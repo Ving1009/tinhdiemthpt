@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css?v=20260910" />
     <link rel="stylesheet" href="css/responsive.css?v=20260910" />
-    <link rel="stylesheet" href="css/refinement.css?v=20260914-4" />
+    <link rel="stylesheet" href="css/refinement.css?v=20260915-1" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
@@ -280,7 +280,11 @@
       <section class="section certificate-section" id="certificate" aria-labelledby="certificate-title">
         <div class="container">
           <div class="section-heading"><p class="eyebrow">04 · Chứng chỉ</p><h2 id="certificate-title">Quy đổi chứng chỉ theo trường</h2><p>Chỉ các bảng quy đổi có dữ liệu của đúng trường, năm và phương thức mới xuất hiện.</p></div>
-          <div class="calculator-layout certificate-layout">
+          <div class="certificate-unavailable is-hidden" id="certificate-unavailable" role="status">
+            <span class="status-icon" aria-hidden="true">i</span>
+            <div><h3>Dữ liệu quy đổi chứng chỉ 2026 đang được cập nhật</h3><p>Chúng tôi chỉ mở công cụ khi có bảng chính thức đúng trường, năm và phương thức. Trong thời gian này, bạn có thể tra cứu phương thức xét tuyển kết hợp trong hồ sơ từng trường.</p><div class="form-actions"><a class="button button-primary" href="#universities">Xem hồ sơ trường</a><a class="button button-light" href="#major-finder">Tìm ngành theo phương thức</a></div></div>
+          </div>
+          <div class="calculator-layout certificate-layout" id="certificate-workspace">
             <form class="form-card" id="certificate-form">
               <div class="form-grid form-grid-two">
                 <div class="field full-field"><label for="certificate-university">Trường</label><select id="certificate-university"><option value="">Đang tải danh sách trường...</option></select></div>
@@ -305,15 +309,17 @@
               <details class="major-filter-panel" open><summary>Bộ lọc ngành</summary>
                 <form id="major-filter-form" class="major-filter-grid">
                   <div class="field"><label for="major-query">Từ khóa</label><input id="major-query" type="search" placeholder="Tên hoặc mã ngành" /></div>
-                  <div class="field"><label for="major-university-filter">Trường</label><select id="major-university-filter"><option value="">Tất cả trường</option></select></div>
                   <div class="field"><label for="major-region-filter">Miền</label><select id="major-region-filter"><option value="">Tất cả miền</option><option value="north">Miền Bắc</option><option value="central">Miền Trung</option><option value="south">Miền Nam</option></select></div>
-                  <div class="field"><label for="major-combination-filter">Tổ hợp</label><select id="major-combination-filter"><option value="">Tất cả tổ hợp</option></select></div>
                   <div class="field"><label for="major-method-filter">Phương thức</label><select id="major-method-filter"><option value="">Tất cả phương thức</option><option value="THPT">THPT</option><option value="Học bạ">Học bạ</option><option value="ĐGNL V-ACT">ĐGNL V-ACT</option><option value="ĐGNL HSA">ĐGNL HSA</option><option value="ĐGTD TSA">ĐGTD TSA</option><option value="ĐGNL SPT">ĐGNL SPT</option><option value="V-SAT">V-SAT</option></select></div>
-                  <div class="field"><label for="major-score-scale">Thang điểm đối chiếu</label><select id="major-score-scale" disabled><option value="">Chọn phương thức trước</option></select></div>
-                  <div class="field"><label for="major-user-score">Điểm của tôi</label><input id="major-user-score" type="text" inputmode="decimal" placeholder="Điểm cùng phương thức" disabled /><small>Điểm thi gốc hoặc điểm xét tuyển đúng thang đã chọn.</small></div>
-                  <div class="field"><label for="major-score-filter">Điểm chuẩn tối đa</label><input id="major-score-filter" type="text" inputmode="decimal" placeholder="Ví dụ 25,5" disabled /></div>
-                  <div class="field"><label for="major-status-filter">Độ tin cậy</label><select id="major-status-filter"><option value="verified,reference">Đã xác minh + Tham khảo</option><option value="verified">Đã xác minh</option><option value="reference">Tham khảo</option><option value="unverified">Chưa xác minh</option></select></div>
-                  <div class="field"><label for="major-sort">Sắp xếp</label><select id="major-sort"><option value="school">Tên trường</option><option value="difference-desc">Chênh lệch cao nhất</option><option value="difference-asc">Chênh lệch thấp nhất</option><option value="cutoff-asc">Điểm chuẩn tăng dần</option><option value="cutoff-desc">Điểm chuẩn giảm dần</option></select></div>
+                  <details class="major-advanced-filters"><summary>Bộ lọc nâng cao</summary><div class="major-advanced-grid">
+                    <div class="field"><label for="major-university-filter">Trường</label><select id="major-university-filter"><option value="">Tất cả trường</option></select></div>
+                    <div class="field"><label for="major-combination-filter">Tổ hợp</label><select id="major-combination-filter"><option value="">Tất cả tổ hợp</option></select></div>
+                    <div class="field"><label for="major-score-scale">Thang điểm đối chiếu</label><select id="major-score-scale" disabled><option value="">Chọn phương thức trước</option></select></div>
+                    <div class="field"><label for="major-user-score">Điểm của tôi</label><input id="major-user-score" type="text" inputmode="decimal" placeholder="Điểm cùng phương thức" disabled /><small>Điểm thi gốc hoặc điểm xét tuyển đúng thang đã chọn.</small></div>
+                    <div class="field"><label for="major-score-filter">Điểm chuẩn tối đa</label><input id="major-score-filter" type="text" inputmode="decimal" placeholder="Ví dụ 25,5" disabled /></div>
+                    <div class="field"><label for="major-status-filter">Độ tin cậy</label><select id="major-status-filter"><option value="verified,reference">Đã xác minh + Tham khảo</option><option value="verified">Đã xác minh</option><option value="reference">Tham khảo</option><option value="unverified">Chưa xác minh</option></select></div>
+                    <div class="field"><label for="major-sort">Sắp xếp</label><select id="major-sort"><option value="school">Tên trường</option><option value="difference-desc">Chênh lệch cao nhất</option><option value="difference-asc">Chênh lệch thấp nhất</option><option value="cutoff-asc">Điểm chuẩn tăng dần</option><option value="cutoff-desc">Điểm chuẩn giảm dần</option></select></div>
+                  </div></details>
                   <div class="form-actions major-filter-actions"><button class="button button-primary" type="submit">Tìm ngành</button><button class="button button-text" id="major-filter-clear" type="button">Xóa bộ lọc</button></div>
                 </form>
                 <p class="form-note">Lọc tỉnh/thành, cơ sở và học phí chưa được bật vì dữ liệu hiện chưa đủ đồng nhất theo năm, đơn vị và phạm vi chương trình.</p>
@@ -378,6 +384,6 @@
       <div class="modal-dialog" role="document"><button class="modal-close" type="button" data-close-modal aria-label="Đóng cửa sổ">×</button><div id="modal-body"></div></div>
     </div>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="js/main.js?v=20260914-5"></script>
+    <script type="module" src="js/main.js?v=20260915-1"></script>
   </body>
 </html>

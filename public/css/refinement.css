@@ -166,6 +166,7 @@ body.dark { --bg:#0b0f17; --surface:#151d2a; --surface-soft:#1c2636; --text:#f1f
  .menu-toggle { display:grid; place-items:center; }
  .calculator-layout { grid-template-columns:1fr; }
  .result-panel { position:static; }
+ .academic-result-panel { scroll-margin-top:76px; }
  .hero-copy { text-align:left; }
  .hero-copy .eyebrow { justify-content:start; }
  .hero-description { margin-left:0; }

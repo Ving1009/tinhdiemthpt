@@ -543,10 +543,10 @@ class THPTApp {
     const calculated = calculateAcademicCombinations({ combinations: this.repository.combinations, scores: input.scores, methodId: this.elements.academicMethod.value, languageLabel: this.elements.academicLanguage.value, priorityContext: this.getPriorityContext(), multiplierEnabled: $("#academic-multiplier-enabled").checked, multiplierSubject: $("#academic-multiplier-subject").value });
     if (!calculated.valid) { this.showToast(calculated.errors[0]); return; }
     if (!calculated.results.length) { this.showToast("Hãy nhập đủ điểm cho ít nhất một tổ hợp phù hợp."); return; }
-    this.showAcademicResult(calculated.results[0].result, { results: calculated.results, method: ACADEMIC_METHODS[this.elements.academicMethod.value].name });
+    this.showAcademicResult(calculated.results[0].result, { results: calculated.results, method: ACADEMIC_METHODS[this.elements.academicMethod.value].name }, true);
     this.saveForm();
   }
-  showAcademicResult(result, view) {
+  showAcademicResult(result, view, shouldScroll = false) {
     const first = view.results.find((item) => item.result === result) || view.results[0];
     this.lastAcademicResult = result;
     this.lastAcademicTrigger = view;
@@ -556,7 +556,7 @@ class THPTApp {
     this.elements.academicResultTotal.textContent = formatScore(result.total); this.elements.academicResultMax.textContent = `/ ${result.maxScore}`;
     this.elements.academicResultDetails.innerHTML = result.priorityApplied ? `<div class="result-row"><span>Điểm học bạ</span><b>${formatScore(result.examScore)}</b></div><div class="result-row"><span>Điểm ưu tiên</span><b>+ ${formatScore(result.priority.adjusted)}</b></div>` : `<div class="result-row"><span>Điểm có trọng số</span><b>${formatScore(result.examScore)} / ${result.maxScore}</b></div><div class="result-row"><span>Điểm ưu tiên</span><b>Chưa áp dụng</b></div><p class="result-warning">Cách quy đổi điểm ưu tiên phụ thuộc quy định của trường.</p>`;
     this.elements.academicResultList.innerHTML = `<h3>Tổ hợp phù hợp</h3>${view.results.slice(0, 8).map(({ combination, result: itemResult }, index) => `<button class="academic-result-item" type="button" data-academic-result-index="${index}"><span><b>${escapeHTML(combination.code)}</b><small>${escapeHTML(combination.subjectText)}</small></span><strong>${formatScore(itemResult.total)} / ${itemResult.maxScore}</strong></button>`).join("")}`;
-    this.goTo("#academic");
+    if (shouldScroll && window.matchMedia("(max-width: 820px)").matches) requestAnimationFrame(() => this.elements.academicResultContent.closest(".academic-result-panel")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
   selectAcademicResult(index) { const item = this.lastAcademicTrigger?.results?.[index]; if (item) this.showAcademicResult(item.result, this.lastAcademicTrigger); }
   clearAcademicData() { $$('[data-academic-score]').forEach((input) => { input.value = ""; input.classList.remove("input-invalid"); }); this.elements.academicResultEmpty.classList.remove("is-hidden"); this.elements.academicResultContent.classList.add("is-hidden"); this.state.academicScores = {}; this.saveForm(); this.showToast("Đã xóa điểm học bạ trên thiết bị."); }

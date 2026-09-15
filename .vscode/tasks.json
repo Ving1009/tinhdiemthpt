@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Website: chạy backend tự cập nhật",
+      "type": "process",
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": ["--watch-preserve-output", "--watch-path=data", "--watch-path=server", "--watch-path=lib", "--watch-path=public", "server/server.js"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated"
+      }
+    }
+  ]
+}

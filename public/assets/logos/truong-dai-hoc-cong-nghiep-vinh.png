@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+
+
+					<title>Home page  - Đại Học Công Nghiệp Vinh</title>
+					<link rel="shortcut icon" href="http://iuv.edu.vn/cms/static/site/sale_cnvinh/template/default/favico.ico">
+					<meta name="description" content="HỢP TÁC - CHUẨN MỰC - THỰC TIỄN - NHÂN VĂN">
+					<meta name="keywords" content="HỢP TÁC,CHUẨN MỰC, THỰC TIỄN, NHÂN VĂN"">
+					<meta property="og:type"               content="article" />
+					<meta property="og:title"              content="Đại Học Công Nghiệp Vinh" />
+					<meta property="og:description"              content="HỢP TÁC - CHUẨN MỰC - THỰC TIỄN - NHÂN VĂN" />
+					<meta property="og:image"              content="http://iuv.edu.vn/cms/static/site/sale_cnvinh/template/default/images/logo.png" />
+				
+
+<script type="text/javascript"><!--
+    // These variables are used by the web2py_ajax_init function in web2py_ajax.js (which is loaded below).
+    var w2p_ajax_confirm_message = "Chắc chắn xóa dữ liệu này?";
+    var w2p_ajax_disable_with_message = "Đang xử lý...";
+    var w2p_ajax_date_format = "%d/%m/%Y";
+    var w2p_ajax_datetime_format = "%d/%m/%Y %H:%M:%S";
+    var ajax_error_500 = 'An error occured, please <a href="/images/logo.png">reload</a> the page'
+    //--></script>
+
+<script src="/cms/static/js/jquery.js" type="text/javascript"></script><link href="/cms/static/css/calendar.css" rel="stylesheet" type="text/css" /><script src="/cms/static/js/calendar.js" type="text/javascript"></script><script src="/cms/static/js/jquery.browser.min.js" type="text/javascript"></script><script src="/cms/static/js/web2py.js" type="text/javascript"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Ads: 367459113 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-367459113"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-367459113');
+</script>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-language" content="vi" />
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
+<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300&amp;subset=vietnamese,latin,latin-ext" rel="stylesheet" type="text/css" />
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ 
+<link href="/cms/static/site/sale_cnvinh/template/default/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="/cms/static/site/sale_cnvinh/template/default/css/bootstrap-responsive.min.css" rel='stylesheet' type='text/css' />
+
+<script src="/cms/static/site/sale_cnvinh/template/default/js/wow.js"  type='text/javascript'></script> 
+
+<script src="/cms/static/site/sale_cnvinh/template/default/js/site.min.js" type='text/javascript'></script>
+
+
+<link href="/cms/static/site/sale_cnvinh/template/default/css/site.min7712.css" rel='stylesheet' type='text/css' />
+<link href="/cms/static/site/sale_cnvinh/template/default/css/ivinh.css" rel='stylesheet' type='text/css' />
+<link href="/cms/static/css/fontawesome-all.css" rel='stylesheet' type='text/css' />
+
+ <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500italic,700,700italic,900,900italic,400italic|Roboto+Condensed:400,700,700italic,400italic|Roboto+Mono:400,500,400italic,500italic,700,700italic|Roboto+Slab:400,700" rel="stylesheet" />
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.7&appId=1044956695623749";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+ new WOW().init();
+</script>
+
+
+<script type="text/javascript">
+	$(function() {
+		$('#menu_phone').mmenu();
+	});
+</script>
+
+
+</head>
+
+
+		
+		
+
+<div id="menu_mobile"  class='hidden-tablet hidden-desktop'>
+	<div class="header">
+		<a href="#menu_phone"></a>
+		Trường Đại Học Công Nghiệp Vinh
+	</div>
+
+	<div id="menu_phone">
+	<ul>
+		
+		
+	</ul>
+	</div>
+</div>
+
+		
+
+
+
+	
+
+
+<body>
+    <div class="header">
+    <div class="nav-hdr text-right hidden-xs">
+        <div class='container'>
+			<div class="ivinh_display" id="display_61"><!-- Start display_61--> <ul>
+	<li><a href="/dao-tao">Đào tạo</a></li>
+	<li><a href="/kien-thuc-y-khoa">Kiến thức y khoa</a></li>
+	<li><a href="/bac-si-tu-van">Tư vấn bác sĩ</a></li>
+	<li><a href="/goc-tri-an">Góc tri ân</a></li>
+	<li><a href="/guong-mat-tieu-bieu">Tấm lòng vàng</a></li>
+</ul> <!-- End display_61--> </div>
+		</div>
+    </div>
+	<div class="main-hdr">
+		<div class="container">
+			<div class="pull-left logo-hdr">
+				<!-- Start display_62--> <p><a href="/home"><img alt="Đại học công nghiệp Vinh" src="/cms/static/site/sale_cnvinh/uploads/ckeditor/plugin_ckeditor_upload.upload.a82161e058d9fb93.6c6f676f2e706e67.png" style="max-height:120px;" /> </a></p> <!-- End display_62--> 
+			</div>
+			<div class="pull-right">
+				<!-- Start display_133--> <a href="http://www.iuv.edu.vn/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFsSURBVHjaYvzPgAD/UNlYEUAAmuTYAAAQhAEYqF/zFbe50RZ1cMmS9TLi0pJLRjZohAMTGFUN9HdnHgEE1sDw//+Tp0ClINW/f4NI9d////3+f+b3/1+////+9f/XL6A4o6ws0AaAAGIBm/0fRTVQ2v3Pf97f/4/9Aqv+DdHA8Ps3UANAALEAMSNQNdDGP3+ALvnf8vv/t9//9X/////7f+uv/4K//iciNABNBwggsJP+/IW4kuH3n//1v/8v+wVSDURmv/57//7/CeokoKFA0wECiAnkpL9/wH4CO+DNr/+VQA1A9PN/w6//j36CVIMRxEkAAQR20m+QpSBXgU0CuSTj9/93v/8v//V/xW+48UBD/zAwAAQQSAMzOMiABoBUswCd8ev/M7A669//OX7///Lr/x+gBlCoAJ0DEEAgDUy//zBISoKNAfoepJNRFmQkyJecfxj4/kDCEIiAigECiPErakTiiWMIAAgwAB4ZUlqMMhQQAAAAAElFTkSuQmCC" /  ></a>
+<a href="https://translate.google.com/translate?sl=vi&tl=en&js=y&prev=_t&hl=vi&ie=UTF-8&u=http%3A%2F%2Fwww.iuv.edu.vn%2Fhome&edit-text=&act=url"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHzSURBVHjaYkxOP8IAB//+Mfz7w8Dwi4HhP5CcJb/n/7evb16/APL/gRFQDiAAw3JuAgAIBEDQ/iswEERjGzBQLEru97ll0g0+3HvqMn1SpqlqGsZMsZsIe0SICA5gt5a/AGIEarCPtFh+6N/ffwxA9OvP/7//QYwff/6fZahmePeB4dNHhi+fGb59Y4zyvHHmCEAAAW3YDzQYaJJ93a+vX79aVf58//69fvEPlpIfnz59+vDhw7t37968efP3b/SXL59OnjwIEEAsDP+YgY53b2b89++/awvLn98MDi2cVxl+/vl6mituCtBghi9f/v/48e/XL86krj9XzwEEEENy8g6gu22rfn78+NGs5Ofr16+ZC58+fvyYwX8rxOxXr169fPny+fPn1//93bJlBUAAsQADZMEBxj9/GBxb2P/9+S/R8u3vzxuyaX8ZHv3j8/YGms3w8ycQARmi2eE37t4ACCDGR4/uSkrKAS35B3TT////wADOgLOBIaXIyjBlwxKAAGKRXjCB0SOEaeu+/y9fMnz4AHQxCP348R/o+l+//sMZQBNLEvif3AcIIMZbty7Ly6t9ZmXl+fXj/38GoHH/UcGfP79//BBiYHjy9+8/oUkNAAHEwt1V/vI/KBY/QSISFqM/GBg+MzB8A6PfYC5EFiDAABqgW776MP0rAAAAAElFTkSuQmCC" /  ></a>
+<div id="wr_search">
+	<div class="search">
+<form action="/tim-kiem">
+		
+		<input id="key_search" name="key_search" type="text" class="box-search form-control form-group" placeholder="Nhập từ khóa cần tìm kiếm">
+		<input class=" form-group btn btn-blue btn-red" id="btn_search" type="submit" value="Tìm kiếm" />
+<form>		
+	</div> 
+</div> <!-- End display_133--> 
+			</div>
+		</div>
+    </div>
+    <div class="menu-hdr hidden-xs">
+       <!-- Start display_64--> 
+
+<ul class="container">
+	<li><a href="/home">Trang chủ</a></li>
+	<li>
+		<a href="/gioi-thieu-tong-quan">Giới thiệu</a>
+		<div class="dropdown-menu-hdr">
+			<div class="container">
+				<span class="name-submenu1"><a href="gioi-thieu-tong-quan">Giới thiệu</a></span>
+				<div class="row">
+					<div class="col-xs-2">
+						<ul class="" id="">
+							<li class="" id="">
+								<a class="" href="/gioi-thieu-tong-quan" id="">Giới thiệu chung</a>
+							</li>
+							<li class="" id="">
+								<a class="" href="/tam-nhin-su-menh" id="">Tầm nhìn - Sứ mệnh</a>
+							</li>
+							<li class="" id="">
+								<a class="" href="/co-cau-to-chuc" id="">Cơ cấu tổ chức</a>
+							</li>
+							<li class="" id="">
+								<a class="" href="/ba-cong-khai" id="">Ba công khai</a>
+							</li>
+						</ul>
+						
+					</div>
+			 
+					<div class="col-xs-2">
+						 <span class="name-submenu2">Lãnh đạo</span>
+						  <ul class="" id=""><li class="" id=""><a class="" href="/hoi-dong-quan-tri" id="">Hội đồng trường</a></li><li class="" id=""><a class="" href="/ban-giam-hieu" id="">Ban giám hiệu</a></li></ul>
+					</div>
+					<div class="col-xs-3">
+						 <span class="name-submenu2">Các hội đồng</span>
+						  <ul class="" id=""><li class="" id=""><a class="" href="/hoi-dong-khoa-hoc-va-dao-tao" id="">Hội đồng Khoa học và Đào tạo</a></li><li class="" id=""><a class="" href="/hoi-dong-thi-dua-khen-thuong" id="">Hội đồng Thi đua - Khen thưởng</a></li><li class="" id=""><a class="" href="/hoi-dong-nhan-su-tien-luong" id="">Hội đồng Nhân sự - Tiền lương</a></li></ul>
+					</div>
+					<div class="col-xs-3">
+						 <span class="name-submenu2">Phòng chức năng</span>
+						  <ul class="" id=""><li class="" id=""><a class="" href="http://www.iuv.edu.vn/dao-tao-gioi-thieu" id="">Phòng Đào tạo</a></li><li class="" id=""><a class="" href="http://www.iuv.edu.vn/hcns-gioi-thieu" id="">Phòng Hành chính - Nhân sự</a></li><li class="" id=""><a class="" href="http://www.iuv.edu.vn/khtc-gioi-thieu/news/gioi-thieu-7.html" id="">Phòng Kế hoạch - Tài chính</a></li></ul>
+					</div>
+					<div class="col-xs-2">
+						 <span class="name-submenu2">Tổ chức  Đoàn thể</span>
+						  <ul class="" id=""><li class="" id=""><a class="" href="/chi-bo-dang" id="">Chi bộ Đảng</a></li><li class="" id=""><a class="" href="http://www.iuv.edu.vn/gioi-thieu-2" id="">Công đoàn</a></li><li class="" id=""><a class="" href="/doan-thanh-nien" id="">Đoàn thanh niên</a></li></ul>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</li>
+         <li>
+		<a href="/tin-tuc-su-kien"> Tin tức & Hoạt động </a>
+		
+	</li>   
+	<li>
+		<a href="#">Đào tạo</a>
+		<div class="dropdown-menu-hdr">
+			<div class="container">
+				
+				  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Ngành đào tạo bậc Đại học  </a></li>
+     <!--<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Ngành đào tạo bậc cao đẳng</a></li>-->
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+				
+	
+	
+		<div class="col-xs-2">
+		   <a href="/cong-nghe-ky-thuat-dien-dien-tu" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.9fd1ea49f2db97e7.6469656e2e6a7067.jpg">
+			   <span class="name-submenu2">Công nghệ kỹ thuật Điện - Điện tử </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/cong-nghe-ky-thuat-dieu-khien-tu-dong-hoa" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.b98a59ecfdac20e9.746f6e67646f6e672e6a7067.jpg">
+			   <span class="name-submenu2">Công nghệ KT Điều khiển, Tự động hóa </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/cong-nghe-thong-tin" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.b702494289e699c8.636e74742e6a7067.jpg">
+			   <span class="name-submenu2">Công nghệ thông tin </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/cong-nghe-ky-thuat-nhiet" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a8ed96dce9a779b9.6e686965742e6a7067.jpg">
+			   <span class="name-submenu2">Công nghệ kỹ thuật Nhiệt </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/ke-toan" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a4f8287f4d842cdf.6b65746f616e2e6a7067.jpg">
+			   <span class="name-submenu2">Kế toán </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/quan-ly-cong-nghiep" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a8c9204136969a40.716c636e2e6a7067.jpg">
+			   <span class="name-submenu2">Quản lý công nghiệp </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/cong-nghe-thuc-pham" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a8b9b7bf47a2804d.636e74702e6a7067.jpg">
+			   <span class="name-submenu2">Công nghệ thực phẩm </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/cong-nghe-ky-thuat-hoa-hoc" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a1d814f5786089de.7068612d6368652d686f612d64756f632d7068616d2e6a7067.jpg">
+			   <span class="name-submenu2">Công nghệ kỹ thuật hóa học </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/quan-tri-dv-du-lich-va-lu-hanh" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.b3386c5cdd5e0242.64756c6963682e6a7067.jpg">
+			   <span class="name-submenu2">Quản trị Dv du lịch và lữ hành </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/quan-tri-khach-san" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.af58214d080fc4bd.6b6861636873616e2e6a7067.jpg">
+			   <span class="name-submenu2">Quản trị khách sạn </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/nganh-cong-nghe-ky-thuat-co-khi" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.9d1cc656d5d451e4.666f6c6465722e6176617461725f62672e613763383865633333366339376462362e3463346635323439343534653264346436353633363836313665363936333631366332643435366536373639366536353635373236393665363732653661373036372e6a7067.jpg">
+			   <span class="name-submenu2">Công nghệ Kỹ thuật Cơ khí </span>
+			</a>
+		</div>
+	
+	</div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+	
+	
+		<div class="col-xs-2">
+		   <a href="/cao-dang" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/                         ">
+			   <span class="name-submenu2">cong nghe phan mem </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/cao-dang-cong-nghe-thong-tin" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.9480672788f3bf7e.636e74742e6a7067.jpg">
+			   <span class="name-submenu2">Công nghệ thông tin </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/cntt-ung-dung-phan-mem" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a19c395fa729d04a.7068616e6d656d2e6a7067.jpg">
+			   <span class="name-submenu2">CNTT - Ứng dụng phần mềm </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/quan-tri-mang-may-tinh" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.948f01934613625b.7175616e7472696d616e672e6a7067.jpg">
+			   <span class="name-submenu2">Quản trị mạng máy tính </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/ky-thuat-su-chua-lap-rap-may-tinh" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a650f6fa917ef767.7375612d636875612d6d61792d7469682e6a7067.jpg">
+			   <span class="name-submenu2">Kỹ thuật sửa chữa, lắp ráp máy tính </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/cong-nghe-ky-thuat-dien-dien-tu-1" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.8892b79ceb9a8c7b.6469656e2e6a7067.jpg">
+			   <span class="name-submenu2">Công nghệ kỹ thuật Điện - Điện tử </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/dien-cong-nghiep" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.9f20a460baf3804b.6469656e636f6e676e67686965702e6a7067.jpg">
+			   <span class="name-submenu2">Điện công nghiệp </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/dien-dan-dung" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.b91ff5a5e71da7e8.6469656e2064616e2064756e672e6a7067.jpg">
+			   <span class="name-submenu2">Điện dân dụng </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/lap-dat-dien-va-dieu-khien-trong-cong-nghiep" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a0fc4e556c952e14.74752d6469656e2d646965752d6b6869656e2d706c632e6a7067.jpg">
+			   <span class="name-submenu2">KT lắp đặt điện và điều khiển trong CN </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/khoa-cong-nghe-o-to" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a2be34fc82e1a96a.6f746f332e6a7067.jpg">
+			   <span class="name-submenu2">Công nghệ Ô tô </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/ke-toan-1" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.bfae425a04b72b43.6b65746f616e2e6a7067.jpg">
+			   <span class="name-submenu2">Kế toán </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/ke-toan-doanh-nghiep" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.9ea58bbd088d9cce.6b652d746f616e2d646f616e682d6e67686965702e6a7067.jpg">
+			   <span class="name-submenu2">Kế toán doanh nghiệp </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/quan-tri-khach-san-1" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a02cccbac0c93fdd.6b6861636873616e2e6a7067.jpg">
+			   <span class="name-submenu2">Quản trị khách sạn </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/huong-dan-du-lich" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.b87c43999e60da53.6475206c6963682e6a7067.jpg">
+			   <span class="name-submenu2">Hướng dẫn du lịch </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/quan-tri-dv-du-lich-va-lu-hanh-1" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.8cb3070a848b72f0.64756c6963682e6a7067.jpg">
+			   <span class="name-submenu2">Quản trị DV Du lịch và Lữ hành </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/san-xuat-ruou-bia" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.87e20c21cbea8f0c.72756f75206269612e6a7067.jpg">
+			   <span class="name-submenu2">Sản xuất rượu, bia </span>
+			</a>
+		</div>
+	
+		<div class="col-xs-2">
+		   <a href="/cong-nghe-thuc-pham-1" class='menu_img'> 
+				<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.beb2eee4bbbf6109.636e74702e6a7067.jpg">
+			   <span class="name-submenu2">Công nghệ thực phẩm </span>
+			</a>
+		</div>
+	
+	</div>
+  </div>
+  
+  
+			</div>
+		</div>
+	</li>
+<li>
+		<a href="#">Sinh viên</a>
+		<div class="dropdown-menu-hdr">
+			<div class="container">
+				<span class="name-submenu1"><a href="#">Sinh viên</a></span>
+				<div class="row">
+				
+				
+					<div class="col-xs-2">
+
+
+	   <a href="/thoi-khoa-bieu" class='menu_img'> 
+							<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.961df563a4d46489.746b622d322e706e67.png">
+						   <span class="name-submenu2">Thời khóa biểu </span>
+						</a>
+
+					</div>
+				
+					<div class="col-xs-2">
+
+
+	   <a href="/lich-thi" class='menu_img'> 
+							<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.ba932d61d1c6708b.74686f6e672d62616f2d6c6963682d746869312e6a7067.jpg">
+						   <span class="name-submenu2">Lịch thi </span>
+						</a>
+
+					</div>
+				
+					<div class="col-xs-2">
+
+
+	   <a href="/ket-qua-hoc-tap" class='menu_img'> 
+							<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a4c7cebcb33a50b0.313435373935303739392d73696e687669656e6e616d342d313438343838303732383933342e6a7067.jpg">
+						   <span class="name-submenu2">Kết quả học tập </span>
+						</a>
+
+					</div>
+				
+					<div class="col-xs-2">
+
+
+	   <a href="/hoc-phi" class='menu_img'> 
+							<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.b94207de95ee43dd.696d61676573323137313034365f3030312e6a7067.jpg">
+						   <span class="name-submenu2">Học phí </span>
+						</a>
+
+					</div>
+				
+					<div class="col-xs-2">
+
+
+	   <a href="/bieu-mau-1" class='menu_img'> 
+							<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a472862a38cbc48f.313131312e706e67.png">
+						   <span class="name-submenu2">Biểu mẫu </span>
+						</a>
+
+					</div>
+				
+					<div class="col-xs-2">
+
+
+	   <a href="/cuu-sinh-vien" class='menu_img'> 
+							<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.980493cd0153449b.686f635f73696e685f6b6861635f73696e685f7669656e2e6a7067.jpg">
+						   <span class="name-submenu2">Cựu sinh viên </span>
+						</a>
+
+					</div>
+				
+					<div class="col-xs-2">
+
+
+					   <a href="https://truyxuatvanbang.naric.edu.vn/" class='menu_img'> 
+							<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.a1289a5b44e7e5c2.747261206375752e6a7067.jpg">
+						   <span class="name-submenu2">Tra cứu văn bằng </span>
+						</a>
+
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</li>
+	<li>
+		<a href="#">Tuyển sinh</a>
+		<div class="dropdown-menu-hdr">
+			<div class="container">
+				<span class="name-submenu1"><a href="#">Tuyển sinh</a></span>
+				<div class="home-chamsockhachhang col-xs-4">
+					<img alt="" src="/cms/static/site/sale_cnvinh/template/default/images/icon1_chamsockhachhang.png" />
+						<br/>                         
+						<p>Trả lời câu hỏi  - Tư vấn tuyển sinh:</p>
+						<span class="number-chamsockhachhang"> 096 446 77 88</span>
+				</div>
+				<div class="col-xs-6">
+					<span class="name-submenu2">Tuyển sinh</span>
+					<ul class="" id=""><li class="" id=""><a class="" href="/ts-dai-hoc" id="">Đại học</a></li><li class="" id=""><a class="" href="/sinh-vien-lao" id="">Tuyển sinh du học sinh Lào (ຮັບສະໝັກນັກສຶກສາລາວ)</a></li><li class="" id=""><a class="" href="/dai-hoc-lien-thong" id="">Đại học liên thông</a></li><li class="" id=""><a class="" href="/dao-tao-ngan-han" id="">Đào tạo ngắn hạn</a></li><li class="" id=""><a class="" href="/ket-qua-xet-tuyen" id="">Kết quả xét tuyển</a></li><li class="" id=""><a class="" href="/hoc-bong" id="">Học bổng</a></li></ul>
+				</div>
+				
+			</div>
+		</div>
+	</li>
+
+	<li>
+		<a href="#">Nghiên cứu khoa học</a>
+		<div class="dropdown-menu-hdr">
+			<div class="container">
+				<!--  <span class="name-submenu1"><a href="#">Nghiên cứu khoa học</a></span>-->
+		 
+				<div class="col-xs-4">
+					 <span class="name-submenu2">Nghiên cứu khoa học</span>
+					  <ul class="" id=""><li class="" id=""><a class="" href="/huong-nghien-cuu" id="">Hướng nghiên cứu</a></li><li class="" id=""><a class="" href="/cong-bo-tieu-bieu" id="">Công bố tiêu biểu</a></li><li class="" id=""><a class="" href="/hop-tac-nckh" id="">Hợp tác NCKH</a></li><li class="" id=""><a class="" href="/cac-de-tai-dang-trien-khai" id="">Các đề tài đang triển khai</a></li></ul>
+				</div>
+				
+				<!-- <div class="col-xs-4">
+					 <span class="name-submenu2">Liên kết doanh nghiệp</span>
+					  
+				</div>-->
+			</div>
+		</div>
+	</li>
+         <li>
+		<a href="/hop-tac">Hợp tác quốc tế</a>
+		<div class="dropdown-menu-hdr">
+			<div class="container">
+				<span class="name-submenu1"><a href="#">Hợp tác quốc tế</a></span>
+				<div class="row">
+				
+				
+					<div class="col-xs-2">
+					   <a href="/hop-tac-dao-tao" class='menu_img'> 
+							<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.943120c0d210249a.686f707461632e6a7067.jpg">
+						   <span class="name-submenu2">Hợp tác đào tạo </span>
+						</a>
+					</div>
+				
+					<div class="col-xs-2">
+					   <a href="/hop-tac-tuyen-dung" class='menu_img'> 
+							<img src="/cms/static/site/sale_cnvinh/uploads/folder/folder.avatar.8c62868b7baabfd0.494d475f323835362e6a7067.jpg">
+						   <span class="name-submenu2">Hợp tác tuyển dụng </span>
+						</a>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</li>
+
+	<li>
+	  <a href="/lien-he"> Liên hệ</a>
+	</li>
+</ul> <!-- End display_64--> 
+    </div>
+</div><!--header-->
+
+
+<div class="wrapper listpage">
+	<div class="bgtop-subpage">
+		<div class="container">
+			<div class="top-namesub2">
+				<h2 class="pull-left"><i class="fa fa-plus-circle" aria-hidden="true"></i><a href=""> 404
+				</a></h2>
+			   
+			   <div class="social-detail pull-right">
+		
+		
+				</div>
+			</div><!--top-namesub2-->
+		</div>
+	</div>
+	<div class="content-listpage content-detailpage bg-gray">
+		<div class="container">
+			
+				<div class="text-center main-detail">
+				<br/>
+				<br/>
+				<br/>
+						<h2> Yêu cầu của bạn hệ thống chưa kịp xử lí hoặc nội dung không tìm thấy !</h2>
+
+<p> <a href="/home"> Bạn vui lòng bấm vào đây để quay về trang chủ.</a></p>
+<br/>
+				<br/>
+				<br/>
+				</div>
+			
+		</div>
+
+	</div><!--row-->
+</div><!--container-->
+  
+
+
+<div class="footer-benhvien">
+    <div class="menu-footer menu-hdr hidden-xs">
+       <!-- Start display_136--> 
+
+<ul class="container">
+	<li><a href="/home">Trang chủ</a></li>
+	<li>
+		<a href="/gioi-thieu-tong-quan">Giới thiệu</a>
+	</li>
+         
+	<li>
+		<a href="#">Đào tạo</a>
+	</li>
+	<li>
+		<a href="#">Tuyển sinh</a>
+	</li>
+
+	<li>
+		<a href="#">Nghiên cứu - Hợp tác</a>
+	</li>
+         
+	<li>
+		<a href="/tin-tuc-su-kien"> Tin tức & Hoạt động </a>
+	</li>   
+	<li>
+	  <a href="/tuyen-dung"> Tuyển dụng</a>
+	</li>
+	<li>
+	  <a href="/lien-he"> Liên hệ</a>
+	</li>
+<li>
+                 <a href="/plugin_auth/login"> Đăng nhập</a>
+            </li>
+        </ul> <!-- End display_136--> 
+    </div><!--menu-footer-->
+    <div class="menu-hdr main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-7 left-main-footer pull-left">
+				
+					  <!-- Start display_115--> <a class="footer-logo" href="#" title="Trường Đại học Công nghiệp Vinh ">
+ <img alt="logo dai hoc cong nghiep" src="/cms/static/site/sale_cnvinh/template/default/images/logo_one.png" />
+</a>
+                    <h4>Trường Đại học Công nghiệp Vinh  </h4>
+                    <p>Địa chỉ: Số 26 - Nguyễn Thái Học - Tp.Vinh - Nghệ An </p>
+                    <p>Điện thoại: (84-0238)3 535 232; Fax: (84-0238)3 534.933; Email: congnghiepvinh@iuv.edu.vn - congnghiepvinh@gmail.com  </p>
+                    <p><span>Copyright © 2018, bản quyền thuộc về <b>http://www.iuv.edu.vn</b>.</span></p> <!-- End display_115--> 
+                    
+                </div>
+                <div class="col-xs-5 right-main-footer pull-right text-right">
+                    <h4>Kết nối với chúng tôi</h4>
+					<!-- Start display_118--> <div class="fooFlowus_img">
+						
+<br/>
+	<ul class="list-unstyled">
+							<li><a class="show_facebook" href="" target="_blank" title="Facebook">
+<img src="/cms/static/site/sale_cnvinh/template/default/images/img-social1.png" alt="">
+</a>
+							</li>
+							<li><a class="show_twitter" href="#" target="_blank" title="Twitter">
+<img src="/cms/static/site/sale_cnvinh/template/default/images/img-social5.png" alt="">
+</a>
+							</li>
+							<li><a class="show_google" href="#" target="_blank" title="Google+">
+<img src="/cms/static/site/sale_cnvinh/template/default/images/img-social3.png" alt="">
+</a>
+							</li>                                
+							<li><a class="show_google" href="#" target="_blank" title="Pinterest">
+<img src="/cms/static/site/sale_cnvinh/template/default/images/img-social6.png" alt="">
+</a>
+							</li>
+						</ul>
+		
+				</div> <!-- End display_118--> 
+                </div>
+            </div>
+        </div>
+    </div><!--main-footer-->
+</div><!--footer-benhvien-->
+<div class="phone-tongdai text-center">
+    <span><i class="fa fa-phone" aria-hidden="true"></i> Chăm sóc khách hàng</span>
+    <h3>0291-3908888</h3>
+    <span><i class="fa fa-calendar-alt" aria-hidden="true"></i> <a href="http://medicbaclieu.webnghean.com/lich-kham">Lịch Khám</a></span>
+    <span><i class="fa fa-calendar" aria-hidden="true"></i><a href="http://medicbaclieu.webnghean.com/dat-ich-hen"> Đặt Lịch Hẹn</a></span>
+</div>
+<!--subscription-->
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+<!--gototop-->
+<script>
+	// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				document.getElementById("myBtn").style.display = "block";
+			} else {
+				document.getElementById("myBtn").style.display = "none";
+			}
+		}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+		document.body.scrollTop = 0; // For Chrome, Safari and Opera
+		document.documentElement.scrollTop = 0; // For IE and Firefox
+	}
+</script>
+<!-- allmenu-mobile -->
+
+    
+    
+    
+</body>
+
+</html>

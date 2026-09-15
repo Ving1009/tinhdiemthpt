@@ -1,0 +1,1784 @@
+{
+  "found": [
+    {
+      "uni": {
+        "id": "truong-quan-tri-va-kinh-doanh-dhqg-ha-noi",
+        "name": "Trường Quản trị và Kinh doanh - Đại học Quốc gia Hà Nội",
+        "shortName": "HSB",
+        "code": "QHD",
+        "logo": "./assets/logos/truong-quan-tri-va-kinh-doanh-dhqg-ha-noi.svg",
+        "description": "Đào tạo cử nhân, thạc sĩ và tiến sĩ về quản trị kinh doanh và an ninh phi truyền thống.",
+        "website": "https://hsb.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "qhd-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/truong-quan-tri-va-kinh-doanh-dai-hoc-quoc-gia-ha-noi-QHD.html",
+      "slug": "truong-quan-tri-va-kinh-doanh-dai-hoc-quoc-gia-ha-noi-QHD"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-viet-nhat-dhqg-ha-noi",
+        "name": "Trường Đại học Việt Nhật - Đại học Quốc gia Hà Nội",
+        "shortName": "VJU",
+        "code": "VJU",
+        "logo": "./assets/logos/truong-dai-hoc-viet-nhat-dhqg-ha-noi.png",
+        "description": "Biểu tượng hợp tác giáo dục giữa Việt Nam và Nhật Bản.",
+        "website": "https://vju.vnu.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "vju-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/viet-nhat-dai-hoc-quoc-gia-ha-noi-VJU.html",
+      "slug": "viet-nhat-dai-hoc-quoc-gia-ha-noi-VJU"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-am-nhac-quoc-gia-viet-nam",
+        "name": "Học viện Âm nhạc Quốc gia Việt Nam",
+        "shortName": "VNAM",
+        "code": "NVH",
+        "logo": "./assets/logos/hoc-vien-am-nhac-quoc-gia-viet-nam.svg",
+        "description": "Cơ sở đào tạo âm nhạc chuyên nghiệp lớn nhất Việt Nam.",
+        "website": "https://vnam.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "nvh-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/am-nhac-quoc-gia-viet-nam-NVH.html",
+      "slug": "am-nhac-quoc-gia-viet-nam-NVH"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-hanh-chinh-quoc-gia",
+        "name": "Học viện Hành chính Quốc gia",
+        "shortName": "NAPA",
+        "code": "HCH",
+        "logo": "./assets/logos/hoc-vien-hanh-chinh-quoc-gia.png",
+        "description": "Trung tâm đào tạo cán bộ và quản lý hành chính nhà nước.",
+        "website": "https://apag.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hch-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/hanh-chinh-quoc-gia-HCH.html",
+      "slug": "hanh-chinh-quoc-gia-HCH"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-nong-nghiep-viet-nam",
+        "name": "Học viện Nông nghiệp Việt Nam",
+        "shortName": "VNUA",
+        "code": "HVN",
+        "logo": "./assets/logos/hoc-vien-nong-nghiep-viet-nam.png",
+        "description": "Trường đại học trọng điểm quốc gia về lĩnh vực nông - lâm - ngư nghiệp.",
+        "website": "https://vnua.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hvn-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/nong-nghiep-viet-nam-HVN.html",
+      "slug": "nong-nghiep-viet-nam-HVN"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-phu-nu-viet-nam",
+        "name": "Học viện Phụ nữ Việt Nam",
+        "shortName": "VWA",
+        "code": "HPN",
+        "logo": "./assets/logos/hoc-vien-phu-nu-viet-nam.png",
+        "description": "Trường đại học đa ngành công lập trực thuộc Hội Liên hiệp Phụ nữ Việt Nam.",
+        "website": "https://hvpnvn.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hpn-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/phu-nu-viet-nam-HPN.html",
+      "slug": "phu-nu-viet-nam-HPN"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-toa-an",
+        "name": "Học viện Tòa án",
+        "shortName": "VJA",
+        "code": "HTA",
+        "logo": "./assets/logos/hoc-vien-toa-an.jpg",
+        "description": "Cơ sở đào tạo chuyên ngành luật phục vụ hệ thống Tòa án nhân dân.",
+        "website": "http://hvta.toaan.gov.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hta-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/toa-an-HTA.html",
+      "slug": "toa-an-HTA"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-san-khau-dien-anh-ha-noi",
+        "name": "Trường Đại học Sân khấu - Điện ảnh Hà Nội",
+        "shortName": "SKDA",
+        "code": "SKD",
+        "logo": "./assets/logos/truong-dai-hoc-san-khau-dien-anh-ha-noi.png",
+        "description": "Cơ sở đào tạo nghệ thuật điện ảnh, truyền hình và sân khấu hàng đầu.",
+        "website": "https://skda.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "skd-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/san-khau-dien-anh-ha-noi-SKD.html",
+      "slug": "san-khau-dien-anh-ha-noi-SKD"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-su-pham-nghe-thuat-trung-uong",
+        "name": "Trường Đại học Sư phạm Nghệ thuật Trung ương",
+        "shortName": "NUAE",
+        "code": "GNT",
+        "logo": "./assets/logos/truong-dai-hoc-su-pham-nghe-thuat-trung-uong.png",
+        "description": "Cơ sở đào tạo giáo viên nghệ thuật lớn hàng đầu Việt Nam.",
+        "website": "https://spnttw.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "gnt-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/su-pham-nghe-thuat-trung-uong-GNT.html",
+      "slug": "su-pham-nghe-thuat-trung-uong-GNT"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-su-pham-the-duc-the-thao-ha-noi",
+        "name": "Trường Đại học Sư phạm Thể dục Thể thao Hà Nội",
+        "shortName": "HUPES",
+        "code": "TDH",
+        "logo": "./assets/logos/truong-dai-hoc-su-pham-the-duc-the-thao-ha-noi.png",
+        "description": "Trung tâm đào tạo giáo viên thể dục thể thao chuyên nghiệp.",
+        "website": "https://hupes.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "tdh-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/su-pham-the-duc-the-thao-ha-noi-TDH.html",
+      "slug": "su-pham-the-duc-the-thao-ha-noi-TDH"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-dong-do",
+        "name": "Trường Đại học Đông Đô",
+        "shortName": "HDIU",
+        "code": "DDU",
+        "logo": "./assets/logos/truong-dai-hoc-dong-do.png",
+        "description": "Trường đại học tư thục đào tạo đa ngành tại Hà Nội.",
+        "website": "https://hdiu.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "ddu-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/dong-do-DDU.html",
+      "slug": "dong-do-DDU"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-cmc",
+        "name": "Trường Đại học CMC",
+        "shortName": "CMC",
+        "code": "CMC",
+        "logo": "./assets/logos/truong-dai-hoc-cmc.png",
+        "description": "Trường đại học tư thục định hướng công nghệ số thuộc Tập đoàn CMC.",
+        "website": "https://cmc-u.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "cmc-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/cmc-CMC.html",
+      "slug": "cmc-CMC"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-can-bo-tp-hcm",
+        "name": "Học viện Cán bộ TP.HCM",
+        "shortName": "HVC",
+        "code": "HVC",
+        "logo": "./assets/logos/hoc-vien-can-bo-tp-hcm.jpg",
+        "description": "Cơ sở đào tạo công chức, cán bộ và đại học ngành quản lý nhà nước, chính trị.",
+        "website": "https://hvc.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "hvc-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/can-bo-tp-hcm-HVC.html",
+      "slug": "can-bo-tp-hcm-HVC"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-quan-ly-va-cong-nghe-tphcm",
+        "name": "Trường Đại học Quản lý và Công nghệ TPHCM",
+        "shortName": "UMT",
+        "code": "UMT",
+        "logo": "./assets/logos/truong-dai-hoc-quan-ly-va-cong-nghe-tphcm.png",
+        "description": "Trường đại học thế hệ mới tập trung vào tinh thần khởi nghiệp và quản lý công nghệ.",
+        "website": "https://umt.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "umt-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/quan-ly-va-cong-nghe-tphcm-UMT.html",
+      "slug": "quan-ly-va-cong-nghe-tphcm-UMT"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai",
+        "name": "Phân hiệu Đại học Thái Nguyên tại Lào Cai",
+        "shortName": "DTP",
+        "code": "DTP",
+        "logo": "./assets/logos/dai-hoc-thai-nguyen.ico",
+        "description": "Cơ sở đào tạo đại học phục vụ phát triển nguồn nhân lực khu vực Tây Bắc.",
+        "website": "https://tnu.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "dtp-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-DTP.html",
+      "slug": "phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-DTP"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-luong-the-vinh",
+        "name": "Trường Đại học Lương Thế Vinh",
+        "shortName": "DTV",
+        "code": "DTV",
+        "logo": "./assets/logos/truong-dai-hoc-luong-the-vinh.png",
+        "description": "Trường đại học tư thục đào tạo đa ngành tại Nam Định.",
+        "website": "https://ultv.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "dtv-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/luong-the-vinh-DTV.html",
+      "slug": "luong-the-vinh-DTV"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-ha-long",
+        "name": "Trường Đại học Hạ Long",
+        "shortName": "HLU",
+        "code": "HLU",
+        "logo": "./assets/logos/truong-dai-hoc-ha-long.png",
+        "description": "Trường đại học công lập đa ngành trực thuộc tỉnh Quảng Ninh.",
+        "website": "https://uhl.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hlu-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/ha-long-HLU.html",
+      "slug": "ha-long-HLU"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-hai-duong",
+        "name": "Trường Đại học Hải Dương",
+        "shortName": "DKT",
+        "code": "DKT",
+        "logo": "./assets/logos/truong-dai-hoc-hai-duong.png",
+        "description": "Trường đại học công lập đào tạo đa ngành tại tỉnh Hải Dương.",
+        "website": "https://uhd.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "dkt-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/hai-duong-DKT.html",
+      "slug": "hai-duong-DKT"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-quoc-te-bac-ha",
+        "name": "Trường Đại học Quốc tế Bắc Hà",
+        "shortName": "DBH",
+        "code": "DBH",
+        "logo": "./assets/logos/truong-dai-hoc-quoc-te-bac-ha.png",
+        "description": "Trường đại học tư thục đào tạo các ngành công nghệ, kinh tế chất lượng.",
+        "website": "https://bhu.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "dbh-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/quoc-te-bac-ha-DBH.html",
+      "slug": "quoc-te-bac-ha-DBH"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-su-pham-ky-thuat-nam-dinh",
+        "name": "Trường Đại học Sư phạm Kỹ thuật Nam Định",
+        "shortName": "SKN",
+        "code": "SKN",
+        "logo": "./assets/logos/truong-dai-hoc-su-pham-ky-thuat-nam-dinh.png",
+        "description": "Trường đại học chuyên đào tạo giáo viên mảng kỹ thuật và kỹ sư công nghệ.",
+        "website": "https://nute.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "skn-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/su-pham-ky-thuat-nam-dinh-SKN.html",
+      "slug": "su-pham-ky-thuat-nam-dinh-SKN"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-tan-trao",
+        "name": "Trường Đại học Tân Trào",
+        "shortName": "TQU",
+        "code": "TQU",
+        "logo": "./assets/logos/truong-dai-hoc-tan-trao.png",
+        "description": "Trường đại học công lập đa ngành tại tỉnh Tuyên Quang.",
+        "website": "https://daihoctantrao.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "tqu-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/tan-trao-TQU.html",
+      "slug": "tan-trao-TQU"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-the-duc-the-thao-bac-ninh",
+        "name": "Trường Đại học Thể dục Thể thao Bắc Ninh",
+        "shortName": "TDB",
+        "code": "TDB",
+        "logo": "./assets/logos/truong-dai-hoc-the-duc-the-thao-bac-ninh.png",
+        "description": "Trường đại học trọng điểm về đào tạo cán bộ thể dục thể thao hàng đầu Việt Nam.",
+        "website": "https://upes1.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "tdb-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/the-duc-the-thao-bac-ninh-TDB.html",
+      "slug": "the-duc-the-thao-bac-ninh-TDB"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-y-khoa-tokyo-viet-nam",
+        "name": "Trường Đại học Y khoa Tokyo Việt Nam",
+        "shortName": "THU",
+        "code": "THU",
+        "logo": "./assets/logos/truong-dai-hoc-y-khoa-tokyo-viet-nam.png",
+        "description": "Trường đại học 100% vốn Nhật Bản đào tạo ngành y tế và điều dưỡng.",
+        "website": "https://tokyo-human.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "thu-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/y-khoa-tokyo-viet-nam-THU.html",
+      "slug": "y-khoa-tokyo-viet-nam-THU"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-cong-nghe-mien-dong",
+        "name": "Trường Đại học Công nghệ Miền Đông",
+        "shortName": "MIT",
+        "code": "MIT",
+        "logo": "./assets/logos/truong-dai-hoc-cong-nghe-mien-dong.png",
+        "description": "Trường đại học tư thục chuyên về công nghệ, kỹ thuật và quản lý tại Đồng Nai.",
+        "website": "https://mit.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "mit-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/cong-nghe-mien-dong-MIT.html",
+      "slug": "cong-nghe-mien-dong-MIT"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-kien-giang",
+        "name": "Trường Đại học Kiên Giang",
+        "shortName": "TKG",
+        "code": "TKG",
+        "logo": "./assets/logos/truong-dai-hoc-kien-giang.png",
+        "description": "Trường đại học công lập đào tạo đa ngành tại khu vực biên giới, hải đảo.",
+        "website": "https://vnkgu.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "tkg-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/kien-giang-TKG.html",
+      "slug": "kien-giang-TKG"
+    },
+    {
+      "uni": {
+        "id": "khoa-ky-thuat-va-cong-nghe-dai-hoc-hue",
+        "name": "Khoa Kỹ thuật và công nghệ - ĐH Huế",
+        "shortName": "DHE",
+        "code": "DHE",
+        "logo": "./assets/logos/dai-hoc-hue.svg",
+        "description": "Đơn vị đào tạo các ngành kỹ thuật, công nghệ trực thuộc Đại học Huế.",
+        "website": "https://huet.hueuni.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "dhe-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/khoa-ky-thuat-va-cong-nghe-dh-hue-DHE.html",
+      "slug": "khoa-ky-thuat-va-cong-nghe-dh-hue-DHE"
+    },
+    {
+      "uni": {
+        "id": "khoa-quoc-te-dai-hoc-hue",
+        "name": "Khoa Quốc tế - ĐH Huế",
+        "shortName": "DHI",
+        "code": "DHI",
+        "logo": "./assets/logos/dai-hoc-hue.svg",
+        "description": "Đơn vị đào tạo các chương trình liên kết quốc tế và chất lượng cao thuộc Đại học Huế.",
+        "website": "https://huis.hueuni.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "dhi-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/khoa-quoc-te-dh-hue-DHI.html",
+      "slug": "khoa-quoc-te-dh-hue-DHI"
+    },
+    {
+      "uni": {
+        "id": "khoa-giao-duc-the-chat-dai-hoc-da-nang",
+        "name": "Khoa Giáo dục Thể chất – ĐH Đà Nẵng",
+        "shortName": "DDG",
+        "code": "DDG",
+        "logo": "./assets/logos/dai-hoc-da-nang.svg",
+        "description": "Đơn vị giảng dạy thể chất và đào tạo chuyên sâu thể thao thuộc Đại học Đà Nẵng.",
+        "website": "https://fpe.udn.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "ddg-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/khoa-giao-duc-the-chat-dh-da-nang-DDG.html",
+      "slug": "khoa-giao-duc-the-chat-dh-da-nang-DDG"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-su-pham-ky-thuat-dai-hoc-da-nang",
+        "name": "Trường Đại học Sư phạm Kỹ thuật – ĐH Đà Nẵng",
+        "shortName": "UTE",
+        "code": "DSK",
+        "logo": "./assets/logos/truong-dai-hoc-su-pham-ky-thuat-dai-hoc-da-nang.png",
+        "description": "Trường đào tạo kỹ sư công nghệ và giáo viên kỹ thuật tại Đà Nẵng.",
+        "website": "https://ute.udn.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "dsk-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/su-pham-ky-thuat-dh-da-nang-DSK.html",
+      "slug": "su-pham-ky-thuat-dh-da-nang-DSK"
+    },
+    {
+      "uni": {
+        "id": "vien-nghien-cuu-dao-tao-viet-anh-dai-hoc-da-nang",
+        "name": "Viện Nghiên cứu và Đào tạo Việt - Anh – ĐH Đà Nẵng",
+        "shortName": "DDV",
+        "code": "DDV",
+        "logo": "./assets/logos/vien-nghien-cuu-dao-tao-viet-anh-dai-hoc-da-nang.png",
+        "description": "Cơ sở đào tạo quốc tế chuẩn Vương quốc Anh thuộc Đại học Đà Nẵng.",
+        "website": "https://vnuk.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "ddv-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/vien-nghien-cuu-va-dao-tao-viet-anh-dh-da-nang-DDV.html",
+      "slug": "vien-nghien-cuu-va-dao-tao-viet-anh-dh-da-nang-DDV"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-cong-nghe-thong-tin-va-truyen-thong-viet-han",
+        "name": "Khoa Công nghệ thông tin và Truyền thông – ĐH Đà Nẵng",
+        "shortName": "VKU",
+        "code": "VKU",
+        "logo": "./assets/logos/truong-dai-hoc-cong-nghe-thong-tin-va-truyen-thong-viet-han.png",
+        "description": "Trường đại học công lập chuyên sâu về CNTT và truyền thông khu vực miền Trung.",
+        "website": "https://vku.udn.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "vku-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/khoa-cong-nghe-thong-tin-va-truyen-thong-dh-da-nang-VKU.html",
+      "slug": "khoa-cong-nghe-thong-tin-va-truyen-thong-dh-da-nang-VKU"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-y-duoc-buon-ma-thuot",
+        "name": "Trường Đại học Y dược Buôn Ma Thuột",
+        "shortName": "BMU",
+        "code": "BMU",
+        "logo": "./assets/logos/truong-dai-hoc-y-duoc-buon-ma-thuot.jpg",
+        "description": "Trường đại học tư thục chuyên đào tạo y dược tại vùng Tây Nguyên.",
+        "website": "https://bmu.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "bmu-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/y-duoc-buon-ma-thuot-BMU.html",
+      "slug": "y-duoc-buon-ma-thuot-BMU"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-dong-a",
+        "name": "Trường Đại học Đông Á",
+        "shortName": "UDA",
+        "code": "DAD",
+        "logo": "./assets/logos/truong-dai-hoc-dong-a.png",
+        "description": "Trường đại học tư thục đào tạo ứng dụng đa ngành hàng đầu tại Đà Nẵng.",
+        "website": "https://donga.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "dad-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/dong-a-DAD.html",
+      "slug": "dong-a-DAD"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-khanh-hoa",
+        "name": "Trường Đại học Khánh Hòa",
+        "shortName": "UKH",
+        "code": "UKH",
+        "logo": "./assets/logos/truong-dai-hoc-khanh-hoa.png",
+        "description": "Trường đại học công lập đào tạo sư phạm, văn hóa, du lịch tại Nha Trang.",
+        "website": "https://ukh.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "ukh-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/khanh-hoa-UKH.html",
+      "slug": "khanh-hoa-UKH"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-am-nhac-hue",
+        "name": "HỌC VIỆN Âm nhạc Huế",
+        "shortName": "HVA",
+        "code": "HVA",
+        "logo": "./assets/logos/dai-hoc-hue.svg",
+        "description": "Cơ sở nghiên cứu, đào tạo âm nhạc chuyên nghiệp duy nhất khu vực Miền Trung - Tây Nguyên.",
+        "website": "https://hocvienamnhachue.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "hva-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/am-nhac-hue-HVA.html",
+      "slug": "am-nhac-hue-HVA"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-quang-binh",
+        "name": "Trường Đại học Quảng Bình",
+        "shortName": "DQB",
+        "code": "DQB",
+        "logo": "./assets/logos/truong-dai-hoc-quang-binh.png",
+        "description": "Trường đại học công lập đào tạo đa cấp, đa ngành tại tỉnh Quảng Bình.",
+        "website": "https://qbu.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "dqb-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/quang-binh-DQB.html",
+      "slug": "quang-binh-DQB"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-quang-trung",
+        "name": "Trường Đại học Quang Trung",
+        "shortName": "DQT",
+        "code": "DQT",
+        "logo": "./assets/logos/truong-dai-hoc-quang-trung.png",
+        "description": "Trường đại học tư thục đào tạo ứng dụng đa ngành tại Quy Nhơn, Bình Định.",
+        "website": "https://qtu.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "dqt-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/quang-trung-DQT.html",
+      "slug": "quang-trung-DQT"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-quy-nhon",
+        "name": "Trường Đại học Quy Nhơn",
+        "shortName": "QNU",
+        "code": "DQN",
+        "logo": "./assets/logos/truong-dai-hoc-quy-nhon.ico",
+        "description": "Trường đại học công lập trọng điểm đa ngành hàng đầu Nam Trung Bộ tại Bình Định.",
+        "website": "https://qnu.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "dqn-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/quy-nhon-DQN.html",
+      "slug": "quy-nhon-DQN"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-the-duc-the-thao-da-nang",
+        "name": "Trường Đại học Thể dục Thể thao Đà Nẵng",
+        "shortName": "TTD",
+        "code": "TTD",
+        "logo": "./assets/logos/truong-dai-hoc-the-duc-the-thao-da-nang.png",
+        "description": "Trường đại học công lập chuyên sâu về thể dục thể thao hàng đầu khu vực miền Trung.",
+        "website": "https://upes3.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "ttd-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/the-duc-the-thao-da-nang-TTD.html",
+      "slug": "the-duc-the-thao-da-nang-TTD"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-hau-can",
+        "name": "Học viện Hậu cần",
+        "shortName": "HEH",
+        "code": "HEH",
+        "logo": "./assets/logos/hoc-vien-ky-thuat-quan-su.png",
+        "description": "Cơ sở đào tạo cán bộ, sĩ quan hậu cần, tài chính cho Quân đội Nhân dân Việt Nam.",
+        "website": "https://hocvienhaucan.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "heh-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/hau-can-HEH.html",
+      "slug": "hau-can-HEH"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-khoa-hoc-quan-su",
+        "name": "Học viện Khoa học Quân sự",
+        "shortName": "NQH",
+        "code": "NQH",
+        "logo": "./assets/logos/hoc-vien-khoa-hoc-quan-su.png",
+        "description": "Cơ sở đào tạo sĩ quan tình báo, ngoại ngữ, đối ngoại quốc phòng và khoa học quân sự.",
+        "website": "https://hvkhqs.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "nqh-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/khoa-hoc-quan-su-NQH.html",
+      "slug": "khoa-hoc-quan-su-NQH"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-van-hoa-nghe-thuat-quan-doi",
+        "name": "Trường Đại học Văn hóa - Nghệ thuật Quân đội",
+        "shortName": "ZNH",
+        "code": "ZNH",
+        "logo": "./assets/logos/truong-dai-hoc-van-hoa-nghe-thuat-quan-doi.png",
+        "description": "Cơ sở đào tạo cán bộ, diễn viên, nghệ sĩ hoạt động trong lĩnh vực văn hóa nghệ thuật toàn quân.",
+        "website": "https://vnq.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "znh-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/van-hoa-nghe-thuat-quan-doi-ZNH.html",
+      "slug": "van-hoa-nghe-thuat-quan-doi-ZNH"
+    },
+    {
+      "uni": {
+        "id": "truong-si-quan-ky-thuat-quan-su-vinhempich",
+        "name": "Trường Sĩ quan Kỹ thuật Quân sự Vinhempich (ĐH Trần Đại Nghĩa)",
+        "shortName": "VPH",
+        "code": "VPH",
+        "logo": "./assets/logos/hoc-vien-ky-thuat-quan-su.png",
+        "description": "Cơ sở đào tạo cán bộ, sĩ quan kỹ thuật xe - máy, vũ khí khí tài cho quân đội.",
+        "website": "http://tdnu.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "vph-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/truong-si-quan-ky-thuat-quan-su-vinhempich-dh-tran-dai-nghia-VPH.html",
+      "slug": "truong-si-quan-ky-thuat-quan-su-vinhempich-dh-tran-dai-nghia-VPH"
+    },
+    {
+      "uni": {
+        "id": "truong-si-quan-tang-thiet-giap",
+        "name": "Trường Sĩ quan Tăng - Thiết giáp",
+        "shortName": "TGH",
+        "code": "TGH",
+        "logo": "./assets/logos/truong-si-quan-dac-cong.png",
+        "description": "Cơ sở đào tạo sĩ quan chỉ huy binh chủng Tăng - Thiết giáp.",
+        "website": "http://siquantangthietgiap.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "tgh-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/truong-si-quan-tang-thiet-giap-TGH.html",
+      "slug": "truong-si-quan-tang-thiet-giap-TGH"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-chinh-tri-cong-an-nhan-dan",
+        "name": "Học viện Chính trị Công an Nhân dân",
+        "shortName": "HCA",
+        "code": "HCA",
+        "logo": "./assets/logos/hoc-vien-chinh-tri-cong-an-nhan-dan.png",
+        "description": "Cơ sở đào tạo lý luận chính trị và lãnh đạo, chỉ huy trong Công an Nhân dân.",
+        "website": "https://hvctcand.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hca-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/chinh-tri-cong-an-nhan-dan-HCA.html",
+      "slug": "chinh-tri-cong-an-nhan-dan-HCA"
+    },
+    {
+      "uni": {
+        "id": "truong-khoa-hoc-lien-nganh-va-nghe-thuat-dhqg-ha-noi",
+        "name": "Trường Khoa học liên ngành và Nghệ thuật - Đại học Quốc gia Hà Nội",
+        "shortName": "VNU-SIS",
+        "code": "QHK",
+        "logo": "./assets/logos/truong-khoa-hoc-lien-nganh-va-nghe-thuat-dhqg-ha-noi.png",
+        "description": "Trường thành viên đào tạo liên ngành, sáng tạo nghệ thuật và thiết kế thuộc ĐHQG Hà Nội.",
+        "website": "https://sis.vnu.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "truong-khoa-hoc-lien-nganh-va-nghe-thuat-dhqg-ha-noi-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/truong-khoa-hoc-lien-nganh-va-nghe-thuat-dai-hoc-quoc-gia-ha-noi-QHK.html",
+      "slug": "truong-khoa-hoc-lien-nganh-va-nghe-thuat-dai-hoc-quoc-gia-ha-noi-QHK"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-dan-toc",
+        "name": "Học viện Dân tộc",
+        "shortName": "HVDT",
+        "code": "HVD",
+        "logo": "./assets/logos/hoc-vien-dan-toc.png",
+        "description": "Cơ sở giáo dục đại học công lập trực thuộc Ủy ban Dân tộc đào tạo chính sách và dân tộc học.",
+        "website": "https://hvdt.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hoc-vien-dan-toc-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/dan-toc-HVD.html",
+      "slug": "dan-toc-HVD"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-truong-dai-hoc-nong-lam-tphcm-tai-gia-lai",
+        "name": "Phân hiệu Trường Đại học Nông Lâm TP.HCM tại Gia Lai",
+        "shortName": "NLU-GL",
+        "code": "NLN",
+        "logo": "./assets/logos/truong-dai-hoc-nong-lam-tp-hcm.png",
+        "description": "Phân hiệu phụ trách đào tạo nông lâm nghiệp, công nghệ của ĐH Nông Lâm TP.HCM tại Gia Lai.",
+        "website": "https://hcmuaf.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "phan-hieu-truong-dai-hoc-nong-lam-tphcm-tai-gia-lai-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/phan-hieu-truong-dai-hoc-nong-lam-tp-hcm-tai-gia-lai-NLN.html",
+      "slug": "phan-hieu-truong-dai-hoc-nong-lam-tp-hcm-tai-gia-lai-NLN"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-hoc-vien-hanh-chinh-quoc-gia-tai-tphcm",
+        "name": "Phân hiệu Học viện Hành chính Quốc gia tại TP.HCM",
+        "shortName": "NAPA-HCM",
+        "code": "HCS",
+        "logo": "./assets/logos/hoc-vien-hanh-chinh-quoc-gia.png",
+        "description": "Phân hiệu phụ trách đào tạo hành chính và quản lý công khu vực phía Nam tại TP.HCM.",
+        "website": "https://apag.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "phan-hieu-hoc-vien-hanh-chinh-quoc-gia-tai-tphcm-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "ts247",
+      "url": "https://diemthi.tuyensinh247.com/diem-chuan/phan-hieu-hoc-vien-hanh-chinh-quoc-gia-tai-tp-hcm-HCS.html",
+      "slug": "phan-hieu-hoc-vien-hanh-chinh-quoc-gia-tai-tp-hcm-HCS"
+    }
+  ],
+  "missing": [
+    {
+      "uni": {
+        "id": "truong-dai-hoc-quan-ly-va-cong-nghe-hai-phong",
+        "name": "Trường Đại học Quản lý và công nghệ Hải Phòng",
+        "shortName": "DHP",
+        "code": "DHP",
+        "logo": "./assets/logos/truong-dai-hoc-quan-ly-va-cong-nghe-hai-phong.png",
+        "description": "Trường đại học tư thục đào tạo đa ngành về quản lý, công nghệ tại Hải Phòng.",
+        "website": "https://hpu.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "dhp-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-an-giang-dhqg-hcm",
+        "name": "Trường Đại học An Giang (ĐHQG HCM)",
+        "shortName": "AGU",
+        "code": "TAG",
+        "logo": "./assets/logos/truong-dai-hoc-an-giang-dhqg-hcm.png",
+        "description": "Cơ sở đào tạo đại học thành viên của Đại học Quốc gia TP.HCM tại An Giang.",
+        "website": "https://agu.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "tag-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-vinuni",
+        "name": "Trường Đại học VinUni",
+        "shortName": "VinUni",
+        "code": "VINUNI",
+        "logo": "./assets/logos/truong-dai-hoc-vinuni.png",
+        "description": "Đại học tư thục phi lợi nhuận hướng tới đẳng cấp thế giới được đầu tư bởi Tập đoàn Vingroup.",
+        "website": "https://vinuni.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "truong-dai-hoc-vinuni-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-anh-quoc-viet-nam",
+        "name": "Trường Đại học Anh Quốc Việt Nam",
+        "shortName": "BUV",
+        "code": "BUV",
+        "logo": "./assets/logos/truong-dai-hoc-anh-quoc-viet-nam.png",
+        "description": "Đại học quốc tế cấp bằng trực tiếp từ các trường đại học danh tiếng của Vương quốc Anh.",
+        "website": "https://buv.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "truong-dai-hoc-anh-quoc-viet-nam-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-rmit-viet-nam",
+        "name": "Đại học RMIT Việt Nam",
+        "shortName": "RMIT",
+        "code": "RMIT",
+        "logo": "./assets/logos/truong-dai-hoc-rmit-viet-nam.svg",
+        "description": "Cơ sở giáo dục đại học quốc tế hàng đầu của Úc tại Việt Nam với các cơ sở tại TP.HCM và Hà Nội.",
+        "website": "https://www.rmit.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "truong-dai-hoc-rmit-viet-nam-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "truong-dai-hoc-fulbright-viet-nam",
+        "name": "Trường Đại học Fulbright Việt Nam",
+        "shortName": "FUV",
+        "code": "FUV",
+        "logo": "./assets/logos/truong-dai-hoc-fulbright-viet-nam.png",
+        "description": "Đại học độc lập, phi lợi nhuận đầu tiên của Việt Nam theo mô hình giáo dục khai phóng Hoa Kỳ.",
+        "website": "https://fulbright.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "truong-dai-hoc-fulbright-viet-nam-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-dhqg-tphcm-tai-ben-tre",
+        "name": "Phân hiệu Đại học Quốc gia TP.HCM tại tỉnh Bến Tre",
+        "shortName": "VNU-HCM-BT",
+        "code": "QSB-BT",
+        "logo": "./assets/logos/phan-hieu-dhqg-tphcm-tai-ben-tre.png",
+        "description": "Phân hiệu đào tạo nguồn nhân lực chất lượng cao và chuyển giao công nghệ cho vùng ĐBSCL.",
+        "website": "https://vnuhcm.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "phan-hieu-dhqg-tphcm-tai-ben-tre-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang",
+        "name": "Phân hiệu Đại học Thái Nguyên tại tỉnh Hà Giang",
+        "shortName": "DTHG",
+        "code": "DTHG",
+        "logo": "./assets/logos/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang.ico",
+        "description": "Cơ sở đào tạo nguồn nhân lực trình độ đại học cho tỉnh Hà Giang và khu vực Đông Bắc.",
+        "website": "https://tnu.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-mua-viet-nam",
+        "name": "Học viện Múa Việt Nam",
+        "shortName": "VNAD",
+        "code": "HMV",
+        "logo": "./assets/logos/truong-dai-hoc-van-hoa-nghe-thuat-quan-doi.png",
+        "description": "Cơ sở đào tạo chuyên sâu về biểu diễn, biên đạo và sư phạm múa trực thuộc Bộ VHTTDL.",
+        "website": "http://vnad.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hoc-vien-mua-viet-nam-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-chinh-tri-quoc-gia-ho-chi-minh",
+        "name": "Học viện Chính trị Quốc gia Hồ Chí Minh",
+        "shortName": "HCMA",
+        "code": "HCMA",
+        "logo": "./assets/logos/hoc-vien-chinh-tri-quoc-gia-ho-chi-minh.png",
+        "description": "Trung tâm quốc gia đào tạo, bồi dưỡng cán bộ lãnh đạo quản lý và nghiên cứu lý luận chính trị.",
+        "website": "https://hcma.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hoc-vien-chinh-tri-quoc-gia-ho-chi-minh-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-khoa-hoc-va-cong-nghe",
+        "name": "Học viện Khoa học và Công nghệ",
+        "shortName": "GUST",
+        "code": "GUST",
+        "logo": "./assets/logos/hoc-vien-khoa-hoc-va-cong-nghe.png",
+        "description": "Cơ sở đào tạo sau đại học và nghiên cứu khoa học trực thuộc Viện Hàn lâm KH&CN Việt Nam.",
+        "website": "https://gust.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hoc-vien-khoa-hoc-va-cong-nghe-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-khoa-hoc-xa-hoi",
+        "name": "Học viện Khoa học Xã hội",
+        "shortName": "GASS",
+        "code": "GASS",
+        "logo": "./assets/logos/hoc-vien-khoa-hoc-xa-hoi.ico",
+        "description": "Cơ sở đào tạo sau đại học trực thuộc Viện Hàn lâm Khoa học xã hội Việt Nam.",
+        "website": "https://gass.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hoc-vien-khoa-hoc-xa-hoi-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-quoc-phong",
+        "name": "Học viện Quốc phòng",
+        "shortName": "NDAV",
+        "code": "HVQP",
+        "logo": "./assets/logos/hoc-vien-ky-thuat-quan-su.png",
+        "description": "Trung tâm đào tạo tướng lĩnh, cán bộ cao cấp của Quân đội nhân dân Việt Nam.",
+        "website": "http://nda.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hoc-vien-quoc-phong-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-chinh-tri-bo-quoc-phong",
+        "name": "Học viện Chính trị (Bộ Quốc phòng)",
+        "shortName": "HCH-QP",
+        "code": "ZCH",
+        "logo": "./assets/logos/hoc-vien-chinh-tri-bo-quoc-phong.png",
+        "description": "Học viện đào tạo cán bộ chính trị cấp trung, sư đoàn cho Quân đội nhân dân Việt Nam.",
+        "website": "https://hvct.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hoc-vien-chinh-tri-bo-quoc-phong-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-luc-quan",
+        "name": "Học viện Lục quân",
+        "shortName": "HVLQ",
+        "code": "HLQ",
+        "logo": "./assets/logos/hoc-vien-ky-thuat-quan-su.png",
+        "description": "Học viện đào tạo cán bộ chỉ huy tham mưu binh chủng hợp thành cấp trung, sư đoàn tại Đà Lạt.",
+        "website": "https://hvlq.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "hoc-vien-luc-quan-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-phat-giao-viet-nam-tai-ha-noi",
+        "name": "Học viện Phật giáo Việt Nam tại Hà Nội",
+        "shortName": "VBU-HN",
+        "code": "HVPG-HN",
+        "logo": "./assets/logos/hoc-vien-phat-giao-viet-nam-tai-tphcm.png",
+        "description": "Cơ sở đào tạo cử nhân và sau đại học ngành Phật học tại miền Bắc trực thuộc GHPGVN.",
+        "website": "https://hvpgvn.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "hoc-vien-phat-giao-viet-nam-tai-ha-noi-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-phat-giao-viet-nam-tai-tphcm",
+        "name": "Học viện Phật giáo Việt Nam tại TP.HCM",
+        "shortName": "VBU-HCM",
+        "code": "HVPG-HCM",
+        "logo": "./assets/logos/hoc-vien-phat-giao-viet-nam-tai-tphcm.png",
+        "description": "Trung tâm đào tạo Phật học bậc đại học và sau đại học lớn nhất tại khu vực phía Nam.",
+        "website": "https://vbu.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "hoc-vien-phat-giao-viet-nam-tai-tphcm-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-phat-giao-viet-nam-tai-hue",
+        "name": "Học viện Phật giáo Việt Nam tại Huế",
+        "shortName": "VBU-HUE",
+        "code": "HVPG-HUE",
+        "logo": "./assets/logos/hoc-vien-phat-giao-viet-nam-tai-tphcm.png",
+        "description": "Cơ sở đào tạo cử nhân Phật học phục vụ Tăng Ni và cư sĩ khu vực miền Trung - Tây Nguyên.",
+        "website": "http://vbuhue.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "hoc-vien-phat-giao-viet-nam-tai-hue-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "hoc-vien-phat-giao-nam-tong-khmer-can-tho",
+        "name": "Học viện Phật giáo Nam tông Khmer Cần Thơ",
+        "shortName": "VBU-KHMER",
+        "code": "HVPG-CT",
+        "logo": "./assets/logos/hoc-vien-phat-giao-viet-nam-tai-tphcm.png",
+        "description": "Cơ sở đào tạo đại học Phật giáo Nam tông Khmer duy nhất tại Việt Nam tọa lạc tại Cần Thơ.",
+        "website": "https://phatgiaonamtongkhmer.org",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "hoc-vien-phat-giao-nam-tong-khmer-can-tho-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-truong-dai-hoc-ngoai-thuong-tai-quang-ninh",
+        "name": "Phân hiệu Trường Đại học Ngoại thương tại Quảng Ninh",
+        "shortName": "FTU-QN",
+        "code": "NTA",
+        "logo": "./assets/logos/truong-dai-hoc-ngoai-thuong.svg",
+        "description": "Cơ sở đào tạo kinh tế đối ngoại và quản trị kinh doanh của FTU tại TP. Uông Bí, Quảng Ninh.",
+        "website": "https://csquangninh.ftu.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "phan-hieu-truong-dai-hoc-ngoai-thuong-tai-quang-ninh-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-truong-dai-hoc-nong-lam-tphcm-tai-ninh-thuan",
+        "name": "Phân hiệu Trường Đại học Nông Lâm TP.HCM tại Ninh Thuận",
+        "shortName": "NLU-NT",
+        "code": "NLT",
+        "logo": "./assets/logos/truong-dai-hoc-nong-lam-tp-hcm.png",
+        "description": "Phân hiệu đào tạo nông nghiệp công nghệ cao và kinh tế của ĐH Nông Lâm TP.HCM tại Ninh Thuận.",
+        "website": "https://hcmuaf.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "phan-hieu-truong-dai-hoc-nong-lam-tphcm-tai-ninh-thuan-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-truong-dai-hoc-lam-nghiep-tai-gia-lai",
+        "name": "Phân hiệu Trường Đại học Lâm nghiệp tại Gia Lai",
+        "shortName": "VNUF-GL",
+        "code": "LNG",
+        "logo": "./assets/logos/truong-dai-hoc-lam-nghiep.png",
+        "description": "Phân hiệu đào tạo nông lâm nghiệp và tài nguyên môi trường tại khu vực Tây Nguyên.",
+        "website": "https://vnuf.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "phan-hieu-truong-dai-hoc-lam-nghiep-tai-gia-lai-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-truong-dai-hoc-kien-truc-tphcm-tai-can-tho",
+        "name": "Phân hiệu Trường Đại học Kiến trúc TP.HCM tại Cần Thơ",
+        "shortName": "UAH-CT",
+        "code": "KTC",
+        "logo": "./assets/logos/truong-dai-hoc-kien-truc-tp-hcm.png",
+        "description": "Cơ sở đào tạo kiến trúc sư, kỹ sư xây dựng của ĐH Kiến trúc TP.HCM cho vùng ĐBSCL.",
+        "website": "https://uah.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "phan-hieu-truong-dai-hoc-kien-truc-tphcm-tai-can-tho-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-truong-dai-hoc-kien-truc-tphcm-tai-da-lat",
+        "name": "Phân hiệu Trường Đại học Kiến trúc TP.HCM tại Đà Lạt",
+        "shortName": "UAH-DL",
+        "code": "KTL",
+        "logo": "./assets/logos/truong-dai-hoc-kien-truc-tp-hcm.png",
+        "description": "Cơ sở đào tạo ngành kiến trúc và thiết kế nội thất của ĐH Kiến trúc TP.HCM tại Lâm Đồng.",
+        "website": "https://uah.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "phan-hieu-truong-dai-hoc-kien-truc-tphcm-tai-da-lat-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-truong-dai-hoc-xay-dung-mien-trung-tai-da-nang",
+        "name": "Phân hiệu Trường Đại học Xây dựng Miền Trung tại Đà Nẵng",
+        "shortName": "MUCE-DN",
+        "code": "XTD",
+        "logo": "./assets/logos/truong-dai-hoc-xay-dung-mien-trung.png",
+        "description": "Phân hiệu của Trường Đại học Xây dựng Miền Trung phục vụ đào tạo tại TP. Đà Nẵng.",
+        "website": "https://muce.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "phan-hieu-truong-dai-hoc-xay-dung-mien-trung-tai-da-nang-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-truong-dai-hoc-binh-duong-tai-ca-mau",
+        "name": "Phân hiệu Trường Đại học Bình Dương tại Cà Mau",
+        "shortName": "BDU-CM",
+        "code": "DBC",
+        "logo": "./assets/logos/truong-dai-hoc-binh-duong.png",
+        "description": "Phân hiệu đào tạo đại học đa ngành của Trường ĐH Bình Dương tại Đất Mũi Cà Mau.",
+        "website": "https://bdu.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "phan-hieu-truong-dai-hoc-binh-duong-tai-ca-mau-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-truong-dai-hoc-lao-dong-xa-hoi-co-so-son-tay",
+        "name": "Trường Đại học Lao động - Xã hội (Cơ sở Sơn Tây)",
+        "shortName": "ULSA-ST",
+        "code": "DLT",
+        "logo": "./assets/logos/truong-dai-hoc-lao-dong-xa-hoi.png",
+        "description": "Cơ sở đào tạo tại thị xã Sơn Tây trực thuộc Trường Đại học Lao động - Xã hội.",
+        "website": "https://ulsa.edu.vn",
+        "year": 2026,
+        "region": "north",
+        "formulas": [
+          "phan-hieu-truong-dai-hoc-lao-dong-xa-hoi-co-so-son-tay-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-truong-dai-hoc-tai-chinh-ke-toan-tai-thua-thien-hue",
+        "name": "Phân hiệu Trường Đại học Tài chính - Kế toán tại Thừa Thiên Huế",
+        "shortName": "UFA-HUE",
+        "code": "UFH",
+        "logo": "./assets/logos/truong-dai-hoc-tai-chinh-ke-toan.ico",
+        "description": "Cơ sở đào tạo tài chính kế toán của Trường ĐH Tài chính - Kế toán tại TP. Huế.",
+        "website": "http://tckt.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "phan-hieu-truong-dai-hoc-tai-chinh-ke-toan-tai-thua-thien-hue-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-hoc-vien-phu-nu-viet-nam-tai-tphcm",
+        "name": "Phân hiệu Học viện Phụ nữ Việt Nam tại TP.HCM",
+        "shortName": "VWA-HCM",
+        "code": "HPS",
+        "logo": "./assets/logos/hoc-vien-phu-nu-viet-nam.png",
+        "description": "Cơ sở đào tạo phía Nam của Học viện Phụ nữ Việt Nam tại TP. Hồ Chí Minh.",
+        "website": "https://hvpnvn.edu.vn",
+        "year": 2026,
+        "region": "south",
+        "formulas": [
+          "phan-hieu-hoc-vien-phu-nu-viet-nam-tai-tphcm-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-hoc-vien-hanh-chinh-quoc-gia-tai-quang-nam",
+        "name": "Phân hiệu Học viện Hành chính Quốc gia khu vực Miền Trung",
+        "shortName": "NAPA-MT",
+        "code": "HCQ",
+        "logo": "./assets/logos/hoc-vien-hanh-chinh-quoc-gia.png",
+        "description": "Phân hiệu phụ trách đào tạo hành chính và quản lý công khu vực Miền Trung tại Quảng Nam.",
+        "website": "https://apag.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "phan-hieu-hoc-vien-hanh-chinh-quoc-gia-tai-quang-nam-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    },
+    {
+      "uni": {
+        "id": "phan-hieu-hoc-vien-hanh-chinh-quoc-gia-tai-tay-nguyen",
+        "name": "Phân hiệu Học viện Hành chính Quốc gia khu vực Tây Nguyên",
+        "shortName": "NAPA-TN",
+        "code": "HCTN",
+        "logo": "./assets/logos/hoc-vien-hanh-chinh-quoc-gia.png",
+        "description": "Phân hiệu phụ trách đào tạo cán bộ và hành chính công khu vực Tây Nguyên tại Đắk Lắk.",
+        "website": "https://apag.edu.vn",
+        "year": 2026,
+        "region": "central",
+        "formulas": [
+          "phan-hieu-hoc-vien-hanh-chinh-quoc-gia-tai-tay-nguyen-thpt-2026"
+        ],
+        "methods": [
+          "THPT",
+          "Học bạ"
+        ]
+      },
+      "source": "none"
+    }
+  ]
+}

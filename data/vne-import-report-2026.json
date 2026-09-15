@@ -1,0 +1,801 @@
+{
+  "source": "VnExpress",
+  "sourceCacheCheckedAt": "2026-09-04",
+  "targetUniversitiesWithoutPublished2026": 245,
+  "importedUniversities": 144,
+  "importedReferenceRows": 9172,
+  "rejectedInconsistentCutoffs": 31,
+  "rejectedAmbiguousMappings": 11,
+  "replacedPendingRows": 9172,
+  "totalMajorsAfterImport": 18128,
+  "rejectedMappings": [
+    {
+      "code": "HTS",
+      "university": "Phân viện Học viện Thanh Thiếu niên Việt Nam tại TP.HCM",
+      "matchedVneCode": "HTN",
+      "matchedVneName": "Học viện Thanh Thiếu Niên Việt Nam"
+    },
+    {
+      "code": "HUEUNI",
+      "university": "Đại học Huế",
+      "matchedVneCode": "DHF",
+      "matchedVneName": "Đại học Ngoại Ngữ - Đại học Huế"
+    },
+    {
+      "code": "KSV",
+      "university": "Phân hiệu Đại học Kinh tế TP.HCM tại tỉnh Vĩnh Long",
+      "matchedVneCode": "KSA",
+      "matchedVneName": "Đại học Kinh tế TP HCM"
+    },
+    {
+      "code": "LPD",
+      "university": "Phân hiệu Trường Đại học Luật Hà Nội tại tỉnh Đắk Lắk",
+      "matchedVneCode": "LPH",
+      "matchedVneName": "Đại học Luật Hà Nội"
+    },
+    {
+      "code": "NHB",
+      "university": "Phân hiệu Học viện Ngân hàng tại Bắc Ninh",
+      "matchedVneCode": "NHH",
+      "matchedVneName": "Học viện Ngân hàng"
+    },
+    {
+      "code": "TCT-HG",
+      "university": "Phân hiệu Đại học Cần Thơ tại tỉnh Hậu Giang",
+      "matchedVneCode": "TCT",
+      "matchedVneName": "Đại học Cần Thơ"
+    },
+    {
+      "code": "TCT-ST",
+      "university": "Phân hiệu Đại học Cần Thơ tại tỉnh Sóc Trăng",
+      "matchedVneCode": "TCT",
+      "matchedVneName": "Đại học Cần Thơ"
+    },
+    {
+      "code": "TNU",
+      "university": "Đại học Thái Nguyên",
+      "matchedVneCode": "DTK",
+      "matchedVneName": "Đại học Kỹ Thuật Công Nghiệp - Đại học Thái Nguyên"
+    },
+    {
+      "code": "UDN",
+      "university": "Đại học Đà Nẵng",
+      "matchedVneCode": "DDQ",
+      "matchedVneName": "Đại học Kinh Tế - Đại học Đà Nẵng"
+    },
+    {
+      "code": "VNU-HCM",
+      "university": "Đại học Quốc gia TP.HCM",
+      "matchedVneCode": "QSA",
+      "matchedVneName": "Đại học An Giang - Đại học Quốc gia TP HCM"
+    },
+    {
+      "code": "VNU",
+      "university": "Đại học Quốc gia Hà Nội",
+      "matchedVneCode": "QHT",
+      "matchedVneName": "Đại học Khoa học tự nhiên - Đại học Quốc Gia Hà Nội"
+    }
+  ],
+  "perUniversity": [
+    {
+      "universityId": "truong-dai-hoc-nha-trang",
+      "code": "TSN",
+      "rows": 450
+    },
+    {
+      "universityId": "truong-dai-hoc-quoc-te-hong-bang",
+      "code": "HIU",
+      "rows": 387
+    },
+    {
+      "universityId": "truong-dai-hoc-van-lang",
+      "code": "DVL",
+      "rows": 377
+    },
+    {
+      "universityId": "truong-dai-hoc-nguyen-tat-thanh",
+      "code": "NTT",
+      "rows": 274
+    },
+    {
+      "universityId": "truong-dai-hoc-duy-tan",
+      "code": "DDT",
+      "rows": 260
+    },
+    {
+      "universityId": "truong-dai-hoc-dong-thap",
+      "code": "SPD",
+      "rows": 210
+    },
+    {
+      "universityId": "truong-dai-hoc-mo-dia-chat",
+      "code": "MDA",
+      "rows": 204
+    },
+    {
+      "universityId": "truong-dai-hoc-tra-vinh",
+      "code": "DVT",
+      "rows": 189
+    },
+    {
+      "universityId": "truong-dai-hoc-thu-dau-mot",
+      "code": "TDM",
+      "rows": 189
+    },
+    {
+      "universityId": "truong-dai-hoc-hoa-sen",
+      "code": "HSU",
+      "rows": 186
+    },
+    {
+      "universityId": "truong-dai-hoc-nong-lam-tp-hcm",
+      "code": "NLS",
+      "rows": 166
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-te-tai-chinh-tp-hcm",
+      "code": "UEF",
+      "rows": 156
+    },
+    {
+      "universityId": "truong-dai-hoc-da-lat",
+      "code": "TDL",
+      "rows": 155
+    },
+    {
+      "universityId": "truong-dai-hoc-ton-duc-thang",
+      "code": "DTT",
+      "rows": 150
+    },
+    {
+      "universityId": "truong-dai-hoc-tay-do",
+      "code": "DTD",
+      "rows": 145
+    },
+    {
+      "universityId": "truong-dai-hoc-nam-can-tho",
+      "code": "DNC",
+      "rows": 144
+    },
+    {
+      "universityId": "truong-dai-hoc-su-pham-ky-thuat-hung-yen",
+      "code": "SKH",
+      "rows": 142
+    },
+    {
+      "universityId": "truong-dai-hoc-lao-dong-xa-hoi",
+      "code": "DLX",
+      "rows": 140
+    },
+    {
+      "universityId": "truong-dai-hoc-mo-tp-hcm",
+      "code": "MBS",
+      "rows": 134
+    },
+    {
+      "universityId": "truong-dai-hoc-van-hien",
+      "code": "DVH",
+      "rows": 130
+    },
+    {
+      "universityId": "hoc-vien-bao-chi-tuyen-truyen",
+      "code": "HBT",
+      "rows": 128
+    },
+    {
+      "universityId": "truong-dai-hoc-ha-tinh",
+      "code": "HHT",
+      "rows": 128
+    },
+    {
+      "universityId": "truong-dai-hoc-can-tho",
+      "code": "TCT",
+      "rows": 127
+    },
+    {
+      "universityId": "truong-dai-hoc-cuu-long",
+      "code": "DCL",
+      "rows": 126
+    },
+    {
+      "universityId": "truong-dai-hoc-khoa-hoc-dai-hoc-hue",
+      "code": "DHT",
+      "rows": 116
+    },
+    {
+      "universityId": "truong-dai-hoc-su-pham-dai-hoc-da-nang",
+      "code": "DDS",
+      "rows": 112
+    },
+    {
+      "universityId": "truong-dai-hoc-lam-nghiep",
+      "code": "LNH",
+      "rows": 110
+    },
+    {
+      "universityId": "truong-dai-hoc-thuy-loi",
+      "code": "TLA",
+      "rows": 109
+    },
+    {
+      "universityId": "truong-dai-hoc-dai-nam",
+      "code": "DDN",
+      "rows": 106
+    },
+    {
+      "universityId": "truong-dai-hoc-phuong-dong",
+      "code": "DPD",
+      "rows": 106
+    },
+    {
+      "universityId": "truong-dai-hoc-sao-do",
+      "code": "SDU",
+      "rows": 105
+    },
+    {
+      "universityId": "truong-dai-hoc-giao-thong-van-tai-co-so-2",
+      "code": "GSA",
+      "rows": 101
+    },
+    {
+      "universityId": "truong-dai-hoc-tay-nguyen",
+      "code": "TTN",
+      "rows": 96
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-doanh-va-cong-nghe-ha-noi",
+      "code": "DQK",
+      "rows": 94
+    },
+    {
+      "universityId": "truong-dai-hoc-thang-long",
+      "code": "DTL",
+      "rows": 92
+    },
+    {
+      "universityId": "truong-dai-hoc-gia-dinh",
+      "code": "GDU",
+      "rows": 90
+    },
+    {
+      "universityId": "truong-dai-hoc-su-pham-dai-hoc-hue",
+      "code": "DHS",
+      "rows": 88
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-te-tp-hcm",
+      "code": "KSA",
+      "rows": 82
+    },
+    {
+      "universityId": "truong-dai-hoc-su-pham-ky-thuat-tp-hcm",
+      "code": "SPK",
+      "rows": 81
+    },
+    {
+      "universityId": "truong-dai-hoc-dien-luc",
+      "code": "DDL",
+      "rows": 76
+    },
+    {
+      "universityId": "truong-dai-hoc-lao-dong-xa-hoi-co-so-tp-hcm",
+      "code": "DLS",
+      "rows": 70
+    },
+    {
+      "universityId": "truong-dai-hoc-ngoai-ngu-tin-hoc-tp-hcm",
+      "code": "DNT",
+      "rows": 69
+    },
+    {
+      "universityId": "truong-dai-hoc-su-pham-ky-thuat-vinh-long",
+      "code": "VLU",
+      "rows": 69
+    },
+    {
+      "universityId": "truong-dai-hoc-vinh",
+      "code": "TDV",
+      "rows": 68
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-te-dai-hoc-hue",
+      "code": "DHK",
+      "rows": 66
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-doan",
+      "code": "LDA",
+      "rows": 65
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghe-dong-nai",
+      "code": "DCD",
+      "rows": 64
+    },
+    {
+      "universityId": "truong-dai-hoc-tan-tao",
+      "code": "TTU",
+      "rows": 64
+    },
+    {
+      "universityId": "truong-dai-hoc-nong-lam-bac-giang",
+      "code": "DBG",
+      "rows": 58
+    },
+    {
+      "universityId": "truong-dai-hoc-lac-hong",
+      "code": "DLH",
+      "rows": 58
+    },
+    {
+      "universityId": "truong-dai-hoc-su-pham-ha-noi",
+      "code": "SPH",
+      "rows": 57
+    },
+    {
+      "universityId": "truong-dai-hoc-hang-hai",
+      "code": "HHA",
+      "rows": 55
+    },
+    {
+      "universityId": "truong-dai-hoc-binh-duong",
+      "code": "DBD",
+      "rows": 51
+    },
+    {
+      "universityId": "truong-dai-hoc-yersin-da-lat",
+      "code": "DYD",
+      "rows": 51
+    },
+    {
+      "universityId": "truong-dai-hoc-thuong-mai",
+      "code": "TMU",
+      "rows": 51
+    },
+    {
+      "universityId": "truong-dai-hoc-mo-ha-noi",
+      "code": "MHN",
+      "rows": 49
+    },
+    {
+      "universityId": "truong-dai-hoc-xay-dung-ha-noi",
+      "code": "XDA",
+      "rows": 49
+    },
+    {
+      "universityId": "truong-dai-hoc-phan-thiet",
+      "code": "DPT",
+      "rows": 48
+    },
+    {
+      "universityId": "truong-dai-hoc-sai-gon",
+      "code": "SGD",
+      "rows": 47
+    },
+    {
+      "universityId": "truong-dai-hoc-lam-nghiep-co-so-2",
+      "code": "LNS",
+      "rows": 45
+    },
+    {
+      "universityId": "truong-dai-hoc-tai-nguyen-va-moi-truong-ha-noi",
+      "code": "DMT",
+      "rows": 44
+    },
+    {
+      "universityId": "truong-dai-hoc-quang-nam",
+      "code": "DQU",
+      "rows": 42
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghiep-viet-hung",
+      "code": "VHD",
+      "rows": 42
+    },
+    {
+      "universityId": "truong-dai-hoc-van-hoa-ha-noi",
+      "code": "VHH",
+      "rows": 42
+    },
+    {
+      "universityId": "truong-dai-hoc-pham-van-dong",
+      "code": "DPQ",
+      "rows": 41
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-te-ky-thuat-binh-duong",
+      "code": "DKB",
+      "rows": 40
+    },
+    {
+      "universityId": "truong-dai-hoc-khoa-hoc-dh-thai-nguyen",
+      "code": "DTZ",
+      "rows": 40
+    },
+    {
+      "universityId": "truong-dai-hoc-hong-duc",
+      "code": "HDT",
+      "rows": 40
+    },
+    {
+      "universityId": "truong-dai-hoc-thai-binh-duong",
+      "code": "TBD",
+      "rows": 40
+    },
+    {
+      "universityId": "truong-dai-hoc-nong-lam-dai-hoc-hue",
+      "code": "DHL",
+      "rows": 38
+    },
+    {
+      "universityId": "truong-dai-hoc-hoa-binh",
+      "code": "ETU",
+      "rows": 38
+    },
+    {
+      "universityId": "truong-dai-hoc-bac-lieu",
+      "code": "DBL",
+      "rows": 36
+    },
+    {
+      "universityId": "truong-dai-hoc-phan-chau-trinh",
+      "code": "DPC",
+      "rows": 35
+    },
+    {
+      "universityId": "truong-dai-hoc-ky-thuat-y-duoc-da-nang",
+      "code": "YDN",
+      "rows": 35
+    },
+    {
+      "universityId": "truong-dai-hoc-y-duoc-tp-hcm",
+      "code": "YDS",
+      "rows": 35
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghe-va-quan-ly-huu-nghi",
+      "code": "DCQ",
+      "rows": 34
+    },
+    {
+      "universityId": "truong-dai-hoc-ngan-hang-tp-hcm",
+      "code": "NHS",
+      "rows": 34
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghe-tt-va-truyen-thong-dh-thai-nguyen",
+      "code": "DTC",
+      "rows": 33
+    },
+    {
+      "universityId": "hoc-vien-ngoai-giao",
+      "code": "HQT",
+      "rows": 33
+    },
+    {
+      "universityId": "truong-dai-hoc-trung-vuong",
+      "code": "DVP",
+      "rows": 32
+    },
+    {
+      "universityId": "truong-dai-hoc-kien-truc-da-nang",
+      "code": "KTD",
+      "rows": 32
+    },
+    {
+      "universityId": "truong-dai-hoc-van-hoa-tp-hcm",
+      "code": "VHS",
+      "rows": 31
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-te-nghe-an",
+      "code": "CEA",
+      "rows": 30
+    },
+    {
+      "universityId": "truong-dai-hoc-ky-thuat-cong-nghiep-dh-thai-nguyen",
+      "code": "DTK",
+      "rows": 30
+    },
+    {
+      "universityId": "truong-dai-hoc-quoc-te-mien-dong",
+      "code": "EIU",
+      "rows": 30
+    },
+    {
+      "universityId": "truong-dai-hoc-quoc-te-sai-gon",
+      "code": "SIU",
+      "rows": 30
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-te-quan-tri-kinh-doanh-dh-thai-nguyen",
+      "code": "DTE",
+      "rows": 29
+    },
+    {
+      "universityId": "truong-dai-hoc-nguyen-trai",
+      "code": "NTU",
+      "rows": 28
+    },
+    {
+      "universityId": "truong-dai-hoc-thanh-do",
+      "code": "TDD",
+      "rows": 28
+    },
+    {
+      "universityId": "truong-dai-hoc-tay-bac",
+      "code": "TTB",
+      "rows": 28
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-te-cong-nghiep-long-an",
+      "code": "DLA",
+      "rows": 27
+    },
+    {
+      "universityId": "truong-dai-hoc-ngoai-ngu-dai-hoc-hue",
+      "code": "DHF",
+      "rows": 26
+    },
+    {
+      "universityId": "truong-dai-hoc-hung-vuong",
+      "code": "THV",
+      "rows": 26
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghiep-viet-tri",
+      "code": "VUI",
+      "rows": 26
+    },
+    {
+      "universityId": "truong-dai-hoc-van-hoa-the-thao-va-du-lich-thanh-hoa",
+      "code": "DVD",
+      "rows": 25
+    },
+    {
+      "universityId": "truong-dai-hoc-y-duoc-dai-hoc-hue",
+      "code": "DHY",
+      "rows": 23
+    },
+    {
+      "universityId": "truong-dai-hoc-nong-lam-dh-thai-nguyen",
+      "code": "DTN",
+      "rows": 23
+    },
+    {
+      "universityId": "truong-dai-hoc-kien-truc-ha-noi",
+      "code": "KTA",
+      "rows": 23
+    },
+    {
+      "universityId": "truong-dai-hoc-su-pham-ha-noi-2",
+      "code": "SP2",
+      "rows": 23
+    },
+    {
+      "universityId": "truong-dai-hoc-ky-thuat-cong-nghe-can-tho",
+      "code": "KCC",
+      "rows": 22
+    },
+    {
+      "universityId": "truong-dai-hoc-phu-yen",
+      "code": "DPY",
+      "rows": 21
+    },
+    {
+      "universityId": "truong-dai-hoc-khoa-hoc-va-cong-nghe-ha-noi",
+      "code": "KCN",
+      "rows": 20
+    },
+    {
+      "universityId": "hoc-vien-chinh-sach-va-phat-trien",
+      "code": "HCP",
+      "rows": 19
+    },
+    {
+      "universityId": "truong-dai-hoc-tien-giang",
+      "code": "TTG",
+      "rows": 19
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghiep-det-may-ha-noi",
+      "code": "CCM",
+      "rows": 18
+    },
+    {
+      "universityId": "truong-dai-hoc-dan-lap-phu-xuan",
+      "code": "DPX",
+      "rows": 18
+    },
+    {
+      "universityId": "truong-dai-hoc-kien-truc-tp-hcm",
+      "code": "KTS",
+      "rows": 18
+    },
+    {
+      "universityId": "truong-dai-hoc-dong-nai",
+      "code": "DNU",
+      "rows": 16
+    },
+    {
+      "universityId": "hoc-vien-thanh-thieu-nien-viet-nam",
+      "code": "HTN",
+      "rows": 16
+    },
+    {
+      "universityId": "truong-dai-hoc-dau-khi-viet-nam",
+      "code": "PVU",
+      "rows": 15
+    },
+    {
+      "universityId": "truong-dai-hoc-xay-dung-mien-trung",
+      "code": "XDT",
+      "rows": 15
+    },
+    {
+      "universityId": "truong-du-lich-dai-hoc-hue",
+      "code": "DHD",
+      "rows": 14
+    },
+    {
+      "universityId": "truong-dai-hoc-y-khoa-pham-ngoc-thach",
+      "code": "TYS",
+      "rows": 14
+    },
+    {
+      "universityId": "truong-dai-hoc-y-duoc-can-tho",
+      "code": "YCT",
+      "rows": 14
+    },
+    {
+      "universityId": "khoa-quoc-te-dh-thai-nguyen",
+      "code": "DTQ",
+      "rows": 13
+    },
+    {
+      "universityId": "truong-dai-hoc-luat-ha-noi",
+      "code": "LPH",
+      "rows": 13
+    },
+    {
+      "universityId": "truong-dai-hoc-viet-duc",
+      "code": "VGU",
+      "rows": 13
+    },
+    {
+      "universityId": "truong-dai-hoc-nghe-thuat-dai-hoc-hue",
+      "code": "DHN",
+      "rows": 12
+    },
+    {
+      "universityId": "truong-dai-hoc-ngoai-thuong-co-so-phia-nam",
+      "code": "NTS",
+      "rows": 12
+    },
+    {
+      "universityId": "truong-dai-hoc-luat-tp-hcm",
+      "code": "LPS",
+      "rows": 11
+    },
+    {
+      "universityId": "truong-dai-hoc-xay-dung-mien-tay",
+      "code": "MTU",
+      "rows": 11
+    },
+    {
+      "universityId": "truong-dai-hoc-vo-truong-toan",
+      "code": "VTT",
+      "rows": 11
+    },
+    {
+      "universityId": "truong-dai-hoc-y-khoa-vinh",
+      "code": "YKV",
+      "rows": 11
+    },
+    {
+      "universityId": "phan-hieu-dai-hoc-hue-tai-quang-tri",
+      "code": "DHQ",
+      "rows": 10
+    },
+    {
+      "universityId": "truong-dai-hoc-thai-binh",
+      "code": "DTB",
+      "rows": 10
+    },
+    {
+      "universityId": "truong-dai-hoc-hoa-lu",
+      "code": "DNB",
+      "rows": 9
+    },
+    {
+      "universityId": "truong-dai-hoc-y-duoc-dh-thai-nguyen",
+      "code": "DTY",
+      "rows": 9
+    },
+    {
+      "universityId": "truong-dai-hoc-dieu-duong-nam-dinh",
+      "code": "YDD",
+      "rows": 9
+    },
+    {
+      "universityId": "truong-dai-hoc-kiem-sat-ha-noi",
+      "code": "DKS",
+      "rows": 8
+    },
+    {
+      "universityId": "hoc-vien-quan-y",
+      "code": "YQH",
+      "rows": 8
+    },
+    {
+      "universityId": "truong-dai-hoc-my-thuat-cong-nghiep",
+      "code": "MTC",
+      "rows": 7
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghiep-vinh",
+      "code": "DCV",
+      "rows": 6
+    },
+    {
+      "universityId": "truong-dai-hoc-su-pham-tdtt-tp-hcm",
+      "code": "STS",
+      "rows": 6
+    },
+    {
+      "universityId": "truong-dai-hoc-y-te-cong-cong",
+      "code": "YTC",
+      "rows": 6
+    },
+    {
+      "universityId": "hoc-vien-bien-phong",
+      "code": "BPH",
+      "rows": 5
+    },
+    {
+      "universityId": "truong-ngoai-ngu-dh-thai-nguyen",
+      "code": "DTF",
+      "rows": 5
+    },
+    {
+      "universityId": "truong-dai-hoc-luat-dai-hoc-hue",
+      "code": "DHA",
+      "rows": 4
+    },
+    {
+      "universityId": "truong-si-quan-luc-quan-2",
+      "code": "LBH",
+      "rows": 4
+    },
+    {
+      "universityId": "truong-si-quan-khong-quan",
+      "code": "KGH",
+      "rows": 3
+    },
+    {
+      "universityId": "truong-si-quan-dac-cong",
+      "code": "DCH",
+      "rows": 2
+    },
+    {
+      "universityId": "khoa-giao-duc-the-chat-dai-hoc-hue",
+      "code": "DHC",
+      "rows": 2
+    },
+    {
+      "universityId": "truong-si-quan-phong-hoa",
+      "code": "HGH",
+      "rows": 2
+    },
+    {
+      "universityId": "truong-dai-hoc-chinh-tri",
+      "code": "LCH",
+      "rows": 2
+    },
+    {
+      "universityId": "truong-si-quan-phao-binh",
+      "code": "PBH",
+      "rows": 2
+    }
+  ]
+}

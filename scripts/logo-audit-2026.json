@@ -1,0 +1,129 @@
+[
+  {
+    "code": "ZNH",
+    "name": "Trường Đại học Văn hóa - Nghệ thuật Quân đội",
+    "website": "https://vnq.edu.vn",
+    "pageUrl": "https://vnq.edu.vn/",
+    "candidates": []
+  },
+  {
+    "code": "KGH",
+    "name": "Trường Sĩ quan Không quân",
+    "website": "https://tsqkq.edu.vn",
+    "error": "fetch failed"
+  },
+  {
+    "code": "PBH",
+    "name": "Trường Sĩ quan Pháo binh",
+    "website": "http://tsqpb.edu.vn",
+    "pageUrl": "http://tsqpb.edu.vn/",
+    "candidates": []
+  },
+  {
+    "code": "HGH",
+    "name": "Trường Sĩ quan Phòng Hóa",
+    "website": "http://siquanphonghoa.edu.vn",
+    "pageUrl": "http://siquanphonghoa.edu.vn/",
+    "candidates": []
+  },
+  {
+    "code": "ZCH",
+    "name": "Học viện Chính trị (Bộ Quốc phòng)",
+    "website": "https://hvct.edu.vn",
+    "pageUrl": "https://hvct.edu.vn/",
+    "candidates": [
+      {
+        "url": "https://hvct.edu.vn/wp-content/uploads/2024/02/364767157_293246756689913_2139035631342656617_n-768x555.jpg",
+        "extension": ".jpg",
+        "dimensions": [
+          768,
+          555
+        ],
+        "bytes": 85171,
+        "score": 15,
+        "quality": 127,
+        "identity": false,
+        "context": "attachment-medium_large size-medium_large wp-image-1871 not-transparent  "
+      },
+      {
+        "url": "https://hvct.edu.vn/wp-content/uploads/2023/12/khai-giang-khoa-hoc-tuan-thu-quy-768x432.jpg",
+        "extension": ".jpg",
+        "dimensions": [
+          768,
+          432
+        ],
+        "bytes": 58101,
+        "score": 15,
+        "quality": 127,
+        "identity": false,
+        "context": "attachment-medium_large size-medium_large wp-image-1769 not-transparent  "
+      },
+      {
+        "url": "https://hvct.edu.vn/wp-content/uploads/2025/09/590805c24e52c50c9c43-768x431.webp",
+        "extension": ".webp",
+        "dimensions": [
+          768,
+          431
+        ],
+        "bytes": 42346,
+        "score": 15,
+        "quality": 127,
+        "identity": false,
+        "context": "attachment-medium_large size-medium_large wp-image-3612 not-transparent  "
+      }
+    ]
+  },
+  {
+    "code": "HVPG-HUE",
+    "name": "Học viện Phật giáo Việt Nam tại Huế",
+    "website": "http://vbuhue.edu.vn",
+    "pageUrl": "https://vbuhue.edu.vn/",
+    "candidates": [
+      {
+        "url": "https://vbuhue.edu.vn/UploadFiles/Anh/danh_le_chu_ton_duc_chung_minh.jpg",
+        "extension": ".jpg",
+        "dimensions": [
+          1089,
+          520
+        ],
+        "bytes": 179254,
+        "score": 15,
+        "quality": 127,
+        "identity": false,
+        "context": " wows1_0 Trở về cội nguồn, tiếp nối đạo phong Thiền môn xứ Huế"
+      },
+      {
+        "url": "https://vbuhue.edu.vn/UploadFiles/Anh/6.jpg",
+        "extension": ".jpg",
+        "dimensions": [
+          2290,
+          1150
+        ],
+        "bytes": 421311,
+        "score": 15,
+        "quality": 127,
+        "identity": false,
+        "context": " wows1_0 Học viện PGVN tại Huế thăm và làm việc với Trường Đại học Khoa học Xã hội và Nhân văn - ĐHQGHN"
+      },
+      {
+        "url": "https://vbuhue.edu.vn/UploadFiles/Anh/tang_xa_hoc_vien_hoi_chung_bang.jpg",
+        "extension": ".jpg",
+        "dimensions": [
+          2048,
+          879
+        ],
+        "bytes": 331508,
+        "score": 15,
+        "quality": 127,
+        "identity": false,
+        "context": " wows1_0 Học viện PGVN tại Huế cử hành lễ Hồi chung bảng, Giải giới trường sau mùa An cư PL.2570"
+      }
+    ]
+  },
+  {
+    "code": "HVPG-CT",
+    "name": "Học viện Phật giáo Nam tông Khmer Cần Thơ",
+    "website": "https://phatgiaonamtongkhmer.org",
+    "error": "fetch failed"
+  }
+]

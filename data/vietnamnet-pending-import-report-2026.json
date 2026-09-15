@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-09-10",
+  "importedUniversities": 5,
+  "importedRows": 354,
+  "replacedPendingRows": 305,
+  "totalMajorsAfterImport": 18177,
+  "perUniversity": [
+    {
+      "code": "CMC",
+      "universityId": "truong-dai-hoc-cmc",
+      "rows": 60,
+      "methods": [
+        "CMC-TEST",
+        "Học bạ",
+        "THPT"
+      ]
+    },
+    {
+      "code": "DDM",
+      "universityId": "truong-dai-hoc-cong-nghiep-quang-ninh",
+      "rows": 60,
+      "methods": [
+        "ĐGNL HSA",
+        "ĐGTD TSA",
+        "Học bạ",
+        "Xét tuyển kết hợp",
+        "THPT"
+      ]
+    },
+    {
+      "code": "HLU",
+      "universityId": "truong-dai-hoc-ha-long",
+      "rows": 64,
+      "methods": [
+        "Xét tuyển kết hợp",
+        "THPT",
+        "Học bạ",
+        "ĐGNL SPT"
+      ]
+    },
+    {
+      "code": "HVN",
+      "universityId": "hoc-vien-nong-nghiep-viet-nam",
+      "rows": 46,
+      "methods": [
+        "Học bạ",
+        "THPT"
+      ]
+    },
+    {
+      "code": "SPS",
+      "universityId": "truong-dai-hoc-su-pham-tp-hcm",
+      "rows": 124,
+      "methods": [
+        "THPT",
+        "Xét tuyển kết hợp"
+      ]
+    }
+  ]
+}

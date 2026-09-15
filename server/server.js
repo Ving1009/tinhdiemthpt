@@ -1,0 +1,135 @@
+import "dotenv/config";
+import express from "express";
+import { fileURLToPath } from "node:url";
+import { AppError } from "./errors.js";
+import { defaultDataStore } from "./dataStore.js";
+import { createPublicApiRouter } from "./routes/publicApi.js";
+import { createScanTranscriptRouter, isUploadError } from "./routes/scanTranscript.js";
+import { createGeminiVisionService } from "./services/geminiVision.js";
+import { createOcrSpaceVisionService } from "./services/ocrSpaceVision.js";
+import { collectApiKeys, createProviderPool } from "./services/providerPool.js";
+import { createTesseractVisionService } from "./services/tesseractVision.js";
+import { createTranscriptScanService } from "./services/transcriptScanService.js";
+import { createReportStore } from "./reportStore.js";
+
+const PUBLIC_DIR = fileURLToPath(new URL("../public/", import.meta.url));
+
+function isAllowedDevelopmentOrigin(origin) {
+  try {
+    const url = new URL(origin);
+    return url.protocol === "http:" && ["localhost", "127.0.0.1", "[::1]"].includes(url.hostname);
+  } catch {
+    return false;
+  }
+}
+
+function localDevelopmentCors(request, response, next) {
+  const origin = request.headers.origin;
+  if (origin && isAllowedDevelopmentOrigin(origin)) {
+    response.setHeader("Access-Control-Allow-Origin", origin);
+    response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    response.setHeader("Access-Control-Max-Age", "600");
+    response.append("Vary", "Origin");
+  }
+  if (request.method === "OPTIONS") {
+    response.sendStatus(204);
+    return;
+  }
+  next();
+}
+
+export function createConfiguredScanProviders(environment = process.env) {
+  const configuredProviders = [];
+  const geminiKeys = collectApiKeys(environment, {
+    primaryName: "GEMINI_API_KEY", listName: "GEMINI_API_KEYS", numberedStart: 1, numberedEnd: 5
+  });
+  if (geminiKeys.length) configuredProviders.push({
+    name: "gemini",
+    label: "Gemini",
+    scan: createProviderPool({
+      keys: geminiKeys,
+      createService: (apiKey) => createGeminiVisionService({ apiKey, model: environment.GEMINI_MODEL }),
+      retryCodes: new Set(["AI_QUOTA", "AI_TIMEOUT", "AI_AUTH", "AI_REQUEST_FAILED"]),
+      cooldownMsByCode: { AI_QUOTA: 5 * 60_000, AI_TIMEOUT: 30_000, AI_AUTH: 60 * 60_000, AI_REQUEST_FAILED: 30_000 }
+    })
+  });
+  const ocrSpaceKeys = collectApiKeys(environment, {
+    primaryName: "OCR_SPACE_API_KEY", listName: "OCR_SPACE_API_KEYS", numberedStart: 1, numberedEnd: 5
+  });
+  if (ocrSpaceKeys.length) configuredProviders.push({
+    name: "ocr-space",
+    label: "OCR.space",
+    scan: createProviderPool({
+      keys: ocrSpaceKeys,
+      createService: (apiKey) => createOcrSpaceVisionService({
+        apiKey,
+        endpoint: environment.OCR_SPACE_ENDPOINT,
+        engine: environment.OCR_SPACE_ENGINE,
+        maxImageBytes: environment.OCR_SPACE_MAX_IMAGE_BYTES,
+        totalTimeoutMs: environment.OCR_SPACE_TIMEOUT_MS
+      }),
+      retryCodes: new Set(["OCR_SPACE_QUOTA", "OCR_SPACE_TIMEOUT", "OCR_SPACE_AUTH", "OCR_SPACE_REQUEST_FAILED"]),
+      cooldownMsByCode: { OCR_SPACE_QUOTA: 5 * 60_000, OCR_SPACE_TIMEOUT: 30_000, OCR_SPACE_AUTH: 60 * 60_000, OCR_SPACE_REQUEST_FAILED: 30_000 }
+    })
+  });
+  if (environment.TESSERACT_FALLBACK_ENABLED !== "false") configuredProviders.push({
+    name: "tesseract", label: "OCR Tesseract cục bộ", scan: createTesseractVisionService({ totalTimeoutMs: environment.TESSERACT_TIMEOUT_MS })
+  });
+  if (!configuredProviders.length) configuredProviders.push({
+    name: "gemini", label: "Gemini", scan: createGeminiVisionService()
+  });
+  return configuredProviders;
+}
+
+export function createApp({ scanTranscript, dataStore = defaultDataStore, reportStore = createReportStore() } = {}) {
+  const app = express();
+  const scanner = scanTranscript || createTranscriptScanService(createConfiguredScanProviders());
+  app.disable("x-powered-by");
+  app.use(express.json({ limit: "100kb" }));
+  app.use("/api", localDevelopmentCors);
+  app.use("/api", createPublicApiRouter({ store: dataStore, reportStore }));
+  app.use("/api", createScanTranscriptRouter({ scanTranscript: scanner }));
+  app.use(express.static(PUBLIC_DIR, {
+    dotfiles: "deny",
+    index: "index.html",
+    etag: true,
+    maxAge: "1h",
+    setHeaders(response, path) {
+      if (/\.(?:html?|css|m?js)$/i.test(path)) response.setHeader("Cache-Control", "no-cache");
+      else if (/\.(?:png|jpe?g|webp|svg|ico|woff2?)$/i.test(path)) response.setHeader("Cache-Control", "public, max-age=604800");
+    }
+  }));
+  app.use("/api", (_request, response) => response.status(404).json({ success: false, error: { code: "API_NOT_FOUND", message: "Không tìm thấy API." } }));
+  app.use((_request, response) => response.status(404).send("Not found"));
+  app.use((error, _request, response, _next) => {
+    if (isUploadError(error)) {
+      const message = error.code === "LIMIT_FILE_SIZE" ? "Mỗi ảnh tối đa 7 MB." : "Tệp tải lên không hợp lệ.";
+      response.status(400).json({ success: false, error: { code: error.code || "INVALID_UPLOAD", message } });
+      return;
+    }
+    const knownError = error instanceof AppError;
+    response.status(knownError ? error.statusCode : 500).json({
+      success: false,
+      error: { code: knownError ? error.code : "INTERNAL_ERROR", message: knownError ? error.message : "Không thể xử lý yêu cầu. Hãy thử lại sau." }
+    });
+  });
+  return app;
+}
+
+const isDirectRun = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];
+if (isDirectRun) {
+  const port = Number(process.env.PORT || 3000);
+  const reportStore = createReportStore();
+  createApp({ reportStore }).listen(port, () => console.info(`Tính Điểm THPT đang chạy tại http://127.0.0.1:${port}`));
+  let lastReportSyncError = "";
+  const syncReports = async () => {
+    const result = await reportStore.syncPending();
+    if (result.synced) console.info(`Đã đồng bộ ${result.synced} báo cáo lên Supabase.`);
+    if (result.errorCode && result.errorCode !== lastReportSyncError) console.warn(`Báo cáo đang chờ đồng bộ: ${result.errorCode}.`);
+    lastReportSyncError = result.errorCode || "";
+  };
+  syncReports().catch(() => {});
+  const syncInterval = Math.max(60_000, Math.min(60 * 60_000, Number(process.env.SUPABASE_SYNC_INTERVAL_MS) || 5 * 60_000));
+  setInterval(() => syncReports().catch(() => {}), syncInterval).unref();
+}

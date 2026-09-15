@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Logo Đại học Công nghệ Mẫu">
+  <rect width="96" height="96" rx="24" fill="#087d9a"/><path d="M48 18c16.6 0 30 13.4 30 30S64.6 78 48 78 18 64.6 18 48s13.4-30 30-30Zm0 10a20 20 0 1 0 0 40 20 20 0 0 0 0-40Z" fill="#e6fbff"/><path d="M45 35h17v8h-9v8h8v8H45V35Zm-11 10 8 4v20h-8V45Z" fill="#e6fbff"/><text x="48" y="88" text-anchor="middle" fill="#e6fbff" font-family="Arial,sans-serif" font-size="9" font-weight="700">CTM</text>
+</svg>

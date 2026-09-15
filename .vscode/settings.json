@@ -1,0 +1,12 @@
+{
+  "npm.autoDetect": "off",
+  "liveServer.settings.root": "/public",
+  "liveServer.settings.host": "127.0.0.1",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.wait": 150,
+  "liveServer.settings.proxy": {
+    "enable": true,
+    "baseUri": "/api",
+    "proxyUri": "http://127.0.0.1:3000/api"
+  }
+}

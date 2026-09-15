@@ -1,0 +1,24 @@
+{
+  "subjects": [
+    { "canonical": "Toán", "formId": "math", "aliases": ["Toán", "Toan"] },
+    { "canonical": "Ngữ văn", "formId": "literature", "aliases": ["Ngữ văn", "Văn", "Ngu van"] },
+    { "canonical": "Tiếng Anh", "formId": "foreignLanguage", "language": "Tiếng Anh", "aliases": ["Tiếng Anh", "Anh", "English"] },
+    { "canonical": "Tiếng Pháp", "formId": "foreignLanguage", "language": "Tiếng Pháp", "aliases": ["Tiếng Pháp", "Pháp", "French"] },
+    { "canonical": "Tiếng Trung", "formId": "foreignLanguage", "language": "Tiếng Trung", "aliases": ["Tiếng Trung", "Trung", "Chinese"] },
+    { "canonical": "Tiếng Nhật", "formId": "foreignLanguage", "language": "Tiếng Nhật", "aliases": ["Tiếng Nhật", "Nhật", "Japanese"] },
+    { "canonical": "Tiếng Nga", "formId": "foreignLanguage", "language": "Tiếng Nga", "aliases": ["Tiếng Nga", "Nga", "Russian"] },
+    { "canonical": "Tiếng Đức", "formId": "foreignLanguage", "language": "Tiếng Đức", "aliases": ["Tiếng Đức", "Đức", "German"] },
+    { "canonical": "Tiếng Hàn", "formId": "foreignLanguage", "language": "Tiếng Hàn", "aliases": ["Tiếng Hàn", "Hàn", "Korean"] },
+    { "canonical": "Ngoại ngữ", "formId": "foreignLanguage", "aliases": ["Ngoại ngữ", "Ngoai ngu"] },
+    { "canonical": "Vật lí", "formId": "physics", "aliases": ["Vật lí", "Vật lý", "Lí", "Lý", "Vat li", "Vat ly"] },
+    { "canonical": "Hóa học", "formId": "chemistry", "aliases": ["Hóa học", "Hoá học", "Hóa", "Hoá", "Hoa hoc"] },
+    { "canonical": "Sinh học", "formId": "biology", "aliases": ["Sinh học", "Sinh", "Sinh hoc"] },
+    { "canonical": "Lịch sử", "formId": "history", "aliases": ["Lịch sử", "Sử", "Lich su"] },
+    { "canonical": "Địa lí", "formId": "geography", "aliases": ["Địa lí", "Địa lý", "Địa", "Dia li", "Dia ly"] },
+    { "canonical": "Tin học", "formId": "informatics", "aliases": ["Tin học", "Tin", "Tin hoc"] },
+    { "canonical": "Công nghệ công nghiệp", "formId": "industrialTechnology", "aliases": ["Công nghệ công nghiệp", "Công nghiệp", "Cong nghe cong nghiep"] },
+    { "canonical": "Công nghệ nông nghiệp", "formId": "agriculturalTechnology", "aliases": ["Công nghệ nông nghiệp", "Nông nghiệp", "Cong nghe nong nghiep"] },
+    { "canonical": "Công nghệ", "formId": null, "requiresResolution": true, "aliases": ["Công nghệ", "Cong nghe"] },
+    { "canonical": "Giáo dục kinh tế và pháp luật", "formId": "civicEducation", "aliases": ["Giáo dục kinh tế và pháp luật", "GDKT&PL", "GDKTPL", "GD Kinh tế và pháp luật"] }
+  ]
+}

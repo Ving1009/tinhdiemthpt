@@ -1,0 +1,6869 @@
+[
+  {
+    "id": "d01-1-1",
+    "stt": 1,
+    "code": "D01",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Ngữ văn, Tiếng Anh",
+    "sourceCodes": [
+      "D01"
+    ],
+    "raw": {
+      "code": "D01",
+      "subjects": "Toán, Ngữ văn, Tiếng Anh"
+    }
+  },
+  {
+    "id": "a00-2-1",
+    "stt": 2,
+    "code": "A00",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Hóa học"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "chemistry"
+    ],
+    "subjectText": "Toán, Vật lí, Hóa học",
+    "sourceCodes": [
+      "A00"
+    ],
+    "raw": {
+      "code": "A00",
+      "subjects": "Toán, Vật lí, Hóa học"
+    }
+  },
+  {
+    "id": "a01-3-1",
+    "stt": 3,
+    "code": "A01",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Vật lí, Tiếng Anh",
+    "sourceCodes": [
+      "A01"
+    ],
+    "raw": {
+      "code": "A01",
+      "subjects": "Toán, Vật lí, Tiếng Anh"
+    }
+  },
+  {
+    "id": "d07-4-1",
+    "stt": 4,
+    "code": "D07",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Hóa học, Tiếng Anh",
+    "sourceCodes": [
+      "D07"
+    ],
+    "raw": {
+      "code": "D07",
+      "subjects": "Toán, Hóa học, Tiếng Anh"
+    }
+  },
+  {
+    "id": "b00-5-1",
+    "stt": 5,
+    "code": "B00",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Sinh học"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "biology"
+    ],
+    "subjectText": "Toán, Hóa học, Sinh học",
+    "sourceCodes": [
+      "B00"
+    ],
+    "raw": {
+      "code": "B00",
+      "subjects": "Toán, Hóa học, Sinh học"
+    }
+  },
+  {
+    "id": "c00-6-1",
+    "stt": 6,
+    "code": "C00",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Địa lí"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "geography"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Địa lí",
+    "sourceCodes": [
+      "C00"
+    ],
+    "raw": {
+      "code": "C00",
+      "subjects": "Ngữ văn, Lịch sử, Địa lí"
+    }
+  },
+  {
+    "id": "c01-7-1",
+    "stt": 7,
+    "code": "C01",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Vật lí"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "physics"
+    ],
+    "subjectText": "Toán, Ngữ văn, Vật lí",
+    "sourceCodes": [
+      "C01"
+    ],
+    "raw": {
+      "code": "C01",
+      "subjects": "Toán, Ngữ văn, Vật lí"
+    }
+  },
+  {
+    "id": "d14-8-1",
+    "stt": 8,
+    "code": "D14",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Tiếng Anh",
+    "sourceCodes": [
+      "D14"
+    ],
+    "raw": {
+      "code": "D14",
+      "subjects": "Ngữ văn, Lịch sử, Tiếng Anh"
+    }
+  },
+  {
+    "id": "d15-9-1",
+    "stt": 9,
+    "code": "D15",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Tiếng Anh",
+    "sourceCodes": [
+      "D15"
+    ],
+    "raw": {
+      "code": "D15",
+      "subjects": "Ngữ văn, Địa lí, Tiếng Anh"
+    }
+  },
+  {
+    "id": "a02-10-1",
+    "stt": 10,
+    "code": "A02",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Sinh học"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "biology"
+    ],
+    "subjectText": "Toán, Vật lí, Sinh học",
+    "sourceCodes": [
+      "A02"
+    ],
+    "raw": {
+      "code": "A02",
+      "subjects": "Toán, Vật lí, Sinh học"
+    }
+  },
+  {
+    "id": "c04-11-1",
+    "stt": 11,
+    "code": "C04",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "Địa lí"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "geography"
+    ],
+    "subjectText": "Ngữ văn, Toán, Địa lí",
+    "sourceCodes": [
+      "C04"
+    ],
+    "raw": {
+      "code": "C04",
+      "subjects": "Ngữ văn, Toán, Địa lí"
+    }
+  },
+  {
+    "id": "d03-12-1",
+    "stt": 12,
+    "code": "D03",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Toán, Tiếng Pháp",
+    "sourceCodes": [
+      "D03"
+    ],
+    "raw": {
+      "code": "D03",
+      "subjects": "Ngữ văn, Toán, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "d04-13-1",
+    "stt": 13,
+    "code": "D04",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Toán, Tiếng Trung",
+    "sourceCodes": [
+      "D04"
+    ],
+    "raw": {
+      "code": "D04",
+      "subjects": "Ngữ văn, Toán, Tiếng Trung"
+    }
+  },
+  {
+    "id": "d10-14-1",
+    "stt": 14,
+    "code": "D10",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Địa lí, Tiếng Anh",
+    "sourceCodes": [
+      "D10"
+    ],
+    "raw": {
+      "code": "D10",
+      "subjects": "Toán, Địa lí, Tiếng Anh"
+    }
+  },
+  {
+    "id": "b08-15-1",
+    "stt": 15,
+    "code": "B08",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Sinh học, Tiếng Anh",
+    "sourceCodes": [
+      "B08"
+    ],
+    "raw": {
+      "code": "B08",
+      "subjects": "Toán, Sinh học, Tiếng Anh"
+    }
+  },
+  {
+    "id": "d06-16-1",
+    "stt": 16,
+    "code": "D06",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Toán, Tiếng Nhật",
+    "sourceCodes": [
+      "D06"
+    ],
+    "raw": {
+      "code": "D06",
+      "subjects": "Ngữ văn, Toán, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "d08-17-1",
+    "stt": 17,
+    "code": "D08",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Sinh học, Tiếng Anh",
+    "sourceCodes": [
+      "D08"
+    ],
+    "raw": {
+      "code": "D08",
+      "subjects": "Toán, Sinh học, Tiếng Anh"
+    }
+  },
+  {
+    "id": "x74-18-1",
+    "stt": 18,
+    "code": "X74",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "civicEducation"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, GDKTPL",
+    "sourceCodes": [
+      "X74"
+    ],
+    "raw": {
+      "code": "X74",
+      "subjects": "Ngữ văn, Địa lí, GDKTPL"
+    }
+  },
+  {
+    "id": "d09-19-1",
+    "stt": 19,
+    "code": "D09",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Lịch sử, Tiếng Anh",
+    "sourceCodes": [
+      "D09"
+    ],
+    "raw": {
+      "code": "D09",
+      "subjects": "Toán, Lịch sử, Tiếng Anh"
+    }
+  },
+  {
+    "id": "x70-20-1",
+    "stt": 20,
+    "code": "X70",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "civicEducation"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, GDKTPL",
+    "sourceCodes": [
+      "X70"
+    ],
+    "raw": {
+      "code": "X70",
+      "subjects": "Ngữ văn, Lịch sử, GDKTPL"
+    }
+  },
+  {
+    "id": "x01-21-1",
+    "stt": 21,
+    "code": "X01",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "civicEducation"
+    ],
+    "subjectText": "Ngữ văn, Toán, GDKTPL",
+    "sourceCodes": [
+      "X01"
+    ],
+    "raw": {
+      "code": "X01",
+      "subjects": "Ngữ văn, Toán, GDKTPL"
+    }
+  },
+  {
+    "id": "d02-22-1",
+    "stt": 22,
+    "code": "D02",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Toán, Tiếng Nga",
+    "sourceCodes": [
+      "D02"
+    ],
+    "raw": {
+      "code": "D02",
+      "subjects": "Ngữ văn, Toán, Tiếng Nga"
+    }
+  },
+  {
+    "id": "x78-23-1",
+    "stt": 23,
+    "code": "X78",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Tiếng Anh",
+    "sourceCodes": [
+      "X78"
+    ],
+    "raw": {
+      "code": "X78",
+      "subjects": "Ngữ văn, GDKTPL, Tiếng Anh"
+    }
+  },
+  {
+    "id": "d05-24-1",
+    "stt": 24,
+    "code": "D05",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Toán, Tiếng Đức",
+    "sourceCodes": [
+      "D05"
+    ],
+    "raw": {
+      "code": "D05",
+      "subjects": "Ngữ văn, Toán, Tiếng Đức"
+    }
+  },
+  {
+    "id": "c02-25-1",
+    "stt": 25,
+    "code": "C02",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Hóa học"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "chemistry"
+    ],
+    "subjectText": "Toán, Ngữ văn, Hóa học",
+    "sourceCodes": [
+      "C02"
+    ],
+    "raw": {
+      "code": "C02",
+      "subjects": "Toán, Ngữ văn, Hóa học"
+    }
+  },
+  {
+    "id": "d28-26-1",
+    "stt": 26,
+    "code": "D28",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Vật lí, Tiếng Nhật",
+    "sourceCodes": [
+      "D28"
+    ],
+    "raw": {
+      "code": "D28",
+      "subjects": "Toán, Vật lí, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "d29-27-1",
+    "stt": 27,
+    "code": "D29",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Vật lí, Tiếng Pháp",
+    "sourceCodes": [
+      "D29"
+    ],
+    "raw": {
+      "code": "D29",
+      "subjects": "Toán, Vật lí, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "x21-28-1",
+    "stt": 28,
+    "code": "X21",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "civicEducation"
+    ],
+    "subjectText": "Toán, Địa lí, GDKTPL",
+    "sourceCodes": [
+      "X21"
+    ],
+    "raw": {
+      "code": "X21",
+      "subjects": "Toán, Địa lí, GDKTPL"
+    }
+  },
+  {
+    "id": "d26-29-1",
+    "stt": 29,
+    "code": "D26",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Vật lí, Tiếng Đức",
+    "sourceCodes": [
+      "D26"
+    ],
+    "raw": {
+      "code": "D26",
+      "subjects": "Toán, Vật lí, Tiếng Đức"
+    }
+  },
+  {
+    "id": "d24-30-1",
+    "stt": 30,
+    "code": "D24",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Hóa học, Tiếng Pháp",
+    "sourceCodes": [
+      "D24"
+    ],
+    "raw": {
+      "code": "D24",
+      "subjects": "Toán, Hóa học, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "v00-31-1",
+    "stt": 31,
+    "code": "V00",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Vẽ Hình họa mỹ thuật"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "ve-hinh-hoa-my-thuat"
+    ],
+    "subjectText": "Toán, Vật lí, Vẽ Hình họa mỹ thuật",
+    "sourceCodes": [
+      "V00"
+    ],
+    "raw": {
+      "code": "V00",
+      "subjects": "Toán, Vật lí, Vẽ Hình họa mỹ thuật"
+    }
+  },
+  {
+    "id": "d23-32-1",
+    "stt": 32,
+    "code": "D23",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Hóa học, Tiếng Nhật",
+    "sourceCodes": [
+      "D23"
+    ],
+    "raw": {
+      "code": "D23",
+      "subjects": "Toán, Hóa học, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "d27-33-1",
+    "stt": 33,
+    "code": "D27",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Vật lí, Tiếng Nga",
+    "sourceCodes": [
+      "D27"
+    ],
+    "raw": {
+      "code": "D27",
+      "subjects": "Toán, Vật lí, Tiếng Nga"
+    }
+  },
+  {
+    "id": "d46-34-1",
+    "stt": 34,
+    "code": "D46",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, Tiếng Đức",
+    "sourceCodes": [
+      "D46"
+    ],
+    "raw": {
+      "code": "D46",
+      "subjects": "Ngữ văn, Hóa học, Tiếng Đức"
+    }
+  },
+  {
+    "id": "d30-35-1",
+    "stt": 35,
+    "code": "D30",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Vật lí, Tiếng Trung",
+    "sourceCodes": [
+      "D30"
+    ],
+    "raw": {
+      "code": "D30",
+      "subjects": "Toán, Vật lí, Tiếng Trung"
+    }
+  },
+  {
+    "id": "d21-36-1",
+    "stt": 36,
+    "code": "D21",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Hóa học, Tiếng Đức",
+    "sourceCodes": [
+      "D21"
+    ],
+    "raw": {
+      "code": "D21",
+      "subjects": "Toán, Hóa học, Tiếng Đức"
+    }
+  },
+  {
+    "id": "d47-37-1",
+    "stt": 37,
+    "code": "D47",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, Tiếng Nga",
+    "sourceCodes": [
+      "D47"
+    ],
+    "raw": {
+      "code": "D47",
+      "subjects": "Ngữ văn, Hóa học, Tiếng Nga"
+    }
+  },
+  {
+    "id": "d22-38-1",
+    "stt": 38,
+    "code": "D22",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Hóa học, Tiếng Nga",
+    "sourceCodes": [
+      "D22"
+    ],
+    "raw": {
+      "code": "D22",
+      "subjects": "Toán, Hóa học, Tiếng Nga"
+    }
+  },
+  {
+    "id": "d25-39-1",
+    "stt": 39,
+    "code": "D25",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Hóa học, Tiếng Trung",
+    "sourceCodes": [
+      "D25"
+    ],
+    "raw": {
+      "code": "D25",
+      "subjects": "Toán, Hóa học, Tiếng Trung"
+    }
+  },
+  {
+    "id": "v01-40-1",
+    "stt": 40,
+    "code": "V01",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Vẽ Hình họa mỹ thuật"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "ve-hinh-hoa-my-thuat"
+    ],
+    "subjectText": "Toán, Ngữ văn, Vẽ Hình họa mỹ thuật",
+    "sourceCodes": [
+      "V01"
+    ],
+    "raw": {
+      "code": "V01",
+      "subjects": "Toán, Ngữ văn, Vẽ Hình họa mỹ thuật"
+    }
+  },
+  {
+    "id": "a07-41-1",
+    "stt": 41,
+    "code": "A07",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Địa lí"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "geography"
+    ],
+    "subjectText": "Toán, Lịch sử, Địa lí",
+    "sourceCodes": [
+      "A07"
+    ],
+    "raw": {
+      "code": "A07",
+      "subjects": "Toán, Lịch sử, Địa lí"
+    }
+  },
+  {
+    "id": "c03-42-1",
+    "stt": 42,
+    "code": "C03",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "Lịch sử"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "history"
+    ],
+    "subjectText": "Ngữ văn, Toán, Lịch sử",
+    "sourceCodes": [
+      "C03"
+    ],
+    "raw": {
+      "code": "C03",
+      "subjects": "Ngữ văn, Toán, Lịch sử"
+    }
+  },
+  {
+    "id": "b03-43-1",
+    "stt": 43,
+    "code": "B03",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Sinh học"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "biology"
+    ],
+    "subjectText": "Toán, Ngữ văn, Sinh học",
+    "sourceCodes": [
+      "B03"
+    ],
+    "raw": {
+      "code": "B03",
+      "subjects": "Toán, Ngữ văn, Sinh học"
+    }
+  },
+  {
+    "id": "ah1-44-1",
+    "stt": 44,
+    "code": "AH1",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Địa lí, Tiếng Hàn",
+    "sourceCodes": [
+      "AH1"
+    ],
+    "raw": {
+      "code": "AH1",
+      "subjects": "Toán, Địa lí, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "h00-45-1",
+    "stt": 45,
+    "code": "H00",
+    "subjects": [
+      "Ngữ văn",
+      "Năng khiếu vẽ Nghệ thuật 1",
+      "Năng khiếu vẽ Nghệ thuật 2"
+    ],
+    "subjectIds": [
+      "literature",
+      "nang-khieu-ve-nghe-thuat-1",
+      "nang-khieu-ve-nghe-thuat-2"
+    ],
+    "subjectText": "Ngữ văn, Năng khiếu vẽ Nghệ thuật 1, Năng khiếu vẽ Nghệ thuật 2",
+    "sourceCodes": [
+      "H00"
+    ],
+    "raw": {
+      "code": "H00",
+      "subjects": "Ngữ văn, Năng khiếu vẽ Nghệ thuật 1, Năng khiếu vẽ Nghệ thuật 2"
+    }
+  },
+  {
+    "id": "v02-46-1",
+    "stt": 46,
+    "code": "V02",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "V02"
+    ],
+    "raw": {
+      "code": "V02",
+      "subjects": "Toán, Tiếng Anh, Vẽ mỹ thuật"
+    }
+  },
+  {
+    "id": "h01-47-1",
+    "stt": 47,
+    "code": "H01",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Toán, Ngữ văn, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "H01"
+    ],
+    "raw": {
+      "code": "H01",
+      "subjects": "Toán, Ngữ văn, Vẽ Mỹ thuật"
+    }
+  },
+  {
+    "id": "c08-48-1",
+    "stt": 48,
+    "code": "C08",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "Sinh học"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "biology"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, Sinh học",
+    "sourceCodes": [
+      "C08"
+    ],
+    "raw": {
+      "code": "C08",
+      "subjects": "Ngữ văn, Hóa học, Sinh học"
+    }
+  },
+  {
+    "id": "x25-49-1",
+    "stt": 49,
+    "code": "X25",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "civicEducation"
+    ],
+    "subjectText": "Toán, Tiếng Anh, GDKTPL",
+    "sourceCodes": [
+      "X25"
+    ],
+    "raw": {
+      "code": "X25",
+      "subjects": "Toán, Tiếng Anh, GDKTPL"
+    }
+  },
+  {
+    "id": "t00-50-1",
+    "stt": 50,
+    "code": "T00",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Năng khiếu Thể dục thể thao"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "nang-khieu-the-duc-the-thao"
+    ],
+    "subjectText": "Toán, Sinh học, Năng khiếu Thể dục thể thao",
+    "sourceCodes": [
+      "T00"
+    ],
+    "raw": {
+      "code": "T00",
+      "subjects": "Toán, Sinh học, Năng khiếu TDTT"
+    }
+  },
+  {
+    "id": "a04-51-1",
+    "stt": 51,
+    "code": "A04",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Địa lí"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "geography"
+    ],
+    "subjectText": "Toán, Vật lí, Địa lí",
+    "sourceCodes": [
+      "A04"
+    ],
+    "raw": {
+      "code": "A04",
+      "subjects": "Toán, Vật lí, Địa lí"
+    }
+  },
+  {
+    "id": "x13-52-1",
+    "stt": 52,
+    "code": "X13",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "civicEducation"
+    ],
+    "subjectText": "Toán, Sinh học, GDKTPL",
+    "sourceCodes": [
+      "X13"
+    ],
+    "raw": {
+      "code": "X13",
+      "subjects": "Toán, Sinh học, GDKTPL"
+    }
+  },
+  {
+    "id": "t05-53-1",
+    "stt": 53,
+    "code": "T05",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Năng khiếu Thể dục thể thao"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "nang-khieu-the-duc-the-thao"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Năng khiếu Thể dục thể thao",
+    "sourceCodes": [
+      "T05"
+    ],
+    "raw": {
+      "code": "T05",
+      "subjects": "Ngữ văn, GDKTPL, Năng khiếu thể dục thể thao"
+    }
+  },
+  {
+    "id": "x05-54-1",
+    "stt": 54,
+    "code": "X05",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "civicEducation"
+    ],
+    "subjectText": "Toán, Vật lí, GDKTPL",
+    "sourceCodes": [
+      "X05"
+    ],
+    "raw": {
+      "code": "X05",
+      "subjects": "Toán, Vật lí, GDKTPL"
+    }
+  },
+  {
+    "id": "m01-55-1",
+    "stt": 55,
+    "code": "M01",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Năng khiếu"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "nang-khieu"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Năng khiếu",
+    "sourceCodes": [
+      "M01"
+    ],
+    "raw": {
+      "code": "M01",
+      "subjects": "Ngữ văn, Lịch sử, Năng khiếu"
+    }
+  },
+  {
+    "id": "h06-56-1",
+    "stt": 56,
+    "code": "H06",
+    "subjects": [
+      "Ngữ văn",
+      "Tiếng Anh",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "literature",
+      "foreignLanguage",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Ngữ văn, Tiếng Anh, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "H06"
+    ],
+    "raw": {
+      "code": "H06",
+      "subjects": "Ngữ văn, Tiếng Anh, Vẽ mỹ thuật"
+    }
+  },
+  {
+    "id": "d11-57-1",
+    "stt": 57,
+    "code": "D11",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Tiếng Anh",
+    "sourceCodes": [
+      "D11"
+    ],
+    "raw": {
+      "code": "D11",
+      "subjects": "Ngữ văn, Vật lí, Tiếng Anh"
+    }
+  },
+  {
+    "id": "n00-58-1",
+    "stt": 58,
+    "code": "N00",
+    "subjects": [
+      "Ngữ văn",
+      "Năng khiếu Âm nhạc 1",
+      "Năng khiếu Âm nhạc 2"
+    ],
+    "subjectIds": [
+      "literature",
+      "nang-khieu-am-nhac-1",
+      "nang-khieu-am-nhac-2"
+    ],
+    "subjectText": "Ngữ văn, Năng khiếu Âm nhạc 1, Năng khiếu Âm nhạc 2",
+    "sourceCodes": [
+      "N00"
+    ],
+    "raw": {
+      "code": "N00",
+      "subjects": "Ngữ văn, Năng khiếu Âm nhạc 1, Năng khiếu Âm nhạc 2"
+    }
+  },
+  {
+    "id": "m00-59-1",
+    "stt": 59,
+    "code": "M00",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "Đọc diễn cảm",
+      "Hát"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "doc-dien-cam",
+      "hat"
+    ],
+    "subjectText": "Ngữ văn, Toán, Đọc diễn cảm, Hát",
+    "sourceCodes": [
+      "M00"
+    ],
+    "raw": {
+      "code": "M00",
+      "subjects": "Ngữ văn, Toán, Đọc diễn cảm, Hát"
+    }
+  },
+  {
+    "id": "x26-60-1",
+    "stt": 60,
+    "code": "X26",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "informatics"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Tin học",
+    "sourceCodes": [
+      "X26",
+      "K01"
+    ],
+    "raw": {
+      "code": "X26, K01",
+      "subjects": "Toán, Tiếng Anh, Tin học"
+    }
+  },
+  {
+    "id": "k01-60-2",
+    "stt": 60,
+    "code": "K01",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "informatics"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Tin học",
+    "sourceCodes": [
+      "X26",
+      "K01"
+    ],
+    "raw": {
+      "code": "X26, K01",
+      "subjects": "Toán, Tiếng Anh, Tin học"
+    }
+  },
+  {
+    "id": "t02-61-1",
+    "stt": 61,
+    "code": "T02",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Năng khiếu Thể dục thể thao"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "nang-khieu-the-duc-the-thao"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Năng khiếu Thể dục thể thao",
+    "sourceCodes": [
+      "T02"
+    ],
+    "raw": {
+      "code": "T02",
+      "subjects": "Ngữ văn, Sinh, Năng khiếu TDTT"
+    }
+  },
+  {
+    "id": "t01-62-1",
+    "stt": 62,
+    "code": "T01",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Năng khiếu Thể dục thể thao"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "nang-khieu-the-duc-the-thao"
+    ],
+    "subjectText": "Toán, Ngữ văn, Năng khiếu Thể dục thể thao",
+    "sourceCodes": [
+      "T01"
+    ],
+    "raw": {
+      "code": "T01",
+      "subjects": "Toán, Ngữ văn, Năng khiếu TDTT"
+    }
+  },
+  {
+    "id": "d13-63-1",
+    "stt": 63,
+    "code": "D13",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Tiếng Anh",
+    "sourceCodes": [
+      "D13"
+    ],
+    "raw": {
+      "code": "D13",
+      "subjects": "Ngữ văn, Sinh học, Tiếng Anh"
+    }
+  },
+  {
+    "id": "h02-64-1",
+    "stt": 64,
+    "code": "H02",
+    "subjects": [
+      "Toán",
+      "Vẽ Hình họa mỹ thuật",
+      "Vẽ trang trí màu"
+    ],
+    "subjectIds": [
+      "math",
+      "ve-hinh-hoa-my-thuat",
+      "ve-trang-tri-mau"
+    ],
+    "subjectText": "Toán, Vẽ Hình họa mỹ thuật, Vẽ trang trí màu",
+    "sourceCodes": [
+      "H02"
+    ],
+    "raw": {
+      "code": "H02",
+      "subjects": "Toán, Vẽ Hình họa mỹ thuật, Vẽ trang trí màu"
+    }
+  },
+  {
+    "id": "h04-65-1",
+    "stt": 65,
+    "code": "H04",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Vẽ Năng khiếu"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "ve-nang-khieu"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Vẽ Năng khiếu",
+    "sourceCodes": [
+      "H04"
+    ],
+    "raw": {
+      "code": "H04",
+      "subjects": "Toán, Tiếng Anh, Vẽ Năng khiếu"
+    }
+  },
+  {
+    "id": "a05-66-1",
+    "stt": 66,
+    "code": "A05",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Lịch sử"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "history"
+    ],
+    "subjectText": "Toán, Hóa học, Lịch sử",
+    "sourceCodes": [
+      "A05"
+    ],
+    "raw": {
+      "code": "A05",
+      "subjects": "Toán, Hóa học, Lịch sử"
+    }
+  },
+  {
+    "id": "a06-67-1",
+    "stt": 67,
+    "code": "A06",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Địa lí"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "geography"
+    ],
+    "subjectText": "Toán, Hóa học, Địa lí",
+    "sourceCodes": [
+      "A06"
+    ],
+    "raw": {
+      "code": "A06",
+      "subjects": "Toán, Hóa học, Địa lí"
+    }
+  },
+  {
+    "id": "x17-68-1",
+    "stt": 68,
+    "code": "X17",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "civicEducation"
+    ],
+    "subjectText": "Toán, Lịch sử, GDKTPL",
+    "sourceCodes": [
+      "X17"
+    ],
+    "raw": {
+      "code": "X17",
+      "subjects": "Toán, Lịch sử, GDKTPL"
+    }
+  },
+  {
+    "id": "t03-69-1",
+    "stt": 69,
+    "code": "T03",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Năng khiếu Thể dục thể thao"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "nang-khieu-the-duc-the-thao"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Năng khiếu Thể dục thể thao",
+    "sourceCodes": [
+      "T03"
+    ],
+    "raw": {
+      "code": "T03",
+      "subjects": "Ngữ văn, Địa, Năng khiếu TDTT"
+    }
+  },
+  {
+    "id": "b02-70-1",
+    "stt": 70,
+    "code": "B02",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Địa lí"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "geography"
+    ],
+    "subjectText": "Toán, Sinh học, Địa lí",
+    "sourceCodes": [
+      "B02"
+    ],
+    "raw": {
+      "code": "B02",
+      "subjects": "Toán, Sinh học, Địa lí"
+    }
+  },
+  {
+    "id": "x09-71-1",
+    "stt": 71,
+    "code": "X09",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "civicEducation"
+    ],
+    "subjectText": "Toán, Hóa học, GDKTPL",
+    "sourceCodes": [
+      "X09"
+    ],
+    "raw": {
+      "code": "X09",
+      "subjects": "Toán, Hóa học, GDKTPL"
+    }
+  },
+  {
+    "id": "m02-72-1",
+    "stt": 72,
+    "code": "M02",
+    "subjects": [
+      "Toán",
+      "Năng khiếu 1",
+      "Năng khiếu 2"
+    ],
+    "subjectIds": [
+      "math",
+      "nang-khieu-1",
+      "nang-khieu-2"
+    ],
+    "subjectText": "Toán, Năng khiếu 1, Năng khiếu 2",
+    "sourceCodes": [
+      "M02"
+    ],
+    "raw": {
+      "code": "M02",
+      "subjects": "Toán, Năng khiếu 1, Năng khiếu 2"
+    }
+  },
+  {
+    "id": "c05-73-1",
+    "stt": 73,
+    "code": "C05",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Hóa học"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "chemistry"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Hóa học",
+    "sourceCodes": [
+      "C05"
+    ],
+    "raw": {
+      "code": "C05",
+      "subjects": "Ngữ văn, Vật lí, Hóa học"
+    }
+  },
+  {
+    "id": "m09-74-1",
+    "stt": 74,
+    "code": "M09",
+    "subjects": [
+      "Toán",
+      "NK Mầm non 1 (kể chuyện, đọc, diễn cảm)",
+      "NK Mầm non 2 (Hát)"
+    ],
+    "subjectIds": [
+      "math",
+      "nk-mam-non-1-ke-chuyen-doc-dien-cam",
+      "nk-mam-non-2-hat"
+    ],
+    "subjectText": "Toán, NK Mầm non 1 (kể chuyện, đọc, diễn cảm), NK Mầm non 2 (Hát)",
+    "sourceCodes": [
+      "M09"
+    ],
+    "raw": {
+      "code": "M09",
+      "subjects": "Toán, NK Mầm non 1 (kể chuyện, đọc, diễn cảm), NK Mầm non 2 (Hát)"
+    }
+  },
+  {
+    "id": "d12-75-1",
+    "stt": 75,
+    "code": "D12",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, Tiếng Anh",
+    "sourceCodes": [
+      "D12"
+    ],
+    "raw": {
+      "code": "D12",
+      "subjects": "Ngữ văn, Hóa học, Tiếng Anh"
+    }
+  },
+  {
+    "id": "d45-76-1",
+    "stt": 76,
+    "code": "D45",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Tiếng Trung",
+    "sourceCodes": [
+      "D45"
+    ],
+    "raw": {
+      "code": "D45",
+      "subjects": "Ngữ văn, Địa lí, Tiếng Trung"
+    }
+  },
+  {
+    "id": "m03-77-1",
+    "stt": 77,
+    "code": "M03",
+    "subjects": [
+      "Ngữ văn",
+      "Năng khiếu 1",
+      "Năng khiếu 2"
+    ],
+    "subjectIds": [
+      "literature",
+      "nang-khieu-1",
+      "nang-khieu-2"
+    ],
+    "subjectText": "Ngữ văn, Năng khiếu 1, Năng khiếu 2",
+    "sourceCodes": [
+      "M03"
+    ],
+    "raw": {
+      "code": "M03",
+      "subjects": "Văn, Năng khiếu 1, Năng khiếu 2"
+    }
+  },
+  {
+    "id": "n01-78-1",
+    "stt": 78,
+    "code": "N01",
+    "subjects": [
+      "Ngữ văn",
+      "xướng âm",
+      "biểu diễn nghệ thuật"
+    ],
+    "subjectIds": [
+      "literature",
+      "xuong-am",
+      "bieu-dien-nghe-thuat"
+    ],
+    "subjectText": "Ngữ văn, xướng âm, biểu diễn nghệ thuật",
+    "sourceCodes": [
+      "N01"
+    ],
+    "raw": {
+      "code": "N01",
+      "subjects": "Ngữ văn, xướng âm, biểu diễn nghệ thuật"
+    }
+  },
+  {
+    "id": "a03-79-1",
+    "stt": 79,
+    "code": "A03",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Lịch sử"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "history"
+    ],
+    "subjectText": "Toán, Vật lí, Lịch sử",
+    "sourceCodes": [
+      "A03"
+    ],
+    "raw": {
+      "code": "A03",
+      "subjects": "Toán, Vật lí, Lịch sử"
+    }
+  },
+  {
+    "id": "d44-80-1",
+    "stt": 80,
+    "code": "D44",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Tiếng Pháp",
+    "sourceCodes": [
+      "D44"
+    ],
+    "raw": {
+      "code": "D44",
+      "subjects": "Ngữ văn, Địa lí, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "d63-81-1",
+    "stt": 81,
+    "code": "D63",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Tiếng Nhật",
+    "sourceCodes": [
+      "D63"
+    ],
+    "raw": {
+      "code": "D63",
+      "subjects": "Ngữ văn, Lịch sử, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "m13-82-1",
+    "stt": 82,
+    "code": "M13",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Năng khiếu"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "nang-khieu"
+    ],
+    "subjectText": "Toán, Sinh học, Năng khiếu",
+    "sourceCodes": [
+      "M13"
+    ],
+    "raw": {
+      "code": "M13",
+      "subjects": "Toán, Sinh học, Năng khiếu"
+    }
+  },
+  {
+    "id": "v03-83-1",
+    "stt": 83,
+    "code": "V03",
+    "subjects": [
+      "Vẽ mỹ thuật",
+      "Toán",
+      "Hóa học"
+    ],
+    "subjectIds": [
+      "ve-my-thuat",
+      "math",
+      "chemistry"
+    ],
+    "subjectText": "Vẽ mỹ thuật, Toán, Hóa học",
+    "sourceCodes": [
+      "V03"
+    ],
+    "raw": {
+      "code": "V03",
+      "subjects": "Vẽ mỹ thuật, Toán, Hóa"
+    }
+  },
+  {
+    "id": "d64-84-1",
+    "stt": 84,
+    "code": "D64",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Tiếng Pháp",
+    "sourceCodes": [
+      "D64"
+    ],
+    "raw": {
+      "code": "D64",
+      "subjects": "Ngữ văn, Lịch sử, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "h08-85-1",
+    "stt": 85,
+    "code": "H08",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "H08"
+    ],
+    "raw": {
+      "code": "H08",
+      "subjects": "Ngữ văn, Lịch sử, Vẽ mỹ thuật"
+    }
+  },
+  {
+    "id": "t04-86-1",
+    "stt": 86,
+    "code": "T04",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Năng khiếu Thể dục thể thao"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "nang-khieu-the-duc-the-thao"
+    ],
+    "subjectText": "Toán, Vật lí, Năng khiếu Thể dục thể thao",
+    "sourceCodes": [
+      "T04"
+    ],
+    "raw": {
+      "code": "T04",
+      "subjects": "Toán, Lý, Năng khiếu TDTT"
+    }
+  },
+  {
+    "id": "v06-87-1",
+    "stt": 87,
+    "code": "V06",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Toán, Địa lí, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "V06"
+    ],
+    "raw": {
+      "code": "V06",
+      "subjects": "Toán, Địa lí, Vẽ mỹ thuật"
+    }
+  },
+  {
+    "id": "c13-88-1",
+    "stt": 88,
+    "code": "C13",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Địa lí"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "geography"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Địa lí",
+    "sourceCodes": [
+      "C13"
+    ],
+    "raw": {
+      "code": "C13",
+      "subjects": "Ngữ văn, Sinh học, Địa lí"
+    }
+  },
+  {
+    "id": "s00-89-1",
+    "stt": 89,
+    "code": "S00",
+    "subjects": [
+      "Ngữ văn",
+      "Năng khiếu SKĐA 1",
+      "Năng khiếu SKĐA 2"
+    ],
+    "subjectIds": [
+      "literature",
+      "nang-khieu-skda-1",
+      "nang-khieu-skda-2"
+    ],
+    "subjectText": "Ngữ văn, Năng khiếu SKĐA 1, Năng khiếu SKĐA 2",
+    "sourceCodes": [
+      "S00"
+    ],
+    "raw": {
+      "code": "S00",
+      "subjects": "Ngữ văn, Năng khiếu SKĐA 1, Năng khiếu SKĐA 2"
+    }
+  },
+  {
+    "id": "d20-90-1",
+    "stt": 90,
+    "code": "D20",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Địa lí, Tiếng Trung",
+    "sourceCodes": [
+      "D20"
+    ],
+    "raw": {
+      "code": "D20",
+      "subjects": "Toán, Địa lí, Tiếng Trung"
+    }
+  },
+  {
+    "id": "d32-91-1",
+    "stt": 91,
+    "code": "D32",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Sinh học, Tiếng Nga",
+    "sourceCodes": [
+      "D32"
+    ],
+    "raw": {
+      "code": "D32",
+      "subjects": "Toán, Sinh học, Tiếng Nga"
+    }
+  },
+  {
+    "id": "d33-92-1",
+    "stt": 92,
+    "code": "D33",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Sinh học, Tiếng Nhật",
+    "sourceCodes": [
+      "D33"
+    ],
+    "raw": {
+      "code": "D33",
+      "subjects": "Toán, Sinh học, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "d34-93-1",
+    "stt": 93,
+    "code": "D34",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Sinh học, Tiếng Pháp",
+    "sourceCodes": [
+      "D34"
+    ],
+    "raw": {
+      "code": "D34",
+      "subjects": "Toán, Sinh học, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "d42-94-1",
+    "stt": 94,
+    "code": "D42",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Tiếng Nga",
+    "sourceCodes": [
+      "D42"
+    ],
+    "raw": {
+      "code": "D42",
+      "subjects": "Ngữ văn, Địa lí, Tiếng Nga"
+    }
+  },
+  {
+    "id": "h07-95-1",
+    "stt": 95,
+    "code": "H07",
+    "subjects": [
+      "Toán",
+      "Hình họa",
+      "Trang trí"
+    ],
+    "subjectIds": [
+      "math",
+      "hinh-hoa",
+      "trang-tri"
+    ],
+    "subjectText": "Toán, Hình họa, Trang trí",
+    "sourceCodes": [
+      "H07"
+    ],
+    "raw": {
+      "code": "H07",
+      "subjects": "Toán, Hình họa, Trang trí"
+    }
+  },
+  {
+    "id": "m10-96-1",
+    "stt": 96,
+    "code": "M10",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "NK1"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "nk1"
+    ],
+    "subjectText": "Toán, Tiếng Anh, NK1",
+    "sourceCodes": [
+      "M10"
+    ],
+    "raw": {
+      "code": "M10",
+      "subjects": "Toán, Tiếng Anh, NK1"
+    }
+  },
+  {
+    "id": "m11-97-1",
+    "stt": 97,
+    "code": "M11",
+    "subjects": [
+      "Ngữ văn",
+      "Năng khiếu báo chí",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "literature",
+      "nang-khieu-bao-chi",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Năng khiếu báo chí, Tiếng Anh",
+    "sourceCodes": [
+      "M11"
+    ],
+    "raw": {
+      "code": "M11",
+      "subjects": "Ngữ văn, Năng khiếu báo chí, Tiếng Anh"
+    }
+  },
+  {
+    "id": "n05-98-1",
+    "stt": 98,
+    "code": "N05",
+    "subjects": [
+      "Ngữ văn",
+      "Xây dựng kịch bản sự kiện",
+      "Năng khiếu"
+    ],
+    "subjectIds": [
+      "literature",
+      "xay-dung-kich-ban-su-kien",
+      "nang-khieu"
+    ],
+    "subjectText": "Ngữ văn, Xây dựng kịch bản sự kiện, Năng khiếu",
+    "sourceCodes": [
+      "N05"
+    ],
+    "raw": {
+      "code": "N05",
+      "subjects": "Ngữ văn, Xây dựng kịch bản sự kiện, Năng khiếu"
+    }
+  },
+  {
+    "id": "v05-99-1",
+    "stt": 99,
+    "code": "V05",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "V05"
+    ],
+    "raw": {
+      "code": "V05",
+      "subjects": "Văn, Vật lí, Vẽ mỹ thuật"
+    }
+  },
+  {
+    "id": "v07-100-1",
+    "stt": 100,
+    "code": "V07",
+    "subjects": [
+      "Toán",
+      "Tiếng Đức",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Toán, Tiếng Đức, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "V07"
+    ],
+    "raw": {
+      "code": "V07",
+      "subjects": "Toán, Tiếng Đức, Vẽ mỹ thuật"
+    }
+  },
+  {
+    "id": "v10-101-1",
+    "stt": 101,
+    "code": "V10",
+    "subjects": [
+      "Toán",
+      "Tiếng Pháp",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Toán, Tiếng Pháp, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "V10"
+    ],
+    "raw": {
+      "code": "V10",
+      "subjects": "Toán, Tiếng Pháp, Vẽ mỹ thuật"
+    }
+  },
+  {
+    "id": "d16-102-1",
+    "stt": 102,
+    "code": "D16",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Địa lí, Tiếng Đức",
+    "sourceCodes": [
+      "D16"
+    ],
+    "raw": {
+      "code": "D16",
+      "subjects": "Toán, Địa lí, Tiếng Đức"
+    }
+  },
+  {
+    "id": "d31-103-1",
+    "stt": 103,
+    "code": "D31",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Sinh học, Tiếng Đức",
+    "sourceCodes": [
+      "D31"
+    ],
+    "raw": {
+      "code": "D31",
+      "subjects": "Toán, Sinh học, Tiếng Đức"
+    }
+  },
+  {
+    "id": "d35-104-1",
+    "stt": 104,
+    "code": "D35",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Sinh học, Tiếng Trung",
+    "sourceCodes": [
+      "D35"
+    ],
+    "raw": {
+      "code": "D35",
+      "subjects": "Toán, Sinh học, Tiếng Trung"
+    }
+  },
+  {
+    "id": "d43-105-1",
+    "stt": 105,
+    "code": "D43",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Tiếng Nhật",
+    "sourceCodes": [
+      "D43"
+    ],
+    "raw": {
+      "code": "D43",
+      "subjects": "Ngữ văn, Địa lí, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "d55-106-1",
+    "stt": 106,
+    "code": "D55",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Tiếng Trung",
+    "sourceCodes": [
+      "D55"
+    ],
+    "raw": {
+      "code": "D55",
+      "subjects": "Ngữ văn, Vật lí, Tiếng Trung"
+    }
+  },
+  {
+    "id": "d65-107-1",
+    "stt": 107,
+    "code": "D65",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Tiếng Trung",
+    "sourceCodes": [
+      "D65"
+    ],
+    "raw": {
+      "code": "D65",
+      "subjects": "Ngữ văn, Lịch sử, Tiếng Trung"
+    }
+  },
+  {
+    "id": "d68-108-1",
+    "stt": 108,
+    "code": "D68",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Tiếng Nga",
+    "sourceCodes": [
+      "D68"
+    ],
+    "raw": {
+      "code": "D68",
+      "subjects": "Ngữ văn, GDKTPL, Tiếng Nga"
+    }
+  },
+  {
+    "id": "d70-109-1",
+    "stt": 109,
+    "code": "D70",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Tiếng Pháp",
+    "sourceCodes": [
+      "D70"
+    ],
+    "raw": {
+      "code": "D70",
+      "subjects": "Ngữ văn, GDKTPL, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "d71-110-1",
+    "stt": 110,
+    "code": "D71",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Tiếng Trung",
+    "sourceCodes": [
+      "D71"
+    ],
+    "raw": {
+      "code": "D71",
+      "subjects": "Ngữ văn, GDKTPL, Tiếng Trung"
+    }
+  },
+  {
+    "id": "m04-111-1",
+    "stt": 111,
+    "code": "M04",
+    "subjects": [
+      "Toán",
+      "Đọc kể diễn cảm",
+      "Hát - Múa"
+    ],
+    "subjectIds": [
+      "math",
+      "doc-ke-dien-cam",
+      "hat-mua"
+    ],
+    "subjectText": "Toán, Đọc kể diễn cảm, Hát - Múa",
+    "sourceCodes": [
+      "M04"
+    ],
+    "raw": {
+      "code": "M04",
+      "subjects": "Toán, Đọc kể diễn cảm, Hát - Múa"
+    }
+  },
+  {
+    "id": "m14-112-1",
+    "stt": 112,
+    "code": "M14",
+    "subjects": [
+      "Ngữ văn",
+      "Năng khiếu báo chí",
+      "Toán"
+    ],
+    "subjectIds": [
+      "literature",
+      "nang-khieu-bao-chi",
+      "math"
+    ],
+    "subjectText": "Ngữ văn, Năng khiếu báo chí, Toán",
+    "sourceCodes": [
+      "M14"
+    ],
+    "raw": {
+      "code": "M14",
+      "subjects": "Ngữ văn, Năng khiếu báo chí, Toán"
+    }
+  },
+  {
+    "id": "n02-113-1",
+    "stt": 113,
+    "code": "N02",
+    "subjects": [
+      "Ngữ văn",
+      "Ký xướng âm",
+      "Hát hoặc biểu diễn nhạc cụ"
+    ],
+    "subjectIds": [
+      "literature",
+      "ky-xuong-am",
+      "hat-hoac-bieu-dien-nhac-cu"
+    ],
+    "subjectText": "Ngữ văn, Ký xướng âm, Hát hoặc biểu diễn nhạc cụ",
+    "sourceCodes": [
+      "N02"
+    ],
+    "raw": {
+      "code": "N02",
+      "subjects": "Ngữ văn, Ký xướng âm, Hát hoặc biểu diễn nhạc cụ"
+    }
+  },
+  {
+    "id": "v08-114-1",
+    "stt": 114,
+    "code": "V08",
+    "subjects": [
+      "Toán",
+      "Tiếng Nga",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Toán, Tiếng Nga, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "V08"
+    ],
+    "raw": {
+      "code": "V08",
+      "subjects": "Toán, Tiếng Nga, Vẽ mỹ thuật"
+    }
+  },
+  {
+    "id": "v09-115-1",
+    "stt": 115,
+    "code": "V09",
+    "subjects": [
+      "Toán",
+      "Tiếng Nhật",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Toán, Tiếng Nhật, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "V09"
+    ],
+    "raw": {
+      "code": "V09",
+      "subjects": "Toán, Tiếng Nhật, Vẽ mỹ thuật"
+    }
+  },
+  {
+    "id": "v11-116-1",
+    "stt": 116,
+    "code": "V11",
+    "subjects": [
+      "Toán",
+      "Tiếng Trung",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Toán, Tiếng Trung, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "V11"
+    ],
+    "raw": {
+      "code": "V11",
+      "subjects": "Toán, Tiếng Trung, Vẽ mỹ thuật"
+    }
+  },
+  {
+    "id": "b01-117-1",
+    "stt": 117,
+    "code": "B01",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Sinh học"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "biology"
+    ],
+    "subjectText": "Toán, Lịch sử, Sinh học",
+    "sourceCodes": [
+      "B01"
+    ],
+    "raw": {
+      "code": "B01",
+      "subjects": "Toán, Lịch sử, Sinh học"
+    }
+  },
+  {
+    "id": "c06-118-1",
+    "stt": 118,
+    "code": "C06",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Sinh học"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "biology"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Sinh học",
+    "sourceCodes": [
+      "C06"
+    ],
+    "raw": {
+      "code": "C06",
+      "subjects": "Ngữ văn, Vật lí, Sinh học"
+    }
+  },
+  {
+    "id": "c07-119-1",
+    "stt": 119,
+    "code": "C07",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Vật lí"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "physics"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Vật lí",
+    "sourceCodes": [
+      "C07"
+    ],
+    "raw": {
+      "code": "C07",
+      "subjects": "Ngữ văn, Lịch sử, Vật lí"
+    }
+  },
+  {
+    "id": "x23-120-1",
+    "stt": 120,
+    "code": "X23",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Địa lí, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X23"
+    ],
+    "raw": {
+      "code": "X23",
+      "subjects": "Toán, Địa lí, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "c09-121-1",
+    "stt": 121,
+    "code": "C09",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Vật lí"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "physics"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Vật lí",
+    "sourceCodes": [
+      "C09"
+    ],
+    "raw": {
+      "code": "C09",
+      "subjects": "Ngữ văn, Địa lí, Vật lí"
+    }
+  },
+  {
+    "id": "x24-122-1",
+    "stt": 122,
+    "code": "X24",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Địa lí, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X24"
+    ],
+    "raw": {
+      "code": "X24",
+      "subjects": "Toán, Địa lí, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "c10-123-1",
+    "stt": 123,
+    "code": "C10",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Hóa học"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "chemistry"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Hóa học",
+    "sourceCodes": [
+      "C10"
+    ],
+    "raw": {
+      "code": "C10",
+      "subjects": "Ngữ văn, Lịch sử, Hóa học"
+    }
+  },
+  {
+    "id": "c11-124-1",
+    "stt": 124,
+    "code": "C11",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Hóa học"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "chemistry"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Hóa học",
+    "sourceCodes": [
+      "C11"
+    ],
+    "raw": {
+      "code": "C11",
+      "subjects": "Ngữ văn, Địa lí, Hóa học"
+    }
+  },
+  {
+    "id": "c12-125-1",
+    "stt": 125,
+    "code": "C12",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Sinh học"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "biology"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Sinh học",
+    "sourceCodes": [
+      "C12"
+    ],
+    "raw": {
+      "code": "C12",
+      "subjects": "Ngữ văn, Lịch sử, Sinh học"
+    }
+  },
+  {
+    "id": "x58-126-1",
+    "stt": 126,
+    "code": "X58",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "civicEducation"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, GDKTPL",
+    "sourceCodes": [
+      "X58"
+    ],
+    "raw": {
+      "code": "X58",
+      "subjects": "Ngữ văn, Vật lí, GDKTPL"
+    }
+  },
+  {
+    "id": "d54-127-1",
+    "stt": 127,
+    "code": "D54",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Tiếng Pháp",
+    "sourceCodes": [
+      "D54"
+    ],
+    "raw": {
+      "code": "D54",
+      "subjects": "Ngữ văn, Vật lí, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "d61-128-1",
+    "stt": 128,
+    "code": "D61",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Tiếng Đức",
+    "sourceCodes": [
+      "D61"
+    ],
+    "raw": {
+      "code": "D61",
+      "subjects": "Ngữ văn, Lịch sử, Tiếng Đức"
+    }
+  },
+  {
+    "id": "d62-129-1",
+    "stt": 129,
+    "code": "D62",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Tiếng Nga",
+    "sourceCodes": [
+      "D62"
+    ],
+    "raw": {
+      "code": "D62",
+      "subjects": "Ngữ văn, Lịch sử, Tiếng Nga"
+    }
+  },
+  {
+    "id": "x94-130-1",
+    "stt": 130,
+    "code": "X94",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Tiếng Đức",
+    "sourceCodes": [
+      "X94"
+    ],
+    "raw": {
+      "code": "X94",
+      "subjects": "Ngữ văn, GDKTPL, Tiếng Đức"
+    }
+  },
+  {
+    "id": "x98-131-1",
+    "stt": 131,
+    "code": "X98",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Tiếng Nhật",
+    "sourceCodes": [
+      "X98"
+    ],
+    "raw": {
+      "code": "X98",
+      "subjects": "Văn, GDKTPL, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "x41-132-1",
+    "stt": 132,
+    "code": "X41",
+    "subjects": [
+      "Toán",
+      "GDKTPL",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "math",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, GDKTPL, Tiếng Đức",
+    "sourceCodes": [
+      "X41"
+    ],
+    "raw": {
+      "code": "X41",
+      "subjects": "Toán, GDKTPL, Tiếng Đức"
+    }
+  },
+  {
+    "id": "x29-133-1",
+    "stt": 133,
+    "code": "X29",
+    "subjects": [
+      "Toán",
+      "GDKTPL",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "math",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, GDKTPL, Tiếng Nga",
+    "sourceCodes": [
+      "X29"
+    ],
+    "raw": {
+      "code": "X29",
+      "subjects": "Toán, GDKTPL, Tiếng Nga"
+    }
+  },
+  {
+    "id": "n03-134-1",
+    "stt": 134,
+    "code": "N03",
+    "subjects": [
+      "Ngữ văn",
+      "Tiếng Anh",
+      "Năng khiếu Âm nhạc"
+    ],
+    "subjectIds": [
+      "literature",
+      "foreignLanguage",
+      "nang-khieu-am-nhac"
+    ],
+    "subjectText": "Ngữ văn, Tiếng Anh, Năng khiếu Âm nhạc",
+    "sourceCodes": [
+      "N03"
+    ],
+    "raw": {
+      "code": "N03",
+      "subjects": "Ngữ văn, Tiếng Anh, Năng khiếu âm nhạc"
+    }
+  },
+  {
+    "id": "n04-135-1",
+    "stt": 135,
+    "code": "N04",
+    "subjects": [
+      "Ngữ văn",
+      "Năng khiếu thuyết trình",
+      "Năng khiếu"
+    ],
+    "subjectIds": [
+      "literature",
+      "nang-khieu-thuyet-trinh",
+      "nang-khieu"
+    ],
+    "subjectText": "Ngữ văn, Năng khiếu thuyết trình, Năng khiếu",
+    "sourceCodes": [
+      "N04"
+    ],
+    "raw": {
+      "code": "N04",
+      "subjects": "Ngữ văn, Năng khiếu thuyết trình, Năng khiếu"
+    }
+  },
+  {
+    "id": "r00-136-1",
+    "stt": 136,
+    "code": "R00",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Năng khiếu báo chí"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "nang-khieu-bao-chi"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Năng khiếu báo chí",
+    "sourceCodes": [
+      "R00"
+    ],
+    "raw": {
+      "code": "R00",
+      "subjects": "Ngữ văn, Lịch sử, Năng khiếu báo chí"
+    }
+  },
+  {
+    "id": "r01-137-1",
+    "stt": 137,
+    "code": "R01",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Năng khiếu nghệ thuật"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "nang-khieu-nghe-thuat"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Năng khiếu nghệ thuật",
+    "sourceCodes": [
+      "R01"
+    ],
+    "raw": {
+      "code": "R01",
+      "subjects": "Ngữ văn, Địa lý, Năng khiếu nghệ thuật"
+    }
+  },
+  {
+    "id": "r02-138-1",
+    "stt": 138,
+    "code": "R02",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "Năng khiếu nghệ thuật"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "nang-khieu-nghe-thuat"
+    ],
+    "subjectText": "Ngữ văn, Toán, Năng khiếu nghệ thuật",
+    "sourceCodes": [
+      "R02"
+    ],
+    "raw": {
+      "code": "R02",
+      "subjects": "Ngữ văn, Toán, Năng khiếu nghệ thuật"
+    }
+  },
+  {
+    "id": "r03-139-1",
+    "stt": 139,
+    "code": "R03",
+    "subjects": [
+      "Ngữ văn",
+      "Tiếng Anh",
+      "Năng khiếu nghệ thuật"
+    ],
+    "subjectIds": [
+      "literature",
+      "foreignLanguage",
+      "nang-khieu-nghe-thuat"
+    ],
+    "subjectText": "Ngữ văn, Tiếng Anh, Năng khiếu nghệ thuật",
+    "sourceCodes": [
+      "R03"
+    ],
+    "raw": {
+      "code": "R03",
+      "subjects": "Ngữ văn, Tiếng Anh, Năng khiếu nghệ thuật"
+    }
+  },
+  {
+    "id": "x62-140-1",
+    "stt": 140,
+    "code": "X62",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "civicEducation"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, GDKTPL",
+    "sourceCodes": [
+      "X62"
+    ],
+    "raw": {
+      "code": "X62",
+      "subjects": "Ngữ văn, Hóa học, GDKTPL"
+    }
+  },
+  {
+    "id": "k00-141-1",
+    "stt": 141,
+    "code": "K00",
+    "subjects": [
+      "Toán",
+      "Đọc hiểu",
+      "Tư duy Khoa học Giải quyết vấn đề"
+    ],
+    "subjectIds": [
+      "math",
+      "doc-hieu",
+      "tu-duy-khoa-hoc-giai-quyet-van-de"
+    ],
+    "subjectText": "Toán, Đọc hiểu, Tư duy Khoa học Giải quyết vấn đề",
+    "sourceCodes": [
+      "K00"
+    ],
+    "raw": {
+      "code": "K00",
+      "subjects": "Toán, Đọc hiểu, Tư duy Khoa học Giải quyết vấn đề"
+    }
+  },
+  {
+    "id": "x02-142-1",
+    "stt": 142,
+    "code": "X02",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "informatics"
+    ],
+    "subjectText": "Toán, Ngữ văn, Tin học",
+    "sourceCodes": [
+      "X02",
+      "K21",
+      "TH6",
+      "DK",
+      "F01",
+      "TH3"
+    ],
+    "raw": {
+      "code": "X02, K21, TH6, DK, F01, TH3",
+      "subjects": "Toán, Ngữ văn, Tin học"
+    }
+  },
+  {
+    "id": "k21-142-2",
+    "stt": 142,
+    "code": "K21",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "informatics"
+    ],
+    "subjectText": "Toán, Ngữ văn, Tin học",
+    "sourceCodes": [
+      "X02",
+      "K21",
+      "TH6",
+      "DK",
+      "F01",
+      "TH3"
+    ],
+    "raw": {
+      "code": "X02, K21, TH6, DK, F01, TH3",
+      "subjects": "Toán, Ngữ văn, Tin học"
+    }
+  },
+  {
+    "id": "th6-142-3",
+    "stt": 142,
+    "code": "TH6",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "informatics"
+    ],
+    "subjectText": "Toán, Ngữ văn, Tin học",
+    "sourceCodes": [
+      "X02",
+      "K21",
+      "TH6",
+      "DK",
+      "F01",
+      "TH3"
+    ],
+    "raw": {
+      "code": "X02, K21, TH6, DK, F01, TH3",
+      "subjects": "Toán, Ngữ văn, Tin học"
+    }
+  },
+  {
+    "id": "dk-142-4",
+    "stt": 142,
+    "code": "DK",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "informatics"
+    ],
+    "subjectText": "Toán, Ngữ văn, Tin học",
+    "sourceCodes": [
+      "X02",
+      "K21",
+      "TH6",
+      "DK",
+      "F01",
+      "TH3"
+    ],
+    "raw": {
+      "code": "X02, K21, TH6, DK, F01, TH3",
+      "subjects": "Toán, Ngữ văn, Tin học"
+    }
+  },
+  {
+    "id": "f01-142-5",
+    "stt": 142,
+    "code": "F01",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "informatics"
+    ],
+    "subjectText": "Toán, Ngữ văn, Tin học",
+    "sourceCodes": [
+      "X02",
+      "K21",
+      "TH6",
+      "DK",
+      "F01",
+      "TH3"
+    ],
+    "raw": {
+      "code": "X02, K21, TH6, DK, F01, TH3",
+      "subjects": "Toán, Ngữ văn, Tin học"
+    }
+  },
+  {
+    "id": "th3-142-6",
+    "stt": 142,
+    "code": "TH3",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "informatics"
+    ],
+    "subjectText": "Toán, Ngữ văn, Tin học",
+    "sourceCodes": [
+      "X02",
+      "K21",
+      "TH6",
+      "DK",
+      "F01",
+      "TH3"
+    ],
+    "raw": {
+      "code": "X02, K21, TH6, DK, F01, TH3",
+      "subjects": "Toán, Ngữ văn, Tin học"
+    }
+  },
+  {
+    "id": "x06-143-1",
+    "stt": 143,
+    "code": "X06",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "informatics"
+    ],
+    "subjectText": "Toán, Vật lí, Tin học",
+    "sourceCodes": [
+      "X06",
+      "A0T",
+      "GT1",
+      "TH1"
+    ],
+    "raw": {
+      "code": "X06, A0T, GT1, TH1",
+      "subjects": "Toán, Vật lí, Tin học"
+    }
+  },
+  {
+    "id": "a0t-143-2",
+    "stt": 143,
+    "code": "A0T",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "informatics"
+    ],
+    "subjectText": "Toán, Vật lí, Tin học",
+    "sourceCodes": [
+      "X06",
+      "A0T",
+      "GT1",
+      "TH1"
+    ],
+    "raw": {
+      "code": "X06, A0T, GT1, TH1",
+      "subjects": "Toán, Vật lí, Tin học"
+    }
+  },
+  {
+    "id": "gt1-143-3",
+    "stt": 143,
+    "code": "GT1",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "informatics"
+    ],
+    "subjectText": "Toán, Vật lí, Tin học",
+    "sourceCodes": [
+      "X06",
+      "A0T",
+      "GT1",
+      "TH1"
+    ],
+    "raw": {
+      "code": "X06, A0T, GT1, TH1",
+      "subjects": "Toán, Vật lí, Tin học"
+    }
+  },
+  {
+    "id": "th1-143-4",
+    "stt": 143,
+    "code": "TH1",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "informatics"
+    ],
+    "subjectText": "Toán, Vật lí, Tin học",
+    "sourceCodes": [
+      "X06",
+      "A0T",
+      "GT1",
+      "TH1"
+    ],
+    "raw": {
+      "code": "X06, A0T, GT1, TH1",
+      "subjects": "Toán, Vật lí, Tin học"
+    }
+  },
+  {
+    "id": "x08-144-1",
+    "stt": 144,
+    "code": "X08",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Vật lí, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X08"
+    ],
+    "raw": {
+      "code": "X08",
+      "subjects": "Toán, Vật lí, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "x07-145-1",
+    "stt": 145,
+    "code": "X07",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Vật lí, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X07",
+      "A0C",
+      "TH3",
+      "TH4"
+    ],
+    "raw": {
+      "code": "X07, A0C, TH3, TH4",
+      "subjects": "Toán, Vật lí, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "a0c-145-2",
+    "stt": 145,
+    "code": "A0C",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Vật lí, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X07",
+      "A0C",
+      "TH3",
+      "TH4"
+    ],
+    "raw": {
+      "code": "X07, A0C, TH3, TH4",
+      "subjects": "Toán, Vật lí, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "th3-145-3",
+    "stt": 145,
+    "code": "TH3",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Vật lí, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X07",
+      "A0C",
+      "TH3",
+      "TH4"
+    ],
+    "raw": {
+      "code": "X07, A0C, TH3, TH4",
+      "subjects": "Toán, Vật lí, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "th4-145-4",
+    "stt": 145,
+    "code": "TH4",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Vật lí, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X07",
+      "A0C",
+      "TH3",
+      "TH4"
+    ],
+    "raw": {
+      "code": "X07, A0C, TH3, TH4",
+      "subjects": "Toán, Vật lí, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "x11-146-1",
+    "stt": 146,
+    "code": "X11",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Hóa học, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X11",
+      "B0C",
+      "TH5"
+    ],
+    "raw": {
+      "code": "X11, B0C, TH5",
+      "subjects": "Toán, Hóa học, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "b0c-146-2",
+    "stt": 146,
+    "code": "B0C",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Hóa học, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X11",
+      "B0C",
+      "TH5"
+    ],
+    "raw": {
+      "code": "X11, B0C, TH5",
+      "subjects": "Toán, Hóa học, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "th5-146-3",
+    "stt": 146,
+    "code": "TH5",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Hóa học, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X11",
+      "B0C",
+      "TH5"
+    ],
+    "raw": {
+      "code": "X11, B0C, TH5",
+      "subjects": "Toán, Hóa học, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "x28-147-1",
+    "stt": 147,
+    "code": "X28",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X28",
+      "K20",
+      "D0C"
+    ],
+    "raw": {
+      "code": "X28, K20, D0C",
+      "subjects": "Toán, Tiếng Anh, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "k20-147-2",
+    "stt": 147,
+    "code": "K20",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X28",
+      "K20",
+      "D0C"
+    ],
+    "raw": {
+      "code": "X28, K20, D0C",
+      "subjects": "Toán, Tiếng Anh, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "d0c-147-3",
+    "stt": 147,
+    "code": "D0C",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X28",
+      "K20",
+      "D0C"
+    ],
+    "raw": {
+      "code": "X28, K20, D0C",
+      "subjects": "Toán, Tiếng Anh, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "x27-148-1",
+    "stt": 148,
+    "code": "X27",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X27",
+      "D0C",
+      "K20",
+      "TH5",
+      "TH7"
+    ],
+    "raw": {
+      "code": "X27, D0C, K20, TH5, TH7",
+      "subjects": "Toán, Tiếng Anh, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "d0c-148-2",
+    "stt": 148,
+    "code": "D0C",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X27",
+      "D0C",
+      "K20",
+      "TH5",
+      "TH7"
+    ],
+    "raw": {
+      "code": "X27, D0C, K20, TH5, TH7",
+      "subjects": "Toán, Tiếng Anh, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "k20-148-3",
+    "stt": 148,
+    "code": "K20",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X27",
+      "D0C",
+      "K20",
+      "TH5",
+      "TH7"
+    ],
+    "raw": {
+      "code": "X27, D0C, K20, TH5, TH7",
+      "subjects": "Toán, Tiếng Anh, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "th5-148-4",
+    "stt": 148,
+    "code": "TH5",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X27",
+      "D0C",
+      "K20",
+      "TH5",
+      "TH7"
+    ],
+    "raw": {
+      "code": "X27, D0C, K20, TH5, TH7",
+      "subjects": "Toán, Tiếng Anh, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "th7-148-5",
+    "stt": 148,
+    "code": "TH7",
+    "subjects": [
+      "Toán",
+      "Tiếng Anh",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Tiếng Anh, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X27",
+      "D0C",
+      "K20",
+      "TH5",
+      "TH7"
+    ],
+    "raw": {
+      "code": "X27, D0C, K20, TH5, TH7",
+      "subjects": "Toán, Tiếng Anh, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "x12-149-1",
+    "stt": 149,
+    "code": "X12",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Hóa học, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X12"
+    ],
+    "raw": {
+      "code": "X12",
+      "subjects": "Toán, Hóa học, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "x15-150-1",
+    "stt": 150,
+    "code": "X15",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Sinh học, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X15"
+    ],
+    "raw": {
+      "code": "X15",
+      "subjects": "Toán, Sinh học, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "x14-151-1",
+    "stt": 151,
+    "code": "X14",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "informatics"
+    ],
+    "subjectText": "Toán, Sinh học, Tin học",
+    "sourceCodes": [
+      "X14"
+    ],
+    "raw": {
+      "code": "X14",
+      "subjects": "Toán, Sinh học, Tin học"
+    }
+  },
+  {
+    "id": "x16-152-1",
+    "stt": 152,
+    "code": "X16",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Sinh học, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X16"
+    ],
+    "raw": {
+      "code": "X16",
+      "subjects": "Toán, Sinh học, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "d18-153-1",
+    "stt": 153,
+    "code": "D18",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Địa lí, Tiếng Nhật",
+    "sourceCodes": [
+      "D18"
+    ],
+    "raw": {
+      "code": "D18",
+      "subjects": "Toán, Địa lí, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "d39-154-1",
+    "stt": 154,
+    "code": "D39",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Lịch sử, Tiếng Pháp",
+    "sourceCodes": [
+      "D39"
+    ],
+    "raw": {
+      "code": "D39",
+      "subjects": "Toán, Lịch sử, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "x10-155-1",
+    "stt": 155,
+    "code": "X10",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Tin"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "tin"
+    ],
+    "subjectText": "Toán, Hóa học, Tin",
+    "sourceCodes": [
+      "X10",
+      "TH4"
+    ],
+    "raw": {
+      "code": "X10, TH4",
+      "subjects": "Toán, Hóa, Tin"
+    }
+  },
+  {
+    "id": "th4-155-2",
+    "stt": 155,
+    "code": "TH4",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Tin"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "tin"
+    ],
+    "subjectText": "Toán, Hóa học, Tin",
+    "sourceCodes": [
+      "X10",
+      "TH4"
+    ],
+    "raw": {
+      "code": "X10, TH4",
+      "subjects": "Toán, Hóa, Tin"
+    }
+  },
+  {
+    "id": "ngu-van-vat-li-tieng-han-156-1",
+    "stt": 156,
+    "code": "(Ngữ văn, Vật lí, Tiếng Hàn)",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Tiếng Hàn",
+    "sourceCodes": [
+      "(Ngữ văn, Vật lí, Tiếng Hàn)"
+    ],
+    "raw": {
+      "code": "(Ngữ văn, Vật lí, Tiếng Hàn)",
+      "subjects": "Ngữ văn, Vật lí, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "x75-157-1",
+    "stt": 157,
+    "code": "X75",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "informatics"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Tin học",
+    "sourceCodes": [
+      "X75"
+    ],
+    "raw": {
+      "code": "X75",
+      "subjects": "Ngữ văn, Địa lí, Tin học"
+    }
+  },
+  {
+    "id": "x46-158-1",
+    "stt": 158,
+    "code": "X46",
+    "subjects": [
+      "Toán",
+      "Tiếng Nhật",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "informatics"
+    ],
+    "subjectText": "Toán, Tiếng Nhật, Tin học",
+    "sourceCodes": [
+      "X46"
+    ],
+    "raw": {
+      "code": "X46",
+      "subjects": "Toán, Tiếng Nhật, Tin học"
+    }
+  },
+  {
+    "id": "x22-159-1",
+    "stt": 159,
+    "code": "X22",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "informatics"
+    ],
+    "subjectText": "Toán, Địa lí, Tin học",
+    "sourceCodes": [
+      "X22"
+    ],
+    "raw": {
+      "code": "X22",
+      "subjects": "Toán, Địa lí, Tin học"
+    }
+  },
+  {
+    "id": "d19-160-1",
+    "stt": 160,
+    "code": "D19",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Địa lí, Tiếng Pháp",
+    "sourceCodes": [
+      "D19"
+    ],
+    "raw": {
+      "code": "D19",
+      "subjects": "Toán, Địa lí, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "d41-161-1",
+    "stt": 161,
+    "code": "D41",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Tiếng Đức",
+    "sourceCodes": [
+      "D41"
+    ],
+    "raw": {
+      "code": "D41",
+      "subjects": "Ngữ văn, Địa lí, Tiếng Đức"
+    }
+  },
+  {
+    "id": "d50-162-1",
+    "stt": 162,
+    "code": "D50",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, Tiếng Trung",
+    "sourceCodes": [
+      "D50"
+    ],
+    "raw": {
+      "code": "D50",
+      "subjects": "Ngữ văn, Hóa học, Tiếng Trung"
+    }
+  },
+  {
+    "id": "x03-163-1",
+    "stt": 163,
+    "code": "X03",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Ngữ văn, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X03",
+      "TH8",
+      "K22",
+      "E01"
+    ],
+    "raw": {
+      "code": "X03, TH8, K22, E01",
+      "subjects": "Toán, Ngữ văn, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "th8-163-2",
+    "stt": 163,
+    "code": "TH8",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Ngữ văn, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X03",
+      "TH8",
+      "K22",
+      "E01"
+    ],
+    "raw": {
+      "code": "X03, TH8, K22, E01",
+      "subjects": "Toán, Ngữ văn, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "k22-163-3",
+    "stt": 163,
+    "code": "K22",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Ngữ văn, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X03",
+      "TH8",
+      "K22",
+      "E01"
+    ],
+    "raw": {
+      "code": "X03, TH8, K22, E01",
+      "subjects": "Toán, Ngữ văn, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "e01-163-4",
+    "stt": 163,
+    "code": "E01",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Ngữ văn, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X03",
+      "TH8",
+      "K22",
+      "E01"
+    ],
+    "raw": {
+      "code": "X03, TH8, K22, E01",
+      "subjects": "Toán, Ngữ văn, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "d73-164-1",
+    "stt": 164,
+    "code": "D73",
+    "subjects": [
+      "Ngữ văn",
+      "Khoa học tự nhiên",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "literature",
+      "naturalScience",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Khoa học tự nhiên, Tiếng Đức",
+    "sourceCodes": [
+      "D73"
+    ],
+    "raw": {
+      "code": "D73",
+      "subjects": "Ngữ văn, Khoa học tự nhiên, Tiếng Đức"
+    }
+  },
+  {
+    "id": "x79-165-1",
+    "stt": 165,
+    "code": "X79",
+    "subjects": [
+      "Ngữ văn",
+      "Tiếng Anh",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "literature",
+      "foreignLanguage",
+      "informatics"
+    ],
+    "subjectText": "Ngữ văn, Tiếng Anh, Tin học",
+    "sourceCodes": [
+      "X79",
+      "TH9"
+    ],
+    "raw": {
+      "code": "X79, TH9",
+      "subjects": "Ngữ văn, Tiếng Anh, Tin học"
+    }
+  },
+  {
+    "id": "th9-165-2",
+    "stt": 165,
+    "code": "TH9",
+    "subjects": [
+      "Ngữ văn",
+      "Tiếng Anh",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "literature",
+      "foreignLanguage",
+      "informatics"
+    ],
+    "subjectText": "Ngữ văn, Tiếng Anh, Tin học",
+    "sourceCodes": [
+      "X79",
+      "TH9"
+    ],
+    "raw": {
+      "code": "X79, TH9",
+      "subjects": "Ngữ văn, Tiếng Anh, Tin học"
+    }
+  },
+  {
+    "id": "k01-166-1",
+    "stt": 166,
+    "code": "K01",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Lý/Hóa/Sinh/Tin"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "ly-hoa-sinh-tin"
+    ],
+    "subjectText": "Toán, Ngữ văn, Lý/Hóa/Sinh/Tin",
+    "sourceCodes": [
+      "K01"
+    ],
+    "raw": {
+      "code": "K01",
+      "subjects": "Toán, Văn, Lý/Hóa/Sinh/Tin"
+    }
+  },
+  {
+    "id": "x04-167-1",
+    "stt": 167,
+    "code": "X04",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Ngữ văn, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X04",
+      "TH8",
+      "K22",
+      "E01"
+    ],
+    "raw": {
+      "code": "X04, TH8, K22, E01",
+      "subjects": "Toán, Ngữ văn, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "th8-167-2",
+    "stt": 167,
+    "code": "TH8",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Ngữ văn, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X04",
+      "TH8",
+      "K22",
+      "E01"
+    ],
+    "raw": {
+      "code": "X04, TH8, K22, E01",
+      "subjects": "Toán, Ngữ văn, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "k22-167-3",
+    "stt": 167,
+    "code": "K22",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Ngữ văn, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X04",
+      "TH8",
+      "K22",
+      "E01"
+    ],
+    "raw": {
+      "code": "X04, TH8, K22, E01",
+      "subjects": "Toán, Ngữ văn, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "e01-167-4",
+    "stt": 167,
+    "code": "E01",
+    "subjects": [
+      "Toán",
+      "Ngữ văn",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "literature",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Ngữ văn, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X04",
+      "TH8",
+      "K22",
+      "E01"
+    ],
+    "raw": {
+      "code": "X04, TH8, K22, E01",
+      "subjects": "Toán, Ngữ văn, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "x71-168-1",
+    "stt": 168,
+    "code": "X71",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "informatics"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Tin học",
+    "sourceCodes": [
+      "X71",
+      "TH11"
+    ],
+    "raw": {
+      "code": "X71, TH11",
+      "subjects": "Ngữ văn, Lịch sử, Tin học"
+    }
+  },
+  {
+    "id": "th11-168-2",
+    "stt": 168,
+    "code": "TH11",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "informatics"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Tin học",
+    "sourceCodes": [
+      "X71",
+      "TH11"
+    ],
+    "raw": {
+      "code": "X71, TH11",
+      "subjects": "Ngữ văn, Lịch sử, Tin học"
+    }
+  },
+  {
+    "id": "q00-169-1",
+    "stt": 169,
+    "code": "Q00",
+    "subjects": [
+      "Tư duy định lượng",
+      "Tư duy định tính",
+      "Khoa học/Tiếng Anh"
+    ],
+    "subjectIds": [
+      "tu-duy-dinh-luong",
+      "tu-duy-dinh-tinh",
+      "khoa-hoc-tieng-anh"
+    ],
+    "subjectText": "Tư duy định lượng, Tư duy định tính, Khoa học/Tiếng Anh",
+    "sourceCodes": [
+      "Q00"
+    ],
+    "raw": {
+      "code": "Q00",
+      "subjects": "Tư duy định lượng, Tư duy định tính, Khoa học/Tiếng Anh"
+    }
+  },
+  {
+    "id": "d96-170-1",
+    "stt": 170,
+    "code": "D96",
+    "subjects": [
+      "Toán",
+      "Khoa học xã hội",
+      "Tiếng Anh"
+    ],
+    "subjectIds": [
+      "math",
+      "socialScience",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Khoa học xã hội, Tiếng Anh",
+    "sourceCodes": [
+      "D96"
+    ],
+    "raw": {
+      "code": "D96",
+      "subjects": "Toán, Khoa học xã hội, Tiếng Anh"
+    }
+  },
+  {
+    "id": "x53-171-1",
+    "stt": 171,
+    "code": "X53",
+    "subjects": [
+      "Toán",
+      "GDKTPL",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "civicEducation",
+      "informatics"
+    ],
+    "subjectText": "Toán, GDKTPL, Tin học",
+    "sourceCodes": [
+      "X53"
+    ],
+    "raw": {
+      "code": "X53",
+      "subjects": "Toán, GDKTPL, Tin học"
+    }
+  },
+  {
+    "id": "ah3-172-1",
+    "stt": 172,
+    "code": "AH3",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Vật lí, Tiếng Hàn",
+    "sourceCodes": [
+      "AH3"
+    ],
+    "raw": {
+      "code": "AH3",
+      "subjects": "Toán, Vật lí, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "dd2-173-1",
+    "stt": 173,
+    "code": "DD2",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Toán, Tiếng Hàn",
+    "sourceCodes": [
+      "DD2"
+    ],
+    "raw": {
+      "code": "DD2",
+      "subjects": "Ngữ văn, Toán, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "ah2-174-1",
+    "stt": 174,
+    "code": "AH2",
+    "subjects": [
+      "Toán",
+      "Hóa học",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "math",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Hóa học, Tiếng Hàn",
+    "sourceCodes": [
+      "AH2"
+    ],
+    "raw": {
+      "code": "AH2",
+      "subjects": "Toán, Hóa học, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "ah5-175-1",
+    "stt": 175,
+    "code": "AH5",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Lịch sử, Tiếng Hàn",
+    "sourceCodes": [
+      "AH5"
+    ],
+    "raw": {
+      "code": "AH5",
+      "subjects": "Toán, Lịch sử, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "d36-176-1",
+    "stt": 176,
+    "code": "D36",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Lịch sử, Tiếng Đức",
+    "sourceCodes": [
+      "D36"
+    ],
+    "raw": {
+      "code": "D36",
+      "subjects": "Toán, Lịch sử, Tiếng Đức"
+    }
+  },
+  {
+    "id": "d37-177-1",
+    "stt": 177,
+    "code": "D37",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Lịch sử, Tiếng Nga",
+    "sourceCodes": [
+      "D37"
+    ],
+    "raw": {
+      "code": "D37",
+      "subjects": "Toán, Lịch sử, Tiếng Nga"
+    }
+  },
+  {
+    "id": "d38-178-1",
+    "stt": 178,
+    "code": "D38",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Lịch sử, Tiếng Nhật",
+    "sourceCodes": [
+      "D38"
+    ],
+    "raw": {
+      "code": "D38",
+      "subjects": "Toán, Lịch sử, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "d40-179-1",
+    "stt": 179,
+    "code": "D40",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Lịch sử, Tiếng Trung",
+    "sourceCodes": [
+      "D40"
+    ],
+    "raw": {
+      "code": "D40",
+      "subjects": "Toán, Lịch sử, Tiếng Trung"
+    }
+  },
+  {
+    "id": "v10-180-1",
+    "stt": 180,
+    "code": "V10",
+    "subjects": [
+      "Toán",
+      "Tiếng Pháp",
+      "Vẽ mỹ thuật"
+    ],
+    "subjectIds": [
+      "math",
+      "foreignLanguage",
+      "ve-my-thuat"
+    ],
+    "subjectText": "Toán, Tiếng Pháp, Vẽ mỹ thuật",
+    "sourceCodes": [
+      "V10"
+    ],
+    "raw": {
+      "code": "V10",
+      "subjects": "Toán, Tiếng Pháp, Vẽ mỹ thuật"
+    }
+  },
+  {
+    "id": "m08-181-1",
+    "stt": 181,
+    "code": "M08",
+    "subjects": [
+      "Ngữ văn",
+      "Năng khiếu 1",
+      "Năng khiếu 2"
+    ],
+    "subjectIds": [
+      "literature",
+      "nang-khieu-1",
+      "nang-khieu-2"
+    ],
+    "subjectText": "Ngữ văn, Năng khiếu 1, Năng khiếu 2",
+    "sourceCodes": [
+      "M08"
+    ],
+    "raw": {
+      "code": "M08",
+      "subjects": "Ngữ văn, Năng khiếu 1, Năng khiếu 2"
+    }
+  },
+  {
+    "id": "x86-182-1",
+    "stt": 182,
+    "code": "X86",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Tiếng Pháp",
+    "sourceCodes": [
+      "X86"
+    ],
+    "raw": {
+      "code": "X86",
+      "subjects": "Ngữ văn, GDKTPL, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "m05-183-1",
+    "stt": 183,
+    "code": "M05",
+    "subjects": [
+      "Ngữ văn",
+      "Khoa học xã hội",
+      "Năng khiếu"
+    ],
+    "subjectIds": [
+      "literature",
+      "socialScience",
+      "nang-khieu"
+    ],
+    "subjectText": "Ngữ văn, Khoa học xã hội, Năng khiếu",
+    "sourceCodes": [
+      "M05"
+    ],
+    "raw": {
+      "code": "M05",
+      "subjects": "Ngữ văn, Khoa học xã hội, Năng khiếu"
+    }
+  },
+  {
+    "id": "x45-184-1",
+    "stt": 184,
+    "code": "X45",
+    "subjects": [
+      "Toán",
+      "GDKTPL",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "math",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, GDKTPL, Tiếng Nhật",
+    "sourceCodes": [
+      "X45"
+    ],
+    "raw": {
+      "code": "X45",
+      "subjects": "Toán, GDKTPL, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "x33-185-1",
+    "stt": 185,
+    "code": "X33",
+    "subjects": [
+      "Toán",
+      "GDKTPL",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "math",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, GDKTPL, Tiếng Pháp",
+    "sourceCodes": [
+      "X33"
+    ],
+    "raw": {
+      "code": "X33",
+      "subjects": "Toán, GDKTPL, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "d48-186-1",
+    "stt": 186,
+    "code": "D48",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, Tiếng Nhật",
+    "sourceCodes": [
+      "D48"
+    ],
+    "raw": {
+      "code": "D48",
+      "subjects": "Ngữ văn, Hóa học, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "d49-187-1",
+    "stt": 187,
+    "code": "D49",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, Tiếng Pháp",
+    "sourceCodes": [
+      "D49"
+    ],
+    "raw": {
+      "code": "D49",
+      "subjects": "Ngữ văn, Hóa học, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "x36-188-1",
+    "stt": 188,
+    "code": "X36",
+    "subjects": [
+      "Toán",
+      "Công nghệ nông nghiệp",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "math",
+      "agriculturalTechnology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Công nghệ nông nghiệp, Tiếng Pháp",
+    "sourceCodes": [
+      "X36"
+    ],
+    "raw": {
+      "code": "X36",
+      "subjects": "Toán, Công nghệ nông nghiệp, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "x38-189-1",
+    "stt": 189,
+    "code": "X38",
+    "subjects": [
+      "Toán",
+      "Tin học",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "math",
+      "informatics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Tin học, Tiếng Trung",
+    "sourceCodes": [
+      "X38"
+    ],
+    "raw": {
+      "code": "X38",
+      "subjects": "Toán, Tin học, Tiếng Trung"
+    }
+  },
+  {
+    "id": "d51-190-1",
+    "stt": 190,
+    "code": "D51",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Tiếng Đức",
+    "sourceCodes": [
+      "D51"
+    ],
+    "raw": {
+      "code": "D51",
+      "subjects": "Ngữ văn, Vật lí, Tiếng Đức"
+    }
+  },
+  {
+    "id": "d52-191-1",
+    "stt": 191,
+    "code": "D52",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Tiếng Nga",
+    "sourceCodes": [
+      "D52"
+    ],
+    "raw": {
+      "code": "D52",
+      "subjects": "Ngữ văn, Vật lí, Tiếng Nga"
+    }
+  },
+  {
+    "id": "d53-192-1",
+    "stt": 192,
+    "code": "D53",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Tiếng Nhật",
+    "sourceCodes": [
+      "D53"
+    ],
+    "raw": {
+      "code": "D53",
+      "subjects": "Ngữ văn, Vật lí, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "x39-193-1",
+    "stt": 193,
+    "code": "X39",
+    "subjects": [
+      "Toán",
+      "Công nghệ công nghiệp",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "math",
+      "industrialTechnology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Công nghệ công nghiệp, Tiếng Trung",
+    "sourceCodes": [
+      "X39"
+    ],
+    "raw": {
+      "code": "X39",
+      "subjects": "Toán, Công nghệ công nghiệp, Tiếng Trung"
+    }
+  },
+  {
+    "id": "d56-194-1",
+    "stt": 194,
+    "code": "D56",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Tiếng Đức",
+    "sourceCodes": [
+      "D56"
+    ],
+    "raw": {
+      "code": "D56",
+      "subjects": "Ngữ văn, Sinh học, Tiếng Đức"
+    }
+  },
+  {
+    "id": "x40-195-1",
+    "stt": 195,
+    "code": "X40",
+    "subjects": [
+      "Toán",
+      "Công nghệ nông nghiệp",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "math",
+      "agriculturalTechnology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Công nghệ nông nghiệp, Tiếng Trung",
+    "sourceCodes": [
+      "X40"
+    ],
+    "raw": {
+      "code": "X40",
+      "subjects": "Toán, Công nghệ nông nghiệp, Tiếng Trung"
+    }
+  },
+  {
+    "id": "d57-196-1",
+    "stt": 196,
+    "code": "D57",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Tiếng Nga",
+    "sourceCodes": [
+      "D57"
+    ],
+    "raw": {
+      "code": "D57",
+      "subjects": "Ngữ văn, Sinh học, Tiếng Nga"
+    }
+  },
+  {
+    "id": "d58-197-1",
+    "stt": 197,
+    "code": "D58",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Tiếng Nhật",
+    "sourceCodes": [
+      "D58"
+    ],
+    "raw": {
+      "code": "D58",
+      "subjects": "Ngữ văn, Sinh học, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "d59-198-1",
+    "stt": 198,
+    "code": "D59",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Tiếng Pháp",
+    "sourceCodes": [
+      "D59"
+    ],
+    "raw": {
+      "code": "D59",
+      "subjects": "Ngữ văn, Sinh học, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "d60-199-1",
+    "stt": 199,
+    "code": "D60",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Tiếng Trung",
+    "sourceCodes": [
+      "D60"
+    ],
+    "raw": {
+      "code": "D60",
+      "subjects": "Ngữ văn, Sinh học, Tiếng Trung"
+    }
+  },
+  {
+    "id": "dh2-200-1",
+    "stt": 200,
+    "code": "DH2",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, Tiếng Hàn",
+    "sourceCodes": [
+      "DH2"
+    ],
+    "raw": {
+      "code": "DH2",
+      "subjects": "Ngữ văn, Hóa học, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "dh3-201-1",
+    "stt": 201,
+    "code": "DH3",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Tiếng Hàn",
+    "sourceCodes": [
+      "DH3"
+    ],
+    "raw": {
+      "code": "DH3",
+      "subjects": "Ngữ văn, Vật lí, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "dh4-202-1",
+    "stt": 202,
+    "code": "DH4",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Tiếng Hàn",
+    "sourceCodes": [
+      "DH4"
+    ],
+    "raw": {
+      "code": "DH4",
+      "subjects": "Ngữ văn, Sinh học, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "x30-203-1",
+    "stt": 203,
+    "code": "X30",
+    "subjects": [
+      "Toán",
+      "Tin học",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "math",
+      "informatics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Tin học, Tiếng Nga",
+    "sourceCodes": [
+      "X30"
+    ],
+    "raw": {
+      "code": "X30",
+      "subjects": "Toán, Tin học, Tiếng Nga"
+    }
+  },
+  {
+    "id": "x31-204-1",
+    "stt": 204,
+    "code": "X31",
+    "subjects": [
+      "Toán",
+      "Công nghệ công nghiệp",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "math",
+      "industrialTechnology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Công nghệ công nghiệp, Tiếng Nga",
+    "sourceCodes": [
+      "X31"
+    ],
+    "raw": {
+      "code": "X31",
+      "subjects": "Toán, Công nghệ công nghiệp, Tiếng Nga"
+    }
+  },
+  {
+    "id": "x37-205-1",
+    "stt": 205,
+    "code": "X37",
+    "subjects": [
+      "Toán",
+      "GDKTPL",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "math",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, GDKTPL, Tiếng Trung",
+    "sourceCodes": [
+      "X37",
+      "D89"
+    ],
+    "raw": {
+      "code": "X37, D89",
+      "subjects": "Toán, GDKTPL, Tiếng Trung"
+    }
+  },
+  {
+    "id": "d89-205-2",
+    "stt": 205,
+    "code": "D89",
+    "subjects": [
+      "Toán",
+      "GDKTPL",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "math",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, GDKTPL, Tiếng Trung",
+    "sourceCodes": [
+      "X37",
+      "D89"
+    ],
+    "raw": {
+      "code": "X37, D89",
+      "subjects": "Toán, GDKTPL, Tiếng Trung"
+    }
+  },
+  {
+    "id": "x42-206-1",
+    "stt": 206,
+    "code": "X42",
+    "subjects": [
+      "Toán",
+      "Tin học",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "math",
+      "informatics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Tin học, Tiếng Đức",
+    "sourceCodes": [
+      "X42"
+    ],
+    "raw": {
+      "code": "X42",
+      "subjects": "Toán, Tin học, Tiếng Đức"
+    }
+  },
+  {
+    "id": "x32-207-1",
+    "stt": 207,
+    "code": "X32",
+    "subjects": [
+      "Toán",
+      "Công nghệ nông nghiệp",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "math",
+      "agriculturalTechnology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Công nghệ nông nghiệp, Tiếng Nga",
+    "sourceCodes": [
+      "X32"
+    ],
+    "raw": {
+      "code": "X32",
+      "subjects": "Toán, Công nghệ nông nghiệp, Tiếng Nga"
+    }
+  },
+  {
+    "id": "x34-208-1",
+    "stt": 208,
+    "code": "X34",
+    "subjects": [
+      "Toán",
+      "Tin học",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "math",
+      "informatics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Tin học, Tiếng Pháp",
+    "sourceCodes": [
+      "X34"
+    ],
+    "raw": {
+      "code": "X34",
+      "subjects": "Toán, Tin học, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "x90-209-1",
+    "stt": 209,
+    "code": "X90",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Tiếng Trung"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Tiếng Trung",
+    "sourceCodes": [
+      "X90"
+    ],
+    "raw": {
+      "code": "X90",
+      "subjects": "Ngữ văn, GDKTPL, Tiếng Trung"
+    }
+  },
+  {
+    "id": "r04-210-1",
+    "stt": 210,
+    "code": "R04",
+    "subjects": [
+      "Ngữ văn",
+      "Biểu diễn nghệ thuật",
+      "Năng khiếu văn hóa nghệ thuật"
+    ],
+    "subjectIds": [
+      "literature",
+      "bieu-dien-nghe-thuat",
+      "nang-khieu-van-hoa-nghe-thuat"
+    ],
+    "subjectText": "Ngữ văn, Biểu diễn nghệ thuật, Năng khiếu văn hóa nghệ thuật",
+    "sourceCodes": [
+      "R04"
+    ],
+    "raw": {
+      "code": "R04",
+      "subjects": "Ngữ văn, Biểu diễn nghệ thuật, Năng khiếu văn hóa nghệ thuật"
+    }
+  },
+  {
+    "id": "m07-211-1",
+    "stt": 211,
+    "code": "M07",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Năng khiếu đọc diễn cảm và Hát"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "nang-khieu-doc-dien-cam-va-hat"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Năng khiếu đọc diễn cảm và Hát",
+    "sourceCodes": [
+      "M07"
+    ],
+    "raw": {
+      "code": "M07",
+      "subjects": "Ngữ văn, Địa lý, Năng khiếu đọc diễn cảm và Hát"
+    }
+  },
+  {
+    "id": "h09-212-1",
+    "stt": 212,
+    "code": "H09",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Năng khiếu"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "nang-khieu"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Năng khiếu",
+    "sourceCodes": [
+      "H09"
+    ],
+    "raw": {
+      "code": "H09",
+      "subjects": "Ngữ văn, Địa, Năng khiếu"
+    }
+  },
+  {
+    "id": "h10-213-1",
+    "stt": 213,
+    "code": "H10",
+    "subjects": [
+      "Ngữ văn",
+      "Ngoại ngữ",
+      "Năng khiếu"
+    ],
+    "subjectIds": [
+      "literature",
+      "foreignLanguage",
+      "nang-khieu"
+    ],
+    "subjectText": "Ngữ văn, Ngoại ngữ, Năng khiếu",
+    "sourceCodes": [
+      "H10",
+      "H11",
+      "H06"
+    ],
+    "raw": {
+      "code": "H10, H11, H06",
+      "subjects": "Ngữ văn, Ngoại ngữ, Năng khiếu"
+    }
+  },
+  {
+    "id": "h11-213-2",
+    "stt": 213,
+    "code": "H11",
+    "subjects": [
+      "Ngữ văn",
+      "Ngoại ngữ",
+      "Năng khiếu"
+    ],
+    "subjectIds": [
+      "literature",
+      "foreignLanguage",
+      "nang-khieu"
+    ],
+    "subjectText": "Ngữ văn, Ngoại ngữ, Năng khiếu",
+    "sourceCodes": [
+      "H10",
+      "H11",
+      "H06"
+    ],
+    "raw": {
+      "code": "H10, H11, H06",
+      "subjects": "Ngữ văn, Ngoại ngữ, Năng khiếu"
+    }
+  },
+  {
+    "id": "h06-213-3",
+    "stt": 213,
+    "code": "H06",
+    "subjects": [
+      "Ngữ văn",
+      "Ngoại ngữ",
+      "Năng khiếu"
+    ],
+    "subjectIds": [
+      "literature",
+      "foreignLanguage",
+      "nang-khieu"
+    ],
+    "subjectText": "Ngữ văn, Ngoại ngữ, Năng khiếu",
+    "sourceCodes": [
+      "H10",
+      "H11",
+      "H06"
+    ],
+    "raw": {
+      "code": "H10, H11, H06",
+      "subjects": "Ngữ văn, Ngoại ngữ, Năng khiếu"
+    }
+  },
+  {
+    "id": "t10-214-1",
+    "stt": 214,
+    "code": "T10",
+    "subjects": [
+      "Toán",
+      "Vật lí",
+      "Năng khiếu Thể dục thể thao"
+    ],
+    "subjectIds": [
+      "math",
+      "physics",
+      "nang-khieu-the-duc-the-thao"
+    ],
+    "subjectText": "Toán, Vật lí, Năng khiếu Thể dục thể thao",
+    "sourceCodes": [
+      "T10"
+    ],
+    "raw": {
+      "code": "T10",
+      "subjects": "Toán, Vật lý, Năng khiếu Thể dục Thể thao"
+    }
+  },
+  {
+    "id": "x35-215-1",
+    "stt": 215,
+    "code": "X35",
+    "subjects": [
+      "Toán",
+      "Công nghệ công nghiệp",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "math",
+      "industrialTechnology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Công nghệ công nghiệp, Tiếng Pháp",
+    "sourceCodes": [
+      "X35"
+    ],
+    "raw": {
+      "code": "X35",
+      "subjects": "Toán, Công nghệ công nghiệp, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "x49-216-1",
+    "stt": 216,
+    "code": "X49",
+    "subjects": [
+      "Toán",
+      "GDKTPL",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "math",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, GDKTPL, Tiếng Hàn",
+    "sourceCodes": [
+      "X49"
+    ],
+    "raw": {
+      "code": "X49",
+      "subjects": "Toán, GDKTPL, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "x50-217-1",
+    "stt": 217,
+    "code": "X50",
+    "subjects": [
+      "Toán",
+      "Tin học",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "math",
+      "informatics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Tin học, Tiếng Hàn",
+    "sourceCodes": [
+      "X50"
+    ],
+    "raw": {
+      "code": "X50",
+      "subjects": "Toán, Tin học, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "x83-218-1",
+    "stt": 218,
+    "code": "X83",
+    "subjects": [
+      "Ngữ văn",
+      "Tin học",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "literature",
+      "informatics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Tin học, Tiếng Nga",
+    "sourceCodes": [
+      "X83"
+    ],
+    "raw": {
+      "code": "X83",
+      "subjects": "Ngữ văn, Tin học, Tiếng Nga"
+    }
+  },
+  {
+    "id": "t06-219-1",
+    "stt": 219,
+    "code": "T06",
+    "subjects": [
+      "Toán",
+      "Địa lí",
+      "Năng khiếu Thể dục thể thao"
+    ],
+    "subjectIds": [
+      "math",
+      "geography",
+      "nang-khieu-the-duc-the-thao"
+    ],
+    "subjectText": "Toán, Địa lí, Năng khiếu Thể dục thể thao",
+    "sourceCodes": [
+      "T06"
+    ],
+    "raw": {
+      "code": "T06",
+      "subjects": "Toán, Địa lý, Năng khiếu Thể dục thể thao"
+    }
+  },
+  {
+    "id": "t07-220-1",
+    "stt": 220,
+    "code": "T07",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Năng khiếu Thể dục thể thao"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "nang-khieu-the-duc-the-thao"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Năng khiếu Thể dục thể thao",
+    "sourceCodes": [
+      "T07"
+    ],
+    "raw": {
+      "code": "T07",
+      "subjects": "Ngữ văn, Địa lý, Năng khiếu Thể dục Thể thao"
+    }
+  },
+  {
+    "id": "x82-221-1",
+    "stt": 221,
+    "code": "X82",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Tiếng Nga",
+    "sourceCodes": [
+      "X82"
+    ],
+    "raw": {
+      "code": "X82",
+      "subjects": "Ngữ văn, GDKTPL, Tiếng Nga"
+    }
+  },
+  {
+    "id": "t08-222-1",
+    "stt": 222,
+    "code": "T08",
+    "subjects": [
+      "Toán",
+      "GDKTPL",
+      "Năng khiếu Thể dục thể thao"
+    ],
+    "subjectIds": [
+      "math",
+      "civicEducation",
+      "nang-khieu-the-duc-the-thao"
+    ],
+    "subjectText": "Toán, GDKTPL, Năng khiếu Thể dục thể thao",
+    "sourceCodes": [
+      "T08"
+    ],
+    "raw": {
+      "code": "T08",
+      "subjects": "Toán, GDKTPL, Năng khiếu Thể dục thể thao"
+    }
+  },
+  {
+    "id": "x84-223-1",
+    "stt": 223,
+    "code": "X84",
+    "subjects": [
+      "Ngữ văn",
+      "Công nghệ công nghiệp",
+      "Tiếng Nga"
+    ],
+    "subjectIds": [
+      "literature",
+      "industrialTechnology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Công nghệ công nghiệp, Tiếng Nga",
+    "sourceCodes": [
+      "X84"
+    ],
+    "raw": {
+      "code": "X84",
+      "subjects": "Ngữ văn, Công nghệ công nghiệp, Tiếng Nga"
+    }
+  },
+  {
+    "id": "x87-224-1",
+    "stt": 224,
+    "code": "X87",
+    "subjects": [
+      "Ngữ văn",
+      "Tin học",
+      "Tiếng Pháp"
+    ],
+    "subjectIds": [
+      "literature",
+      "informatics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Tin học, Tiếng Pháp",
+    "sourceCodes": [
+      "X87"
+    ],
+    "raw": {
+      "code": "X87",
+      "subjects": "Ngữ văn, Tin học, Tiếng Pháp"
+    }
+  },
+  {
+    "id": "t09-225-1",
+    "stt": 225,
+    "code": "T09",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Năng khiếu Thể dục thể thao"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "nang-khieu-the-duc-the-thao"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Năng khiếu Thể dục thể thao",
+    "sourceCodes": [
+      "T09"
+    ],
+    "raw": {
+      "code": "T09",
+      "subjects": "Ngữ văn, Lịch sử, Năng khiếu thể dục thể thao"
+    }
+  },
+  {
+    "id": "m06-226-1",
+    "stt": 226,
+    "code": "M06",
+    "subjects": [
+      "Ngữ văn",
+      "Toán",
+      "Năng khiếu Giáo dục mầm non"
+    ],
+    "subjectIds": [
+      "literature",
+      "math",
+      "nang-khieu-giao-duc-mam-non"
+    ],
+    "subjectText": "Ngữ văn, Toán, Năng khiếu Giáo dục mầm non",
+    "sourceCodes": [
+      "M06"
+    ],
+    "raw": {
+      "code": "M06",
+      "subjects": "Ngữ văn, Toán, Năng khiếu Giáo dục mầm non"
+    }
+  },
+  {
+    "id": "x54-227-1",
+    "stt": 227,
+    "code": "X54",
+    "subjects": [
+      "Toán",
+      "GDKTPL",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "civicEducation",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, GDKTPL, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X54"
+    ],
+    "raw": {
+      "code": "X54",
+      "subjects": "Toán, GDKTPL, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "x66-228-1",
+    "stt": 228,
+    "code": "X66",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "GDKTPL"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "civicEducation"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, GDKTPL",
+    "sourceCodes": [
+      "X66"
+    ],
+    "raw": {
+      "code": "X66",
+      "subjects": "Ngữ văn, Sinh học, GDKT&PL"
+    }
+  },
+  {
+    "id": "x55-229-1",
+    "stt": 229,
+    "code": "X55",
+    "subjects": [
+      "Toán",
+      "GDKTPL",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "civicEducation",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, GDKTPL, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X55"
+    ],
+    "raw": {
+      "code": "X55",
+      "subjects": "Toán, GDKTPL, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "x56-230-1",
+    "stt": 230,
+    "code": "X56",
+    "subjects": [
+      "Toán",
+      "Tin học",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "informatics",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Tin học, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X56"
+    ],
+    "raw": {
+      "code": "X56",
+      "subjects": "Toán, Tin học, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "x95-231-1",
+    "stt": 231,
+    "code": "X95",
+    "subjects": [
+      "Ngữ văn",
+      "Tin học",
+      "Tiếng Đức"
+    ],
+    "subjectIds": [
+      "literature",
+      "informatics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Tin học, Tiếng Đức",
+    "sourceCodes": [
+      "X95"
+    ],
+    "raw": {
+      "code": "X95",
+      "subjects": "Ngữ văn, Tin học, Tiếng Đức"
+    }
+  },
+  {
+    "id": "x57-232-1",
+    "stt": 232,
+    "code": "X57",
+    "subjects": [
+      "Toán",
+      "Tin học",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "informatics",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Tin học, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X57"
+    ],
+    "raw": {
+      "code": "X57",
+      "subjects": "Toán, Tin học, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "x19-233-1",
+    "stt": 233,
+    "code": "X19",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "industrialTechnology"
+    ],
+    "subjectText": "Toán, Lịch sử, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X19"
+    ],
+    "raw": {
+      "code": "X19",
+      "subjects": "Toán, Lịch sử, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "x20-234-1",
+    "stt": 234,
+    "code": "X20",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Toán, Lịch sử, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X20"
+    ],
+    "raw": {
+      "code": "X20",
+      "subjects": "Toán, Lịch sử, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "x18-235-1",
+    "stt": 235,
+    "code": "X18",
+    "subjects": [
+      "Toán",
+      "Lịch sử",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "math",
+      "history",
+      "informatics"
+    ],
+    "subjectText": "Toán, Lịch sử, Tin học",
+    "sourceCodes": [
+      "X18"
+    ],
+    "raw": {
+      "code": "X18",
+      "subjects": "Toán, Lịch sử, Tin học"
+    }
+  },
+  {
+    "id": "x99-236-1",
+    "stt": 236,
+    "code": "X99",
+    "subjects": [
+      "Ngữ văn",
+      "Tin học",
+      "Tiếng Nhật"
+    ],
+    "subjectIds": [
+      "literature",
+      "informatics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Tin học, Tiếng Nhật",
+    "sourceCodes": [
+      "X99"
+    ],
+    "raw": {
+      "code": "X99",
+      "subjects": "Ngữ văn, Tin học, Tiếng Nhật"
+    }
+  },
+  {
+    "id": "x76-237-1",
+    "stt": 237,
+    "code": "X76",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "industrialTechnology"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X76"
+    ],
+    "raw": {
+      "code": "X76",
+      "subjects": "Ngữ văn, Địa lí, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "y08-238-1",
+    "stt": 238,
+    "code": "Y08",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "industrialTechnology"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "Y08"
+    ],
+    "raw": {
+      "code": "Y08",
+      "subjects": "Ngữ văn, GDKTPL, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "x77-239-1",
+    "stt": 239,
+    "code": "X77",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X77"
+    ],
+    "raw": {
+      "code": "X77",
+      "subjects": "Ngữ văn, Địa lí, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "y09-240-1",
+    "stt": 240,
+    "code": "Y09",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "Y09"
+    ],
+    "raw": {
+      "code": "Y09",
+      "subjects": "Ngữ văn, GDKTPL, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "y07-241-1",
+    "stt": 241,
+    "code": "Y07",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "informatics"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Tin học",
+    "sourceCodes": [
+      "Y07"
+    ],
+    "raw": {
+      "code": "Y07",
+      "subjects": "Ngữ văn, GDKTPL, Tin học"
+    }
+  },
+  {
+    "id": "y03-242-1",
+    "stt": 242,
+    "code": "Y03",
+    "subjects": [
+      "Ngữ văn",
+      "GDKTPL",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "literature",
+      "civicEducation",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, GDKTPL, Tiếng Hàn",
+    "sourceCodes": [
+      "Y03"
+    ],
+    "raw": {
+      "code": "Y03",
+      "subjects": "Ngữ văn, GDKTPL, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "x64-243-1",
+    "stt": 243,
+    "code": "X64",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "industrialTechnology"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X64"
+    ],
+    "raw": {
+      "code": "X64",
+      "subjects": "Ngữ văn, Hóa học, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "y04-244-1",
+    "stt": 244,
+    "code": "Y04",
+    "subjects": [
+      "Ngữ văn",
+      "Tin học",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "literature",
+      "informatics",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Tin học, Tiếng Hàn",
+    "sourceCodes": [
+      "Y04"
+    ],
+    "raw": {
+      "code": "Y04",
+      "subjects": "Ngữ văn, Tin học, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "x65-245-1",
+    "stt": 245,
+    "code": "X65",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X65"
+    ],
+    "raw": {
+      "code": "X65",
+      "subjects": "Ngữ văn, Hóa học, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "x63-246-1",
+    "stt": 246,
+    "code": "X63",
+    "subjects": [
+      "Ngữ văn",
+      "Hóa học",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "literature",
+      "chemistry",
+      "informatics"
+    ],
+    "subjectText": "Ngữ văn, Hóa học, Tin học",
+    "sourceCodes": [
+      "X63"
+    ],
+    "raw": {
+      "code": "X63",
+      "subjects": "Ngữ văn, Hóa học, Tin học"
+    }
+  },
+  {
+    "id": "x72-247-1",
+    "stt": 247,
+    "code": "X72",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "industrialTechnology"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X72"
+    ],
+    "raw": {
+      "code": "X72",
+      "subjects": "Ngữ văn, Lịch sử, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "x73-248-1",
+    "stt": 248,
+    "code": "X73",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X73"
+    ],
+    "raw": {
+      "code": "X73",
+      "subjects": "Ngữ văn, Lịch sử, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "x68-249-1",
+    "stt": 249,
+    "code": "X68",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "industrialTechnology"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X68"
+    ],
+    "raw": {
+      "code": "X68",
+      "subjects": "Ngữ văn, Sinh học, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "x69-250-1",
+    "stt": 250,
+    "code": "X69",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X69"
+    ],
+    "raw": {
+      "code": "X69",
+      "subjects": "Ngữ văn, Sinh học, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "x67-251-1",
+    "stt": 251,
+    "code": "X67",
+    "subjects": [
+      "Ngữ văn",
+      "Sinh học",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "literature",
+      "biology",
+      "informatics"
+    ],
+    "subjectText": "Ngữ văn, Sinh học, Tin học",
+    "sourceCodes": [
+      "X67"
+    ],
+    "raw": {
+      "code": "X67",
+      "subjects": "Ngữ văn, Sinh học, Tin học"
+    }
+  },
+  {
+    "id": "x80-252-1",
+    "stt": 252,
+    "code": "X80",
+    "subjects": [
+      "Ngữ văn",
+      "Tiếng Anh",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "foreignLanguage",
+      "industrialTechnology"
+    ],
+    "subjectText": "Ngữ văn, Tiếng Anh, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X80"
+    ],
+    "raw": {
+      "code": "X80",
+      "subjects": "Ngữ văn, Tiếng Anh, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "x81-253-1",
+    "stt": 253,
+    "code": "X81",
+    "subjects": [
+      "Ngữ văn",
+      "Tiếng Anh",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "foreignLanguage",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Ngữ văn, Tiếng Anh, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X81"
+    ],
+    "raw": {
+      "code": "X81",
+      "subjects": "Ngữ văn, Tiếng Anh, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "y10-254-1",
+    "stt": 254,
+    "code": "Y10",
+    "subjects": [
+      "Ngữ văn",
+      "Tin học",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "informatics",
+      "industrialTechnology"
+    ],
+    "subjectText": "Ngữ văn, Tin học, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "Y10"
+    ],
+    "raw": {
+      "code": "Y10",
+      "subjects": "Ngữ văn, Tin học, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "y11-255-1",
+    "stt": 255,
+    "code": "Y11",
+    "subjects": [
+      "Ngữ văn",
+      "Tin học",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "informatics",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Ngữ văn, Tin học, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "Y11"
+    ],
+    "raw": {
+      "code": "Y11",
+      "subjects": "Ngữ văn, Tin học, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "x60-256-1",
+    "stt": 256,
+    "code": "X60",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Công nghệ công nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "industrialTechnology"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Công nghệ công nghiệp",
+    "sourceCodes": [
+      "X60"
+    ],
+    "raw": {
+      "code": "X60",
+      "subjects": "Ngữ văn, Vật lí, Công nghệ công nghiệp"
+    }
+  },
+  {
+    "id": "dh1-257-1",
+    "stt": 257,
+    "code": "DH1",
+    "subjects": [
+      "Ngữ văn",
+      "Địa lí",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "literature",
+      "geography",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Địa lí, Tiếng Hàn",
+    "sourceCodes": [
+      "DH1"
+    ],
+    "raw": {
+      "code": "DH1",
+      "subjects": "Ngữ văn, Địa lí, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "x61-258-1",
+    "stt": 258,
+    "code": "X61",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Công nghệ nông nghiệp"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "agriculturalTechnology"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Công nghệ nông nghiệp",
+    "sourceCodes": [
+      "X61"
+    ],
+    "raw": {
+      "code": "X61",
+      "subjects": "Ngữ văn, Vật lí, Công nghệ nông nghiệp"
+    }
+  },
+  {
+    "id": "dh5-259-1",
+    "stt": 259,
+    "code": "DH5",
+    "subjects": [
+      "Ngữ văn",
+      "Lịch sử",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "literature",
+      "history",
+      "foreignLanguage"
+    ],
+    "subjectText": "Ngữ văn, Lịch sử, Tiếng Hàn",
+    "sourceCodes": [
+      "DH5"
+    ],
+    "raw": {
+      "code": "DH5",
+      "subjects": "Ngữ văn, Lịch sử, Tiếng Hàn"
+    }
+  },
+  {
+    "id": "x59-260-1",
+    "stt": 260,
+    "code": "X59",
+    "subjects": [
+      "Ngữ văn",
+      "Vật lí",
+      "Tin học"
+    ],
+    "subjectIds": [
+      "literature",
+      "physics",
+      "informatics"
+    ],
+    "subjectText": "Ngữ văn, Vật lí, Tin học",
+    "sourceCodes": [
+      "X59"
+    ],
+    "raw": {
+      "code": "X59",
+      "subjects": "Ngữ văn, Vật lí, Tin học"
+    }
+  },
+  {
+    "id": "ah4-261-1",
+    "stt": 261,
+    "code": "AH4",
+    "subjects": [
+      "Toán",
+      "Sinh học",
+      "Tiếng Hàn"
+    ],
+    "subjectIds": [
+      "math",
+      "biology",
+      "foreignLanguage"
+    ],
+    "subjectText": "Toán, Sinh học, Tiếng Hàn",
+    "sourceCodes": [
+      "AH4"
+    ],
+    "raw": {
+      "code": "AH4",
+      "subjects": "Toán, Sinh học, Tiếng Hàn"
+    }
+  }
+]

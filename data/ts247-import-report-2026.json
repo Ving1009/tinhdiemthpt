@@ -1,0 +1,300 @@
+{
+  "capturedAt": "2026-09-10T01:03:29.279Z",
+  "listedPages": 300,
+  "linkedReferencePages": 287,
+  "pagesWith2026Data": 72,
+  "matchedUniversitiesWith2026Data": 72,
+  "importedReferenceRows": 5648,
+  "retainedOfficialRows": 95,
+  "totalMajorsAfterImport": 13399,
+  "perUniversity": [
+    {
+      "universityId": "truong-dai-hoc-kinh-te-quoc-dan",
+      "rows": 728
+    },
+    {
+      "universityId": "truong-dai-hoc-phenikaa",
+      "rows": 510
+    },
+    {
+      "universityId": "dai-hoc-bach-khoa-ha-noi",
+      "rows": 284
+    },
+    {
+      "universityId": "truong-dai-hoc-ngoai-thuong",
+      "rows": 262
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghe-tp-hcm",
+      "rows": 256
+    },
+    {
+      "universityId": "hoc-vien-hang-khong-viet-nam",
+      "rows": 246
+    },
+    {
+      "universityId": "truong-dai-hoc-tai-nguyen-va-moi-truong-tp-hcm",
+      "rows": 217
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-te-ky-thuat-cong-nghiep",
+      "rows": 196
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghe-giao-thong-van-tai",
+      "rows": 191
+    },
+    {
+      "universityId": "hoc-vien-phu-nu-viet-nam",
+      "rows": 184
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-thuong-tp-hcm",
+      "rows": 176
+    },
+    {
+      "universityId": "truong-dai-hoc-giao-thong-van-tai",
+      "rows": 175
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghiep-ha-noi",
+      "rows": 165
+    },
+    {
+      "universityId": "truong-dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-dhqg-tp-hcm",
+      "rows": 162
+    },
+    {
+      "universityId": "hoc-vien-ngan-hang",
+      "rows": 157
+    },
+    {
+      "universityId": "truong-dai-hoc-bach-khoa-dai-hoc-da-nang",
+      "rows": 133
+    },
+    {
+      "universityId": "truong-dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-dhqg-ha-noi",
+      "rows": 87
+    },
+    {
+      "universityId": "truong-dai-hoc-khoa-hoc-tu-nhien-dhqg-ha-noi",
+      "rows": 84
+    },
+    {
+      "universityId": "truong-dai-hoc-tai-chinh-marketing",
+      "rows": 83
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghe-dhqg-ha-noi",
+      "rows": 80
+    },
+    {
+      "universityId": "truong-dai-hoc-bach-khoa-dhqg-tp-hcm",
+      "rows": 73
+    },
+    {
+      "universityId": "hoc-vien-tai-chinh",
+      "rows": 69
+    },
+    {
+      "universityId": "truong-dai-hoc-giao-thong-van-tai-tp-hcm",
+      "rows": 64
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghiep-tp-hcm",
+      "rows": 62
+    },
+    {
+      "universityId": "truong-dai-hoc-thu-do-ha-noi",
+      "rows": 58
+    },
+    {
+      "universityId": "truong-dai-hoc-ha-noi",
+      "rows": 58
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-te-dai-hoc-da-nang",
+      "rows": 55
+    },
+    {
+      "universityId": "truong-dai-hoc-ngoai-ngu-dhqg-ha-noi",
+      "rows": 48
+    },
+    {
+      "universityId": "truong-dai-hoc-viet-nhat-dhqg-ha-noi",
+      "rows": 44
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghe-thong-tin-va-truyen-thong-viet-han",
+      "rows": 44
+    },
+    {
+      "universityId": "truong-dai-hoc-an-giang-dhqg-hcm",
+      "rows": 43
+    },
+    {
+      "universityId": "truong-dai-hoc-giao-duc-dhqg-ha-noi",
+      "rows": 42
+    },
+    {
+      "universityId": "khoa-quoc-te-dhqg-ha-noi",
+      "rows": 42
+    },
+    {
+      "universityId": "truong-dai-hoc-khoa-hoc-tu-nhien-dhqg-tphcm",
+      "rows": 39
+    },
+    {
+      "universityId": "truong-dai-hoc-cong-nghe-thong-tin-dh-quoc-gia-tp-hcm",
+      "rows": 38
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-te-luat-dh-quoc-gia-tp-hcm",
+      "rows": 38
+    },
+    {
+      "universityId": "truong-dai-hoc-quoc-te-dh-quoc-gia-tp-hcm",
+      "rows": 38
+    },
+    {
+      "universityId": "truong-dai-hoc-y-ha-noi",
+      "rows": 35
+    },
+    {
+      "universityId": "truong-dai-hoc-quang-trung",
+      "rows": 33
+    },
+    {
+      "universityId": "hoc-vien-hai-quan",
+      "rows": 32
+    },
+    {
+      "universityId": "hoc-vien-ky-thuat-quan-su",
+      "rows": 31
+    },
+    {
+      "universityId": "truong-khoa-hoc-lien-nganh-va-nghe-thuat-dhqg-ha-noi",
+      "rows": 30
+    },
+    {
+      "universityId": "truong-dai-hoc-ky-thuat-y-te-hai-duong",
+      "rows": 25
+    },
+    {
+      "universityId": "truong-dai-hoc-su-pham-ky-thuat-dai-hoc-da-nang",
+      "rows": 25
+    },
+    {
+      "universityId": "truong-dai-hoc-ngoai-ngu-dai-hoc-da-nang",
+      "rows": 24
+    },
+    {
+      "universityId": "truong-dai-hoc-su-pham-dh-thai-nguyen",
+      "rows": 21
+    },
+    {
+      "universityId": "hoc-vien-ky-thuat-mat-ma",
+      "rows": 20
+    },
+    {
+      "universityId": "hoc-vien-phong-khong-khong-quan",
+      "rows": 20
+    },
+    {
+      "universityId": "truong-si-quan-thong-tin",
+      "rows": 20
+    },
+    {
+      "universityId": "truong-quan-tri-va-kinh-doanh-dhqg-ha-noi",
+      "rows": 19
+    },
+    {
+      "universityId": "truong-dai-hoc-kinh-te-dhqg-ha-noi",
+      "rows": 18
+    },
+    {
+      "universityId": "truong-dai-hoc-y-duoc-dhqg-ha-noi",
+      "rows": 18
+    },
+    {
+      "universityId": "truong-dai-hoc-duoc-ha-noi",
+      "rows": 17
+    },
+    {
+      "universityId": "hoc-vien-an-ninh-nhan-dan",
+      "rows": 16
+    },
+    {
+      "universityId": "phan-hieu-dai-hoc-da-nang-tai-kon-tum",
+      "rows": 16
+    },
+    {
+      "universityId": "truong-dai-hoc-y-duoc-hai-phong",
+      "rows": 14
+    },
+    {
+      "universityId": "truong-dai-hoc-y-duoc-thai-binh",
+      "rows": 12
+    },
+    {
+      "universityId": "khoa-y-duoc-dai-hoc-da-nang",
+      "rows": 11
+    },
+    {
+      "universityId": "truong-si-quan-luc-quan-1",
+      "rows": 10
+    },
+    {
+      "universityId": "khoa-luat-dhqg-ha-noi",
+      "rows": 9
+    },
+    {
+      "universityId": "hoc-vien-quan-ly-giao-duc",
+      "rows": 7
+    },
+    {
+      "universityId": "hoc-vien-chinh-tri-cong-an-nhan-dan",
+      "rows": 5
+    },
+    {
+      "universityId": "khoa-y-dh-quoc-gia-tp-hcm",
+      "rows": 5
+    },
+    {
+      "universityId": "hoc-vien-canh-sat-nhan-dan",
+      "rows": 4
+    },
+    {
+      "universityId": "truong-dai-hoc-canh-sat-nhan-dan",
+      "rows": 4
+    },
+    {
+      "universityId": "truong-dai-hoc-ky-thuat-hau-can-cong-an-nhan-dan-phia-bac",
+      "rows": 4
+    },
+    {
+      "universityId": "hoc-vien-y-duoc-hoc-co-truyen-viet-nam",
+      "rows": 3
+    },
+    {
+      "universityId": "truong-dai-hoc-the-duc-the-thao-da-nang",
+      "rows": 3
+    },
+    {
+      "universityId": "truong-dai-hoc-an-ninh-nhan-dan",
+      "rows": 2
+    },
+    {
+      "universityId": "truong-si-quan-cong-binh",
+      "rows": 2
+    },
+    {
+      "universityId": "truong-dai-hoc-phong-chay-chua-chay-phia-nam",
+      "rows": 2
+    },
+    {
+      "universityId": "truong-dai-hoc-phong-chay-chua-chay-phia-bac",
+      "rows": 2
+    }
+  ]
+}

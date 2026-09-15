@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <radialGradient id="bg-truong-dai-hoc-xay-dung-mien-tay" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="75%" stop-color="#f7fafc"/>
+      <stop offset="100%" stop-color="#edf2f7"/>
+    </radialGradient>
+    <linearGradient id="ring-truong-dai-hoc-xay-dung-mien-tay" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A202C"/>
+      <stop offset="100%" stop-color="#1A202C"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer Ring -->
+  <circle cx="80" cy="80" r="74" fill="url(#bg-truong-dai-hoc-xay-dung-mien-tay)" stroke="#1A202C" stroke-width="4"/>
+  <circle cx="80" cy="80" r="68" fill="none" stroke="#3182CE" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <circle cx="80" cy="80" r="52" fill="#1A202C" stroke="#3182CE" stroke-width="2"/>
+  
+  <!-- School Code Centerpiece -->
+  <text x="80" y="86" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">MTU</text>
+  
+  <!-- Subtle Stars -->
+  <circle cx="80" cy="40" r="2.5" fill="#3182CE"/>
+  <circle cx="70" cy="42" r="2" fill="#3182CE"/>
+  <circle cx="90" cy="42" r="2" fill="#3182CE"/>
+  
+  <!-- Bottom banner text -->
+  <text x="80" y="120" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8" font-weight="700" fill="#1A202C" text-anchor="middle" letter-spacing="0.5">VIETNAM</text>
+</svg>

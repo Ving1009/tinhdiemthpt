@@ -1,0 +1,401 @@
+{
+  "checkedAt": "2026-09-11",
+  "codesInferred": 3878,
+  "formulasAdded": 1429,
+  "profilesWithFormula": 292,
+  "specialProfilesClassified": 16,
+  "inferredByUniversity": [
+    {
+      "code": "PKA",
+      "count": 396
+    },
+    {
+      "code": "DQN",
+      "count": 332
+    },
+    {
+      "code": "DAD",
+      "count": 220
+    },
+    {
+      "code": "KHA",
+      "count": 161
+    },
+    {
+      "code": "GHA",
+      "count": 159
+    },
+    {
+      "code": "BKA",
+      "count": 147
+    },
+    {
+      "code": "DQB",
+      "count": 124
+    },
+    {
+      "code": "HCH",
+      "count": 122
+    },
+    {
+      "code": "THP",
+      "count": 106
+    },
+    {
+      "code": "GSA",
+      "count": 95
+    },
+    {
+      "code": "TKG",
+      "count": 90
+    },
+    {
+      "code": "GTA",
+      "count": 89
+    },
+    {
+      "code": "QHX",
+      "count": 84
+    },
+    {
+      "code": "TLA",
+      "count": 84
+    },
+    {
+      "code": "SKN",
+      "count": 80
+    },
+    {
+      "code": "QHT",
+      "count": 76
+    },
+    {
+      "code": "HCS",
+      "count": 68
+    },
+    {
+      "code": "DDU",
+      "count": 60
+    },
+    {
+      "code": "QHI",
+      "count": 60
+    },
+    {
+      "code": "DDA",
+      "count": 56
+    },
+    {
+      "code": "NHH",
+      "count": 56
+    },
+    {
+      "code": "MIT",
+      "count": 54
+    },
+    {
+      "code": "SKV",
+      "count": 52
+    },
+    {
+      "code": "CMC",
+      "count": 51
+    },
+    {
+      "code": "UKH",
+      "count": 48
+    },
+    {
+      "code": "DSG",
+      "count": 45
+    },
+    {
+      "code": "HBT",
+      "count": 44
+    },
+    {
+      "code": "QSK",
+      "count": 38
+    },
+    {
+      "code": "HTC",
+      "count": 34
+    },
+    {
+      "code": "QSB",
+      "count": 34
+    },
+    {
+      "code": "HQT",
+      "count": 33
+    },
+    {
+      "code": "FBU",
+      "count": 27
+    },
+    {
+      "code": "UMT",
+      "count": 27
+    },
+    {
+      "code": "EIU",
+      "count": 27
+    },
+    {
+      "code": "TLS",
+      "count": 26
+    },
+    {
+      "code": "XDA",
+      "count": 26
+    },
+    {
+      "code": "DTP",
+      "count": 25
+    },
+    {
+      "code": "NQH",
+      "count": 24
+    },
+    {
+      "code": "QHS",
+      "count": 24
+    },
+    {
+      "code": "DTV",
+      "count": 22
+    },
+    {
+      "code": "TQU",
+      "count": 22
+    },
+    {
+      "code": "DTC",
+      "count": 22
+    },
+    {
+      "code": "HVN",
+      "count": 22
+    },
+    {
+      "code": "DFA",
+      "count": 21
+    },
+    {
+      "code": "QHQ",
+      "count": 21
+    },
+    {
+      "code": "HVC",
+      "count": 20
+    },
+    {
+      "code": "UFA",
+      "count": 20
+    },
+    {
+      "code": "GNT",
+      "count": 19
+    },
+    {
+      "code": "DVB",
+      "count": 18
+    },
+    {
+      "code": "DDV",
+      "count": 18
+    },
+    {
+      "code": "DTK",
+      "count": 18
+    },
+    {
+      "code": "TMU",
+      "count": 18
+    },
+    {
+      "code": "UKB",
+      "count": 17
+    },
+    {
+      "code": "BMU",
+      "count": 16
+    },
+    {
+      "code": "DVX",
+      "count": 16
+    },
+    {
+      "code": "DHE",
+      "count": 15
+    },
+    {
+      "code": "QST",
+      "count": 15
+    },
+    {
+      "code": "DCA",
+      "count": 14
+    },
+    {
+      "code": "DBH",
+      "count": 14
+    },
+    {
+      "code": "HTA",
+      "count": 12
+    },
+    {
+      "code": "THU",
+      "count": 12
+    },
+    {
+      "code": "QSQ",
+      "count": 12
+    },
+    {
+      "code": "DHI",
+      "count": 11
+    },
+    {
+      "code": "NHP",
+      "count": 9
+    },
+    {
+      "code": "KTA",
+      "count": 9
+    },
+    {
+      "code": "RMIT",
+      "count": 9
+    },
+    {
+      "code": "KSA",
+      "count": 8
+    },
+    {
+      "code": "YQH",
+      "count": 8
+    },
+    {
+      "code": "ZNH",
+      "count": 7
+    },
+    {
+      "code": "GTS",
+      "count": 7
+    },
+    {
+      "code": "HHA",
+      "count": 7
+    },
+    {
+      "code": "VINUNI",
+      "count": 7
+    },
+    {
+      "code": "NVH",
+      "count": 6
+    },
+    {
+      "code": "NVS",
+      "count": 6
+    },
+    {
+      "code": "TDB",
+      "count": 6
+    },
+    {
+      "code": "FUV",
+      "count": 6
+    },
+    {
+      "code": "HCN",
+      "count": 5
+    },
+    {
+      "code": "DTT",
+      "count": 5
+    },
+    {
+      "code": "DTZ",
+      "count": 5
+    },
+    {
+      "code": "MTH",
+      "count": 4
+    },
+    {
+      "code": "MTS",
+      "count": 4
+    },
+    {
+      "code": "TDS",
+      "count": 4
+    },
+    {
+      "code": "HCA",
+      "count": 4
+    },
+    {
+      "code": "DKS",
+      "count": 4
+    },
+    {
+      "code": "HCP",
+      "count": 4
+    },
+    {
+      "code": "LBH",
+      "count": 4
+    },
+    {
+      "code": "NTS",
+      "count": 4
+    },
+    {
+      "code": "BUV",
+      "count": 3
+    },
+    {
+      "code": "TDH",
+      "count": 2
+    },
+    {
+      "code": "ANH",
+      "count": 2
+    },
+    {
+      "code": "DPX",
+      "count": 2
+    },
+    {
+      "code": "DTE",
+      "count": 2
+    },
+    {
+      "code": "SKD",
+      "count": 1
+    },
+    {
+      "code": "DSD",
+      "count": 1
+    },
+    {
+      "code": "DDG",
+      "count": 1
+    },
+    {
+      "code": "DTS",
+      "count": 1
+    },
+    {
+      "code": "DTN",
+      "count": 1
+    },
+    {
+      "code": "SPH",
+      "count": 1
+    }
+  ]
+}

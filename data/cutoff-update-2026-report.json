@@ -1,0 +1,154 @@
+{
+  "year": 2026,
+  "source": "VietnamNet UniversityDetail/GetDetail 2026",
+  "schoolsWithThptSource": 2,
+  "updated": 17,
+  "unmatchedThpt": 3765,
+  "changedCount": 16,
+  "changedSamples": [
+    {
+      "id": "dai-hoc-bach-khoa-ha-noi-7480201-thpt",
+      "from": 28,
+      "to": 27.75,
+      "official": "Công nghệ thông tin (Việt - Pháp)",
+      "combination": "A00",
+      "note": "Điểm chuẩn - THPT | Nhóm ngành: Trường CNTT&TT | Thang điểm: 30",
+      "match": 104
+    },
+    {
+      "id": "dai-hoc-bach-khoa-ha-noi-7480101-thpt",
+      "from": 29.25,
+      "to": 29.27,
+      "official": "CNTT: Khoa học Máy tính",
+      "combination": "A00",
+      "note": "Điểm chuẩn - THPT | Nhóm ngành: Trường CNTT&TT | Thang điểm: 30",
+      "match": 104
+    },
+    {
+      "id": "dai-hoc-bach-khoa-ha-noi-7480108-thpt",
+      "from": 28.5,
+      "to": 29.54,
+      "official": "Khoa học dữ liệu và Trí tuệ nhân tạo (CT tiên tiến)",
+      "combination": "A00",
+      "note": "Điểm chuẩn - THPT | Nhóm ngành: Trường CNTT&TT | Thang điểm: 30",
+      "match": 86
+    },
+    {
+      "id": "dai-hoc-bach-khoa-ha-noi-7510203-thpt",
+      "from": 25.75,
+      "to": 28.47,
+      "official": "Kỹ thuật Cơ điện tử",
+      "combination": "A00",
+      "note": "Điểm chuẩn - THPT | Nhóm ngành: Trường Cơ khí | Thang điểm: 30",
+      "match": 75.4
+    },
+    {
+      "id": "dai-hoc-bach-khoa-ha-noi-7510301-thpt",
+      "from": 25.25,
+      "to": 28.64,
+      "official": "Kỹ thuật Vi điện tử và Công nghệ nano",
+      "combination": "A00",
+      "note": "Điểm chuẩn - THPT | Nhóm ngành: Trường Vật liệu | Thang điểm: 30",
+      "match": 73
+    },
+    {
+      "id": "dai-hoc-bach-khoa-ha-noi-7510303-thpt",
+      "from": 27.5,
+      "to": 28.98,
+      "official": "Kỹ thuật Điều khiển - Tự động hoá",
+      "combination": "A00",
+      "note": "Điểm chuẩn - THPT | Nhóm ngành: Trường Điện - Điện tử | Thang điểm: 30",
+      "match": 104
+    },
+    {
+      "id": "dai-hoc-bach-khoa-ha-noi-7510605-thpt",
+      "from": 28,
+      "to": 24.56,
+      "official": "Logistics và Quản lý chuỗi cung ứng (CT tiên tiến)",
+      "combination": "D01",
+      "note": "Điểm chuẩn - THPT | Nhóm ngành: Trường Kinh tế | Thang điểm: 30",
+      "match": 86
+    },
+    {
+      "id": "truong-dai-hoc-cong-nghe-giao-thong-van-tai-7480201-hocba",
+      "from": 23.75,
+      "to": 25.63,
+      "official": "Công nghệ thông tin",
+      "combination": "",
+      "note": "Điểm chuẩn Học bạ | Thang điểm: 30",
+      "match": 100
+    },
+    {
+      "id": "truong-dai-hoc-cong-nghe-giao-thong-van-tai-7510203-thpt",
+      "from": 20.75,
+      "to": 24.25,
+      "official": "Công nghệ kỹ thuật cơ điện tử",
+      "combination": "",
+      "note": "Điểm chuẩn THPT | Thang điểm: 30",
+      "match": 100
+    },
+    {
+      "id": "truong-dai-hoc-cong-nghe-giao-thong-van-tai-7510203-hocba",
+      "from": 22,
+      "to": 26.94,
+      "official": "Công nghệ kỹ thuật cơ điện tử",
+      "combination": "",
+      "note": "Điểm chuẩn Học bạ | Thang điểm: 30",
+      "match": 100
+    },
+    {
+      "id": "truong-dai-hoc-cong-nghe-giao-thong-van-tai-7510205-thpt",
+      "from": 21.5,
+      "to": 23.5,
+      "official": "Công nghệ kỹ thuật ô tô",
+      "combination": "",
+      "note": "Điểm chuẩn THPT | Thang điểm: 30",
+      "match": 100
+    },
+    {
+      "id": "truong-dai-hoc-cong-nghe-giao-thong-van-tai-7510205-hocba",
+      "from": 22.75,
+      "to": 26.38,
+      "official": "Công nghệ kỹ thuật ô tô",
+      "combination": "",
+      "note": "Điểm chuẩn Học bạ | Thang điểm: 30",
+      "match": 100
+    },
+    {
+      "id": "truong-dai-hoc-cong-nghe-giao-thong-van-tai-7510301-thpt",
+      "from": 20.25,
+      "to": 24.25,
+      "official": "Công nghệ kỹ thuật cơ điện tử",
+      "combination": "",
+      "note": "Điểm chuẩn THPT | Thang điểm: 30",
+      "match": 82.7
+    },
+    {
+      "id": "truong-dai-hoc-cong-nghe-giao-thong-van-tai-7510301-hocba",
+      "from": 21.5,
+      "to": 26.94,
+      "official": "Công nghệ kỹ thuật cơ điện tử",
+      "combination": "",
+      "note": "Điểm chuẩn Học bạ | Thang điểm: 30",
+      "match": 82.7
+    },
+    {
+      "id": "truong-dai-hoc-cong-nghe-giao-thong-van-tai-7510605-thpt",
+      "from": 22.5,
+      "to": 25,
+      "official": "Logistics và quản lý chuỗi cung ứng",
+      "combination": "",
+      "note": "Điểm chuẩn THPT | Thang điểm: 30",
+      "match": 100
+    },
+    {
+      "id": "truong-dai-hoc-cong-nghe-giao-thong-van-tai-7510605-hocba",
+      "from": 23.75,
+      "to": 27.5,
+      "official": "Logistics và quản lý chuỗi cung ứng",
+      "combination": "",
+      "note": "Điểm chuẩn Học bạ | Thang điểm: 30",
+      "match": 100
+    }
+  ]
+}

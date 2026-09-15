@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="grad-truong-dai-hoc-chinh-tri" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B0000" />
+      <stop offset="100%" stop-color="#DAA520" />
+    </linearGradient>
+    <filter id="shadow-truong-dai-hoc-chinh-tri" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <circle cx="60" cy="60" r="54" fill="url(#grad-truong-dai-hoc-chinh-tri)" filter="url(#shadow-truong-dai-hoc-chinh-tri)" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="60" y="66" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">LCH</text>
+  <text x="60" y="86" font-family="system-ui, -apple-system, sans-serif" font-size="7.5" font-weight="600" fill="rgba(255,255,255,0.9)" text-anchor="middle">VIETNAM</text>
+</svg>

@@ -1,0 +1,226 @@
+[
+  {
+    "id": "bieu-dien-nghe-thuat",
+    "name": "biểu diễn nghệ thuật"
+  },
+  {
+    "id": "industrialTechnology",
+    "name": "Công nghệ công nghiệp"
+  },
+  {
+    "id": "agriculturalTechnology",
+    "name": "Công nghệ nông nghiệp"
+  },
+  {
+    "id": "geography",
+    "name": "Địa lí"
+  },
+  {
+    "id": "doc-dien-cam",
+    "name": "Đọc diễn cảm"
+  },
+  {
+    "id": "doc-hieu",
+    "name": "Đọc hiểu"
+  },
+  {
+    "id": "doc-ke-dien-cam",
+    "name": "Đọc kể diễn cảm"
+  },
+  {
+    "id": "civicEducation",
+    "name": "GDKTPL"
+  },
+  {
+    "id": "hat",
+    "name": "Hát"
+  },
+  {
+    "id": "hat-mua",
+    "name": "Hát - Múa"
+  },
+  {
+    "id": "hat-hoac-bieu-dien-nhac-cu",
+    "name": "Hát hoặc biểu diễn nhạc cụ"
+  },
+  {
+    "id": "hinh-hoa",
+    "name": "Hình họa"
+  },
+  {
+    "id": "chemistry",
+    "name": "Hóa học"
+  },
+  {
+    "id": "naturalScience",
+    "name": "Khoa học tự nhiên"
+  },
+  {
+    "id": "socialScience",
+    "name": "Khoa học xã hội"
+  },
+  {
+    "id": "khoa-hoc-tieng-anh",
+    "name": "Khoa học/Tiếng Anh"
+  },
+  {
+    "id": "ky-xuong-am",
+    "name": "Ký xướng âm"
+  },
+  {
+    "id": "history",
+    "name": "Lịch sử"
+  },
+  {
+    "id": "ly-hoa-sinh-tin",
+    "name": "Lý/Hóa/Sinh/Tin"
+  },
+  {
+    "id": "nang-khieu",
+    "name": "Năng khiếu"
+  },
+  {
+    "id": "nang-khieu-1",
+    "name": "Năng khiếu 1"
+  },
+  {
+    "id": "nang-khieu-2",
+    "name": "Năng khiếu 2"
+  },
+  {
+    "id": "nang-khieu-am-nhac",
+    "name": "Năng khiếu Âm nhạc"
+  },
+  {
+    "id": "nang-khieu-am-nhac-1",
+    "name": "Năng khiếu Âm nhạc 1"
+  },
+  {
+    "id": "nang-khieu-am-nhac-2",
+    "name": "Năng khiếu Âm nhạc 2"
+  },
+  {
+    "id": "nang-khieu-bao-chi",
+    "name": "Năng khiếu báo chí"
+  },
+  {
+    "id": "nang-khieu-doc-dien-cam-va-hat",
+    "name": "Năng khiếu đọc diễn cảm và Hát"
+  },
+  {
+    "id": "nang-khieu-giao-duc-mam-non",
+    "name": "Năng khiếu Giáo dục mầm non"
+  },
+  {
+    "id": "nang-khieu-nghe-thuat",
+    "name": "Năng khiếu nghệ thuật"
+  },
+  {
+    "id": "nang-khieu-skda-1",
+    "name": "Năng khiếu SKĐA 1"
+  },
+  {
+    "id": "nang-khieu-skda-2",
+    "name": "Năng khiếu SKĐA 2"
+  },
+  {
+    "id": "nang-khieu-the-duc-the-thao",
+    "name": "Năng khiếu Thể dục thể thao"
+  },
+  {
+    "id": "nang-khieu-thuyet-trinh",
+    "name": "Năng khiếu thuyết trình"
+  },
+  {
+    "id": "nang-khieu-van-hoa-nghe-thuat",
+    "name": "Năng khiếu văn hóa nghệ thuật"
+  },
+  {
+    "id": "nang-khieu-ve-nghe-thuat-1",
+    "name": "Năng khiếu vẽ Nghệ thuật 1"
+  },
+  {
+    "id": "nang-khieu-ve-nghe-thuat-2",
+    "name": "Năng khiếu vẽ Nghệ thuật 2"
+  },
+  {
+    "id": "foreignLanguage",
+    "name": "Ngoại ngữ"
+  },
+  {
+    "id": "literature",
+    "name": "Ngữ văn"
+  },
+  {
+    "id": "nk-mam-non-1-ke-chuyen-doc-dien-cam",
+    "name": "NK Mầm non 1 (kể chuyện, đọc, diễn cảm)"
+  },
+  {
+    "id": "nk-mam-non-2-hat",
+    "name": "NK Mầm non 2 (Hát)"
+  },
+  {
+    "id": "nk1",
+    "name": "NK1"
+  },
+  {
+    "id": "biology",
+    "name": "Sinh học"
+  },
+  {
+    "id": "tin",
+    "name": "Tin"
+  },
+  {
+    "id": "informatics",
+    "name": "Tin học"
+  },
+  {
+    "id": "math",
+    "name": "Toán"
+  },
+  {
+    "id": "trang-tri",
+    "name": "Trang trí"
+  },
+  {
+    "id": "tu-duy-dinh-luong",
+    "name": "Tư duy định lượng"
+  },
+  {
+    "id": "tu-duy-dinh-tinh",
+    "name": "Tư duy định tính"
+  },
+  {
+    "id": "tu-duy-khoa-hoc-giai-quyet-van-de",
+    "name": "Tư duy Khoa học Giải quyết vấn đề"
+  },
+  {
+    "id": "physics",
+    "name": "Vật lí"
+  },
+  {
+    "id": "ve-hinh-hoa-my-thuat",
+    "name": "Vẽ Hình họa mỹ thuật"
+  },
+  {
+    "id": "ve-my-thuat",
+    "name": "Vẽ mỹ thuật"
+  },
+  {
+    "id": "ve-nang-khieu",
+    "name": "Vẽ Năng khiếu"
+  },
+  {
+    "id": "ve-trang-tri-mau",
+    "name": "Vẽ trang trí màu"
+  },
+  {
+    "id": "xay-dung-kich-ban-su-kien",
+    "name": "Xây dựng kịch bản sự kiện"
+  },
+  {
+    "id": "xuong-am",
+    "name": "xướng âm"
+  }
+]

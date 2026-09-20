@@ -29,47 +29,47 @@
   {
     "code": "ZCH",
     "name": "Học viện Chính trị (Bộ Quốc phòng)",
-    "website": "https://hvct.edu.vn",
-    "pageUrl": "https://hvct.edu.vn/",
+    "website": "https://hocvienchinhtribqp.edu.vn",
+    "pageUrl": "https://hocvienchinhtribqp.edu.vn/",
     "candidates": [
       {
-        "url": "https://hvct.edu.vn/wp-content/uploads/2024/02/364767157_293246756689913_2139035631342656617_n-768x555.jpg",
+        "url": "https://hocvienchinhtribqp.edu.vn/uploads/Admin/2017/02/24/.thumbs/Untitled_9aaba5.jpg",
         "extension": ".jpg",
         "dimensions": [
-          768,
-          555
+          508,
+          297
         ],
-        "bytes": 85171,
+        "bytes": 84946,
         "score": 15,
         "quality": 127,
         "identity": false,
-        "context": "attachment-medium_large size-medium_large wp-image-1871 not-transparent  "
+        "context": "  "
       },
       {
-        "url": "https://hvct.edu.vn/wp-content/uploads/2023/12/khai-giang-khoa-hoc-tuan-thu-quy-768x432.jpg",
+        "url": "https://hocvienchinhtribqp.edu.vn/uploads/Admin/2025/09/25/.thumbs/9R7A0778_f3192b.JPG",
         "extension": ".jpg",
         "dimensions": [
-          768,
-          432
+          740,
+          275
         ],
-        "bytes": 58101,
+        "bytes": 100549,
         "score": 15,
-        "quality": 127,
+        "quality": 109,
         "identity": false,
-        "context": "attachment-medium_large size-medium_large wp-image-1769 not-transparent  "
+        "context": "  "
       },
       {
-        "url": "https://hvct.edu.vn/wp-content/uploads/2025/09/590805c24e52c50c9c43-768x431.webp",
-        "extension": ".webp",
+        "url": "https://hocvienchinhtribqp.edu.vn/uploads/Admin/2025/09/25/.thumbs/9R7A0759_0fb0f6.JPG",
+        "extension": ".jpg",
         "dimensions": [
-          768,
-          431
+          740,
+          275
         ],
-        "bytes": 42346,
+        "bytes": 98347,
         "score": 15,
-        "quality": 127,
+        "quality": 109,
         "identity": false,
-        "context": "attachment-medium_large size-medium_large wp-image-3612 not-transparent  "
+        "context": "  "
       }
     ]
   },
@@ -79,6 +79,19 @@
     "website": "http://vbuhue.edu.vn",
     "pageUrl": "https://vbuhue.edu.vn/",
     "candidates": [
+      {
+        "url": "https://vbuhue.edu.vn/UploadFiles/Anh/hoa_thuong_vien_truong_trao_bang_tot_nghiep_cu_nhan_2026.jpg",
+        "extension": ".jpg",
+        "dimensions": [
+          7008,
+          3043
+        ],
+        "bytes": 3668086,
+        "score": 15,
+        "quality": 127,
+        "identity": false,
+        "context": " wows1_0 Lễ Cấp phát Văn bằng Tốt nghiệp Cử nhân khóa XIII, Thạc sĩ khóa III và khai giảng năm học 2026-2027"
+      },
       {
         "url": "https://vbuhue.edu.vn/UploadFiles/Anh/danh_le_chu_ton_duc_chung_minh.jpg",
         "extension": ".jpg",
@@ -104,19 +117,6 @@
         "quality": 127,
         "identity": false,
         "context": " wows1_0 Học viện PGVN tại Huế thăm và làm việc với Trường Đại học Khoa học Xã hội và Nhân văn - ĐHQGHN"
-      },
-      {
-        "url": "https://vbuhue.edu.vn/UploadFiles/Anh/tang_xa_hoc_vien_hoi_chung_bang.jpg",
-        "extension": ".jpg",
-        "dimensions": [
-          2048,
-          879
-        ],
-        "bytes": 331508,
-        "score": 15,
-        "quality": 127,
-        "identity": false,
-        "context": " wows1_0 Học viện PGVN tại Huế cử hành lễ Hồi chung bảng, Giải giới trường sau mùa An cư PL.2570"
       }
     ]
   },

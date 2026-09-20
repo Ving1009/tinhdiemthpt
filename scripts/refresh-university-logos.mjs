@@ -6,6 +6,8 @@ const root = new URL("../", import.meta.url);
 const universitiesUrl = new URL("data/universities.json", root);
 const universities = JSON.parse(await readFile(universitiesUrl, "utf8"));
 const shouldWrite = process.argv.includes("--write");
+const codesArg = process.argv.find((value) => value.startsWith("--codes="));
+const requestedCodes = new Set((codesArg?.slice("--codes=".length) || "").split(",").map((value) => value.trim().toUpperCase()).filter(Boolean));
 const timeoutMs = 14_000;
 const rejectedAssets = [
   "/uploads/ussh/menu/logo_up.png",
@@ -182,7 +184,7 @@ async function findLogo(university) {
   }
 }
 
-const pending = universities.filter((item) => item.logoStatus === "updating" && item.website);
+const pending = universities.filter((item) => item.website && (requestedCodes.size ? requestedCodes.has(item.code) : item.logoStatus === "updating"));
 const results = [];
 for (let index = 0; index < pending.length; index += 8) {
   results.push(...await Promise.all(pending.slice(index, index + 8).map(findLogo)));
@@ -197,16 +199,16 @@ for (const result of results) {
   const university = result.university;
   const filename = `${university.id}${selected.extension}`;
   const relativeLogo = `./assets/logos/${filename}`;
-  const oldPrivate = new URL(university.logo.replace(/^\.\//, ""), root);
-  const newPrivate = new URL(`assets/logos/${filename}`, root);
+  const oldPublic = new URL(`public/${university.logo.replace(/^\.\//, "")}`, root);
   const newPublic = new URL(`public/assets/logos/${filename}`, root);
-  const oldHash = await readFile(oldPrivate).then((buffer) => createHash("sha256").update(buffer).digest("hex")).catch(() => "");
+  const oldHash = await readFile(oldPublic).then((buffer) => createHash("sha256").update(buffer).digest("hex")).catch(() => "");
   const newHash = createHash("sha256").update(selected.buffer).digest("hex");
   if (shouldWrite) {
-    await Promise.all([writeFile(newPrivate, selected.buffer), writeFile(newPublic, selected.buffer)]);
+    await writeFile(newPublic, selected.buffer);
     university.logo = relativeLogo;
     university.logoStatus = "clear_local";
     university.logoSourceUrl = selected.finalUrl;
+    university.logoCheckedAt = new Date().toISOString().slice(0, 10);
   }
   updated += 1;
   console.log(`${shouldWrite ? "CẬP NHẬT" : "TÌM THẤY"}\t${university.code}\t${selected.extension}\t${selected.dimensions?.join("x") || "vector"}\t${selected.bytes}\t${selected.score}/${selected.quality}\t${oldHash === newHash ? "trùng" : "mới"}\t${selected.finalUrl}`);

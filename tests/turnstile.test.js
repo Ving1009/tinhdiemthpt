@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { getTurnstileConfiguration, turnstileTokenFromHeaders, verifyTurnstile } from "../server/services/turnstile.js";
+import { getTurnstileConfiguration, getTurnstileConfigurationForHostname, turnstileTokenFromHeaders, verifyTurnstile } from "../server/services/turnstile.js";
 
 const environment = {
   TURNSTILE_SITE_KEY: "site-key",
@@ -8,8 +8,15 @@ const environment = {
 };
 
 test("Turnstile tắt an toàn khi chưa cấu hình khóa", async () => {
-  assert.deepEqual(getTurnstileConfiguration({}), { enabled: false, configured: false, siteKey: "" });
+  assert.deepEqual(getTurnstileConfiguration({}), { enabled: false, configured: false, credentialsReady: false, siteKey: "" });
   assert.deepEqual(await verifyTurnstile({ environment: {}, action: "data_report" }), { skipped: true });
+});
+
+test("Turnstile chỉ bật trên hostname đã cho phép", async () => {
+  const restricted = { ...environment, TURNSTILE_ALLOWED_HOSTNAMES: "tinhdiemthpt.id.vn" };
+  assert.equal(getTurnstileConfigurationForHostname(restricted, "tinhdiemthpt.id.vn").enabled, true);
+  assert.equal(getTurnstileConfigurationForHostname(restricted, "tinhdiemthpt.tinh-diem-thpt.workers.dev").enabled, false);
+  assert.deepEqual(await verifyTurnstile({ environment: restricted, action: "data_report", requestHostname: "tinhdiemthpt.tinh-diem-thpt.workers.dev" }), { skipped: true });
 });
 
 test("Turnstile yêu cầu token khi đã bật", async () => {

@@ -10,19 +10,33 @@ function value(environment, key) {
 export function getTurnstileConfiguration(environment = {}) {
   const siteKey = value(environment, "TURNSTILE_SITE_KEY");
   const secretKey = value(environment, "TURNSTILE_SECRET_KEY");
+  const configured = Boolean(siteKey || secretKey);
   return {
     enabled: Boolean(siteKey && secretKey),
-    configured: Boolean(siteKey || secretKey),
+    configured,
+    credentialsReady: Boolean(siteKey && secretKey),
     siteKey
   };
 }
 
-function allowedHostnames(environment, requestHostname) {
-  const configured = value(environment, "TURNSTILE_ALLOWED_HOSTNAMES")
+function configuredHostnames(environment) {
+  return value(environment, "TURNSTILE_ALLOWED_HOSTNAMES")
     .split(",")
     .map((hostname) => hostname.trim().toLocaleLowerCase("en"))
     .filter(Boolean);
+}
+
+function allowedHostnames(environment, requestHostname) {
+  const configured = configuredHostnames(environment);
   return configured.length ? configured : [String(requestHostname || "").toLocaleLowerCase("en")].filter(Boolean);
+}
+
+export function getTurnstileConfigurationForHostname(environment = {}, requestHostname = "") {
+  const configuration = getTurnstileConfiguration(environment);
+  const configured = configuredHostnames(environment);
+  const hostname = String(requestHostname || "").toLocaleLowerCase("en");
+  const hostnameAllowed = !configured.length || configured.includes(hostname);
+  return { ...configuration, enabled: configuration.credentialsReady && hostnameAllowed, hostnameAllowed };
 }
 
 export async function verifyTurnstile({
@@ -33,11 +47,12 @@ export async function verifyTurnstile({
   requestHostname = "",
   fetchImpl = globalThis.fetch
 } = {}) {
-  const configuration = getTurnstileConfiguration(environment);
+  const configuration = getTurnstileConfigurationForHostname(environment, requestHostname);
   if (!configuration.configured) return { skipped: true };
-  if (!configuration.enabled) {
+  if (!configuration.credentialsReady) {
     throw new AppError("Turnstile chưa được cấu hình đầy đủ.", { statusCode: 503, code: "TURNSTILE_MISCONFIGURED" });
   }
+  if (!configuration.hostnameAllowed) return { skipped: true };
 
   const responseToken = String(token || "").trim();
   if (!responseToken) {

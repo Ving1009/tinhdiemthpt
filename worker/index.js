@@ -1,4 +1,4 @@
-import { getTurnstileConfiguration, turnstileTokenFromHeaders, verifyTurnstile } from "../server/services/turnstile.js";
+import { getTurnstileConfigurationForHostname, turnstileTokenFromHeaders, verifyTurnstile } from "../server/services/turnstile.js";
 import { applyRateLimit, errorResponse, failure, success } from "./http.js";
 import { handleDataApi } from "./dataApi.js";
 
@@ -24,7 +24,7 @@ export default {
       return new Response("Not found", { status: 404 });
     }
     if (request.method === "GET" && url.pathname === "/api/security-config") {
-      const turnstile = getTurnstileConfiguration(environment);
+      const turnstile = getTurnstileConfigurationForHostname(environment, url.hostname);
       return success(request, { turnstile: { enabled: turnstile.enabled, siteKey: turnstile.enabled ? turnstile.siteKey : "" } }, {
         headers: { "Cache-Control": "public, max-age=300" }
       });

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { gzipSync } from "node:zlib";
 import rateLimit from "express-rate-limit";
-import { getTurnstileConfiguration, turnstileTokenFromHeaders, verifyTurnstile } from "../services/turnstile.js";
+import { getTurnstileConfigurationForHostname, turnstileTokenFromHeaders, verifyTurnstile } from "../services/turnstile.js";
 
 function ok(response, data) { response.json({ success: true, data }); }
 function badRequest(response, code, message) { response.status(400).json({ success: false, error: { code, message } }); }
@@ -27,8 +27,8 @@ export function createPublicApiRouter({ store, reportStore, environment = proces
     response.send(bootstrapJson);
   });
 
-  router.get("/security-config", (_request, response) => {
-    const turnstile = getTurnstileConfiguration(environment);
+  router.get("/security-config", (request, response) => {
+    const turnstile = getTurnstileConfigurationForHostname(environment, request.hostname);
     response.setHeader("Cache-Control", "public, max-age=300");
     ok(response, { turnstile: { enabled: turnstile.enabled, siteKey: turnstile.enabled ? turnstile.siteKey : "" } });
   });

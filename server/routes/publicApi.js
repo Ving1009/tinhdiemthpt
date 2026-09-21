@@ -1,12 +1,13 @@
 import { Router } from "express";
 import { gzipSync } from "node:zlib";
 import rateLimit from "express-rate-limit";
+import { getTurnstileConfiguration, turnstileTokenFromHeaders, verifyTurnstile } from "../services/turnstile.js";
 
 function ok(response, data) { response.json({ success: true, data }); }
 function badRequest(response, code, message) { response.status(400).json({ success: false, error: { code, message } }); }
 function notFound(response, code, message) { response.status(404).json({ success: false, error: { code, message } }); }
 
-export function createPublicApiRouter({ store, reportStore }) {
+export function createPublicApiRouter({ store, reportStore, environment = process.env }) {
   const router = Router();
   const bootstrapJson = JSON.stringify({ success: true, data: store.publicInitialData });
   const bootstrapGzip = gzipSync(bootstrapJson, { level: 6 });
@@ -24,6 +25,12 @@ export function createPublicApiRouter({ store, reportStore }) {
     }
     response.setHeader("Content-Length", Buffer.byteLength(bootstrapJson));
     response.send(bootstrapJson);
+  });
+
+  router.get("/security-config", (_request, response) => {
+    const turnstile = getTurnstileConfiguration(environment);
+    response.setHeader("Cache-Control", "public, max-age=300");
+    ok(response, { turnstile: { enabled: turnstile.enabled, siteKey: turnstile.enabled ? turnstile.siteKey : "" } });
   });
 
   router.get("/universities", (request, response) => ok(response, store.listUniversities(request.query)));
@@ -61,6 +68,13 @@ export function createPublicApiRouter({ store, reportStore }) {
   router.get("/catalog/subjects", (_request, response) => ok(response, store.publicSubjects));
   router.post("/data-reports", reportLimiter, async (request, response, next) => {
     try {
+      await verifyTurnstile({
+        environment,
+        token: turnstileTokenFromHeaders(request.headers),
+        action: "data_report",
+        remoteIp: request.ip,
+        requestHostname: request.hostname
+      });
       if (!reportStore) return response.status(503).json({ success: false, error: { code: "REPORT_INTAKE_UNAVAILABLE", message: "Nơi tiếp nhận báo cáo chưa sẵn sàng." } });
       const result = await reportStore.submit(request.body);
       response.status(202).json({ success: true, data: result });

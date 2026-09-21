@@ -33,7 +33,7 @@ function localDevelopmentCors(request, response, next) {
   if (origin && isAllowedDevelopmentOrigin(origin)) {
     response.setHeader("Access-Control-Allow-Origin", origin);
     response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    response.setHeader("Access-Control-Allow-Headers", "Content-Type, X-Turnstile-Token");
     response.setHeader("Access-Control-Max-Age", "600");
     response.append("Vary", "Origin");
   }
@@ -46,14 +46,14 @@ function localDevelopmentCors(request, response, next) {
 
 export { createConfiguredScanProviders } from "./configuredScanProviders.js";
 
-export function createApp({ scanTranscript, dataStore = defaultDataStore, reportStore = createReportStore() } = {}) {
+export function createApp({ scanTranscript, dataStore = defaultDataStore, reportStore = createReportStore(), environment = process.env } = {}) {
   const app = express();
   const scanner = scanTranscript || createTranscriptScanService(createConfiguredScanProviders());
   app.disable("x-powered-by");
   app.use(express.json({ limit: "100kb" }));
   app.use("/api", localDevelopmentCors);
-  app.use("/api", createPublicApiRouter({ store: dataStore, reportStore }));
-  app.use("/api", createScanTranscriptRouter({ scanTranscript: scanner }));
+  app.use("/api", createPublicApiRouter({ store: dataStore, reportStore, environment }));
+  app.use("/api", createScanTranscriptRouter({ scanTranscript: scanner, environment }));
   const vendorStaticOptions = { dotfiles: "deny", index: false, etag: true, maxAge: "30d", immutable: true };
   app.use("/vendor/tesseract", localDevelopmentCors, express.static(TESSERACT_DIST_DIR, vendorStaticOptions));
   app.use("/vendor/tesseract-core", localDevelopmentCors, express.static(TESSERACT_CORE_DIR, vendorStaticOptions));

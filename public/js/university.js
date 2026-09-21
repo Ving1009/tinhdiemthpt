@@ -25,7 +25,7 @@ function abortIfNeeded(signal) {
   if (signal?.aborted) throw new DOMException("Yêu cầu đã bị hủy.", "AbortError");
 }
 
-async function requestJson(path, { signal, method = "GET", body } = {}) {
+async function requestJson(path, { signal, method = "GET", body, headers = {} } = {}) {
   const browserLocation = globalThis.location;
   const isVsCodeLiveServer = browserLocation
     && ["127.0.0.1", "localhost"].includes(browserLocation.hostname)
@@ -36,7 +36,7 @@ async function requestJson(path, { signal, method = "GET", body } = {}) {
     response = await fetch(url, {
       method,
       signal,
-      headers: body ? { "Content-Type": "application/json" } : undefined,
+      headers: body ? { "Content-Type": "application/json", ...headers } : Object.keys(headers).length ? headers : undefined,
       body: body ? JSON.stringify(body) : undefined
     });
   } catch (error) {
@@ -154,7 +154,8 @@ export class UniversityRepository {
     for (const major of result.items) this.rememberMajor(major);
     return result;
   }
-  submitDataReport(report, { signal } = {}) {
-    return requestJson("/api/data-reports", { signal, method: "POST", body: report });
+  submitDataReport(report, { signal, turnstileToken = "" } = {}) {
+    const headers = turnstileToken ? { "X-Turnstile-Token": turnstileToken } : {};
+    return requestJson("/api/data-reports", { signal, method: "POST", body: report, headers });
   }
 }

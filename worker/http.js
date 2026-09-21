@@ -19,7 +19,7 @@ export function withCors(request, response) {
   const headers = new Headers(response.headers);
   headers.set("Access-Control-Allow-Origin", origin);
   headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  headers.set("Access-Control-Allow-Headers", "Content-Type");
+  headers.set("Access-Control-Allow-Headers", "Content-Type, X-Turnstile-Token");
   headers.set("Access-Control-Max-Age", "600");
   headers.append("Vary", "Origin");
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });

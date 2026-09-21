@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { createCloudflareReportStore } from "../server/cloudflareReportStore.js";
 import { handleOcrRequest } from "../worker/ocrHandler.js";
+import mainWorker from "../worker/index.js";
 
 test("Cloudflare OCR nhận multipart hợp lệ và giữ schema response của frontend", async () => {
   const form = new FormData();
@@ -62,4 +63,27 @@ test("Cloudflare report store chỉ xác nhận sau khi Supabase nhận báo cá
   assert.match(result.id, /^[0-9a-f-]{36}$/i);
   assert.equal(request.url, "https://project.supabase.co/rest/v1/data_reports?on_conflict=id");
   assert.equal(JSON.parse(request.options.body)[0].status, "pending_review");
+});
+
+test("Worker chỉ công khai site key và trạng thái Turnstile", async () => {
+  const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.id.vn/api/security-config"), {
+    TURNSTILE_SITE_KEY: "public-site-key",
+    TURNSTILE_SECRET_KEY: "private-secret"
+  });
+  const payload = await response.json();
+  assert.deepEqual(payload.data, { turnstile: { enabled: true, siteKey: "public-site-key" } });
+  assert.doesNotMatch(JSON.stringify(payload), /private-secret/);
+});
+
+test("Worker chặn request OCR trước service khi thiếu token Turnstile", async () => {
+  let forwarded = false;
+  const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.id.vn/api/scan-transcript", { method: "POST" }), {
+    TURNSTILE_SITE_KEY: "public-site-key",
+    TURNSTILE_SECRET_KEY: "private-secret",
+    OCR_SERVICE: { async fetch() { forwarded = true; return new Response("forwarded"); } }
+  });
+  const payload = await response.json();
+  assert.equal(response.status, 403);
+  assert.equal(payload.error.code, "TURNSTILE_REQUIRED");
+  assert.equal(forwarded, false);
 });

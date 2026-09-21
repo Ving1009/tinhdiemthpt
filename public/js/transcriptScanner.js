@@ -1,5 +1,6 @@
 import { escapeHTML } from "./utils.js";
 import { optimizeTranscriptImagesSequentially } from "./transcriptImageOptimizer.js";
+import { turnstileGate } from "./turnstile.js";
 
 const MAX_IMAGES = 12;
 const MAX_IMAGE_BYTES = 7 * 1024 * 1024;
@@ -32,7 +33,7 @@ class RemoteTranscriptScanError extends Error {
   }
 }
 
-const NON_FALLBACK_CODES = new Set(["INVALID_IMAGE", "UNSUPPORTED_IMAGE", "MISSING_IMAGES", "IMAGES_TOO_LARGE"]);
+const NON_FALLBACK_CODES = new Set(["INVALID_IMAGE", "UNSUPPORTED_IMAGE", "MISSING_IMAGES", "IMAGES_TOO_LARGE", "TURNSTILE_CANCELLED"]);
 
 export function shouldUseBrowserFallback(error) {
   return error instanceof TypeError || !NON_FALLBACK_CODES.has(error?.code);
@@ -40,11 +41,13 @@ export function shouldUseBrowserFallback(error) {
 
 export async function requestRemoteTranscriptScan(images, {
   apiUrl = resolveTranscriptApiUrl(),
-  fetchImpl = globalThis.fetch
+  fetchImpl = globalThis.fetch,
+  turnstileToken = ""
 } = {}) {
   const formData = new FormData();
   images.forEach((image) => formData.append("images[]", image.blob, image.uploadName));
-  const response = await fetchImpl(apiUrl, { method: "POST", body: formData });
+  const headers = turnstileToken ? { "X-Turnstile-Token": turnstileToken } : undefined;
+  const response = await fetchImpl(apiUrl, { method: "POST", headers, body: formData });
   const payload = await response.json().catch(() => null);
   if (!response.ok || !payload?.success) {
     throw new RemoteTranscriptScanError(payload?.error?.message || "Dịch vụ nhận diện tạm thời chưa sẵn sàng.", {
@@ -143,7 +146,8 @@ export class TranscriptScanner {
       this.setStatus("Đang nhận diện...", "working");
       let payload;
       try {
-        payload = await requestRemoteTranscriptScan(optimizedImages);
+        const turnstileToken = await turnstileGate.getToken("scan_transcript");
+        payload = await requestRemoteTranscriptScan(optimizedImages, { turnstileToken });
       } catch (error) {
         if (!shouldUseBrowserFallback(error)) throw error;
         const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js");

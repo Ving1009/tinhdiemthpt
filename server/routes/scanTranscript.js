@@ -2,6 +2,7 @@ import { Router } from "express";
 import rateLimit from "express-rate-limit";
 import multer from "multer";
 import { AppError } from "../errors.js";
+import { turnstileTokenFromHeaders, verifyTurnstile } from "../services/turnstile.js";
 
 export const MAX_IMAGES = 12;
 export const MAX_IMAGE_BYTES = 7 * 1024 * 1024;
@@ -28,7 +29,7 @@ const upload = multer({
   }
 });
 
-export function createScanTranscriptRouter({ scanTranscript }) {
+export function createScanTranscriptRouter({ scanTranscript, environment = process.env }) {
   const router = Router();
   router.use(rateLimit({
     windowMs: 15 * 60 * 1000,
@@ -37,7 +38,20 @@ export function createScanTranscriptRouter({ scanTranscript }) {
     legacyHeaders: false,
     handler: (_request, response) => response.status(429).json({ success: false, error: { code: "RATE_LIMITED", message: "Bạn đã gửi nhiều yêu cầu. Hãy thử lại sau ít phút." } })
   }));
-  router.post("/scan-transcript", upload.array("images[]", MAX_IMAGES), async (request, response, next) => {
+  router.post("/scan-transcript", async (request, _response, next) => {
+    try {
+      await verifyTurnstile({
+        environment,
+        token: turnstileTokenFromHeaders(request.headers),
+        action: "scan_transcript",
+        remoteIp: request.ip,
+        requestHostname: request.hostname
+      });
+      next();
+    } catch (error) {
+      next(error);
+    }
+  }, upload.array("images[]", MAX_IMAGES), async (request, response, next) => {
     try {
       const images = request.files || [];
       if (!images.length) throw new AppError("Hãy chọn ít nhất một ảnh học bạ.", { statusCode: 400, code: "MISSING_IMAGES" });

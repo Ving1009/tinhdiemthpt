@@ -9,7 +9,7 @@ test("OCR tách HK1, HK2 và cả năm khi tiêu đề cột và lớp rõ ràng
   const result = parseOcrTranscriptPages([{
     originalname: "hoc-ba-lop-12.png",
     confidence: 84,
-    text: "HỌ VÀ TÊN: Nguyễn Văn An\nLỚP 12\nMôn học  HK1  HK2  Cả năm\nToán 8,0 8,6 8,3\nNgữ văn 7.5 8.1 7.8"
+    text: "HỌ VÀ TÊN: Nguyễn Văn An\nLỚP 12\nMONHOC  HK1  HK2  CANAM\nToán 8,0 8,6 8,3\nNgữ văn 7.5 8.1 7.8"
   }], catalog);
   assert.equal(result.payload.student.name, "Nguyễn Văn An");
   assert.deepEqual(result.payload.scores.map(({ subject, grade, semester1, semester2, year }) => ({ subject, grade, semester1, semester2, year })), [
@@ -34,4 +34,3 @@ test("OCR đọc bảng điểm cả năm ba lớp nhưng không tự suy diễn
   assert.equal(ambiguous.payload.scores.length, 0);
   assert.match(ambiguous.warnings.join(" "), /bố cục điểm chưa đủ rõ/i);
 });
-

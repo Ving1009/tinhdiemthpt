@@ -18,7 +18,7 @@ const combinations = [
   { id: "d01", code: "D01", subjects: ["Toán", "Ngữ văn", "Tiếng Anh"], subjectIds: ["math", "literature", "foreignLanguage"], subjectText: "Toán, Ngữ văn, Tiếng Anh" },
   { id: "q00", code: "Q00", subjects: ["ĐGNL"], subjectIds: ["dgnl"], subjectText: "Đánh giá năng lực" }
 ];
-const store = createDataStore({ universities, majors, combinations, subjects: [], certificateConversions: [] });
+const store = createDataStore({ universities, majors, combinations, subjects: [] });
 
 test("normalize search hỗ trợ tiếng Việt có và không dấu", () => {
   assert.equal(normalizeSearch("Tự động hóa"), "tu dong hoa");
@@ -45,7 +45,7 @@ test("tìm nhiều tổ hợp không bỏ dòng thứ 51 và phân trang sau khi
     comparisonRules: { A00: "three-subject-sum-priority-2026", A01: "three-subject-sum-priority-2026" },
     cutoff: { year: 2026, score: 20 + (index % 5), scale: 30, status: "verified", sourceUrl: `https://hidden.example/${index}` }
   }));
-  const largeStore = createDataStore({ universities, majors: manyMajors, combinations, subjects: [], certificateConversions: [] });
+  const largeStore = createDataStore({ universities, majors: manyMajors, combinations, subjects: [] });
   const input = { year: 2026, pageSize: 24, page: 3, results: [
     { combination: "A00", score: 25, scale: 30, method: "THPT", ruleId: "three-subject-sum-priority-2026" },
     { combination: "A01", score: 26, scale: 30, method: "THPT", ruleId: "three-subject-sum-priority-2026" }
@@ -69,7 +69,7 @@ test("tìm một tổ hợp xác định khả năng so sánh và chênh lệch 
     comparisonRules: index >= 60 ? { A00: "three-subject-sum-priority-2026" } : undefined,
     cutoff: { year: 2026, score: index >= 60 ? 20 + (index - 60) / 10 : 10 + index / 100, scale: 30, status: "verified", sourceUrl: `https://hidden.example/ordered-${index}` }
   }));
-  const orderedStore = createDataStore({ universities, majors: rows, combinations, subjects: [], certificateConversions: [] });
+  const orderedStore = createDataStore({ universities, majors: rows, combinations, subjects: [] });
   const result = orderedStore.listMajors({
     combination: "A00", method: "THPT", year: 2026, score: 25, scale: 30,
     ruleId: "three-subject-sum-priority-2026", status: "verified", sort: "difference-desc", page: 1, pageSize: 10

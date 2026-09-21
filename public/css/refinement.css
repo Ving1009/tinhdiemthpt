@@ -51,7 +51,7 @@ body.dark { --bg:#0b0f17; --surface:#151d2a; --surface-soft:#1c2636; --text:#f1f
 .result-empty p { font-size:15px; }
 .result-row,.result-label,.result-context,.result-details,.result-content .link-button { font-size:14px; }
 .score-note { line-height:1.7; }
-.academic-section,.admission-section,.universities-section,.formulas-section,.combinations-section,.guide-section { background:none!important; }
+.academic-section,.admission-section,.universities-section,.combinations-section,.guide-section { background:none!important; }
 .academic-table th,.academic-table td input,.academic-note,.academic-result-item,.academic-result-list h3,.transcript-dropzone p,.transcript-status { font-size:14px; }
 .admission-flow { grid-template-columns:repeat(3,minmax(0,1fr)) auto; padding:24px; box-shadow:none; gap:16px; }
 .flow-arrow { display:none; }
@@ -91,9 +91,6 @@ body.dark { --bg:#0b0f17; --surface:#151d2a; --surface-soft:#1c2636; --text:#f1f
 .combination-card { min-height:145px; padding:18px; border-radius:12px; }
 .combination-code { font-size:14px; }
 .combination-card h3,.combination-summary { font-size:14px; }
-.formula-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-.formula-card p { font-size:14px; line-height:1.7; }
-.formula-type,.formula-meta span,.formula-meta b { font-size:12px; }
 .guide-layout { gap:48px; }
 .accordion { background:var(--surface); border-color:var(--line); }
 .accordion summary,.accordion p { font-size:15px; }
@@ -193,7 +190,7 @@ body.dark { --bg:#0b0f17; --surface:#151d2a; --surface-soft:#1c2636; --text:#f1f
  .section-heading h2 { font-size:26px; }
  .section-heading p:not(.eyebrow) { font-size:15px; }
  .form-card { padding:18px; }
- .university-region-list,.formula-grid { grid-template-columns:1fr; }
+ .university-region-list { grid-template-columns:1fr; }
  .university-card { min-height:154px; }
  .university-card h3 { font-size:16px; }
  .region-filter { font-size:13px; padding:0 7px; }
@@ -248,7 +245,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .check-field { display:flex; min-height:44px; align-items:center; gap:9px; color:var(--text); font-size:14px; font-weight:600; cursor:pointer; }
 .check-field input { width:18px; height:18px; accent-color:var(--primary); }
 .multiplier-controls>.field { flex:1; margin:0; }
-.certificate-layout .result-panel { background:#173858; }
 .compact-result .result-empty { min-height:250px; }
 .compact-result .result-content { padding:30px; }
 .major-workspace { display:grid; grid-template-columns:minmax(0,2fr) minmax(280px,.8fr); gap:22px; align-items:start; }
@@ -284,7 +280,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .wish-actions button { width:27px; height:27px; padding:0; border:1px solid var(--line); border-radius:6px; color:var(--muted); background:var(--surface); cursor:pointer; }
 .wish-actions button:disabled { opacity:.32; cursor:default; }
 .wish-undo { padding:9px 10px; border-radius:8px; background:var(--primary-soft); font-size:12px; }
-.wish-print-header,.wish-print-details { display:none; }
 .finder-disclaimer { margin:20px 0 0; color:var(--muted); font-size:13px; }
 .form-note { margin:14px 0 0; color:var(--muted); font-size:12px; line-height:1.6; }
 .save-major-button { margin-top:8px; padding:5px 9px; border:1px solid var(--line); border-radius:7px; color:var(--primary); background:var(--surface); cursor:pointer; }
@@ -344,6 +339,26 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 /* Functional workspace additions. */
 .admission-calculator-panel { max-width:980px; margin:22px auto 0; }
 .admission-dynamic-form { border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); }
+.verified-formula-card { display:grid; gap:16px; margin-bottom:18px; padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface); box-shadow:var(--shadow); }
+.verified-formula-card.is-profile { box-shadow:none; }
+.verified-formula-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
+.verified-formula-heading h3 { margin:2px 0 0; color:var(--text); font-size:20px; }
+.verified-formula-card .formula-box { margin:0; overflow-wrap:anywhere; }
+.verified-formula-card section h4 { margin:0 0 7px; color:var(--text); font-size:13px; }
+.verified-formula-card section p,.verified-formula-card section ul,.formula-programs p,.formula-programs ul { margin:0; color:var(--muted); font-size:13px; line-height:1.7; }
+.verified-formula-card section ul,.formula-programs ul { display:grid; gap:5px; padding-left:20px; }
+.formula-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0; }
+.formula-facts div { padding:12px; border:1px solid var(--line); border-radius:9px; background:var(--surface-soft); }
+.formula-facts dt { color:var(--faint); font-size:10px; font-weight:700; text-transform:uppercase; }
+.formula-facts dd { display:flex; flex-wrap:wrap; gap:6px; margin:5px 0 0; color:var(--text); font-size:13px; font-weight:600; }
+.formula-facts dd span { padding:2px 7px; border-radius:999px; color:var(--primary); background:var(--primary-soft); font-size:11px; }
+.formula-programs { padding-top:12px; border-top:1px solid var(--line); }
+.formula-programs summary { color:var(--text); font-size:13px; font-weight:700; cursor:pointer; }
+.formula-programs ul,.formula-programs p { max-height:220px; margin-top:10px; overflow:auto; }
+.formula-source { width:max-content; max-width:100%; color:var(--primary); font-size:12px; font-weight:700; overflow-wrap:anywhere; }
+.profile-formulas { margin:24px 0 32px; }
+.profile-formulas .verified-formula-card { margin-top:12px; }
+.formula-unverified { text-align:left; }
 .admission-form-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:18px; }
 .admission-form-heading h3 { margin:4px 0 0; }
 .verified-badge { flex:0 0 auto; padding:6px 9px; border-radius:999px; color:#12604e; background:#dff7ef; font-size:11px; font-weight:750; }
@@ -364,7 +379,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .report-school-button { margin-left:auto; white-space:nowrap; }
 .detail-pagination { margin-top:12px; }
 .detail-table tr.is-target-major { background:color-mix(in srgb,var(--primary) 9%,var(--surface)); box-shadow:inset 3px 0 var(--primary); }
-.wish-export-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; margin-top:14px; padding-top:14px; border-top:1px solid var(--line); }
+.wish-export-actions { display:grid; grid-template-columns:1fr; gap:7px; margin-top:14px; padding-top:14px; border-top:1px solid var(--line); }
 .wish-export-actions .button { display:grid; min-height:38px; place-items:center; padding:7px; font-size:11px; cursor:pointer; }
 .comparison-panel { margin-top:20px; padding-top:18px; border-top:1px solid var(--line); }
 .comparison-scroll { max-width:100%; margin-top:12px; overflow-x:auto; overscroll-behavior-inline:contain; border:1px solid var(--line); border-radius:9px; }
@@ -380,6 +395,10 @@ textarea { width:100%; min-height:110px; resize:vertical; padding:10px 12px; bor
 textarea:focus-visible { outline:3px solid color-mix(in srgb,var(--primary) 38%,transparent); outline-offset:2px; }
 
 @media(max-width:560px) {
+ .verified-formula-card { padding:17px 14px; }
+ .verified-formula-heading { display:grid; gap:10px; }
+ .formula-facts { grid-template-columns:1fr; }
+ .verified-formula-card .formula-box { padding:15px; font-size:12px; }
  .table-scroll-hint { display:block; }
  .academic-table-wrap { max-width:100%; overflow-x:auto; overscroll-behavior-inline:contain; }
  .academic-table th:first-child { position:sticky; left:0; z-index:2; background:var(--surface); }
@@ -401,44 +420,8 @@ textarea:focus-visible { outline:3px solid color-mix(in srgb,var(--primary) 38%,
  .admission-form-heading,.simulation-grid { grid-template-columns:1fr; }
  .admission-form-heading { display:grid; }
  .verified-badge { justify-self:start; }
- .wish-export-actions { grid-template-columns:1fr 1fr; }
+ .wish-export-actions { grid-template-columns:1fr; }
  button,.button,input,select { min-height:44px; }
-}
-
-@media print {
- @page { size:A4 portrait; margin:14mm; }
- body * { visibility:hidden!important; }
- #saved-wishes-panel,#saved-wishes-panel * { visibility:visible!important; }
- #saved-wishes-panel { position:absolute; inset:0; width:100%; padding:0; border:0; box-shadow:none; color:#111; background:#fff; }
- .wish-print-header { display:block; margin-bottom:18px; padding-bottom:12px; border-bottom:2px solid #164e63; }
- .wish-print-header h1 { margin:0 0 8px; font-size:22px; }
- .wish-print-header p { margin:3px 0; font-size:11px; }
- .wish-print-details { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:3px 16px; margin:9px 0 0; font-size:10px; }
- .wish-print-details div { display:flex; gap:5px; }
- .wish-print-details dt { font-weight:700; }
- .wish-print-details dd { margin:0; }
- .saved-wish { break-inside:avoid; grid-template-columns:28px minmax(0,1fr); padding:11px 0; }
- .saved-wish b { font-size:12px; }
- .saved-wishes-heading,.wish-actions,.wish-export-actions,#clear-saved-wishes,.comparison-panel,.saved-wishes-note,.wish-undo { display:none!important; }
-}
-.applied-conversion {
-  align-items: center;
-  background: color-mix(in srgb, var(--primary, #0f766e) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--primary, #0f766e) 34%, transparent);
-  border-radius: 14px;
-  display: flex;
-  gap: 16px;
-  justify-content: space-between;
-  margin-top: 14px;
-  padding: 12px 14px;
-}
-
-.applied-conversion div { display: grid; gap: 3px; }
-.applied-conversion span { color: var(--muted, #64748b); font-size: .88rem; }
-.applied-conversion .button { flex: 0 0 auto; }
-
-@media (max-width: 520px) {
-  .applied-conversion { align-items: flex-start; flex-direction: column; }
 }
 
 /* September 2026 interface pass: tighter hierarchy and reliable small-screen flow. */
@@ -471,12 +454,6 @@ textarea:focus-visible { outline:3px solid color-mix(in srgb,var(--primary) 38%,
 .major-advanced-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; padding: 2px 13px 13px; border-top: 1px solid var(--line); }
 .major-advanced-grid > .field { margin-top: 12px; }
 
-.certificate-unavailable { display: flex; max-width: 860px; align-items: flex-start; gap: 16px; padding: 24px; border: 1px solid color-mix(in srgb,var(--primary) 28%,var(--line)); border-radius: 14px; background: var(--surface); box-shadow: var(--shadow); }
-.certificate-unavailable.is-hidden { display: none; }
-.certificate-unavailable .status-icon { display: grid; width: 38px; height: 38px; flex: 0 0 38px; place-items: center; border-radius: 50%; color: var(--primary); background: var(--primary-soft); font-size: 18px; font-weight: 800; }
-.certificate-unavailable h3 { margin: 0 0 7px; color: var(--text); font-size: 18px; line-height: 1.45; }
-.certificate-unavailable p { max-width: 720px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
-.certificate-unavailable .form-actions { margin-top: 17px; }
 
 .profile-status-compact { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 3px 18px; }
 .profile-status-compact p { margin: 0; }
@@ -508,9 +485,6 @@ textarea:focus-visible { outline:3px solid color-mix(in srgb,var(--primary) 38%,
   .major-filter-grid { grid-template-columns: 1fr; padding-inline: 14px; }
   .major-advanced-grid { grid-template-columns: 1fr; gap: 0; }
   .major-advanced-filters { margin-top: 0; }
-  .certificate-unavailable { padding: 19px 16px; }
-  .certificate-unavailable .form-actions { display: grid; grid-template-columns: 1fr; }
-  .certificate-unavailable .button { width: 100%; }
   .detail-header .school-logo { width: 48px; height: 48px; flex-basis: 48px; }
   .profile-status-compact { grid-template-columns: 1fr; }
   .profile-status-compact a { grid-column: auto; grid-row: auto; margin-top: 7px; white-space: normal; }
@@ -521,5 +495,4 @@ textarea:focus-visible { outline:3px solid color-mix(in srgb,var(--primary) 38%,
 
 @media(max-width:390px) {
   .auto-subject-row { grid-template-columns: minmax(0,1fr) 78px; }
-  .certificate-unavailable { display: grid; gap: 12px; }
 }

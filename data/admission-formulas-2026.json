@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "year": 2026,
+  "verifiedAt": "2026-09-21",
+  "verificationPolicy": "Chỉ công bố biểu thức được nguồn chính thức của trường nêu trực tiếp. Nhãn trạng thái trong tài liệu tổng hợp, mô tả tham khảo và phép suy luận từ tên phương thức không đủ để xuất bản.",
+  "schools": [
+    {
+      "universityId": "dai-hoc-bach-khoa-ha-noi",
+      "schoolCode": "BKA",
+      "methods": [
+        {
+          "id": "bka-thpt-2026-official",
+          "label": "THPT",
+          "repositoryMethods": ["THPT"],
+          "status": "official_verified",
+          "expression": "Tổ hợp không có môn chính: ĐX = M1 + M2 + M3 + ĐƯT\nTổ hợp có Toán là môn chính: ĐX = (2 × Toán + M2 + M3) × 3/4 + ĐƯT\nK01: ĐX = (3 × Toán + Ngữ văn + 2 × M) / 2 + ĐƯT",
+          "scale": "Thang 30",
+          "conditions": [
+            "M của K01 là Vật lí, Hóa học, Sinh học hoặc Tin học theo tổ hợp trường công bố.",
+            "Điểm xét tuyển được làm tròn đến 2 chữ số thập phân."
+          ],
+          "priority": "ĐƯT là điểm ưu tiên khu vực, đối tượng theo quy chế tuyển sinh được trường dẫn chiếu.",
+          "conversion": "Chứng chỉ ngoại ngữ chỉ được quy đổi thay điểm môn ngoại ngữ ở tổ hợp và mức trường công bố; xem bảng gốc trước khi áp dụng.",
+          "combinationNote": "Áp dụng theo tổ hợp THPT của từng chương trình; công thức K01 và công thức có môn chính dùng trọng số riêng nêu trên.",
+          "applicability": {
+            "mode": "explicit_major_ids",
+            "majorIds": [
+              "dai-hoc-bach-khoa-ha-noi-it1-thpt-91",
+              "dai-hoc-bach-khoa-ha-noi-ee2-thpt-115",
+              "dai-hoc-bach-khoa-ha-noi-et1-thpt-139"
+            ],
+            "note": "Phạm vi tích hợp tự tính chỉ gồm ba dòng ngành đã có calculationVerified=true trong repository."
+          },
+          "autoCalculate": true,
+          "formulaModuleId": "bka-thpt-2026",
+          "source": {
+            "kind": "official_primary",
+            "title": "Thông tin tuyển sinh Đại học Bách khoa Hà Nội năm 2026",
+            "url": "https://hust.edu.vn/uploads/sys/tuyen-sinh/2023_06/thong-tin-tuyen-sinh-dai-hoc-2026.pdf",
+            "verifiedAt": "2026-09-21",
+            "evidence": "Nguồn trường công bố trực tiếp ba biểu thức THPT: tổ hợp thường, tổ hợp có Toán là môn chính và K01."
+          }
+        }
+      ]
+    },
+    {
+      "universityId": "truong-dai-hoc-fpt",
+      "schoolCode": "FPT",
+      "methods": [
+        {
+          "id": "fpt-ket-hop-2026-official",
+          "label": "Xét tuyển kết hợp",
+          "repositoryMethods": ["Xét tuyển kết hợp"],
+          "status": "official_verified",
+          "expression": "ĐXT = ĐKH + ĐKK + ĐƯT\nĐKH = [Điểm thi THPT + 3 × ĐTB lớp 12] / 2",
+          "scale": "Thang 30",
+          "conditions": [
+            "Điểm thi THPT là tổng ba môn theo tổ hợp Axx; tổ hợp Cxx không áp dụng cho Công nghệ thông tin và Khoa học máy tính.",
+            "ĐTB lớp 12 là trung bình cộng của tất cả môn học được đánh giá bằng điểm số trong năm lớp 12.",
+            "Tổng ba môn thi THPT của thí sinh dự thi năm 2026 phải đạt tối thiểu 15,00 điểm.",
+            "ĐXT được làm tròn đến hàng phần trăm và không vượt quá 30."
+          ],
+          "priority": "ĐƯT theo quy chế Bộ GDĐT; ĐKK theo phụ lục chứng chỉ của trường. Diện sinh viên thế hệ thứ nhất được cộng 1,5 điểm khi đủ hồ sơ theo quy định của trường.",
+          "conversion": "Chứng chỉ ngoại ngữ chỉ dùng để quy đổi điểm môn ngoại ngữ trong tổ hợp hoặc làm điểm khuyến khích; tra phụ lục chính thức để lấy đúng mức.",
+          "combinationNote": "Axx: Toán + 2 môn thi khác. Cxx: Ngữ văn + 2 môn thi khác, trừ ngành Công nghệ thông tin và Khoa học máy tính.",
+          "applicability": {
+            "mode": "repository_methods",
+            "note": "Áp dụng cho các dòng ngành mang đúng nhãn phương thức Xét tuyển kết hợp trong repository."
+          },
+          "autoCalculate": false,
+          "source": {
+            "kind": "official_primary",
+            "title": "Quy chế tuyển sinh hệ đại học chính quy năm 2026 – Trường Đại học FPT",
+            "url": "https://daihoc.fpt.edu.vn/quy-che-tuyen-sinh-2026/",
+            "verifiedAt": "2026-09-21",
+            "evidence": "Nguồn trường nêu trực tiếp ĐXT, ĐKH, thành phần điểm thi THPT và ĐTB lớp 12."
+          }
+        }
+      ]
+    },
+    {
+      "universityId": "khoa-quoc-te-dhqg-ha-noi",
+      "schoolCode": "QHQ",
+      "methods": [
+        {
+          "id": "qhq-thpt-2026-official",
+          "label": "THPT",
+          "repositoryMethods": ["THPT"],
+          "status": "official_verified",
+          "expression": "Điểm xét tuyển = Tổng điểm 03 môn + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có)",
+          "scale": "Thang 30",
+          "conditions": [
+            "Thí sinh phải đạt ngưỡng đảm bảo chất lượng đầu vào do ĐHQGHN quy định.",
+            "Áp dụng tổ hợp theo từng chương trình trong thông tin tuyển sinh chính thức."
+          ],
+          "priority": "Điểm cộng và điểm ưu tiên áp dụng theo quy định của ĐHQGHN, nhà trường và quy chế tuyển sinh hiện hành.",
+          "conversion": "Nếu chứng chỉ không dùng để quy đổi trong tổ hợp, việc cộng điểm chỉ áp dụng theo đúng điều kiện trường công bố.",
+          "combinationNote": "Theo tổ hợp công bố cho từng chương trình.",
+          "applicability": {
+            "mode": "repository_methods",
+            "note": "Áp dụng cho các dòng ngành THPT của trường trong repository."
+          },
+          "autoCalculate": false,
+          "source": {
+            "kind": "official_primary",
+            "title": "Thông tin tuyển sinh đại học năm 2026 – Trường Quốc tế, ĐHQGHN",
+            "url": "https://www.is.vnu.edu.vn/truong-quoc-te-thong-bao-thong-tin-du-kien-tuyen-sinh-dhcq-nam-2026/",
+            "verifiedAt": "2026-09-21",
+            "evidence": "Nguồn trường nêu trực tiếp công thức tổng ba môn, điểm cộng và điểm ưu tiên."
+          }
+        },
+        {
+          "id": "qhq-hsa-2026-official",
+          "label": "ĐGNL HSA",
+          "repositoryMethods": ["ĐGNL HSA"],
+          "status": "official_verified",
+          "expression": "Điểm xét tuyển = Điểm HSA quy đổi + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có)",
+          "scale": "Điểm HSA được quy đổi theo quy định của ĐHQGHN và Trường Quốc tế",
+          "conditions": [
+            "Kết quả HSA phải đạt ngưỡng đảm bảo chất lượng đầu vào do ĐHQGHN quy định.",
+            "Bảng quy đổi chi tiết chưa được tự suy ra khi nguồn chưa công bố mức áp dụng."
+          ],
+          "priority": "Điểm cộng và điểm ưu tiên chỉ áp dụng theo quy định chính thức của ĐHQGHN và trường.",
+          "conversion": "Nguồn xác nhận dùng điểm HSA quy đổi nhưng không nêu một bảng quy đổi cố định tại mục công thức.",
+          "combinationNote": "Dùng kết quả HSA, không dùng tổ hợp môn THPT.",
+          "applicability": {
+            "mode": "repository_methods",
+            "note": "Áp dụng cho các dòng ngành ĐGNL HSA của trường trong repository."
+          },
+          "autoCalculate": false,
+          "source": {
+            "kind": "official_primary",
+            "title": "Thông tin tuyển sinh đại học năm 2026 – Trường Quốc tế, ĐHQGHN",
+            "url": "https://www.is.vnu.edu.vn/truong-quoc-te-thong-bao-thong-tin-du-kien-tuyen-sinh-dhcq-nam-2026/",
+            "verifiedAt": "2026-09-21",
+            "evidence": "Nguồn trường nêu trực tiếp công thức có thành phần điểm HSA quy đổi."
+          }
+        },
+        {
+          "id": "qhq-ket-hop-2026-official",
+          "label": "Xét tuyển kết hợp",
+          "repositoryMethods": ["Xét tuyển kết hợp"],
+          "status": "official_verified",
+          "expression": "Điểm xét tuyển = Điểm CCTA quy đổi + Điểm 2 môn còn lại + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có)",
+          "scale": "Thang 30",
+          "conditions": [
+            "IELTS Academic từ 5.5 hoặc TOEFL iBT từ 72 điểm.",
+            "Hai môn còn lại là điểm thi tốt nghiệp THPT năm 2026 theo tổ hợp của ngành, không gồm môn Tiếng Anh."
+          ],
+          "priority": "Điểm cộng và điểm ưu tiên áp dụng theo quy định chính thức; tổng điểm không vượt quá thang xét tuyển.",
+          "conversion": "IELTS 5.5/6.0/6.5/7.0/7.5–9.0 lần lượt quy đổi 8.0/8.5/9.0/9.5/10; TOEFL iBT tương ứng 72–78/79–87/88–95/96–101/102–120.",
+          "combinationNote": "Chứng chỉ quy đổi thay môn Tiếng Anh; dùng điểm thi THPT của hai môn còn lại trong tổ hợp ngành.",
+          "applicability": {
+            "mode": "repository_methods",
+            "note": "Áp dụng cho các dòng ngành Xét tuyển kết hợp của trường trong repository."
+          },
+          "autoCalculate": false,
+          "source": {
+            "kind": "official_primary",
+            "title": "Thông tin tuyển sinh đại học năm 2026 – Trường Quốc tế, ĐHQGHN",
+            "url": "https://www.is.vnu.edu.vn/truong-quoc-te-thong-bao-thong-tin-du-kien-tuyen-sinh-dhcq-nam-2026/",
+            "verifiedAt": "2026-09-21",
+            "evidence": "Nguồn trường nêu trực tiếp công thức kết hợp và bảng quy đổi IELTS/TOEFL iBT."
+          }
+        }
+      ]
+    },
+    {
+      "universityId": "hoc-vien-am-nhac-quoc-gia-viet-nam",
+      "schoolCode": "NVH",
+      "methods": [
+        {
+          "id": "nvh-ket-hop-2026-official",
+          "label": "Kết hợp thi tuyển với xét tuyển",
+          "repositoryMethods": ["Kết hợp thi tuyển và xét học bạ"],
+          "status": "official_verified",
+          "expression": "Điểm xét tuyển = [(2 × NK1) + NK2 + VA/TO] × 3/4 + Điểm ưu tiên + Điểm cộng (nếu có)",
+          "scale": "Thang 30",
+          "conditions": [
+            "NK1 là môn Chuyên ngành, hệ số 2; NK2 là Kiến thức âm nhạc tổng hợp, hệ số 1.",
+            "VA là điểm xét môn Ngữ văn; trường hợp học bạ nước ngoài không có Ngữ văn có thể dùng Toán theo quy định.",
+            "Ngữ văn/Toán tối thiểu 5,0; Chuyên ngành tối thiểu 7,0; Kiến thức âm nhạc tổng hợp tối thiểu 5,0.",
+            "Sáng tác, Chỉ huy và Âm nhạc học có thêm điều kiện Piano phổ thông tối thiểu 5,0."
+          ],
+          "priority": "Điểm ưu tiên theo khu vực, đối tượng chính sách và điểm cộng chỉ áp dụng theo Quy chế 2026 của Học viện và quy chế Bộ GDĐT.",
+          "conversion": "Không có bảng quy đổi chứng chỉ riêng được tích hợp cho phương thức này.",
+          "combinationNote": "Chuyên ngành ×2 + Kiến thức âm nhạc tổng hợp + Ngữ văn hoặc Toán.",
+          "applicability": {
+            "mode": "repository_methods",
+            "note": "Áp dụng cho tám dòng ngành mang nhãn Kết hợp thi tuyển và xét học bạ trong repository; tên phương thức chính thức là Kết hợp thi tuyển với xét tuyển."
+          },
+          "autoCalculate": false,
+          "source": {
+            "kind": "official_primary",
+            "title": "Quy chế tuyển sinh trình độ đại học năm 2026 – Học viện Âm nhạc Quốc gia Việt Nam",
+            "url": "https://www.vnam.edu.vn/NewsDetail.aspx?ItemID=2046&lang=",
+            "verifiedAt": "2026-09-21",
+            "evidence": "Quy chế của Học viện nêu trực tiếp trọng số, biểu thức, thành phần xét tuyển và ngưỡng từng môn."
+          }
+        }
+      ]
+    }
+  ]
+}

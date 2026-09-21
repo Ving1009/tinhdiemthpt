@@ -1,5 +1,7 @@
 import "dotenv/config";
 import express from "express";
+import { createRequire } from "node:module";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { AppError } from "./errors.js";
 import { defaultDataStore } from "./dataStore.js";
@@ -8,11 +10,16 @@ import { createScanTranscriptRouter, isUploadError } from "./routes/scanTranscri
 import { createGeminiVisionService } from "./services/geminiVision.js";
 import { createOcrSpaceVisionService } from "./services/ocrSpaceVision.js";
 import { collectApiKeys, createProviderPool } from "./services/providerPool.js";
-import { createTesseractVisionService } from "./services/tesseractVision.js";
 import { createTranscriptScanService } from "./services/transcriptScanService.js";
 import { createReportStore } from "./reportStore.js";
 
+const serverRequire = createRequire(import.meta.url);
 const PUBLIC_DIR = fileURLToPath(new URL("../public/", import.meta.url));
+const TRANSCRIPT_SUBJECT_CATALOG = fileURLToPath(new URL("../data/transcript-subjects.json", import.meta.url));
+const TESSERACT_DIST_DIR = join(dirname(serverRequire.resolve("tesseract.js/package.json")), "dist");
+const TESSERACT_CORE_DIR = dirname(serverRequire.resolve("tesseract.js-core/package.json"));
+const TESSERACT_VIE_DIR = join(dirname(serverRequire.resolve("@tesseract.js-data/vie/package.json")), "4.0.0_best_int");
+const TESSERACT_ENG_DIR = join(dirname(serverRequire.resolve("@tesseract.js-data/eng/package.json")), "4.0.0_best_int");
 
 function isAllowedDevelopmentOrigin(origin) {
   try {
@@ -73,9 +80,6 @@ export function createConfiguredScanProviders(environment = process.env) {
       cooldownMsByCode: { OCR_SPACE_QUOTA: 5 * 60_000, OCR_SPACE_TIMEOUT: 30_000, OCR_SPACE_AUTH: 60 * 60_000, OCR_SPACE_REQUEST_FAILED: 30_000 }
     })
   });
-  if (environment.TESSERACT_FALLBACK_ENABLED !== "false") configuredProviders.push({
-    name: "tesseract", label: "OCR Tesseract cục bộ", scan: createTesseractVisionService({ totalTimeoutMs: environment.TESSERACT_TIMEOUT_MS })
-  });
   if (!configuredProviders.length) configuredProviders.push({
     name: "gemini", label: "Gemini", scan: createGeminiVisionService()
   });
@@ -90,6 +94,14 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
   app.use("/api", localDevelopmentCors);
   app.use("/api", createPublicApiRouter({ store: dataStore, reportStore }));
   app.use("/api", createScanTranscriptRouter({ scanTranscript: scanner }));
+  const vendorStaticOptions = { dotfiles: "deny", index: false, etag: true, maxAge: "30d", immutable: true };
+  app.use("/vendor/tesseract", localDevelopmentCors, express.static(TESSERACT_DIST_DIR, vendorStaticOptions));
+  app.use("/vendor/tesseract-core", localDevelopmentCors, express.static(TESSERACT_CORE_DIR, vendorStaticOptions));
+  app.use("/vendor/tesseract-lang", localDevelopmentCors, express.static(TESSERACT_VIE_DIR, vendorStaticOptions), express.static(TESSERACT_ENG_DIR, vendorStaticOptions));
+  app.get("/vendor/transcript-subjects.json", localDevelopmentCors, (_request, response) => {
+    response.setHeader("Cache-Control", "public, max-age=86400");
+    response.sendFile(TRANSCRIPT_SUBJECT_CATALOG);
+  });
   app.use(express.static(PUBLIC_DIR, {
     dotfiles: "deny",
     index: "index.html",

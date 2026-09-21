@@ -25,11 +25,13 @@ test("public source không chứa wording hay website thu thập dữ liệu", a
   ]) assert.equal(content.toLocaleLowerCase("vi").includes(forbidden.toLocaleLowerCase("vi")), false, `không được public: ${forbidden}`);
 });
 
-test("HTML có tìm kiếm mobile và không cho dùng công thức 2026 cho năm 2027", async () => {
+test("HTML có tìm kiếm mobile, khóa năm 2027 và đã dọn UI cũ", async () => {
   const html = await readFile(new URL("index.html", publicRoot), "utf8");
   assert.match(html, /id="mobile-search"/);
   assert.match(html, /value="2027" disabled/);
-  assert.match(html, /Tesseract OCR cục bộ/);
+  assert.match(html, />Quét học bạ</);
+  assert.doesNotMatch(html, /AI \+ OCR|Độ tin cậy|id="certificate"|Quy đổi chứng chỉ theo trường|id="formulas"|Mục 8/i);
+  assert.equal((html.match(/id="export-wishes-pdf"/g) || []).length, 1);
 });
 
 test("frontend dùng API và không import private dataset", async () => {

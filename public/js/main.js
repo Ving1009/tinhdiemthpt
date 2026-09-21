@@ -1,17 +1,14 @@
 import { canCalculateMajor, cutoffLabel, cutoffStatusLabel, paginate, publicProfileNote, publishableCutoff, verifiedCutoff } from "./admissions.js?v=20260914-3";
-import { Calculator } from "./calculator.js";
 import { UniversityRepository } from "./university.js?v=20260914-2";
 import { $, $$, debounce, escapeHTML, formatScore, sanitizeScoreInput, storage, validateScore } from "./utils.js";
-import { formulaList } from "../formulas/index.js";
 import { ACADEMIC_METHODS } from "../formulas/hocba.js";
 import { calculateAcademicCombinations } from "./core/academicCalculator.js";
-import { applyCertificateToEntries } from "./core/certificateApplication.js";
 import { STANDARD_SUBJECTS, combinationSubjectKeys, isStandardCombination, subjectLabelForKey } from "./core/subjectMatching.js";
 import { calculateAutomaticCombinations, calculateCombination, validateSubjectEntries } from "./core/thptCombinations.js";
 import { createDataReport } from "./core/dataReport.js";
 import { simulateScoreChange } from "./core/scoreSimulation.js";
 import { createFinderScoreContext, createScoreProfile, finderContextIsFresh, formatFinderScoreContext } from "./core/scoreState.js";
-import { createWishBackup, mergeWishListsDetailed, moveWishById, normalizeWish, normalizeWishList, parseWishBackup, removeWishById, wishIdentity, wishesToXlsxBytes } from "./core/wishList.js";
+import { moveWishById, normalizeWish, normalizeWishList, removeWishById, wishIdentity } from "./core/wishList.js";
 import { autoFillTranscript } from "./autoFillTranscript.js";
 import { TranscriptPreview } from "./transcriptPreview.js";
 import { TranscriptScanner } from "./transcriptScanner.js";
@@ -56,10 +53,11 @@ function safeWebsite(value) {
 }
 
 function downloadBlob(content, type, filename) {
-  const url = URL.createObjectURL(new Blob([content], { type }));
+  const blob = content instanceof Blob ? content : new Blob([content], { type });
+  const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url; link.download = filename; document.body.append(link); link.click(); link.remove();
-  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  window.setTimeout(() => URL.revokeObjectURL(url), 60000);
 }
 
 function parseDeepLink(hash = location.hash) {
@@ -100,8 +98,6 @@ class THPTApp {
     this.lastAcademicResult = null;
     this.lastAcademicTrigger = null;
     this.lastThptResults = [];
-    this.certificateRules = [];
-    this.appliedCertificate = null;
     this.savedWishes = loadPersonalList(WISH_STORAGE_KEY, LEGACY_WISH_STORAGE_KEYS);
     this.comparisonItems = loadPersonalList(COMPARE_STORAGE_KEY, [LEGACY_COMPARE_STORAGE_KEY], 4, "thpt-major-comparison-migration-backup");
     this.scoreRevision = 0;
@@ -114,7 +110,7 @@ class THPTApp {
       combinationSelect: $("#combination-select"), scoreGrid: $("#score-grid"), autoSubjectGrid: $("#auto-subject-grid"),
       academicForm: $("#academic-form"), academicMethod: $("#academic-method"), academicLanguage: $("#academic-language"), academicHead: $("#academic-head"), academicBody: $("#academic-body"), academicResultEmpty: $("#academic-result-empty"), academicResultContent: $("#academic-result-content"), academicResultLabel: $("#academic-result-label"), academicResultContext: $("#academic-result-context"), academicResultTotal: $("#academic-result-total"), academicResultMax: $("#academic-result-max"), academicResultDetails: $("#academic-result-details"), academicResultList: $("#academic-result-list"),
       universitySelect: $("#university-select"), majorSelect: $("#major-select"), methodSelect: $("#method-select"), calculateAdmission: $("#calculate-admission"), selectionHint: $("#selection-hint"),
-      combinationGrid: $("#combination-grid"), combinationEmpty: $("#combination-empty"), combinationCount: $("#combination-count"), universityGrid: $("#university-grid"), universityEmpty: $("#university-empty"), universityRegionFilters: $("#university-region-filters"), formulaGrid: $("#formula-grid"),
+      combinationGrid: $("#combination-grid"), combinationEmpty: $("#combination-empty"), combinationCount: $("#combination-count"), universityGrid: $("#university-grid"), universityEmpty: $("#university-empty"), universityRegionFilters: $("#university-region-filters"),
       modal: $("#modal"), modalBody: $("#modal-body"), toast: $("#toast")
     };
   }
@@ -124,7 +120,6 @@ class THPTApp {
     this.bindGlobalEvents();
     this.setView(location.hash);
     this.setupTranscriptTools();
-    this.renderFormulas();
     this.renderSavedWishes();
     this.renderComparison();
     try {
@@ -178,14 +173,12 @@ class THPTApp {
     const autoCalculate = debounce(() => this.calculateTHPT(false), 250);
     this.elements.form.addEventListener("input", (event) => {
       if (event.target.matches("[data-auto-score], [data-manual-score]")) event.target.value = sanitizeScoreInput(event.target.value);
-      if (event.target.matches("[data-auto-score]") && Number(event.target.dataset.autoScore) === this.appliedCertificate?.rowIndex) this.clearAppliedCertificate();
       if (event.target.matches("[data-auto-score], [data-manual-score]")) this.invalidateScoreDerived("Điểm môn đã thay đổi.");
       this.saveForm();
       if (this.thptMode === "auto") autoCalculate();
     });
     this.elements.form.addEventListener("change", (event) => {
       if (event.target.matches("[data-auto-subject]")) {
-        if (Number(event.target.dataset.autoSubject) === this.appliedCertificate?.rowIndex) this.clearAppliedCertificate();
         this.syncAutoSubjectOptions();
       }
       if (event.target.matches("[data-auto-subject], #admission-year")) this.invalidateScoreDerived("Môn hoặc năm tuyển sinh đã thay đổi.");
@@ -218,9 +211,9 @@ class THPTApp {
     $("#show-academic-calculation").addEventListener("click", () => this.openAcademicCalculationModal());
 
     this.elements.universitySelect.addEventListener("change", () => { this.admissionLoadVersion = (this.admissionLoadVersion || 0) + 1; this.populateMajorSelect(); });
-    this.elements.majorSelect.addEventListener("change", () => { this.clearAdmissionResult(); this.populateMethodSelect(); this.saveForm(); });
+    this.elements.methodSelect.addEventListener("change", () => { this.clearAdmissionResult(); this.populateMethodSelect(); this.saveForm(); });
+    this.elements.majorSelect.addEventListener("change", () => { this.clearAdmissionResult(); this.renderAdmissionCalculator(); this.saveForm(); });
     this.elements.calculateAdmission.addEventListener("click", () => this.focusAdmissionCalculator());
-    this.elements.methodSelect.addEventListener("change", () => { this.clearAdmissionResult(); this.renderAdmissionCalculator(); this.saveForm(); });
     $("#combination-query").addEventListener("input", debounce((event) => this.renderCombinations(event.target.value), 180));
     $("#university-query").addEventListener("input", debounce((event) => this.renderUniversities(event.target.value), 180));
     this.elements.universityRegionFilters.addEventListener("click", (event) => {
@@ -232,11 +225,6 @@ class THPTApp {
 
     this.bindSearchInput($("#global-search"), $("#search-results"));
     this.bindSearchInput($("#mobile-search"), $("#mobile-search-results"));
-
-    $("#certificate-university").addEventListener("change", () => { this.clearAppliedCertificate(); this.loadCertificateRules(); });
-    $("#certificate-type").addEventListener("change", () => { this.clearAppliedCertificate(); this.syncCertificateControls(); });
-    $("#certificate-method").addEventListener("change", () => { this.clearAppliedCertificate(); this.syncCertificatePurpose(); });
-    $("#certificate-form").addEventListener("submit", (event) => { event.preventDefault(); this.calculateCertificate(); });
 
     $("#major-filter-form").addEventListener("submit", (event) => { event.preventDefault(); this.majorPage = 1; this.majorSearchMode === "combinations" && this.allCombinationSearch?.length ? this.loadBestCombinationResults() : this.loadMajorResults(); });
     const invalidateMajorResults = debounce(() => this.invalidateMajorResults(), 120);
@@ -253,10 +241,7 @@ class THPTApp {
     $("#major-filter-clear").addEventListener("click", () => this.clearMajorFilters());
     $("#clear-saved-wishes").addEventListener("click", () => { if (!this.savedWishes.length) return; this.recentWishRemoval = { items: [...this.savedWishes], index: 0 }; this.savedWishes = []; this.persistWishes(); });
     $("#clear-comparison").addEventListener("click", () => { this.comparisonItems = []; this.persistComparison(); });
-    $("#export-wishes-json").addEventListener("click", () => this.exportWishesJson());
-    $("#export-wishes-excel").addEventListener("click", () => this.exportWishesExcel());
-    $("#print-wishes").addEventListener("click", () => { $("#wish-print-meta").textContent = `Năm tuyển sinh 2026 · Xuất ngày ${new Date().toLocaleDateString("vi-VN")} · ${this.savedWishes.length} nguyện vọng`; window.print(); });
-    $("#import-wishes-json").addEventListener("change", (event) => this.previewWishImport(event.target.files?.[0]));
+    $("#export-wishes-pdf").addEventListener("click", (event) => this.exportWishesPdf(event.currentTarget));
   }
 
   handleDocumentKeydown(event) {
@@ -288,7 +273,6 @@ class THPTApp {
     if (page) this.changePage(page.dataset.pageKind, Number(page.dataset.page));
     const school = event.target.closest("[data-school-id]"); if (school) this.openUniversityModal(school.dataset.schoolId, school);
     const combination = event.target.closest("[data-combination-id]"); if (combination) this.openCombinationModal(combination.dataset.combinationId, combination);
-    const formula = event.target.closest("[data-formula-id]"); if (formula) this.openFormulaModal(formula.dataset.formulaId, formula);
     const searchSchool = event.target.closest("[data-search-school]"); if (searchSchool) { this.hideSearch(); this.openUniversityModal(searchSchool.dataset.searchSchool, searchSchool); }
     const searchMajor = event.target.closest("[data-search-major]"); if (searchMajor) { this.hideSearch(); this.openUniversityModal(searchMajor.dataset.universityId, searchMajor, searchMajor.dataset.searchMajor); }
     const searchCombination = event.target.closest("[data-search-combination]"); if (searchCombination) { this.hideSearch(); this.openCombinationModal(searchCombination.dataset.searchCombination, searchCombination); }
@@ -302,18 +286,15 @@ class THPTApp {
     const compareWish = event.target.closest("[data-compare-wish]"); if (compareWish) this.addComparison(compareWish.dataset.compareWish, true);
     const removeCompare = event.target.closest("[data-remove-compare]"); if (removeCompare) this.removeComparison(removeCompare.dataset.removeCompare);
     const undoWish = event.target.closest("[data-undo-wish]"); if (undoWish) this.undoWishRemoval();
-    const applyImport = event.target.closest("[data-apply-wish-import]"); if (applyImport) this.applyWishImport(applyImport.dataset.applyWishImport);
     const reportSchool = event.target.closest("[data-report-school]"); if (reportSchool) this.openDataReport({ universityId: reportSchool.dataset.reportSchool }, reportSchool);
     const reportMajor = event.target.closest("[data-report-major]"); if (reportMajor) this.openDataReport({ majorId: reportMajor.dataset.reportMajor }, reportMajor);
     const downloadReport = event.target.closest("[data-download-report]"); if (downloadReport) this.downloadDataReport();
     const copyReport = event.target.closest("[data-copy-report]"); if (copyReport) this.copyDataReport();
     const applySimulation = event.target.closest("[data-apply-simulation]"); if (applySimulation) this.applyScoreSimulation();
-    const useCertificate = event.target.closest("[data-use-certificate]"); if (useCertificate) this.useCertificateResult();
-    const clearCertificate = event.target.closest("[data-clear-certificate]"); if (clearCertificate) this.clearAppliedCertificate({ announce: true });
   }
 
   setView(hash) {
-    const allowed = ["calculator", "academic", "admission", "certificate", "major-finder", "combinations", "universities", "formulas", "guide"];
+    const allowed = ["calculator", "academic", "admission", "major-finder", "combinations", "universities", "guide"];
     const rawValue = String(hash || "").replace(/^#/, "");
     const value = /^(?:truong|nganh)\//.test(rawValue) ? "universities" : rawValue;
     const view = allowed.includes(value) ? value : "calculator";
@@ -364,7 +345,8 @@ class THPTApp {
       academicMultiplierEnabled: $("#academic-multiplier-enabled").checked,
       academicMultiplierSubject: $("#academic-multiplier-subject").value,
       universityId: this.elements.universitySelect.value,
-      majorId: this.elements.methodSelect.value || this.elements.majorSelect.value
+      admissionMethod: this.elements.methodSelect.value,
+      admissionProgramId: this.elements.majorSelect.value
     });
   }
 
@@ -432,7 +414,7 @@ class THPTApp {
       subjectKey: select.value,
       score: $(`[data-auto-score="${index}"]`).value
     }));
-    return applyCertificateToEntries(rawEntries, this.appliedCertificate);
+    return rawEntries;
   }
 
   populateCombinationSelects() {
@@ -574,51 +556,72 @@ class THPTApp {
   }
 
   populateUniversitySelects() {
-    const options = this.repository.universities.map((item) => `<option value="${escapeHTML(item.id)}">${item.calculableCount ? "✓ " : ""}${escapeHTML(item.shortName)} — ${escapeHTML(item.name)}</option>`).join("");
+    const options = this.repository.universities.map((item) => `<option value="${escapeHTML(item.id)}">${item.verifiedFormulaCount ? "✓ " : ""}${escapeHTML(item.shortName)} — ${escapeHTML(item.name)}</option>`).join("");
     this.elements.universitySelect.innerHTML = '<option value="">Chọn trường</option>' + options;
-    const supportedCertificates = new Set(this.repository.metadata?.certificateUniversityIds || []);
-    const certificateOptions = this.repository.universities.filter((item) => supportedCertificates.has(item.id)).map((item) => `<option value="${escapeHTML(item.id)}">${escapeHTML(item.shortName)} — ${escapeHTML(item.name)}</option>`).join("");
-    $("#certificate-university").innerHTML = certificateOptions ? '<option value="">Chọn trường</option>' + certificateOptions : '<option value="">Chưa có bảng quy đổi đã xác minh</option>';
-    $("#certificate-university").disabled = !certificateOptions;
-    $("#certificate-unavailable").classList.toggle("is-hidden", Boolean(certificateOptions));
-    $("#certificate-workspace").classList.toggle("is-hidden", !certificateOptions);
     $("#major-university-filter").innerHTML = '<option value="">Tất cả trường</option>' + options;
   }
   async populateMajorSelect() {
     const id = this.elements.universitySelect.value;
     const loadVersion = ++this.admissionLoadVersion;
     this.elements.majorSelect.disabled = true; this.elements.methodSelect.disabled = true; this.elements.calculateAdmission.disabled = true;
-    if (!id) { this.elements.majorSelect.innerHTML = '<option value="">Chọn trường trước</option>'; this.elements.selectionHint.textContent = "Hãy chọn trường để xem các ngành và công thức tương ứng."; this.saveForm(); return; }
-    this.elements.majorSelect.innerHTML = '<option value="">Đang tải ngành...</option>';
+    this.elements.majorSelect.innerHTML = '<option value="">Chọn trường trước</option>';
+    this.elements.methodSelect.innerHTML = '<option value="">Đang tải phương thức...</option>';
+    if (!id) {
+      this.elements.methodSelect.innerHTML = '<option value="">Chọn trường trước</option>';
+      this.elements.selectionHint.textContent = "Hãy chọn trường để xem từng phương thức và trạng thái công thức.";
+      this.renderAdmissionCalculator(); this.saveForm(); return;
+    }
     try {
-      const majors = await this.repository.getMajors(id);
+      const [majors, formulaData] = await Promise.all([
+        this.repository.getMajors(id),
+        this.repository.getAdmissionFormulas(id)
+      ]);
       if (loadVersion !== this.admissionLoadVersion || this.elements.universitySelect.value !== id) return;
-      const groups = new Map();
-      for (const major of majors) {
-        const key = `${major.code}|${major.name}`;
-        if (!groups.has(key)) groups.set(key, []);
-        groups.get(key).push(major);
-      }
-      this.admissionPrograms = new Map([...groups.values()].map((rows) => [rows[0].id, rows]));
-      this.elements.majorSelect.innerHTML = majors.length ? '<option value="">Chọn ngành / chương trình</option>' + [...this.admissionPrograms.entries()].map(([key, rows]) => {
-        const ready = rows.some((major) => canCalculateMajor(major, this.repository.getFormula(major.formula)));
-        return `<option value="${escapeHTML(key)}">${ready ? "✓ " : ""}${escapeHTML(rows[0].name)} (${escapeHTML(rows[0].code)})</option>`;
-      }).join("") : '<option value="">Đang cập nhật dữ liệu ngành</option>';
-      this.elements.majorSelect.disabled = !majors.length;
-      this.elements.selectionHint.textContent = majors.length ? `${this.admissionPrograms.size} ngành/chương trình · ${majors.filter((major) => canCalculateMajor(major, this.repository.getFormula(major.formula))).length} phương án hỗ trợ tự tính.` : "Trường đang cập nhật dữ liệu ngành.";
-    } catch { if (loadVersion !== this.admissionLoadVersion) return; this.elements.majorSelect.innerHTML = '<option value="">Không thể tải ngành — chọn lại để thử</option>'; this.elements.selectionHint.textContent = "Không thể tải dữ liệu. Hãy thử lại."; }
+      this.admissionMajorRows = majors;
+      this.admissionFormulaData = formulaData;
+      this.admissionFormulaById = new Map((formulaData.methods || []).map((method) => [method.id, method]));
+      const options = formulaData.methodOptions || [];
+      this.elements.methodSelect.innerHTML = options.length
+        ? '<option value="">Chọn phương thức</option>' + options.map((option) => `<option value="${escapeHTML(option.label)}">${option.verified ? "✓ " : ""}${escapeHTML(option.label)} · ${option.programCount} ngành</option>`).join("")
+        : '<option value="">Chưa có phương thức</option>';
+      this.elements.methodSelect.disabled = !options.length;
+      this.elements.selectionHint.textContent = formulaData.available
+        ? `${formulaData.methods.length} công thức đã xác minh · các phương thức còn lại được ghi rõ trạng thái.`
+        : formulaData.message;
+      this.renderAdmissionCalculator();
+    } catch {
+      if (loadVersion !== this.admissionLoadVersion) return;
+      this.elements.methodSelect.innerHTML = '<option value="">Không thể tải phương thức — chọn lại để thử</option>';
+      this.elements.selectionHint.textContent = "Không thể tải dữ liệu. Hãy thử lại.";
+      this.renderAdmissionCalculator();
+    }
     this.saveForm();
   }
   populateMethodSelect() {
-    const rows = this.admissionPrograms?.get(this.elements.majorSelect.value) || [];
-    this.elements.methodSelect.innerHTML = rows.length ? rows.map((major) => `<option value="${escapeHTML(major.id)}">${canCalculateMajor(major, this.repository.getFormula(major.formula)) ? "✓ " : ""}${escapeHTML(major.method)}</option>`).join("") : '<option value="">Chọn ngành trước</option>';
-    this.elements.methodSelect.disabled = !rows.length;
-    const major = this.repository.getMajor(this.elements.methodSelect.value);
-    const formula = major ? this.repository.getFormula(major.formula) : null;
-    const ready = canCalculateMajor(major, formula);
+    const method = this.elements.methodSelect.value;
+    const verifiedFormula = this.admissionFormulaForMethod(method);
+    const applicableIds = new Set((verifiedFormula?.programs || []).map((program) => program.id));
+    const rows = verifiedFormula
+      ? (this.admissionMajorRows || []).filter((major) => applicableIds.has(major.id))
+      : (this.admissionMajorRows || []).filter((major) => major.method === method);
+    const groups = new Map();
+    for (const major of rows) {
+      const key = `${major.code}|${major.name}`;
+      if (!groups.has(key)) groups.set(key, major);
+    }
+    const programs = [...groups.values()];
+    this.elements.majorSelect.innerHTML = programs.length
+      ? `<option value="">Tất cả ${programs.length} ngành / chương trình</option>${programs.map((major) => `<option value="${escapeHTML(major.id)}">${escapeHTML(major.name)} (${escapeHTML(major.code)})</option>`).join("")}`
+      : '<option value="">Không có ngành áp dụng trong dữ liệu</option>';
+    this.elements.majorSelect.disabled = !method || !programs.length;
+    const major = this.selectedAdmissionMajor();
+    const formula = verifiedFormula?.formulaModuleId ? this.repository.getFormula(verifiedFormula.formulaModuleId) : null;
+    const ready = verifiedFormula?.autoCalculate === true && canCalculateMajor(major, formula);
     this.elements.calculateAdmission.disabled = !ready;
-    this.elements.calculateAdmission.textContent = ready ? "Nhập điểm" : "Chưa thể tự tính";
-    this.elements.selectionHint.textContent = major ? (ready ? "Công thức riêng đã xác minh và sẵn sàng tính." : `Chỉ tra cứu: ${major.formulaText ? "công thức hiện mới ở mức tham khảo." : "chưa có đủ quy tắc tính."}`) : "Chọn ngành để xem khả năng tự tính.";
+    this.elements.calculateAdmission.textContent = ready ? "Nhập điểm" : "Chưa hỗ trợ tự tính";
+    this.elements.selectionHint.textContent = verifiedFormula
+      ? `${verifiedFormula.label}: công thức đã xác minh${ready ? " và có thể tự tính cho phạm vi đã liên kết." : "; hiện chỉ hiển thị để tra cứu."}`
+      : (method ? "Chưa có công thức chính thức được xác minh cho phương thức này." : "Chọn phương thức để xem công thức và phạm vi áp dụng.");
     this.renderAdmissionCalculator();
     this.saveForm();
   }
@@ -626,25 +629,59 @@ class THPTApp {
     if (!this.state.universityId || !this.repository.getUniversity(this.state.universityId)) return;
     this.elements.universitySelect.value = this.state.universityId;
     await this.populateMajorSelect();
-    if (this.state.majorId && this.repository.getMajor(this.state.majorId)) {
-      const group = [...(this.admissionPrograms?.entries() || [])].find(([, rows]) => rows.some((item) => item.id === this.state.majorId));
-      if (group) { this.elements.majorSelect.value = group[0]; this.populateMethodSelect(); this.elements.methodSelect.value = this.state.majorId; this.renderAdmissionCalculator(); }
-    }
+    const legacyMajor = this.state.majorId ? this.repository.getMajor(this.state.majorId) : null;
+    const method = this.state.admissionMethod || legacyMajor?.method || "";
+    if ([...this.elements.methodSelect.options].some((option) => option.value === method)) this.elements.methodSelect.value = method;
+    this.populateMethodSelect();
+    const programId = this.state.admissionProgramId || legacyMajor?.id || "";
+    if ([...this.elements.majorSelect.options].some((option) => option.value === programId)) this.elements.majorSelect.value = programId;
+    this.renderAdmissionCalculator();
+  }
+  admissionFormulaForMethod(label, formulaData = this.admissionFormulaData) {
+    const option = (formulaData?.methodOptions || []).find((item) => item.label === label);
+    return option?.formulaId ? (formulaData?.methods || []).find((item) => item.id === option.formulaId) || null : null;
+  }
+  admissionFormulaForMajor(major, formulaData = this.admissionFormulaData) {
+    const formula = major ? this.admissionFormulaForMethod(major.method, formulaData) : null;
+    return formula?.programs?.some((program) => program.id === major.id) ? formula : null;
+  }
+  selectedAdmissionMajor() {
+    const selected = this.repository.getMajor(this.elements.majorSelect.value);
+    if (selected) return selected;
+    const formula = this.admissionFormulaForMethod(this.elements.methodSelect.value);
+    return (formula?.programs || []).map((program) => this.repository.getMajor(program.id)).find(Boolean) || null;
+  }
+  admissionFormulaMarkup(formula, { profile = false } = {}) {
+    const sourceUrl = safeWebsite(formula?.officialLink?.url);
+    const conditions = (formula?.conditions || []).map((item) => `<li>${escapeHTML(item)}</li>`).join("");
+    const programs = (formula?.programs || []).map((item) => `<li><b>${escapeHTML(item.code)}</b> · ${escapeHTML(item.name)}</li>`).join("");
+    const combinations = (formula?.combinations || []).map((code) => `<span>${escapeHTML(code)}</span>`).join("");
+    return `<article class="verified-formula-card${profile ? " is-profile" : ""}"><div class="verified-formula-heading"><div><p class="eyebrow">PHƯƠNG THỨC</p><h3>${escapeHTML(formula.label)}</h3></div><span class="verified-badge">✓ Đã xác minh</span></div><div class="formula-box">${escapeHTML(formula.expression)}</div><dl class="formula-facts"><div><dt>Thang điểm</dt><dd>${escapeHTML(formula.scale || "Theo nguồn chính thức")}</dd></div><div><dt>Tổ hợp</dt><dd>${combinations || escapeHTML(formula.combinationNote || "Không áp dụng tổ hợp THPT")}</dd></div></dl>${conditions ? `<section><h4>Điều kiện quan trọng</h4><ul>${conditions}</ul></section>` : ""}${formula.priority ? `<section><h4>Điểm ưu tiên</h4><p>${escapeHTML(formula.priority)}</p></section>` : ""}${formula.conversion ? `<section><h4>Quy đổi trong công thức</h4><p>${escapeHTML(formula.conversion)}</p></section>` : ""}${formula.combinationNote ? `<section><h4>Phạm vi tổ hợp</h4><p>${escapeHTML(formula.combinationNote)}</p></section>` : ""}<details class="formula-programs"${profile ? "" : " open"}><summary>${formula.programCount} ngành / chương trình áp dụng</summary>${programs ? `<ul>${programs}</ul>` : `<p>${escapeHTML(formula.applicabilityNote || "Chưa có ngành được liên kết.")}</p>`}</details>${sourceUrl ? `<a class="formula-source" href="${escapeHTML(sourceUrl)}" target="_blank" rel="noopener">${escapeHTML(formula.officialLink.label || "Nguồn chính thức")} ↗</a>` : ""}</article>`;
   }
   focusAdmissionCalculator() { $("#admission-calculator-form input")?.focus(); }
   clearAdmissionResult() { const result = $("#admission-result"); if (result) result.innerHTML = '<p class="result-stale">Thông tin đã thay đổi, cần tính lại.</p>'; }
   renderAdmissionCalculator() {
     const panel = $("#admission-calculator-panel");
-    const major = this.repository.getMajor(this.elements.methodSelect.value);
-    const formula = major && this.repository.getFormula(major.formula);
-    if (!major) { panel.innerHTML = '<div class="result-empty"><h3>Chọn ngành và phương thức</h3><p>Ngành được nhóm một lần; các phương thức nằm ở bước kế tiếp.</p></div>'; return; }
-    if (!canCalculateMajor(major, formula) || typeof formula.getInputDefinition !== "function") {
-      panel.innerHTML = `<div class="result-empty"><h3>Hiện chỉ hỗ trợ tra cứu</h3><p>${escapeHTML(major.calculationVerified ? "Module công thức chưa sẵn sàng trên trình duyệt." : "Chưa đủ hệ số, cách chuẩn hóa hoặc điều kiện riêng để tạo kết quả an toàn.")}</p>${major.formulaText ? `<div class="info-callout">${escapeHTML(major.formulaText)}</div>` : ""}</div>`;
+    const method = this.elements.methodSelect.value;
+    if (!method) { this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính"; panel.innerHTML = '<div class="result-empty"><h3>Chọn trường và phương thức</h3><p>Chỉ công thức được nguồn chính thức nêu trực tiếp mới được hiển thị là đã xác minh.</p></div>'; return; }
+    const verifiedFormula = this.admissionFormulaForMethod(method);
+    if (!verifiedFormula) {
+      this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính";
+      panel.innerHTML = '<div class="result-empty formula-unverified"><h3>Chưa có công thức chính thức được xác minh.</h3><p>Phương thức vẫn được liệt kê để tra cứu, nhưng website không tự suy đoán công thức còn thiếu.</p></div>';
       return;
     }
+    const major = this.selectedAdmissionMajor();
+    const formula = verifiedFormula.formulaModuleId ? this.repository.getFormula(verifiedFormula.formulaModuleId) : null;
+    const details = this.admissionFormulaMarkup(verifiedFormula);
+    if (!verifiedFormula.autoCalculate || !canCalculateMajor(major, formula) || typeof formula?.getInputDefinition !== "function") {
+      this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính";
+      panel.innerHTML = `${details}<div class="info-callout">Công thức này được hiển thị để tra cứu; website chưa tự tính khi chưa có đủ quy tắc đầu vào an toàn.</div>`;
+      return;
+    }
+    this.elements.calculateAdmission.disabled = false; this.elements.calculateAdmission.textContent = "Nhập điểm";
     const supported = Object.keys(formula.combinations || {}).filter((code) => String(major.combination || "").toLocaleUpperCase("vi").split(/[;,/|]+/).map((item) => item.trim()).includes(code));
-    panel.innerHTML = `<form id="admission-calculator-form" class="form-card admission-dynamic-form"><div class="admission-form-heading"><div><p class="eyebrow">CÓ THỂ TỰ TÍNH</p><h3>${escapeHTML(major.name)}</h3></div><span class="verified-badge">✓ Quy tắc đã xác minh</span></div><div class="form-grid form-grid-two"><div class="field"><label for="admission-combination">Tổ hợp</label><select id="admission-combination">${supported.map((code) => `<option value="${code}">${code}</option>`).join("")}</select></div><div class="field is-hidden" id="admission-choice-field"><label for="admission-choice-subject">Môn tự chọn K01</label><select id="admission-choice-subject"><option value="physics">Vật lí</option><option value="chemistry">Hóa học</option><option value="biology">Sinh học</option><option value="informatics">Tin học</option></select></div></div><div class="score-grid" id="admission-inputs"></div><div class="priority-context-note">Ưu tiên đang dùng: <b>${escapeHTML($("#area").selectedOptions[0]?.textContent || "KV3")}</b> · <b>${escapeHTML($("#priority-group").selectedOptions[0]?.textContent || "Không thuộc nhóm ưu tiên")}</b></div><div class="form-actions"><button class="button button-primary" type="submit">Tính theo ngành</button></div></form><div id="admission-result"></div>`;
-    const refresh = () => { this.clearAdmissionResult(); this.renderAdmissionInputs(formula); };
+    panel.innerHTML = `${details}<form id="admission-calculator-form" class="form-card admission-dynamic-form"><div class="admission-form-heading"><div><p class="eyebrow">CÓ THỂ TỰ TÍNH</p><h3>${escapeHTML(major.name)}</h3></div><span class="verified-badge">✓ Quy tắc đã xác minh</span></div><div class="form-grid form-grid-two"><div class="field"><label for="admission-combination">Tổ hợp</label><select id="admission-combination">${supported.map((code) => `<option value="${code}">${code}</option>`).join("")}</select></div><div class="field is-hidden" id="admission-choice-field"><label for="admission-choice-subject">Môn tự chọn K01</label><select id="admission-choice-subject"><option value="physics">Vật lí</option><option value="chemistry">Hóa học</option><option value="biology">Sinh học</option><option value="informatics">Tin học</option></select></div></div><div class="score-grid" id="admission-inputs"></div><div class="priority-context-note">Ưu tiên đang dùng: <b>${escapeHTML($("#area").selectedOptions[0]?.textContent || "KV3")}</b> · <b>${escapeHTML($("#priority-group").selectedOptions[0]?.textContent || "Không thuộc nhóm ưu tiên")}</b></div><div class="form-actions"><button class="button button-primary" type="submit">Tính theo ngành</button></div></form><div id="admission-result"></div>`;
+    const refresh = () => { const result = $("#admission-result"); if (result) result.innerHTML = ""; this.renderAdmissionInputs(formula); };
     $("#admission-combination").addEventListener("change", refresh);
     $("#admission-choice-subject").addEventListener("change", refresh);
     $("#admission-calculator-form").addEventListener("submit", (event) => { event.preventDefault(); this.calculateForMajor(); });
@@ -660,8 +697,9 @@ class THPTApp {
     $("#admission-inputs").innerHTML = definition.subjects.map((key, index) => `<div class="field score-field"><label for="admission-score-${index}">${escapeHTML(subjectLabelForKey(key))}</label><input id="admission-score-${index}" data-admission-score="${escapeHTML(key)}" inputmode="decimal" autocomplete="off" placeholder="0.00" value="${escapeHTML(reusable.has(key) ? reusable.get(key) : "")}" /><small class="field-error"></small></div>`).join("");
   }
   calculateForMajor() {
-    const major = this.repository.getMajor(this.elements.methodSelect.value);
-    const formula = major && this.repository.getFormula(major.formula);
+    const major = this.selectedAdmissionMajor();
+    const verifiedFormula = this.admissionFormulaForMethod(this.elements.methodSelect.value);
+    const formula = verifiedFormula?.formulaModuleId ? this.repository.getFormula(verifiedFormula.formulaModuleId) : null;
     if (!canCalculateMajor(major, formula)) { this.showToast("Công thức đang được cập nhật, chưa thể tự tính."); return; }
     const scores = {}; const errors = [];
     $$('[data-admission-score]').forEach((input) => { const checked = validateScore(input.value); input.classList.toggle("input-invalid", !checked.valid); if (checked.valid) scores[input.dataset.admissionScore] = checked.value; else errors.push(checked.message); });
@@ -709,9 +747,10 @@ class THPTApp {
     this.openModal(`<div class="modal-loading" role="status"><span class="loading-spinner" aria-hidden="true"></span><p>Đang tải hồ sơ ${escapeHTML(summary.shortName)}...</p></div>`, trigger);
     const token = Symbol("modal"); this.modalToken = token;
     try {
-      const [university, initialPage] = await Promise.all([
+      const [university, initialPage, formulaData] = await Promise.all([
         this.repository.getUniversityDetails(universityId),
-        this.repository.getMajorsPage(universityId, { page: 1, pageSize: 25, targetId: targetMajorId })
+        this.repository.getMajorsPage(universityId, { page: 1, pageSize: 25, targetId: targetMajorId }),
+        this.repository.getAdmissionFormulas(universityId)
       ]);
       if (this.modalToken !== token || this.elements.modal.classList.contains("is-hidden")) return;
       const evidence = university.admissions || {};
@@ -727,10 +766,10 @@ class THPTApp {
       const classified = UNIVERSITY_PROFILE_STATUS[evidence.status]?.full;
       const status = profileVerified ? "✓ Đã xác minh" : profilePartial ? "◐ Xác minh một phần" : reference ? "~ Dữ liệu tham khảo" : classified || "! Đang cập nhật";
       const note = publicProfileNote({ status: evidence.status, hasReference: reference, classified });
-      const formulas = (evidence.formulas || []).map((item) => `<div class="method-entry"><b>${escapeHTML(item.method)}</b><p>${escapeHTML(item.text)}</p>${item.conditions ? `<p>${escapeHTML(item.conditions)}</p>` : ""}</div>`).join("");
+      const formulas = (formulaData.methods || []).map((item) => this.admissionFormulaMarkup(item, { profile: true })).join("");
       const website = safeWebsite(university.website);
       const admissionsCode = university.officialAdmissionsCode || university.code;
-      this.elements.modalBody.innerHTML = `<div class="detail-header">${this.logoMarkup(university)}<div><p class="modal-kicker">Hồ sơ tuyển sinh 2026</p><h2 id="modal-title">${escapeHTML(university.name)}</h2><p>Mã tuyển sinh: ${escapeHTML(admissionsCode)} · ${escapeHTML(this.regionLabel(university.region))}</p></div><button class="button button-text report-school-button" type="button" data-report-school="${escapeHTML(university.id)}">Báo dữ liệu sai</button></div><div class="profile-status profile-status-compact"><p><b>${escapeHTML(status)}</b> · ${verifiedRows} mục xác minh · ${referenceRows} mục tham khảo</p><p>${escapeHTML(note)}</p>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Website chính thức ↗</a>` : ""}</div><section class="profile-majors" aria-labelledby="profile-majors-title"><div class="profile-major-heading"><div><p class="modal-kicker">Tra cứu nhanh</p><h3 class="modal-section-title" id="profile-majors-title">Ngành và điểm chuẩn 2026</h3></div><span>${programCount} ngành / chương trình</span></div><div class="detail-filters"><input id="detail-major-search" type="search" placeholder="Tìm ngành hoặc mã ngành" aria-label="Tìm ngành" ${summary.majorRowCount ? "" : "disabled"} /><select id="detail-method-filter" aria-label="Lọc phương thức" ${summary.majorRowCount ? "" : "disabled"}><option value="">Tất cả phương thức</option>${methods.map((method) => `<option value="${escapeHTML(method)}">${escapeHTML(method)}</option>`).join("")}</select></div><p class="detail-result-count" id="detail-result-count"></p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Ngành</th><th>Mã ngành</th><th>Tổ hợp</th><th>Phương thức</th><th>Điểm chuẩn 2026</th><th>Công thức tính điểm</th></tr></thead><tbody id="detail-major-rows"></tbody></table></div><nav class="pagination detail-pagination" id="detail-major-pagination" aria-label="Trang ngành trong hồ sơ"></nav></section><details class="profile-overview"><summary>Thông tin trường và đề án tuyển sinh</summary><div class="profile-overview-body"><p class="modal-description">${escapeHTML(university.description)}</p><div class="detail-meta"><div><span>KHU VỰC</span><b>${escapeHTML(this.regionLabel(university.region))}</b></div><div><span>NGÀNH / CHƯƠNG TRÌNH</span><b>${programCount}</b></div><div><span>DÒNG NGÀNH / PHƯƠNG THỨC</span><b>${summary.majorRowCount || 0}</b></div><div><span>ĐIỂM CHUẨN ĐÃ CẬP NHẬT</span><b>${published}</b></div><div><span>KIỂM TRA DỮ LIỆU</span><b>${escapeHTML(checkedAt)}</b></div><div><span>WEBSITE</span>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Trang của trường ↗</a>` : "<b>Đang cập nhật</b>"}</div></div><div class="profile-sections"><details><summary>Phương thức tuyển sinh</summary><div class="profile-section-body"><p>${escapeHTML((evidence.methods || university.methods || []).join(" · ") || classified || "Đang cập nhật")}</p></div></details><details><summary>Công thức tính điểm</summary><div class="profile-section-body">${formulas || (classified ? "Không có công thức điểm chung áp dụng cho hồ sơ này." : "Công thức đang được cập nhật, chưa thể tự tính.")}</div></details></div></div></details>`;
+      this.elements.modalBody.innerHTML = `<div class="detail-header">${this.logoMarkup(university)}<div><p class="modal-kicker">Hồ sơ tuyển sinh 2026</p><h2 id="modal-title">${escapeHTML(university.name)}</h2><p>Mã tuyển sinh: ${escapeHTML(admissionsCode)} · ${escapeHTML(this.regionLabel(university.region))}</p></div><button class="button button-text report-school-button" type="button" data-report-school="${escapeHTML(university.id)}">Báo dữ liệu sai</button></div><div class="profile-status profile-status-compact"><p><b>${escapeHTML(status)}</b> · ${verifiedRows} mục xác minh · ${referenceRows} mục tham khảo</p><p>${escapeHTML(note)}</p>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Website chính thức ↗</a>` : ""}</div><section class="profile-formulas" aria-labelledby="profile-formulas-title"><div class="profile-major-heading"><div><p class="modal-kicker">Dữ liệu đã kiểm tra</p><h3 class="modal-section-title" id="profile-formulas-title">Công thức xét tuyển</h3></div><span>${formulaData.methods.length} phương thức đã xác minh</span></div>${formulas || '<div class="info-callout formula-unverified">Chưa có công thức chính thức được xác minh.</div>'}</section><section class="profile-majors" aria-labelledby="profile-majors-title"><div class="profile-major-heading"><div><p class="modal-kicker">Tra cứu nhanh</p><h3 class="modal-section-title" id="profile-majors-title">Ngành và điểm chuẩn 2026</h3></div><span>${programCount} ngành / chương trình</span></div><div class="detail-filters"><input id="detail-major-search" type="search" placeholder="Tìm ngành hoặc mã ngành" aria-label="Tìm ngành" ${summary.majorRowCount ? "" : "disabled"} /><select id="detail-method-filter" aria-label="Lọc phương thức" ${summary.majorRowCount ? "" : "disabled"}><option value="">Tất cả phương thức</option>${methods.map((method) => `<option value="${escapeHTML(method)}">${escapeHTML(method)}</option>`).join("")}</select></div><p class="detail-result-count" id="detail-result-count"></p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Ngành</th><th>Mã ngành</th><th>Tổ hợp</th><th>Phương thức</th><th>Điểm chuẩn 2026</th><th>Công thức tính điểm</th></tr></thead><tbody id="detail-major-rows"></tbody></table></div><nav class="pagination detail-pagination" id="detail-major-pagination" aria-label="Trang ngành trong hồ sơ"></nav></section><details class="profile-overview"><summary>Thông tin trường và đề án tuyển sinh</summary><div class="profile-overview-body"><p class="modal-description">${escapeHTML(university.description)}</p><div class="detail-meta"><div><span>KHU VỰC</span><b>${escapeHTML(this.regionLabel(university.region))}</b></div><div><span>NGÀNH / CHƯƠNG TRÌNH</span><b>${programCount}</b></div><div><span>DÒNG NGÀNH / PHƯƠNG THỨC</span><b>${summary.majorRowCount || 0}</b></div><div><span>ĐIỂM CHUẨN ĐÃ CẬP NHẬT</span><b>${published}</b></div><div><span>KIỂM TRA DỮ LIỆU</span><b>${escapeHTML(checkedAt)}</b></div><div><span>WEBSITE</span>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Trang của trường ↗</a>` : "<b>Đang cập nhật</b>"}</div></div><div class="profile-sections"><details><summary>Phương thức tuyển sinh</summary><div class="profile-section-body"><p>${escapeHTML((evidence.methods || university.methods || []).join(" · ") || classified || "Đang cập nhật")}</p></div></details></div></div></details>`;
       const pageSize = 25;
       let detailPage = initialPage.pagination.page;
       let detailRequest = 0;
@@ -746,7 +785,7 @@ class THPTApp {
           pendingTargetId = "";
           detailPage = data.pagination.page;
           $("#detail-result-count").textContent = `${data.pagination.total} kết quả · đang hiển thị ${data.items.length}`;
-          $("#detail-major-rows").innerHTML = data.items.length ? data.items.map((major) => this.majorRow(major, targetMajorId)).join("") : `<tr><td colspan="6">${escapeHTML(classified || "Không tìm thấy ngành phù hợp.")}</td></tr>`;
+          $("#detail-major-rows").innerHTML = data.items.length ? data.items.map((major) => this.majorRow(major, targetMajorId, formulaData)).join("") : `<tr><td colspan="6">${escapeHTML(classified || "Không tìm thấy ngành phù hợp.")}</td></tr>`;
           $("#detail-major-pagination").innerHTML = data.pagination.pages > 1 ? `<button type="button" data-detail-page="${detailPage - 1}" ${detailPage === 1 ? "disabled" : ""}>← Trước</button><span>Trang ${detailPage} / ${data.pagination.pages}</span><button type="button" data-detail-page="${detailPage + 1}" ${detailPage === data.pagination.pages ? "disabled" : ""}>Sau →</button>` : "";
           if (targetMajorId) requestAnimationFrame(() => $(`[data-major-row="${CSS.escape(targetMajorId)}"]`)?.scrollIntoView({ block: "center" }));
         } catch (error) {
@@ -761,12 +800,14 @@ class THPTApp {
       renderRows(false, initialPage);
     } catch (error) { if (this.modalToken === token) this.elements.modalBody.innerHTML = `<div class="error-state"><h2 id="modal-title">Không thể tải hồ sơ</h2><p>${escapeHTML(error.message)}</p><button class="button button-primary" type="button" data-school-id="${escapeHTML(universityId)}">Thử lại</button></div>`; }
   }
-  majorRow(major, targetMajorId = "") {
+  majorRow(major, targetMajorId = "", formulaData = null) {
     const status = publishableCutoff(major) ? cutoffStatusLabel(major) : cutoffLabel(major);
     const cutoff = publishableCutoff(major) ? `<b class="cutoff-value ${verifiedCutoff(major) ? "" : "cutoff-reference"}">${escapeHTML(cutoffLabel(major))}</b><small>${escapeHTML(status)}</small>` : `<span class="cutoff-pending">${escapeHTML(cutoffLabel(major))}</span>`;
-    const formulaStatus = major.calculationVerified ? "✓ Đã xác minh" : major.formulaText ? "~ Công thức tham khảo" : "Đang cập nhật";
+    const formula = formulaData ? this.admissionFormulaForMajor(major, formulaData) : null;
+    const formulaStatus = formula ? "✓ Đã xác minh" : "Chưa xác minh";
+    const formulaText = formula?.expression || "Chưa có công thức chính thức được xác minh.";
     const target = major.id === targetMajorId;
-    return `<tr data-major-row="${escapeHTML(major.id)}" class="${target ? "is-target-major" : ""}" ${target ? 'aria-current="true"' : ""}><td data-label="Ngành">${escapeHTML(major.name)}</td><td data-label="Mã ngành">${escapeHTML(major.code)}</td><td data-label="Tổ hợp">${escapeHTML(major.combination || "Đang cập nhật")}</td><td data-label="Phương thức">${escapeHTML(major.method || "Đang cập nhật")}${major.methodDetails ? `<small>${escapeHTML(major.methodDetails)}</small>` : ""}</td><td data-label="Điểm chuẩn 2026">${cutoff}</td><td data-label="Công thức"><details class="formula-disclosure"><summary>${formulaStatus}</summary><p>${escapeHTML(major.formulaText || "Công thức đang được cập nhật.")}</p></details><div class="row-actions"><button class="save-major-button" type="button" data-save-major="${escapeHTML(major.id)}" data-major-name="${escapeHTML(major.name)}" data-major-code="${escapeHTML(major.code)}" data-university-id="${escapeHTML(major.universityId)}">♡ Lưu</button><button class="save-major-button" type="button" data-compare-major="${escapeHTML(major.id)}">So sánh</button><button class="save-major-button" type="button" data-report-major="${escapeHTML(major.id)}">Báo sai</button></div></td></tr>`;
+    return `<tr data-major-row="${escapeHTML(major.id)}" class="${target ? "is-target-major" : ""}" ${target ? 'aria-current="true"' : ""}><td data-label="Ngành">${escapeHTML(major.name)}</td><td data-label="Mã ngành">${escapeHTML(major.code)}</td><td data-label="Tổ hợp">${escapeHTML(major.combination || "Đang cập nhật")}</td><td data-label="Phương thức">${escapeHTML(major.method || "Đang cập nhật")}${major.methodDetails ? `<small>${escapeHTML(major.methodDetails)}</small>` : ""}</td><td data-label="Điểm chuẩn 2026">${cutoff}</td><td data-label="Công thức"><details class="formula-disclosure"><summary>${formulaStatus}</summary><p>${escapeHTML(formulaText)}</p></details><div class="row-actions"><button class="save-major-button" type="button" data-save-major="${escapeHTML(major.id)}" data-major-name="${escapeHTML(major.name)}" data-major-code="${escapeHTML(major.code)}" data-university-id="${escapeHTML(major.universityId)}">♡ Lưu</button><button class="save-major-button" type="button" data-compare-major="${escapeHTML(major.id)}">So sánh</button><button class="save-major-button" type="button" data-report-major="${escapeHTML(major.id)}">Báo sai</button></div></td></tr>`;
   }
 
   renderCombinations(filter = "", keepPage = false) {
@@ -778,8 +819,6 @@ class THPTApp {
     this.elements.combinationGrid.innerHTML = paging.items.map((item) => `<article class="combination-card"><div><span class="combination-code">${escapeHTML(item.code)}</span><h3>${escapeHTML(item.subjectText)}</h3></div><button class="card-link" type="button" data-combination-id="${escapeHTML(item.id)}">Chi tiết</button></article>`).join("");
     this.elements.combinationEmpty.classList.toggle("is-hidden", items.length > 0); this.renderPagination("combination", paging);
   }
-  renderFormulas() { this.elements.formulaGrid.innerHTML = formulaList.slice(0, 4).map((formula) => `<article class="formula-card"><span class="formula-type">${escapeHTML(formula.type)}</span><h3>${escapeHTML(formula.name)}</h3><p>${escapeHTML(formula.description)}</p><div class="formula-meta"><span>PHƯƠNG THỨC<b>${escapeHTML(formula.type)}</b></span><span>NĂM<b>${escapeHTML(formula.year)}</b></span></div><button class="card-link" type="button" data-formula-id="${escapeHTML(formula.id)}">Xem công thức →</button></article>`).join(""); }
-
   bindSearchInput(input, target) {
     input.addEventListener("input", debounce(() => this.renderSearch(input.value, target), 280));
     input.addEventListener("keydown", (event) => { if (event.key === "ArrowDown") { const first = target.querySelector("button"); if (first) { event.preventDefault(); first.focus(); } } });
@@ -796,83 +835,6 @@ class THPTApp {
         return `<button class="search-result" type="button" ${type === "school" ? `data-search-school="${escapeHTML(school.id)}"` : `data-search-major="${escapeHTML(item.id)}" data-university-id="${escapeHTML(school.id)}"`}><span class="search-result-icon">${type === "school" ? "T" : "N"}</span><span><b>${escapeHTML(item.name)}</b><small>${type === "school" ? `Trường · ${escapeHTML(item.officialAdmissionsCode || item.code)}` : `Ngành · ${escapeHTML(school.shortName)} · ${escapeHTML(item.code)}`}</small></span></button>`;
       }).join("") : '<p class="search-empty">Không tìm thấy kết quả phù hợp.</p>';
     } catch (error) { if (error.name !== "AbortError") target.innerHTML = '<p class="search-empty">Không thể tìm kiếm. Hãy thử lại.</p>'; }
-  }
-
-  async loadCertificateRules() {
-    const id = $("#certificate-university").value;
-    this.certificateRules = [];
-    $("#certificate-type").disabled = true; $("#certificate-method").disabled = true; $("#certificate-score").disabled = true; $("#certificate-submit").disabled = true;
-    if (!id) { $("#certificate-type").innerHTML = '<option value="">Chọn trường trước</option>'; return; }
-    $("#certificate-result").innerHTML = '<div class="result-empty"><span class="loading-spinner" aria-hidden="true"></span><p>Đang kiểm tra bảng quy đổi...</p></div>';
-    try {
-      const data = await this.repository.getCertificateRules(id, 2026);
-      this.certificateRules = data.rules;
-      if (!data.available) { $("#certificate-type").innerHTML = '<option value="">Chưa có bảng quy đổi</option>'; $("#certificate-result").innerHTML = '<div class="result-empty"><span aria-hidden="true">◇</span><h3>Đang cập nhật</h3><p>Trường này chưa có bảng quy đổi chứng chỉ trong hệ thống.</p></div>'; return; }
-      const certificates = [...new Set(data.rules.map((rule) => rule.certificate))];
-      $("#certificate-type").innerHTML = certificates.map((item) => `<option value="${escapeHTML(item)}">${escapeHTML(item)}</option>`).join("");
-      $("#certificate-type").disabled = false; $("#certificate-score").disabled = false; this.syncCertificateControls();
-    } catch { $("#certificate-result").innerHTML = '<div class="result-empty error-state"><h3>Không thể tải dữ liệu</h3><p>Hãy chọn lại trường để thử.</p></div>'; }
-  }
-  syncCertificateControls() {
-    const certificate = $("#certificate-type").value;
-    const methods = [...new Set(this.certificateRules.filter((rule) => rule.certificate === certificate).map((rule) => rule.method))];
-    $("#certificate-method").innerHTML = methods.map((item) => `<option value="${escapeHTML(item)}">${escapeHTML(item)}</option>`).join("");
-    $("#certificate-method").disabled = !methods.length; $("#certificate-submit").disabled = !methods.length; this.syncCertificatePurpose();
-  }
-  syncCertificatePurpose() {
-    const rules = this.certificateRules.filter((rule) => rule.certificate === $("#certificate-type").value && rule.method === $("#certificate-method").value);
-    const field = $("#certificate-purpose-field"); field.classList.toggle("is-hidden", rules.length < 2);
-    $("#certificate-purpose").innerHTML = rules.map((rule) => `<option value="${escapeHTML(rule.id)}">${escapeHTML(rule.label || rule.target?.type || rule.id)}</option>`).join("");
-  }
-  async calculateCertificate() {
-    const input = { universityId: $("#certificate-university").value, year: 2026, certificate: $("#certificate-type").value, method: $("#certificate-method").value, purpose: $("#certificate-purpose").value || undefined, value: $("#certificate-score").value };
-    $("#certificate-result").innerHTML = '<div class="result-empty"><span class="loading-spinner" aria-hidden="true"></span><p>Đang tính quy đổi...</p></div>';
-    this.lastCertificateResult = null;
-    try {
-      const result = await this.repository.calculateCertificate(input);
-      if (!result.available) { $("#certificate-result").innerHTML = '<div class="result-empty"><h3>Chưa có quy tắc phù hợp</h3><p>Hệ thống không tạo kết quả khi thiếu bảng quy đổi.</p></div>'; return; }
-      if (!result.matched) { $("#certificate-result").innerHTML = `<div class="result-empty"><h3>Không nằm trong khoảng hỗ trợ</h3><p>${result.status === "verified" ? "✓ Đã xác minh" : "~ Tham khảo"}</p></div>`; return; }
-      const labels = { subjectScore: "Điểm môn quy đổi", componentScore: "Điểm thành phần", bonusScore: "Điểm cộng", finalAdmissionScore: "Điểm xét tuyển", eligibilityOnly: "Điều kiện xét tuyển" };
-      this.lastCertificateResult = result;
-      $("#certificate-result").innerHTML = `<div class="result-content"><span class="result-label">${result.status === "verified" ? "✓ ĐÃ XÁC MINH" : "~ THAM KHẢO"}</span><h3>${escapeHTML(labels[result.target.type] || "Kết quả quy đổi")}</h3><div class="result-score"><strong>${result.target.type === "eligibilityOnly" ? (result.eligible ? "Đạt" : "Chưa đạt") : formatScore(result.value)}</strong>${result.outputScale ? `<span>/ ${result.outputScale}</span>` : ""}</div>${result.canApply ? '<button class="button button-light" type="button" data-use-certificate>Sử dụng khi tính xét tuyển</button>' : ""}</div>`;
-    } catch (error) { $("#certificate-result").innerHTML = `<div class="result-empty error-state"><h3>Không thể quy đổi</h3><p>${escapeHTML(error.message)}</p></div>`; }
-  }
-  useCertificateResult() {
-    const result = this.lastCertificateResult; if (!result?.canApply) return;
-    const subject = result.target.subject === "english" ? "foreignLanguage:english" : result.target.subject;
-    const row = $$('[data-auto-subject]').find((item) => item.value === subject);
-    if (!row) { this.showToast(`Hãy chọn môn ${subjectLabelForKey(subject)} trong bốn môn trước khi áp dụng.`); return; }
-    const university = this.repository.getUniversity(result.provenance?.universityId);
-    this.appliedCertificate = {
-      rowIndex: Number(row.dataset.autoSubject),
-      subjectKey: subject,
-      value: Number(result.value),
-      rawScore: $(`[data-auto-score="${row.dataset.autoSubject}"]`)?.value || "",
-      certificate: result.provenance?.certificate || $("#certificate-type").value,
-      method: result.provenance?.method || $("#certificate-method").value,
-      year: result.provenance?.year || 2026,
-      university: university?.shortName || university?.name || "trường đã chọn",
-      universityId: result.provenance?.universityId || "",
-      recordId: result.provenance?.recordId || ""
-    };
-    this.renderAppliedCertificateNotice();
-    this.setThptMode("auto"); this.goTo("#calculator"); this.calculateTHPT(false); this.showToast("Đã áp dụng điểm quy đổi; điểm gốc vẫn được giữ nguyên.");
-  }
-
-  renderAppliedCertificateNotice() {
-    const note = $("#applied-certificate-note");
-    if (!this.appliedCertificate) { note.innerHTML = ""; note.classList.add("is-hidden"); return; }
-    const item = this.appliedCertificate;
-    note.classList.remove("is-hidden");
-    note.innerHTML = `<div><b>Đang áp dụng ${escapeHTML(item.certificate)}</b><span>${escapeHTML(item.university)} · ${item.year} · ${escapeHTML(subjectLabelForKey(item.subjectKey))}: ${formatScore(item.value)}${item.rawScore ? ` (điểm gốc ${escapeHTML(item.rawScore)})` : ""}</span></div><button class="button button-text" type="button" data-clear-certificate>Bỏ quy đổi</button>`;
-  }
-
-  clearAppliedCertificate({ announce = false } = {}) {
-    if (!this.appliedCertificate) return;
-    this.appliedCertificate = null;
-    this.renderAppliedCertificateNotice();
-    if (this.lastThptResults.length && this.thptMode === "auto") this.calculateTHPT(false);
-    if (announce) this.showToast("Đã bỏ điểm quy đổi; điểm gốc không thay đổi.");
   }
 
   majorFilterQuery(page = this.majorPage) {
@@ -1071,7 +1033,13 @@ class THPTApp {
   }
   persistWishes() { this.savedWishes = normalizeWishList(this.savedWishes); storage.set(WISH_STORAGE_KEY, this.savedWishes); this.renderSavedWishes(); }
   wishScoreNote(item) { const current = this.scoreProfile?.results?.find((result) => result.combination === item.combination && result.method === item.method && result.year === item.year && result.scale === item.scale); if (!current || item.userScore === null || Math.abs(current.score - item.userScore) < 0.001) return ""; return `<small class="wish-score-change">Điểm hiện tại ${formatScore(current.score)}/${current.scale}; mục này giữ điểm lúc lưu ${formatScore(item.userScore)}/${item.scale}.</small>`; }
-  renderSavedWishes() { const target = $("#saved-wishes"); if (!target) return; const undo = this.recentWishRemoval ? `<p class="wish-undo" role="status">Đã xóa ${this.recentWishRemoval.items.length} mục. <button class="button button-text" type="button" data-undo-wish>Hoàn tác</button></p>` : ""; target.innerHTML = undo + (this.savedWishes.length ? this.savedWishes.map((item, index) => `<article class="saved-wish"><span>${index + 1}</span><div><b>${escapeHTML(item.name)}</b><small>${escapeHTML(item.university)} · ${escapeHTML(item.code)}${item.campus ? ` · ${escapeHTML(item.campus)}` : ""}${item.method ? ` · ${escapeHTML(item.method)}` : ""}</small>${this.wishScoreNote(item)}<dl class="wish-print-details"><div><dt>Năm</dt><dd>${item.year}</dd></div><div><dt>Phương thức</dt><dd>${escapeHTML(item.method || "Chưa có dữ liệu")}</dd></div><div><dt>Tổ hợp</dt><dd>${escapeHTML(item.combination || "Chưa có dữ liệu")}</dd></div><div><dt>Thang điểm</dt><dd>${item.scale ?? "Chưa có dữ liệu"}</dd></div><div><dt>Điểm chuẩn</dt><dd>${item.cutoff ?? "Chưa có dữ liệu"}</dd></div><div><dt>Điểm của tôi khi lưu</dt><dd>${item.userScore ?? "Chưa so sánh được"}</dd></div><div><dt>Trạng thái</dt><dd>${escapeHTML(item.comparisonStatus === "compatible" ? "Có thể đối chiếu" : item.comparisonReason || "Chưa so sánh được")}</dd></div></dl></div><div class="wish-actions"><button type="button" data-move-wish="${escapeHTML(item.wishId)}" data-direction="-1" aria-label="Đưa nguyện vọng lên" ${index === 0 ? "disabled" : ""}>↑</button><button type="button" data-move-wish="${escapeHTML(item.wishId)}" data-direction="1" aria-label="Đưa nguyện vọng xuống" ${index === this.savedWishes.length - 1 ? "disabled" : ""}>↓</button><button type="button" data-compare-wish="${escapeHTML(item.wishId)}" aria-label="Thêm vào so sánh">⇄</button><button type="button" data-remove-wish="${escapeHTML(item.wishId)}" aria-label="Xóa nguyện vọng">×</button></div></article>`).join("") : '<p class="empty-state">Chưa có nguyện vọng nào được lưu.</p>'); }
+  renderSavedWishes() {
+    const target = $("#saved-wishes");
+    if (!target) return;
+    const undo = this.recentWishRemoval ? `<p class="wish-undo" role="status">Đã xóa ${this.recentWishRemoval.items.length} mục. <button class="button button-text" type="button" data-undo-wish>Hoàn tác</button></p>` : "";
+    const wishes = this.savedWishes.map((item, index) => `<article class="saved-wish"><span>${index + 1}</span><div><b>${escapeHTML(item.name)}</b><small>${escapeHTML(item.university)} · ${escapeHTML(item.code)}${item.campus ? ` · ${escapeHTML(item.campus)}` : ""}${item.method ? ` · ${escapeHTML(item.method)}` : ""}</small>${this.wishScoreNote(item)}</div><div class="wish-actions"><button type="button" data-move-wish="${escapeHTML(item.wishId)}" data-direction="-1" aria-label="Đưa nguyện vọng lên" ${index === 0 ? "disabled" : ""}>↑</button><button type="button" data-move-wish="${escapeHTML(item.wishId)}" data-direction="1" aria-label="Đưa nguyện vọng xuống" ${index === this.savedWishes.length - 1 ? "disabled" : ""}>↓</button><button type="button" data-compare-wish="${escapeHTML(item.wishId)}" aria-label="Thêm vào so sánh">⇄</button><button type="button" data-remove-wish="${escapeHTML(item.wishId)}" aria-label="Xóa nguyện vọng">×</button></div></article>`).join("");
+    target.innerHTML = undo + (wishes || '<p class="empty-state">Chưa có nguyện vọng nào được lưu.</p>');
+  }
   removeWish(wishId) { const result = removeWishById(this.savedWishes, wishId); if (!result.removed) return; this.savedWishes = result.items; this.recentWishRemoval = { items: [result.removed], index: result.index }; this.persistWishes(); }
   undoWishRemoval() { if (!this.recentWishRemoval) return; this.savedWishes.splice(this.recentWishRemoval.index, 0, ...this.recentWishRemoval.items); this.recentWishRemoval = null; this.persistWishes(); this.showToast("Đã khôi phục nguyện vọng."); }
   moveWish(wishId, direction) { this.savedWishes = moveWishById(this.savedWishes, wishId, direction); this.persistWishes(); }
@@ -1091,25 +1059,26 @@ class THPTApp {
       ["Ngành / chương trình", (item) => item.name], ["Mã ngành", (item) => item.code], ["Cơ sở", (item) => item.campus || "Chưa có dữ liệu"], ["Năm", (item) => item.year], ["Tổ hợp", (item) => item.combination || "Chưa có dữ liệu"], ["Phương thức", (item) => item.method || "Chưa có dữ liệu"], ["Thang điểm", (item) => item.scale ?? "Chưa có dữ liệu"], ["Điểm chuẩn", (item) => item.cutoff ?? "Chưa có dữ liệu"], ["Điểm của tôi khi lưu", (item) => item.userScore ?? "Chưa so sánh được"], ["Trạng thái", (item) => item.comparisonStatus === "compatible" ? "Có thể đối chiếu" : item.comparisonReason || "Chưa so sánh được"], ["Học phí", (item) => item.tuitionMin !== null && item.tuitionMin !== undefined ? `${item.tuitionMin}${item.tuitionMax !== null && item.tuitionMax !== undefined ? `–${item.tuitionMax}` : ""} ${item.tuitionUnit || ""}/${item.tuitionPeriod || ""}` : "Chưa có dữ liệu"], ["Điều kiện bổ sung", (item) => item.conditions || "Chưa có dữ liệu"]
     ].map(([label, value]) => `<tr><th>${label}</th>${this.comparisonItems.map((item) => `<td>${escapeHTML(value(item))}</td>`).join("")}</tr>`).join("")}<tr><th>Bỏ mục</th>${this.comparisonItems.map((item) => `<td><button class="button button-text" type="button" data-remove-compare="${escapeHTML(item.wishId)}">Bỏ</button></td>`).join("")}</tr></tbody></table></div>${this.comparisonItems.length < 2 ? '<p class="saved-wishes-note">Thêm ít nhất một mục nữa để so sánh.</p>' : ""}`;
   }
-  exportWishesJson() {
-    if (!this.savedWishes.length) { this.showToast("Chưa có nguyện vọng để xuất."); return; }
-    downloadBlob(JSON.stringify(createWishBackup(this.savedWishes), null, 2), "application/json;charset=utf-8", `nguyen-vong-2026-${new Date().toISOString().slice(0, 10)}.json`);
-  }
-  exportWishesExcel() {
-    if (!this.savedWishes.length) { this.showToast("Chưa có nguyện vọng để xuất."); return; }
-    downloadBlob(wishesToXlsxBytes(this.savedWishes), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", `nguyen-vong-2026-${new Date().toISOString().slice(0, 10)}.xlsx`);
-  }
-  async previewWishImport(file) {
-    if (!file) return;
+  async exportWishesPdf(button) {
+    const status = $("#wish-export-status");
+    if (!this.savedWishes.length) { status.textContent = "Chưa có nguyện vọng để xuất."; this.showToast(status.textContent); return; }
+    const originalLabel = button.textContent;
+    button.disabled = true; button.textContent = "Đang tạo PDF..."; status.textContent = "Đang tạo file PDF trên thiết bị...";
     try {
-      if (file.size > 1024 * 1024) throw new Error("Tệp sao lưu vượt quá 1 MB.");
-      const parsed = parseWishBackup(await file.text()); this.pendingWishImport = parsed;
-      const preview = parsed.items.slice(0, 8).map((item, index) => `<li><span>${index + 1}. ${escapeHTML(item.university)}</span><b>${escapeHTML(item.name)} · ${escapeHTML(item.method || "Chưa có phương thức")}</b></li>`).join("");
-      this.openModal(`<p class="modal-kicker">Xem trước tệp sao lưu</p><h2 id="modal-title">${parsed.items.length} nguyện vọng hợp lệ</h2><p class="modal-description">Hợp lệ: ${parsed.report.valid} · Trùng: ${parsed.report.duplicates} · Sai: ${parsed.report.invalid} · Vượt giới hạn: ${parsed.report.exceeded}</p><ul class="explanation-list">${preview}</ul>${parsed.items.length > 8 ? `<p class="modal-description">Và ${parsed.items.length - 8} mục khác.</p>` : ""}<div class="form-actions"><button class="button button-primary" type="button" data-apply-wish-import="merge">Gộp với danh sách hiện tại</button><button class="button button-light" type="button" data-apply-wish-import="replace">Thay thế danh sách</button><button class="button button-text" type="button" data-close-modal>Hủy</button></div>`, $("#import-wishes-json"));
-    } catch (error) { this.showToast(error.message); }
-    finally { $("#import-wishes-json").value = ""; }
+      const exportedAt = new Date();
+      const { createWishPdfBlob, wishPdfFilename } = await import("./core/wishPdf.js?v=20260921-1");
+      const pdf = await createWishPdfBlob(this.savedWishes, { exportedAt });
+      const filename = wishPdfFilename(exportedAt);
+      downloadBlob(pdf, "application/pdf", filename);
+      status.textContent = `Đã tải xuống ${filename}.`;
+      this.showToast("Đã xuất và tải file PDF.");
+    } catch (error) {
+      status.textContent = error.message || "Không thể tạo PDF. Hãy thử lại.";
+      this.showToast(status.textContent);
+    } finally {
+      button.disabled = false; button.textContent = originalLabel;
+    }
   }
-  applyWishImport(mode) { if (!this.pendingWishImport) return; const merged = mergeWishListsDetailed(this.savedWishes, this.pendingWishImport.items, mode); this.savedWishes = merged.items; this.pendingWishImport = null; this.persistWishes(); this.closeModal(); this.showToast(`Đã nhập ${merged.report.valid} mục; bỏ ${merged.report.duplicates} mục trùng và ${merged.report.invalid} mục sai.`); }
   openDataReport(context, trigger) {
     const major = context.majorId ? this.repository.getMajor(context.majorId) : null;
     const university = this.repository.getUniversity(major?.universityId || context.universityId);
@@ -1122,7 +1091,7 @@ class THPTApp {
   async copyDataReport() { try { const report = this.buildDataReportFromForm(); await navigator.clipboard.writeText(JSON.stringify(report, null, 2)); $("#report-status").textContent = "Đã sao chép; báo cáo chưa được gửi đi."; } catch (error) { this.showToast(error.message || "Không thể sao chép báo cáo."); } }
   async submitDataReport(button) { try { if (!button || button.disabled) return; const report = this.buildDataReportFromForm(); button.disabled = true; button.textContent = "Đang gửi..."; $("#report-status").textContent = "Đang gửi báo cáo..."; const result = await this.repository.submitDataReport(report); const shortId = String(result.id || "").slice(0, 8); $("#report-status").textContent = result.delivery === "supabase" ? `Đã gửi thành công tới hệ thống quản trị${shortId ? ` · Mã ${shortId}` : ""}.` : `Đã tiếp nhận báo cáo${shortId ? ` · Mã ${shortId}` : ""} và sẽ tự đồng bộ khi kết nối ổn định.`; button.textContent = "Đã gửi"; this.showToast("Đã tiếp nhận báo cáo của bạn."); } catch (error) { $("#report-status").textContent = error.message || "Không thể gửi báo cáo. Bạn có thể tải JSON để giữ lại."; button.disabled = false; button.textContent = "Gửi lại"; this.showToast("Chưa gửi được báo cáo."); } }
 
-  clearFormData() { this.invalidateScoreDerived("Điểm THPT đã bị xóa, cần tính lại."); this.clearAppliedCertificate(); this.state.autoEntries = undefined; this.state.manualScores = {}; this.renderAutoSubjectRows(); this.renderManualScoreFields(); this.resetThptResult(); this.saveForm(); this.showToast("Đã xóa điểm THPT đã lưu trên thiết bị."); }
+  clearFormData() { this.invalidateScoreDerived("Điểm THPT đã bị xóa, cần tính lại."); this.state.autoEntries = undefined; this.state.manualScores = {}; this.renderAutoSubjectRows(); this.renderManualScoreFields(); this.resetThptResult(); this.saveForm(); this.showToast("Đã xóa điểm THPT đã lưu trên thiết bị."); }
   normalizeSearch(value) { return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLocaleLowerCase("vi").trim(); }
   regionLabel(id) { return UNIVERSITY_REGIONS.find((item) => item.id === id)?.label || "Chưa phân miền"; }
   changePage(kind, page) { if (kind === "university") { this.universityPage = page; this.renderUniversities($("#university-query").value, true); } if (kind === "combination") { this.combinationPage = page; this.renderCombinations($("#combination-query").value, true); } if (kind === "major") { this.majorPage = page; this.majorSearchMode === "combinations" ? this.loadBestCombinationResults(page) : this.loadMajorResults(); } }
@@ -1130,7 +1099,6 @@ class THPTApp {
 
   openModal(content, trigger) { this.modalReturnFocus = trigger || document.activeElement; this.elements.modalBody.innerHTML = content; this.elements.modal.classList.remove("is-hidden"); document.body.classList.add("modal-open"); this.elements.modal.querySelector(".modal-close").focus(); }
   closeModal(restoreRoute = true) { this.modalToken = null; this.elements.modal.classList.add("is-hidden"); document.body.classList.remove("modal-open"); this.elements.modalBody.innerHTML = ""; if (restoreRoute && this.modalRouteActive && parseDeepLink()) { const target = this.modalSourceHash || "#universities"; history.replaceState(null, "", target); this.setView(target); } this.modalRouteActive = false; this.modalReturnFocus?.focus?.(); }
-  openFormulaModal(id, trigger) { const formula = Calculator.getFormula(id); if (!formula) return; const inputs = (formula.inputs || []).map((item) => `<li><span>${escapeHTML(item)}</span><b>Đầu vào</b></li>`).join(""); this.openModal(`<p class="modal-kicker">${escapeHTML(formula.type)} · ${formula.year}</p><h2 id="modal-title">${escapeHTML(formula.name)}</h2><p class="modal-description">${escapeHTML(formula.description)}</p><h3 class="modal-section-title">Công thức</h3><div class="formula-box">${escapeHTML(formula.expression)}</div><h3 class="modal-section-title">Các biến đầu vào</h3><ul class="explanation-list">${inputs}</ul><h3 class="modal-section-title">Ví dụ</h3><div class="info-callout">${escapeHTML(formula.example)}</div>`, trigger); }
   openCalculationModal() { const result = this.lastResult; if (!result) return; const rows = result.breakdown.map((item) => `<li><span>${escapeHTML(item.label)}</span><b>${formatScore(item.value)}</b></li>`).join(""); this.openModal(`<p class="modal-kicker">Giải thích kết quả</p><h2 id="modal-title">${escapeHTML(this.lastTrigger?.context || "Điểm xét tuyển")}</h2><ul class="explanation-list">${rows}<li><span>Điểm tổ hợp</span><b>${formatScore(result.examScore)}</b></li><li><span>Điểm ưu tiên</span><b>+ ${formatScore(result.priority.adjusted)}</b></li><li><span>Tổng điểm xét tuyển</span><b>${formatScore(result.total)} / ${result.maxScore}</b></li></ul>`, $("#show-calculation")); }
   openAcademicCalculationModal() { const result = this.lastAcademicResult; if (!result) return; const rows = result.breakdown.map((item) => `<li><span>${escapeHTML(item.label)}</span><b>${formatScore(item.value)}${item.weight === 2 ? " × 2" : ""}</b></li>`).join(""); const priority = result.priorityApplied ? `<li><span>Điểm ưu tiên</span><b>+ ${formatScore(result.priority.adjusted)}</b></li>` : '<li><span>Điểm ưu tiên</span><b>Chưa áp dụng do thang 40</b></li>'; this.openModal(`<p class="modal-kicker">Giải thích học bạ</p><h2 id="modal-title">Điểm học bạ</h2><ul class="explanation-list">${rows}<li><span>Điểm có trọng số</span><b>${formatScore(result.examScore)} / ${result.maxScore}</b></li>${priority}</ul>`, $("#show-academic-calculation")); }
   openScoreSimulation() {

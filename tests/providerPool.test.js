@@ -59,7 +59,7 @@ test("không thử khóa tiếp theo với lỗi nội dung không thể khắc 
   assert.deepEqual(calls, ["key-a"]);
 });
 
-test("cấu hình provider giữ đúng thứ tự Gemini, OCR.space rồi Tesseract", () => {
+test("backend chỉ cấu hình Gemini và OCR.space; biến Tesseract cũ bị bỏ qua", () => {
   const providers = createConfiguredScanProviders({
     GEMINI_API_KEY: "gemini-one",
     GEMINI_API_KEY_2: "gemini-two",
@@ -67,5 +67,5 @@ test("cấu hình provider giữ đúng thứ tự Gemini, OCR.space rồi Tesse
     OCR_SPACE_API_KEY_2: "ocr-two",
     TESSERACT_FALLBACK_ENABLED: "true"
   });
-  assert.deepEqual(providers.map((provider) => provider.name), ["gemini", "ocr-space", "tesseract"]);
+  assert.deepEqual(providers.map((provider) => provider.name), ["gemini", "ocr-space"]);
 });

@@ -1,4 +1,5 @@
 import { escapeHTML } from "./utils.js";
+import { optimizeTranscriptImagesSequentially } from "./transcriptImageOptimizer.js";
 
 const MAX_IMAGES = 12;
 const MAX_IMAGE_BYTES = 7 * 1024 * 1024;
@@ -14,6 +15,44 @@ export function resolveTranscriptApiUrl(location = window.location, documentRef 
   const isLoopback = ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname);
   if (isLoopback && location.port !== "3000") return `http://${location.hostname}:3000/api/scan-transcript`;
   return "/api/scan-transcript";
+}
+
+export function resolveTranscriptAssetBaseUrl(location = window.location, documentRef = document) {
+  const apiUrl = resolveTranscriptApiUrl(location, documentRef);
+  if (/^https?:\/\//i.test(apiUrl)) return new URL("/vendor/", apiUrl).toString();
+  return "/vendor/";
+}
+
+class RemoteTranscriptScanError extends Error {
+  constructor(message, { code = "REMOTE_SCAN_FAILED", statusCode = 0 } = {}) {
+    super(message);
+    this.name = "RemoteTranscriptScanError";
+    this.code = code;
+    this.statusCode = statusCode;
+  }
+}
+
+const NON_FALLBACK_CODES = new Set(["INVALID_IMAGE", "UNSUPPORTED_IMAGE", "MISSING_IMAGES", "IMAGES_TOO_LARGE"]);
+
+export function shouldUseBrowserFallback(error) {
+  return error instanceof TypeError || !NON_FALLBACK_CODES.has(error?.code);
+}
+
+export async function requestRemoteTranscriptScan(images, {
+  apiUrl = resolveTranscriptApiUrl(),
+  fetchImpl = globalThis.fetch
+} = {}) {
+  const formData = new FormData();
+  images.forEach((image) => formData.append("images[]", image.blob, image.uploadName));
+  const response = await fetchImpl(apiUrl, { method: "POST", body: formData });
+  const payload = await response.json().catch(() => null);
+  if (!response.ok || !payload?.success) {
+    throw new RemoteTranscriptScanError(payload?.error?.message || "Dịch vụ nhận diện tạm thời chưa sẵn sàng.", {
+      code: payload?.error?.code,
+      statusCode: response.status
+    });
+  }
+  return payload;
 }
 
 export class TranscriptScanner {
@@ -61,7 +100,7 @@ export class TranscriptScanner {
       if (next.some((item) => fileKey(item.file) === fileKey(file))) continue;
       if (next.length >= MAX_IMAGES) { errors.push(`Chỉ có thể chọn tối đa ${MAX_IMAGES} ảnh.`); break; }
       if (next.reduce((sum, item) => sum + item.file.size, file.size) > MAX_TOTAL_BYTES) { errors.push("Tổng dung lượng ảnh tối đa là 24 MB."); break; }
-      next.push({ file, url: URL.createObjectURL(file) });
+      next.push({ file });
     }
     this.files = next;
     this.render();
@@ -69,13 +108,11 @@ export class TranscriptScanner {
   }
 
   removeFile(index) {
-    const [removed] = this.files.splice(index, 1);
-    if (removed) URL.revokeObjectURL(removed.url);
+    this.files.splice(index, 1);
     this.render();
   }
 
   clearFiles() {
-    this.files.forEach((item) => URL.revokeObjectURL(item.url));
     this.files = [];
     this.setStatus("Chọn ảnh học bạ để bắt đầu quét.");
     this.render();
@@ -87,7 +124,7 @@ export class TranscriptScanner {
   }
 
   render() {
-    this.fileList.innerHTML = this.files.map((item, index) => `<li class="transcript-file-item"><img src="${escapeHTML(item.url)}" alt="Xem trước ${escapeHTML(item.file.name)}" /><span><b>${escapeHTML(item.file.name)}</b><small>${fileSize(item.file.size)}</small></span><button class="icon-button transcript-remove" type="button" data-transcript-file-index="${index}" aria-label="Xóa ${escapeHTML(item.file.name)}" title="Xóa ảnh">×</button></li>`).join("");
+    this.fileList.innerHTML = this.files.map((item, index) => `<li class="transcript-file-item"><span class="transcript-file-icon" aria-hidden="true">Ảnh</span><span><b>${escapeHTML(item.file.name)}</b><small>${fileSize(item.file.size)}</small></span><button class="icon-button transcript-remove" type="button" data-transcript-file-index="${index}" aria-label="Xóa ${escapeHTML(item.file.name)}" title="Xóa ảnh">×</button></li>`).join("");
     const hasFiles = this.files.length > 0;
     this.scanButton.disabled = !hasFiles || this.isScanning;
     this.clearButton.disabled = !hasFiles || this.isScanning;
@@ -98,22 +135,32 @@ export class TranscriptScanner {
     if (!this.files.length || this.isScanning) return;
     this.isScanning = true;
     this.render();
+    let optimizedImages = [];
     try {
-      this.setStatus("Đang tải ảnh...", "working");
-      const formData = new FormData();
-      this.files.forEach(({ file }) => formData.append("images[]", file, file.name));
-      this.setStatus("Đang đọc học bạ...", "working");
-      const response = await fetch(resolveTranscriptApiUrl(), { method: "POST", body: formData });
-      this.setStatus("Đang xử lý dữ liệu...", "working");
-      const payload = await response.json().catch(() => null);
-      if (!response.ok || !payload?.success) throw new Error(payload?.error?.message || payload?.error || "Không thể đọc ảnh học bạ. Hãy thử lại sau.");
+      optimizedImages = await optimizeTranscriptImagesSequentially(this.files.map((item) => item.file), {
+        onProgress: (index, total) => this.setStatus(`Đang xử lý ảnh ${index + 1}/${total}...`, "working")
+      });
+      this.setStatus("Đang nhận diện...", "working");
+      let payload;
+      try {
+        payload = await requestRemoteTranscriptScan(optimizedImages);
+      } catch (error) {
+        if (!shouldUseBrowserFallback(error)) throw error;
+        const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js");
+        payload = await recognizeTranscriptInBrowser(optimizedImages, {
+          assetBaseUrl: resolveTranscriptAssetBaseUrl(),
+          onStatus: (message) => this.setStatus(message, "working")
+        });
+      }
       this.setStatus("Đang kiểm tra...", "working");
       this.onScanSuccess(payload);
-      this.setStatus("Hoàn tất! Kiểm tra lại bảng điểm trước khi xác nhận.", "success");
+      this.files = [];
+      this.setStatus("Hoàn tất. Hãy kiểm tra bảng điểm trước khi xác nhận.", "success");
     } catch (error) {
-      const message = error instanceof TypeError ? "Không kết nối được backend nhận diện. Trong VS Code, hãy chạy npm start ở terminal rồi thử lại." : error.message || "Không thể đọc ảnh học bạ. Hãy thử lại sau.";
+      const message = error?.message || "Không thể nhận diện ảnh. Hãy dùng ảnh rõ hơn hoặc nhập điểm thủ công.";
       this.setStatus(message, "error");
     } finally {
+      optimizedImages.length = 0;
       this.isScanning = false;
       this.render();
     }

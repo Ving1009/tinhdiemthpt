@@ -1,10 +1,10 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { calculateCertificateConversion, sanitizeCertificateRecord, validateCertificateConversions } from "../lib/certificateConversion.js";
 import { chooseBestCombination, comparisonCompatibility, comparisonContextKey, sortComparedMajors } from "../lib/majorComparison.js";
 import { majorHasCombination, parseCombinationCodes } from "../lib/majorCombination.js";
 import { sanitizeMajor, sanitizeUniversity } from "../lib/dataValidation.js";
 import { normalizeAdmissionMethodCode } from "../lib/admissionMethod.js";
+import { createAdmissionFormulaIndex } from "../lib/admissionFormulaData.js";
 
 const DATA_ROOT = fileURLToPath(new URL("../data/", import.meta.url));
 const readJson = (name) => JSON.parse(readFileSync(new URL(name, new URL("../data/", import.meta.url)), "utf8"));
@@ -38,14 +38,18 @@ function searchRank(entry, term) {
   return words.length && words.every((word) => entry.text.includes(word)) ? 3 : null;
 }
 
-export function createDataStore({ universities, majors, combinations, subjects, certificateConversions } = {}) {
+export function createDataStore({ universities, majors, combinations, subjects, admissionFormulas } = {}) {
   const allUniversities = universities || readJson("universities.json");
   const allMajors = majors || readJson("majors.json");
   const allCombinations = combinations || readJson("combinations.json");
   const allSubjects = subjects || readJson("subjects.json");
-  const allCertificateConversions = certificateConversions || readJson("certificate-conversions.json");
+  const usesInjectedCatalog = Boolean(universities || majors || combinations || subjects);
+  const allAdmissionFormulas = admissionFormulas || (usesInjectedCatalog
+    ? { schemaVersion: 1, year: 2026, verifiedAt: null, schools: [] }
+    : readJson("admission-formulas-2026.json"));
   const universitiesById = new Map(allUniversities.map((item) => [item.id, item]));
   const majorsById = new Map(allMajors.map((item) => [item.id, item]));
+  const admissionFormulaIndex = createAdmissionFormulaIndex(allAdmissionFormulas, { universities: allUniversities, majors: allMajors });
   const majorsByUniversity = new Map();
   const validCombinationCodes = new Set(allCombinations.map((item) => item.code.toLocaleUpperCase("vi")));
   const indexedMajors = allMajors.map((major) => {
@@ -86,7 +90,8 @@ export function createDataStore({ universities, majors, combinations, subjects, 
       cutoffCount,
       verifiedRowCount: rows.filter(({ major }) => major.dataStatus === "verified").length,
       informationalRowCount: rows.filter(({ major }) => major.dataStatus === "reference").length,
-      calculableCount: rows.filter(({ major }) => major.calculationVerified === true).length
+      calculableCount: rows.filter(({ major }) => major.calculationVerified === true).length,
+      verifiedFormulaCount: admissionFormulaIndex.get(university.id)?.methods.length || 0
     };
   });
   const summaryById = new Map(universitySummaries.map((item) => [item.id, item]));
@@ -99,12 +104,12 @@ export function createDataStore({ universities, majors, combinations, subjects, 
       dataCheckedAt: allUniversities.map((item) => item.dataCheckedAt).filter(Boolean).sort().at(-1) || null,
       universityCount: allUniversities.length,
       majorRowCount: allMajors.length,
-      certificateUniversityIds: [...new Set(allCertificateConversions.map((item) => item.universityId))],
       quality: {
         profileStatusCounts: [...new Set(allUniversities.map((item) => item.admissions?.status || "unknown"))].sort().map((status) => ({ status, count: allUniversities.filter((item) => (item.admissions?.status || "unknown") === status).length })),
         cutoffStatusCounts: [...new Set(allMajors.map((item) => item.cutoff?.status || "missing"))].sort().map((status) => ({ status, count: allMajors.filter((item) => (item.cutoff?.status || "missing") === status).length })),
         calculableRows: allMajors.filter((item) => item.calculationVerified === true).length,
-        certificateRuleCount: allCertificateConversions.length
+        verifiedFormulaSchools: admissionFormulaIndex.size,
+        verifiedSchoolMethodFormulas: [...admissionFormulaIndex.values()].reduce((total, school) => total + school.methods.length, 0)
       }
     }
   };
@@ -129,9 +134,6 @@ export function createDataStore({ universities, majors, combinations, subjects, 
     text: normalizeSearch(`${item.code} ${item.subjectText} ${(item.sourceCodes || []).join(" ")}`),
     item
   }));
-  const certificateCheck = validateCertificateConversions(allCertificateConversions, { universityIds: new Set(universitiesById.keys()) });
-  if (!certificateCheck.valid) throw new Error(`Dữ liệu quy đổi chứng chỉ không hợp lệ: ${certificateCheck.errors.join(" ")}`);
-
   function toPublicMajor(major) {
     return { ...sanitizeMajor(major), methodCode: major.methodCode || normalizeAdmissionMethodCode(major.method) };
   }
@@ -187,6 +189,70 @@ export function createDataStore({ universities, majors, combinations, subjects, 
         cutoff: clean.cutoff, dataStatus: clean.dataStatus
       };
     });
+  }
+
+  function listAdmissionFormulas(id) {
+    const university = universitiesById.get(id);
+    if (!university) return null;
+    const rows = majorsByUniversity.get(id) || [];
+    const school = admissionFormulaIndex.get(id);
+    const methods = (school?.methods || []).map((method) => {
+      const programs = [...new Map(method.applicableRows.map((major) => [
+        `${major.code}|${major.name}`,
+        { id: major.id, code: major.code, name: major.name, method: major.method }
+      ])).values()];
+      const combinations = [...new Set(method.applicableRows.flatMap((major) => parseCombinationCodes(major.combination, validCombinationCodes)))];
+      return {
+        id: method.id,
+        label: method.label,
+        status: method.status,
+        expression: method.expression,
+        scale: method.scale,
+        conditions: method.conditions || [],
+        priority: method.priority || "",
+        conversion: method.conversion || "",
+        combinationNote: method.combinationNote || "",
+        combinations,
+        programs,
+        programCount: programs.length,
+        autoCalculate: method.autoCalculate === true,
+        formulaModuleId: method.formulaModuleId || "",
+        applicabilityNote: method.applicability?.note || "",
+        officialLink: {
+          label: method.source.title,
+          url: method.source.url,
+          checkedAt: method.source.verifiedAt
+        }
+      };
+    });
+    const formulaByRepositoryMethod = new Map();
+    for (const method of school?.methods || []) {
+      for (const label of method.repositoryMethods || []) formulaByRepositoryMethod.set(label, method);
+    }
+    const methodLabels = [...new Set([
+      ...(university.methods || []),
+      ...rows.map(({ major }) => major.method)
+    ].filter(Boolean))];
+    const methodOptions = methodLabels.map((label) => {
+      const formula = formulaByRepositoryMethod.get(label);
+      const matchingRows = rows.filter(({ major }) => major.method === label).map(({ major }) => major);
+      const programs = new Set(matchingRows.map((major) => `${major.code}|${major.name}`));
+      const verifiedPrograms = formula ? new Set(formula.applicableRows.map((major) => `${major.code}|${major.name}`)) : null;
+      return {
+        label,
+        formulaId: formula?.id || "",
+        verified: Boolean(formula),
+        programCount: verifiedPrograms?.size ?? programs.size
+      };
+    });
+    return {
+      available: methods.length > 0,
+      year: allAdmissionFormulas.year,
+      verifiedAt: allAdmissionFormulas.verifiedAt,
+      message: methods.length ? "Chỉ hiển thị các công thức được nguồn chính thức nêu trực tiếp." : "Chưa có công thức chính thức được xác minh.",
+      methodOptions,
+      methods
+    };
   }
 
   function listMajors(query = {}) {
@@ -329,13 +395,6 @@ export function createDataStore({ universities, majors, combinations, subjects, 
       });
   }
 
-  function listCertificateConversions(universityId, year) {
-    if (!universitiesById.has(universityId)) return null;
-    return allCertificateConversions
-      .filter((record) => record.universityId === universityId && (!year || record.year === Number(year)))
-      .map(sanitizeCertificateRecord);
-  }
-
   return {
     dataRoot: DATA_ROOT,
     universities: allUniversities,
@@ -344,7 +403,6 @@ export function createDataStore({ universities, majors, combinations, subjects, 
     subjects: allSubjects,
     publicCombinations: allCombinations.map(sanitizeUniversity),
     publicSubjects: allSubjects.map(sanitizeUniversity),
-    certificateConversions: allCertificateConversions,
     universitiesById,
     majorsById,
     validCombinationCodes,
@@ -353,11 +411,10 @@ export function createDataStore({ universities, majors, combinations, subjects, 
     getUniversity,
     listUniversityMajors,
     listUniversityMajorOptions,
+    listAdmissionFormulas,
     listMajors,
     findBestMajorCombinations,
     search,
-    listCertificateConversions,
-    calculateCertificateConversion: (input) => calculateCertificateConversion(allCertificateConversions, input),
     majorHasCombination: (major, code) => majorHasCombination(major, code, validCombinationCodes)
   };
 }

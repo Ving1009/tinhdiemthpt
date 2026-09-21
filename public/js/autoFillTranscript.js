@@ -73,11 +73,11 @@ function preferDestination(destinations, candidate, warnings) {
   if (current.value === candidate.value) return;
   if (candidate.confidence > current.confidence) {
     destinations.set(candidate.fieldId, candidate);
-    warnings.push(`${candidate.label} có dữ liệu trùng, đã chọn giá trị có độ tin cậy cao hơn.`);
+    warnings.push(`${candidate.label} có dữ liệu trùng, đã chọn giá trị rõ hơn.`);
   } else if (candidate.confidence < current.confidence) {
-    warnings.push(`${candidate.label} có dữ liệu trùng, giữ giá trị có độ tin cậy cao hơn.`);
+    warnings.push(`${candidate.label} có dữ liệu trùng, giữ giá trị rõ hơn.`);
   } else {
-    warnings.push(`${candidate.label} có dữ liệu trùng cùng độ tin cậy, chưa tự ghi đè.`);
+    warnings.push(`${candidate.label} có dữ liệu trùng, chưa tự ghi đè.`);
   }
 }
 

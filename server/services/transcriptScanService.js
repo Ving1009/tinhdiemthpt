@@ -4,7 +4,7 @@ const FALLBACK_CODES = new Set([
   "MISSING_API_KEY", "AI_QUOTA", "AI_TIMEOUT", "AI_AUTH", "AI_REQUEST_FAILED", "INVALID_AI_JSON", "NO_TRANSCRIPT_DATA",
   "MISSING_OCR_SPACE_API_KEY", "OCR_SPACE_QUOTA", "OCR_SPACE_TIMEOUT", "OCR_SPACE_AUTH", "OCR_SPACE_REQUEST_FAILED",
   "OCR_SPACE_INVALID_RESPONSE", "OCR_SPACE_UNSUPPORTED_IMAGE", "OCR_SPACE_FILE_TOO_LARGE", "OCR_SPACE_CONFIG",
-  "OCR_TIMEOUT", "OCR_FAILED", "SCAN_PROVIDER_UNAVAILABLE"
+  "SCAN_PROVIDER_UNAVAILABLE"
 ]);
 
 export function shouldUseTranscriptFallback(error) {
@@ -23,7 +23,7 @@ export function createTranscriptScanService(providers = []) {
       try {
         const result = await provider.scan(images);
         const warnings = [...(result.warnings || [])];
-        if (index > 0) warnings.unshift(`Đã chuyển sang ${provider.label} vì dịch vụ nhận diện chính tạm thời không dùng được. Hãy kiểm tra kỹ kết quả trước khi điền.`);
+        if (index > 0) warnings.unshift("Đã dùng phương án nhận diện dự phòng. Hãy kiểm tra kỹ kết quả trước khi điền.");
         return { ...result, warnings, engine: provider.name };
       } catch (error) {
         previousError = error;

@@ -60,6 +60,7 @@ test("API trường, ngành và catalog không lộ metadata hay tên website th
     `/api/universities/${encodeURIComponent(universityId)}`,
     `/api/universities/${encodeURIComponent(universityId)}/majors?pageSize=5`,
     `/api/universities/${encodeURIComponent(universityId)}/major-options`,
+    `/api/universities/${encodeURIComponent(universityId)}/admission-formulas`,
     "/api/catalog/combinations",
     "/api/catalog/subjects"
   ]) {
@@ -71,7 +72,7 @@ test("API trường, ngành và catalog không lộ metadata hay tên website th
     assert.deepEqual(forbiddenKeys(payload), []);
     assert.doesNotMatch(JSON.stringify(payload), /tuyensinh247|diemthi\.vnexpress\.net/i);
   }
-  const catalog = payloads[4].data;
+  const catalog = payloads[5].data;
   assert.ok(catalog.length > 0);
   assert.equal(Object.hasOwn(catalog[0], "raw"), false);
 });
@@ -120,18 +121,21 @@ test("API lỗi dùng schema thống nhất và không gửi stack", async () =>
   const missing = await fetch(`${baseUrl}/api/does-not-exist`);
   const missingPayload = await missing.json();
   assert.deepEqual(missingPayload, { success: false, error: { code: "API_NOT_FOUND", message: "Không tìm thấy API." } });
-  const invalid = await fetch(`${baseUrl}/api/certificate-conversions/calculate`, { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" });
-  const invalidPayload = await invalid.json();
-  assert.equal(invalid.status, 400);
-  assert.equal(invalidPayload.error.code, "INVALID_CERTIFICATE_INPUT");
-  assert.equal(Object.hasOwn(invalidPayload, "stack"), false);
+  assert.equal(Object.hasOwn(missingPayload, "stack"), false);
 });
 
-test("production certificate dataset trống trả available false thay vì bịa quy đổi", async () => {
+test("API quy đổi chứng chỉ độc lập đã được gỡ", async () => {
   const list = await fetch(`${baseUrl}/api/universities?pageSize=1`).then((response) => response.json());
   const id = list.data.items[0].id;
-  const payload = await fetch(`${baseUrl}/api/universities/${id}/certificate-conversions?year=2026`).then((response) => response.json());
-  assert.deepEqual(payload.data, { available: false, rules: [] });
+  for (const [path, options] of [
+    [`/api/universities/${id}/certificate-conversions?year=2026`, undefined],
+    ["/api/certificate-conversions/calculate", { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" }]
+  ]) {
+    const response = await fetch(`${baseUrl}${path}`, options);
+    const payload = await response.json();
+    assert.equal(response.status, 404);
+    assert.equal(payload.error.code, "API_NOT_FOUND");
+  }
 });
 
 test("API gộp nhiều tổ hợp trả dữ liệu đã làm sạch", async () => {

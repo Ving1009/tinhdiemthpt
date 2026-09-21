@@ -60,6 +60,7 @@ export class UniversityRepository {
     this.majorIndex = [];
     this.searchEntries = [];
     this.universityDetails = new Map();
+    this.admissionFormulaCache = new Map();
   }
 
   async load() {
@@ -75,6 +76,7 @@ export class UniversityRepository {
     this.majorIndex = [];
     this.searchEntries = [];
     this.universityDetails = new Map();
+    this.admissionFormulaCache = new Map();
     return this;
   }
 
@@ -96,6 +98,20 @@ export class UniversityRepository {
   getCachedMajors(universityId) {
     const value = this.majorCache.get(universityId);
     return Array.isArray(value) ? value : [];
+  }
+  async getAdmissionFormulas(universityId, { force = false } = {}) {
+    if (!force && this.admissionFormulaCache.has(universityId)) return this.admissionFormulaCache.get(universityId);
+    const promise = requestJson(`/api/universities/${encodeURIComponent(universityId)}/admission-formulas`)
+      .then((data) => {
+        this.admissionFormulaCache.set(universityId, data);
+        return data;
+      })
+      .catch((error) => {
+        this.admissionFormulaCache.delete(universityId);
+        throw error;
+      });
+    this.admissionFormulaCache.set(universityId, promise);
+    return promise;
   }
   async getMajorsPage(universityId, query = {}, { signal } = {}) {
     const params = new URLSearchParams(Object.entries(query).filter(([, value]) => value !== undefined && value !== null && value !== "").map(([key, value]) => [key, String(value)]));
@@ -137,12 +153,6 @@ export class UniversityRepository {
     const result = await requestJson("/api/majors/best-combinations", { signal, method: "POST", body: input });
     for (const major of result.items) this.rememberMajor(major);
     return result;
-  }
-  getCertificateRules(universityId, year = 2026, { signal } = {}) {
-    return requestJson(`/api/universities/${encodeURIComponent(universityId)}/certificate-conversions?year=${year}`, { signal });
-  }
-  calculateCertificate(input, { signal } = {}) {
-    return requestJson("/api/certificate-conversions/calculate", { signal, method: "POST", body: input });
   }
   submitDataReport(report, { signal } = {}) {
     return requestJson("/api/data-reports", { signal, method: "POST", body: report });

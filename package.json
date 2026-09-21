@@ -1,29 +1,30 @@
 {
-  "name": "tinh-diem-thpt",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "description": "Website HTML/CSS/JavaScript thuần để tính điểm THPT và xét tuyển mẫu.",
-  "scripts": {
-    "start": "node server/server.js",
-    "dev": "node --watch-preserve-output --watch-path=data --watch-path=server --watch-path=lib --watch-path=public server/server.js",
-    "package:share": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build-share-package.ps1",
-    "audit:logos": "node scripts/audit-logo-quality.mjs",
-    "refresh:ts247": "node scripts/refresh-ts247-references-2026.mjs --write",
-    "admin:data": "node scripts/admin-data.mjs",
-    "measure:performance": "node scripts/measure-performance.mjs",
-    "test": "node --test",
-    "check": "node --check server/server.js && node --check server/dataStore.js && node --check server/reportStore.js && node --check server/services/providerPool.js && node --check server/services/geminiVision.js && node --check server/services/ocrSpaceVision.js && node --check server/services/supabaseReportSink.js && node --check server/services/tesseractVision.js && node --check server/services/transcriptScanService.js && node --check server/routes/publicApi.js && node --check server/routes/scanTranscript.js && node --check public/js/main.js && node --check public/js/university.js && node --check public/js/admissions.js && node --check public/js/calculator.js && node --check public/js/core/subjectMatching.js && node --check public/js/core/thptCombinations.js && node --check public/js/core/academicCalculator.js && node --check public/js/core/certificateApplication.js && node --check public/js/core/wishList.js && node --check public/js/core/scoreState.js && node --check public/js/core/scoreSimulation.js && node --check public/js/core/dataReport.js && node --check public/js/transcriptScanner.js && node --check public/js/transcriptPreview.js && node --check public/js/autoFillTranscript.js && node --check public/formulas/index.js && node --check public/formulas/thpt.js && node --check public/formulas/hocba.js && node --check public/formulas/universities/bka-thpt.js && node --check formulas/index.js && node --check formulas/thpt.js && node --check formulas/hocba.js && node --check formulas/dgnl.js && node --check formulas/dgt.js && node --check formulas/universities/generated-school-formulas.js && node --check formulas/universities/university-example.js && node --check formulas/universities/technology-sample.js && node --check formulas/universities/technical-college-sample.js && node --check lib/dataValidation.js && node --check lib/admissionMethod.js && node --check lib/majorCombination.js && node --check lib/majorComparison.js && node --check lib/certificateConversion.js && node --check lib/ocrTranscriptParser.js && node --check scripts/admin-data.mjs && node --check scripts/verify-dataset.mjs && node --check scripts/refresh-university-logos.mjs && node --check scripts/refresh-ts247-references-2026.mjs && node --check scripts/promote-dvp-official-2026.mjs && node --check scripts/audit-logo-quality.mjs && node --check scripts/measure-performance.mjs && node --check scripts/lib/ts247-parser.mjs && node --check scripts/import-ts247-live-2026.mjs && node --check scripts/import-vne-2026.mjs && node --check scripts/import-external-profiles-2026.mjs && node --check scripts/import-vietnamnet-pending-2026.mjs && node --check scripts/import-official-pending-2026.mjs && node --check scripts/enrich-remaining-profiles-2026.mjs && node --check scripts/complete-remaining-profiles-2026.mjs",
-    "verify:data": "node scripts/verify-dataset.mjs"
-  },
-  "dependencies": {
-    "@google/genai": "^2.18.0",
-    "@tesseract.js-data/eng": "^1.0.0",
-    "@tesseract.js-data/vie": "^1.0.0",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "express-rate-limit": "^8.6.2",
-    "multer": "^2.4.0",
-    "tesseract.js": "^7.0.0"
-  }
+    "name":  "tinh-diem-thpt",
+    "version":  "1.0.0",
+    "private":  true,
+    "type":  "module",
+    "description": "Website HTML/CSS/JavaScript thuần để tính điểm THPT và xét tuyển mẫu.",
+    "scripts":  {
+                    "start":  "node server/server.js",
+                    "dev": "node --watch-preserve-output --watch-path=data --watch-path=server --watch-path=lib --watch-path=public server/server.js",
+                    "package:share": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build-share-package.ps1",
+                    "audit:logos": "node scripts/audit-logo-quality.mjs",
+                    "audit:formulas": "node scripts/audit-admission-formulas.mjs",
+                    "refresh:ts247": "node scripts/refresh-ts247-references-2026.mjs --write",
+                    "admin:data": "node scripts/admin-data.mjs",
+                    "measure:performance": "node scripts/measure-performance.mjs",
+                    "test": "node --test",
+                    "check": "node --check server/server.js && node --check server/dataStore.js && node --check server/reportStore.js && node --check server/services/providerPool.js && node --check server/services/geminiVision.js && node --check server/services/ocrSpaceVision.js && node --check server/services/supabaseReportSink.js && node --check server/services/transcriptScanService.js && node --check server/routes/publicApi.js && node --check server/routes/scanTranscript.js && node --check server/validators/transcriptValidator.js && node --check public/js/main.js && node --check public/js/university.js && node --check public/js/admissions.js && node --check public/js/calculator.js && node --check public/js/core/subjectMatching.js && node --check public/js/core/thptCombinations.js && node --check public/js/core/academicCalculator.js && node --check public/js/core/wishList.js && node --check public/js/core/wishPdf.js && node --check public/js/core/scoreState.js && node --check public/js/core/scoreSimulation.js && node --check public/js/core/dataReport.js && node --check public/js/core/ocrTranscriptParser.js && node --check public/js/core/transcriptValidator.js && node --check public/js/transcriptScanner.js && node --check public/js/transcriptPreview.js && node --check public/js/transcriptImageOptimizer.js && node --check public/js/clientTranscriptOcr.js && node --check public/js/autoFillTranscript.js && node --check public/formulas/index.js && node --check public/formulas/thpt.js && node --check public/formulas/hocba.js && node --check public/formulas/universities/bka-thpt.js && node --check formulas/index.js && node --check formulas/thpt.js && node --check formulas/hocba.js && node --check formulas/dgnl.js && node --check formulas/dgt.js && node --check formulas/universities/generated-school-formulas.js && node --check formulas/universities/university-example.js && node --check formulas/universities/technology-sample.js && node --check formulas/universities/technical-college-sample.js && node --check lib/dataValidation.js && node --check lib/admissionMethod.js && node --check lib/majorCombination.js && node --check lib/majorComparison.js && node --check lib/admissionFormulaData.js && node --check lib/ocrTranscriptParser.js && node --check scripts/admin-data.mjs && node --check scripts/verify-dataset.mjs && node --check scripts/refresh-university-logos.mjs && node --check scripts/refresh-ts247-references-2026.mjs && node --check scripts/promote-dvp-official-2026.mjs && node --check scripts/audit-logo-quality.mjs && node --check scripts/audit-admission-formulas.mjs && node --check scripts/measure-performance.mjs && node --check scripts/lib/ts247-parser.mjs && node --check scripts/import-ts247-live-2026.mjs && node --check scripts/import-vne-2026.mjs && node --check scripts/import-external-profiles-2026.mjs && node --check scripts/import-vietnamnet-pending-2026.mjs && node --check scripts/import-official-pending-2026.mjs && node --check scripts/enrich-remaining-profiles-2026.mjs && node --check scripts/complete-remaining-profiles-2026.mjs",
+                    "verify:data": "node scripts/verify-dataset.mjs"
+                },
+    "dependencies":  {
+                         "@google/genai":  "^2.18.0",
+                         "@tesseract.js-data/eng":  "^1.0.0",
+                         "@tesseract.js-data/vie":  "^1.0.0",
+                         "dotenv":  "^17.4.2",
+                         "express":  "^5.2.1",
+                         "express-rate-limit":  "^8.6.2",
+                         "multer":  "^2.4.0",
+                         "tesseract.js":  "^7.0.0"
+                     }
 }

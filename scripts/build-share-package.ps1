@@ -13,7 +13,7 @@ $runtimeFiles = @(
   "data/combinations.json",
   "data/subjects.json",
   "data/transcript-subjects.json",
-  "data/certificate-conversions.json",
+  "data/admission-formulas-2026.json",
   ".vscode/settings.json",
   ".vscode/tasks.json",
   ".env.example",

@@ -37,10 +37,10 @@ export function createPublicApiRouter({ store, reportStore }) {
     if (!result) return notFound(response, "UNIVERSITY_NOT_FOUND", "Không tìm thấy trường.");
     ok(response, result);
   });
-  router.get("/universities/:id/certificate-conversions", (request, response) => {
-    const rules = store.listCertificateConversions(request.params.id, request.query.year);
-    if (rules === null) return notFound(response, "UNIVERSITY_NOT_FOUND", "Không tìm thấy trường.");
-    ok(response, { available: rules.length > 0, rules });
+  router.get("/universities/:id/admission-formulas", (request, response) => {
+    const result = store.listAdmissionFormulas(request.params.id);
+    if (!result) return notFound(response, "UNIVERSITY_NOT_FOUND", "Không tìm thấy trường.");
+    ok(response, result);
   });
   router.get("/universities/:id", (request, response) => {
     const university = store.getUniversity(request.params.id);
@@ -59,13 +59,6 @@ export function createPublicApiRouter({ store, reportStore }) {
   });
   router.get("/catalog/combinations", (_request, response) => ok(response, store.publicCombinations));
   router.get("/catalog/subjects", (_request, response) => ok(response, store.publicSubjects));
-  router.post("/certificate-conversions/calculate", (request, response) => {
-    const input = request.body || {};
-    if (!input.universityId || !input.year || !input.certificate || !input.method || input.value === undefined) {
-      return badRequest(response, "INVALID_CERTIFICATE_INPUT", "Thiếu thông tin quy đổi chứng chỉ.");
-    }
-    ok(response, store.calculateCertificateConversion(input));
-  });
   router.post("/data-reports", reportLimiter, async (request, response, next) => {
     try {
       if (!reportStore) return response.status(503).json({ success: false, error: { code: "REPORT_INTAKE_UNAVAILABLE", message: "Nơi tiếp nhận báo cáo chưa sẵn sàng." } });

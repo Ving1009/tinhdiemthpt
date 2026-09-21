@@ -12,3 +12,7 @@ tmp-*
 .logo-*
 academic-check.png
 .local/
+.cloudflare/
+.wrangler/
+.dev.vars
+.dev.vars.*

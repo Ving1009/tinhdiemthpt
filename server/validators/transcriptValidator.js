@@ -6,13 +6,19 @@ import {
   validateTranscriptPayload as validateTranscriptPayloadCore
 } from "../../public/js/core/transcriptValidator.js";
 
-const SUBJECT_CATALOG_URL = new URL("../../data/transcript-subjects.json", import.meta.url);
 let subjectCatalogPromise;
 
 export const normalizeText = normalizeTranscriptText;
 
+export function configureTranscriptSubjectCatalog(catalog) {
+  if (!Array.isArray(catalog?.subjects) || catalog.subjects.length === 0) {
+    throw new AppError("Không tải được danh mục môn học.");
+  }
+  subjectCatalogPromise = Promise.resolve(catalog);
+}
+
 export async function loadTranscriptSubjectCatalog() {
-  subjectCatalogPromise ||= readFile(SUBJECT_CATALOG_URL, "utf8").then((content) => {
+  subjectCatalogPromise ||= readFile(new URL("../../data/transcript-subjects.json", import.meta.url), "utf8").then((content) => {
     const catalog = JSON.parse(content);
     if (!Array.isArray(catalog.subjects) || catalog.subjects.length === 0) throw new AppError("Không tải được danh mục môn học.");
     return catalog;

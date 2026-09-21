@@ -1,6 +1,34 @@
 # Tính Điểm THPT
 
-Website Vanilla JavaScript và Express để tính điểm THPT, học bạ, tra cứu hồ sơ tuyển sinh 2026, xem công thức đã xác minh và tìm ngành theo điểm.
+Website Vanilla JavaScript với Cloudflare Workers để tính điểm THPT, học bạ, tra cứu hồ sơ tuyển sinh 2026, xem công thức đã xác minh và tìm ngành theo điểm. Express vẫn được giữ để chạy backend cục bộ khi biên tập dữ liệu.
+
+## Triển khai Cloudflare Workers
+
+Production dùng hai Worker:
+
+- `tinhdiemthpt`: giao diện, Static Assets, API trường/ngành và tiếp nhận báo sai qua Supabase.
+- `tinhdiemthpt-ocr`: Gemini và OCR.space. Worker này không có URL public; Worker chính gọi qua Service Binding.
+
+Việc tách OCR khỏi API tra cứu giúp mỗi tiến trình giữ bộ nhớ riêng. Dữ liệu nguồn trong `data/` không được public trực tiếp: lệnh build chỉ tạo bản đã loại metadata thu thập vào `.cloudflare/public/_worker-data/`, và Worker chặn mọi request bên ngoài đến đường dẫn này.
+
+```powershell
+npm.cmd install
+npm.cmd run cf:dry-run
+npm.cmd exec -- wrangler login
+npm.cmd run cf:deploy
+npm.cmd run cf:secrets
+```
+
+`cf:deploy` luôn triển khai Worker OCR trước rồi mới triển khai Worker chính. `cf:secrets` đọc `.env`, chỉ gửi nhóm khóa Gemini/OCR.space vào Worker OCR và nhóm Supabase vào Worker chính; script không in giá trị khóa. Không commit `.env`, `.dev.vars`, `.cloudflare/` hoặc `.wrangler/`.
+
+Chạy local Cloudflare bằng hai terminal:
+
+```powershell
+npm.cmd run cf:dev:ocr
+npm.cmd run cf:dev
+```
+
+Khi cả hai lệnh đang chạy, Wrangler tự nối Service Binding. Website mở tại địa chỉ mà `cf:dev` in ra. Lệnh `npm.cmd start` bên dưới vẫn dùng Express tại `http://127.0.0.1:3000` cho quy trình phát triển cũ.
 
 ## Cài đặt và chạy
 
@@ -32,8 +60,9 @@ Các lệnh kiểm tra và đóng gói ở trên áp dụng cho repository ngu�
 ## Kiến trúc
 
 - `public/`: nguồn giao diện duy nhất được Express và Live Server phục vụ, gồm HTML, CSS, JavaScript, logo và công thức chạy trên trình duyệt.
-- `server/`: Express API, route quét học bạ và các service phía máy chủ.
-- `server/dataStore.js`: nạp JSON một lần khi tiến trình khởi động, tạo các `Map` và chỉ mục tìm kiếm trong RAM.
+- `worker/`: entry Worker chính, Worker OCR và router Web API dành cho Cloudflare.
+- `server/`: Express API cục bộ cùng các service dùng chung với Worker OCR.
+- `server/dataStoreCore.js`: tạo các `Map` và chỉ mục dùng chung; Worker nạp lười bản dữ liệu public từ Static Assets.
 - `data/`: dữ liệu nội bộ về trường, ngành, tổ hợp và bộ công thức đã xác minh. Thư mục này không được phục vụ tĩnh.
 - `lib/`: validator, bộ làm sạch response và các engine dùng chung.
 - `scripts/`: công cụ kiểm tra hoặc nhập dữ liệu nội bộ.
@@ -109,7 +138,7 @@ Kết quả từ mọi bộ máy đi qua cùng parser, validator và bước xem
 
 Hai môn Công nghệ công nghiệp và Công nghệ nông nghiệp có ánh xạ riêng. Nếu ảnh chỉ ghi “Công nghệ”, bước xem trước bắt buộc người dùng chọn định hướng; hệ thống không chép điểm sang cả hai môn và không ghi đè điểm đã nhập khi còn xung đột.
 
-Các điểm nhập thủ công và nguyện vọng đã lưu chỉ nằm trong `localStorage` của thiết bị. Mỗi khu vực có nút xóa dữ liệu tương ứng. Báo dữ liệu sai chỉ được ghi khi người dùng bấm gửi; backend lưu trước vào `.local/pending-data-reports.ndjson`, rồi đồng bộ lên bảng Supabase `data_reports`. Nếu Supabase tạm lỗi, bản cục bộ vẫn ở trạng thái chờ và máy chủ thử lại khi khởi động, sau mỗi báo cáo mới và định kỳ 5 phút. Thư mục `.local/` không được phục vụ tĩnh và không nằm trong bản ZIP chia sẻ.
+Các điểm nhập thủ công và nguyện vọng đã lưu chỉ nằm trong `localStorage` của thiết bị. Mỗi khu vực có nút xóa dữ liệu tương ứng. Báo dữ liệu sai chỉ được ghi khi người dùng bấm gửi. Trên Cloudflare, Worker ghi thẳng vào bảng Supabase `data_reports` và chỉ trả thành công sau khi Supabase xác nhận. Khi chạy Express cục bộ, backend vẫn lưu trước vào `.local/pending-data-reports.ndjson` rồi đồng bộ để hỗ trợ biên tập ngoại tuyến. Thư mục `.local/` không được phục vụ tĩnh và không nằm trong bản ZIP chia sẻ.
 
 Tạo bảng cloud bằng cách chạy [supabase/data-reports.sql](supabase/data-reports.sql) trong Supabase SQL Editor. Sau đó đặt `SUPABASE_URL`, `SUPABASE_SECRET_KEY` và `SUPABASE_REPORTS_TABLE` trong `.env`. Secret key chỉ được dùng ở backend; bảng bật RLS, thu hồi quyền của `anon` và `authenticated`, nên trình duyệt không thể đọc danh sách báo cáo.
 

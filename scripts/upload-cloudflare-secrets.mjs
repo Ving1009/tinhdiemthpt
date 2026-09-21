@@ -18,7 +18,7 @@ const targetKeys = {
   ],
   "wrangler.jsonc": ["SUPABASE_URL", "SUPABASE_SECRET_KEY", "SUPABASE_REPORTS_TABLE", "SUPABASE_TIMEOUT_MS"]
 };
-const wrangler = require.resolve("wrangler/bin/wrangler.js");
+const wrangler = require.resolve("wrangler");
 
 function select(keys) {
   return Object.fromEntries(keys.filter((key) => String(source[key] || "").trim()).map((key) => [key, source[key]]));

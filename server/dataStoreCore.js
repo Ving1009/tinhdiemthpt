@@ -239,9 +239,10 @@ export function createDataStore({ universities, majors, combinations, subjects, 
       if (officialRowIds.has(major.id)) continue;
       const expression = String(major.formulaText || "").trim();
       const sourceUrl = String(major.formulaSourceUrl || "").trim();
-      if (!expression || !/^https?:\/\//.test(sourceUrl)) continue;
-      const key = `${major.method}\u0000${expression}\u0000${sourceUrl}`;
-      const group = referenceGroups.get(key) || { label: major.method, expression, sourceUrl, rows: [] };
+      const hasEvidence = major.formulaEvidenceAvailable === true || /^https?:\/\//.test(sourceUrl);
+      if (!expression || !hasEvidence) continue;
+      const key = `${major.method}\u0000${expression}`;
+      const group = referenceGroups.get(key) || { label: major.method, expression, rows: [] };
       group.rows.push(major);
       referenceGroups.set(key, group);
     }

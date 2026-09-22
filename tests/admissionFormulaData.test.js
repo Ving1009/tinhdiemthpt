@@ -4,6 +4,8 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { promisify } from "node:util";
 import { validateAdmissionFormulaData } from "../lib/admissionFormulaData.js";
+import { sanitizeMajor, sanitizePublicValue, sanitizeUniversity } from "../lib/dataValidation.js";
+import { createDataStore } from "../server/dataStoreCore.js";
 import { defaultDataStore } from "../server/dataStore.js";
 
 const execFileAsync = promisify(execFile);
@@ -74,6 +76,33 @@ test("API phủ công thức và nguồn cho toàn bộ dòng ngành của mọi
     assert.ok(result.methods.every((formula) => /^https?:\/\//.test(formula.officialLink?.url || "")), `${university.code}: công thức chính thức thiếu liên kết`);
     assert.ok(result.profileFormulas.filter((formula) => formula.status === "reference").every((formula) => !formula.officialLink && !formula.sourceLink), `${university.code}: API làm lộ metadata nguồn tham khảo`);
   }
+});
+
+test("gói dữ liệu Cloudflare giữ bằng chứng nội bộ để phủ công thức nhưng không công khai metadata", async () => {
+  const [universities, majors, combinations, subjects, admissionFormulas] = await Promise.all([
+    loadJson("universities.json"),
+    loadJson("majors.json"),
+    loadJson("combinations.json"),
+    loadJson("subjects.json"),
+    loadJson("admission-formulas-2026.json")
+  ]);
+  const workerMajors = majors.map((major) => ({
+    ...sanitizeMajor(major),
+    formulaEvidenceAvailable: Boolean(major.formulaText?.trim() && /^https?:\/\//.test(major.formulaSourceUrl || ""))
+  }));
+  const workerStore = createDataStore({
+    universities: universities.map(sanitizeUniversity),
+    majors: workerMajors,
+    combinations: combinations.map(sanitizePublicValue),
+    subjects: subjects.map(sanitizePublicValue),
+    admissionFormulas
+  });
+  const qhl = workerStore.listAdmissionFormulas("khoa-luat-dhqg-ha-noi");
+  assert.equal(qhl.stats.coveredRows, qhl.stats.totalRows);
+  assert.ok(qhl.profileFormulas.length > 0);
+  const publicRow = workerStore.listUniversityMajors("khoa-luat-dhqg-ha-noi", { pageSize: 1 }).items[0];
+  assert.equal(Object.hasOwn(publicRow, "formulaEvidenceAvailable"), false);
+  assert.equal(Object.hasOwn(publicRow, "formulaSourceUrl"), false);
 });
 
 test("script audit đối chiếu đủ trường, ngành, phương thức và phát hiện ba nhãn quá mức", async () => {

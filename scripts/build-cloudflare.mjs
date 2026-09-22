@@ -47,7 +47,10 @@ const [universities, majors, combinations, subjects, formulas, transcriptSubject
 ]);
 await Promise.all([
   writeJson("universities.json", universities.map(sanitizeUniversity)),
-  writeJson("majors.json", majors.map(sanitizeMajor)),
+  writeJson("majors.json", majors.map((major) => ({
+    ...sanitizeMajor(major),
+    formulaEvidenceAvailable: Boolean(major.formulaText?.trim() && /^https?:\/\//.test(major.formulaSourceUrl || ""))
+  }))),
   writeJson("combinations.json", combinations.map(sanitizePublicValue)),
   writeJson("subjects.json", subjects.map(sanitizePublicValue)),
   writeJson("admission-formulas-2026.json", formulas),

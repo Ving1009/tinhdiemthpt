@@ -2,7 +2,7 @@ import { createGeminiVisionService } from "./services/geminiVision.js";
 import { createOcrSpaceVisionService } from "./services/ocrSpaceVision.js";
 import { collectApiKeys, createProviderPool } from "./services/providerPool.js";
 
-export function createConfiguredScanProviders(environment = process.env) {
+export function createConfiguredScanProviders(environment = process.env, { onGeminiError = () => {} } = {}) {
   const configuredProviders = [];
   const geminiKeys = collectApiKeys(environment, {
     primaryName: "GEMINI_API_KEY", listName: "GEMINI_API_KEYS", numberedStart: 1, numberedEnd: 5
@@ -12,7 +12,7 @@ export function createConfiguredScanProviders(environment = process.env) {
     label: "Gemini",
     scan: createProviderPool({
       keys: geminiKeys,
-      createService: (apiKey) => createGeminiVisionService({ apiKey, model: environment.GEMINI_MODEL }),
+      createService: (apiKey) => createGeminiVisionService({ apiKey, model: environment.GEMINI_MODEL, onError: onGeminiError }),
       retryCodes: new Set(["AI_QUOTA", "AI_TIMEOUT", "AI_AUTH", "AI_REQUEST_FAILED"]),
       cooldownMsByCode: { AI_QUOTA: 5 * 60_000, AI_TIMEOUT: 30_000, AI_AUTH: 60 * 60_000, AI_REQUEST_FAILED: 30_000 }
     })

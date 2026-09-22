@@ -36,3 +36,16 @@ test("không đổi provider khi lỗi không thuộc nhóm có thể dự phòn
   await assert.rejects(() => scan([]), (error) => error.code === "INVALID_IMAGE");
   assert.equal(fallbackCalls, 0);
 });
+
+test("ghi nhận mã lỗi provider mà không đưa ảnh hay khóa API vào log", async () => {
+  const failures = [];
+  const scan = createTranscriptScanService([
+    { name: "gemini", scan: async () => { throw new AppError("quota", { statusCode: 503, code: "AI_QUOTA" }); } },
+    { name: "ocr-space", scan: async () => ({ data: { scores: [] }, warnings: [] }) }
+  ], { onProviderError: (failure) => failures.push(failure) });
+
+  await scan([{ buffer: Buffer.from("private-image") }]);
+
+  assert.deepEqual(failures, [{ provider: "gemini", code: "AI_QUOTA", statusCode: 503, hasNext: true }]);
+  assert.doesNotMatch(JSON.stringify(failures), /private-image|api.?key/i);
+});

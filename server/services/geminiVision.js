@@ -31,6 +31,20 @@ function classifyGeminiError(error) {
   return new AppError("Không thể đọc ảnh học bạ. Hãy chụp lại rõ hơn, tránh lóa sáng và đảm bảo đủ bảng điểm.", { statusCode: 502, code: "AI_REQUEST_FAILED" });
 }
 
+function diagnosticGeminiError(error, apiKey) {
+  const rawMessage = String(error?.message || "");
+  const withoutKey = apiKey ? rawMessage.replaceAll(String(apiKey), "[redacted]") : rawMessage;
+  const message = withoutKey
+    .replace(/([?&]key=)[^&\s]+/gi, "$1[redacted]")
+    .slice(0, 800);
+  return {
+    name: String(error?.name || "Error").slice(0, 80),
+    status: Number(error?.status || error?.statusCode) || null,
+    code: String(error?.code || "").slice(0, 80) || null,
+    message
+  };
+}
+
 function mergeBatchPayloads(payloads) {
   const firstStudent = payloads.map((item) => item.student?.name).find((name) => typeof name === "string" && name.trim());
   return {
@@ -39,7 +53,7 @@ function mergeBatchPayloads(payloads) {
   };
 }
 
-export function createGeminiVisionService({ apiKey, model = DEFAULT_MODEL } = {}) {
+export function createGeminiVisionService({ apiKey, model = DEFAULT_MODEL, onError = () => {} } = {}) {
   if (!apiKey) {
     return async () => {
       throw new AppError("Máy chủ chưa được cấu hình Gemini API key.", { statusCode: 503, code: "MISSING_API_KEY" });
@@ -68,6 +82,7 @@ export function createGeminiVisionService({ apiKey, model = DEFAULT_MODEL } = {}
       }
       return validateTranscriptPayload(mergeBatchPayloads(payloads), catalog);
     } catch (error) {
+      onError(diagnosticGeminiError(error, apiKey));
       throw classifyGeminiError(error);
     }
   };

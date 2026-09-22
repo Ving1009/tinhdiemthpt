@@ -11,7 +11,7 @@ export function shouldUseTranscriptFallback(error) {
   return FALLBACK_CODES.has(error?.code);
 }
 
-export function createTranscriptScanService(providers = []) {
+export function createTranscriptScanService(providers = [], { onProviderError = () => {} } = {}) {
   const available = providers.filter((provider) => provider && typeof provider.scan === "function");
   if (!available.length) {
     return async () => { throw new AppError("Máy chủ chưa có bộ máy nhận diện học bạ.", { statusCode: 503, code: "MISSING_SCAN_PROVIDER" }); };
@@ -28,6 +28,7 @@ export function createTranscriptScanService(providers = []) {
       } catch (error) {
         previousError = error;
         const hasNext = index < available.length - 1;
+        onProviderError({ provider: provider.name, code: error?.code || "UNKNOWN", statusCode: error?.statusCode || 500, hasNext });
         if (!hasNext || !shouldUseTranscriptFallback(error)) throw error;
       }
     }

@@ -73,17 +73,21 @@ test("Worker chỉ công khai site key và trạng thái Turnstile", async () =>
   const payload = await response.json();
   assert.deepEqual(payload.data, { turnstile: { enabled: true, siteKey: "public-site-key" } });
   assert.doesNotMatch(JSON.stringify(payload), /private-secret/);
+  assert.match(response.headers.get("cache-control"), /no-store/);
 });
 
 test("Worker chặn request OCR trước service khi thiếu token Turnstile", async () => {
   let forwarded = false;
+  let rateLimitChecked = false;
   const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.id.vn/api/scan-transcript", { method: "POST" }), {
     TURNSTILE_SITE_KEY: "public-site-key",
     TURNSTILE_SECRET_KEY: "private-secret",
+    OCR_RATE_LIMITER: { async limit() { rateLimitChecked = true; return { success: true }; } },
     OCR_SERVICE: { async fetch() { forwarded = true; return new Response("forwarded"); } }
   });
   const payload = await response.json();
   assert.equal(response.status, 403);
   assert.equal(payload.error.code, "TURNSTILE_REQUIRED");
+  assert.equal(rateLimitChecked, false);
   assert.equal(forwarded, false);
 });

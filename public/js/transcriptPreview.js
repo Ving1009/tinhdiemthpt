@@ -42,6 +42,17 @@ export class TranscriptPreview {
     this.panel.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
+  clear() {
+    this.data = null;
+    this.backendWarnings = [];
+    this.panel.classList.add("is-hidden");
+    this.student.textContent = "Không đọc được tên học sinh.";
+    this.warnings.innerHTML = "";
+    this.warnings.classList.add("is-hidden");
+    this.table.innerHTML = "";
+    this.setMessage("");
+  }
+
   setMessage(message, state = "") {
     this.message.textContent = message;
     this.message.dataset.state = state;

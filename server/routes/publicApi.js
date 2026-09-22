@@ -29,7 +29,7 @@ export function createPublicApiRouter({ store, reportStore, environment = proces
 
   router.get("/security-config", (request, response) => {
     const turnstile = getTurnstileConfigurationForHostname(environment, request.hostname);
-    response.setHeader("Cache-Control", "public, max-age=300");
+    response.setHeader("Cache-Control", "no-store, max-age=0");
     ok(response, { turnstile: { enabled: turnstile.enabled, siteKey: turnstile.enabled ? turnstile.siteKey : "" } });
   });
 

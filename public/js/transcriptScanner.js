@@ -33,7 +33,31 @@ class RemoteTranscriptScanError extends Error {
   }
 }
 
-const NON_FALLBACK_CODES = new Set(["INVALID_IMAGE", "UNSUPPORTED_IMAGE", "MISSING_IMAGES", "IMAGES_TOO_LARGE", "TURNSTILE_CANCELLED"]);
+const NON_FALLBACK_CODES = new Set([
+  "INVALID_IMAGE",
+  "UNSUPPORTED_IMAGE",
+  "MISSING_IMAGES",
+  "IMAGES_TOO_LARGE",
+  "LIMIT_FILE_COUNT",
+  "LIMIT_FILE_SIZE",
+  "RATE_LIMITED",
+  "TURNSTILE_CANCELLED",
+  "TURNSTILE_REQUIRED",
+  "TURNSTILE_FAILED",
+  "TURNSTILE_INVALID",
+  "TURNSTILE_ACTION_MISMATCH",
+  "TURNSTILE_HOSTNAME_MISMATCH",
+  "TURNSTILE_MISCONFIGURED",
+  "TURNSTILE_CONFIG_UNAVAILABLE",
+  "TURNSTILE_CLIENT_ERROR",
+  "TURNSTILE_TIMEOUT",
+  "TURNSTILE_UNAVAILABLE"
+]);
+const RETRYABLE_TURNSTILE_CODES = new Set([
+  "TURNSTILE_REQUIRED",
+  "TURNSTILE_FAILED",
+  "TURNSTILE_INVALID"
+]);
 
 export function shouldUseBrowserFallback(error) {
   return error instanceof TypeError || !NON_FALLBACK_CODES.has(error?.code);
@@ -58,8 +82,23 @@ export async function requestRemoteTranscriptScan(images, {
   return payload;
 }
 
+export async function requestProtectedTranscriptScan(images, {
+  gate = turnstileGate,
+  requestImpl = requestRemoteTranscriptScan
+} = {}) {
+  const action = "scan_transcript";
+  const firstToken = await gate.getToken(action);
+  try {
+    return await requestImpl(images, { turnstileToken: firstToken });
+  } catch (error) {
+    if (!RETRYABLE_TURNSTILE_CODES.has(error?.code)) throw error;
+    const refreshedToken = await gate.getToken(action, { forceConfiguration: true });
+    return requestImpl(images, { turnstileToken: refreshedToken });
+  }
+}
+
 export class TranscriptScanner {
-  constructor({ onScanSuccess, notify }) {
+  constructor({ onScanStart, onScanSuccess, notify }) {
     this.input = document.getElementById("transcript-images");
     this.dropzone = document.getElementById("transcript-dropzone");
     this.chooseButton = document.getElementById("transcript-choose-images");
@@ -67,6 +106,7 @@ export class TranscriptScanner {
     this.scanButton = document.getElementById("transcript-scan");
     this.clearButton = document.getElementById("transcript-clear-images");
     this.status = document.getElementById("transcript-scan-status");
+    this.onScanStart = onScanStart || (() => {});
     this.onScanSuccess = onScanSuccess;
     this.notify = notify || (() => {});
     this.files = [];
@@ -137,6 +177,7 @@ export class TranscriptScanner {
   async scan() {
     if (!this.files.length || this.isScanning) return;
     this.isScanning = true;
+    this.onScanStart();
     this.render();
     let optimizedImages = [];
     try {
@@ -146,15 +187,18 @@ export class TranscriptScanner {
       this.setStatus("Đang nhận diện...", "working");
       let payload;
       try {
-        const turnstileToken = await turnstileGate.getToken("scan_transcript");
-        payload = await requestRemoteTranscriptScan(optimizedImages, { turnstileToken });
+        payload = await requestProtectedTranscriptScan(optimizedImages);
       } catch (error) {
         if (!shouldUseBrowserFallback(error)) throw error;
-        const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js");
-        payload = await recognizeTranscriptInBrowser(optimizedImages, {
-          assetBaseUrl: resolveTranscriptAssetBaseUrl(),
-          onStatus: (message) => this.setStatus(message, "working")
-        });
+        try {
+          const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js");
+          payload = await recognizeTranscriptInBrowser(optimizedImages, {
+            assetBaseUrl: resolveTranscriptAssetBaseUrl(),
+            onStatus: (message) => this.setStatus(message, "working")
+          });
+        } catch {
+          throw error;
+        }
       }
       this.setStatus("Đang kiểm tra...", "working");
       this.onScanSuccess(payload);

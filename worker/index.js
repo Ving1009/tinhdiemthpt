@@ -26,15 +26,15 @@ export default {
     if (request.method === "GET" && url.pathname === "/api/security-config") {
       const turnstile = getTurnstileConfigurationForHostname(environment, url.hostname);
       return success(request, { turnstile: { enabled: turnstile.enabled, siteKey: turnstile.enabled ? turnstile.siteKey : "" } }, {
-        headers: { "Cache-Control": "public, max-age=300" }
+        headers: { "Cache-Control": "no-store, max-age=0" }
       });
     }
     if (url.pathname === "/api/scan-transcript") {
-      const limited = await applyRateLimit(environment.OCR_RATE_LIMITER, request);
-      if (limited) return limited;
       if (request.method === "POST") {
         const rejected = await requireTurnstile(request, environment, "scan_transcript");
         if (rejected) return rejected;
+        const limited = await applyRateLimit(environment.OCR_RATE_LIMITER, request);
+        if (limited) return limited;
       }
       if (!environment.OCR_SERVICE || typeof environment.OCR_SERVICE.fetch !== "function") {
         return failure(request, "SCAN_PROVIDER_UNAVAILABLE", "Dịch vụ quét học bạ chưa sẵn sàng.", 503);

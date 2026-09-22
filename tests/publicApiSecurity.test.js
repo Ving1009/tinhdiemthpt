@@ -47,6 +47,8 @@ test("HTML, CSS và JavaScript luôn tái xác thực sau khi cập nhật", asy
   }
   const logo = await fetch(`${baseUrl}/assets/logos/dai-hoc-quoc-gia-ha-noi.svg`);
   assert.match(logo.headers.get("cache-control") || "", /max-age=604800/, "logo nên được cache để giảm tải");
+  const securityConfig = await fetch(`${baseUrl}/api/security-config`);
+  assert.match(securityConfig.headers.get("cache-control") || "", /no-store/, "cấu hình xác minh không được dùng bản cũ");
 });
 
 test("API trường, ngành và catalog không lộ metadata hay tên website thu thập", async () => {

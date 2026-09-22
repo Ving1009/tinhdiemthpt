@@ -546,7 +546,11 @@ class THPTApp {
 
   setupTranscriptTools() {
     this.transcriptPreview = new TranscriptPreview({ notify: (message) => this.showToast(message), onConfirm: (data) => this.confirmTranscriptAutofill(data) });
-    this.transcriptScanner = new TranscriptScanner({ notify: (message) => this.showToast(message), onScanSuccess: (payload) => this.transcriptPreview.show(payload) });
+    this.transcriptScanner = new TranscriptScanner({
+      notify: (message) => this.showToast(message),
+      onScanStart: () => this.transcriptPreview.clear(),
+      onScanSuccess: (payload) => this.transcriptPreview.show(payload)
+    });
   }
   confirmTranscriptAutofill(data) {
     const result = autoFillTranscript(data, { methodId: this.elements.academicMethod.value });

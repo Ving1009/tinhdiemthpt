@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { requestRemoteTranscriptScan, resolveTranscriptApiUrl } from "../public/js/transcriptScanner.js";
+import { requestProtectedTranscriptScan, requestRemoteTranscriptScan, resolveTranscriptApiUrl, shouldUseBrowserFallback } from "../public/js/transcriptScanner.js";
 
 const noConfiguration = { querySelector: () => null };
 
@@ -27,4 +27,43 @@ test("request quét từ xa gửi token Turnstile bằng header, không nhét v�
   });
   assert.equal(request.headers["X-Turnstile-Token"], "verified-token");
   assert.equal(request.body.get("images[]").name, "hoc-ba.jpg");
+});
+
+test("cấu hình Turnstile cũ được làm mới và request quét được gửi lại một lần", async () => {
+  const tokenCalls = [];
+  const requestCalls = [];
+  const gate = {
+    async getToken(action, options) {
+      tokenCalls.push({ action, options });
+      return options?.forceConfiguration ? "fresh-token" : "";
+    }
+  };
+  const requestImpl = async (_images, options) => {
+    requestCalls.push(options);
+    if (requestCalls.length === 1) {
+      const error = new Error("Hãy xác minh.");
+      error.code = "TURNSTILE_REQUIRED";
+      throw error;
+    }
+    return { success: true, data: { scores: [] } };
+  };
+
+  const result = await requestProtectedTranscriptScan([], { gate, requestImpl });
+
+  assert.equal(result.success, true);
+  assert.deepEqual(tokenCalls, [
+    { action: "scan_transcript", options: undefined },
+    { action: "scan_transcript", options: { forceConfiguration: true } }
+  ]);
+  assert.deepEqual(requestCalls, [
+    { turnstileToken: "" },
+    { turnstileToken: "fresh-token" }
+  ]);
+});
+
+test("không che lỗi giới hạn lượt quét bằng OCR chậm trong trình duyệt", () => {
+  assert.equal(shouldUseBrowserFallback({ code: "RATE_LIMITED" }), false);
+  assert.equal(shouldUseBrowserFallback({ code: "TURNSTILE_CLIENT_ERROR" }), false);
+  assert.equal(shouldUseBrowserFallback({ code: "TURNSTILE_TIMEOUT" }), false);
+  assert.equal(shouldUseBrowserFallback({ code: "AI_QUOTA" }), true);
 });

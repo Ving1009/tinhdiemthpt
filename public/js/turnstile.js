@@ -15,12 +15,13 @@ function resolveApiUrl(path, location = window.location) {
   return isLiveServer ? `http://127.0.0.1:3000${path}` : path;
 }
 
-async function loadConfiguration(fetchImpl = globalThis.fetch) {
+async function loadConfiguration(fetchImpl = globalThis.fetch, { force = false } = {}) {
+  if (force) configurationPromise = undefined;
   if (!configurationPromise) {
-    configurationPromise = fetchImpl(resolveApiUrl("/api/security-config"))
+    configurationPromise = fetchImpl(resolveApiUrl("/api/security-config"), { cache: "no-store" })
       .then(async (response) => {
         const payload = await response.json().catch(() => null);
-        if (!response.ok || !payload?.success) throw new Error("Không tải được cấu hình xác minh bảo mật.");
+        if (!response.ok || !payload?.success) throw new TurnstileClientError("Không tải được cấu hình xác minh bảo mật.", "TURNSTILE_CONFIG_UNAVAILABLE");
         return payload.data?.turnstile || { enabled: false, siteKey: "" };
       })
       .catch((error) => {
@@ -37,9 +38,9 @@ function loadScript(documentRef = document) {
   scriptPromise = new Promise((resolve, reject) => {
     const existing = documentRef.querySelector(`script[src="${SCRIPT_URL}"]`);
     const script = existing || documentRef.createElement("script");
-    const onReady = () => globalThis.turnstile ? resolve(globalThis.turnstile) : reject(new Error("Không khởi tạo được Cloudflare Turnstile."));
+    const onReady = () => globalThis.turnstile ? resolve(globalThis.turnstile) : reject(new TurnstileClientError("Không khởi tạo được Cloudflare Turnstile.", "TURNSTILE_CLIENT_ERROR"));
     script.addEventListener("load", onReady, { once: true });
-    script.addEventListener("error", () => reject(new Error("Không tải được Cloudflare Turnstile.")), { once: true });
+    script.addEventListener("error", () => reject(new TurnstileClientError("Không tải được Cloudflare Turnstile.", "TURNSTILE_UNAVAILABLE")), { once: true });
     if (!existing) {
       script.src = SCRIPT_URL;
       script.async = true;
@@ -60,10 +61,10 @@ function challengeCopy(action) {
 }
 
 export class TurnstileGate {
-  async getToken(action) {
-    const configuration = await loadConfiguration();
+  async getToken(action, { forceConfiguration = false } = {}) {
+    const configuration = await loadConfiguration(globalThis.fetch, { force: forceConfiguration });
     if (!configuration.enabled) return "";
-    if (!configuration.siteKey) throw new Error("Turnstile chưa có site key.");
+    if (!configuration.siteKey) throw new TurnstileClientError("Turnstile chưa có site key.", "TURNSTILE_MISCONFIGURED");
     const api = await loadScript();
     return this.openChallenge(api, configuration.siteKey, action);
   }
@@ -111,12 +112,12 @@ export class TurnstileGate {
             overlay.querySelector(".turnstile-dialog").classList.add("is-verified");
             window.setTimeout(() => finish(null, token), 350);
           },
-          "error-callback": () => finish(new Error("Cloudflare chưa thể xác minh. Hãy thử lại.")),
+          "error-callback": () => finish(new TurnstileClientError("Cloudflare chưa thể xác minh. Hãy thử lại.", "TURNSTILE_CLIENT_ERROR")),
           "expired-callback": () => api.reset(widgetId),
-          "timeout-callback": () => api.reset(widgetId)
+          "timeout-callback": () => finish(new TurnstileClientError("Xác minh đã hết thời gian. Hãy bấm quét và thử lại.", "TURNSTILE_TIMEOUT"))
         });
       } catch {
-        finish(new Error("Không khởi tạo được bước xác minh bảo mật."));
+        finish(new TurnstileClientError("Không khởi tạo được bước xác minh bảo mật.", "TURNSTILE_CLIENT_ERROR"));
       }
     });
   }

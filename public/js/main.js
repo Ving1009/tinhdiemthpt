@@ -213,7 +213,7 @@ class THPTApp {
 
     this.elements.universitySelect.addEventListener("change", () => { this.admissionLoadVersion = (this.admissionLoadVersion || 0) + 1; this.populateMajorSelect(); });
     this.elements.methodSelect.addEventListener("change", () => { this.clearAdmissionResult(); this.populateMethodSelect(); this.saveForm(); });
-    this.elements.majorSelect.addEventListener("change", () => { this.clearAdmissionResult(); this.renderAdmissionCalculator(); this.saveForm(); });
+    this.elements.majorSelect.addEventListener("change", () => { this.clearAdmissionResult(); this.syncAdmissionSelectionState(); this.renderAdmissionCalculator(); this.saveForm(); });
     this.elements.calculateAdmission.addEventListener("click", () => this.focusAdmissionCalculator());
     $("#combination-query").addEventListener("input", debounce((event) => this.renderCombinations(event.target.value), 180));
     $("#university-query").addEventListener("input", debounce((event) => this.renderUniversities(event.target.value), 180));
@@ -590,9 +590,7 @@ class THPTApp {
         ? '<option value="">Chọn phương thức</option>' + options.map((option) => `<option value="${escapeHTML(option.label)}">${option.verified ? "✓ " : ""}${escapeHTML(option.label)} · ${option.programCount} ngành</option>`).join("")
         : '<option value="">Chưa có phương thức</option>';
       this.elements.methodSelect.disabled = !options.length;
-      this.elements.selectionHint.textContent = formulaData.available
-        ? `${formulaData.methods.length} công thức đã xác minh · các phương thức còn lại được ghi rõ trạng thái.`
-        : formulaData.message;
+      this.elements.selectionHint.textContent = formulaData.message;
       this.renderAdmissionCalculator();
     } catch {
       if (loadVersion !== this.admissionLoadVersion) return;
@@ -604,11 +602,7 @@ class THPTApp {
   }
   populateMethodSelect() {
     const method = this.elements.methodSelect.value;
-    const verifiedFormula = this.admissionFormulaForMethod(method);
-    const applicableIds = new Set((verifiedFormula?.programs || []).map((program) => program.id));
-    const rows = verifiedFormula
-      ? (this.admissionMajorRows || []).filter((major) => applicableIds.has(major.id))
-      : (this.admissionMajorRows || []).filter((major) => major.method === method);
+    const rows = (this.admissionMajorRows || []).filter((major) => major.method === method);
     const groups = new Map();
     for (const major of rows) {
       const key = `${major.code}|${major.name}`;
@@ -619,16 +613,22 @@ class THPTApp {
       ? `<option value="">Tất cả ${programs.length} ngành / chương trình</option>${programs.map((major) => `<option value="${escapeHTML(major.id)}">${escapeHTML(major.name)} (${escapeHTML(major.code)})</option>`).join("")}`
       : '<option value="">Không có ngành áp dụng trong dữ liệu</option>';
     this.elements.majorSelect.disabled = !method || !programs.length;
+    this.syncAdmissionSelectionState();
+    this.renderAdmissionCalculator();
+    this.saveForm();
+  }
+  syncAdmissionSelectionState() {
+    const method = this.elements.methodSelect.value;
     const major = this.selectedAdmissionMajor();
+    const verifiedFormula = this.admissionFormulaForMajor(major);
     const formula = verifiedFormula?.formulaModuleId ? this.repository.getFormula(verifiedFormula.formulaModuleId) : null;
     const ready = verifiedFormula?.autoCalculate === true && canCalculateMajor(major, formula);
     this.elements.calculateAdmission.disabled = !ready;
     this.elements.calculateAdmission.textContent = ready ? "Nhập điểm" : "Chưa hỗ trợ tự tính";
+    const referenceFormula = this.referenceFormulaForMajor(major) || this.referenceFormulaForMethod(method);
     this.elements.selectionHint.textContent = verifiedFormula
       ? `${verifiedFormula.label}: công thức đã xác minh${ready ? " và có thể tự tính cho phạm vi đã liên kết." : "; hiện chỉ hiển thị để tra cứu."}`
-      : (method ? "Chưa có công thức chính thức được xác minh cho phương thức này." : "Chọn phương thức để xem công thức và phạm vi áp dụng.");
-    this.renderAdmissionCalculator();
-    this.saveForm();
+      : (referenceFormula ? `${method}: đã có công thức tham khảo và nguồn đối chiếu; chưa bật tính tự động.` : (method ? "Chưa có công thức cho phương thức này." : "Chọn phương thức để xem công thức và phạm vi áp dụng."));
   }
   async restoreAdmissionSelections() {
     if (!this.state.universityId || !this.repository.getUniversity(this.state.universityId)) return;
@@ -648,20 +648,27 @@ class THPTApp {
   }
   admissionFormulaForMajor(major, formulaData = this.admissionFormulaData) {
     const formula = major ? this.admissionFormulaForMethod(major.method, formulaData) : null;
-    return formula?.programs?.some((program) => program.id === major.id) ? formula : null;
+    return formula?.rowIds?.includes(major.id) || formula?.programs?.some((program) => program.id === major.id) ? formula : null;
+  }
+  referenceFormulaForMethod(label, formulaData = this.admissionFormulaData) {
+    return (formulaData?.profileFormulas || []).find((item) => item.status === "reference" && item.label === label) || null;
+  }
+  referenceFormulaForMajor(major, formulaData = this.admissionFormulaData) {
+    return major ? (formulaData?.profileFormulas || []).find((item) => item.status === "reference" && item.rowIds?.includes(major.id)) || null : null;
   }
   selectedAdmissionMajor() {
     const selected = this.repository.getMajor(this.elements.majorSelect.value);
     if (selected) return selected;
-    const formula = this.admissionFormulaForMethod(this.elements.methodSelect.value);
-    return (formula?.programs || []).map((program) => this.repository.getMajor(program.id)).find(Boolean) || null;
+    return (this.admissionMajorRows || []).find((major) => major.method === this.elements.methodSelect.value) || null;
   }
   admissionFormulaMarkup(formula, { profile = false } = {}) {
-    const sourceUrl = safeWebsite(formula?.officialLink?.url);
+    const official = formula?.status === "official_verified";
+    const source = formula?.sourceLink || formula?.officialLink;
+    const sourceUrl = safeWebsite(source?.url);
     const conditions = (formula?.conditions || []).map((item) => `<li>${escapeHTML(item)}</li>`).join("");
     const programs = (formula?.programs || []).map((item) => `<li><b>${escapeHTML(item.code)}</b> · ${escapeHTML(item.name)}</li>`).join("");
     const combinations = (formula?.combinations || []).map((code) => `<span>${escapeHTML(code)}</span>`).join("");
-    return `<article class="verified-formula-card${profile ? " is-profile" : ""}"><div class="verified-formula-heading"><div><p class="eyebrow">PHƯƠNG THỨC</p><h3>${escapeHTML(formula.label)}</h3></div><span class="verified-badge">✓ Đã xác minh</span></div><div class="formula-box">${escapeHTML(formula.expression)}</div><dl class="formula-facts"><div><dt>Thang điểm</dt><dd>${escapeHTML(formula.scale || "Theo nguồn chính thức")}</dd></div><div><dt>Tổ hợp</dt><dd>${combinations || escapeHTML(formula.combinationNote || "Không áp dụng tổ hợp THPT")}</dd></div></dl>${conditions ? `<section><h4>Điều kiện quan trọng</h4><ul>${conditions}</ul></section>` : ""}${formula.priority ? `<section><h4>Điểm ưu tiên</h4><p>${escapeHTML(formula.priority)}</p></section>` : ""}${formula.conversion ? `<section><h4>Quy đổi trong công thức</h4><p>${escapeHTML(formula.conversion)}</p></section>` : ""}${formula.combinationNote ? `<section><h4>Phạm vi tổ hợp</h4><p>${escapeHTML(formula.combinationNote)}</p></section>` : ""}<details class="formula-programs"${profile ? "" : " open"}><summary>${formula.programCount} ngành / chương trình áp dụng</summary>${programs ? `<ul>${programs}</ul>` : `<p>${escapeHTML(formula.applicabilityNote || "Chưa có ngành được liên kết.")}</p>`}</details>${sourceUrl ? `<a class="formula-source" href="${escapeHTML(sourceUrl)}" target="_blank" rel="noopener">${escapeHTML(formula.officialLink.label || "Nguồn chính thức")} ↗</a>` : ""}</article>`;
+    return `<article class="verified-formula-card${profile ? " is-profile" : ""}${official ? "" : " is-reference"}"><div class="verified-formula-heading"><div><p class="eyebrow">${official ? "CÔNG THỨC CHÍNH THỨC" : "CÔNG THỨC TRONG HỒ SƠ"}</p><h3>${escapeHTML(formula.label)}</h3></div><span class="verified-badge${official ? "" : " is-reference"}">${official ? "✓ Đã xác minh chính thức" : "Tham khảo · cần đối chiếu"}</span></div><div class="formula-box">${escapeHTML(formula.expression)}</div><dl class="formula-facts"><div><dt>Thang điểm</dt><dd>${escapeHTML(formula.scale || "Theo đề án của trường")}</dd></div><div><dt>Tổ hợp</dt><dd>${combinations || escapeHTML(formula.combinationNote || "Theo điều kiện của phương thức")}</dd></div></dl>${conditions ? `<section><h4>Điều kiện quan trọng</h4><ul>${conditions}</ul></section>` : ""}${formula.priority ? `<section><h4>Điểm ưu tiên</h4><p>${escapeHTML(formula.priority)}</p></section>` : ""}${formula.conversion ? `<section><h4>Quy đổi trong công thức</h4><p>${escapeHTML(formula.conversion)}</p></section>` : ""}${formula.combinationNote ? `<section><h4>Phạm vi tổ hợp</h4><p>${escapeHTML(formula.combinationNote)}</p></section>` : ""}<details class="formula-programs"${profile ? "" : " open"}><summary>${formula.programCount} ngành / chương trình áp dụng</summary>${programs ? `<ul>${programs}</ul>` : `<p>${escapeHTML(formula.applicabilityNote || "Chưa có ngành được liên kết.")}</p>`}</details>${sourceUrl ? `<a class="formula-source" href="${escapeHTML(sourceUrl)}" target="_blank" rel="noopener">${escapeHTML(source?.label || (official ? "Nguồn chính thức" : "Nguồn dữ liệu"))} ↗</a>` : ""}</article>`;
   }
   focusAdmissionCalculator() { $("#admission-calculator-form input")?.focus(); }
   clearAdmissionResult() { const result = $("#admission-result"); if (result) result.innerHTML = '<p class="result-stale">Thông tin đã thay đổi, cần tính lại.</p>'; }
@@ -669,13 +676,19 @@ class THPTApp {
     const panel = $("#admission-calculator-panel");
     const method = this.elements.methodSelect.value;
     if (!method) { this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính"; panel.innerHTML = '<div class="result-empty"><h3>Chọn trường và phương thức</h3><p>Chỉ công thức được nguồn chính thức nêu trực tiếp mới được hiển thị là đã xác minh.</p></div>'; return; }
-    const verifiedFormula = this.admissionFormulaForMethod(method);
-    if (!verifiedFormula) {
+    const major = this.selectedAdmissionMajor();
+    const verifiedFormula = this.admissionFormulaForMajor(major);
+    const referenceFormula = this.referenceFormulaForMajor(major) || this.referenceFormulaForMethod(method);
+    if (!verifiedFormula && !referenceFormula) {
       this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính";
-      panel.innerHTML = '<div class="result-empty formula-unverified"><h3>Chưa có công thức chính thức được xác minh.</h3><p>Phương thức vẫn được liệt kê để tra cứu, nhưng website không tự suy đoán công thức còn thiếu.</p></div>';
+      panel.innerHTML = '<div class="result-empty formula-unverified"><h3>Chưa có công thức cho phương thức này.</h3><p>Hãy xem ghi chú hồ sơ hoặc nguồn tuyển sinh của trường.</p></div>';
       return;
     }
-    const major = this.selectedAdmissionMajor();
+    if (!verifiedFormula) {
+      this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính";
+      panel.innerHTML = `${this.admissionFormulaMarkup(referenceFormula)}<div class="info-callout">Công thức này được hiển thị để tra cứu. Hãy đối chiếu lại đề án của trường trước khi nộp hồ sơ; website chưa tự tính khi quy tắc chưa được nguồn chính thức xác nhận đầy đủ.</div>`;
+      return;
+    }
     const formula = verifiedFormula.formulaModuleId ? this.repository.getFormula(verifiedFormula.formulaModuleId) : null;
     const details = this.admissionFormulaMarkup(verifiedFormula);
     if (!verifiedFormula.autoCalculate || !canCalculateMajor(major, formula) || typeof formula?.getInputDefinition !== "function") {
@@ -771,10 +784,15 @@ class THPTApp {
       const classified = UNIVERSITY_PROFILE_STATUS[evidence.status]?.full;
       const status = profileVerified ? "✓ Đã xác minh" : profilePartial ? "◐ Xác minh một phần" : reference ? "~ Dữ liệu tham khảo" : classified || "! Đang cập nhật";
       const note = publicProfileNote({ status: evidence.status, hasReference: reference, classified });
-      const formulas = (formulaData.methods || []).map((item) => this.admissionFormulaMarkup(item, { profile: true })).join("");
+      const profileFormulas = formulaData.profileFormulas || formulaData.methods || [];
+      const formulas = profileFormulas.map((item) => this.admissionFormulaMarkup(item, { profile: true })).join("");
+      const formulaStats = formulaData.stats || {};
+      const formulaCoverage = formulaStats.totalRows
+        ? `${formulaStats.coveredRows}/${formulaStats.totalRows} dòng ngành · ${formulaStats.officialMethodCount || 0} công thức chính thức`
+        : "Không có dòng ngành áp dụng";
       const website = safeWebsite(university.website);
       const admissionsCode = university.officialAdmissionsCode || university.code;
-      this.elements.modalBody.innerHTML = `<div class="detail-header">${this.logoMarkup(university)}<div><p class="modal-kicker">Hồ sơ tuyển sinh 2026</p><h2 id="modal-title">${escapeHTML(university.name)}</h2><p>Mã tuyển sinh: ${escapeHTML(admissionsCode)} · ${escapeHTML(this.regionLabel(university.region))}</p></div><button class="button button-text report-school-button" type="button" data-report-school="${escapeHTML(university.id)}">Báo dữ liệu sai</button></div><div class="profile-status profile-status-compact"><p><b>${escapeHTML(status)}</b> · ${verifiedRows} mục xác minh · ${referenceRows} mục tham khảo</p><p>${escapeHTML(note)}</p>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Website chính thức ↗</a>` : ""}</div><section class="profile-formulas" aria-labelledby="profile-formulas-title"><div class="profile-major-heading"><div><p class="modal-kicker">Dữ liệu đã kiểm tra</p><h3 class="modal-section-title" id="profile-formulas-title">Công thức xét tuyển</h3></div><span>${formulaData.methods.length} phương thức đã xác minh</span></div>${formulas || '<div class="info-callout formula-unverified">Chưa có công thức chính thức được xác minh.</div>'}</section><section class="profile-majors" aria-labelledby="profile-majors-title"><div class="profile-major-heading"><div><p class="modal-kicker">Tra cứu nhanh</p><h3 class="modal-section-title" id="profile-majors-title">Ngành và điểm chuẩn 2026</h3></div><span>${programCount} ngành / chương trình</span></div><div class="detail-filters"><input id="detail-major-search" type="search" placeholder="Tìm ngành hoặc mã ngành" aria-label="Tìm ngành" ${summary.majorRowCount ? "" : "disabled"} /><select id="detail-method-filter" aria-label="Lọc phương thức" ${summary.majorRowCount ? "" : "disabled"}><option value="">Tất cả phương thức</option>${methods.map((method) => `<option value="${escapeHTML(method)}">${escapeHTML(method)}</option>`).join("")}</select></div><p class="detail-result-count" id="detail-result-count"></p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Ngành</th><th>Mã ngành</th><th>Tổ hợp</th><th>Phương thức</th><th>Điểm chuẩn 2026</th><th>Công thức tính điểm</th></tr></thead><tbody id="detail-major-rows"></tbody></table></div><nav class="pagination detail-pagination" id="detail-major-pagination" aria-label="Trang ngành trong hồ sơ"></nav></section><details class="profile-overview"><summary>Thông tin trường và đề án tuyển sinh</summary><div class="profile-overview-body"><p class="modal-description">${escapeHTML(university.description)}</p><div class="detail-meta"><div><span>KHU VỰC</span><b>${escapeHTML(this.regionLabel(university.region))}</b></div><div><span>NGÀNH / CHƯƠNG TRÌNH</span><b>${programCount}</b></div><div><span>DÒNG NGÀNH / PHƯƠNG THỨC</span><b>${summary.majorRowCount || 0}</b></div><div><span>ĐIỂM CHUẨN ĐÃ CẬP NHẬT</span><b>${published}</b></div><div><span>KIỂM TRA DỮ LIỆU</span><b>${escapeHTML(checkedAt)}</b></div><div><span>WEBSITE</span>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Trang của trường ↗</a>` : "<b>Đang cập nhật</b>"}</div></div><div class="profile-sections"><details><summary>Phương thức tuyển sinh</summary><div class="profile-section-body"><p>${escapeHTML((evidence.methods || university.methods || []).join(" · ") || classified || "Đang cập nhật")}</p></div></details></div></div></details>`;
+      this.elements.modalBody.innerHTML = `<div class="detail-header">${this.logoMarkup(university)}<div><p class="modal-kicker">Hồ sơ tuyển sinh 2026</p><h2 id="modal-title">${escapeHTML(university.name)}</h2><p>Mã tuyển sinh: ${escapeHTML(admissionsCode)} · ${escapeHTML(this.regionLabel(university.region))}</p></div><button class="button button-text report-school-button" type="button" data-report-school="${escapeHTML(university.id)}">Báo dữ liệu sai</button></div><div class="profile-status profile-status-compact"><p><b>${escapeHTML(status)}</b> · ${verifiedRows} mục xác minh · ${referenceRows} mục tham khảo</p><p>${escapeHTML(note)}</p>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Website chính thức ↗</a>` : ""}</div><section class="profile-formulas" aria-labelledby="profile-formulas-title"><div class="profile-major-heading"><div><p class="modal-kicker">Dữ liệu đã kiểm tra</p><h3 class="modal-section-title" id="profile-formulas-title">Công thức xét tuyển</h3></div><span>${escapeHTML(formulaCoverage)}</span></div>${formulas || `<div class="info-callout formula-unverified">${escapeHTML(formulaData.emptyReason || "Hồ sơ chưa có dòng ngành để áp dụng công thức.")}</div>`}</section><section class="profile-majors" aria-labelledby="profile-majors-title"><div class="profile-major-heading"><div><p class="modal-kicker">Tra cứu nhanh</p><h3 class="modal-section-title" id="profile-majors-title">Ngành và điểm chuẩn 2026</h3></div><span>${programCount} ngành / chương trình</span></div><div class="detail-filters"><input id="detail-major-search" type="search" placeholder="Tìm ngành hoặc mã ngành" aria-label="Tìm ngành" ${summary.majorRowCount ? "" : "disabled"} /><select id="detail-method-filter" aria-label="Lọc phương thức" ${summary.majorRowCount ? "" : "disabled"}><option value="">Tất cả phương thức</option>${methods.map((method) => `<option value="${escapeHTML(method)}">${escapeHTML(method)}</option>`).join("")}</select></div><p class="detail-result-count" id="detail-result-count"></p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Ngành</th><th>Mã ngành</th><th>Tổ hợp</th><th>Phương thức</th><th>Điểm chuẩn 2026</th><th>Công thức tính điểm</th></tr></thead><tbody id="detail-major-rows"></tbody></table></div><nav class="pagination detail-pagination" id="detail-major-pagination" aria-label="Trang ngành trong hồ sơ"></nav></section><details class="profile-overview"><summary>Thông tin trường và đề án tuyển sinh</summary><div class="profile-overview-body"><p class="modal-description">${escapeHTML(university.description)}</p><div class="detail-meta"><div><span>KHU VỰC</span><b>${escapeHTML(this.regionLabel(university.region))}</b></div><div><span>NGÀNH / CHƯƠNG TRÌNH</span><b>${programCount}</b></div><div><span>DÒNG NGÀNH / PHƯƠNG THỨC</span><b>${summary.majorRowCount || 0}</b></div><div><span>ĐIỂM CHUẨN ĐÃ CẬP NHẬT</span><b>${published}</b></div><div><span>KIỂM TRA DỮ LIỆU</span><b>${escapeHTML(checkedAt)}</b></div><div><span>WEBSITE</span>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Trang của trường ↗</a>` : "<b>Đang cập nhật</b>"}</div></div><div class="profile-sections"><details><summary>Phương thức tuyển sinh</summary><div class="profile-section-body"><p>${escapeHTML((evidence.methods || university.methods || []).join(" · ") || classified || "Đang cập nhật")}</p></div></details></div></div></details>`;
       const pageSize = 25;
       let detailPage = initialPage.pagination.page;
       let detailRequest = 0;
@@ -808,11 +826,15 @@ class THPTApp {
   majorRow(major, targetMajorId = "", formulaData = null) {
     const status = publishableCutoff(major) ? cutoffStatusLabel(major) : cutoffLabel(major);
     const cutoff = publishableCutoff(major) ? `<b class="cutoff-value ${verifiedCutoff(major) ? "" : "cutoff-reference"}">${escapeHTML(cutoffLabel(major))}</b><small>${escapeHTML(status)}</small>` : `<span class="cutoff-pending">${escapeHTML(cutoffLabel(major))}</span>`;
-    const formula = formulaData ? this.admissionFormulaForMajor(major, formulaData) : null;
-    const formulaStatus = formula ? "✓ Đã xác minh" : "Chưa xác minh";
-    const formulaText = formula?.expression || "Chưa có công thức chính thức được xác minh.";
+    const verifiedFormula = formulaData ? this.admissionFormulaForMajor(major, formulaData) : null;
+    const referenceFormula = formulaData ? this.referenceFormulaForMajor(major, formulaData) : null;
+    const formula = verifiedFormula || referenceFormula;
+    const formulaStatus = verifiedFormula ? "✓ Chính thức" : (formula ? "Công thức tham khảo" : "Đang cập nhật");
+    const formulaText = formula?.expression || major.formulaText || "Chưa có công thức cho dòng ngành này.";
+    const source = formula?.sourceLink || formula?.officialLink;
+    const sourceUrl = safeWebsite(source?.url);
     const target = major.id === targetMajorId;
-    return `<tr data-major-row="${escapeHTML(major.id)}" class="${target ? "is-target-major" : ""}" ${target ? 'aria-current="true"' : ""}><td data-label="Ngành">${escapeHTML(major.name)}</td><td data-label="Mã ngành">${escapeHTML(major.code)}</td><td data-label="Tổ hợp">${escapeHTML(major.combination || "Đang cập nhật")}</td><td data-label="Phương thức">${escapeHTML(major.method || "Đang cập nhật")}${major.methodDetails ? `<small>${escapeHTML(major.methodDetails)}</small>` : ""}</td><td data-label="Điểm chuẩn 2026">${cutoff}</td><td data-label="Công thức"><details class="formula-disclosure"><summary>${formulaStatus}</summary><p>${escapeHTML(formulaText)}</p></details><div class="row-actions"><button class="save-major-button" type="button" data-save-major="${escapeHTML(major.id)}" data-major-name="${escapeHTML(major.name)}" data-major-code="${escapeHTML(major.code)}" data-university-id="${escapeHTML(major.universityId)}">♡ Lưu</button><button class="save-major-button" type="button" data-compare-major="${escapeHTML(major.id)}">So sánh</button><button class="save-major-button" type="button" data-report-major="${escapeHTML(major.id)}">Báo sai</button></div></td></tr>`;
+    return `<tr data-major-row="${escapeHTML(major.id)}" class="${target ? "is-target-major" : ""}" ${target ? 'aria-current="true"' : ""}><td data-label="Ngành">${escapeHTML(major.name)}</td><td data-label="Mã ngành">${escapeHTML(major.code)}</td><td data-label="Tổ hợp">${escapeHTML(major.combination || "Đang cập nhật")}</td><td data-label="Phương thức">${escapeHTML(major.method || "Đang cập nhật")}${major.methodDetails ? `<small>${escapeHTML(major.methodDetails)}</small>` : ""}</td><td data-label="Điểm chuẩn 2026">${cutoff}</td><td data-label="Công thức"><details class="formula-disclosure"><summary>${formulaStatus}</summary><p>${escapeHTML(formulaText)}</p>${sourceUrl ? `<a class="formula-source" href="${escapeHTML(sourceUrl)}" target="_blank" rel="noopener">${escapeHTML(source?.label || "Nguồn dữ liệu")} ↗</a>` : ""}</details><div class="row-actions"><button class="save-major-button" type="button" data-save-major="${escapeHTML(major.id)}" data-major-name="${escapeHTML(major.name)}" data-major-code="${escapeHTML(major.code)}" data-university-id="${escapeHTML(major.universityId)}">♡ Lưu</button><button class="save-major-button" type="button" data-compare-major="${escapeHTML(major.id)}">So sánh</button><button class="save-major-button" type="button" data-report-major="${escapeHTML(major.id)}">Báo sai</button></div></td></tr>`;
   }
 
   renderCombinations(filter = "", keepPage = false) {

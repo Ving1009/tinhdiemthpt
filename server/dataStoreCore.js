@@ -33,6 +33,17 @@ function searchRank(entry, term) {
   return words.length && words.every((word) => entry.text.includes(word)) ? 3 : null;
 }
 
+function formulaIdPart(value) {
+  return normalizeSearch(value)
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "") || "phuong-thuc";
+}
+
+function formulaScale(rows) {
+  const scales = [...new Set(rows.map((major) => major.cutoff?.scale).filter((value) => Number.isFinite(value) && value > 0))];
+  return scales.length === 1 ? `Thang ${scales[0]}` : "Theo thang điểm và bảng quy đổi của trường";
+}
+
 export function createDataStore({ universities, majors, combinations, subjects, admissionFormulas, dataRoot = null } = {}) {
   const allUniversities = universities || [];
   const allMajors = majors || [];
@@ -83,6 +94,8 @@ export function createDataStore({ universities, majors, combinations, subjects, 
       verifiedRowCount: rows.filter(({ major }) => major.dataStatus === "verified").length,
       informationalRowCount: rows.filter(({ major }) => major.dataStatus === "reference").length,
       calculableCount: rows.filter(({ major }) => major.calculationVerified === true).length,
+      formulaCoverageCount: rows.filter(({ major }) => major.formulaText?.trim() && /^https?:\/\//.test(major.formulaSourceUrl || "")).length,
+      formulaMethodCount: new Set(rows.filter(({ major }) => major.formulaText?.trim()).map(({ major }) => major.method)).size,
       verifiedFormulaCount: admissionFormulaIndex.get(university.id)?.methods.length || 0
     };
   });
@@ -100,6 +113,8 @@ export function createDataStore({ universities, majors, combinations, subjects, 
         profileStatusCounts: [...new Set(allUniversities.map((item) => item.admissions?.status || "unknown"))].sort().map((status) => ({ status, count: allUniversities.filter((item) => (item.admissions?.status || "unknown") === status).length })),
         cutoffStatusCounts: [...new Set(allMajors.map((item) => item.cutoff?.status || "missing"))].sort().map((status) => ({ status, count: allMajors.filter((item) => (item.cutoff?.status || "missing") === status).length })),
         calculableRows: allMajors.filter((item) => item.calculationVerified === true).length,
+        formulaRows: allMajors.filter((item) => item.formulaText?.trim() && /^https?:\/\//.test(item.formulaSourceUrl || "")).length,
+        formulaProfileSchools: new Set(allMajors.filter((item) => item.formulaText?.trim()).map((item) => item.universityId)).size,
         verifiedFormulaSchools: admissionFormulaIndex.size,
         verifiedSchoolMethodFormulas: [...admissionFormulaIndex.values()].reduce((total, school) => total + school.methods.length, 0)
       }
@@ -206,6 +221,7 @@ export function createDataStore({ universities, majors, combinations, subjects, 
         combinationNote: method.combinationNote || "",
         combinations,
         programs,
+        rowIds: method.applicableRows.map((major) => major.id),
         programCount: programs.length,
         autoCalculate: method.autoCalculate === true,
         formulaModuleId: method.formulaModuleId || "",
@@ -217,33 +233,87 @@ export function createDataStore({ universities, majors, combinations, subjects, 
         }
       };
     });
+    const officialRowIds = new Set(methods.flatMap((method) => method.rowIds));
+    const referenceGroups = new Map();
+    for (const { major } of rows) {
+      if (officialRowIds.has(major.id)) continue;
+      const expression = String(major.formulaText || "").trim();
+      const sourceUrl = String(major.formulaSourceUrl || "").trim();
+      if (!expression || !/^https?:\/\//.test(sourceUrl)) continue;
+      const key = `${major.method}\u0000${expression}\u0000${sourceUrl}`;
+      const group = referenceGroups.get(key) || { label: major.method, expression, sourceUrl, rows: [] };
+      group.rows.push(major);
+      referenceGroups.set(key, group);
+    }
+    const referenceMethods = [...referenceGroups.values()].map((group, index) => {
+      const programs = [...new Map(group.rows.map((major) => [
+        `${major.code}|${major.name}`,
+        { id: major.id, code: major.code, name: major.name, method: major.method }
+      ])).values()];
+      const combinations = [...new Set(group.rows.flatMap((major) => parseCombinationCodes(major.combination, validCombinationCodes)))];
+      return {
+        id: `reference-${formulaIdPart(group.label)}-${index + 1}`,
+        label: group.label,
+        status: "reference",
+        expression: group.expression,
+        scale: formulaScale(group.rows),
+        conditions: [],
+        priority: "Áp dụng điểm cộng và điểm ưu tiên theo quy chế 2026 cùng đề án của trường.",
+        conversion: "Nếu phương thức có quy đổi, phải dùng đúng bảng quy đổi 2026 của trường trước khi nộp hồ sơ.",
+        combinationNote: combinations.length ? "Theo tổ hợp ghi tại từng ngành / chương trình." : "Theo thành phần và điều kiện của phương thức.",
+        combinations,
+        programs,
+        rowIds: group.rows.map((major) => major.id),
+        programCount: programs.length,
+        autoCalculate: false,
+        formulaModuleId: "",
+        applicabilityNote: `Tổng hợp từ ${group.rows.length} dòng ngành có nguồn lưu nội bộ; chưa bật tính tự động.`
+      };
+    });
+    const profileFormulas = [...methods, ...referenceMethods];
     const formulaByRepositoryMethod = new Map();
     for (const method of school?.methods || []) {
       for (const label of method.repositoryMethods || []) formulaByRepositoryMethod.set(label, method);
     }
-    const methodLabels = [...new Set([
-      ...(university.methods || []),
-      ...rows.map(({ major }) => major.method)
-    ].filter(Boolean))];
+    const methodLabels = [...new Set(rows.map(({ major }) => major.method).filter(Boolean))];
     const methodOptions = methodLabels.map((label) => {
       const formula = formulaByRepositoryMethod.get(label);
       const matchingRows = rows.filter(({ major }) => major.method === label).map(({ major }) => major);
       const programs = new Set(matchingRows.map((major) => `${major.code}|${major.name}`));
       const verifiedPrograms = formula ? new Set(formula.applicableRows.map((major) => `${major.code}|${major.name}`)) : null;
+      const references = referenceMethods.filter((method) => method.label === label);
       return {
         label,
         formulaId: formula?.id || "",
+        advisoryFormulaIds: references.map((method) => method.id),
+        hasFormula: Boolean(formula || references.length),
         verified: Boolean(formula),
-        programCount: verifiedPrograms?.size ?? programs.size
+        verifiedProgramCount: verifiedPrograms?.size || 0,
+        programCount: programs.size
       };
     });
+    const coveredRowIds = new Set(profileFormulas.flatMap((method) => method.rowIds || []));
     return {
       available: methods.length > 0,
+      profileAvailable: profileFormulas.length > 0,
       year: allAdmissionFormulas.year,
       verifiedAt: allAdmissionFormulas.verifiedAt,
-      message: methods.length ? "Chỉ hiển thị các công thức được nguồn chính thức nêu trực tiếp." : "Chưa có công thức chính thức được xác minh.",
+      message: rows.length
+        ? `Đã có công thức và nguồn cho ${coveredRowIds.size}/${rows.length} dòng ngành; công thức chưa đủ nguồn chính thức được ghi rõ là tham khảo.`
+        : (university.admissions?.note || "Hồ sơ này không có dòng ngành tuyển sinh đại học chính quy để áp dụng công thức."),
+      emptyReason: rows.length ? "" : (university.admissions?.note || "Không có dòng ngành tuyển sinh đại học chính quy để áp dụng công thức."),
+      stats: {
+        totalRows: rows.length,
+        coveredRows: coveredRowIds.size,
+        officialRows: officialRowIds.size,
+        advisoryRows: coveredRowIds.size - officialRowIds.size,
+        officialMethodCount: methods.length,
+        advisoryFormulaCount: referenceMethods.length,
+        formulaGroupCount: profileFormulas.length
+      },
       methodOptions,
-      methods
+      methods,
+      profileFormulas
     };
   }
 

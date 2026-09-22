@@ -30,13 +30,50 @@ test("API công thức giữ rõ trạng thái chưa xác minh và phạm vi ng�
   assert.equal(bka.methods[0].programCount, 3);
   assert.equal(bka.methods[0].autoCalculate, true);
   assert.match(bka.methods[0].officialLink.url, /^https:\/\/hust\.edu\.vn\//);
+  assert.equal(bka.stats.coveredRows, bka.stats.totalRows);
+  assert.ok(bka.profileFormulas.some((method) => method.status === "reference"));
 
   const qhl = defaultDataStore.listAdmissionFormulas("khoa-luat-dhqg-ha-noi");
   assert.equal(qhl.available, false);
   assert.equal(qhl.methods.length, 0);
-  assert.match(qhl.message, /Chưa có công thức chính thức được xác minh/);
+  assert.equal(qhl.profileAvailable, true);
+  assert.equal(qhl.stats.coveredRows, qhl.stats.totalRows);
+  assert.ok(qhl.profileFormulas.length > 0);
+  assert.ok(qhl.profileFormulas.every((method) => method.status === "reference"));
   assert.ok(qhl.methodOptions.length > 0);
   assert.ok(qhl.methodOptions.every((method) => method.verified === false));
+  assert.ok(qhl.methodOptions.every((method) => method.hasFormula === true));
+});
+
+test("API phủ công thức và nguồn cho toàn bộ dòng ngành của mọi hồ sơ", async () => {
+  const [universities, majors] = await Promise.all([
+    loadJson("universities.json"),
+    loadJson("majors.json")
+  ]);
+  const majorsByUniversity = new Map();
+  for (const major of majors) {
+    const rows = majorsByUniversity.get(major.universityId) || [];
+    rows.push(major);
+    majorsByUniversity.set(major.universityId, rows);
+  }
+
+  for (const university of universities) {
+    const rows = majorsByUniversity.get(university.id) || [];
+    const result = defaultDataStore.listAdmissionFormulas(university.id);
+    assert.ok(result, `${university.code}: API công thức không trả dữ liệu`);
+    if (!rows.length) {
+      assert.equal(result.stats.totalRows, 0, `${university.code}: thống kê dòng ngành sai`);
+      assert.ok(result.emptyReason, `${university.code}: thiếu lý do không áp dụng công thức`);
+      continue;
+    }
+    const coveredIds = new Set(result.profileFormulas.flatMap((formula) => formula.rowIds || []));
+    assert.equal(result.stats.coveredRows, rows.length, `${university.code}: thống kê độ phủ công thức sai`);
+    assert.ok(rows.every((major) => coveredIds.has(major.id)), `${university.code}: còn dòng ngành chưa được liên kết công thức`);
+    assert.ok(result.profileFormulas.every((formula) => formula.expression?.trim()), `${university.code}: có công thức trống`);
+    assert.ok(rows.every((major) => /^https?:\/\//.test(major.formulaSourceUrl || "")), `${university.code}: dữ liệu nội bộ có công thức thiếu nguồn`);
+    assert.ok(result.methods.every((formula) => /^https?:\/\//.test(formula.officialLink?.url || "")), `${university.code}: công thức chính thức thiếu liên kết`);
+    assert.ok(result.profileFormulas.filter((formula) => formula.status === "reference").every((formula) => !formula.officialLink && !formula.sourceLink), `${university.code}: API làm lộ metadata nguồn tham khảo`);
+  }
 });
 
 test("script audit đối chiếu đủ trường, ngành, phương thức và phát hiện ba nhãn quá mức", async () => {

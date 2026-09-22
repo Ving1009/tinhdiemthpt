@@ -25,15 +25,18 @@ test("bộ công thức công khai chỉ chứa sáu phương thức có nguồn
   assert.equal(new Set(dataset.schools.flatMap((school) => school.methods.map((method) => method.expression.replace(/\s+/g, " ")))).size, 6);
 });
 
-test("API công thức giữ rõ trạng thái chưa xác minh và phạm vi ngành", () => {
+test("API công thức giữ đúng một công thức cho mỗi phương thức của trường", () => {
   const bka = defaultDataStore.listAdmissionFormulas("dai-hoc-bach-khoa-ha-noi");
   assert.equal(bka.available, true);
   assert.equal(bka.methods.length, 1);
-  assert.equal(bka.methods[0].programCount, 3);
+  assert.equal(bka.methods[0].programCount, bka.methodOptions.find((method) => method.label === "THPT").programCount);
+  assert.ok(bka.methods[0].programCount > 3);
+  assert.equal(bka.methods[0].calculableRowIds.length, 3);
   assert.equal(bka.methods[0].autoCalculate, true);
   assert.match(bka.methods[0].officialLink.url, /^https:\/\/hust\.edu\.vn\//);
   assert.equal(bka.stats.coveredRows, bka.stats.totalRows);
   assert.ok(bka.profileFormulas.some((method) => method.status === "reference"));
+  assert.equal(bka.profileFormulas.filter((method) => method.label === "THPT").length, 1);
 
   const qhl = defaultDataStore.listAdmissionFormulas("khoa-luat-dhqg-ha-noi");
   assert.equal(qhl.available, false);
@@ -45,6 +48,11 @@ test("API công thức giữ rõ trạng thái chưa xác minh và phạm vi ng�
   assert.ok(qhl.methodOptions.length > 0);
   assert.ok(qhl.methodOptions.every((method) => method.verified === false));
   assert.ok(qhl.methodOptions.every((method) => method.hasFormula === true));
+
+  const qht = defaultDataStore.listAdmissionFormulas("truong-dai-hoc-khoa-hoc-tu-nhien-dhqg-ha-noi");
+  const qhtThpt = qht.profileFormulas.filter((method) => method.label === "THPT");
+  assert.equal(qhtThpt.length, 1);
+  assert.equal(qhtThpt[0].variantCount, 2);
 });
 
 test("API phủ công thức và nguồn cho toàn bộ dòng ngành của mọi hồ sơ", async () => {
@@ -69,7 +77,12 @@ test("API phủ công thức và nguồn cho toàn bộ dòng ngành của mọi
       continue;
     }
     const coveredIds = new Set(result.profileFormulas.flatMap((formula) => formula.rowIds || []));
+    const methodLabels = new Set(rows.map((major) => major.method));
     assert.equal(result.stats.coveredRows, rows.length, `${university.code}: thống kê độ phủ công thức sai`);
+    assert.equal(result.stats.totalMethods, methodLabels.size, `${university.code}: thống kê số phương thức sai`);
+    assert.equal(result.stats.coveredMethods, methodLabels.size, `${university.code}: còn phương thức thiếu công thức`);
+    assert.equal(result.profileFormulas.length, methodLabels.size, `${university.code}: phải có đúng một công thức cho mỗi phương thức`);
+    assert.equal(new Set(result.profileFormulas.map((formula) => formula.label)).size, methodLabels.size, `${university.code}: phương thức bị lặp công thức`);
     assert.ok(rows.every((major) => coveredIds.has(major.id)), `${university.code}: còn dòng ngành chưa được liên kết công thức`);
     assert.ok(result.profileFormulas.every((formula) => formula.expression?.trim()), `${university.code}: có công thức trống`);
     assert.ok(rows.every((major) => /^https?:\/\//.test(major.formulaSourceUrl || "")), `${university.code}: dữ liệu nội bộ có công thức thiếu nguồn`);

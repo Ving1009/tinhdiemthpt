@@ -346,6 +346,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .verified-formula-heading h3 { margin:2px 0 0; color:var(--text); font-size:20px; }
 .verified-badge.is-reference { color:#8a4b08; background:#fff1d6; border-color:#f0c87a; }
 .verified-formula-card .formula-box { margin:0; overflow-wrap:anywhere; }
+.formula-scope-note { margin:0; color:var(--muted); font-size:13px; }
 .verified-formula-card section h4 { margin:0 0 7px; color:var(--text); font-size:13px; }
 .verified-formula-card section p,.verified-formula-card section ul,.formula-programs p,.formula-programs ul { margin:0; color:var(--muted); font-size:13px; line-height:1.7; }
 .verified-formula-card section ul,.formula-programs ul { display:grid; gap:5px; padding-left:20px; }

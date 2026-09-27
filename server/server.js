@@ -10,6 +10,7 @@ import { createScanTranscriptRouter, isUploadError } from "./routes/scanTranscri
 import { createConfiguredScanProviders } from "./configuredScanProviders.js";
 import { createTranscriptScanService } from "./services/transcriptScanService.js";
 import { createReportStore } from "./reportStore.js";
+import { securityHeaders } from "../lib/securityHeaders.js";
 
 const serverRequire = createRequire(import.meta.url);
 const PUBLIC_DIR = fileURLToPath(new URL("../public/", import.meta.url));
@@ -44,12 +45,20 @@ function localDevelopmentCors(request, response, next) {
   next();
 }
 
+function applySecurityHeaders(request, response, next) {
+  const forwardedProtocol = String(request.headers["x-forwarded-proto"] || "").split(",", 1)[0].trim().toLocaleLowerCase("en");
+  const isHttps = request.secure || forwardedProtocol === "https";
+  for (const [name, value] of Object.entries(securityHeaders({ isHttps }))) response.setHeader(name, value);
+  next();
+}
+
 export { createConfiguredScanProviders } from "./configuredScanProviders.js";
 
 export function createApp({ scanTranscript, dataStore = defaultDataStore, reportStore = createReportStore(), environment = process.env } = {}) {
   const app = express();
   const scanner = scanTranscript || createTranscriptScanService(createConfiguredScanProviders());
   app.disable("x-powered-by");
+  app.use(applySecurityHeaders);
   app.use(express.json({ limit: "100kb" }));
   app.use("/api", localDevelopmentCors);
   app.use("/api", createPublicApiRouter({ store: dataStore, reportStore, environment }));
@@ -76,11 +85,27 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
   app.use((_request, response) => response.status(404).send("Not found"));
   app.use((error, _request, response, _next) => {
     if (isUploadError(error)) {
-      const message = error.code === "LIMIT_FILE_SIZE" ? "Mỗi ảnh tối đa 7 MB." : "Tệp tải lên không hợp lệ.";
-      response.status(400).json({ success: false, error: { code: error.code || "INVALID_UPLOAD", message } });
+      const tooLarge = error.code === "LIMIT_FILE_SIZE";
+      const message = tooLarge ? "Mỗi ảnh tối đa 7 MB." : "Tệp tải lên không hợp lệ.";
+      response.status(tooLarge ? 413 : 400).json({ success: false, error: { code: error.code || "INVALID_UPLOAD", message } });
+      return;
+    }
+    if (error?.type === "entity.too.large" || error?.status === 413) {
+      response.status(413).json({ success: false, error: { code: "REQUEST_TOO_LARGE", message: "Dữ liệu gửi lên quá lớn." } });
+      return;
+    }
+    if (error instanceof SyntaxError && error?.status === 400) {
+      response.status(400).json({ success: false, error: { code: "INVALID_JSON", message: "Dữ liệu JSON không hợp lệ." } });
       return;
     }
     const knownError = error instanceof AppError;
+    if (!knownError) {
+      console.error(JSON.stringify({
+        event: "unhandled_request_error",
+        name: String(error?.name || "Error").slice(0, 80),
+        code: String(error?.code || "INTERNAL_ERROR").slice(0, 80)
+      }));
+    }
     response.status(knownError ? error.statusCode : 500).json({
       success: false,
       error: { code: knownError ? error.code : "INTERNAL_ERROR", message: knownError ? error.message : "Không thể xử lý yêu cầu. Hãy thử lại sau." }

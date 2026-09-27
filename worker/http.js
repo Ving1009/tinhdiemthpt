@@ -1,6 +1,14 @@
 import { AppError } from "../server/errors.js";
+import { securityHeaders } from "../lib/securityHeaders.js";
 
 export const JSON_HEADERS = { "Content-Type": "application/json; charset=utf-8" };
+
+export function withSecurityHeaders(request, response) {
+  const headers = new Headers(response.headers);
+  const isHttps = new URL(request.url).protocol === "https:";
+  for (const [name, value] of Object.entries(securityHeaders({ isHttps }))) headers.set(name, value);
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+}
 
 function developmentOrigin(request) {
   const origin = request.headers.get("Origin");
@@ -14,15 +22,16 @@ function developmentOrigin(request) {
 }
 
 export function withCors(request, response) {
+  const securedResponse = withSecurityHeaders(request, response);
   const origin = developmentOrigin(request);
-  if (!origin) return response;
-  const headers = new Headers(response.headers);
+  if (!origin) return securedResponse;
+  const headers = new Headers(securedResponse.headers);
   headers.set("Access-Control-Allow-Origin", origin);
   headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   headers.set("Access-Control-Allow-Headers", "Content-Type, X-Turnstile-Token");
   headers.set("Access-Control-Max-Age", "600");
   headers.append("Vary", "Origin");
-  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+  return new Response(securedResponse.body, { status: securedResponse.status, statusText: securedResponse.statusText, headers });
 }
 
 export function json(request, payload, { status = 200, headers = {} } = {}) {
@@ -49,7 +58,11 @@ export function errorResponse(request, error) {
   if (/định dạng|mô tả|liên kết/i.test(error?.message || "")) {
     return failure(request, "INVALID_DATA_REPORT", error.message, 400);
   }
-  console.error(error);
+  console.error(JSON.stringify({
+    event: "unhandled_request_error",
+    name: String(error?.name || "Error").slice(0, 80),
+    code: String(error?.code || "INTERNAL_ERROR").slice(0, 80)
+  }));
   return failure(request, "INTERNAL_ERROR", "Không thể xử lý yêu cầu. Hãy thử lại sau.", 500);
 }
 

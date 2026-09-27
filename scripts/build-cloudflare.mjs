@@ -3,6 +3,7 @@ import { createRequire } from "node:module";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { sanitizeMajor, sanitizePublicValue, sanitizeUniversity } from "../lib/dataValidation.js";
+import { securityHeaders } from "../lib/securityHeaders.js";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const output = join(root, ".cloudflare", "public");
@@ -68,6 +69,8 @@ await Promise.all([
   copyFileFromPackage("@tesseract.js-data/eng", "4.0.0_best_int/eng.traineddata.gz", "vendor/tesseract-lang/eng.traineddata.gz"),
   writeFile(join(vendor, "transcript-subjects.json"), JSON.stringify(transcriptSubjects)),
   writeFile(join(output, "_headers"), [
+    "/*",
+    ...Object.entries(securityHeaders({ isHttps: true })).map(([name, value]) => `  ${name}: ${value}`),
     "/index.html",
     "  Cache-Control: no-cache",
     "/*.html",

@@ -1,5 +1,5 @@
 import { getTurnstileConfigurationForHostname, turnstileTokenFromHeaders, verifyTurnstile } from "../server/services/turnstile.js";
-import { applyRateLimit, errorResponse, failure, success } from "./http.js";
+import { applyRateLimit, errorResponse, failure, success, withSecurityHeaders } from "./http.js";
 import { handleDataApi } from "./dataApi.js";
 
 async function requireTurnstile(request, environment, action) {
@@ -21,7 +21,7 @@ export default {
   async fetch(request, environment) {
     const url = new URL(request.url);
     if (url.pathname.startsWith("/_worker-data/")) {
-      return new Response("Not found", { status: 404 });
+      return withSecurityHeaders(request, new Response("Not found", { status: 404 }));
     }
     if (request.method === "GET" && url.pathname === "/api/security-config") {
       const turnstile = getTurnstileConfigurationForHostname(environment, url.hostname);
@@ -39,7 +39,7 @@ export default {
       if (!environment.OCR_SERVICE || typeof environment.OCR_SERVICE.fetch !== "function") {
         return failure(request, "SCAN_PROVIDER_UNAVAILABLE", "Dịch vụ quét học bạ chưa sẵn sàng.", 503);
       }
-      return environment.OCR_SERVICE.fetch(request);
+      return withSecurityHeaders(request, await environment.OCR_SERVICE.fetch(request));
     }
     if (url.pathname === "/api/data-reports") {
       const limited = await applyRateLimit(environment.REPORT_RATE_LIMITER, request);
@@ -50,6 +50,6 @@ export default {
       }
     }
     if (url.pathname.startsWith("/api/")) return handleDataApi(request, environment);
-    return environment.ASSETS.fetch(request);
+    return withSecurityHeaders(request, await environment.ASSETS.fetch(request));
   }
 };

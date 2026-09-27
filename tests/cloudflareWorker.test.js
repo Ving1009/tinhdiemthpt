@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { createCloudflareReportStore } from "../server/cloudflareReportStore.js";
-import { handleOcrRequest } from "../worker/ocrHandler.js";
+import { handleOcrRequest, MAX_MULTIPART_BYTES } from "../worker/ocrHandler.js";
 import mainWorker from "../worker/index.js";
 
 test("Cloudflare OCR nhận multipart hợp lệ và giữ schema response của frontend", async () => {
@@ -39,6 +39,18 @@ test("Cloudflare OCR từ chối nội dung giả mạo kiểu ảnh", async () 
   assert.equal(payload.error.code, "INVALID_IMAGE");
 });
 
+test("Cloudflare OCR chặn request khai báo vượt giới hạn trước khi đọc multipart", async () => {
+  const response = await handleOcrRequest(new Request("https://example.com/api/scan-transcript", {
+    method: "POST",
+    headers: { "Content-Type": "multipart/form-data; boundary=test", "Content-Length": String(MAX_MULTIPART_BYTES + 1) },
+    body: "--test--",
+    duplex: "half"
+  }), async () => assert.fail("Không được gọi scanner"));
+  const payload = await response.json();
+  assert.equal(response.status, 413);
+  assert.equal(payload.error.code, "REQUEST_TOO_LARGE");
+});
+
 test("Cloudflare report store chỉ xác nhận sau khi Supabase nhận báo cáo", async () => {
   let request;
   const store = createCloudflareReportStore({
@@ -74,6 +86,22 @@ test("Worker chỉ công khai site key và trạng thái Turnstile", async () =>
   assert.deepEqual(payload.data, { turnstile: { enabled: true, siteKey: "public-site-key" } });
   assert.doesNotMatch(JSON.stringify(payload), /private-secret/);
   assert.match(response.headers.get("cache-control"), /no-store/);
+  assert.match(response.headers.get("strict-transport-security"), /max-age=31536000/);
+  assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+});
+
+test("Worker gắn security headers cho static asset và CSP không dùng wildcard nguy hiểm", async () => {
+  const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.tinh-diem-thpt.workers.dev/"), {
+    ASSETS: { async fetch() { return new Response("<!doctype html>", { headers: { "Content-Type": "text/html" } }); } }
+  });
+  const csp = response.headers.get("content-security-policy") || "";
+  assert.equal(response.status, 200);
+  assert.match(csp, /frame-ancestors 'none'/);
+  assert.match(csp, /https:\/\/challenges\.cloudflare\.com/);
+  assert.match(csp, /https:\/\/fonts\.googleapis\.com/);
+  assert.doesNotMatch(csp, /unsafe-inline|unsafe-eval|\s\*\s/);
+  assert.equal(response.headers.get("x-frame-options"), "DENY");
+  assert.equal(response.headers.get("permissions-policy"), "camera=(), microphone=(), geolocation=(), payment=(), usb=()");
 });
 
 test("Worker chặn request OCR trước service khi thiếu token Turnstile", async () => {

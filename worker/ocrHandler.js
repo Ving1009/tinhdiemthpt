@@ -5,6 +5,7 @@ import { errorResponse, failure, json, optionsResponse } from "./http.js";
 export const MAX_IMAGES = 12;
 export const MAX_IMAGE_BYTES = 7 * 1024 * 1024;
 export const MAX_TOTAL_BYTES = 24 * 1024 * 1024;
+export const MAX_MULTIPART_BYTES = MAX_TOTAL_BYTES + 1024 * 1024;
 const ALLOWED_MIME_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
 
 function hasMagicBytes(buffer, type) {
@@ -18,6 +19,10 @@ export async function handleOcrRequest(request, scanTranscript) {
   if (request.method === "OPTIONS") return optionsResponse(request);
   if (request.method !== "POST") return failure(request, "API_NOT_FOUND", "Không tìm thấy API.", 404);
   try {
+    const declaredBytes = Number(request.headers.get("Content-Length") || 0);
+    if (Number.isFinite(declaredBytes) && declaredBytes > MAX_MULTIPART_BYTES) {
+      throw new AppError("Tổng dung lượng yêu cầu vượt quá giới hạn 25 MB.", { statusCode: 413, code: "REQUEST_TOO_LARGE" });
+    }
     const form = await request.formData();
     const files = form.getAll("images[]").filter((file) => file && typeof file.arrayBuffer === "function");
     if (!files.length) throw new AppError("Hãy chọn ít nhất một ảnh học bạ.", { statusCode: 400, code: "MISSING_IMAGES" });
@@ -37,7 +42,8 @@ export async function handleOcrRequest(request, scanTranscript) {
       if (!hasMagicBytes(buffer, file.type)) {
         throw new AppError("Có ảnh không hợp lệ. Hãy chọn đúng ảnh JPG, PNG hoặc WEBP.", { statusCode: 400, code: "INVALID_IMAGE" });
       }
-      images.push({ buffer, size: buffer.length, mimetype: file.type, originalname: file.name || "hoc-ba" });
+      const extension = file.type === "image/png" ? "png" : file.type === "image/webp" ? "webp" : "jpg";
+      images.push({ buffer, size: buffer.length, mimetype: file.type, originalname: `hoc-ba-${images.length + 1}.${extension}` });
     }
     const result = await scanTranscript(images);
     return json(request, {

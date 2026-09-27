@@ -51,6 +51,41 @@ test("HTML, CSS và JavaScript luôn tái xác thực sau khi cập nhật", asy
   assert.match(securityConfig.headers.get("cache-control") || "", /no-store/, "cấu hình xác minh không được dùng bản cũ");
 });
 
+test("mọi response có security headers và HTTPS proxy nhận HSTS", async () => {
+  const response = await fetch(`${baseUrl}/`, { headers: { "X-Forwarded-Proto": "https" } });
+  const csp = response.headers.get("content-security-policy") || "";
+  assert.match(csp, /default-src 'self'/);
+  assert.match(csp, /frame-ancestors 'none'/);
+  assert.doesNotMatch(csp, /unsafe-inline|unsafe-eval/);
+  assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  assert.equal(response.headers.get("x-frame-options"), "DENY");
+  assert.equal(response.headers.get("referrer-policy"), "strict-origin-when-cross-origin");
+  assert.match(response.headers.get("strict-transport-security") || "", /max-age=31536000/);
+});
+
+test("CORS không phản chiếu origin ngoài danh sách phát triển", async () => {
+  const response = await fetch(`${baseUrl}/api/search?q=BKA`, { headers: { Origin: "https://attacker.invalid" } });
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("access-control-allow-origin"), null);
+  assert.equal(response.headers.get("access-control-allow-credentials"), null);
+});
+
+test("JSON lỗi và body quá lớn trả mã an toàn, không lộ stack", async () => {
+  const malformed = await fetch(`${baseUrl}/api/majors/best-combinations`, {
+    method: "POST", headers: { "Content-Type": "application/json" }, body: "{"
+  });
+  assert.equal(malformed.status, 400);
+  assert.deepEqual(await malformed.json(), { success: false, error: { code: "INVALID_JSON", message: "Dữ liệu JSON không hợp lệ." } });
+
+  const oversized = await fetch(`${baseUrl}/api/majors/best-combinations`, {
+    method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ padding: "x".repeat(101 * 1024) })
+  });
+  assert.equal(oversized.status, 413);
+  const payload = await oversized.json();
+  assert.equal(payload.error.code, "REQUEST_TOO_LARGE");
+  assert.equal(Object.hasOwn(payload, "stack"), false);
+});
+
 test("API trường, ngành và catalog không lộ metadata hay tên website thu thập", async () => {
   const listResponse = await fetch(`${baseUrl}/api/universities?pageSize=3`);
   const listPayload = await listResponse.json();

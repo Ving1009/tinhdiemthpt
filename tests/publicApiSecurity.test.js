@@ -59,8 +59,18 @@ test("mọi response có security headers và HTTPS proxy nhận HSTS", async ()
   assert.doesNotMatch(csp, /unsafe-inline|unsafe-eval/);
   assert.equal(response.headers.get("x-content-type-options"), "nosniff");
   assert.equal(response.headers.get("x-frame-options"), "DENY");
-  assert.equal(response.headers.get("referrer-policy"), "strict-origin-when-cross-origin");
+  assert.equal(response.headers.get("referrer-policy"), "no-referrer");
   assert.match(response.headers.get("strict-transport-security") || "", /max-age=31536000/);
+});
+
+test("security.txt công khai kênh báo lỗi bảo mật mà không lộ email cá nhân", async () => {
+  const response = await fetch(`${baseUrl}/.well-known/security.txt`);
+  const body = await response.text();
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") || "", /^text\/plain/);
+  assert.match(body, /^Contact: https:\/\/github\.com\/Ving1009\/tinhdiemthpt\/issues\/new/m);
+  assert.match(body, /^Expires: 2027-09-27T00:00:00Z/m);
+  assert.doesNotMatch(body, /@/);
 });
 
 test("CORS không phản chiếu origin ngoài danh sách phát triển", async () => {

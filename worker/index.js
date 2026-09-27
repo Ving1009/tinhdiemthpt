@@ -20,6 +20,10 @@ async function requireTurnstile(request, environment, action) {
 export default {
   async fetch(request, environment) {
     const url = new URL(request.url);
+    if (url.protocol === "http:") {
+      url.protocol = "https:";
+      return withSecurityHeaders(request, Response.redirect(url, 308));
+    }
     if (url.pathname.startsWith("/_worker-data/")) {
       return withSecurityHeaders(request, new Response("Not found", { status: 404 }));
     }

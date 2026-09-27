@@ -102,6 +102,18 @@ test("Worker gắn security headers cho static asset và CSP không dùng wildca
   assert.doesNotMatch(csp, /unsafe-inline|unsafe-eval|\s\*\s/);
   assert.equal(response.headers.get("x-frame-options"), "DENY");
   assert.equal(response.headers.get("permissions-policy"), "camera=(), microphone=(), geolocation=(), payment=(), usb=()");
+  assert.equal(response.headers.get("referrer-policy"), "no-referrer");
+});
+
+test("Worker chuyển HTTP sang HTTPS trước khi đọc static asset", async () => {
+  let assetFetched = false;
+  const response = await mainWorker.fetch(new Request("http://tinhdiemthpt.tinh-diem-thpt.workers.dev/?from=test"), {
+    ASSETS: { async fetch() { assetFetched = true; return new Response("unexpected"); } }
+  });
+  assert.equal(response.status, 308);
+  assert.equal(response.headers.get("location"), "https://tinhdiemthpt.tinh-diem-thpt.workers.dev/?from=test");
+  assert.equal(response.headers.get("strict-transport-security"), null);
+  assert.equal(assetFetched, false);
 });
 
 test("Worker chặn request OCR trước service khi thiếu token Turnstile", async () => {

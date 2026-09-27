@@ -14,6 +14,7 @@ import { securityHeaders } from "../lib/securityHeaders.js";
 
 const serverRequire = createRequire(import.meta.url);
 const PUBLIC_DIR = fileURLToPath(new URL("../public/", import.meta.url));
+const SECURITY_TXT = fileURLToPath(new URL("../public/.well-known/security.txt", import.meta.url));
 const TRANSCRIPT_SUBJECT_CATALOG = fileURLToPath(new URL("../data/transcript-subjects.json", import.meta.url));
 const TESSERACT_DIST_DIR = join(dirname(serverRequire.resolve("tesseract.js/package.json")), "dist");
 const TESSERACT_CORE_DIR = dirname(serverRequire.resolve("tesseract.js-core/package.json"));
@@ -60,6 +61,10 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
   app.disable("x-powered-by");
   app.use(applySecurityHeaders);
   app.use(express.json({ limit: "100kb" }));
+  app.get("/.well-known/security.txt", (_request, response) => {
+    response.setHeader("Cache-Control", "public, max-age=86400");
+    response.type("text/plain").sendFile(SECURITY_TXT, { dotfiles: "allow" });
+  });
   app.use("/api", localDevelopmentCors);
   app.use("/api", createPublicApiRouter({ store: dataStore, reportStore, environment }));
   app.use("/api", createScanTranscriptRouter({ scanTranscript: scanner, environment }));

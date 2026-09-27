@@ -14,6 +14,7 @@ import { autoFillTranscript } from "./autoFillTranscript.js";
 import { TranscriptPreview } from "./transcriptPreview.js";
 import { TranscriptScanner } from "./transcriptScanner.js";
 import { turnstileGate } from "./turnstile.js";
+import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
 const THEME_STORAGE_KEY = "thpt-calculator-theme-v1";
@@ -30,7 +31,9 @@ const PERSONAL_DATA_STORAGE_KEYS = [
   WISH_MIGRATION_BACKUP_KEY,
   COMPARE_STORAGE_KEY,
   LEGACY_COMPARE_STORAGE_KEY,
-  COMPARE_MIGRATION_BACKUP_KEY
+  COMPARE_MIGRATION_BACKUP_KEY,
+  PRACTICE_ACTIVE_KEY,
+  PRACTICE_HISTORY_KEY
 ];
 const SCORE_CONTEXTS = {
   THPT: [{ value: 30, label: "Thang 30 · điểm xét tuyển" }],
@@ -100,6 +103,7 @@ class THPTApp {
   constructor() {
     this.repository = new UniversityRepository();
     this.personalDataRetention = refreshPersonalDataRetention(storage, PERSONAL_DATA_STORAGE_KEYS);
+    this.practiceExam = new PracticeExamApp();
     this.state = storage.get(FORM_STORAGE_KEY, {});
     this.thptMode = this.state.thptMode === "manual" ? "manual" : "auto";
     this.activeUniversityRegion = "all";
@@ -132,6 +136,7 @@ class THPTApp {
   async init() {
     this.applyTheme(storage.get(THEME_STORAGE_KEY, "light"));
     this.bindGlobalEvents();
+    this.practiceExam.init();
     this.setView(location.hash);
     this.setupTranscriptTools();
     this.renderSavedWishes();
@@ -311,7 +316,7 @@ class THPTApp {
   }
 
   setView(hash) {
-    const allowed = ["calculator", "academic", "admission", "major-finder", "combinations", "universities", "guide"];
+    const allowed = ["calculator", "academic", "admission", "major-finder", "combinations", "universities", "practice-exams", "guide"];
     const rawValue = String(hash || "").replace(/^#/, "");
     const value = /^(?:truong|nganh)\//.test(rawValue) ? "universities" : rawValue;
     const view = allowed.includes(value) ? value : "calculator";
@@ -1146,7 +1151,7 @@ class THPTApp {
   renderPagination(kind, paging) { const target = document.getElementById(`${kind}-pagination`); if (!target) return; target.innerHTML = paging.pages > 1 ? `<button type="button" data-page-kind="${kind}" data-page="${paging.page - 1}" ${paging.page === 1 ? "disabled" : ""}>← Trước</button><span>Trang ${paging.page} / ${paging.pages}</span><button type="button" data-page-kind="${kind}" data-page="${paging.page + 1}" ${paging.page === paging.pages ? "disabled" : ""}>Sau →</button>` : ""; }
 
   openPrivacyPolicy(trigger) {
-    this.openModal(`<p class="modal-kicker">Quyền riêng tư</p><h2 id="modal-title">Chính sách quyền riêng tư</h2><p class="modal-description">Cập nhật ngày 27/09/2026. Hãy che thông tin định danh không cần thiết trước khi tải ảnh học bạ.</p><div class="privacy-policy"><h3>Ảnh học bạ</h3><p>Trình duyệt tối ưu ảnh trước khi gửi qua kết nối HTTPS tới backend. Backend chuyển ảnh đã tối ưu tới các dịch vụ nhận diện được cấu hình (Gemini hoặc OCR.space), chỉ giữ dữ liệu trong bộ nhớ tạm trong thời gian xử lý và không ghi ảnh hay phản hồi OCR thô vào ổ đĩa hoặc cơ sở dữ liệu của website. Nhà cung cấp nhận diện bên ngoài xử lý dữ liệu theo điều khoản và chính sách của họ.</p><p>Nếu dịch vụ từ xa gặp sự cố, website chỉ tải Tesseract.js và dữ liệu ngôn ngữ khoảng 15 MB sau khi bạn chọn tiếp tục. Lượt nhận diện dự phòng này chạy bằng CPU và RAM của thiết bị.</p><h3>Dữ liệu trên thiết bị</h3><p>Điểm đã nhập, tùy chọn tính điểm, danh sách nguyện vọng và bảng so sánh được lưu trong <code>localStorage</code> của trình duyệt để khôi phục khi bạn quay lại. Khi bạn mở lại website sau 30 ngày không truy cập, các dữ liệu cá nhân này được tự động xóa. Tùy chọn giao diện được giữ lại. Bạn cũng có thể xóa dữ liệu sớm hơn bằng nút xóa trong từng khu vực hoặc bằng cài đặt trình duyệt.</p><h3>Báo dữ liệu sai</h3><p>Nội dung báo sai chỉ được gửi khi bạn chủ động bấm “Gửi báo cáo”. Báo cáo hợp lệ được lưu trong hệ thống quản trị Supabase để đối chiếu; ảnh học bạ không được đính kèm vào báo cáo.</p><h3>An toàn truyền tải</h3><p>Bản production dùng HTTPS. Không tải ảnh học bạ qua bản sao website hoặc kết nối không tin cậy.</p></div>`, trigger);
+    this.openModal(`<p class="modal-kicker">Quyền riêng tư</p><h2 id="modal-title">Chính sách quyền riêng tư</h2><p class="modal-description">Cập nhật ngày 27/09/2026. Hãy che thông tin định danh không cần thiết trước khi tải ảnh học bạ.</p><div class="privacy-policy"><h3>Ảnh học bạ</h3><p>Trình duyệt tối ưu ảnh trước khi gửi qua kết nối HTTPS tới backend. Backend chuyển ảnh đã tối ưu tới các dịch vụ nhận diện được cấu hình (Gemini hoặc OCR.space), chỉ giữ dữ liệu trong bộ nhớ tạm trong thời gian xử lý và không ghi ảnh hay phản hồi OCR thô vào ổ đĩa hoặc cơ sở dữ liệu của website. Nhà cung cấp nhận diện bên ngoài xử lý dữ liệu theo điều khoản và chính sách của họ.</p><p>Nếu dịch vụ từ xa gặp sự cố, website chỉ tải Tesseract.js và dữ liệu ngôn ngữ khoảng 15 MB sau khi bạn chọn tiếp tục. Lượt nhận diện dự phòng này chạy bằng CPU và RAM của thiết bị.</p><h3>Dữ liệu trên thiết bị</h3><p>Điểm đã nhập, tùy chọn tính điểm, danh sách nguyện vọng, bảng so sánh, bài thi thử đang làm và lịch sử thi thử được lưu trong <code>localStorage</code> của trình duyệt để khôi phục khi bạn quay lại. Khi bạn mở lại website sau 30 ngày không truy cập, các dữ liệu cá nhân này được tự động xóa. Tùy chọn giao diện được giữ lại. Bạn cũng có thể xóa dữ liệu sớm hơn bằng nút xóa trong từng khu vực hoặc bằng cài đặt trình duyệt.</p><h3>Báo dữ liệu sai</h3><p>Nội dung báo sai chỉ được gửi khi bạn chủ động bấm “Gửi báo cáo”. Báo cáo hợp lệ được lưu trong hệ thống quản trị Supabase để đối chiếu; ảnh học bạ không được đính kèm vào báo cáo.</p><h3>An toàn truyền tải</h3><p>Bản production dùng HTTPS. Không tải ảnh học bạ qua bản sao website hoặc kết nối không tin cậy.</p></div>`, trigger);
   }
   openModal(content, trigger) { this.modalReturnFocus = trigger || document.activeElement; this.elements.modalBody.innerHTML = content; this.elements.modal.classList.remove("is-hidden"); document.body.classList.add("modal-open"); this.elements.modal.querySelector(".modal-close").focus(); }
   closeModal(restoreRoute = true) { this.modalToken = null; this.elements.modal.classList.add("is-hidden"); document.body.classList.remove("modal-open"); this.elements.modalBody.innerHTML = ""; if (restoreRoute && this.modalRouteActive && parseDeepLink()) { const target = this.modalSourceHash || "#universities"; history.replaceState(null, "", target); this.setView(target); } this.modalRouteActive = false; this.modalReturnFocus?.focus?.(); }

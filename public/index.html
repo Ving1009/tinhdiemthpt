@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/style.css?v=20260927-1" />
     <link rel="stylesheet" href="css/responsive.css?v=20260927-1" />
     <link rel="stylesheet" href="css/refinement.css?v=20260927-2" />
+    <link rel="stylesheet" href="css/practice-exam.css?v=20260927-1" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
@@ -34,6 +35,7 @@
           <a href="#combinations">Tổ hợp</a>
           <a href="#universities">Hồ sơ trường</a>
           <a href="#major-finder">Tìm ngành</a>
+          <a href="#practice-exams">Phòng thi 2026</a>
           <a href="#guide">Hướng dẫn</a>
         </nav>
 
@@ -333,9 +335,27 @@
         </div>
       </section>
 
+      <section class="section practice-exam-section" id="practice-exams" aria-labelledby="practice-exams-title">
+        <div class="container">
+          <div class="section-heading practice-heading">
+            <div>
+              <p class="eyebrow">07 · LUYỆN THI TỐT NGHIỆP</p>
+              <h2 id="practice-exams-title">Phòng thi 2026</h2>
+              <p>Chọn môn, làm bài có đồng hồ và xem lại từng câu kèm lời giải. Bài dở và kết quả được lưu ngay trên thiết bị.</p>
+            </div>
+            <div class="practice-heading-badge"><strong>18</strong><span>môn và ngoại ngữ</span></div>
+          </div>
+          <div class="practice-notice">
+            <span aria-hidden="true">i</span>
+            <p><strong>Đề luyện tập rút gọn, không phải đề thi chính thức.</strong> Nội dung do website biên soạn theo danh sách môn và định hướng cấu trúc được Bộ GDĐT công bố. <a href="https://vqa.moet.gov.vn/vi/news/thong-bao/cau-truc-dinh-dang-de-thi-tot-nghiep-thpt-tu-nam-2025-74.html" target="_blank" rel="noopener">Xem nguồn chính thức ↗</a></p>
+          </div>
+          <div id="practice-exam-app" aria-live="polite"></div>
+        </div>
+      </section>
+
       <section class="section guide-section" id="guide" aria-labelledby="guide-title">
         <div class="container guide-layout">
-          <div><p class="eyebrow">07 · Hướng dẫn</p><h2 id="guide-title">Đọc kết quả đúng cách</h2><p class="guide-intro">Kết quả là công cụ tham khảo nhanh. Hãy đối chiếu đề án tuyển sinh chính thức của từng trường trước khi đăng ký nguyện vọng.</p><a class="button button-secondary" href="#calculator">Tính điểm ngay</a></div>
+          <div><p class="eyebrow">08 · Hướng dẫn</p><h2 id="guide-title">Đọc kết quả đúng cách</h2><p class="guide-intro">Kết quả là công cụ tham khảo nhanh. Hãy đối chiếu đề án tuyển sinh chính thức của từng trường trước khi đăng ký nguyện vọng.</p><a class="button button-secondary" href="#calculator">Tính điểm ngay</a></div>
           <div class="accordion" id="guide-accordion">
             <details open><summary>Điểm ưu tiên được tính như thế nào?<span aria-hidden="true">+</span></summary><p>Điểm ưu tiên bao gồm khu vực và đối tượng. Với điểm tổ hợp từ 22.5 trở lên, mức cộng được điều chỉnh giảm theo quy định. Bạn luôn có thể mở “Xem cách tính” để kiểm tra số cụ thể.</p></details>
             <details><summary>Tôi có thể nhập 8,5 không?<span aria-hidden="true">+</span></summary><p>Có. Hệ thống tự đổi dấu phẩy thành dấu chấm và chỉ nhận điểm từ 0 đến 10 với tối đa 2 chữ số thập phân.</p></details>
@@ -346,7 +366,7 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-grid"><div><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">Σ</span><span>Tính Điểm <strong>THPT</strong></span></a><p>Công cụ hỗ trợ tham khảo điểm xét tuyển.</p></div><div class="footer-links"><a href="#calculator">Tính điểm</a><a href="#major-finder">Tìm ngành</a><a href="#universities">Hồ sơ trường</a><a href="#privacy-policy" data-privacy-policy>Chính sách quyền riêng tư</a></div><p class="footer-warning">Thông tin và kết quả trên website chỉ mang tính chất tham khảo. Người dùng cần kiểm tra thông tin tuyển sinh chính thức từ nhà trường.</p></div>
+      <div class="container footer-grid"><div><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">Σ</span><span>Tính Điểm <strong>THPT</strong></span></a><p>Công cụ hỗ trợ tham khảo điểm xét tuyển.</p></div><div class="footer-links"><a href="#calculator">Tính điểm</a><a href="#major-finder">Tìm ngành</a><a href="#universities">Hồ sơ trường</a><a href="#practice-exams">Thi thử 2026</a><a href="#privacy-policy" data-privacy-policy>Chính sách quyền riêng tư</a></div><p class="footer-warning">Thông tin và kết quả trên website chỉ mang tính chất tham khảo. Người dùng cần kiểm tra thông tin tuyển sinh chính thức từ nhà trường.</p></div>
       <div class="container footer-bottom"><span>© 2026 Tính Điểm THPT</span><span>Dữ liệu đã nhập tự xóa khi quay lại sau 30 ngày không truy cập</span></div>
     </footer>
 
@@ -364,6 +384,6 @@
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="js/main.js?v=20260927-2"></script>
+    <script type="module" src="js/main.js?v=20260927-3"></script>
   </body>
 </html>

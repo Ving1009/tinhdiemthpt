@@ -50,10 +50,10 @@ test("ghi nhận mã lỗi provider mà không đưa ảnh hay khóa API vào lo
   assert.doesNotMatch(JSON.stringify(failures), /private-image|api.?key/i);
 });
 
-test("hướng dẫn nhập tay khi tất cả provider đều hết quota", async () => {
+test("báo cho trình duyệt dùng Tesseract khi tất cả provider đều hết quota", async () => {
   const scan = createTranscriptScanService([
     { name: "gemini", scan: async () => { throw new AppError("quota", { statusCode: 503, code: "AI_QUOTA" }); } },
     { name: "ocr-space", scan: async () => { throw new AppError("quota", { statusCode: 503, code: "OCR_SPACE_QUOTA" }); } }
   ]);
-  await assert.rejects(() => scan([]), (error) => error.code === "SCAN_QUOTA_EXHAUSTED" && /nhập điểm thủ công/i.test(error.message));
+  await assert.rejects(() => scan([]), (error) => error.code === "SCAN_QUOTA_EXHAUSTED" && /Tesseract/i.test(error.message));
 });

@@ -32,7 +32,7 @@ export function createTranscriptScanService(providers = [], { onProviderError = 
         onProviderError({ provider: provider.name, code: error?.code || "UNKNOWN", statusCode: error?.statusCode || 500, hasNext });
         if (!hasNext || !shouldUseTranscriptFallback(error)) {
           if (!hasNext && QUOTA_CODES.has(error?.code)) {
-            throw new AppError("Các dịch vụ nhận diện đang hết hạn mức. Vui lòng nhập điểm thủ công và thử quét lại sau.", {
+            throw new AppError("Gemini và OCR.space đang hết hạn mức. Bạn có thể tiếp tục nhận diện bằng Tesseract ngay trên thiết bị.", {
               statusCode: 503,
               code: "SCAN_QUOTA_EXHAUSTED"
             });

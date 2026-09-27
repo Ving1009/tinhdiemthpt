@@ -49,13 +49,16 @@ export async function recognizeTranscriptInBrowser(images, {
     onStatus("Đang chuẩn bị nhận diện trên thiết bị...");
     const tesseract = tesseractModule || await loadTesseract(urlFrom(assetBaseUrl, "tesseract/tesseract.esm.min.js"));
     const subjectCatalog = catalog || await loadCatalog(catalogUrl || urlFrom(assetBaseUrl, "transcript-subjects.json"), fetchImpl);
-    worker = await tesseract.createWorker(["vie", "eng"], 1, {
+    let rejectWorkerFailure;
+    const workerFailure = new Promise((_, reject) => { rejectWorkerFailure = reject; });
+    const workerPromise = tesseract.createWorker(["vie", "eng"], 1, {
       workerPath: urlFrom(assetBaseUrl, "tesseract/worker.min.js"),
       corePath: urlFrom(assetBaseUrl, "tesseract-core/"),
       langPath: urlFrom(assetBaseUrl, "tesseract-lang/"),
-      workerBlobURL: true,
-      errorHandler: () => {}
+      workerBlobURL: false,
+      errorHandler: (error) => rejectWorkerFailure(error instanceof Error ? error : new Error(String(error)))
     });
+    worker = await Promise.race([workerPromise, workerFailure]);
     await worker.setParameters({ preserve_interword_spaces: "1" });
 
     const pages = [];

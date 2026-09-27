@@ -61,11 +61,12 @@ test("cấu hình Turnstile cũ được làm mới và request quét được g
   ]);
 });
 
-test("không che lỗi giới hạn lượt quét bằng OCR chậm trong trình duyệt", () => {
+test("dùng Tesseract khi provider hết quota nhưng vẫn giữ giới hạn chống lạm dụng", () => {
   assert.equal(shouldUseBrowserFallback({ code: "RATE_LIMITED" }), false);
   assert.equal(shouldUseBrowserFallback({ code: "TURNSTILE_CLIENT_ERROR" }), false);
   assert.equal(shouldUseBrowserFallback({ code: "TURNSTILE_TIMEOUT" }), false);
-  assert.equal(shouldUseBrowserFallback({ code: "AI_QUOTA" }), false);
-  assert.equal(shouldUseBrowserFallback({ code: "SCAN_QUOTA_EXHAUSTED" }), false);
+  assert.equal(shouldUseBrowserFallback({ code: "AI_QUOTA" }), true);
+  assert.equal(shouldUseBrowserFallback({ code: "OCR_SPACE_QUOTA" }), true);
+  assert.equal(shouldUseBrowserFallback({ code: "SCAN_QUOTA_EXHAUSTED" }), true);
   assert.equal(shouldUseBrowserFallback({ code: "AI_REQUEST_FAILED" }), true);
 });

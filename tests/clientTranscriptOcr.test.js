@@ -28,6 +28,7 @@ test("Tesseract trình duyệt tạo đúng một worker, nhận diện tuần t
       assert.deepEqual(languages, ["vie", "eng"]);
       assert.equal(oem, 1);
       assert.match(options.workerPath, /worker\.min\.js$/);
+      assert.equal(options.workerBlobURL, false);
       return worker;
     }
   };
@@ -54,4 +55,23 @@ test("worker vẫn được terminate khi nhận diện lỗi", async () => {
     (error) => error.code === "CLIENT_OCR_FAILED" && !/technical details/.test(error.message)
   );
   assert.equal(terminated, 1);
+});
+
+test("lỗi khởi tạo worker được trả về thay vì treo vô thời hạn", async () => {
+  const tesseractModule = {
+    createWorker: (_languages, _oem, options) => {
+      queueMicrotask(() => options.errorHandler(new Error("worker blocked")));
+      return new Promise(() => {});
+    }
+  };
+
+  await assert.rejects(
+    () => recognizeTranscriptInBrowser([{ blob: "one" }], {
+      assetBaseUrl: "/vendor/",
+      catalog,
+      tesseractModule,
+      browserEnvironment: {}
+    }),
+    (error) => error.code === "CLIENT_OCR_FAILED" && !/worker blocked/.test(error.message)
+  );
 });

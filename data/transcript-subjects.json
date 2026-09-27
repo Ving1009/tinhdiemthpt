@@ -19,6 +19,7 @@
     { "canonical": "Công nghệ công nghiệp", "formId": "industrialTechnology", "aliases": ["Công nghệ công nghiệp", "Công nghiệp", "Cong nghe cong nghiep"] },
     { "canonical": "Công nghệ nông nghiệp", "formId": "agriculturalTechnology", "aliases": ["Công nghệ nông nghiệp", "Nông nghiệp", "Cong nghe nong nghiep"] },
     { "canonical": "Công nghệ", "formId": null, "requiresResolution": true, "aliases": ["Công nghệ", "Cong nghe"] },
-    { "canonical": "Giáo dục kinh tế và pháp luật", "formId": "civicEducation", "aliases": ["Giáo dục kinh tế và pháp luật", "GDKT&PL", "GDKTPL", "GD Kinh tế và pháp luật"] }
+    { "canonical": "Giáo dục kinh tế và pháp luật", "formId": "civicEducation", "aliases": ["Giáo dục kinh tế và pháp luật", "GDKT&PL", "GDKTPL", "GD Kinh tế và pháp luật"] },
+    { "canonical": "Giáo dục quốc phòng và an ninh", "formId": "nationalDefense", "aliases": ["Giáo dục quốc phòng và an ninh", "Giáo dục quốc phòng an ninh", "GDQP-AN", "GDQP&AN", "GDQPAN", "Quốc phòng và an ninh"] }
   ]
 }

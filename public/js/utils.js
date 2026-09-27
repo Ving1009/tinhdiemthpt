@@ -7,6 +7,8 @@ export const SUBJECT_LABELS = {
   biology: "Sinh học",
   history: "Lịch sử",
   geography: "Địa lý",
+  civicEducation: "Giáo dục kinh tế và pháp luật",
+  nationalDefense: "Giáo dục quốc phòng và an ninh",
   informatics: "Tin học",
   technology: "Công nghệ",
   industrialTechnology: "Công nghệ công nghiệp",

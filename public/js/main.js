@@ -6,6 +6,7 @@ import { calculateAcademicCombinations } from "./core/academicCalculator.js";
 import { STANDARD_SUBJECTS, combinationSubjectKeys, isStandardCombination, subjectLabelForKey } from "./core/subjectMatching.js";
 import { calculateAutomaticCombinations, calculateCombination, validateSubjectEntries } from "./core/thptCombinations.js";
 import { createDataReport } from "./core/dataReport.js";
+import { refreshPersonalDataRetention } from "./core/personalDataRetention.js";
 import { simulateScoreChange } from "./core/scoreSimulation.js";
 import { createFinderScoreContext, createScoreProfile, finderContextIsFresh, formatFinderScoreContext } from "./core/scoreState.js";
 import { moveWishById, normalizeWish, normalizeWishList, removeWishById, wishIdentity } from "./core/wishList.js";
@@ -21,6 +22,16 @@ const LEGACY_WISH_STORAGE_KEYS = ["thpt-saved-wishes-v2", "thpt-saved-wishes-v1"
 const WISH_MIGRATION_BACKUP_KEY = "thpt-saved-wishes-migration-backup";
 const COMPARE_STORAGE_KEY = "thpt-major-comparison-v2";
 const LEGACY_COMPARE_STORAGE_KEY = "thpt-major-comparison-v1";
+const COMPARE_MIGRATION_BACKUP_KEY = "thpt-major-comparison-migration-backup";
+const PERSONAL_DATA_STORAGE_KEYS = [
+  FORM_STORAGE_KEY,
+  WISH_STORAGE_KEY,
+  ...LEGACY_WISH_STORAGE_KEYS,
+  WISH_MIGRATION_BACKUP_KEY,
+  COMPARE_STORAGE_KEY,
+  LEGACY_COMPARE_STORAGE_KEY,
+  COMPARE_MIGRATION_BACKUP_KEY
+];
 const SCORE_CONTEXTS = {
   THPT: [{ value: 30, label: "Thang 30 · điểm xét tuyển" }],
   "Học bạ": [{ value: 30, label: "Thang 30" }, { value: 40, label: "Thang 40 · có hệ số" }],
@@ -35,7 +46,8 @@ const ACADEMIC_SUBJECTS = [
   { id: "history", label: "Sử" }, { id: "geography", label: "Địa" }, { id: "civicEducation", label: "GDKTPL" },
   { id: "physics", label: "Lí" }, { id: "chemistry", label: "Hóa" }, { id: "biology", label: "Sinh" },
   { id: "informatics", label: "Tin học" }, { id: "industrialTechnology", label: "Công nghệ công nghiệp" },
-  { id: "agriculturalTechnology", label: "Công nghệ nông nghiệp" }
+  { id: "agriculturalTechnology", label: "Công nghệ nông nghiệp" },
+  { id: "nationalDefense", label: "Giáo dục quốc phòng và an ninh" }
 ];
 const UNIVERSITY_REGIONS = [
   { id: "north", label: "Miền Bắc" }, { id: "central", label: "Miền Trung" }, { id: "south", label: "Miền Nam" }
@@ -87,6 +99,7 @@ function loadPersonalList(currentKey, legacyKeys, maxItems, backupKey = WISH_MIG
 class THPTApp {
   constructor() {
     this.repository = new UniversityRepository();
+    this.personalDataRetention = refreshPersonalDataRetention(storage, PERSONAL_DATA_STORAGE_KEYS);
     this.state = storage.get(FORM_STORAGE_KEY, {});
     this.thptMode = this.state.thptMode === "manual" ? "manual" : "auto";
     this.activeUniversityRegion = "all";
@@ -100,7 +113,7 @@ class THPTApp {
     this.lastAcademicTrigger = null;
     this.lastThptResults = [];
     this.savedWishes = loadPersonalList(WISH_STORAGE_KEY, LEGACY_WISH_STORAGE_KEYS);
-    this.comparisonItems = loadPersonalList(COMPARE_STORAGE_KEY, [LEGACY_COMPARE_STORAGE_KEY], 4, "thpt-major-comparison-migration-backup");
+    this.comparisonItems = loadPersonalList(COMPARE_STORAGE_KEY, [LEGACY_COMPARE_STORAGE_KEY], 4, COMPARE_MIGRATION_BACKUP_KEY);
     this.scoreRevision = 0;
     this.scoreProfile = null;
     this.activeFinderContext = null;
@@ -138,6 +151,7 @@ class THPTApp {
       this.renderUniversities();
       await this.restoreAdmissionSelections();
       await this.openDeepLinkFromHash();
+      if (this.personalDataRetention.expired) this.showToast("Đã xóa dữ liệu cá nhân cũ sau 30 ngày không truy cập.");
     } catch (error) {
       this.elements.universityGrid.innerHTML = '<p class="empty-state error-state">Không thể tải dữ liệu. <button class="button button-text" type="button" data-retry-load>Thử lại</button></p>';
       this.showToast(error.message);
@@ -492,7 +506,7 @@ class THPTApp {
     const method = ACADEMIC_METHODS[this.elements.academicMethod.value] || ACADEMIC_METHODS["three-years"];
     const saved = this.state.academicScores || {};
     this.elements.academicHead.innerHTML = `<tr><th>Môn học</th>${method.columns.map((column) => `<th>${escapeHTML(column.label)}</th>`).join("")}</tr>`;
-    this.elements.academicBody.innerHTML = ACADEMIC_SUBJECTS.map((subject) => `<tr><th scope="row">${escapeHTML(subject.label)}</th>${method.columns.map((column) => { const id = `academic-${subject.id}-${column.id}`; return `<td><input id="${id}" data-academic-score="${subject.id}__${column.id}" inputmode="decimal" autocomplete="off" placeholder="0.00" aria-label="${escapeHTML(subject.label)} ${escapeHTML(column.label)}" value="${escapeHTML(saved[id] || "")}" /></td>`; }).join("")}</tr>`).join("");
+    this.elements.academicBody.innerHTML = ACADEMIC_SUBJECTS.map((subject) => `<tr><th scope="row">${escapeHTML(subject.label)}</th>${method.columns.map((column) => { const id = `academic-${subject.id}-${column.id}`; return `<td data-label="${escapeHTML(column.label)}"><input id="${id}" data-academic-score="${subject.id}__${column.id}" inputmode="decimal" autocomplete="off" placeholder="0.00" aria-label="${escapeHTML(subject.label)} ${escapeHTML(column.label)}" value="${escapeHTML(saved[id] || "")}" /></td>`; }).join("")}</tr>`).join("");
     $("#academic-note").innerHTML = `<span aria-hidden="true">i</span> Đang dùng <b>${escapeHTML(method.name)}</b>. Chỉ các tổ hợp có đủ điểm mới được tính.`;
   }
   getAcademicScoreData() {
@@ -973,7 +987,9 @@ class THPTApp {
     const comparedScale = selected?.scale ?? major.comparison?.scale;
     const alternatives = major.alternativeCombinations?.length > 1 ? `<details class="alternative-combinations"><summary>${major.alternativeCombinations.length - 1} tổ hợp thay thế</summary><ul>${major.alternativeCombinations.filter((item) => item.combination !== selected?.combination).map((item) => `<li><b>${escapeHTML(item.combination)}</b><span>${item.compatible ? `${formatScore(item.userScore)} / ${item.scale} · ${item.difference >= 0 ? "+" : ""}${formatScore(item.difference)}` : escapeHTML(item.reason || "Chưa so sánh được")}</span></li>`).join("")}</ul></details>` : "";
     const hasComparison = major.comparison !== undefined || this.finderComparisonScore !== null || $("#major-user-score").value.trim();
-    return `<article class="major-result-card"><div class="major-result-school"><span>${escapeHTML(major.university?.shortName || "ĐH")}</span><small>${escapeHTML(major.method || "Đang cập nhật")}</small></div><h3>${escapeHTML(major.name)}</h3><p>${escapeHTML(major.code)} · ${escapeHTML(selected?.combination || major.comparison?.combination || major.combination || "Đang cập nhật tổ hợp")}</p>${Number.isFinite(comparedScore) ? `<div class="user-score-line"><span>Điểm của tôi</span><b>${formatScore(comparedScore)} / ${comparedScale}</b></div>` : ""}<div class="major-result-cutoff"><b>${escapeHTML(cutoffLabel(major))}</b><span>${escapeHTML(status)}</span></div>${hasComparison ? `<p class="comparison-text">${escapeHTML(comparison)}</p>` : ""}${alternatives}<div class="major-card-actions"><button class="button button-light" type="button" data-view-major="${escapeHTML(major.id)}" data-university-id="${escapeHTML(major.universityId)}">Chi tiết</button><button class="button button-light" type="button" data-compare-major="${escapeHTML(major.id)}">So sánh</button><button class="button button-secondary" type="button" data-save-major="${escapeHTML(major.id)}" data-major-name="${escapeHTML(major.name)}" data-major-code="${escapeHTML(major.code)}" data-university-id="${escapeHTML(major.universityId)}">♡ Lưu</button></div></article>`;
+    const universityCode = major.university?.officialAdmissionsCode || major.university?.code || major.university?.shortName || "ĐH";
+    const universityName = major.university?.name || major.university?.shortName || "Trường đang cập nhật";
+    return `<article class="major-result-card"><div class="major-result-school"><span><b>${escapeHTML(universityCode)}</b><span aria-hidden="true"> · </span>${escapeHTML(universityName)}</span><small>${escapeHTML(major.method || "Đang cập nhật")}</small></div><h3>${escapeHTML(major.name)}</h3><p>${escapeHTML(major.code)} · ${escapeHTML(selected?.combination || major.comparison?.combination || major.combination || "Đang cập nhật tổ hợp")}</p>${Number.isFinite(comparedScore) ? `<div class="user-score-line"><span>Điểm của tôi</span><b>${formatScore(comparedScore)} / ${comparedScale}</b></div>` : ""}<div class="major-result-cutoff"><b>${escapeHTML(cutoffLabel(major))}</b><span>${escapeHTML(status)}</span></div>${hasComparison ? `<p class="comparison-text">${escapeHTML(comparison)}</p>` : ""}${alternatives}<div class="major-card-actions"><button class="button button-light" type="button" data-view-major="${escapeHTML(major.id)}" data-university-id="${escapeHTML(major.universityId)}">Chi tiết</button><button class="button button-light" type="button" data-compare-major="${escapeHTML(major.id)}">So sánh</button><button class="button button-secondary" type="button" data-save-major="${escapeHTML(major.id)}" data-major-name="${escapeHTML(major.name)}" data-major-code="${escapeHTML(major.code)}" data-university-id="${escapeHTML(major.universityId)}">♡ Lưu</button></div></article>`;
   }
   findMajorsForCombination(code, score, scale) {
     $("#major-combination-filter").value = code;
@@ -1098,7 +1114,7 @@ class THPTApp {
     button.disabled = true; button.textContent = "Đang tạo PDF..."; status.textContent = "Đang tạo file PDF trên thiết bị...";
     try {
       const exportedAt = new Date();
-      const { createWishPdfBlob, wishPdfFilename } = await import("./core/wishPdf.js?v=20260921-1");
+      const { createWishPdfBlob, wishPdfFilename } = await import("./core/wishPdf.js?v=20260927-2");
       const pdf = await createWishPdfBlob(this.savedWishes, { exportedAt });
       const filename = wishPdfFilename(exportedAt);
       downloadBlob(pdf, "application/pdf", filename);
@@ -1130,7 +1146,7 @@ class THPTApp {
   renderPagination(kind, paging) { const target = document.getElementById(`${kind}-pagination`); if (!target) return; target.innerHTML = paging.pages > 1 ? `<button type="button" data-page-kind="${kind}" data-page="${paging.page - 1}" ${paging.page === 1 ? "disabled" : ""}>← Trước</button><span>Trang ${paging.page} / ${paging.pages}</span><button type="button" data-page-kind="${kind}" data-page="${paging.page + 1}" ${paging.page === paging.pages ? "disabled" : ""}>Sau →</button>` : ""; }
 
   openPrivacyPolicy(trigger) {
-    this.openModal(`<p class="modal-kicker">Quyền riêng tư</p><h2 id="modal-title">Chính sách quyền riêng tư</h2><p class="modal-description">Cập nhật ngày 27/09/2026. Hãy che thông tin định danh không cần thiết trước khi tải ảnh học bạ.</p><div class="privacy-policy"><h3>Ảnh học bạ</h3><p>Trình duyệt tối ưu ảnh trước khi gửi qua kết nối HTTPS tới backend. Backend chuyển ảnh đã tối ưu tới các dịch vụ nhận diện được cấu hình (Gemini hoặc OCR.space), chỉ giữ dữ liệu trong bộ nhớ tạm trong thời gian xử lý và không ghi ảnh hay phản hồi OCR thô vào ổ đĩa hoặc cơ sở dữ liệu của website. Nhà cung cấp nhận diện bên ngoài xử lý dữ liệu theo điều khoản và chính sách của họ.</p><p>Nếu dịch vụ từ xa gặp sự cố, website chỉ tải Tesseract.js và dữ liệu ngôn ngữ khoảng 15 MB sau khi bạn chọn tiếp tục. Lượt nhận diện dự phòng này chạy bằng CPU và RAM của thiết bị.</p><h3>Dữ liệu trên thiết bị</h3><p>Điểm đã nhập, tùy chọn tính điểm và danh sách nguyện vọng được lưu trong <code>localStorage</code> của trình duyệt để khôi phục khi bạn quay lại. Bạn có thể xóa các dữ liệu này bằng nút xóa trong từng khu vực hoặc bằng cài đặt trình duyệt.</p><h3>Báo dữ liệu sai</h3><p>Nội dung báo sai chỉ được gửi khi bạn chủ động bấm “Gửi báo cáo”. Báo cáo hợp lệ được lưu trong hệ thống quản trị Supabase để đối chiếu; ảnh học bạ không được đính kèm vào báo cáo.</p><h3>An toàn truyền tải</h3><p>Bản production dùng HTTPS. Không tải ảnh học bạ qua bản sao website hoặc kết nối không tin cậy.</p></div>`, trigger);
+    this.openModal(`<p class="modal-kicker">Quyền riêng tư</p><h2 id="modal-title">Chính sách quyền riêng tư</h2><p class="modal-description">Cập nhật ngày 27/09/2026. Hãy che thông tin định danh không cần thiết trước khi tải ảnh học bạ.</p><div class="privacy-policy"><h3>Ảnh học bạ</h3><p>Trình duyệt tối ưu ảnh trước khi gửi qua kết nối HTTPS tới backend. Backend chuyển ảnh đã tối ưu tới các dịch vụ nhận diện được cấu hình (Gemini hoặc OCR.space), chỉ giữ dữ liệu trong bộ nhớ tạm trong thời gian xử lý và không ghi ảnh hay phản hồi OCR thô vào ổ đĩa hoặc cơ sở dữ liệu của website. Nhà cung cấp nhận diện bên ngoài xử lý dữ liệu theo điều khoản và chính sách của họ.</p><p>Nếu dịch vụ từ xa gặp sự cố, website chỉ tải Tesseract.js và dữ liệu ngôn ngữ khoảng 15 MB sau khi bạn chọn tiếp tục. Lượt nhận diện dự phòng này chạy bằng CPU và RAM của thiết bị.</p><h3>Dữ liệu trên thiết bị</h3><p>Điểm đã nhập, tùy chọn tính điểm, danh sách nguyện vọng và bảng so sánh được lưu trong <code>localStorage</code> của trình duyệt để khôi phục khi bạn quay lại. Khi bạn mở lại website sau 30 ngày không truy cập, các dữ liệu cá nhân này được tự động xóa. Tùy chọn giao diện được giữ lại. Bạn cũng có thể xóa dữ liệu sớm hơn bằng nút xóa trong từng khu vực hoặc bằng cài đặt trình duyệt.</p><h3>Báo dữ liệu sai</h3><p>Nội dung báo sai chỉ được gửi khi bạn chủ động bấm “Gửi báo cáo”. Báo cáo hợp lệ được lưu trong hệ thống quản trị Supabase để đối chiếu; ảnh học bạ không được đính kèm vào báo cáo.</p><h3>An toàn truyền tải</h3><p>Bản production dùng HTTPS. Không tải ảnh học bạ qua bản sao website hoặc kết nối không tin cậy.</p></div>`, trigger);
   }
   openModal(content, trigger) { this.modalReturnFocus = trigger || document.activeElement; this.elements.modalBody.innerHTML = content; this.elements.modal.classList.remove("is-hidden"); document.body.classList.add("modal-open"); this.elements.modal.querySelector(".modal-close").focus(); }
   closeModal(restoreRoute = true) { this.modalToken = null; this.elements.modal.classList.add("is-hidden"); document.body.classList.remove("modal-open"); this.elements.modalBody.innerHTML = ""; if (restoreRoute && this.modalRouteActive && parseDeepLink()) { const target = this.modalSourceHash || "#universities"; history.replaceState(null, "", target); this.setView(target); } this.modalRouteActive = false; this.modalReturnFocus?.focus?.(); }

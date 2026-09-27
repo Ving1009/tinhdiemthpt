@@ -22,6 +22,7 @@ export const STANDARD_SUBJECTS = [
   { key: "informatics", label: "Tin học" },
   { key: "industrialTechnology", label: "Công nghệ công nghiệp" },
   { key: "agriculturalTechnology", label: "Công nghệ nông nghiệp" },
+  { key: "nationalDefense", label: "Giáo dục quốc phòng và an ninh" },
   { key: "foreignLanguage:english", label: "Tiếng Anh" },
   { key: "foreignLanguage:french", label: "Tiếng Pháp" },
   { key: "foreignLanguage:chinese", label: "Tiếng Trung" },

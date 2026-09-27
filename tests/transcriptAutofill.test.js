@@ -32,3 +32,13 @@ test("nhiều ngoại ngữ được cảnh báo rõ", () => {
   assert.equal(plan.language, "");
   assert.match(plan.warnings.join(" "), /nhiều môn ngoại ngữ/i);
 });
+
+test("Giáo dục quốc phòng và an ninh được điền đúng ô học bạ", () => {
+  const plan = buildTranscriptAutofillPlan({ scores: [{
+    subject: "Giáo dục quốc phòng và an ninh", grade: 12, semester1: 8.8, semester2: 9.2, year: 9.1, confidence: 0.96
+  }] }, { methodId: "six-semesters" });
+  assert.deepEqual(plan.assignments.map((item) => [item.fieldId, item.value]), [
+    ["academic-nationalDefense-grade12s1", 8.8],
+    ["academic-nationalDefense-grade12s2", 9.2]
+  ]);
+});

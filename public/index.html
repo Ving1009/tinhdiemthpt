@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css?v=20260927-1" />
     <link rel="stylesheet" href="css/responsive.css?v=20260927-1" />
-    <link rel="stylesheet" href="css/refinement.css?v=20260921-1" />
+    <link rel="stylesheet" href="css/refinement.css?v=20260927-2" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
@@ -184,7 +184,7 @@
                     <thead><tr><th>Môn</th><th>Lớp</th><th>HK1</th><th>HK2</th><th>Cả năm</th><th><span class="sr-only">Xóa</span></th></tr></thead>
                     <tbody id="transcript-preview-body"></tbody>
                   </table>
-                  <datalist id="transcript-subject-options"><option value="Toán"></option><option value="Ngữ văn"></option><option value="Tiếng Anh"></option><option value="Tiếng Pháp"></option><option value="Tiếng Trung"></option><option value="Tiếng Nhật"></option><option value="Tiếng Nga"></option><option value="Tiếng Đức"></option><option value="Tiếng Hàn"></option><option value="Vật lí"></option><option value="Hóa học"></option><option value="Sinh học"></option><option value="Lịch sử"></option><option value="Địa lí"></option><option value="Tin học"></option><option value="Công nghệ công nghiệp"></option><option value="Công nghệ nông nghiệp"></option><option value="Giáo dục kinh tế và pháp luật"></option></datalist>
+                  <datalist id="transcript-subject-options"><option value="Toán"></option><option value="Ngữ văn"></option><option value="Tiếng Anh"></option><option value="Tiếng Pháp"></option><option value="Tiếng Trung"></option><option value="Tiếng Nhật"></option><option value="Tiếng Nga"></option><option value="Tiếng Đức"></option><option value="Tiếng Hàn"></option><option value="Vật lí"></option><option value="Hóa học"></option><option value="Sinh học"></option><option value="Lịch sử"></option><option value="Địa lí"></option><option value="Tin học"></option><option value="Công nghệ công nghiệp"></option><option value="Công nghệ nông nghiệp"></option><option value="Giáo dục kinh tế và pháp luật"></option><option value="Giáo dục quốc phòng và an ninh"></option></datalist>
                 </div>
                 <p class="transcript-preview-message" id="transcript-preview-message" role="status"></p>
                 <div class="form-actions"><button class="button button-primary" id="transcript-confirm-autofill" type="button">XÁC NHẬN VÀ ĐIỀN ĐIỂM <span aria-hidden="true">→</span></button></div>
@@ -227,7 +227,7 @@
               </div>
               <div class="form-card" id="academic-score-entry">
                 <div class="card-title"><span class="card-number">4</span><div><h3>Bảng điểm học bạ</h3><p>Nhập điểm cho tối thiểu 3 môn. Ô trống sẽ được bỏ qua khi dò tổ hợp.</p></div></div>
-                <p class="table-scroll-hint">Trên điện thoại, vuốt ngang trong bảng để xem các cột điểm.</p>
+                <p class="table-scroll-hint">Trên điện thoại, từng môn được xếp thành thẻ để nhập điểm mà không cần vuốt ngang.</p>
                 <div class="academic-table-wrap">
                   <table class="academic-table">
                     <thead id="academic-head"></thead>
@@ -307,7 +307,7 @@
               <div class="major-result-grid" id="major-result-grid" aria-live="polite"></div>
               <nav class="pagination" id="major-pagination" aria-label="Trang kết quả ngành"></nav>
             </div>
-            <aside class="saved-wishes-panel" id="saved-wishes-panel"><div class="saved-wishes-heading"><div><p class="eyebrow">DANH SÁCH ĐÃ CHỌN</p><h3>Nguyện vọng đã lưu</h3></div><button class="button button-text" id="clear-saved-wishes" type="button">Xóa tất cả</button></div><div id="saved-wishes" aria-live="polite"></div><div class="wish-export-actions"><button class="button button-primary" id="export-wishes-pdf" type="button">Xuất file PDF</button></div><p class="saved-wishes-note" id="wish-export-status" role="status" aria-live="polite">PDF gồm điểm, phương thức và thông tin ngành trong danh sách.</p><section class="comparison-panel" aria-labelledby="comparison-title"><div class="saved-wishes-heading"><div><p class="eyebrow">SO SÁNH 2–4 MỤC</p><h3 id="comparison-title">Bảng so sánh</h3></div><button class="button button-text" id="clear-comparison" type="button">Xóa bảng</button></div><div id="comparison-items" aria-live="polite"></div></section></aside>
+            <aside class="saved-wishes-panel" id="saved-wishes-panel"><div class="saved-wishes-heading"><div><p class="eyebrow">DANH SÁCH ĐÃ CHỌN</p><h3>Nguyện vọng đã lưu</h3></div><button class="button button-text" id="clear-saved-wishes" type="button">Xóa tất cả</button></div><div id="saved-wishes" aria-live="polite"></div><div class="wish-export-actions"><button class="button button-primary" id="export-wishes-pdf" type="button">Xuất file PDF</button></div><p class="saved-wishes-note" id="wish-export-status" role="status" aria-live="polite">PDF ngang chứa tối đa 15 nguyện vọng mỗi trang, gồm điểm, phương thức và thông tin ngành.</p><section class="comparison-panel" aria-labelledby="comparison-title"><div class="saved-wishes-heading"><div><p class="eyebrow">SO SÁNH 2–4 MỤC</p><h3 id="comparison-title">Bảng so sánh</h3></div><button class="button button-text" id="clear-comparison" type="button">Xóa bảng</button></div><div id="comparison-items" aria-live="polite"></div></section></aside>
           </div>
           <p class="finder-disclaimer">Kết quả chỉ dùng để tham khảo. Kết quả tuyển sinh thực tế còn phụ thuộc phương thức, điều kiện và quy định của từng trường.</p>
         </div>
@@ -347,7 +347,7 @@
 
     <footer class="site-footer">
       <div class="container footer-grid"><div><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">Σ</span><span>Tính Điểm <strong>THPT</strong></span></a><p>Công cụ hỗ trợ tham khảo điểm xét tuyển.</p></div><div class="footer-links"><a href="#calculator">Tính điểm</a><a href="#major-finder">Tìm ngành</a><a href="#universities">Hồ sơ trường</a><a href="#privacy-policy" data-privacy-policy>Chính sách quyền riêng tư</a></div><p class="footer-warning">Thông tin và kết quả trên website chỉ mang tính chất tham khảo. Người dùng cần kiểm tra thông tin tuyển sinh chính thức từ nhà trường.</p></div>
-      <div class="container footer-bottom"><span>© 2026 Tính Điểm THPT</span><span>Thiết kế cho học sinh Việt Nam</span></div>
+      <div class="container footer-bottom"><span>© 2026 Tính Điểm THPT</span><span>Dữ liệu đã nhập tự xóa khi quay lại sau 30 ngày không truy cập</span></div>
     </footer>
 
     <div class="modal is-hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -364,6 +364,6 @@
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="js/main.js?v=20260927-1"></script>
+    <script type="module" src="js/main.js?v=20260927-2"></script>
   </body>
 </html>

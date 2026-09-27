@@ -1,7 +1,8 @@
-const CANVAS_WIDTH = 1240;
-const CANVAS_HEIGHT = 1754;
-const PAGE_WIDTH = 595.28;
-const PAGE_HEIGHT = 841.89;
+const CANVAS_WIDTH = 1754;
+const CANVAS_HEIGHT = 1240;
+const PAGE_WIDTH = 841.89;
+const PAGE_HEIGHT = 595.28;
+export const WISHES_PER_PAGE = 15;
 
 function pdfNumber(value, fallback = "Chưa có dữ liệu") {
   if (value === null || value === undefined || value === "") return fallback;
@@ -91,15 +92,6 @@ export function buildRasterPdf(jpegPages, { pixelWidth = CANVAS_WIDTH, pixelHeig
   return joinBytes(chunks, length);
 }
 
-function roundedRect(context, x, y, width, height, radius) {
-  const r = Math.min(radius, width / 2, height / 2);
-  context.beginPath();
-  context.moveTo(x + r, y); context.lineTo(x + width - r, y); context.quadraticCurveTo(x + width, y, x + width, y + r);
-  context.lineTo(x + width, y + height - r); context.quadraticCurveTo(x + width, y + height, x + width - r, y + height);
-  context.lineTo(x + r, y + height); context.quadraticCurveTo(x, y + height, x, y + height - r);
-  context.lineTo(x, y + r); context.quadraticCurveTo(x, y, x + r, y); context.closePath();
-}
-
 function fitCanvasText(context, value, maxWidth, forceEllipsis = false) {
   const text = String(value || "");
   if (!forceEllipsis && context.measureText(text).width <= maxWidth) return text;
@@ -108,72 +100,63 @@ function fitCanvasText(context, value, maxWidth, forceEllipsis = false) {
   return `${fitted.trim()}…`;
 }
 
-function wrappedCanvasLines(context, value, maxWidth, maxLines = 2) {
-  const words = String(value || "").trim().split(/\s+/).filter(Boolean);
-  const lines = [];
-  let line = "";
-  let truncated = false;
-  for (let index = 0; index < words.length; index += 1) {
-    const word = words[index];
-    const candidate = line ? `${line} ${word}` : word;
-    if (!line || context.measureText(candidate).width <= maxWidth) { line = candidate; continue; }
-    lines.push(line); line = word;
-    if (lines.length === maxLines - 1) { truncated = index < words.length - 1; break; }
-  }
-  if (line && lines.length < maxLines) lines.push(line);
-  if (truncated && lines.length) lines[lines.length - 1] = fitCanvasText(context, lines[lines.length - 1], maxWidth, true);
-  return lines.length ? lines : [""];
-}
-
 function drawPage(context, model, pageItems, pageNumber, pageCount) {
   const font = '"Be Vietnam Pro", "Noto Sans", Arial, sans-serif';
   context.fillStyle = "#f8fafc"; context.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-  context.fillStyle = "#3b49df"; context.fillRect(0, 0, CANVAS_WIDTH, 250);
-  context.fillStyle = "#ffffff"; context.font = `700 46px ${font}`; context.fillText(model.title, 84, 96);
-  context.font = `500 25px ${font}`; context.fillText(model.subtitle, 84, 142);
-  context.fillStyle = "#dbe2ff"; context.font = `400 20px ${font}`;
-  context.fillText(`Xuất ngày ${model.exportedAt} · ${model.items.length} nguyện vọng`, 84, 188);
+  context.fillStyle = "#3b49df"; context.fillRect(0, 0, CANVAS_WIDTH, 154);
+  context.fillStyle = "#ffffff"; context.font = `700 38px ${font}`; context.fillText(model.title, 54, 65);
+  context.font = `500 20px ${font}`; context.fillText(model.subtitle, 54, 103);
+  context.fillStyle = "#dbe2ff"; context.font = `400 17px ${font}`;
+  context.fillText(`Xuất ngày ${model.exportedAt} · ${model.items.length} nguyện vọng`, 54, 132);
+
+  const columns = [
+    [54, "STT"], [104, "TRƯỜNG · NGÀNH / CHƯƠNG TRÌNH"], [748, "MÃ NGÀNH · NĂM"],
+    [926, "PHƯƠNG THỨC · TỔ HỢP"], [1240, "ĐIỂM CỦA BẠN · ĐIỂM CHUẨN"], [1505, "TRẠNG THÁI"]
+  ];
+  context.fillStyle = "#e8ecff"; context.fillRect(42, 176, 1670, 42);
+  context.fillStyle = "#334155"; context.font = `700 13px ${font}`;
+  columns.forEach(([x, label]) => context.fillText(label, x, 203));
 
   pageItems.forEach((item, localIndex) => {
-    const top = 292 + localIndex * 410;
-    context.fillStyle = "#ffffff"; roundedRect(context, 72, top, 1096, 394, 24); context.fill();
-    context.strokeStyle = "#e2e8f0"; context.lineWidth = 2; roundedRect(context, 72, top, 1096, 394, 24); context.stroke();
-    context.fillStyle = "#eef2ff"; context.beginPath(); context.arc(124, top + 55, 29, 0, Math.PI * 2); context.fill();
-    context.fillStyle = "#3b49df"; context.font = `700 22px ${font}`; context.textAlign = "center"; context.fillText(String(item.order), 124, top + 63); context.textAlign = "left";
+    const top = 218 + localIndex * 61;
+    context.fillStyle = localIndex % 2 ? "#f8fafc" : "#ffffff";
+    context.fillRect(42, top, 1670, 61);
+    context.strokeStyle = "#e2e8f0"; context.lineWidth = 1;
+    context.beginPath(); context.moveTo(42, top + 61); context.lineTo(1712, top + 61); context.stroke();
 
-    context.fillStyle = "#0f172a"; context.font = `700 29px ${font}`;
-    wrappedCanvasLines(context, item.name, 925, 2).forEach((line, index) => context.fillText(line, 174, top + 48 + index * 38));
-    context.fillStyle = "#475569"; context.font = `500 21px ${font}`;
-    context.fillText(fitCanvasText(context, `${item.university}${item.campus ? ` · ${item.campus}` : ""}`, 925), 174, top + 126);
+    context.fillStyle = "#3b49df"; context.font = `700 17px ${font}`; context.textAlign = "center";
+    context.fillText(String(item.order), 70, top + 37); context.textAlign = "left";
 
-    const cells = [
-      [174, "MÃ NGÀNH", item.code, 210],
-      [410, "PHƯƠNG THỨC", item.method, 330],
-      [770, "TỔ HỢP", item.combination, 175],
-      [970, "NĂM", item.year, 140]
-    ];
-    cells.forEach(([x, label, value, width]) => {
-      context.fillStyle = "#64748b"; context.font = `600 15px ${font}`; context.fillText(label, x, top + 192);
-      context.fillStyle = "#0f172a"; context.font = `600 20px ${font}`; context.fillText(fitCanvasText(context, value, width), x, top + 224);
-    });
+    context.fillStyle = "#0f172a"; context.font = `700 16px ${font}`;
+    context.fillText(fitCanvasText(context, item.name, 620), 104, top + 24);
+    context.fillStyle = "#475569"; context.font = `500 14px ${font}`;
+    context.fillText(fitCanvasText(context, `${item.university}${item.campus ? ` · ${item.campus}` : ""}`, 620), 104, top + 46);
 
-    context.fillStyle = "#f1f5f9"; roundedRect(context, 160, top + 255, 950, 106, 15); context.fill();
-    const scoreCells = [
-      [184, "ĐIỂM CỦA BẠN", item.userScore === "Chưa so sánh được" ? item.userScore : `${item.userScore} / ${item.scale}`, 275, false],
-      [512, "ĐIỂM CHUẨN", item.cutoff === "Chưa có dữ liệu" ? item.cutoff : `${item.cutoff} / ${item.scale}`, 270, false],
-      [820, "TRẠNG THÁI", `${item.cutoffStatus} · ${item.comparison}`, 270, true]
-    ];
-    scoreCells.forEach(([x, label, value, width, wrap]) => {
-      context.fillStyle = "#64748b"; context.font = `600 14px ${font}`; context.fillText(label, x, top + 284);
-      context.fillStyle = "#172554"; context.font = `${wrap ? 600 : 700} ${wrap ? 16 : 19}px ${font}`;
-      if (wrap) wrappedCanvasLines(context, value, width, 3).forEach((line, lineIndex) => context.fillText(line, x, top + 310 + lineIndex * 20));
-      else context.fillText(fitCanvasText(context, value, width), x, top + 316);
-    });
+    context.fillStyle = "#0f172a"; context.font = `700 15px ${font}`;
+    context.fillText(fitCanvasText(context, item.code, 155), 748, top + 24);
+    context.fillStyle = "#64748b"; context.font = `500 13px ${font}`;
+    context.fillText(`Năm ${fitCanvasText(context, item.year, 115)}`, 748, top + 46);
+
+    context.fillStyle = "#0f172a"; context.font = `600 14px ${font}`;
+    context.fillText(fitCanvasText(context, item.method, 286), 926, top + 24);
+    context.fillStyle = "#64748b"; context.font = `500 13px ${font}`;
+    context.fillText(`Tổ hợp: ${fitCanvasText(context, item.combination, 220)}`, 926, top + 46);
+
+    context.fillStyle = "#172554"; context.font = `700 14px ${font}`;
+    const userScore = item.userScore === "Chưa so sánh được" ? item.userScore : `${item.userScore} / ${item.scale}`;
+    const cutoff = item.cutoff === "Chưa có dữ liệu" ? item.cutoff : `${item.cutoff} / ${item.scale}`;
+    context.fillText(fitCanvasText(context, `Bạn: ${userScore}`, 240), 1240, top + 24);
+    context.fillText(fitCanvasText(context, `Chuẩn: ${cutoff}`, 240), 1240, top + 46);
+
+    context.fillStyle = "#334155"; context.font = `600 12px ${font}`;
+    context.fillText(fitCanvasText(context, item.cutoffStatus, 185), 1505, top + 23);
+    context.fillStyle = "#64748b"; context.font = `500 11px ${font}`;
+    context.fillText(fitCanvasText(context, item.comparison, 185), 1505, top + 44);
   });
 
-  context.fillStyle = "#64748b"; context.font = `400 18px ${font}`;
-  context.fillText("Kết quả chỉ để tham khảo. Hãy kiểm tra thông tin tuyển sinh chính thức của từng trường.", 72, 1682);
-  context.textAlign = "right"; context.fillText(`Trang ${pageNumber} / ${pageCount}`, 1168, 1682); context.textAlign = "left";
+  context.fillStyle = "#64748b"; context.font = `400 15px ${font}`;
+  context.fillText("Kết quả chỉ để tham khảo. Hãy kiểm tra thông tin tuyển sinh chính thức của từng trường.", 42, 1189);
+  context.textAlign = "right"; context.fillText(`Trang ${pageNumber} / ${pageCount}`, 1712, 1189); context.textAlign = "left";
 }
 
 async function canvasJpegBytes(canvas) {
@@ -187,13 +170,13 @@ export async function createWishPdfBlob(wishes, { exportedAt = new Date(), docum
   if (!model.items.length) throw new Error("Chưa có nguyện vọng để xuất.");
   try { await documentRef.fonts?.ready; } catch { /* The system font remains a valid Vietnamese fallback. */ }
   const pages = [];
-  const pageCount = Math.ceil(model.items.length / 3);
+  const pageCount = Math.ceil(model.items.length / WISHES_PER_PAGE);
   for (let pageIndex = 0; pageIndex < pageCount; pageIndex += 1) {
     const canvas = documentRef.createElement("canvas");
     canvas.width = CANVAS_WIDTH; canvas.height = CANVAS_HEIGHT;
     const context = canvas.getContext("2d", { alpha: false });
     if (!context) throw new Error("Trình duyệt không hỗ trợ tạo PDF.");
-    drawPage(context, model, model.items.slice(pageIndex * 3, pageIndex * 3 + 3), pageIndex + 1, pageCount);
+    drawPage(context, model, model.items.slice(pageIndex * WISHES_PER_PAGE, pageIndex * WISHES_PER_PAGE + WISHES_PER_PAGE), pageIndex + 1, pageCount);
     pages.push(await canvasJpegBytes(canvas));
     context.clearRect(0, 0, canvas.width, canvas.height); canvas.width = 1; canvas.height = 1;
   }

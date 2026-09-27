@@ -260,7 +260,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .major-result-card { display:flex; min-width:0; flex-direction:column; padding:17px; border:1px solid var(--line); border-radius:12px; background:var(--surface); box-shadow:var(--shadow); }
 .major-result-card h3 { margin:13px 0 5px; font-size:16px; line-height:1.5; }
 .major-result-card>p { margin:0 0 13px; color:var(--muted); font-size:13px; line-height:1.65; overflow-wrap:anywhere; }
-.major-result-school>span { color:var(--primary); font-weight:750; }
+.major-result-school { align-items:flex-start; }
+.major-result-school>span { min-width:0; flex:1; color:var(--text); font-size:12px; font-weight:600; line-height:1.5; overflow-wrap:anywhere; }
+.major-result-school>span>b { color:var(--primary); font-weight:800; }
 .major-result-school small { color:var(--muted); text-align:right; }
 .major-result-cutoff { margin-top:auto; padding:12px 0; border-top:1px solid var(--line); }
 .major-result-cutoff b { color:var(--primary); font-size:18px; }
@@ -511,4 +513,46 @@ body.turnstile-open { overflow:hidden; }
 
 @media(max-width:390px) {
   .auto-subject-row { grid-template-columns: minmax(0,1fr) 78px; }
+}
+
+/* Bảng học bạ trên điện thoại: mỗi môn là một thẻ, không cần cuộn ngang. */
+@media(max-width:560px) {
+  .academic-table-wrap { overflow:visible; border:0; background:transparent; }
+  .academic-table { display:block; width:100%; min-width:0; }
+  .academic-table thead { display:none; }
+  .academic-table tbody { display:grid; gap:12px; }
+  .academic-table tbody tr {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(118px,1fr));
+    gap:10px;
+    padding:13px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:var(--surface);
+    box-shadow:0 4px 16px #1725540a;
+  }
+  .academic-table tbody th,
+  .academic-table tbody th:first-child {
+    position:static;
+    grid-column:1/-1;
+    width:auto;
+    padding:0 0 9px;
+    border:0;
+    border-bottom:1px solid var(--line);
+    background:transparent;
+    color:var(--text);
+    font-size:14px;
+    line-height:1.45;
+    white-space:normal;
+  }
+  .academic-table tbody td { display:grid; gap:5px; padding:0; border:0; }
+  .academic-table tbody td::before {
+    content:attr(data-label);
+    color:var(--muted);
+    font-size:10px;
+    font-weight:750;
+    line-height:1.35;
+    text-transform:uppercase;
+  }
+  .academic-table tbody input { width:100%; min-width:0; }
 }

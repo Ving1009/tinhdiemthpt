@@ -23,7 +23,11 @@ const SUBJECT_FORM_IDS = new Map([
   ["cong nghiep", "industrialTechnology"],
   ["cong nghe nong nghiep", "agriculturalTechnology"],
   ["nong nghiep", "agriculturalTechnology"],
-  ["giao duc kinh te va phap luat", "civicEducation"]
+  ["giao duc kinh te va phap luat", "civicEducation"],
+  ["giao duc quoc phong va an ninh", "nationalDefense"],
+  ["giao duc quoc phong an ninh", "nationalDefense"],
+  ["gdqp an", "nationalDefense"],
+  ["gdqpan", "nationalDefense"]
 ]);
 const LANGUAGE_NAMES = new Map([
   ["tieng anh", "Tiếng Anh"], ["tieng phap", "Tiếng Pháp"], ["tieng trung", "Tiếng Trung"], ["tieng nhat", "Tiếng Nhật"],

@@ -7,8 +7,8 @@ import {
 } from "../public/js/transcriptImageOptimizer.js";
 
 test("ảnh chỉ thu nhỏ theo cạnh dài và không phóng lớn", () => {
-  assert.deepEqual(fitImageDimensions(4032, 3024, 2000), { width: 2000, height: 1500 });
-  assert.deepEqual(fitImageDimensions(900, 1200, 2000), { width: 900, height: 1200 });
+  assert.deepEqual(fitImageDimensions(4032, 3024), { width: 1600, height: 1200 });
+  assert.deepEqual(fitImageDimensions(900, 1200), { width: 900, height: 1200 });
 });
 
 test("optimizer đóng bitmap và thu hồi canvas sau khi tạo JPEG", async () => {
@@ -31,14 +31,14 @@ test("optimizer đóng bitmap và thu hồi canvas sau khi tạo JPEG", async ()
     decoder: async () => ({ source: {}, width: 4000, height: 3000, close: () => { closed += 1; } }),
     canvasFactory: () => canvas
   });
-  assert.equal(result.width, 2000);
-  assert.equal(result.height, 1500);
+  assert.equal(result.width, 1600);
+  assert.equal(result.height, 1200);
   assert.equal(result.uploadName, "hoc-ba.jpg");
   assert.equal(result.blob.type, "image/jpeg");
   assert.equal(closed, 1);
   assert.equal(canvas.width, 1);
   assert.equal(canvas.height, 1);
-  assert.deepEqual(calls.find((call) => call[0] === "toBlob"), ["toBlob", "image/jpeg", 0.86]);
+  assert.deepEqual(calls.find((call) => call[0] === "toBlob"), ["toBlob", "image/jpeg", 0.8]);
 });
 
 test("nhiều ảnh luôn được tối ưu tuần tự", async () => {

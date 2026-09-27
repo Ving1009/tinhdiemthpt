@@ -26,4 +26,8 @@
 }
 @media (max-width: 560px) {
   .university-card { min-height: 126px; }
+  .transcript-scan-actions { align-items: stretch; flex-direction: column; }
+  .transcript-scan-actions .button { width: 100%; }
+  .fallback-dialog { padding: 22px 18px; border-radius: 15px; }
+  .fallback-dialog h2 { font-size: 21px; }
 }

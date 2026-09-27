@@ -6,6 +6,7 @@ const FALLBACK_CODES = new Set([
   "OCR_SPACE_INVALID_RESPONSE", "OCR_SPACE_UNSUPPORTED_IMAGE", "OCR_SPACE_FILE_TOO_LARGE", "OCR_SPACE_CONFIG",
   "SCAN_PROVIDER_UNAVAILABLE"
 ]);
+const QUOTA_CODES = new Set(["AI_QUOTA", "OCR_SPACE_QUOTA"]);
 
 export function shouldUseTranscriptFallback(error) {
   return FALLBACK_CODES.has(error?.code);
@@ -29,7 +30,15 @@ export function createTranscriptScanService(providers = [], { onProviderError = 
         previousError = error;
         const hasNext = index < available.length - 1;
         onProviderError({ provider: provider.name, code: error?.code || "UNKNOWN", statusCode: error?.statusCode || 500, hasNext });
-        if (!hasNext || !shouldUseTranscriptFallback(error)) throw error;
+        if (!hasNext || !shouldUseTranscriptFallback(error)) {
+          if (!hasNext && QUOTA_CODES.has(error?.code)) {
+            throw new AppError("Các dịch vụ nhận diện đang hết hạn mức. Vui lòng nhập điểm thủ công và thử quét lại sau.", {
+              statusCode: 503,
+              code: "SCAN_QUOTA_EXHAUSTED"
+            });
+          }
+          throw error;
+        }
       }
     }
     throw previousError || new AppError("Không thể nhận diện học bạ.", { statusCode: 502, code: "SCAN_FAILED" });

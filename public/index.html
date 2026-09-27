@@ -14,8 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css?v=20260910" />
-    <link rel="stylesheet" href="css/responsive.css?v=20260910" />
+    <link rel="stylesheet" href="css/style.css?v=20260927-1" />
+    <link rel="stylesheet" href="css/responsive.css?v=20260927-1" />
     <link rel="stylesheet" href="css/refinement.css?v=20260921-1" />
   </head>
   <body>
@@ -140,6 +140,7 @@
                 <button class="button button-light is-hidden" id="simulate-score" type="button">Mô phỏng thay đổi điểm</button>
                 <button class="button button-light" id="show-calculation" type="button">Xem cách tính <span aria-hidden="true">↗</span></button>
                 <button class="link-button" id="recalculate" type="button">Tính lại</button>
+                <p class="reference-warning"><strong>⚠️ Lưu ý:</strong> Điểm số và danh sách ngành chỉ mang tính chất mô phỏng tham khảo theo quy chế 2026. Thí sinh bắt buộc phải đối chiếu đề án tuyển sinh chính thức do trường đại học công bố trước khi đăng ký nguyện vọng.</p>
               </div>
             </aside>
           </div>
@@ -157,20 +158,22 @@
             <form id="academic-form" novalidate>
               <div class="form-card">
                 <div class="card-title"><span class="card-number">1</span><div><h3>Quét học bạ</h3><p>Tải ảnh, kiểm tra kết quả rồi xác nhận để điền điểm.</p></div></div>
+                <div class="privacy-callout"><strong>💡 Mẹo bảo mật:</strong> Hệ thống chỉ cần bảng điểm môn học. Bạn nên dùng công cụ sửa ảnh trên điện thoại để che Họ và tên, Ngày sinh, Số CCCD trước khi tải lên.</div>
                 <input class="sr-only" id="transcript-images" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" multiple />
                 <div class="transcript-dropzone" id="transcript-dropzone" role="button" tabindex="0" aria-describedby="transcript-scan-status">
                   <span class="transcript-camera" aria-hidden="true">⌾</span>
                   <strong>Tải ảnh học bạ</strong>
-                  <p>Chọn một hoặc nhiều ảnh có sẵn trên thiết bị. JPG, PNG, WEBP; tối đa 7 MB mỗi ảnh.</p>
+                  <p>Chọn tối đa 6 ảnh có sẵn trên thiết bị. JPG, PNG, WEBP; tối đa 7 MB mỗi ảnh. Ảnh sẽ được tự động tối ưu trước khi gửi.</p>
                   <button class="button button-secondary" id="transcript-choose-images" type="button">Chọn ảnh từ thiết bị</button>
                 </div>
                 <ul class="transcript-file-list" id="transcript-file-list" aria-label="Ảnh học bạ đã chọn"></ul>
+                <label class="transcript-consent" for="transcript-consent"><input id="transcript-consent" type="checkbox" /> <span>Tôi đồng ý gửi ảnh học bạ đã tối ưu tới dịch vụ nhận diện điểm và hiểu rằng website chỉ xử lý ảnh tạm thời, không lưu ảnh vào ổ đĩa hoặc cơ sở dữ liệu.</span></label>
                 <div class="transcript-scan-actions">
                   <button class="button button-primary" id="transcript-scan" type="button" disabled>QUÉT HỌC BẠ <span aria-hidden="true">→</span></button>
                   <button class="button button-text" id="transcript-clear-images" type="button" disabled>Xóa ảnh</button>
                 </div>
                 <p class="transcript-status" id="transcript-scan-status" role="status">Chọn ảnh học bạ để bắt đầu quét.</p>
-                <p class="transcript-privacy">Ảnh chỉ được sử dụng để nhận diện thông tin học bạ.</p>
+                <p class="transcript-privacy">Ảnh chỉ được dùng cho lượt nhận diện hiện tại. <button type="button" data-privacy-policy>Chính sách quyền riêng tư</button></p>
               </div>
 
               <div class="form-card transcript-preview is-hidden" id="transcript-preview">
@@ -222,7 +225,7 @@
                 </div>
                 <p class="score-note is-hidden" id="academic-multiplier-note">Điểm có trọng số dùng thang 40. Điểm ưu tiên chỉ được áp dụng khi có quy tắc quy đổi đã xác minh của trường.</p>
               </div>
-              <div class="form-card">
+              <div class="form-card" id="academic-score-entry">
                 <div class="card-title"><span class="card-number">4</span><div><h3>Bảng điểm học bạ</h3><p>Nhập điểm cho tối thiểu 3 môn. Ô trống sẽ được bỏ qua khi dò tổ hợp.</p></div></div>
                 <p class="table-scroll-hint">Trên điện thoại, vuốt ngang trong bảng để xem các cột điểm.</p>
                 <div class="academic-table-wrap">
@@ -248,6 +251,7 @@
                 <div class="result-details" id="academic-result-details"></div>
                 <div class="academic-result-list" id="academic-result-list"></div>
                 <button class="button button-light" id="show-academic-calculation" type="button">Xem cách tính <span aria-hidden="true">↗</span></button>
+                <p class="reference-warning"><strong>⚠️ Lưu ý:</strong> Điểm số và danh sách ngành chỉ mang tính chất mô phỏng tham khảo theo quy chế 2026. Thí sinh bắt buộc phải đối chiếu đề án tuyển sinh chính thức do trường đại học công bố trước khi đăng ký nguyện vọng.</p>
               </div>
             </aside>
           </div>
@@ -299,6 +303,7 @@
               </details>
               <div class="finder-score-context is-hidden" id="major-score-context" role="status"></div>
               <p class="directory-summary" id="major-result-summary" role="status">Chọn bộ lọc hoặc dùng nút “Tìm ngành” trong kết quả tính điểm.</p>
+              <p class="reference-warning finder-reference-warning"><strong>⚠️ Lưu ý:</strong> Điểm số và danh sách ngành chỉ mang tính chất mô phỏng tham khảo theo quy chế 2026. Thí sinh bắt buộc phải đối chiếu đề án tuyển sinh chính thức do trường đại học công bố trước khi đăng ký nguyện vọng.</p>
               <div class="major-result-grid" id="major-result-grid" aria-live="polite"></div>
               <nav class="pagination" id="major-pagination" aria-label="Trang kết quả ngành"></nav>
             </div>
@@ -341,7 +346,7 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-grid"><div><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">Σ</span><span>Tính Điểm <strong>THPT</strong></span></a><p>Công cụ hỗ trợ tham khảo điểm xét tuyển.</p></div><div class="footer-links"><a href="#calculator">Tính điểm</a><a href="#major-finder">Tìm ngành</a><a href="#universities">Hồ sơ trường</a></div><p class="footer-warning">Thông tin và kết quả trên website chỉ mang tính chất tham khảo. Người dùng cần kiểm tra thông tin tuyển sinh chính thức từ nhà trường.</p></div>
+      <div class="container footer-grid"><div><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">Σ</span><span>Tính Điểm <strong>THPT</strong></span></a><p>Công cụ hỗ trợ tham khảo điểm xét tuyển.</p></div><div class="footer-links"><a href="#calculator">Tính điểm</a><a href="#major-finder">Tìm ngành</a><a href="#universities">Hồ sơ trường</a><a href="#privacy-policy" data-privacy-policy>Chính sách quyền riêng tư</a></div><p class="footer-warning">Thông tin và kết quả trên website chỉ mang tính chất tham khảo. Người dùng cần kiểm tra thông tin tuyển sinh chính thức từ nhà trường.</p></div>
       <div class="container footer-bottom"><span>© 2026 Tính Điểm THPT</span><span>Thiết kế cho học sinh Việt Nam</span></div>
     </footer>
 
@@ -349,7 +354,16 @@
       <div class="modal-backdrop" data-close-modal></div>
       <div class="modal-dialog" role="document"><button class="modal-close" type="button" data-close-modal aria-label="Đóng cửa sổ">×</button><div id="modal-body"></div></div>
     </div>
+    <dialog class="fallback-dialog" id="transcript-fallback-dialog" aria-labelledby="transcript-fallback-title">
+      <p class="modal-kicker">Nhận diện dự phòng</p>
+      <h2 id="transcript-fallback-title">Quét trực tiếp trên thiết bị?</h2>
+      <p>Dịch vụ nhận diện từ xa đang gián đoạn. Chế độ dự phòng sẽ tải Tesseract.js và dữ liệu ngôn ngữ khoảng 15 MB, sau đó dùng CPU và RAM của thiết bị để đọc ảnh.</p>
+      <div class="fallback-dialog-actions">
+        <button class="button button-primary" id="transcript-fallback-continue" type="button">Tiếp tục quét trên thiết bị (~15 MB data)</button>
+        <button class="button button-light" id="transcript-fallback-manual" type="button">Tự nhập điểm bằng tay</button>
+      </div>
+    </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="js/main.js?v=20260921-1"></script>
+    <script type="module" src="js/main.js?v=20260927-1"></script>
   </body>
 </html>

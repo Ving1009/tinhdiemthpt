@@ -21,6 +21,20 @@ npm.cmd run cf:secrets
 
 `cf:deploy` luôn triển khai Worker OCR trước rồi mới triển khai Worker chính. `cf:secrets` đọc `.env`, chỉ gửi nhóm khóa Gemini/OCR.space vào Worker OCR và nhóm Supabase vào Worker chính; script không in giá trị khóa. Không commit `.env`, `.dev.vars`, `.cloudflare/` hoặc `.wrangler/`.
 
+### Checklist tên miền và lớp bảo vệ Cloudflare
+
+Nên chạy production trên Custom Domain thay vì chỉ dùng địa chỉ `workers.dev`. Sau khi zone của tên miền đã hoạt động trên Cloudflare, vào **Workers & Pages → tinhdiemthpt → Settings → Domains & Routes → Add → Custom domain**, thêm tên miền chính và `www` nếu cần. Kiểm tra cả HTTPS, chuyển hướng HTTP sang HTTPS và các API trước khi công bố. Cloudflare cũng [khuyến nghị dùng Custom Domain hoặc Worker Route cho production](https://developers.cloudflare.com/workers/configuration/routing/).
+
+- Vào **DNS → Settings → DNSSEC**, bật DNSSEC và thêm bản ghi DS tại nhà đăng ký nếu Cloudflare không tự làm. Chỉ bật sau khi nameserver mới đã hoạt động; xem [quy trình DNSSEC chính thức](https://developers.cloudflare.com/dns/dnssec/).
+- Vào **SSL/TLS → Edge Certificates**, bật **TLS 1.3**. Giữ Minimum TLS Version ở TLS 1.2 để không loại các thiết bị học sinh cũ vẫn an toàn; TLS 1.3 sẽ được ưu tiên khi trình duyệt hỗ trợ. Xem [cấu hình TLS 1.3](https://developers.cloudflare.com/ssl/edge-certificates/additional-options/tls-13/).
+- Vào **Security → Settings**, lọc `Bot traffic` và bật **Bot Fight Mode**. Sau đó kiểm tra lại giao diện, Turnstile và API vì chế độ này áp dụng cho toàn domain và có thể challenge lưu lượng API; theo dõi **Security → Analytics → Events**. Xem [giới hạn và cách bật Bot Fight Mode](https://developers.cloudflare.com/bots/get-started/bot-fight-mode/).
+- Vào **Security → Security rules → Create rule → Rate limiting rules**, tạo rule cho đường dẫn bắt đầu bằng `/api/universities`, `/api/majors` hoặc bằng `/api/search`. Có thể bắt đầu ở mức 120 request/phút/IP với Managed Challenge, quan sát lưu lượng thật rồi điều chỉnh để không ảnh hưởng người dùng hợp lệ. Không áp rule này cho Static Assets. Xem [hướng dẫn Rate Limiting](https://developers.cloudflare.com/waf/rate-limiting-rules/create-zone-dashboard/).
+- Giữ hai Rate Limiting binding trong `wrangler.jsonc` cho OCR và báo sai. WAF bảo vệ API đọc trên Custom Domain; binding tiếp tục bảo vệ hai thao tác tốn tài nguyên ngay trong Worker.
+
+### Kiểm soát chi phí Gemini
+
+Trong Google Cloud Billing, tạo Budget Alert cho project chứa Gemini với các ngưỡng 50%, 80% và 100%. Budget cảnh báo thông thường chỉ gửi thông báo, không tự dừng chi phí. Nếu tài khoản hiển thị **Spend cap budget** cho Gemini API, tạo cap riêng cho đúng project/dịch vụ và đặt thấp hơn giới hạn tuyệt đối để chừa độ trễ ghi nhận; đây vẫn là tính năng có phạm vi áp dụng giới hạn. Nếu không có Spend Cap, hạ quota request/ngày hoặc request/phút của API và giữ rate limit OCR ở Worker. Tham khảo [Budget Alert](https://docs.cloud.google.com/billing/docs/how-to/budgets), [Spend Cap](https://docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps) và [giới hạn sử dụng API](https://docs.cloud.google.com/apis/docs/capping-api-usage).
+
 Chạy local Cloudflare bằng hai terminal:
 
 ```powershell
@@ -126,19 +140,19 @@ Danh sách này là bản chuẩn bị cá nhân, không phải hồ sơ nguyệ
 
 ## Quét học bạ
 
-Trình duyệt kiểm tra tệp, rồi giải mã và tối ưu lần lượt từng ảnh thành JPEG với cạnh dài tối đa 2.000 px và chất lượng 0,86. Hướng EXIF được áp dụng trước khi vẽ lại ảnh; bitmap và canvas được giải phóng ngay sau mỗi lượt. Giới hạn đầu vào vẫn là 12 ảnh, 7 MB mỗi ảnh và 24 MB tổng.
+Trình duyệt kiểm tra tệp, rồi giải mã và tối ưu lần lượt từng ảnh thành JPEG với cạnh dài tối đa 1.600 px và chất lượng 0,8. Hướng EXIF được áp dụng trước khi vẽ lại ảnh; bitmap và canvas được giải phóng ngay sau mỗi lượt. Mỗi lượt nhận tối đa 6 ảnh, 7 MB cho tệp gốc; tổng payload sau tối ưu tối đa 10 MB và toàn bộ multipart tối đa 11 MB.
 
 Ảnh đã tối ưu được gửi đến backend để thử Gemini rồi OCR.space. Trong từng nhóm dịch vụ từ xa, bộ điều phối xoay vòng khóa khỏe và tạm ngừng khóa gặp quota, lỗi xác thực, timeout hoặc lỗi máy chủ. Khóa Gemini và OCR.space chỉ tồn tại ở backend, không xuất hiện trong HTML hay JavaScript phía trình duyệt.
 
-Nếu các dịch vụ từ xa không dùng được, frontend mới tải động Tesseract.js, core WASM và dữ liệu ngôn ngữ Việt–Anh. Một worker chạy tuần tự toàn bộ ảnh của lượt quét và luôn được `terminate()` sau khi hoàn tất hoặc gặp lỗi. Backend chỉ phục vụ các tệp tĩnh này; backend không import, khởi tạo hay chạy worker Tesseract.
+Nếu các dịch vụ từ xa không dùng được, frontend hỏi người dùng trước khi tải động Tesseract.js, core WASM và dữ liệu ngôn ngữ Việt–Anh khoảng 15 MB. Người dùng có thể tiếp tục quét trên thiết bị hoặc chuyển thẳng tới bảng nhập điểm thủ công. Chỉ sau khi đồng ý, một worker mới chạy tuần tự toàn bộ ảnh và luôn được `terminate()` khi hoàn tất hoặc gặp lỗi. Backend chỉ phục vụ các tệp tĩnh này; backend không import, khởi tạo hay chạy worker Tesseract. Khi toàn bộ nhà cung cấp báo hết quota, giao diện hướng dẫn nhập điểm thủ công thay vì tiếp tục retry.
 
 OCR.space nhận từng ảnh JPEG với `language=vnm`, `isTable=true`, `scale=true` và tự nhận hướng ảnh. `OCR_SPACE_ENGINE` nhận `2` hoặc `3`; `OCR_SPACE_TIMEOUT_MS` giới hạn tổng thời gian OCR.space cho một yêu cầu. Nếu gói OCR.space cho phép tệp lớn hơn, có thể tăng `OCR_SPACE_MAX_IMAGE_BYTES` nhưng không quá giới hạn tải lên 7 MB. Xem giới hạn hiện hành trong [tài liệu OCR.space chính thức](https://ocr.space/ocrapi).
 
-Kết quả từ mọi bộ máy đi qua cùng parser, validator và bước xem trước; chỉ sau khi người dùng xác nhận mới điền bảng điểm. Website không lưu ảnh, raw response hoặc ảnh trong `localStorage`. Bảng mơ hồ không được đoán điểm.
+Kết quả từ mọi bộ máy đi qua cùng parser, validator và bước xem trước; chỉ sau khi người dùng xác nhận mới điền bảng điểm. Người dùng phải đồng ý rõ ràng trước mỗi lượt quét. Backend không ghi ảnh hoặc phản hồi OCR thô vào ổ đĩa, database hay `localStorage`; ảnh chỉ được giữ trong bộ nhớ xử lý của lượt request. Ảnh tối ưu được chuyển tới Gemini hoặc OCR.space nên giao diện công khai rõ nhà cung cấp bên ngoài và khuyên che thông tin định danh trước khi tải. Bảng mơ hồ không được đoán điểm.
 
 Hai môn Công nghệ công nghiệp và Công nghệ nông nghiệp có ánh xạ riêng. Nếu ảnh chỉ ghi “Công nghệ”, bước xem trước bắt buộc người dùng chọn định hướng; hệ thống không chép điểm sang cả hai môn và không ghi đè điểm đã nhập khi còn xung đột.
 
-Các điểm nhập thủ công và nguyện vọng đã lưu chỉ nằm trong `localStorage` của thiết bị. Mỗi khu vực có nút xóa dữ liệu tương ứng. Báo dữ liệu sai chỉ được ghi khi người dùng bấm gửi. Trên Cloudflare, Worker ghi thẳng vào bảng Supabase `data_reports` và chỉ trả thành công sau khi Supabase xác nhận. Khi chạy Express cục bộ, backend vẫn lưu trước vào `.local/pending-data-reports.ndjson` rồi đồng bộ để hỗ trợ biên tập ngoại tuyến. Thư mục `.local/` không được phục vụ tĩnh và không nằm trong bản ZIP chia sẻ.
+Các điểm nhập thủ công và nguyện vọng đã lưu chỉ nằm trong `localStorage` của thiết bị. Mỗi khu vực có nút xóa dữ liệu tương ứng. Báo dữ liệu sai chỉ được ghi khi người dùng bấm gửi; mô tả phải dài 15–1.000 ký tự và bị từ chối nếu là chuỗi lặp hoặc mẫu bàn phím vô nghĩa. Validator chạy lại ở backend trước khi gọi Supabase. Trên Cloudflare, Worker ghi thẳng vào bảng Supabase `data_reports` và chỉ trả thành công sau khi Supabase xác nhận. Khi chạy Express cục bộ, backend vẫn lưu trước vào `.local/pending-data-reports.ndjson` rồi đồng bộ để hỗ trợ biên tập ngoại tuyến. Thư mục `.local/` không được phục vụ tĩnh và không nằm trong bản ZIP chia sẻ.
 
 Tạo bảng cloud bằng cách chạy [supabase/data-reports.sql](supabase/data-reports.sql) trong Supabase SQL Editor. Sau đó đặt `SUPABASE_URL`, `SUPABASE_SECRET_KEY` và `SUPABASE_REPORTS_TABLE` trong `.env`. Secret key chỉ được dùng ở backend; bảng bật RLS, thu hồi quyền của `anon` và `authenticated`, nên trình duyệt không thể đọc danh sách báo cáo.
 

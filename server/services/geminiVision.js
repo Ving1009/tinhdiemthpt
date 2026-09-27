@@ -26,7 +26,7 @@ function parseModelJson(text) {
 function classifyGeminiError(error) {
   if (error instanceof AppError) return error;
   const status = Number(error?.status || error?.statusCode || error?.code);
-  if (status === 429) return new AppError("Dịch vụ AI đang quá tải hoặc đã hết hạn mức. Hãy thử lại sau.", { statusCode: 503, code: "AI_QUOTA" });
+  if (status === 429) return new AppError("Dịch vụ AI đang quá tải hoặc đã hết hạn mức. Vui lòng nhập điểm thủ công thay vì quét lại liên tục.", { statusCode: 503, code: "AI_QUOTA" });
   if (status === 401 || status === 403) return new AppError("Không thể xác thực dịch vụ AI. Hãy kiểm tra cấu hình máy chủ.", { statusCode: 503, code: "AI_AUTH" });
   return new AppError("Không thể đọc ảnh học bạ. Hãy chụp lại rõ hơn, tránh lóa sáng và đảm bảo đủ bảng điểm.", { statusCode: 502, code: "AI_REQUEST_FAILED" });
 }

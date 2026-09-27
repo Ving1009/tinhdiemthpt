@@ -2,9 +2,9 @@ import { escapeHTML } from "./utils.js";
 import { optimizeTranscriptImagesSequentially } from "./transcriptImageOptimizer.js";
 import { turnstileGate } from "./turnstile.js";
 
-const MAX_IMAGES = 12;
+const MAX_IMAGES = 6;
 const MAX_IMAGE_BYTES = 7 * 1024 * 1024;
-const MAX_TOTAL_BYTES = 24 * 1024 * 1024;
+const MAX_UPLOAD_BYTES = 10 * 1024 * 1024;
 const ACCEPTED_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
 
 function fileKey(file) { return `${file.name}-${file.size}-${file.lastModified}`; }
@@ -41,6 +41,9 @@ const NON_FALLBACK_CODES = new Set([
   "LIMIT_FILE_COUNT",
   "LIMIT_FILE_SIZE",
   "RATE_LIMITED",
+  "AI_QUOTA",
+  "OCR_SPACE_QUOTA",
+  "SCAN_QUOTA_EXHAUSTED",
   "TURNSTILE_CANCELLED",
   "TURNSTILE_REQUIRED",
   "TURNSTILE_FAILED",
@@ -58,6 +61,7 @@ const RETRYABLE_TURNSTILE_CODES = new Set([
   "TURNSTILE_FAILED",
   "TURNSTILE_INVALID"
 ]);
+const MANUAL_ENTRY_CODES = new Set(["AI_QUOTA", "OCR_SPACE_QUOTA", "SCAN_QUOTA_EXHAUSTED"]);
 
 export function shouldUseBrowserFallback(error) {
   return error instanceof TypeError || !NON_FALLBACK_CODES.has(error?.code);
@@ -105,7 +109,11 @@ export class TranscriptScanner {
     this.fileList = document.getElementById("transcript-file-list");
     this.scanButton = document.getElementById("transcript-scan");
     this.clearButton = document.getElementById("transcript-clear-images");
+    this.consent = document.getElementById("transcript-consent");
     this.status = document.getElementById("transcript-scan-status");
+    this.fallbackDialog = document.getElementById("transcript-fallback-dialog");
+    this.fallbackContinue = document.getElementById("transcript-fallback-continue");
+    this.fallbackManual = document.getElementById("transcript-fallback-manual");
     this.onScanStart = onScanStart || (() => {});
     this.onScanSuccess = onScanSuccess;
     this.notify = notify || (() => {});
@@ -132,6 +140,7 @@ export class TranscriptScanner {
     });
     this.scanButton.addEventListener("click", () => this.scan());
     this.clearButton.addEventListener("click", () => this.clearFiles());
+    this.consent?.addEventListener("change", () => this.render());
   }
 
   addFiles(list) {
@@ -142,7 +151,6 @@ export class TranscriptScanner {
       if (file.size > MAX_IMAGE_BYTES) { errors.push(`${file.name}: tối đa 7 MB.`); continue; }
       if (next.some((item) => fileKey(item.file) === fileKey(file))) continue;
       if (next.length >= MAX_IMAGES) { errors.push(`Chỉ có thể chọn tối đa ${MAX_IMAGES} ảnh.`); break; }
-      if (next.reduce((sum, item) => sum + item.file.size, file.size) > MAX_TOTAL_BYTES) { errors.push("Tổng dung lượng ảnh tối đa là 24 MB."); break; }
       next.push({ file });
     }
     this.files = next;
@@ -157,6 +165,7 @@ export class TranscriptScanner {
 
   clearFiles() {
     this.files = [];
+    if (this.consent) this.consent.checked = false;
     this.setStatus("Chọn ảnh học bạ để bắt đầu quét.");
     this.render();
   }
@@ -169,13 +178,45 @@ export class TranscriptScanner {
   render() {
     this.fileList.innerHTML = this.files.map((item, index) => `<li class="transcript-file-item"><span class="transcript-file-icon" aria-hidden="true">Ảnh</span><span><b>${escapeHTML(item.file.name)}</b><small>${fileSize(item.file.size)}</small></span><button class="icon-button transcript-remove" type="button" data-transcript-file-index="${index}" aria-label="Xóa ${escapeHTML(item.file.name)}" title="Xóa ảnh">×</button></li>`).join("");
     const hasFiles = this.files.length > 0;
-    this.scanButton.disabled = !hasFiles || this.isScanning;
+    const hasConsent = this.consent?.checked === true;
+    this.scanButton.disabled = !hasFiles || !hasConsent || this.isScanning;
     this.clearButton.disabled = !hasFiles || this.isScanning;
     this.dropzone.classList.toggle("has-files", hasFiles);
   }
 
+  requestBrowserFallbackConsent() {
+    const dialog = this.fallbackDialog;
+    if (!dialog || typeof dialog.showModal !== "function" || !this.fallbackContinue || !this.fallbackManual) {
+      return Promise.resolve(false);
+    }
+    return new Promise((resolve) => {
+      let settled = false;
+      const finish = (continueOnDevice) => {
+        if (settled) return;
+        settled = true;
+        this.fallbackContinue.removeEventListener("click", continueHandler);
+        this.fallbackManual.removeEventListener("click", manualHandler);
+        dialog.removeEventListener("cancel", cancelHandler);
+        if (dialog.open) dialog.close();
+        resolve(continueOnDevice);
+      };
+      const continueHandler = () => finish(true);
+      const manualHandler = () => finish(false);
+      const cancelHandler = (event) => { event.preventDefault(); finish(false); };
+      this.fallbackContinue.addEventListener("click", continueHandler);
+      this.fallbackManual.addEventListener("click", manualHandler);
+      dialog.addEventListener("cancel", cancelHandler);
+      dialog.showModal();
+      this.fallbackContinue.focus();
+    });
+  }
+
+  scrollToManualEntry() {
+    document.getElementById("academic-score-entry")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   async scan() {
-    if (!this.files.length || this.isScanning) return;
+    if (!this.files.length || this.consent?.checked !== true || this.isScanning) return;
     this.isScanning = true;
     this.onScanStart();
     this.render();
@@ -184,12 +225,24 @@ export class TranscriptScanner {
       optimizedImages = await optimizeTranscriptImagesSequentially(this.files.map((item) => item.file), {
         onProgress: (index, total) => this.setStatus(`Đang xử lý ảnh ${index + 1}/${total}...`, "working")
       });
+      if (optimizedImages.reduce((total, image) => total + image.blob.size, 0) > MAX_UPLOAD_BYTES) {
+        throw new RemoteTranscriptScanError("Ảnh sau tối ưu vẫn vượt giới hạn 10 MB. Hãy giảm số ảnh hoặc chụp lại ở độ phân giải thấp hơn.", {
+          code: "IMAGES_TOO_LARGE",
+          statusCode: 413
+        });
+      }
       this.setStatus("Đang nhận diện...", "working");
       let payload;
       try {
         payload = await requestProtectedTranscriptScan(optimizedImages);
       } catch (error) {
         if (!shouldUseBrowserFallback(error)) throw error;
+        const continueOnDevice = await this.requestBrowserFallbackConsent();
+        if (!continueOnDevice) {
+          this.setStatus("Đã chuyển sang bảng nhập điểm thủ công.");
+          this.scrollToManualEntry();
+          return;
+        }
         try {
           const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js");
           payload = await recognizeTranscriptInBrowser(optimizedImages, {
@@ -203,10 +256,12 @@ export class TranscriptScanner {
       this.setStatus("Đang kiểm tra...", "working");
       this.onScanSuccess(payload);
       this.files = [];
+      if (this.consent) this.consent.checked = false;
       this.setStatus("Hoàn tất. Hãy kiểm tra bảng điểm trước khi xác nhận.", "success");
     } catch (error) {
       const message = error?.message || "Không thể nhận diện ảnh. Hãy dùng ảnh rõ hơn hoặc nhập điểm thủ công.";
       this.setStatus(message, "error");
+      if (MANUAL_ENTRY_CODES.has(error?.code)) this.scrollToManualEntry();
     } finally {
       optimizedImages.length = 0;
       this.isScanning = false;

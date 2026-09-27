@@ -4,10 +4,10 @@ import multer from "multer";
 import { AppError } from "../errors.js";
 import { turnstileTokenFromHeaders, verifyTurnstile } from "../services/turnstile.js";
 
-export const MAX_IMAGES = 12;
+export const MAX_IMAGES = 6;
 export const MAX_IMAGE_BYTES = 7 * 1024 * 1024;
-const MAX_TOTAL_BYTES = 24 * 1024 * 1024;
-export const MAX_MULTIPART_BYTES = MAX_TOTAL_BYTES + 1024 * 1024;
+export const MAX_TOTAL_BYTES = 10 * 1024 * 1024;
+export const MAX_MULTIPART_BYTES = 11 * 1024 * 1024;
 const ALLOWED_MIME_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
 
 function isRealImage(file) {
@@ -42,7 +42,7 @@ export function createScanTranscriptRouter({ scanTranscript, environment = proce
   router.post("/scan-transcript", (request, _response, next) => {
     const declaredBytes = Number(request.headers["content-length"] || 0);
     if (Number.isFinite(declaredBytes) && declaredBytes > MAX_MULTIPART_BYTES) {
-      next(new AppError("Tổng dung lượng yêu cầu vượt quá giới hạn 25 MB.", { statusCode: 413, code: "REQUEST_TOO_LARGE" }));
+      next(new AppError("Tổng dung lượng yêu cầu vượt quá giới hạn 11 MB.", { statusCode: 413, code: "REQUEST_TOO_LARGE" }));
       return;
     }
     next();
@@ -63,7 +63,7 @@ export function createScanTranscriptRouter({ scanTranscript, environment = proce
     try {
       const images = request.files || [];
       if (!images.length) throw new AppError("Hãy chọn ít nhất một ảnh học bạ.", { statusCode: 400, code: "MISSING_IMAGES" });
-      if (images.reduce((total, image) => total + image.size, 0) > MAX_TOTAL_BYTES) throw new AppError("Tổng dung lượng ảnh vượt quá giới hạn 24 MB.", { statusCode: 413, code: "IMAGES_TOO_LARGE" });
+      if (images.reduce((total, image) => total + image.size, 0) > MAX_TOTAL_BYTES) throw new AppError("Tổng dung lượng ảnh vượt quá giới hạn 10 MB.", { statusCode: 413, code: "IMAGES_TOO_LARGE" });
       if (!images.every(isRealImage)) throw new AppError("Có ảnh không hợp lệ. Hãy chọn đúng ảnh JPG, PNG hoặc WEBP.", { statusCode: 400, code: "INVALID_IMAGE" });
       const safeImages = images.map((image, index) => ({
         ...image,

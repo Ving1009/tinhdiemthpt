@@ -32,6 +32,10 @@ test("HTML có tìm kiếm mobile, khóa năm 2027 và đã dọn UI cũ", async
   assert.match(html, />Quét học bạ</);
   assert.doesNotMatch(html, /AI \+ OCR|Độ tin cậy|id="certificate"|Quy đổi chứng chỉ theo trường|id="formulas"|Mục 8/i);
   assert.equal((html.match(/id="export-wishes-pdf"/g) || []).length, 1);
+  assert.match(html, /id="transcript-consent"/);
+  assert.match(html, /id="transcript-fallback-dialog"/);
+  assert.match(html, /Chính sách quyền riêng tư/);
+  assert.equal((html.match(/class="reference-warning/g) || []).length, 3);
 });
 
 test("frontend dùng API và không import private dataset", async () => {

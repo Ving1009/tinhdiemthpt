@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { createCloudflareReportStore } from "../server/cloudflareReportStore.js";
-import { handleOcrRequest, MAX_MULTIPART_BYTES } from "../worker/ocrHandler.js";
+import { handleOcrRequest, MAX_IMAGES, MAX_MULTIPART_BYTES, MAX_TOTAL_BYTES } from "../worker/ocrHandler.js";
 import mainWorker from "../worker/index.js";
 
 test("Cloudflare OCR nhận multipart hợp lệ và giữ schema response của frontend", async () => {
@@ -51,6 +51,12 @@ test("Cloudflare OCR chặn request khai báo vượt giới hạn trước khi 
   assert.equal(payload.error.code, "REQUEST_TOO_LARGE");
 });
 
+test("Cloudflare OCR giữ trần an toàn cho bộ nhớ Worker", () => {
+  assert.equal(MAX_IMAGES, 6);
+  assert.equal(MAX_TOTAL_BYTES, 10 * 1024 * 1024);
+  assert.equal(MAX_MULTIPART_BYTES, 11 * 1024 * 1024);
+});
+
 test("Cloudflare report store chỉ xác nhận sau khi Supabase nhận báo cáo", async () => {
   let request;
   const store = createCloudflareReportStore({
@@ -75,6 +81,24 @@ test("Cloudflare report store chỉ xác nhận sau khi Supabase nhận báo cá
   assert.match(result.id, /^[0-9a-f-]{36}$/i);
   assert.equal(request.url, "https://project.supabase.co/rest/v1/data_reports?on_conflict=id");
   assert.equal(JSON.parse(request.options.body)[0].status, "pending_review");
+});
+
+test("Cloudflare report store chặn nội dung rác trước Supabase", async () => {
+  let remoteCalls = 0;
+  const store = createCloudflareReportStore({
+    SUPABASE_URL: "https://project.supabase.co",
+    SUPABASE_SECRET_KEY: "secret-for-test",
+    SUPABASE_REPORTS_TABLE: "data_reports"
+  }, {
+    fetchImpl: async () => { remoteCalls += 1; return { ok: true, status: 201 }; }
+  });
+  await assert.rejects(() => store.submit({
+    kind: "tinh-diem-thpt-data-report",
+    version: 1,
+    context: { universityId: "u1" },
+    report: { field: "Khác", description: "aaaaaaaaaaaaaaaaaaaa" }
+  }), /lặp|vô nghĩa/i);
+  assert.equal(remoteCalls, 0);
 });
 
 test("Worker chỉ công khai site key và trạng thái Turnstile", async () => {

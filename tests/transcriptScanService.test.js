@@ -49,3 +49,11 @@ test("ghi nhận mã lỗi provider mà không đưa ảnh hay khóa API vào lo
   assert.deepEqual(failures, [{ provider: "gemini", code: "AI_QUOTA", statusCode: 503, hasNext: true }]);
   assert.doesNotMatch(JSON.stringify(failures), /private-image|api.?key/i);
 });
+
+test("hướng dẫn nhập tay khi tất cả provider đều hết quota", async () => {
+  const scan = createTranscriptScanService([
+    { name: "gemini", scan: async () => { throw new AppError("quota", { statusCode: 503, code: "AI_QUOTA" }); } },
+    { name: "ocr-space", scan: async () => { throw new AppError("quota", { statusCode: 503, code: "OCR_SPACE_QUOTA" }); } }
+  ]);
+  await assert.rejects(() => scan([]), (error) => error.code === "SCAN_QUOTA_EXHAUSTED" && /nhập điểm thủ công/i.test(error.message));
+});

@@ -2,10 +2,10 @@ import { Buffer } from "node:buffer";
 import { AppError } from "../server/errors.js";
 import { errorResponse, failure, json, optionsResponse } from "./http.js";
 
-export const MAX_IMAGES = 12;
+export const MAX_IMAGES = 6;
 export const MAX_IMAGE_BYTES = 7 * 1024 * 1024;
-export const MAX_TOTAL_BYTES = 24 * 1024 * 1024;
-export const MAX_MULTIPART_BYTES = MAX_TOTAL_BYTES + 1024 * 1024;
+export const MAX_TOTAL_BYTES = 10 * 1024 * 1024;
+export const MAX_MULTIPART_BYTES = 11 * 1024 * 1024;
 const ALLOWED_MIME_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
 
 function hasMagicBytes(buffer, type) {
@@ -21,7 +21,7 @@ export async function handleOcrRequest(request, scanTranscript) {
   try {
     const declaredBytes = Number(request.headers.get("Content-Length") || 0);
     if (Number.isFinite(declaredBytes) && declaredBytes > MAX_MULTIPART_BYTES) {
-      throw new AppError("Tổng dung lượng yêu cầu vượt quá giới hạn 25 MB.", { statusCode: 413, code: "REQUEST_TOO_LARGE" });
+      throw new AppError("Tổng dung lượng yêu cầu vượt quá giới hạn 11 MB.", { statusCode: 413, code: "REQUEST_TOO_LARGE" });
     }
     const form = await request.formData();
     const files = form.getAll("images[]").filter((file) => file && typeof file.arrayBuffer === "function");
@@ -34,7 +34,7 @@ export async function handleOcrRequest(request, scanTranscript) {
       throw new AppError("Mỗi ảnh tối đa 7 MB.", { statusCode: 413, code: "LIMIT_FILE_SIZE" });
     }
     if (files.reduce((total, file) => total + file.size, 0) > MAX_TOTAL_BYTES) {
-      throw new AppError("Tổng dung lượng ảnh vượt quá giới hạn 24 MB.", { statusCode: 413, code: "IMAGES_TOO_LARGE" });
+      throw new AppError("Tổng dung lượng ảnh vượt quá giới hạn 10 MB.", { statusCode: 413, code: "IMAGES_TOO_LARGE" });
     }
     const images = [];
     for (const file of files) {

@@ -65,5 +65,7 @@ test("không che lỗi giới hạn lượt quét bằng OCR chậm trong trình
   assert.equal(shouldUseBrowserFallback({ code: "RATE_LIMITED" }), false);
   assert.equal(shouldUseBrowserFallback({ code: "TURNSTILE_CLIENT_ERROR" }), false);
   assert.equal(shouldUseBrowserFallback({ code: "TURNSTILE_TIMEOUT" }), false);
-  assert.equal(shouldUseBrowserFallback({ code: "AI_QUOTA" }), true);
+  assert.equal(shouldUseBrowserFallback({ code: "AI_QUOTA" }), false);
+  assert.equal(shouldUseBrowserFallback({ code: "SCAN_QUOTA_EXHAUSTED" }), false);
+  assert.equal(shouldUseBrowserFallback({ code: "AI_REQUEST_FAILED" }), true);
 });

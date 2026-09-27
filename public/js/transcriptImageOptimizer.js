@@ -1,5 +1,5 @@
-export const TRANSCRIPT_IMAGE_MAX_DIMENSION = 2000;
-export const TRANSCRIPT_IMAGE_QUALITY = 0.86;
+export const TRANSCRIPT_IMAGE_MAX_DIMENSION = 1600;
+export const TRANSCRIPT_IMAGE_QUALITY = 0.8;
 
 export function fitImageDimensions(width, height, maxDimension = TRANSCRIPT_IMAGE_MAX_DIMENSION) {
   const safeWidth = Math.max(1, Number(width) || 1);

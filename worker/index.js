@@ -3,6 +3,9 @@ import { applyRateLimit, errorResponse, failure, success, withSecurityHeaders } 
 import { handleDataApi } from "./dataApi.js";
 import { publicAuthConfig } from "../lib/publicAuthConfig.js";
 
+const PRIMARY_HOSTNAME = "tinhdiemthpt.id.vn";
+const LEGACY_HOSTNAME = "tinhdiemthpt.tinh-diem-thpt.workers.dev";
+
 async function requireTurnstile(request, environment, action) {
   try {
     await verifyTurnstile({
@@ -21,6 +24,11 @@ async function requireTurnstile(request, environment, action) {
 export default {
   async fetch(request, environment) {
     const url = new URL(request.url);
+    if (url.hostname === LEGACY_HOSTNAME) {
+      url.protocol = "https:";
+      url.hostname = PRIMARY_HOSTNAME;
+      return withSecurityHeaders(request, Response.redirect(url, 308));
+    }
     if (url.protocol === "http:") {
       url.protocol = "https:";
       return withSecurityHeaders(request, Response.redirect(url, 308));

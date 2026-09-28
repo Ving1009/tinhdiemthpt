@@ -115,7 +115,7 @@ test("Worker chỉ công khai site key và trạng thái Turnstile", async () =>
 });
 
 test("Worker gắn security headers cho static asset và CSP không dùng wildcard nguy hiểm", async () => {
-  const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.tinh-diem-thpt.workers.dev/"), {
+  const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.id.vn/"), {
     ASSETS: { async fetch() { return new Response("<!doctype html>", { headers: { "Content-Type": "text/html" } }); } }
   });
   const csp = response.headers.get("content-security-policy") || "";
@@ -131,12 +131,22 @@ test("Worker gắn security headers cho static asset và CSP không dùng wildca
 
 test("Worker chuyển HTTP sang HTTPS trước khi đọc static asset", async () => {
   let assetFetched = false;
-  const response = await mainWorker.fetch(new Request("http://tinhdiemthpt.tinh-diem-thpt.workers.dev/?from=test"), {
+  const response = await mainWorker.fetch(new Request("http://tinhdiemthpt.id.vn/?from=test"), {
     ASSETS: { async fetch() { assetFetched = true; return new Response("unexpected"); } }
   });
   assert.equal(response.status, 308);
-  assert.equal(response.headers.get("location"), "https://tinhdiemthpt.tinh-diem-thpt.workers.dev/?from=test");
+  assert.equal(response.headers.get("location"), "https://tinhdiemthpt.id.vn/?from=test");
   assert.equal(response.headers.get("strict-transport-security"), null);
+  assert.equal(assetFetched, false);
+});
+
+test("Worker chuyển tên miền workers.dev cũ sang tên miền chính", async () => {
+  let assetFetched = false;
+  const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.tinh-diem-thpt.workers.dev/api/security-config?from=legacy"), {
+    ASSETS: { async fetch() { assetFetched = true; return new Response("unexpected"); } }
+  });
+  assert.equal(response.status, 308);
+  assert.equal(response.headers.get("location"), "https://tinhdiemthpt.id.vn/api/security-config?from=legacy");
   assert.equal(assetFetched, false);
 });
 

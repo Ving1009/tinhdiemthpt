@@ -1,4 +1,4 @@
 Contact: https://github.com/Ving1009/tinhdiemthpt/issues/new
 Expires: 2027-09-27T00:00:00Z
 Preferred-Languages: vi, en
-Canonical: https://tinhdiemthpt.tinh-diem-thpt.workers.dev/.well-known/security.txt
+Canonical: https://tinhdiemthpt.id.vn/.well-known/security.txt

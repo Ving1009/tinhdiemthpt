@@ -1,6 +1,7 @@
 # External Security Scans — Tính Điểm THPT
 
-- **Target:** https://tinhdiemthpt.tinh-diem-thpt.workers.dev/
+- **Target lịch sử:** https://tinhdiemthpt.tinh-diem-thpt.workers.dev/
+- **Tên miền production hiện tại:** https://tinhdiemthpt.id.vn/
 - **Ngày chạy:** 2026-09-27
 - **Cloudflare version retest:** `5add3a95-0f49-410d-96f9-e60b85c512df`
 - **Phạm vi:** các bài quét công khai, không đăng nhập, không brute force và không thử khai thác phá hoại.

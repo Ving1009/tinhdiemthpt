@@ -1,7 +1,7 @@
 # Security Audit — Tính Điểm THPT
 
 - **Phạm vi:** repository hiện tại, Express backend cục bộ, Cloudflare Worker chính, OCR Worker, API công khai, frontend và website production.
-- **Production:** https://tinhdiemthpt.tinh-diem-thpt.workers.dev/
+- **Production:** https://tinhdiemthpt.id.vn/
 - **Ngày kiểm tra:** 2026-09-27
 - **Bản production đã retest:** `6ae2825f-0184-4883-b624-d1e5c64fc886`
 - **Nguyên tắc:** kiểm thử có kiểm soát; không flood, DDoS, brute force, khai thác sâu, xóa dữ liệu hoặc tấn công dịch vụ bên thứ ba.

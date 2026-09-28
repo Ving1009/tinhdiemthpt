@@ -12,8 +12,9 @@ test("tên đăng nhập được chuẩn hóa và chỉ nhận ký tự an toà
 });
 
 test("mật khẩu bắt buộc đủ độ dài, chữ và số", () => {
-  assert.equal(validatePassword("Matkhau2026"), "Matkhau2026");
-  for (const invalid of ["short1", "onlyletterslong", "1234567890123"]) {
+  assert.equal(validatePassword("Abcde1"), "Abcde1");
+  assert.equal(validatePassword("Matkhau2026A"), "Matkhau2026A");
+  for (const invalid of ["Abcd1", "Matkhau2026AB", "abcdef", "123456"]) {
     assert.throws(() => validatePassword(invalid), AppError);
   }
 });

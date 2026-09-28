@@ -4,6 +4,8 @@ import { scrypt as scryptCallback, timingSafeEqual } from "node:crypto";
 
 export const AUTH_COOKIE = "__Host-thpt_session";
 export const PASSWORD_COST = 16_384;
+export const PASSWORD_MIN_LENGTH = 6;
+export const PASSWORD_MAX_LENGTH = 12;
 export const SESSION_MAX_AGE_SECONDS = 30 * 24 * 60 * 60;
 const MAX_AUTH_BODY_BYTES = 16 * 1024;
 const MAX_USER_DATA_BYTES = 512 * 1024;
@@ -51,8 +53,8 @@ export function validateUsername(value) {
 
 export function validatePassword(value) {
   const password = String(value || "");
-  if (password.length < 10 || password.length > 72 || !/[A-Za-z]/.test(password) || !/\d/.test(password)) {
-    throw new AppError("Mật khẩu cần 10–72 ký tự và có ít nhất một chữ cùng một số.", { statusCode: 400, code: "INVALID_PASSWORD" });
+  if (password.length < PASSWORD_MIN_LENGTH || password.length > PASSWORD_MAX_LENGTH || !/[A-Za-z]/.test(password) || !/\d/.test(password)) {
+    throw new AppError("Mật khẩu cần 6–12 ký tự và có ít nhất một chữ cùng một số.", { statusCode: 400, code: "INVALID_PASSWORD" });
   }
   return password;
 }

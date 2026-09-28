@@ -1,3 +1,5 @@
+import { OFFICIAL_PRACTICE_EXAMS_2026 } from "./officialPracticeExams2026.js";
+
 const q = (id, prompt, options, answer, explanation) => ({ id, prompt, options, answer, explanation });
 const exam = (id, subject, category, icon, officialMinutes, questions, note = "") => ({
   id,
@@ -16,7 +18,7 @@ export const PRACTICE_EXAM_SOURCE = {
   url: "https://vqa.moet.gov.vn/vi/news/thong-bao/cau-truc-dinh-dang-de-thi-tot-nghiep-thpt-tu-nam-2025-74.html"
 };
 
-export const PRACTICE_EXAMS_2026 = [
+const ORIGINAL_PRACTICE_EXAMS_2026 = [
   exam("math-01", "Toán", "Bắt buộc", "∑", 90, [
     q("m1", "Đạo hàm của hàm số y = x² − 3x + 1 tại x = 2 bằng bao nhiêu?", ["−1", "0", "1", "2"], 2, "y' = 2x − 3. Thay x = 2 được y'(2) = 1."),
     q("m2", "Tổng hai nghiệm của phương trình x² − 5x + 6 = 0 là", ["−5", "5", "6", "−6"], 1, "Theo hệ thức Viète, tổng hai nghiệm bằng −b/a = 5."),
@@ -167,5 +169,12 @@ export const PRACTICE_EXAMS_2026 = [
     q("ko5", "Trong “저는 학생입니다”, “학생” nghĩa là", ["Giáo viên", "Học sinh", "Bác sĩ", "Bạn bè"], 1, "학생 (haksaeng) nghĩa là học sinh/sinh viên.")
   ])
 ];
+
+const officialExamBySubject = new Map(OFFICIAL_PRACTICE_EXAMS_2026.map((item) => [item.subject, item]));
+
+// Dùng đề người dùng cung cấp cho 17 môn; Ngữ văn tạm giữ đề luyện do chưa có tệp nguồn.
+export const PRACTICE_EXAMS_2026 = ORIGINAL_PRACTICE_EXAMS_2026.map(
+  (item) => officialExamBySubject.get(item.subject) || item
+);
 
 export const PRACTICE_CATEGORIES = ["Tất cả", "Bắt buộc", "Tự chọn", "Ngoại ngữ"];

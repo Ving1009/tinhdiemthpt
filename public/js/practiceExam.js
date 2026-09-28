@@ -1,5 +1,12 @@
 import { PRACTICE_CATEGORIES, PRACTICE_EXAMS_2026 } from "./data/practiceExams2026.js";
-import { createPracticeAttempt, formatExamTime, gradePracticeExam, normalizePracticeHistory, remainingExamSeconds } from "./core/practiceExam.js";
+import {
+  createPracticeAttempt,
+  formatExamTime,
+  gradePracticeExam,
+  isPracticeQuestionAnswered,
+  normalizePracticeHistory,
+  remainingExamSeconds
+} from "./core/practiceExam.js";
 import { escapeHTML, storage } from "./utils.js";
 
 export const PRACTICE_ACTIVE_KEY = "thpt-practice-active-v1";
@@ -19,6 +26,15 @@ function scoreTone(score) {
   return "needs-work";
 }
 
+function answerLabel(value) {
+  return value === true ? "Đúng" : value === false ? "Sai" : "Chưa chọn";
+}
+
+function renderPageGallery(images, label, className) {
+  if (!Array.isArray(images) || !images.length) return "";
+  return `<div class="${className}">${images.map((src, index) => `<a href="${escapeHTML(src)}" target="_blank" rel="noopener" aria-label="Mở ${escapeHTML(label.toLocaleLowerCase("vi"))} trang ${index + 1}"><img src="${escapeHTML(src)}" alt="${escapeHTML(label)} trang ${index + 1}" ${index ? 'loading="lazy"' : 'fetchpriority="high"'}></a>`).join("")}</div>`;
+}
+
 export class PracticeExamApp {
   constructor(root = document.getElementById("practice-exam-app")) {
     this.root = root;
@@ -35,14 +51,7 @@ export class PracticeExamApp {
     if (!this.root) return;
     this.root.addEventListener("click", (event) => this.handleClick(event));
     this.root.addEventListener("change", (event) => this.handleChange(event));
-    this.root.addEventListener("input", (event) => {
-      if (!event.target.matches("[data-practice-search]")) return;
-      this.query = event.target.value.trim().toLocaleLowerCase("vi");
-      this.renderDashboard();
-      const search = this.root.querySelector("[data-practice-search]");
-      search?.focus();
-      search?.setSelectionRange(search.value.length, search.value.length);
-    });
+    this.root.addEventListener("input", (event) => this.handleInput(event));
     if (this.active && this.examById(this.active.examId)) {
       if (remainingExamSeconds(this.active) <= 0) this.finishAttempt(true);
       else this.renderExam();
@@ -55,6 +64,13 @@ export class PracticeExamApp {
 
   examById(id) {
     return PRACTICE_EXAMS_2026.find((item) => item.id === id);
+  }
+
+  questionsForAttempt(exam, attempt = this.active) {
+    const questions = Array.isArray(exam?.questions) ? exam.questions : [];
+    if (!exam?.answerBranches?.length) return questions;
+    const branch = exam.answerBranches.includes(attempt?.branch) ? attempt.branch : exam.answerBranches[0];
+    return questions.filter((question) => !question.branch || question.branch === branch);
   }
 
   filteredExams() {
@@ -71,13 +87,15 @@ export class PracticeExamApp {
     this.history.forEach((item) => {
       if (!completedByExam.has(item.examId)) completedByExam.set(item.examId, item);
     });
-    const cards = this.filteredExams().map((item) => {
+    const filteredExams = this.filteredExams();
+    const cards = filteredExams.map((item) => {
       const latest = completedByExam.get(item.id);
+      const official = item.sourceKind === "official-paper";
       return `<article class="practice-subject-card">
-        <div class="practice-card-top"><span class="practice-icon" aria-hidden="true">${escapeHTML(item.icon)}</span><span class="practice-category">${escapeHTML(item.category)}</span></div>
+        <div class="practice-card-top"><span class="practice-icon" aria-hidden="true">${escapeHTML(item.icon)}</span><span class="practice-category ${official ? "is-official" : ""}">${official ? "Đề chính thức" : "Đề luyện"}</span></div>
         <h3>${escapeHTML(item.subject)}</h3>
-        <p>${escapeHTML(item.title)} · ${item.questions.length} câu</p>
-        <dl><div><dt>Thời gian luyện</dt><dd>${item.durationMinutes} phút</dd></div><div><dt>Thi chính thức</dt><dd>${item.officialMinutes} phút</dd></div></dl>
+        <p>${escapeHTML(item.title)} · ${item.questionCount || item.questions.length} câu phải làm</p>
+        <dl><div><dt>Thời gian</dt><dd>${item.durationMinutes} phút</dd></div><div><dt>Tài liệu</dt><dd>${item.solutionImages?.length ? `Lời giải ${item.solutionImages.length} trang` : item.answerImages?.length ? "Có đáp án nguồn" : item.answerSource ? "Có đáp án đối chiếu" : official ? "Có đáp án chấm" : "Có lời giải"}</dd></div></dl>
         ${latest ? `<div class="practice-latest">Lần gần nhất <strong>${Number(latest.result?.score || 0).toFixed(2)}</strong>/10</div>` : ""}
         <button class="button button-primary" type="button" data-start-exam="${escapeHTML(item.id)}">${latest ? "Thi lại" : "Bắt đầu"}</button>
       </article>`;
@@ -103,11 +121,28 @@ export class PracticeExamApp {
       </div>
       <div class="practice-directory">
         <div>
-          <p class="practice-count">${cards ? `${this.filteredExams().length} đề luyện tập` : "Không tìm thấy môn phù hợp."}</p>
+          <p class="practice-count">${cards ? `${filteredExams.length} đề thi và đề luyện tập` : "Không tìm thấy môn phù hợp."}</p>
           <div class="practice-subject-grid">${cards}</div>
         </div>
         <aside class="practice-history"><div class="practice-history-heading"><div><span>Kết quả trên thiết bị</span><h3>Lịch sử thi thử</h3></div><b>${this.history.length}</b></div>${history || '<p class="practice-empty">Kết quả sau khi nộp bài sẽ xuất hiện tại đây.</p>'}</aside>
       </div>`;
+  }
+
+  handleInput(event) {
+    const shortAnswer = event.target.closest("[data-practice-short]");
+    if (shortAnswer && this.active) {
+      this.active.answers[shortAnswer.dataset.practiceShort] = shortAnswer.value;
+      this.submitArmed = false;
+      this.persistActive();
+      this.updateExamProgress();
+      return;
+    }
+    if (!event.target.matches("[data-practice-search]")) return;
+    this.query = event.target.value.trim().toLocaleLowerCase("vi");
+    this.renderDashboard();
+    const search = this.root.querySelector("[data-practice-search]");
+    search?.focus();
+    search?.setSelectionRange(search.value.length, search.value.length);
   }
 
   handleClick(event) {
@@ -127,6 +162,13 @@ export class PracticeExamApp {
     }
     const nav = event.target.closest("[data-question-nav]");
     if (nav) return document.getElementById(`practice-question-${nav.dataset.questionNav}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    const branch = event.target.closest("[data-practice-branch]");
+    if (branch && this.active) {
+      this.active.branch = branch.dataset.practiceBranch;
+      this.submitArmed = false;
+      this.persistActive();
+      return this.renderExam();
+    }
     const flag = event.target.closest("[data-flag-question]");
     if (flag) return this.toggleFlag(flag.dataset.flagQuestion);
     if (event.target.closest("[data-submit-exam]")) return this.requestSubmit();
@@ -139,8 +181,23 @@ export class PracticeExamApp {
   }
 
   handleChange(event) {
+    if (!this.active) return;
+    const trueFalse = event.target.closest("[data-practice-tf]");
+    if (trueFalse) {
+      const questionId = trueFalse.dataset.practiceTf;
+      const statementIndex = Number(trueFalse.dataset.statementIndex);
+      const current = Array.isArray(this.active.answers[questionId])
+        ? [...this.active.answers[questionId]]
+        : [null, null, null, null];
+      current[statementIndex] = trueFalse.value === "true";
+      this.active.answers[questionId] = current;
+      this.submitArmed = false;
+      this.persistActive();
+      this.updateExamProgress();
+      return;
+    }
     const answer = event.target.closest("[data-practice-answer]");
-    if (!answer || !this.active) return;
+    if (!answer) return;
     this.active.answers[answer.dataset.practiceAnswer] = Number(answer.value);
     this.submitArmed = false;
     this.persistActive();
@@ -165,30 +222,51 @@ export class PracticeExamApp {
     this.root.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  renderQuestion(question, index, answers, flagged) {
+    const value = answers[question.id];
+    let fields = "";
+    if (question.type === "true-false") {
+      const selected = Array.isArray(value) ? value : [];
+      fields = `<div class="practice-tf-list">${question.statements.map((statement, statementIndex) => `<div class="practice-tf-row"><b>Ý ${escapeHTML(statement)}</b><div><label><input type="radio" name="${escapeHTML(question.id)}-${statementIndex}" value="true" data-practice-tf="${escapeHTML(question.id)}" data-statement-index="${statementIndex}" ${selected[statementIndex] === true ? "checked" : ""}><span>Đúng</span></label><label><input type="radio" name="${escapeHTML(question.id)}-${statementIndex}" value="false" data-practice-tf="${escapeHTML(question.id)}" data-statement-index="${statementIndex}" ${selected[statementIndex] === false ? "checked" : ""}><span>Sai</span></label></div></div>`).join("")}</div>`;
+    } else if (question.type === "short") {
+      fields = `<label class="practice-short"><span>Nhập đáp án</span><input type="text" inputmode="decimal" autocomplete="off" value="${escapeHTML(String(value ?? ""))}" data-practice-short="${escapeHTML(question.id)}" placeholder="Ví dụ: 7,35"></label>`;
+    } else {
+      const compact = question.options.every((option) => /^[A-D]$/.test(option));
+      fields = `<div class="practice-options ${compact ? "is-answer-sheet" : ""}">${question.options.map((option, optionIndex) => `<label><input type="radio" name="${escapeHTML(question.id)}" value="${optionIndex}" data-practice-answer="${escapeHTML(question.id)}" ${value === optionIndex ? "checked" : ""}><span><b>${String.fromCharCode(65 + optionIndex)}</b>${compact ? "" : escapeHTML(option)}</span></label>`).join("")}</div>`;
+    }
+    return `<fieldset class="practice-question type-${escapeHTML(question.type || "single")}" id="practice-question-${index + 1}">
+      <legend><span>${escapeHTML(question.section || `Câu ${index + 1}`)}</span> ${escapeHTML(question.prompt)}</legend>
+      ${fields}
+      <button class="practice-flag ${flagged.has(question.id) ? "is-active" : ""}" type="button" data-flag-question="${escapeHTML(question.id)}" aria-pressed="${flagged.has(question.id)}">⚑ ${flagged.has(question.id) ? "Đã đánh dấu" : "Xem lại sau"}</button>
+    </fieldset>`;
+  }
+
   renderExam() {
     const selectedExam = this.examById(this.active?.examId);
     if (!selectedExam) return this.renderDashboard();
+    const questions = this.questionsForAttempt(selectedExam);
     const answers = this.active.answers || {};
     const flagged = new Set(this.active.flagged || []);
+    const branchPicker = selectedExam.answerBranches?.length ? `<div class="practice-branch-picker"><span>Chọn định hướng Tin học</span><div>${selectedExam.answerBranches.map((branch) => `<button type="button" data-practice-branch="${escapeHTML(branch)}" class="${this.active.branch === branch ? "is-active" : ""}" aria-pressed="${this.active.branch === branch}">${escapeHTML(branch)}</button>`).join("")}</div></div>` : "";
+    const paperOpen = typeof window !== "undefined" && window.matchMedia("(min-width: 821px)").matches ? " open" : "";
+    const sourcePages = selectedExam.pageImages?.length ? `<details class="practice-paper"${paperOpen}><summary><span><b>Đề thi gốc · Mã ${escapeHTML(selectedExam.examCode)}</b><small>Chạm vào trang đề để phóng to</small></span><strong>${selectedExam.pageImages.length} trang</strong></summary>${renderPageGallery(selectedExam.pageImages, `Đề ${selectedExam.subject}`, "practice-paper-pages")}</details>` : "";
     this.root.innerHTML = `
       <div class="practice-exam-shell">
         <header class="practice-exam-header">
-          <div><p class="eyebrow">PHÒNG THI 2026 · ĐỀ LUYỆN NHANH</p><h3>${escapeHTML(selectedExam.subject)}</h3><p>${escapeHTML(selectedExam.title)} · ${selectedExam.questions.length} câu · thang 10</p></div>
+          <div><p class="eyebrow">PHÒNG THI 2026 · ${selectedExam.sourceKind === "official-paper" ? "ĐỀ CHÍNH THỨC" : "ĐỀ LUYỆN"}</p><h3>${escapeHTML(selectedExam.subject)}</h3><p>${escapeHTML(selectedExam.title)} · ${questions.length} câu phải làm · thang 10</p></div>
           <div class="practice-timer-wrap"><span>Thời gian còn lại</span><strong id="practice-timer" aria-live="polite">${formatExamTime(remainingExamSeconds(this.active))}</strong></div>
         </header>
-        <div class="practice-progress"><span id="practice-progress-label">Đã làm 0/${selectedExam.questions.length}</span><div><i id="practice-progress-bar"></i></div></div>
+        <div class="practice-progress"><span id="practice-progress-label">Đã làm 0/${questions.length}</span><div><i id="practice-progress-bar"></i></div></div>
         ${selectedExam.note ? `<p class="practice-exam-note">${escapeHTML(selectedExam.note)}</p>` : ""}
+        ${branchPicker}
+        ${sourcePages}
         <div class="practice-exam-layout">
-          <form class="practice-question-list" id="practice-question-form">
-            ${selectedExam.questions.map((question, index) => `<fieldset class="practice-question" id="practice-question-${index + 1}">
-              <legend><span>Câu ${index + 1}</span> ${escapeHTML(question.prompt)}</legend>
-              <div class="practice-options">${question.options.map((option, optionIndex) => `<label><input type="radio" name="${escapeHTML(question.id)}" value="${optionIndex}" data-practice-answer="${escapeHTML(question.id)}" ${answers[question.id] === optionIndex ? "checked" : ""}><span><b>${String.fromCharCode(65 + optionIndex)}</b>${escapeHTML(option)}</span></label>`).join("")}</div>
-              <button class="practice-flag ${flagged.has(question.id) ? "is-active" : ""}" type="button" data-flag-question="${escapeHTML(question.id)}" aria-pressed="${flagged.has(question.id)}">⚑ ${flagged.has(question.id) ? "Đã đánh dấu" : "Xem lại sau"}</button>
-            </fieldset>`).join("")}
+          <form class="practice-question-list ${selectedExam.pageImages?.length ? "is-answer-sheet" : ""}" id="practice-question-form">
+            ${questions.map((question, index) => this.renderQuestion(question, index, answers, flagged)).join("")}
           </form>
           <aside class="practice-question-nav">
             <h4>Phiếu trả lời</h4>
-            <div class="practice-nav-grid">${selectedExam.questions.map((question, index) => `<button type="button" data-question-nav="${index + 1}" data-question-id="${escapeHTML(question.id)}" class="${answers[question.id] !== undefined ? "is-answered" : ""} ${flagged.has(question.id) ? "is-flagged" : ""}">${index + 1}</button>`).join("")}</div>
+            <div class="practice-nav-grid">${questions.map((question, index) => `<button type="button" data-question-nav="${index + 1}" data-question-id="${escapeHTML(question.id)}" class="${isPracticeQuestionAnswered(question, answers[question.id]) ? "is-answered" : ""} ${flagged.has(question.id) ? "is-flagged" : ""}">${index + 1}</button>`).join("")}</div>
             <p id="practice-submit-note">Bài được lưu tự động trên thiết bị.</p>
             <button class="button button-primary" type="button" data-submit-exam>Nộp bài</button>
             <button class="button button-text" type="button" data-exit-exam>Thoát và làm tiếp sau</button>
@@ -202,14 +280,16 @@ export class PracticeExamApp {
   updateExamProgress() {
     const selectedExam = this.examById(this.active?.examId);
     if (!selectedExam) return;
-    const answered = selectedExam.questions.filter((question) => this.active.answers?.[question.id] !== undefined).length;
-    const percent = selectedExam.questions.length ? (answered / selectedExam.questions.length) * 100 : 0;
+    const questions = this.questionsForAttempt(selectedExam);
+    const answered = questions.filter((question) => isPracticeQuestionAnswered(question, this.active.answers?.[question.id])).length;
+    const percent = questions.length ? (answered / questions.length) * 100 : 0;
     const label = this.root.querySelector("#practice-progress-label");
     const bar = this.root.querySelector("#practice-progress-bar");
-    if (label) label.textContent = `Đã làm ${answered}/${selectedExam.questions.length}`;
+    if (label) label.textContent = `Đã làm ${answered}/${questions.length}`;
     if (bar) bar.style.width = `${percent}%`;
     this.root.querySelectorAll("[data-question-id]").forEach((button) => {
-      button.classList.toggle("is-answered", this.active.answers?.[button.dataset.questionId] !== undefined);
+      const question = questions.find((item) => item.id === button.dataset.questionId);
+      button.classList.toggle("is-answered", isPracticeQuestionAnswered(question, this.active.answers?.[button.dataset.questionId]));
       button.classList.toggle("is-flagged", this.active.flagged?.includes(button.dataset.questionId));
     });
   }
@@ -229,7 +309,8 @@ export class PracticeExamApp {
   requestSubmit() {
     const selectedExam = this.examById(this.active?.examId);
     if (!selectedExam) return;
-    const unanswered = selectedExam.questions.filter((question) => this.active.answers?.[question.id] === undefined).length;
+    const questions = this.questionsForAttempt(selectedExam);
+    const unanswered = questions.filter((question) => !isPracticeQuestionAnswered(question, this.active.answers?.[question.id])).length;
     const note = this.root.querySelector("#practice-submit-note");
     if (unanswered > 0 && !this.submitArmed) {
       this.submitArmed = true;
@@ -243,12 +324,8 @@ export class PracticeExamApp {
     const selectedExam = this.examById(this.active?.examId);
     if (!selectedExam) return this.renderDashboard();
     const submittedAt = Date.now();
-    const completed = {
-      ...this.active,
-      submittedAt,
-      autoSubmitted,
-      result: gradePracticeExam(selectedExam, this.active.answers || {})
-    };
+    const gradingExam = { ...selectedExam, questions: this.questionsForAttempt(selectedExam) };
+    const completed = { ...this.active, submittedAt, autoSubmitted, result: gradePracticeExam(gradingExam, this.active.answers || {}) };
     this.history = normalizePracticeHistory([completed, ...this.history]);
     storage.set(PRACTICE_HISTORY_KEY, this.history);
     storage.remove(PRACTICE_ACTIVE_KEY);
@@ -256,27 +333,44 @@ export class PracticeExamApp {
     this.renderResult(completed);
   }
 
+  renderReview(question, index, detail) {
+    if (question.type === "true-false") {
+      return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section)} · Câu ${question.number}</span>${detail.correctItems}/4 ý đúng · ${Number(detail.points).toFixed(2)}/${Number(detail.maximumPoints).toFixed(2)} điểm</h4><div class="practice-review-options">${question.statements.map((statement, statementIndex) => {
+        const selected = detail.selected?.[statementIndex];
+        const expected = question.answer[statementIndex];
+        return `<p class="${selected === expected ? "is-answer" : "is-selected-wrong"}"><b>${escapeHTML(statement)}</b>Bạn chọn: ${answerLabel(selected)}<strong>Đáp án: ${answerLabel(expected)}</strong></p>`;
+      }).join("")}</div></article>`;
+    }
+    if (question.type === "short") {
+      return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section)} · Câu ${question.number}</span>${detail.correct ? "Chính xác" : "Chưa chính xác"} · ${Number(detail.points).toFixed(2)}/${Number(detail.maximumPoints).toFixed(2)} điểm</h4><div class="practice-review-options"><p class="${detail.correct ? "is-answer" : "is-selected-wrong"}"><b>✎</b>Bạn nhập: ${escapeHTML(detail.selected || "Bỏ trống")}<strong>Đáp án: ${escapeHTML(question.answerText)}</strong></p></div></article>`;
+    }
+    return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section || `Câu ${index + 1}`)}</span>${escapeHTML(question.prompt)}</h4><div class="practice-review-options">${question.options.map((option, optionIndex) => {
+      const classes = [optionIndex === question.answer ? "is-answer" : "", optionIndex === detail.selected && optionIndex !== question.answer ? "is-selected-wrong" : ""].filter(Boolean).join(" ");
+      return `<p class="${classes}"><b>${String.fromCharCode(65 + optionIndex)}</b>${question.options.every((item) => /^[A-D]$/.test(item)) ? "" : escapeHTML(option)}${optionIndex === question.answer ? "<strong>Đáp án đúng</strong>" : optionIndex === detail.selected ? "<strong>Bạn chọn</strong>" : ""}</p>`;
+    }).join("")}</div>${question.explanation ? `<div class="practice-explanation"><b>Lời giải</b><p>${escapeHTML(question.explanation)}</p></div>` : ""}</article>`;
+  }
+
   renderResult(attempt) {
     this.stopTimer();
     const selectedExam = this.examById(attempt?.examId);
     if (!selectedExam || !attempt?.result) return this.renderDashboard();
     const result = attempt.result;
+    const questions = this.questionsForAttempt(selectedExam, attempt);
     const detailById = new Map(result.details.map((item) => [item.questionId, item]));
+    const sourcePages = selectedExam.pageImages?.length ? `<details class="practice-solutions"><summary>Đề thi gốc (${selectedExam.pageImages.length} trang)</summary>${renderPageGallery(selectedExam.pageImages, `Đề ${selectedExam.subject}`, "practice-paper-pages")}</details>` : "";
+    const answers = selectedExam.answerImages?.length ? `<details class="practice-solutions" open><summary>Đáp án trong tài liệu nguồn (${selectedExam.answerImages.length} trang)</summary>${renderPageGallery(selectedExam.answerImages, `Đáp án ${selectedExam.subject}`, "practice-solution-pages")}</details>` : "";
+    const answerSource = selectedExam.answerSource ? `<p class="practice-answer-source">Đáp án được đối chiếu tại <a href="${escapeHTML(selectedExam.answerSource)}" target="_blank" rel="noopener">trang đáp án ↗</a>.</p>` : "";
+    const solutions = selectedExam.solutionImages?.length ? `<details class="practice-solutions" open><summary>Lời giải chi tiết trong tài liệu (${selectedExam.solutionImages.length} trang)</summary>${renderPageGallery(selectedExam.solutionImages, `Lời giải ${selectedExam.subject}`, "practice-solution-pages")}</details>` : (!answers && !answerSource ? `<p class="practice-no-solution">Tệp nguồn chưa có lời giải chi tiết; hệ thống chỉ hiển thị đáp án chấm bài.</p>` : "");
     this.root.innerHTML = `
       <div class="practice-result">
         <header class="practice-result-hero ${scoreTone(result.score)}">
           <div><p class="eyebrow">KẾT QUẢ · ${escapeHTML(selectedExam.subject)}</p><h3>${result.score.toFixed(2)}<span>/10</span></h3><p>${attempt.autoSubmitted ? "Hết giờ, hệ thống đã tự nộp bài." : "Bài đã được chấm và lưu trên thiết bị."}</p></div>
-          <dl><div><dt>Đúng</dt><dd>${result.correctCount}/${result.totalQuestions}</dd></div><div><dt>Đã trả lời</dt><dd>${result.answeredCount}</dd></div><div><dt>Bỏ trống</dt><dd>${result.unansweredCount}</dd></div></dl>
+          <dl><div><dt>Trọn điểm</dt><dd>${result.correctCount}/${result.totalQuestions}</dd></div><div><dt>Đã trả lời</dt><dd>${result.answeredCount}</dd></div><div><dt>Bỏ trống</dt><dd>${result.unansweredCount}</dd></div></dl>
         </header>
         <div class="practice-result-actions"><button class="button button-primary" type="button" data-retry-exam="${escapeHTML(selectedExam.id)}">Làm lại đề</button><button class="button button-secondary" type="button" data-back-practice>Về danh sách môn</button></div>
-        <div class="practice-review-heading"><div><p class="eyebrow">XEM LẠI BÀI LÀM</p><h3>Đáp án và lời giải chi tiết</h3></div><span>Đỏ: đã chọn sai · Xanh: đáp án đúng</span></div>
-        <div class="practice-review-list">${selectedExam.questions.map((question, index) => {
-          const detail = detailById.get(question.id);
-          return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>Câu ${index + 1}</span>${escapeHTML(question.prompt)}</h4><div class="practice-review-options">${question.options.map((option, optionIndex) => {
-            const classes = [optionIndex === question.answer ? "is-answer" : "", optionIndex === detail.selected && optionIndex !== question.answer ? "is-selected-wrong" : ""].filter(Boolean).join(" ");
-            return `<p class="${classes}"><b>${String.fromCharCode(65 + optionIndex)}</b>${escapeHTML(option)}${optionIndex === question.answer ? "<strong>Đáp án đúng</strong>" : optionIndex === detail.selected ? "<strong>Bạn chọn</strong>" : ""}</p>`;
-          }).join("")}</div><div class="practice-explanation"><b>Lời giải</b><p>${escapeHTML(question.explanation)}</p></div></article>`;
-        }).join("")}</div>
+        ${solutions}${answers}${answerSource}${sourcePages}
+        <div class="practice-review-heading"><div><p class="eyebrow">XEM LẠI BÀI LÀM</p><h3>Đáp án và điểm từng câu</h3></div><span>Đỏ: trả lời sai · Xanh: trả lời đúng</span></div>
+        <div class="practice-review-list">${questions.map((question, index) => this.renderReview(question, index, detailById.get(question.id))).join("")}</div>
       </div>`;
     this.root.scrollIntoView({ behavior: "smooth", block: "start" });
   }

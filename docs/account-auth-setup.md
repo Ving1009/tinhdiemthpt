@@ -7,7 +7,7 @@ npx wrangler d1 migrations apply tinhdiemthpt-auth --remote
 npm run cf:deploy
 ```
 
-Luồng đăng ký bắt buộc Turnstile action `account_register`. Mật khẩu được băm bằng PBKDF2-SHA256 với salt ngẫu nhiên và 210.000 vòng; phiên đăng nhập là token ngẫu nhiên chỉ lưu ở cookie `Secure`, `HttpOnly`, `SameSite=Lax`. Database chỉ giữ SHA-256 của token phiên.
+Luồng đăng ký bắt buộc Turnstile action `account_register`. Mật khẩu được băm bằng scrypt với salt ngẫu nhiên riêng và tham số N=16.384, r=8, p=1; phiên đăng nhập là token ngẫu nhiên chỉ lưu ở cookie `Secure`, `HttpOnly`, `SameSite=Lax`. Database chỉ giữ SHA-256 của token phiên.
 
 API tài khoản:
 

@@ -18,7 +18,7 @@ test("mật khẩu bắt buộc đủ độ dài, chữ và số", () => {
   }
 });
 
-test("PBKDF2 dùng salt riêng và xác minh mật khẩu không lưu bản rõ", async () => {
+test("scrypt dùng salt riêng và xác minh mật khẩu không lưu bản rõ", async () => {
   const first = await hashPassword("Matkhau2026");
   const second = await hashPassword("Matkhau2026");
   assert.notEqual(first.salt, second.salt);

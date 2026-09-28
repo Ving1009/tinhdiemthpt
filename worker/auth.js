@@ -1,15 +1,16 @@
 import { AppError } from "../server/errors.js";
 import { failure, success } from "./http.js";
+import { scrypt as scryptCallback, timingSafeEqual } from "node:crypto";
 
 export const AUTH_COOKIE = "__Host-thpt_session";
-export const PASSWORD_ITERATIONS = 210_000;
+export const PASSWORD_COST = 16_384;
 export const SESSION_MAX_AGE_SECONDS = 30 * 24 * 60 * 60;
 const MAX_AUTH_BODY_BYTES = 16 * 1024;
 const MAX_USER_DATA_BYTES = 512 * 1024;
 const DUMMY_PASSWORD_RECORD = {
   password_salt: "AAAAAAAAAAAAAAAAAAAAAA==",
   password_hash: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
-  password_iterations: PASSWORD_ITERATIONS
+  password_iterations: PASSWORD_COST
 };
 const encoder = new TextEncoder();
 
@@ -56,20 +57,25 @@ export function validatePassword(value) {
   return password;
 }
 
-export async function hashPassword(password, salt = crypto.getRandomValues(new Uint8Array(16)), iterations = PASSWORD_ITERATIONS) {
-  const key = await crypto.subtle.importKey("raw", encoder.encode(password), "PBKDF2", false, ["deriveBits"]);
-  const derived = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt, iterations }, key, 256);
-  return { salt: bytesToBase64(salt), hash: bytesToBase64(new Uint8Array(derived)), iterations };
+function derivePassword(password, salt, cost) {
+  return new Promise((resolve, reject) => {
+    scryptCallback(password, salt, 32, { N: cost, r: 8, p: 1, maxmem: 32 * 1024 * 1024 }, (error, derived) => {
+      if (error) reject(error);
+      else resolve(new Uint8Array(derived));
+    });
+  });
+}
+
+export async function hashPassword(password, salt = crypto.getRandomValues(new Uint8Array(16)), iterations = PASSWORD_COST) {
+  const derived = await derivePassword(password, salt, iterations);
+  return { salt: bytesToBase64(salt), hash: bytesToBase64(derived), iterations };
 }
 
 export async function verifyPassword(password, stored) {
   const actual = await hashPassword(password, base64ToBytes(stored.password_salt), Number(stored.password_iterations));
   const expectedBytes = base64ToBytes(stored.password_hash);
   const actualBytes = base64ToBytes(actual.hash);
-  if (expectedBytes.length !== actualBytes.length) return false;
-  let difference = 0;
-  for (let index = 0; index < expectedBytes.length; index += 1) difference |= expectedBytes[index] ^ actualBytes[index];
-  return difference === 0;
+  return expectedBytes.length === actualBytes.length && timingSafeEqual(expectedBytes, actualBytes);
 }
 
 export function cookieValue(cookieHeader, name = AUTH_COOKIE) {

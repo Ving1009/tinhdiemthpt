@@ -12,7 +12,7 @@ Không phát hiện lỗ hổng Critical hoặc High đã được xác nhận. 
 
 | # | Hạng mục | Trước khi kiểm tra | Hành động | Kết quả |
 | --- | --- | --- | --- | --- |
-| 1 | Password hashing | Website dùng tài khoản tên đăng nhập và mật khẩu. | PASS | Mật khẩu được băm PBKDF2-SHA256 với salt ngẫu nhiên riêng và 210.000 vòng; không lưu bản rõ. |
+| 1 | Password hashing | Website dùng tài khoản tên đăng nhập và mật khẩu. | PASS | Mật khẩu được băm bằng scrypt với salt ngẫu nhiên riêng và tham số N=16.384, r=8, p=1; không lưu bản rõ. |
 | 2 | Login rate limit | Endpoint đăng nhập và đăng ký có thể bị dò tự động. | PASS | Cloudflare Rate Limiting giới hạn chung 5 lần/phút/IP; đăng ký còn bắt buộc Turnstile. |
 | 3 | Session expiration | Tài khoản cần phiên đăng nhập phía máy chủ. | PASS | Token ngẫu nhiên hết hạn sau 30 ngày; D1 chỉ lưu SHA-256 của token và trình duyệt chỉ nhận cookie Secure, HttpOnly, SameSite=Lax. |
 | 4 | Debug log | Log lỗi provider đã che khóa; lỗi Worker chưa biết trước đó có thể ghi nguyên đối tượng lỗi. | FIXED | Log production chỉ giữ `event`, tên lỗi và mã lỗi đã giới hạn độ dài; không ghi ảnh, học bạ, token, khóa hoặc stack. Log chẩn đoán Tesseract phía trình duyệt chỉ chạy ở localhost. |

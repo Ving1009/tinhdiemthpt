@@ -1,4 +1,5 @@
 import { OFFICIAL_QUESTION_CONTENT_2026 } from "./officialQuestionContent2026.js";
+import { formatOfficialExamText } from "../core/unicodeMath.js";
 
 const LETTERS = ["A", "B", "C", "D"];
 
@@ -82,10 +83,10 @@ function officialExam({
     }
     if (!sourceQuestion) throw new Error(`Thiếu câu ${question.type} ${question.number} của ${id}`);
     question.number = sourceQuestion.number;
-    question.context = sourceQuestion.context || "";
-    question.prompt = sourceQuestion.prompt;
-    if (question.type === "single") question.options = sourceQuestion.options;
-    if (question.type === "true-false") question.statements = sourceQuestion.statements;
+    question.context = formatOfficialExamText(slug, sourceQuestion.context || "");
+    question.prompt = formatOfficialExamText(slug, sourceQuestion.prompt);
+    if (question.type === "single") question.options = sourceQuestion.options.map((option) => formatOfficialExamText(slug, option));
+    if (question.type === "true-false") question.statements = sourceQuestion.statements.map((statement) => formatOfficialExamText(slug, statement));
   }
   const baseQuestions = questions.filter((question) => !question.branch);
   const scoreSets = branchEntries.length

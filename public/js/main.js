@@ -6,7 +6,7 @@ import { calculateAcademicCombinations } from "./core/academicCalculator.js";
 import { STANDARD_SUBJECTS, combinationSubjectKeys, isStandardCombination, subjectLabelForKey } from "./core/subjectMatching.js";
 import { calculateAutomaticCombinations, calculateCombination, validateSubjectEntries } from "./core/thptCombinations.js";
 import { createDataReport } from "./core/dataReport.js";
-import { refreshPersonalDataRetention } from "./core/personalDataRetention.js";
+import { markGuestSessionLeft, refreshPersonalDataRetention } from "./core/personalDataRetention.js";
 import { simulateScoreChange } from "./core/scoreSimulation.js";
 import { createFinderScoreContext, createScoreProfile, finderContextIsFresh, formatFinderScoreContext } from "./core/scoreState.js";
 import { moveWishById, normalizeWish, normalizeWishList, removeWishById, wishIdentity } from "./core/wishList.js";
@@ -15,6 +15,7 @@ import { TranscriptPreview } from "./transcriptPreview.js";
 import { TranscriptScanner } from "./transcriptScanner.js";
 import { turnstileGate } from "./turnstile.js";
 import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js";
+import { AccountApp, captureOAuthCallback, hasStoredAuthSession } from "./account.js";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
 const THEME_STORAGE_KEY = "thpt-calculator-theme-v1";
@@ -102,7 +103,8 @@ function loadPersonalList(currentKey, legacyKeys, maxItems, backupKey = WISH_MIG
 class THPTApp {
   constructor() {
     this.repository = new UniversityRepository();
-    this.personalDataRetention = refreshPersonalDataRetention(storage, PERSONAL_DATA_STORAGE_KEYS);
+    this.account = new AccountApp({ personalKeys: PERSONAL_DATA_STORAGE_KEYS });
+    this.personalDataRetention = refreshPersonalDataRetention(storage, PERSONAL_DATA_STORAGE_KEYS, Date.now(), { authenticated: hasStoredAuthSession() });
     this.practiceExam = new PracticeExamApp();
     this.state = storage.get(FORM_STORAGE_KEY, {});
     this.thptMode = this.state.thptMode === "manual" ? "manual" : "auto";
@@ -136,6 +138,7 @@ class THPTApp {
   async init() {
     this.applyTheme(storage.get(THEME_STORAGE_KEY, "light"));
     this.bindGlobalEvents();
+    await this.account.init();
     this.practiceExam.init();
     this.setView(location.hash);
     this.setupTranscriptTools();
@@ -156,7 +159,7 @@ class THPTApp {
       this.renderUniversities();
       await this.restoreAdmissionSelections();
       await this.openDeepLinkFromHash();
-      if (this.personalDataRetention.expired) this.showToast("Đã xóa dữ liệu cá nhân cũ sau 30 ngày không truy cập.");
+      if (this.personalDataRetention.expired) this.showToast("Đã xóa phiên khách cũ sau 15 phút rời website.");
     } catch (error) {
       this.elements.universityGrid.innerHTML = '<p class="empty-state error-state">Không thể tải dữ liệu. <button class="button button-text" type="button" data-retry-load>Thử lại</button></p>';
       this.showToast(error.message);
@@ -171,6 +174,13 @@ class THPTApp {
     $$(".site-nav a").forEach((link) => link.addEventListener("click", () => this.closeMenu()));
     $("#mobile-search-toggle").addEventListener("click", () => this.toggleMobileSearch());
     window.addEventListener("scroll", () => $("#site-header").classList.toggle("scrolled", window.scrollY > 4), { passive: true });
+    const markGuestLeft = () => markGuestSessionLeft(storage, Date.now(), this.account.isAuthenticated() || hasStoredAuthSession());
+    window.addEventListener("pagehide", markGuestLeft);
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") return markGuestLeft();
+      const retention = refreshPersonalDataRetention(storage, PERSONAL_DATA_STORAGE_KEYS, Date.now(), { authenticated: this.account.isAuthenticated() || hasStoredAuthSession() });
+      if (retention.expired) location.reload();
+    });
 
     document.addEventListener("error", (event) => {
       if (!(event.target instanceof HTMLImageElement) || !event.target.classList.contains("school-logo")) return;
@@ -558,7 +568,7 @@ class THPTApp {
     this.elements.academicResultLabel.textContent = result.weighted ? "ĐIỂM HỌC BẠ CÓ TRỌNG SỐ" : "KẾT QUẢ HỌC BẠ";
     this.elements.academicResultContext.textContent = `${view.method} · ${first.combination.code} · ${first.combination.subjectText}`;
     this.elements.academicResultTotal.textContent = formatScore(result.total); this.elements.academicResultMax.textContent = `/ ${result.maxScore}`;
-    this.elements.academicResultDetails.innerHTML = result.priorityApplied ? `<div class="result-row"><span>Điểm học bạ</span><b>${formatScore(result.examScore)}</b></div><div class="result-row"><span>Điểm ưu tiên</span><b>+ ${formatScore(result.priority.adjusted)}</b></div>` : `<div class="result-row"><span>Điểm có trọng số</span><b>${formatScore(result.examScore)} / ${result.maxScore}</b></div><div class="result-row"><span>Điểm ưu tiên</span><b>Chưa áp dụng</b></div><p class="result-warning">Cách quy đổi điểm ưu tiên phụ thuộc quy định của trường.</p>`;
+    this.elements.academicResultDetails.innerHTML = `<div class="result-row"><span>${result.maxScore === 30 ? "Điểm học bạ" : "Điểm có trọng số"}</span><b>${formatScore(result.examScore)} / ${result.maxScore}</b></div><div class="result-row"><span>Điểm ưu tiên${result.maxScore === 30 ? "" : " quy đổi"}</span><b>+ ${formatScore(result.priority.adjusted)}</b></div>`;
     this.elements.academicResultList.innerHTML = `<h3>Tổ hợp phù hợp</h3>${view.results.slice(0, 8).map(({ combination, result: itemResult }, index) => `<button class="academic-result-item" type="button" data-academic-result-index="${index}"><span><b>${escapeHTML(combination.code)}</b><small>${escapeHTML(combination.subjectText)}</small></span><strong>${formatScore(itemResult.total)} / ${itemResult.maxScore}</strong></button>`).join("")}`;
     if (shouldScroll && window.matchMedia("(max-width: 820px)").matches) requestAnimationFrame(() => this.elements.academicResultContent.closest(".academic-result-panel")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
@@ -1151,12 +1161,12 @@ class THPTApp {
   renderPagination(kind, paging) { const target = document.getElementById(`${kind}-pagination`); if (!target) return; target.innerHTML = paging.pages > 1 ? `<button type="button" data-page-kind="${kind}" data-page="${paging.page - 1}" ${paging.page === 1 ? "disabled" : ""}>← Trước</button><span>Trang ${paging.page} / ${paging.pages}</span><button type="button" data-page-kind="${kind}" data-page="${paging.page + 1}" ${paging.page === paging.pages ? "disabled" : ""}>Sau →</button>` : ""; }
 
   openPrivacyPolicy(trigger) {
-    this.openModal(`<p class="modal-kicker">Quyền riêng tư</p><h2 id="modal-title">Chính sách quyền riêng tư</h2><p class="modal-description">Cập nhật ngày 27/09/2026. Hãy che thông tin định danh không cần thiết trước khi tải ảnh học bạ.</p><div class="privacy-policy"><h3>Ảnh học bạ</h3><p>Trình duyệt tối ưu ảnh trước khi gửi qua kết nối HTTPS tới backend. Backend chuyển ảnh đã tối ưu tới các dịch vụ nhận diện được cấu hình (Gemini hoặc OCR.space), chỉ giữ dữ liệu trong bộ nhớ tạm trong thời gian xử lý và không ghi ảnh hay phản hồi OCR thô vào ổ đĩa hoặc cơ sở dữ liệu của website. Nhà cung cấp nhận diện bên ngoài xử lý dữ liệu theo điều khoản và chính sách của họ.</p><p>Nếu dịch vụ từ xa gặp sự cố, website chỉ tải Tesseract.js và dữ liệu ngôn ngữ khoảng 15 MB sau khi bạn chọn tiếp tục. Lượt nhận diện dự phòng này chạy bằng CPU và RAM của thiết bị.</p><h3>Dữ liệu trên thiết bị</h3><p>Điểm đã nhập, tùy chọn tính điểm, danh sách nguyện vọng, bảng so sánh, bài thi thử đang làm và lịch sử thi thử được lưu trong <code>localStorage</code> của trình duyệt để khôi phục khi bạn quay lại. Khi bạn mở lại website sau 30 ngày không truy cập, các dữ liệu cá nhân này được tự động xóa. Tùy chọn giao diện được giữ lại. Bạn cũng có thể xóa dữ liệu sớm hơn bằng nút xóa trong từng khu vực hoặc bằng cài đặt trình duyệt.</p><h3>Báo dữ liệu sai</h3><p>Nội dung báo sai chỉ được gửi khi bạn chủ động bấm “Gửi báo cáo”. Báo cáo hợp lệ được lưu trong hệ thống quản trị Supabase để đối chiếu; ảnh học bạ không được đính kèm vào báo cáo.</p><h3>An toàn truyền tải</h3><p>Bản production dùng HTTPS. Không tải ảnh học bạ qua bản sao website hoặc kết nối không tin cậy.</p></div>`, trigger);
+    this.openModal(`<p class="modal-kicker">Quyền riêng tư</p><h2 id="modal-title">Chính sách quyền riêng tư</h2><p class="modal-description">Cập nhật ngày 28/09/2026. Hãy che thông tin định danh không cần thiết trước khi tải ảnh học bạ.</p><div class="privacy-policy"><h3>Ảnh học bạ</h3><p>Trình duyệt tối ưu ảnh trước khi gửi qua kết nối HTTPS tới backend. Backend chuyển ảnh đã tối ưu tới các dịch vụ nhận diện được cấu hình (Gemini hoặc OCR.space), chỉ giữ dữ liệu trong bộ nhớ tạm trong thời gian xử lý và không ghi ảnh hay phản hồi OCR thô vào ổ đĩa hoặc cơ sở dữ liệu của website. Nhà cung cấp nhận diện bên ngoài xử lý dữ liệu theo điều khoản và chính sách của họ.</p><p>Nếu dịch vụ từ xa gặp sự cố, website chỉ tải Tesseract.js và dữ liệu ngôn ngữ khoảng 15 MB sau khi bạn chọn tiếp tục. Lượt nhận diện dự phòng này chạy bằng CPU và RAM của thiết bị.</p><h3>Phiên khách</h3><p>Người chưa đăng nhập vẫn dùng đầy đủ công cụ. Điểm, nguyện vọng, bảng so sánh và bài thi thử được lưu cục bộ trong lúc sử dụng; khi quay lại sau ít nhất 15 phút rời website, phiên cũ tự xóa. Tùy chọn giao diện được giữ lại.</p><h3>Tài khoản</h3><p>Khi bạn chủ động đăng nhập Google, Supabase Authentication quản lý phiên đăng nhập. Website có thể sao lưu dữ liệu công cụ vào vùng dữ liệu chỉ tài khoản đó được phép đọc và ghi. Bạn có thể đăng xuất bất cứ lúc nào.</p><h3>Báo dữ liệu sai</h3><p>Nội dung báo sai chỉ được gửi khi bạn chủ động bấm “Gửi báo cáo”. Báo cáo hợp lệ được lưu trong hệ thống quản trị Supabase để đối chiếu; ảnh học bạ không được đính kèm vào báo cáo.</p><h3>An toàn truyền tải</h3><p>Bản production dùng HTTPS. Không tải ảnh học bạ qua bản sao website hoặc kết nối không tin cậy.</p></div>`, trigger);
   }
   openModal(content, trigger) { this.modalReturnFocus = trigger || document.activeElement; this.elements.modalBody.innerHTML = content; this.elements.modal.classList.remove("is-hidden"); document.body.classList.add("modal-open"); this.elements.modal.querySelector(".modal-close").focus(); }
   closeModal(restoreRoute = true) { this.modalToken = null; this.elements.modal.classList.add("is-hidden"); document.body.classList.remove("modal-open"); this.elements.modalBody.innerHTML = ""; if (restoreRoute && this.modalRouteActive && parseDeepLink()) { const target = this.modalSourceHash || "#universities"; history.replaceState(null, "", target); this.setView(target); } this.modalRouteActive = false; this.modalReturnFocus?.focus?.(); }
   openCalculationModal() { const result = this.lastResult; if (!result) return; const rows = result.breakdown.map((item) => `<li><span>${escapeHTML(item.label)}</span><b>${formatScore(item.value)}</b></li>`).join(""); this.openModal(`<p class="modal-kicker">Giải thích kết quả</p><h2 id="modal-title">${escapeHTML(this.lastTrigger?.context || "Điểm xét tuyển")}</h2><ul class="explanation-list">${rows}<li><span>Điểm tổ hợp</span><b>${formatScore(result.examScore)}</b></li><li><span>Điểm ưu tiên</span><b>+ ${formatScore(result.priority.adjusted)}</b></li><li><span>Tổng điểm xét tuyển</span><b>${formatScore(result.total)} / ${result.maxScore}</b></li></ul>`, $("#show-calculation")); }
-  openAcademicCalculationModal() { const result = this.lastAcademicResult; if (!result) return; const rows = result.breakdown.map((item) => `<li><span>${escapeHTML(item.label)}</span><b>${formatScore(item.value)}${item.weight === 2 ? " × 2" : ""}</b></li>`).join(""); const priority = result.priorityApplied ? `<li><span>Điểm ưu tiên</span><b>+ ${formatScore(result.priority.adjusted)}</b></li>` : '<li><span>Điểm ưu tiên</span><b>Chưa áp dụng do thang 40</b></li>'; this.openModal(`<p class="modal-kicker">Giải thích học bạ</p><h2 id="modal-title">Điểm học bạ</h2><ul class="explanation-list">${rows}<li><span>Điểm có trọng số</span><b>${formatScore(result.examScore)} / ${result.maxScore}</b></li>${priority}</ul>`, $("#show-academic-calculation")); }
+  openAcademicCalculationModal() { const result = this.lastAcademicResult; if (!result) return; const rows = result.breakdown.map((item) => `<li><span>${escapeHTML(item.label)}</span><b>${formatScore(item.value)}${item.weight === 2 ? " × 2" : ""}</b></li>`).join(""); const conversion = result.maxScore === 30 ? "" : `<li><span>Điểm quy về thang 30</span><b>${formatScore(result.priority.normalizedScore)} / 30</b></li>`; const priority = `<li><span>Điểm ưu tiên quy đổi</span><b>+ ${formatScore(result.priority.adjusted)}</b></li>`; this.openModal(`<p class="modal-kicker">Giải thích học bạ</p><h2 id="modal-title">Điểm học bạ</h2><ul class="explanation-list">${rows}<li><span>Điểm có trọng số</span><b>${formatScore(result.examScore)} / ${result.maxScore}</b></li>${conversion}${priority}</ul>`, $("#show-academic-calculation")); }
   openScoreSimulation() {
     if (!this.lastThptInput?.automatic) return;
     const options = this.lastThptInput.entries.map((item) => `<option value="${escapeHTML(item.subjectKey)}">${escapeHTML(subjectLabelForKey(item.subjectKey))} · ${formatScore(item.score)}</option>`).join("");
@@ -1187,5 +1197,6 @@ class THPTApp {
   showToast(message) { this.elements.toast.textContent = message; this.elements.toast.classList.add("show"); clearTimeout(this.toastTimer); this.toastTimer = setTimeout(() => this.elements.toast.classList.remove("show"), 3200); }
 }
 
+captureOAuthCallback();
 const app = new THPTApp();
 app.init();

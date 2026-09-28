@@ -20,7 +20,7 @@ test("tắt hệ số giữ hành vi thang 30", () => {
   assert.equal(d01.priorityApplied, true);
 });
 
-test("bật hệ số 2 nhân đúng môn, giữ raw scale 40 và chưa cộng ưu tiên thang 30", () => {
+test("bật hệ số 2 nhân đúng môn và quy đổi ưu tiên tương đương sang thang 40", () => {
   const result = calculateAcademicCombinations({
     combinations, scores, methodId: "grade-12", languageLabel: "Tiếng Anh",
     priorityContext: { area: "KV1", priorityGroup: "UT1" }, multiplierEnabled: true, multiplierSubject: "foreignLanguage:english"
@@ -30,10 +30,11 @@ test("bật hệ số 2 nhân đúng môn, giữ raw scale 40 và chưa cộng �
   const d01 = result.results[0].result;
   assert.equal(d01.rawScore, 33);
   assert.equal(d01.examScore, 33);
-  assert.equal(d01.total, 33);
+  assert.equal(d01.total, 35.57);
   assert.equal(d01.maxScore, 40);
-  assert.equal(d01.priority.adjusted, 0);
-  assert.equal(d01.priorityApplied, false);
+  assert.equal(d01.priority.normalizedScore, 24.75);
+  assert.equal(d01.priority.adjusted, 2.57);
+  assert.equal(d01.priorityApplied, true);
   assert.equal(d01.breakdown.find((item) => item.label.includes("Tiếng Anh")).weight, 2);
   assert.equal(d01.breakdown.find((item) => item.label.includes("Toán")).weight, 1);
 });
@@ -69,7 +70,7 @@ test("fixture quy tắc trường đã xác minh chuẩn hóa /40 về /30 trư�
   assert.equal(result.total, 25.28);
 });
 
-test("normalization chưa xác minh không được áp dụng", () => {
+test("normalization chưa xác minh giữ thang 40 và vẫn quy đổi ưu tiên tương đương", () => {
   const result = Calculator.calculate({
     formula: "hocba-example", method: "grade-12",
     academicScores: { math: scores.math, literature: scores.literature, foreignLanguage: scores.foreignLanguage },
@@ -77,8 +78,8 @@ test("normalization chưa xác minh không được áp dụng", () => {
     normalization: { type: "linear", verified: false, outputScale: 30 }, priorityApplication: "after-normalization",
     priorityContext: { area: "KV1" }
   });
-  assert.equal(result.total, 33);
+  assert.equal(result.total, 33.7);
   assert.equal(result.maxScore, 40);
   assert.equal(result.normalizationApplied, false);
-  assert.equal(result.priorityApplied, false);
+  assert.equal(result.priorityApplied, true);
 });

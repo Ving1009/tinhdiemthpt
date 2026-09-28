@@ -1,4 +1,5 @@
 import { OFFICIAL_QUESTION_CONTENT_2026 } from "./officialQuestionContent2026.js";
+import { OFFICIAL_SOLUTIONS_2026 } from "./officialSolutions2026.js";
 import { formatOfficialExamText } from "../core/unicodeMath.js";
 
 const LETTERS = ["A", "B", "C", "D"];
@@ -87,6 +88,7 @@ function officialExam({
     question.prompt = formatOfficialExamText(slug, sourceQuestion.prompt);
     if (question.type === "single") question.options = sourceQuestion.options.map((option) => formatOfficialExamText(slug, option));
     if (question.type === "true-false") question.statements = sourceQuestion.statements.map((statement) => formatOfficialExamText(slug, statement));
+    question.explanation = formatOfficialExamText(slug, OFFICIAL_SOLUTIONS_2026[slug]?.[`${question.type}:${question.number}`] || "");
   }
   const baseQuestions = questions.filter((question) => !question.branch);
   const scoreSets = branchEntries.length
@@ -117,6 +119,7 @@ function officialExam({
     pageImages: assetPages(slug, "pages", pageCount),
     answerImages: assetPages(slug, "answers", answerCount),
     solutionImages: assetPages(slug, "solutions", solutionCount),
+    digitizedSolutionCount: questions.filter((question) => question.explanation).length,
     questions
   };
 }

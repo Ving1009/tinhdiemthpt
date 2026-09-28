@@ -63,7 +63,7 @@ export const hocBaFormula = {
   description: "Tính trung bình học bạ theo phương thức và tổ hợp; hỗ trợ điểm môn có trọng số.",
   subjects: ["math", "literature", "foreignLanguage"],
   inputs: ["Phương thức học bạ", "Điểm theo học kỳ/năm", "Tổ hợp môn", "Khu vực", "Đối tượng ưu tiên"],
-  expression: "ĐTB môn = trung bình các cột điểm; Điểm thô = tổng (ĐTB môn × hệ số). Điểm ưu tiên chỉ áp dụng trực tiếp trên thang 30 hoặc sau một quy tắc chuẩn hóa đã xác minh.",
+  expression: "ĐTB môn = trung bình các cột điểm; Điểm thô = tổng (ĐTB môn × hệ số). Điểm ưu tiên được tính trên thang 30 rồi quy đổi tương đương nếu tổ hợp dùng thang điểm khác.",
   example: "A01: Toán 8.00, Vật lí 7.50, Ngoại ngữ 8.50, điểm tổ hợp là 24.00.",
   methods: ACADEMIC_METHODS,
   calculate(data) {
@@ -85,8 +85,7 @@ export const hocBaFormula = {
       normalization.type === "linear" && Number.isFinite(requestedOutputScale) && requestedOutputScale > 0;
     const examScore = canNormalize ? rounded((rawScore / rawScale) * requestedOutputScale) : rawScore;
     const maxScore = canNormalize ? requestedOutputScale : rawScale;
-    const canApplyPriority = rawScale === 30 || (canNormalize && maxScore === 30 && data.priorityApplication === "after-normalization");
-    const priority = canApplyPriority ? calculateAdmissionPriority(examScore, data.priorityContext) : { area: 0, group: 0, base: 0, adjusted: 0, shouldAdjust: false, applicable: false };
+    const priority = calculateAdmissionPriority(examScore, data.priorityContext, maxScore);
     return {
       total: rounded(examScore + priority.adjusted),
       maxScore,
@@ -99,7 +98,7 @@ export const hocBaFormula = {
       method: method.name,
       breakdown: subjects.map((key) => ({ label: `ĐTB ${labelFor(key)}${weights[key] === 2 ? " ×2" : ""}`, value: subjectAverages[key], weight: weights[key] })),
       weighted: maxScore !== 30,
-      priorityApplied: canApplyPriority,
+      priorityApplied: true,
       explanation: method.name,
       formula: this.expression
     };

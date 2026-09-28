@@ -77,6 +77,13 @@ test("toàn bộ trang đề và lời giải đã được đóng gói cho webs
   }
 });
 
+test("mọi câu của môn có tài liệu lời giải đều đã được số hóa theo câu", () => {
+  for (const exam of PRACTICE_EXAMS_2026.filter((item) => item.solutionImages?.length)) {
+    assert.equal(exam.digitizedSolutionCount, exam.questions.length, exam.subject);
+    assert.equal(exam.questions.every((question) => question.explanation.trim().length >= 12), true, exam.subject);
+  }
+});
+
 test("17 đề nguồn có đầy đủ nội dung chữ để làm bài không cần xem ảnh", () => {
   for (const exam of PRACTICE_EXAMS_2026.filter((item) => item.sourceKind === "official-paper")) {
     assert.equal(exam.hasFullText, true, exam.subject);

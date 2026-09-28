@@ -556,3 +556,59 @@ body.turnstile-open { overflow:hidden; }
   }
   .academic-table tbody input { width:100%; min-width:0; }
 }
+.account-button img,
+.account-profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.account-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  justify-items: end;
+  background: rgb(15 23 42 / 45%);
+}
+
+.account-panel.is-hidden { display: none; }
+
+.account-card {
+  width: min(420px, 100%);
+  height: 100%;
+  overflow: auto;
+  padding: 28px;
+  background: var(--surface, #fff);
+  box-shadow: -18px 0 50px rgb(15 23 42 / 18%);
+  position: relative;
+}
+
+.account-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-soft, #f1f5f9);
+  color: var(--text, #0f172a);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.account-card h2 { margin: 50px 0 10px; }
+.account-card p { color: var(--text-muted, #64748b); line-height: 1.65; }
+.account-card ul { margin: 24px 0; padding-left: 20px; line-height: 1.8; }
+.account-intro-icon { margin-top: 48px; width: 52px; height: 52px; display: grid; place-items: center; border-radius: 16px; background: #fff; color: #4285f4; border: 1px solid #dbe3ee; font-size: 25px; font-weight: 800; }
+.account-google { width: 100%; margin-top: 12px; }
+.account-profile { display: flex; gap: 12px; align-items: center; margin: 46px 0 20px; }
+.account-profile img, .account-profile > span { width: 48px; height: 48px; border-radius: 50%; }
+.account-profile > span { display: grid; place-items: center; background: var(--primary); color: #fff; }
+.account-profile div { display: grid; gap: 3px; min-width: 0; }
+.account-profile small { color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; }
+.account-actions { display: grid; gap: 10px; margin: 22px 0 12px; }
+.account-status { min-height: 24px; font-size: .9rem; }
+.account-logout { margin-top: 24px; border: 0; background: none; color: #c24141; font-weight: 700; cursor: pointer; }

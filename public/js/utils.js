@@ -40,18 +40,32 @@ export function validateScore(raw, required = true) {
 }
 
 /**
- * Khung ưu tiên tuyển sinh theo thang 30: KV1/KV2-NT/KV2/KV3 và UT1/UT2.
- * Mốc 22.5 áp dụng phép giảm điểm ưu tiên; giữ hàm riêng để dễ cập nhật theo năm.
+ * Khung ưu tiên tuyển sinh 2025-2026. Quy chế công bố công thức trên thang 30;
+ * với thang điểm khác, cả điểm xét tuyển và điểm ưu tiên được quy đổi tuyến tính
+ * tương đương trước và sau khi áp dụng mốc 22,5.
  */
-export function calculateAdmissionPriority(examScore, context = {}) {
+export function calculateAdmissionPriority(examScore, context = {}, scoreScale = 30) {
   const areaPoints = { KV1: 0.75, "KV2-NT": 0.5, KV2: 0.25, KV3: 0 };
   const groupPoints = { UT1: 2, UT2: 1, none: 0 };
   const area = Number(areaPoints[context.area] ?? 0);
   const group = Number(groupPoints[context.priorityGroup] ?? 0);
   const base = rounded(area + group);
-  const shouldAdjust = Number(examScore) >= 22.5 && base > 0;
-  const adjusted = shouldAdjust ? rounded(Math.max(0, ((30 - Number(examScore)) / 7.5) * base)) : base;
-  return { area, group, base, adjusted, shouldAdjust };
+  const scale = Number(scoreScale);
+  const safeScale = Number.isFinite(scale) && scale > 0 ? scale : 30;
+  const normalizedScore = rounded((Number(examScore) / safeScale) * 30, 6);
+  const shouldAdjust = normalizedScore >= 22.5 && base > 0;
+  const adjustedOn30 = shouldAdjust ? rounded(Math.max(0, ((30 - normalizedScore) / 7.5) * base), 6) : base;
+  const adjusted = rounded(adjustedOn30 * (safeScale / 30));
+  return {
+    area,
+    group,
+    base,
+    adjusted,
+    adjustedOn30: rounded(adjustedOn30),
+    normalizedScore: rounded(normalizedScore),
+    scale: safeScale,
+    shouldAdjust
+  };
 }
 
 export function debounce(callback, wait = 180) {
@@ -63,6 +77,16 @@ export const storage = {
   get(key, fallback = null) {
     try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; } catch { return fallback; }
   },
-  set(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* Private mode or full storage: app remains usable. */ } },
-  remove(key) { try { localStorage.removeItem(key); } catch { /* no-op */ } }
+  set(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+      window.dispatchEvent(new CustomEvent("thpt-storage-change", { detail: { key, action: "set" } }));
+    } catch { /* Private mode or full storage: app remains usable. */ }
+  },
+  remove(key) {
+    try {
+      localStorage.removeItem(key);
+      window.dispatchEvent(new CustomEvent("thpt-storage-change", { detail: { key, action: "remove" } }));
+    } catch { /* no-op */ }
+  }
 };

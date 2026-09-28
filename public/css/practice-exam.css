@@ -224,3 +224,40 @@
   .practice-result-actions { display:grid; }
   .practice-review-heading { align-items:flex-start; flex-direction:column; }
 }
+.practice-solution-picker {
+  display: grid;
+  gap: 8px;
+  max-width: 420px;
+  margin: 18px 0;
+  font-weight: 700;
+}
+
+.practice-solution-picker select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.practice-question-solution {
+  margin-top: 14px;
+  border: 1px solid color-mix(in srgb, var(--primary) 24%, var(--border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--primary) 5%, var(--surface));
+}
+
+.practice-question-solution summary {
+  padding: 12px 14px;
+  cursor: pointer;
+  color: var(--primary);
+  font-weight: 750;
+}
+
+.practice-question-solution div {
+  padding: 0 14px 14px;
+  white-space: pre-line;
+  line-height: 1.65;
+}

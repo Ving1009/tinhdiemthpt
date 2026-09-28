@@ -16,8 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css?v=20260927-1" />
     <link rel="stylesheet" href="css/responsive.css?v=20260927-1" />
-    <link rel="stylesheet" href="css/refinement.css?v=20260927-2" />
-    <link rel="stylesheet" href="css/practice-exam.css?v=20260927-1" />
+    <link rel="stylesheet" href="css/refinement.css?v=20260928-1" />
+    <link rel="stylesheet" href="css/practice-exam.css?v=20260928-1" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
@@ -50,6 +50,7 @@
           <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Bật giao diện tối" title="Đổi giao diện">
             <span aria-hidden="true">☾</span>
           </button>
+          <button class="icon-button account-button" id="account-button" type="button" aria-label="Đăng nhập hoặc tạo tài khoản" aria-controls="account-panel" aria-expanded="false">♙</button>
           <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Mở menu">
             <span class="menu-icon" aria-hidden="true"></span>
           </button>
@@ -347,7 +348,7 @@
           </div>
           <div class="practice-notice">
             <span aria-hidden="true">i</span>
-            <p><strong>Danh mục có 17 đề thi tốt nghiệp THPT 2026 đầy đủ nguyên trang do người dùng cung cấp và 1 đề luyện Ngữ văn.</strong> Không rút gọn số câu; đáp án và lời giải chỉ xuất hiện khi tài liệu nguồn có kèm nội dung tương ứng. <a href="https://vqa.moet.gov.vn/vi/news/thong-bao/cau-truc-dinh-dang-de-thi-tot-nghiep-thpt-tu-nam-2025-74.html" target="_blank" rel="noopener">Xem cấu trúc đề thi ↗</a></p>
+              <p><strong>Danh mục có 17 đề thi tốt nghiệp THPT 2026 đầy đủ nguyên trang do người dùng cung cấp và 1 đề luyện Ngữ văn.</strong> Đáp án đã được số hóa để chấm theo từng câu; môn có tài liệu lời giải cho phép chọn và mở đúng lời giải của câu cần xem. <a href="https://vqa.moet.gov.vn/vi/news/thong-bao/cau-truc-dinh-dang-de-thi-tot-nghiep-thpt-tu-nam-2025-74.html" target="_blank" rel="noopener">Xem cấu trúc đề thi ↗</a></p>
           </div>
           <div id="practice-exam-app" aria-live="polite"></div>
         </div>
@@ -367,8 +368,15 @@
 
     <footer class="site-footer">
       <div class="container footer-grid"><div><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">Σ</span><span>Tính Điểm <strong>THPT</strong></span></a><p>Công cụ hỗ trợ tham khảo điểm xét tuyển.</p></div><div class="footer-links"><a href="#calculator">Tính điểm</a><a href="#major-finder">Tìm ngành</a><a href="#universities">Hồ sơ trường</a><a href="#practice-exams">Thi thử 2026</a><a href="#privacy-policy" data-privacy-policy>Chính sách quyền riêng tư</a></div><p class="footer-warning">Thông tin và kết quả trên website chỉ mang tính chất tham khảo. Người dùng cần kiểm tra thông tin tuyển sinh chính thức từ nhà trường.</p></div>
-      <div class="container footer-bottom"><span>© 2026 Tính Điểm THPT</span><span>Dữ liệu đã nhập tự xóa khi quay lại sau 30 ngày không truy cập</span></div>
+      <div class="container footer-bottom"><span>© 2026 Tính Điểm THPT</span><span>Phiên khách tự xóa khi quay lại sau 15 phút rời website</span></div>
     </footer>
+
+    <div class="account-panel is-hidden" id="account-panel" role="dialog" aria-modal="true" aria-labelledby="account-title">
+      <section class="account-card">
+        <button class="account-close" type="button" data-account-close aria-label="Đóng">×</button>
+        <div data-account-content></div>
+      </section>
+    </div>
 
     <div class="modal is-hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div class="modal-backdrop" data-close-modal></div>
@@ -384,6 +392,6 @@
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="js/main.js?v=20260927-3"></script>
+    <script type="module" src="js/main.js?v=20260928-1"></script>
   </body>
 </html>

@@ -1,6 +1,7 @@
 import { getTurnstileConfigurationForHostname, turnstileTokenFromHeaders, verifyTurnstile } from "../server/services/turnstile.js";
 import { applyRateLimit, errorResponse, failure, success, withSecurityHeaders } from "./http.js";
 import { handleDataApi } from "./dataApi.js";
+import { publicAuthConfig } from "../lib/publicAuthConfig.js";
 
 async function requireTurnstile(request, environment, action) {
   try {
@@ -32,6 +33,9 @@ export default {
       return success(request, { turnstile: { enabled: turnstile.enabled, siteKey: turnstile.enabled ? turnstile.siteKey : "" } }, {
         headers: { "Cache-Control": "no-store, max-age=0" }
       });
+    }
+    if (request.method === "GET" && url.pathname === "/api/auth-config") {
+      return success(request, publicAuthConfig(environment), { headers: { "Cache-Control": "no-store, max-age=0" } });
     }
     if (url.pathname === "/api/scan-transcript") {
       if (request.method === "POST") {

@@ -22,6 +22,14 @@
       "service": "tinhdiemthpt-ocr"
     }
   ],
+  "d1_databases": [
+    {
+      "binding": "AUTH_DB",
+      "database_name": "tinhdiemthpt-auth",
+      "database_id": "ca54ca27-e706-4bc6-8d9f-11614f938eaa",
+      "migrations_dir": "migrations"
+    }
+  ],
   "ratelimits": [
     {
       "name": "OCR_RATE_LIMITER",
@@ -32,6 +40,11 @@
       "name": "REPORT_RATE_LIMITER",
       "namespace_id": "41002",
       "simple": { "limit": 3, "period": 60 }
+    },
+    {
+      "name": "AUTH_RATE_LIMITER",
+      "namespace_id": "41003",
+      "simple": { "limit": 5, "period": 60 }
     }
   ],
   "observability": {

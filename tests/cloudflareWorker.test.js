@@ -165,3 +165,35 @@ test("Worker chặn request OCR trước service khi thiếu token Turnstile", a
   assert.equal(rateLimitChecked, false);
   assert.equal(forwarded, false);
 });
+
+test("Worker bắt buộc Turnstile trước khi tạo tài khoản", async () => {
+  let databaseTouched = false;
+  const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.id.vn/api/auth/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username: "test-user", password: "Matkhau2026" })
+  }), {
+    TURNSTILE_SITE_KEY: "public-site-key",
+    TURNSTILE_SECRET_KEY: "private-secret",
+    AUTH_RATE_LIMITER: { async limit() { return { success: true }; } },
+    AUTH_DB: { prepare() { databaseTouched = true; throw new Error("Không được truy cập D1 trước Turnstile"); } }
+  });
+  const payload = await response.json();
+  assert.equal(response.status, 403);
+  assert.equal(payload.error.code, "TURNSTILE_REQUIRED");
+  assert.equal(databaseTouched, false);
+});
+
+test("Worker khóa đăng ký nếu Turnstile chưa được cấu hình", async () => {
+  const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.id.vn/api/auth/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username: "test-user", password: "Matkhau2026" })
+  }), {
+    AUTH_RATE_LIMITER: { async limit() { return { success: true }; } },
+    AUTH_DB: { prepare() { throw new Error("Không được truy cập D1 khi thiếu Turnstile"); } }
+  });
+  const payload = await response.json();
+  assert.equal(response.status, 503);
+  assert.equal(payload.error.code, "TURNSTILE_REQUIRED_FOR_REGISTRATION");
+});

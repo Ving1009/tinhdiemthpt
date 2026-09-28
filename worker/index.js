@@ -2,6 +2,7 @@ import { getTurnstileConfigurationForHostname, turnstileTokenFromHeaders, verify
 import { applyRateLimit, errorResponse, failure, success, withSecurityHeaders } from "./http.js";
 import { handleDataApi } from "./dataApi.js";
 import { publicAuthConfig } from "../lib/publicAuthConfig.js";
+import { handleAuthRequest } from "./auth.js";
 
 const PRIMARY_HOSTNAME = "tinhdiemthpt.id.vn";
 const LEGACY_HOSTNAME = "tinhdiemthpt.tinh-diem-thpt.workers.dev";
@@ -44,6 +45,25 @@ export default {
     }
     if (request.method === "GET" && url.pathname === "/api/auth-config") {
       return success(request, publicAuthConfig(environment), { headers: { "Cache-Control": "no-store, max-age=0" } });
+    }
+    if (url.pathname.startsWith("/api/auth/")) {
+      try {
+        if (request.method === "POST" && ["/api/auth/register", "/api/auth/login"].includes(url.pathname)) {
+          const limited = await applyRateLimit(environment.AUTH_RATE_LIMITER, request, "Bạn đã thử đăng nhập hoặc đăng ký quá nhiều lần. Hãy đợi một phút.");
+          if (limited) return limited;
+        }
+        if (request.method === "POST" && url.pathname === "/api/auth/register") {
+          const turnstile = getTurnstileConfigurationForHostname(environment, url.hostname);
+          if (!turnstile.enabled) {
+            return failure(request, "TURNSTILE_REQUIRED_FOR_REGISTRATION", "Hệ thống xác minh tạo tài khoản chưa sẵn sàng.", 503);
+          }
+          const rejected = await requireTurnstile(request, environment, "account_register");
+          if (rejected) return rejected;
+        }
+        return withSecurityHeaders(request, await handleAuthRequest(request, environment));
+      } catch (error) {
+        return errorResponse(request, error);
+      }
     }
     if (url.pathname === "/api/scan-transcript") {
       if (request.method === "POST") {

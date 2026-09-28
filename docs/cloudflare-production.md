@@ -10,6 +10,7 @@
 - Cloudflare Managed Ruleset và HTTP DDoS protection: luôn hoạt động
 - Bot Fight Mode, Browser Integrity Check, Continuous Script Monitoring, Precursor và Hotlink Protection: bật
 - Turnstile: bật cho tên miền chính và hostname Worker cũ
+- Tài khoản: Cloudflare D1 `tinhdiemthpt-auth`, đăng ký bằng tên đăng nhập và mật khẩu; Turnstile bảo vệ endpoint tạo tài khoản
 
 DNSSEC đã được khởi tạo trên Cloudflare. Nhà đăng ký tên miền cần có bản ghi DS sau để chuyển trạng thái từ pending sang active:
 

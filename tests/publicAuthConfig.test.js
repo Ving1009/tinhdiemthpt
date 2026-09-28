@@ -2,11 +2,12 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { publicAuthConfig } from "../lib/publicAuthConfig.js";
 
-test("chỉ bật auth khi có khóa công khai và không bao giờ trả secret", () => {
-  const disabled = publicAuthConfig({ SUPABASE_URL: "https://demo.supabase.co", SUPABASE_SECRET_KEY: "sb_secret_hidden" });
+test("chỉ bật tài khoản khi có D1 binding và không công khai cấu hình nội bộ", () => {
+  const disabled = publicAuthConfig({});
   assert.equal(disabled.enabled, false);
-  assert.equal(JSON.stringify(disabled).includes("sb_secret_hidden"), false);
-  const enabled = publicAuthConfig({ SUPABASE_URL: "https://demo.supabase.co", SUPABASE_PUBLIC_KEY: "sb_publishable_12345678901234567890" });
+  const enabled = publicAuthConfig({ AUTH_DB: { prepare() {} }, AUTH_PRIVATE_VALUE: "hidden" });
   assert.equal(enabled.enabled, true);
-  assert.equal(enabled.publicKey, "sb_publishable_12345678901234567890");
+  assert.equal(enabled.provider, "password");
+  assert.equal(enabled.passwordMinLength, 10);
+  assert.equal(JSON.stringify(enabled).includes("hidden"), false);
 });

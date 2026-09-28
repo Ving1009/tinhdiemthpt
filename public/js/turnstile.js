@@ -55,6 +55,9 @@ function loadScript(documentRef = document) {
 }
 
 function challengeCopy(action) {
+  if (action === "account_register") {
+    return { title: "Xác minh trước khi tạo tài khoản", description: "Bước này giúp ngăn tài khoản rác và bảo vệ hệ thống đăng ký." };
+  }
   return action === "scan_transcript"
     ? { title: "Xác minh trước khi quét", description: "Bước này giúp bảo vệ lượt quét ảnh và các khóa AI của hệ thống." }
     : { title: "Xác minh trước khi gửi", description: "Bước này giúp ngăn báo cáo rác tự động." };

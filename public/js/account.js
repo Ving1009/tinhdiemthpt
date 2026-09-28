@@ -1,72 +1,42 @@
 import { escapeHTML, storage } from "./utils.js";
 import { clearGuestSessionMarker } from "./core/personalDataRetention.js";
+import { turnstileGate } from "./turnstile.js";
 
-export const AUTH_SESSION_KEY = "thpt-auth-session-v1";
-const AUTH_RETURN_ROUTE_KEY = "thpt-auth-return-route-v1";
-
-function safeAvatar(value) {
-  try {
-    const url = new URL(value);
-    return url.protocol === "https:" && url.hostname === "lh3.googleusercontent.com" ? url.href : "";
-  } catch { return ""; }
-}
-
-export function captureOAuthCallback() {
-  if (typeof location === "undefined" || !location.hash.includes("access_token=")) return false;
-  const params = new URLSearchParams(location.hash.slice(1));
-  const accessToken = params.get("access_token");
-  if (!accessToken) return false;
-  const expiresIn = Number(params.get("expires_in") || 3600);
-  storage.set(AUTH_SESSION_KEY, {
-    accessToken,
-    refreshToken: params.get("refresh_token") || "",
-    expiresAt: Date.now() + Math.max(60, expiresIn) * 1000,
-    tokenType: params.get("token_type") || "bearer"
-  });
-  const returnRoute = sessionStorage.getItem(AUTH_RETURN_ROUTE_KEY) || "#home";
-  sessionStorage.removeItem(AUTH_RETURN_ROUTE_KEY);
-  history.replaceState(null, "", `${location.pathname}${location.search.replace(/([?&])auth=google(&|$)/, "$1").replace(/[?&]$/, "")}${returnRoute}`);
-  return true;
-}
+export const AUTH_SESSION_KEY = "thpt-auth-session-v2";
 
 export function hasStoredAuthSession() {
-  const session = storage.get(AUTH_SESSION_KEY, null);
-  return Boolean(session?.accessToken || session?.refreshToken);
+  return storage.get(AUTH_SESSION_KEY, null)?.authenticated === true;
+}
+
+function messageFromPayload(payload, fallback) {
+  return payload?.error?.message || fallback;
 }
 
 export class AccountApp {
   constructor({ personalKeys = [] } = {}) {
     this.personalKeys = [...new Set(personalKeys)];
     this.config = null;
-    this.session = storage.get(AUTH_SESSION_KEY, null);
     this.user = null;
+    this.mode = "login";
     this.root = document.getElementById("account-panel");
     this.button = document.getElementById("account-button");
     this.syncTimer = null;
   }
 
-  isAuthenticated() { return Boolean(this.user && this.session?.accessToken); }
+  isAuthenticated() { return Boolean(this.user?.id); }
 
   async init() {
     if (!this.root || !this.button) return;
     this.button.addEventListener("click", () => this.toggle(true));
     this.root.addEventListener("click", (event) => this.handleClick(event));
+    this.root.addEventListener("submit", (event) => this.handleSubmit(event));
     window.addEventListener("thpt-storage-change", (event) => {
       if (!this.isAuthenticated() || !this.personalKeys.includes(event.detail?.key)) return;
       clearTimeout(this.syncTimer);
       this.syncTimer = setTimeout(() => this.backup(false), 1800);
     });
     await this.loadConfig();
-    if (this.config?.enabled && this.session) {
-      try {
-        await this.ensureSession();
-        this.user = await this.fetchUser();
-        clearGuestSessionMarker(storage);
-      } catch {
-        storage.remove(AUTH_SESSION_KEY);
-        this.session = null;
-      }
-    }
+    if (this.config?.enabled) await this.refreshUser();
     this.render();
   }
 
@@ -78,50 +48,87 @@ export class AccountApp {
     } catch { this.config = { enabled: false }; }
   }
 
-  async ensureSession() {
-    if (!this.session) throw new Error("Không có phiên đăng nhập.");
-    if (Number(this.session.expiresAt) > Date.now() + 60_000) return;
-    if (!this.session.refreshToken) throw new Error("Phiên đã hết hạn.");
-    const response = await fetch(`${this.config.url}/auth/v1/token?grant_type=refresh_token`, {
-      method: "POST",
-      headers: { apikey: this.config.publicKey, "Content-Type": "application/json" },
-      body: JSON.stringify({ refresh_token: this.session.refreshToken })
+  async request(path, options = {}) {
+    const response = await fetch(path, {
+      credentials: "same-origin",
+      cache: "no-store",
+      ...options,
+      headers: { Accept: "application/json", ...(options.headers || {}) }
     });
-    if (!response.ok) throw new Error("Không thể làm mới phiên đăng nhập.");
-    const data = await response.json();
-    this.session = {
-      accessToken: data.access_token,
-      refreshToken: data.refresh_token || this.session.refreshToken,
-      expiresAt: Date.now() + Number(data.expires_in || 3600) * 1000,
-      tokenType: data.token_type || "bearer"
-    };
-    storage.set(AUTH_SESSION_KEY, this.session);
+    const payload = await response.json().catch(() => null);
+    if (!response.ok || !payload?.success) {
+      const error = new Error(messageFromPayload(payload, "Không thể xử lý yêu cầu tài khoản."));
+      error.code = payload?.error?.code || "AUTH_REQUEST_FAILED";
+      throw error;
+    }
+    return payload.data;
   }
 
-  async fetchUser() {
-    const response = await fetch(`${this.config.url}/auth/v1/user`, { headers: this.authHeaders() });
-    if (!response.ok) throw new Error("Không thể đọc tài khoản.");
-    return response.json();
+  async refreshUser() {
+    try {
+      const data = await this.request("/api/auth/me");
+      this.user = data.user;
+      storage.set(AUTH_SESSION_KEY, { authenticated: true });
+      clearGuestSessionMarker(storage);
+    } catch {
+      this.user = null;
+      storage.remove(AUTH_SESSION_KEY);
+    }
   }
 
-  authHeaders(extra = {}) {
-    return { apikey: this.config.publicKey, Authorization: `Bearer ${this.session.accessToken}`, ...extra };
+  async register(form) {
+    const values = new FormData(form);
+    const username = String(values.get("username") || "").trim().toLocaleLowerCase("en");
+    const password = String(values.get("password") || "");
+    if (password !== String(values.get("passwordConfirmation") || "")) {
+      this.setStatus("Hai lần nhập mật khẩu chưa giống nhau.", true);
+      return;
+    }
+    this.setFormBusy(form, true, "Đang xác minh…");
+    try {
+      const token = await turnstileGate.getToken("account_register");
+      const data = await this.request("/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-Turnstile-Token": token },
+        body: JSON.stringify({ username, password })
+      });
+      this.user = data.user;
+      storage.set(AUTH_SESSION_KEY, { authenticated: true });
+      clearGuestSessionMarker(storage);
+      this.render();
+      this.setStatus("Tạo tài khoản thành công. Dữ liệu của bạn có thể được sao lưu ngay.");
+    } catch (error) {
+      this.setFormBusy(form, false);
+      this.setStatus(error.message, true);
+    }
   }
 
-  startGoogleLogin() {
-    if (!this.config?.enabled) return;
-    sessionStorage.setItem(AUTH_RETURN_ROUTE_KEY, location.hash || "#home");
-    const redirectTo = `${location.origin}${location.pathname}?auth=google`;
-    location.assign(`${this.config.url}/auth/v1/authorize?provider=google&redirect_to=${encodeURIComponent(redirectTo)}`);
+  async login(form) {
+    const values = new FormData(form);
+    this.setFormBusy(form, true, "Đang đăng nhập…");
+    try {
+      const data = await this.request("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: values.get("username"), password: values.get("password") })
+      });
+      this.user = data.user;
+      storage.set(AUTH_SESSION_KEY, { authenticated: true });
+      clearGuestSessionMarker(storage);
+      this.render();
+      this.setStatus("Đăng nhập thành công.");
+    } catch (error) {
+      this.setFormBusy(form, false);
+      this.setStatus(error.message, true);
+    }
   }
 
   async logout() {
-    try {
-      if (this.session?.accessToken) await fetch(`${this.config.url}/auth/v1/logout`, { method: "POST", headers: this.authHeaders() });
-    } catch { /* Xóa phiên cục bộ ngay cả khi mạng lỗi. */ }
+    try { await this.request("/api/auth/logout", { method: "POST" }); }
+    catch { /* Cookie cục bộ vẫn được coi là hết phiên ở giao diện. */ }
     storage.remove(AUTH_SESSION_KEY);
-    this.session = null;
     this.user = null;
+    this.mode = "login";
     this.render();
   }
 
@@ -136,68 +143,93 @@ export class AccountApp {
     if (!this.isAuthenticated()) return;
     if (showStatus) this.setStatus("Đang sao lưu…");
     try {
-      await this.ensureSession();
-      const response = await fetch(`${this.config.url}/rest/v1/${encodeURIComponent(this.config.userDataTable)}?on_conflict=user_id`, {
-        method: "POST",
-        headers: this.authHeaders({ "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" }),
-        body: JSON.stringify({ user_id: this.user.id, data: this.snapshot(), updated_at: new Date().toISOString() })
+      const result = await this.request("/api/auth/data", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: this.snapshot() })
       });
-      if (!response.ok) throw new Error("Chưa tạo bảng lưu dữ liệu hoặc chính sách RLS chưa đúng.");
-      this.setStatus(`Đã sao lưu lúc ${new Intl.DateTimeFormat("vi-VN", { hour: "2-digit", minute: "2-digit" }).format(new Date())}.`);
-    } catch (error) { if (showStatus) this.setStatus(error.message); }
+      const time = new Intl.DateTimeFormat("vi-VN", { hour: "2-digit", minute: "2-digit" }).format(new Date(result.updatedAt));
+      this.setStatus(`Đã sao lưu lúc ${time}.`);
+    } catch (error) { if (showStatus) this.setStatus(error.message, true); }
   }
 
   async restore() {
     if (!this.isAuthenticated()) return;
     this.setStatus("Đang tải bản sao…");
     try {
-      await this.ensureSession();
-      const query = `user_id=eq.${encodeURIComponent(this.user.id)}&select=data,updated_at&limit=1`;
-      const response = await fetch(`${this.config.url}/rest/v1/${encodeURIComponent(this.config.userDataTable)}?${query}`, { headers: this.authHeaders() });
-      if (!response.ok) throw new Error("Không đọc được bản sao trên đám mây.");
-      const row = (await response.json())[0];
-      if (!row?.data) throw new Error("Tài khoản chưa có bản sao dữ liệu.");
-      for (const key of this.personalKeys) row.data[key] === undefined ? storage.remove(key) : storage.set(key, row.data[key]);
+      const result = await this.request("/api/auth/data");
+      if (!result.data) throw new Error("Tài khoản chưa có bản sao dữ liệu.");
+      for (const key of this.personalKeys) result.data[key] === undefined ? storage.remove(key) : storage.set(key, result.data[key]);
       location.reload();
-    } catch (error) { this.setStatus(error.message); }
+    } catch (error) { this.setStatus(error.message, true); }
   }
 
   toggle(open) {
     this.root.classList.toggle("is-hidden", !open);
     this.button.setAttribute("aria-expanded", String(open));
-    if (open) this.root.querySelector("button, a")?.focus();
+    if (open) this.root.querySelector("button, input")?.focus();
   }
 
   handleClick(event) {
     if (event.target.closest("[data-account-close]")) return this.toggle(false);
-    if (event.target.closest("[data-google-login]")) return this.startGoogleLogin();
+    const modeButton = event.target.closest("[data-account-mode]");
+    if (modeButton) {
+      this.mode = modeButton.dataset.accountMode === "register" ? "register" : "login";
+      this.render();
+      return;
+    }
     if (event.target.closest("[data-account-logout]")) return this.logout();
     if (event.target.closest("[data-account-backup]")) return this.backup();
     if (event.target.closest("[data-account-restore]")) return this.restore();
     if (event.target === this.root) this.toggle(false);
   }
 
-  setStatus(message) {
+  handleSubmit(event) {
+    if (!event.target.matches("[data-account-login], [data-account-register]")) return;
+    event.preventDefault();
+    if (event.target.matches("[data-account-register]")) this.register(event.target);
+    else this.login(event.target);
+  }
+
+  setFormBusy(form, busy, label = "") {
+    for (const element of form.elements) element.disabled = busy;
+    const submit = form.querySelector('[type="submit"]');
+    if (submit) {
+      if (!submit.dataset.defaultLabel) submit.dataset.defaultLabel = submit.textContent;
+      submit.textContent = busy ? label : submit.dataset.defaultLabel;
+    }
+  }
+
+  setStatus(message, error = false) {
     const target = this.root.querySelector("[data-account-status]");
-    if (target) target.textContent = message;
+    if (!target) return;
+    target.textContent = message;
+    target.classList.toggle("is-error", error);
+  }
+
+  renderAuthenticated() {
+    const username = this.user.username || "Tài khoản";
+    const initial = username.slice(0, 1).toLocaleUpperCase("vi");
+    this.button.classList.add("is-signed-in");
+    this.button.textContent = initial;
+    this.button.setAttribute("aria-label", `Tài khoản ${username}`);
+    this.root.querySelector("[data-account-content]").innerHTML = `<div class="account-profile"><span aria-hidden="true">${escapeHTML(initial)}</span><div><strong>${escapeHTML(username)}</strong><small>Tài khoản Tính Điểm THPT</small></div></div><p>Dữ liệu tính điểm, nguyện vọng và lịch sử thi thử có thể tự sao lưu khi bạn thay đổi.</p><div class="account-actions"><button class="button button-primary" type="button" data-account-backup>Sao lưu ngay</button><button class="button button-light" type="button" data-account-restore>Khôi phục bản sao</button></div><p class="account-status" data-account-status aria-live="polite">Đã đăng nhập bằng phiên bảo mật.</p><button class="account-logout" type="button" data-account-logout>Đăng xuất</button>`;
+  }
+
+  renderGuest() {
+    if (!this.config?.enabled) {
+      this.root.querySelector("[data-account-content]").innerHTML = `<h2 id="account-title">Tài khoản đang được cấu hình</h2><p>Bạn vẫn dùng đầy đủ mọi công cụ mà không cần đăng nhập.</p>`;
+      return;
+    }
+    const register = this.mode === "register";
+    this.root.querySelector("[data-account-content]").innerHTML = `<div class="account-intro-icon" aria-hidden="true">♙</div><h2 id="account-title">Tài khoản Tính Điểm THPT</h2><div class="account-auth-tabs" role="tablist" aria-label="Đăng nhập hoặc tạo tài khoản"><button type="button" role="tab" aria-selected="${!register}" class="${!register ? "is-active" : ""}" data-account-mode="login">Đăng nhập</button><button type="button" role="tab" aria-selected="${register}" class="${register ? "is-active" : ""}" data-account-mode="register">Tạo tài khoản</button></div>${register ? `<form class="account-auth-form" data-account-register><label>Tên đăng nhập<input name="username" required minlength="4" maxlength="24" pattern="[a-z0-9][a-z0-9._-]{2,22}[a-z0-9]" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="ví dụ: quangvinh26"></label><label>Mật khẩu<input name="password" type="password" required minlength="10" maxlength="72" autocomplete="new-password" placeholder="Ít nhất 10 ký tự"></label><label>Nhập lại mật khẩu<input name="passwordConfirmation" type="password" required minlength="10" maxlength="72" autocomplete="new-password"></label><p class="account-form-note">Mật khẩu cần có chữ và số. Cloudflare Turnstile sẽ xác minh trước khi tạo tài khoản.</p><button class="button button-primary" type="submit">Xác minh và tạo tài khoản</button><p class="account-status" data-account-status aria-live="polite"></p></form>` : `<form class="account-auth-form" data-account-login><label>Tên đăng nhập<input name="username" required autocomplete="username" autocapitalize="none" spellcheck="false"></label><label>Mật khẩu<input name="password" type="password" required autocomplete="current-password"></label><button class="button button-primary" type="submit">Đăng nhập</button><p class="account-status" data-account-status aria-live="polite"></p></form>`}<ul><li>Sao lưu điểm, nguyện vọng và lịch sử thi thử.</li><li>Khôi phục dữ liệu trên thiết bị khác.</li><li>Không đăng nhập vẫn dùng đầy đủ công cụ.</li></ul>`;
   }
 
   render() {
-    if (this.isAuthenticated()) {
-      const metadata = this.user.user_metadata || {};
-      const name = metadata.full_name || metadata.name || this.user.email || "Tài khoản";
-      const avatar = safeAvatar(metadata.avatar_url || metadata.picture || "");
-      this.button.classList.add("is-signed-in");
-      this.button.innerHTML = avatar ? `<img src="${escapeHTML(avatar)}" alt="">` : "●";
-      this.button.setAttribute("aria-label", `Tài khoản ${name}`);
-      this.root.querySelector("[data-account-content]").innerHTML = `<div class="account-profile">${avatar ? `<img src="${escapeHTML(avatar)}" alt="">` : '<span aria-hidden="true">●</span>'}<div><strong>${escapeHTML(name)}</strong><small>${escapeHTML(this.user.email || "")}</small></div></div><p>Dữ liệu tính điểm, nguyện vọng và lịch sử thi thử có thể tự sao lưu khi bạn thay đổi.</p><div class="account-actions"><button class="button button-primary" type="button" data-account-backup>Sao lưu ngay</button><button class="button button-light" type="button" data-account-restore>Khôi phục bản sao</button></div><p class="account-status" data-account-status aria-live="polite">Đã đăng nhập an toàn bằng Google.</p><button class="account-logout" type="button" data-account-logout>Đăng xuất</button>`;
-      return;
-    }
+    if (this.isAuthenticated()) return this.renderAuthenticated();
     this.button.classList.remove("is-signed-in");
     this.button.textContent = "♙";
     this.button.setAttribute("aria-label", "Đăng nhập hoặc tạo tài khoản");
-    this.root.querySelector("[data-account-content]").innerHTML = this.config?.enabled
-      ? `<div class="account-intro-icon" aria-hidden="true">G</div><h2 id="account-title">Tài khoản Tính Điểm THPT</h2><p>Dùng tài khoản Google đang có trong trình duyệt. Lần đăng nhập đầu tiên cũng đồng thời tạo tài khoản.</p><button class="button button-primary account-google" type="button" data-google-login>Tiếp tục với Google</button><ul><li>Sao lưu điểm, nguyện vọng và lịch sử thi thử.</li><li>Khôi phục dữ liệu trên thiết bị khác.</li><li>Không đăng nhập vẫn dùng đầy đủ công cụ.</li></ul>`
-      : `<h2 id="account-title">Tài khoản đang được cấu hình</h2><p>Bạn vẫn dùng đầy đủ mọi công cụ mà không cần đăng nhập. Quản trị viên cần thêm khóa công khai Supabase để bật đăng nhập Google.</p>`;
+    this.renderGuest();
   }
 }

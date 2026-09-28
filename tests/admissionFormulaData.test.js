@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { promisify } from "node:util";
 import { validateAdmissionFormulaData } from "../lib/admissionFormulaData.js";
-import { sanitizeMajor, sanitizePublicValue, sanitizeUniversity } from "../lib/dataValidation.js";
+import { sanitizeMajor, sanitizePublicValue, sanitizeUniversity, validateCutoff } from "../lib/dataValidation.js";
 import { createDataStore } from "../server/dataStoreCore.js";
 import { defaultDataStore } from "../server/dataStore.js";
 
@@ -101,6 +101,7 @@ test("gói dữ liệu Cloudflare giữ bằng chứng nội bộ để phủ c�
   ]);
   const workerMajors = majors.map((major) => ({
     ...sanitizeMajor(major),
+    cutoffEvidenceAvailable: validateCutoff(major.cutoff).publishable,
     formulaEvidenceAvailable: Boolean(major.formulaText?.trim() && /^https?:\/\//.test(major.formulaSourceUrl || ""))
   }));
   const workerStore = createDataStore({
@@ -114,7 +115,10 @@ test("gói dữ liệu Cloudflare giữ bằng chứng nội bộ để phủ c�
   assert.equal(qhl.stats.coveredRows, qhl.stats.totalRows);
   assert.ok(qhl.profileFormulas.length > 0);
   const publicRow = workerStore.listUniversityMajors("khoa-luat-dhqg-ha-noi", { pageSize: 1 }).items[0];
+  assert.equal(publicRow.cutoff.score, 24.52);
+  assert.ok(workerStore.publicInitialData.metadata.quality.formulaRows > 17_000);
   assert.equal(Object.hasOwn(publicRow, "formulaEvidenceAvailable"), false);
+  assert.equal(Object.hasOwn(publicRow, "cutoffEvidenceAvailable"), false);
   assert.equal(Object.hasOwn(publicRow, "formulaSourceUrl"), false);
 });
 

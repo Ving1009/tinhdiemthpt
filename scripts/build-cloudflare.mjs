@@ -2,7 +2,7 @@ import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promi
 import { createRequire } from "node:module";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
-import { sanitizeMajor, sanitizePublicValue, sanitizeUniversity } from "../lib/dataValidation.js";
+import { sanitizeMajor, sanitizePublicValue, sanitizeUniversity, validateCutoff } from "../lib/dataValidation.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
@@ -50,6 +50,7 @@ await Promise.all([
   writeJson("universities.json", universities.map(sanitizeUniversity)),
   writeJson("majors.json", majors.map((major) => ({
     ...sanitizeMajor(major),
+    cutoffEvidenceAvailable: validateCutoff(major.cutoff).publishable,
     formulaEvidenceAvailable: Boolean(major.formulaText?.trim() && /^https?:\/\//.test(major.formulaSourceUrl || ""))
   }))),
   writeJson("combinations.json", combinations.map(sanitizePublicValue)),

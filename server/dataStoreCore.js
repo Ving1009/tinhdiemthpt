@@ -94,7 +94,7 @@ export function createDataStore({ universities, majors, combinations, subjects, 
       verifiedRowCount: rows.filter(({ major }) => major.dataStatus === "verified").length,
       informationalRowCount: rows.filter(({ major }) => major.dataStatus === "reference").length,
       calculableCount: rows.filter(({ major }) => major.calculationVerified === true).length,
-      formulaCoverageCount: rows.filter(({ major }) => major.formulaText?.trim() && /^https?:\/\//.test(major.formulaSourceUrl || "")).length,
+      formulaCoverageCount: rows.filter(({ major }) => major.formulaText?.trim() && (major.formulaEvidenceAvailable === true || /^https?:\/\//.test(major.formulaSourceUrl || ""))).length,
       formulaMethodCount: new Set(rows.filter(({ major }) => major.formulaText?.trim()).map(({ major }) => major.method)).size,
       verifiedFormulaCount: admissionFormulaIndex.get(university.id)?.methods.length || 0
     };
@@ -113,7 +113,7 @@ export function createDataStore({ universities, majors, combinations, subjects, 
         profileStatusCounts: [...new Set(allUniversities.map((item) => item.admissions?.status || "unknown"))].sort().map((status) => ({ status, count: allUniversities.filter((item) => (item.admissions?.status || "unknown") === status).length })),
         cutoffStatusCounts: [...new Set(allMajors.map((item) => item.cutoff?.status || "missing"))].sort().map((status) => ({ status, count: allMajors.filter((item) => (item.cutoff?.status || "missing") === status).length })),
         calculableRows: allMajors.filter((item) => item.calculationVerified === true).length,
-        formulaRows: allMajors.filter((item) => item.formulaText?.trim() && /^https?:\/\//.test(item.formulaSourceUrl || "")).length,
+        formulaRows: allMajors.filter((item) => item.formulaText?.trim() && (item.formulaEvidenceAvailable === true || /^https?:\/\//.test(item.formulaSourceUrl || ""))).length,
         formulaProfileSchools: new Set(allMajors.filter((item) => item.formulaText?.trim()).map((item) => item.universityId)).size,
         verifiedFormulaSchools: admissionFormulaIndex.size,
         verifiedSchoolMethodFormulas: [...admissionFormulaIndex.values()].reduce((total, school) => total + school.methods.length, 0)

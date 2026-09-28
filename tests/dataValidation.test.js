@@ -34,6 +34,16 @@ test("sanitizer xóa metadata nguồn đệ quy nhưng giữ website chính củ
   assert.doesNotMatch(JSON.stringify(clean), /source|referenceNote|hidden\.example|collector\.example/i);
 });
 
+test("sanitizer giữ điểm khi gói Cloudflare đã xác nhận nguồn nội bộ", () => {
+  const clean = sanitizeMajor({
+    id: "m-cloudflare",
+    cutoffEvidenceAvailable: true,
+    cutoff: { year: 2026, score: 24.52, scale: 30, status: "reference" }
+  });
+  assert.equal(clean.cutoff.score, 24.52);
+  assert.equal(Object.hasOwn(clean, "cutoffEvidenceAvailable"), false);
+});
+
 test("major chưa xác minh không xuất bản điểm số", () => {
   const clean = sanitizeMajor({ id: "m1", cutoff: { year: 2026, score: 20, scale: 30, status: "unverified" } });
   assert.equal(clean.cutoff.score, null);

@@ -227,15 +227,18 @@ export class PracticeExamApp {
     let fields = "";
     if (question.type === "true-false") {
       const selected = Array.isArray(value) ? value : [];
-      fields = `<div class="practice-tf-list">${question.statements.map((statement, statementIndex) => `<div class="practice-tf-row"><b>Ý ${escapeHTML(statement)}</b><div><label><input type="radio" name="${escapeHTML(question.id)}-${statementIndex}" value="true" data-practice-tf="${escapeHTML(question.id)}" data-statement-index="${statementIndex}" ${selected[statementIndex] === true ? "checked" : ""}><span>Đúng</span></label><label><input type="radio" name="${escapeHTML(question.id)}-${statementIndex}" value="false" data-practice-tf="${escapeHTML(question.id)}" data-statement-index="${statementIndex}" ${selected[statementIndex] === false ? "checked" : ""}><span>Sai</span></label></div></div>`).join("")}</div>`;
+      fields = `<div class="practice-tf-list">${question.statements.map((statement, statementIndex) => `<div class="practice-tf-row"><div class="practice-tf-statement"><b>Ý ${String.fromCharCode(97 + statementIndex)}</b><p>${escapeHTML(statement)}</p></div><div><label><input type="radio" name="${escapeHTML(question.id)}-${statementIndex}" value="true" data-practice-tf="${escapeHTML(question.id)}" data-statement-index="${statementIndex}" ${selected[statementIndex] === true ? "checked" : ""}><span>Đúng</span></label><label><input type="radio" name="${escapeHTML(question.id)}-${statementIndex}" value="false" data-practice-tf="${escapeHTML(question.id)}" data-statement-index="${statementIndex}" ${selected[statementIndex] === false ? "checked" : ""}><span>Sai</span></label></div></div>`).join("")}</div>`;
     } else if (question.type === "short") {
       fields = `<label class="practice-short"><span>Nhập đáp án</span><input type="text" inputmode="decimal" autocomplete="off" value="${escapeHTML(String(value ?? ""))}" data-practice-short="${escapeHTML(question.id)}" placeholder="Ví dụ: 7,35"></label>`;
     } else {
       const compact = question.options.every((option) => /^[A-D]$/.test(option));
       fields = `<div class="practice-options ${compact ? "is-answer-sheet" : ""}">${question.options.map((option, optionIndex) => `<label><input type="radio" name="${escapeHTML(question.id)}" value="${optionIndex}" data-practice-answer="${escapeHTML(question.id)}" ${value === optionIndex ? "checked" : ""}><span><b>${String.fromCharCode(65 + optionIndex)}</b>${compact ? "" : escapeHTML(option)}</span></label>`).join("")}</div>`;
     }
+    const numberLabel = Number.isInteger(question.number) ? `Câu ${question.number}` : `Câu ${index + 1}`;
+    const context = String(question.context || "").trim();
     return `<fieldset class="practice-question type-${escapeHTML(question.type || "single")}" id="practice-question-${index + 1}">
-      <legend><span>${escapeHTML(question.section || `Câu ${index + 1}`)}</span> ${escapeHTML(question.prompt)}</legend>
+      <legend><span>${escapeHTML(question.section || "")}</span> ${escapeHTML(numberLabel)}. ${escapeHTML(question.prompt)}</legend>
+      ${context ? `<div class="practice-question-context">${escapeHTML(context)}</div>` : ""}
       ${fields}
       <button class="practice-flag ${flagged.has(question.id) ? "is-active" : ""}" type="button" data-flag-question="${escapeHTML(question.id)}" aria-pressed="${flagged.has(question.id)}">⚑ ${flagged.has(question.id) ? "Đã đánh dấu" : "Xem lại sau"}</button>
     </fieldset>`;
@@ -248,8 +251,7 @@ export class PracticeExamApp {
     const answers = this.active.answers || {};
     const flagged = new Set(this.active.flagged || []);
     const branchPicker = selectedExam.answerBranches?.length ? `<div class="practice-branch-picker"><span>Chọn định hướng Tin học</span><div>${selectedExam.answerBranches.map((branch) => `<button type="button" data-practice-branch="${escapeHTML(branch)}" class="${this.active.branch === branch ? "is-active" : ""}" aria-pressed="${this.active.branch === branch}">${escapeHTML(branch)}</button>`).join("")}</div></div>` : "";
-    const paperOpen = typeof window !== "undefined" && window.matchMedia("(min-width: 821px)").matches ? " open" : "";
-    const sourcePages = selectedExam.pageImages?.length ? `<details class="practice-paper"${paperOpen}><summary><span><b>Đề thi gốc · Mã ${escapeHTML(selectedExam.examCode)}</b><small>Chạm vào trang đề để phóng to</small></span><strong>${selectedExam.pageImages.length} trang</strong></summary>${renderPageGallery(selectedExam.pageImages, `Đề ${selectedExam.subject}`, "practice-paper-pages")}</details>` : "";
+    const sourcePages = selectedExam.pageImages?.length ? `<details class="practice-paper"><summary><span><b>Đối chiếu bản đề gốc · Mã ${escapeHTML(selectedExam.examCode)}</b><small>Chỉ mở khi cần kiểm tra hình, bảng hoặc công thức</small></span><strong>${selectedExam.pageImages.length} trang</strong></summary>${renderPageGallery(selectedExam.pageImages, `Đề ${selectedExam.subject}`, "practice-paper-pages")}</details>` : "";
     this.root.innerHTML = `
       <div class="practice-exam-shell">
         <header class="practice-exam-header">
@@ -261,7 +263,7 @@ export class PracticeExamApp {
         ${branchPicker}
         ${sourcePages}
         <div class="practice-exam-layout">
-          <form class="practice-question-list ${selectedExam.pageImages?.length ? "is-answer-sheet" : ""}" id="practice-question-form">
+          <form class="practice-question-list ${selectedExam.hasFullText ? "is-full-text" : selectedExam.pageImages?.length ? "is-answer-sheet" : ""}" id="practice-question-form">
             ${questions.map((question, index) => this.renderQuestion(question, index, answers, flagged)).join("")}
           </form>
           <aside class="practice-question-nav">
@@ -334,17 +336,18 @@ export class PracticeExamApp {
   }
 
   renderReview(question, index, detail) {
+    const reviewText = `${question.context ? `<div class="practice-review-context">${escapeHTML(question.context)}</div>` : ""}<p class="practice-review-prompt">${escapeHTML(question.prompt)}</p>`;
     if (question.type === "true-false") {
-      return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section)} · Câu ${question.number}</span>${detail.correctItems}/4 ý đúng · ${Number(detail.points).toFixed(2)}/${Number(detail.maximumPoints).toFixed(2)} điểm</h4><div class="practice-review-options">${question.statements.map((statement, statementIndex) => {
+      return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section)} · Câu ${question.number}</span>${detail.correctItems}/4 ý đúng · ${Number(detail.points).toFixed(2)}/${Number(detail.maximumPoints).toFixed(2)} điểm</h4>${reviewText}<div class="practice-review-options">${question.statements.map((statement, statementIndex) => {
         const selected = detail.selected?.[statementIndex];
         const expected = question.answer[statementIndex];
         return `<p class="${selected === expected ? "is-answer" : "is-selected-wrong"}"><b>${escapeHTML(statement)}</b>Bạn chọn: ${answerLabel(selected)}<strong>Đáp án: ${answerLabel(expected)}</strong></p>`;
       }).join("")}</div></article>`;
     }
     if (question.type === "short") {
-      return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section)} · Câu ${question.number}</span>${detail.correct ? "Chính xác" : "Chưa chính xác"} · ${Number(detail.points).toFixed(2)}/${Number(detail.maximumPoints).toFixed(2)} điểm</h4><div class="practice-review-options"><p class="${detail.correct ? "is-answer" : "is-selected-wrong"}"><b>✎</b>Bạn nhập: ${escapeHTML(detail.selected || "Bỏ trống")}<strong>Đáp án: ${escapeHTML(question.answerText)}</strong></p></div></article>`;
+      return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section)} · Câu ${question.number}</span>${detail.correct ? "Chính xác" : "Chưa chính xác"} · ${Number(detail.points).toFixed(2)}/${Number(detail.maximumPoints).toFixed(2)} điểm</h4>${reviewText}<div class="practice-review-options"><p class="${detail.correct ? "is-answer" : "is-selected-wrong"}"><b>✎</b>Bạn nhập: ${escapeHTML(detail.selected || "Bỏ trống")}<strong>Đáp án: ${escapeHTML(question.answerText)}</strong></p></div></article>`;
     }
-    return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section || `Câu ${index + 1}`)}</span>${escapeHTML(question.prompt)}</h4><div class="practice-review-options">${question.options.map((option, optionIndex) => {
+    return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section || "")} · Câu ${question.number || index + 1}</span>${detail.correct ? "Chính xác" : "Chưa chính xác"}</h4>${reviewText}<div class="practice-review-options">${question.options.map((option, optionIndex) => {
       const classes = [optionIndex === question.answer ? "is-answer" : "", optionIndex === detail.selected && optionIndex !== question.answer ? "is-selected-wrong" : ""].filter(Boolean).join(" ");
       return `<p class="${classes}"><b>${String.fromCharCode(65 + optionIndex)}</b>${question.options.every((item) => /^[A-D]$/.test(item)) ? "" : escapeHTML(option)}${optionIndex === question.answer ? "<strong>Đáp án đúng</strong>" : optionIndex === detail.selected ? "<strong>Bạn chọn</strong>" : ""}</p>`;
     }).join("")}</div>${question.explanation ? `<div class="practice-explanation"><b>Lời giải</b><p>${escapeHTML(question.explanation)}</p></div>` : ""}</article>`;

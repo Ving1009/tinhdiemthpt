@@ -77,6 +77,24 @@ test("toàn bộ trang đề và lời giải đã được đóng gói cho webs
   }
 });
 
+test("17 đề nguồn có đầy đủ nội dung chữ để làm bài không cần xem ảnh", () => {
+  for (const exam of PRACTICE_EXAMS_2026.filter((item) => item.sourceKind === "official-paper")) {
+    assert.equal(exam.hasFullText, true, exam.subject);
+    for (const question of exam.questions) {
+      assert.ok(`${question.context || ""} ${question.prompt}`.trim().length >= 5, `${exam.subject} câu ${question.number}`);
+      assert.doesNotMatch(question.prompt.trim(), /^Câu\s+\d+$/i, `${exam.subject} câu ${question.number}`);
+      if (question.type === "single") {
+        assert.equal(question.options.length, 4, `${exam.subject} câu ${question.number}`);
+        assert.equal(question.options.every((option) => /^[A-D]$/.test(option)), false, `${exam.subject} câu ${question.number}`);
+      }
+      if (question.type === "true-false") {
+        assert.equal(question.statements.length, 4, `${exam.subject} câu ${question.number}`);
+        assert.equal(question.statements.every((statement) => /^[a-d]$/i.test(statement)), false, `${exam.subject} câu ${question.number}`);
+      }
+    }
+  }
+});
+
 test("chấm đúng thang điểm chính thức cho chọn đáp án, đúng sai và trả lời ngắn", () => {
   const exam = PRACTICE_EXAMS_2026.find((item) => item.subject === "Vật lí");
   const single = exam.questions.find((item) => item.type === "single");

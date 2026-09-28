@@ -1,3 +1,5 @@
+import { OFFICIAL_QUESTION_CONTENT_2026 } from "./officialQuestionContent2026.js";
+
 const LETTERS = ["A", "B", "C", "D"];
 
 function assetPages(slug, kind, count) {
@@ -61,6 +63,30 @@ function officialExam({
     ...branchQuestions,
     ...shortAnswerQuestions(id, short, shortPoints)
   ];
+  const transcript = OFFICIAL_QUESTION_CONTENT_2026[slug];
+  if (!transcript) throw new Error(`Thiếu nội dung số hóa cho ${id}`);
+  const branchOffsets = new Map();
+  for (const question of questions) {
+    let sourceQuestion;
+    if (question.type === "single") {
+      sourceQuestion = transcript.single.find((item) => item.number === question.number);
+    } else if (question.type === "short") {
+      sourceQuestion = transcript.short.find((item) => item.number === question.number);
+    } else if (question.branch) {
+      const branchQuestions = transcript.trueFalse.filter((item) => item.branch === question.branch);
+      const offset = branchOffsets.get(question.branch) || 0;
+      sourceQuestion = branchQuestions[offset];
+      branchOffsets.set(question.branch, offset + 1);
+    } else {
+      sourceQuestion = transcript.trueFalse.find((item) => item.number === question.number && (!item.branch || item.branch === "Chung"));
+    }
+    if (!sourceQuestion) throw new Error(`Thiếu câu ${question.type} ${question.number} của ${id}`);
+    question.number = sourceQuestion.number;
+    question.context = sourceQuestion.context || "";
+    question.prompt = sourceQuestion.prompt;
+    if (question.type === "single") question.options = sourceQuestion.options;
+    if (question.type === "true-false") question.statements = sourceQuestion.statements;
+  }
   const baseQuestions = questions.filter((question) => !question.branch);
   const scoreSets = branchEntries.length
     ? branchEntries.map(([branch]) => [...baseQuestions, ...questions.filter((question) => question.branch === branch)])
@@ -81,11 +107,12 @@ function officialExam({
     title: `Đề thi chính thức tốt nghiệp THPT 2026 · Mã đề ${code}`,
     examCode: code,
     sourceKind: "official-paper",
+    hasFullText: true,
     sourceLabel: "Đề thi do người dùng cung cấp",
     answerSource,
     answerBranches: branchEntries.map(([branch]) => branch),
     questionCount: scoreSets[0].length,
-    note: `${note}${note ? " " : ""}Đề được hiển thị nguyên trang; phiếu trả lời trực tuyến chấm theo cấu trúc và thang điểm của đề.`,
+    note: `${note}${note ? " " : ""}Toàn bộ câu hỏi đã được số hóa để làm trực tiếp; ảnh đề gốc được giữ để đối chiếu khi cần.`,
     pageImages: assetPages(slug, "pages", pageCount),
     answerImages: assetPages(slug, "answers", answerCount),
     solutionImages: assetPages(slug, "solutions", solutionCount),

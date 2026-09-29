@@ -16,7 +16,7 @@ import { TranscriptScanner } from "./transcriptScanner.js";
 import { turnstileGate } from "./turnstile.js";
 import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js";
 import { AccountApp, hasStoredAuthSession } from "./account.js";
-import { AdmissionsAssistant } from "./assistant.js?v=20260929-3";
+import { AdmissionsAssistant } from "./assistant.js?v=20260929-4";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
 const THEME_STORAGE_KEY = "thpt-calculator-theme-v1";

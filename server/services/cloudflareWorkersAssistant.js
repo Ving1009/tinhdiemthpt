@@ -32,7 +32,7 @@ export function createCloudflareWorkersAssistantService({
       response = await fetchImpl(`https://api.cloudflare.com/client/v4/accounts/${account}/ai/run/${selectedModel}`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: createGroundedAssistantMessages(rawInput), temperature: 0.2, max_tokens: 500, stream: false }),
+        body: JSON.stringify({ messages: createGroundedAssistantMessages(rawInput), temperature: 0.2, max_tokens: 900, reasoning_effort: "low", stream: false }),
         signal: controller.signal
       });
     } catch (error) {

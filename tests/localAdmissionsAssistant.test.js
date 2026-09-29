@@ -28,6 +28,16 @@ test("tư vấn theo điểm chỉ lấy mốc THPT công khai trên thang 30", 
   for (const card of answer.cards) assert.equal(card.type, "program");
 });
 
+test("tư vấn hiểu điểm viết tắt và lọc đúng ngành điện điện tử", () => {
+  const answer = answerAdmissionsQuestion(knowledge, "25đ thpt nên chọn ngành điện điện tử ở trường nào");
+  assert.ok(answer.cards.length > 0);
+  assert.ok(answer.cards.every((card) => /điện/i.test(card.title)));
+  assert.ok(answer.cards.every((card) => !/thương mại điện tử/i.test(card.title)));
+  assert.ok(answer.cards.some((card) => /kỹ thuật|công nghệ kỹ thuật|cơ điện tử/i.test(card.title)));
+  assert.ok(answer.cards.every((card) => card.lines.some((line) => /THPT|xét tuyển/i.test(line) && /\/30/.test(line))));
+  assert.match(answer.text, /không cao hơn 25/i);
+});
+
 test("trợ lý giải thích tổ hợp từ kho website", () => {
   const answer = answerAdmissionsQuestion(knowledge, "Tổ hợp A00 gồm môn gì?");
   assert.match(answer.text, /A00/);

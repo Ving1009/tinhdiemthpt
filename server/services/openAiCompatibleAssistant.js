@@ -41,7 +41,7 @@ export function createOpenAiCompatibleAssistantService({
           model: selectedModel,
           messages: createGroundedAssistantMessages(rawInput),
           temperature: 0.2,
-          [maxTokensProperty]: 500,
+          [maxTokensProperty]: 800,
           stream: false
         }),
         signal: controller.signal

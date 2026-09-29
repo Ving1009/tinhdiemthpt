@@ -1,6 +1,6 @@
 const STOP_WORDS = new Set([
   "ai", "ban", "cho", "co", "cua", "dai", "duoc", "gi", "hay", "ho", "la", "minh", "mot", "muon", "nao", "nam",
-  "nganh", "o", "tim", "toi", "truong", "tu", "van", "ve", "xem", "xin", "xet", "tuyen", "sinh"
+  "nganh", "o", "tim", "toi", "truong", "van", "ve", "xem", "xin", "xet", "tuyen", "sinh"
 ]);
 const PUBLIC_SCORE_STATUSES = new Set(["verified", "reference"]);
 const REGION_LABELS = { north: "Miền Bắc", central: "Miền Trung", south: "Miền Nam" };
@@ -167,19 +167,55 @@ function programCard(knowledge, program) {
 }
 
 function extractScore(query) {
-  const values = [...String(query).matchAll(/(?:^|\s)(\d{1,2}(?:[.,]\d{1,2})?)(?=\s|điểm|$)/giu)]
+  const values = [...String(query).matchAll(/(?:^|\s)(\d{1,2}(?:[.,]\d{1,2})?)(?=\s*(?:điểm|diem|đ|d)?(?:\s|$))/giu)]
     .map((match) => Number(match[1].replace(",", ".")))
     .filter((value) => value >= 0 && value <= 30);
   return values[0] ?? null;
 }
 
+function scoreAdviceTokens(query) {
+  const ignored = new Set([
+    "chon", "diem", "goi", "hoc", "khoang", "muc", "nen", "phu", "hop", "tam", "thi", "thpt", "voi", "xem", "y"
+  ]);
+  return [...new Set(tokens(query).filter((word) => !/^\d+(?:[.,]\d+)?d?$/.test(word) && !ignored.has(word)))];
+}
+
+function asksElectricalElectronics(query) {
+  const normalized = normalizeAssistantText(query);
+  if (/\bthuong mai dien tu\b/.test(normalized)) return false;
+  return /\bdien\s+(?:va\s+)?dien\s+tu\b|\bnganh\s+dien\s+tu\b/.test(normalized);
+}
+
+function matchesAdviceTopic(programName, wantedTokens, electricalElectronics) {
+  const name = normalizeAssistantText(programName);
+  if (electricalElectronics) {
+    if (/\b(?:thuong mai|kinh doanh)\s+dien\s+tu\b/.test(name)) return false;
+    return (/\b(?:ky thuat|cong nghe ky thuat)\b/.test(name) && /\bdien/.test(name))
+      || /\bco dien tu\b|\bdien tu\s*-?\s*vien thong\b|\bdien\s*(?:-|va|,)\s*dien tu\b/.test(name);
+  }
+  return !wantedTokens.length || wantedTokens.every((word) => name.includes(word));
+}
+
+function scoreProgramCard(knowledge, program, method, score) {
+  const card = programCard(knowledge, program);
+  const difference = Math.max(0, score - method.score);
+  const comparison = difference > 0
+    ? `điểm của bạn cao hơn mốc ${difference.toFixed(2).replace(/\.00$/, "").replace(/0$/, "")} điểm`
+    : "mốc bằng điểm bạn nhập";
+  const detail = [method.name || "THPT", method.combination, `${method.score}/${method.scale || 30}`, comparison].filter(Boolean).join(" · ");
+  card.lines = [detail, ...card.lines.filter((line) => !line.includes(`${method.score}/${method.scale || 30}`))].slice(0, 3);
+  return card;
+}
+
 function scoreAdvice(knowledge, query, score) {
-  const wantedTokens = tokens(query).filter((word) => !/^\d+(?:[.,]\d+)?$/.test(word) && !["diem", "thpt", "thi", "khoang", "tam", "voi", "nen"].includes(word));
+  const wantedTokens = scoreAdviceTokens(query);
+  const electricalElectronics = asksElectricalElectronics(query);
   const candidates = [];
   for (const program of knowledge.programs) {
     const school = knowledge.schoolById.get(program.universityId);
     const text = normalizeAssistantText(`${program.name} ${program.code} ${school?.name || ""} ${school?.region || ""}`);
-    if (wantedTokens.length && !wantedTokens.every((word) => text.includes(word))) continue;
+    if (!matchesAdviceTopic(program.name, wantedTokens, electricalElectronics)) continue;
+    if (!electricalElectronics && wantedTokens.length && !wantedTokens.every((word) => text.includes(word))) continue;
     const method = program.methods
       .filter((item) => /thpt/i.test(item.name) && Number.isFinite(item.score) && Number(item.scale) === 30 && PUBLIC_SCORE_STATUSES.has(item.status) && item.score <= score)
       .sort((a, b) => b.score - a.score)[0];
@@ -195,7 +231,7 @@ function scoreAdvice(knowledge, query, score) {
   if (!ranked.length) return null;
   return {
     text: `Mình tìm thấy ${ranked.length} ngành có mốc THPT 2026 trong dữ liệu website không cao hơn ${score}. Đây chỉ là đối chiếu theo điểm đã công bố, chưa phải dự đoán trúng tuyển; bạn cần kiểm tra tổ hợp và điều kiện của từng trường.`,
-    cards: ranked.map(({ program }) => programCard(knowledge, program)),
+    cards: ranked.map(({ program, method }) => scoreProgramCard(knowledge, program, method, score)),
     suggestions: ["Tìm ngành Công nghệ thông tin", "Xem các trường miền Bắc", "Báo thông tin sai"]
   };
 }

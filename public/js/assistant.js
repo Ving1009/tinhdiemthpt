@@ -1,4 +1,4 @@
-import { answerAdmissionsQuestion, createAssistantKnowledge } from "./core/localAdmissionsAssistant.js";
+import { answerAdmissionsQuestion, createAssistantKnowledge } from "./core/localAdmissionsAssistant.js?v=20260929-2";
 import { createDataReport } from "./core/dataReport.js";
 import { turnstileGate } from "./turnstile.js";
 

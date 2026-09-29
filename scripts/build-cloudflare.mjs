@@ -4,6 +4,7 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { sanitizeMajor, sanitizePublicValue, sanitizeUniversity, validateCutoff } from "../lib/dataValidation.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
+import { buildAssistantKnowledge } from "./build-assistant-knowledge.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const output = join(root, ".cloudflare", "public");
@@ -34,6 +35,7 @@ async function listFiles(directory) {
   return nested.flat();
 }
 
+await buildAssistantKnowledge();
 await rm(join(root, ".cloudflare"), { recursive: true, force: true });
 await mkdir(workerData, { recursive: true });
 await cp(join(root, "public"), output, { recursive: true });
@@ -84,6 +86,8 @@ await Promise.all([
     "  Cache-Control: public, max-age=604800",
     "/vendor/*",
     "  Cache-Control: public, max-age=31536000, immutable",
+    "/data/assistant-knowledge.json",
+    "  Cache-Control: public, max-age=86400",
     ""
   ].join("\n"))
 ]);

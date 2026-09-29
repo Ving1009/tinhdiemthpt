@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/responsive.css?v=20260927-1" />
     <link rel="stylesheet" href="css/refinement.css?v=20260928-1" />
     <link rel="stylesheet" href="css/practice-exam.css?v=20260928-1" />
+    <link rel="stylesheet" href="css/assistant.css?v=20260929-1" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
@@ -380,6 +381,66 @@
       </section>
     </div>
 
+    <div class="assistant-shell" id="admissions-assistant">
+      <section class="assistant-panel" id="assistant-panel" role="dialog" aria-labelledby="assistant-title" hidden>
+        <header class="assistant-header">
+          <div class="assistant-avatar" aria-hidden="true">Σ</div>
+          <div><h2 id="assistant-title">Trợ lý tuyển sinh</h2><p><span></span>Nội bộ · không dùng API AI</p></div>
+          <button class="assistant-close" type="button" data-assistant-close aria-label="Đóng trợ lý">×</button>
+        </header>
+        <div class="assistant-chat" data-assistant-chat>
+          <div class="assistant-messages" id="assistant-messages" aria-live="polite">
+            <article class="assistant-message assistant-message-assistant">
+              <div class="assistant-message-body"><p>Chào bạn! Mình có thể tìm trường/ngành, đối chiếu mức điểm, giải thích tổ hợp và tiếp nhận báo thông tin sai.</p></div>
+              <div class="assistant-suggestions">
+                <button class="assistant-chip" type="button" data-assistant-suggestion="Tìm ngành Công nghệ thông tin">Tìm ngành CNTT</button>
+                <button class="assistant-chip" type="button" data-assistant-suggestion="25 điểm THPT nên xem ngành nào?">Tư vấn theo điểm</button>
+                <button class="assistant-chip" type="button" data-assistant-suggestion="Báo thông tin sai">Báo thông tin sai</button>
+              </div>
+            </article>
+          </div>
+          <div class="assistant-privacy"><span aria-hidden="true">✓</span><span>Câu hỏi được xử lý trên thiết bị và không gửi tới dịch vụ AI bên ngoài.</span></div>
+          <form class="assistant-form" id="assistant-form">
+            <label class="sr-only" for="assistant-input">Hỏi trợ lý tuyển sinh</label>
+            <textarea id="assistant-input" rows="1" minlength="2" maxlength="500" placeholder="Nhập tên trường, ngành, mã hoặc mức điểm…" required></textarea>
+            <button type="submit" aria-label="Gửi câu hỏi">➤</button>
+          </form>
+          <button class="assistant-report-shortcut" type="button" data-assistant-report-open>⚑ Báo thông tin sai</button>
+        </div>
+        <div class="assistant-report-view" data-assistant-report hidden>
+          <button class="assistant-back" type="button" data-assistant-report-back>← Quay lại tư vấn</button>
+          <h3>Báo thông tin cần sửa</h3>
+          <p id="assistant-report-context" class="assistant-report-context">Báo thông tin chung</p>
+          <form id="assistant-report-form" class="assistant-report-form">
+            <label>Tên trường
+              <input name="school" list="assistant-school-list" maxlength="240" placeholder="Nhập hoặc chọn trường" required />
+              <datalist id="assistant-school-list"></datalist>
+            </label>
+            <label>Mục cần chỉnh sửa
+              <select name="field">
+                <option>Hồ sơ trường</option><option>Tên ngành</option><option>Mã ngành</option><option>Tổ hợp</option><option>Phương thức</option><option>Điểm chuẩn</option><option>Công thức</option><option>Liên kết nguồn</option><option>Khác</option>
+              </select>
+            </label>
+            <label>Nội dung báo lỗi
+              <textarea name="description" minlength="15" maxlength="1000" rows="4" placeholder="Nêu rõ thông tin nào chưa đúng (15–1.000 ký tự)" required></textarea>
+            </label>
+            <label>Thông tin đúng đề xuất <small>không bắt buộc</small>
+              <input name="proposedValue" maxlength="500" placeholder="Giá trị đúng theo nguồn" />
+            </label>
+            <label>Nguồn kiểm chứng <small>không bắt buộc</small>
+              <input name="evidenceUrl" type="url" maxlength="500" placeholder="https://website-chinh-thuc.edu.vn/…" />
+            </label>
+            <button class="assistant-report-submit" type="submit" data-assistant-report-submit>Gửi báo cáo</button>
+            <p id="assistant-report-status" class="assistant-report-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+      <button class="assistant-launcher" type="button" data-assistant-open aria-controls="assistant-panel" aria-expanded="false">
+        <span class="assistant-launcher-icon" aria-hidden="true">✦</span>
+        <span class="assistant-launcher-label">Hỏi trợ lý</span>
+      </button>
+    </div>
+
     <div class="modal is-hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div class="modal-backdrop" data-close-modal></div>
       <div class="modal-dialog" role="document"><button class="modal-close" type="button" data-close-modal aria-label="Đóng cửa sổ">×</button><div id="modal-body"></div></div>
@@ -394,6 +455,6 @@
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="js/main.js?v=20260928-1"></script>
+    <script type="module" src="js/main.js?v=20260929-1"></script>
   </body>
 </html>

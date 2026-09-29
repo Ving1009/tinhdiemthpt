@@ -12,7 +12,7 @@ import { createFinderScoreContext, createScoreProfile, finderContextIsFresh, for
 import { moveWishById, normalizeWish, normalizeWishList, removeWishById, wishIdentity } from "./core/wishList.js";
 import { autoFillTranscript } from "./autoFillTranscript.js";
 import { TranscriptPreview } from "./transcriptPreview.js";
-import { TranscriptScanner } from "./transcriptScanner.js";
+import { TranscriptScanner } from "./transcriptScanner.js?v=20260929-1";
 import { turnstileGate } from "./turnstile.js";
 import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js";
 import { AccountApp, hasStoredAuthSession } from "./account.js";
@@ -333,8 +333,7 @@ class THPTApp {
     const view = allowed.includes(value) ? value : "calculator";
     document.querySelectorAll("main > .section").forEach((section) => { section.hidden = section.id !== view && !(section.id === "home" && view === "calculator"); });
     document.querySelectorAll(".site-nav a").forEach((link) => { const active = link.hash === `#${view}`; link.classList.toggle("is-active", active); active ? link.setAttribute("aria-current", "page") : link.removeAttribute("aria-current"); });
-    const heading = document.querySelector(`#${view} h1, #${view} h2`);
-    document.title = `${heading?.textContent?.trim() || "Tính Điểm THPT"} | Tính Điểm THPT`;
+    document.title = "Tính Điểm THPT | Tra cứu tuyển sinh 2026";
   }
   async handleLocationChange() {
     this.setView(location.hash);

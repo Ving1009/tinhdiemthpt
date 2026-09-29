@@ -2,24 +2,23 @@ import { escapeHTML } from "./utils.js";
 import { optimizeTranscriptImagesSequentially } from "./transcriptImageOptimizer.js";
 import { turnstileGate } from "./turnstile.js";
 
-const MAX_IMAGES = 6;
-const MAX_IMAGE_BYTES = 7 * 1024 * 1024;
+export const MAX_IMAGES = 6;
+export const MAX_IMAGE_BYTES = 7 * 1024 * 1024;
 const MAX_UPLOAD_BYTES = 10 * 1024 * 1024;
 const ACCEPTED_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
+export const REMOTE_SCAN_TIMEOUT_MS = 60_000;
 
 function fileKey(file) { return `${file.name}-${file.size}-${file.lastModified}`; }
 function fileSize(bytes) { return `${(bytes / (1024 * 1024)).toFixed(bytes < 1024 * 1024 ? 1 : 0)} MB`; }
 
-export function resolveTranscriptApiUrl(location = window.location, documentRef = document) {
-  const configuredBase = documentRef.querySelector('meta[name="transcript-api-base"]')?.content.trim();
-  if (configuredBase) return new URL("/api/scan-transcript", configuredBase).toString();
+export function resolveTranscriptApiUrl(location = window.location) {
   const isLoopback = ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname);
   if (isLoopback && location.port !== "3000") return `http://${location.hostname}:3000/api/scan-transcript`;
   return "/api/scan-transcript";
 }
 
-export function resolveTranscriptAssetBaseUrl(location = window.location, documentRef = document) {
-  const apiUrl = resolveTranscriptApiUrl(location, documentRef);
+export function resolveTranscriptAssetBaseUrl(location = window.location) {
+  const apiUrl = resolveTranscriptApiUrl(location);
   if (/^https?:\/\//i.test(apiUrl)) return new URL("/vendor/", apiUrl).toString();
   return "/vendor/";
 }
@@ -41,17 +40,7 @@ const NON_FALLBACK_CODES = new Set([
   "LIMIT_FILE_COUNT",
   "LIMIT_FILE_SIZE",
   "RATE_LIMITED",
-  "TURNSTILE_CANCELLED",
-  "TURNSTILE_REQUIRED",
-  "TURNSTILE_FAILED",
-  "TURNSTILE_INVALID",
-  "TURNSTILE_ACTION_MISMATCH",
-  "TURNSTILE_HOSTNAME_MISMATCH",
-  "TURNSTILE_MISCONFIGURED",
-  "TURNSTILE_CONFIG_UNAVAILABLE",
-  "TURNSTILE_CLIENT_ERROR",
-  "TURNSTILE_TIMEOUT",
-  "TURNSTILE_UNAVAILABLE"
+  "TURNSTILE_CANCELLED"
 ]);
 const RETRYABLE_TURNSTILE_CODES = new Set([
   "TURNSTILE_REQUIRED",
@@ -61,26 +50,49 @@ const RETRYABLE_TURNSTILE_CODES = new Set([
 const MANUAL_ENTRY_CODES = new Set(["AI_QUOTA", "OCR_SPACE_QUOTA", "SCAN_QUOTA_EXHAUSTED"]);
 
 export function shouldUseBrowserFallback(error) {
+  if (Number(error?.statusCode) >= 500) return true;
   return error instanceof TypeError || !NON_FALLBACK_CODES.has(error?.code);
+}
+
+export function transcriptImageValidationMessage(file) {
+  if (!ACCEPTED_TYPES.has(file?.type)) return `${file?.name || "Tệp đã chọn"}: chỉ nhận JPG, PNG hoặc WEBP.`;
+  if (Number(file?.size) > MAX_IMAGE_BYTES) return `${file.name}: tối đa 7 MB.`;
+  return "";
 }
 
 export async function requestRemoteTranscriptScan(images, {
   apiUrl = resolveTranscriptApiUrl(),
   fetchImpl = globalThis.fetch,
-  turnstileToken = ""
+  turnstileToken = "",
+  timeoutMs = REMOTE_SCAN_TIMEOUT_MS
 } = {}) {
   const formData = new FormData();
   images.forEach((image) => formData.append("images[]", image.blob, image.uploadName));
   const headers = turnstileToken ? { "X-Turnstile-Token": turnstileToken } : undefined;
-  const response = await fetchImpl(apiUrl, { method: "POST", headers, body: formData });
-  const payload = await response.json().catch(() => null);
-  if (!response.ok || !payload?.success) {
-    throw new RemoteTranscriptScanError(payload?.error?.message || "Dịch vụ nhận diện tạm thời chưa sẵn sàng.", {
-      code: payload?.error?.code,
-      statusCode: response.status
-    });
+  const controller = new AbortController();
+  const requestTimeout = Number.isFinite(Number(timeoutMs)) && Number(timeoutMs) > 0 ? Number(timeoutMs) : REMOTE_SCAN_TIMEOUT_MS;
+  const timeoutId = setTimeout(() => controller.abort(), requestTimeout);
+  try {
+    const response = await fetchImpl(apiUrl, { method: "POST", headers, body: formData, signal: controller.signal });
+    const payload = await response.json().catch(() => null);
+    if (!response.ok || !payload?.success) {
+      throw new RemoteTranscriptScanError(payload?.error?.message || "Dịch vụ nhận diện tạm thời chưa sẵn sàng.", {
+        code: payload?.error?.code,
+        statusCode: response.status
+      });
+    }
+    return payload;
+  } catch (error) {
+    if (controller.signal.aborted) {
+      throw new RemoteTranscriptScanError("Dịch vụ nhận diện phản hồi quá lâu. Bạn có thể quét trực tiếp trên thiết bị.", {
+        code: "REMOTE_SCAN_TIMEOUT",
+        statusCode: 504
+      });
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeoutId);
   }
-  return payload;
 }
 
 export async function requestProtectedTranscriptScan(images, {
@@ -144,8 +156,8 @@ export class TranscriptScanner {
     const next = [...this.files];
     const errors = [];
     for (const file of [...list]) {
-      if (!ACCEPTED_TYPES.has(file.type)) { errors.push(`${file.name}: chỉ nhận JPG, PNG hoặc WEBP.`); continue; }
-      if (file.size > MAX_IMAGE_BYTES) { errors.push(`${file.name}: tối đa 7 MB.`); continue; }
+      const validationMessage = transcriptImageValidationMessage(file);
+      if (validationMessage) { errors.push(validationMessage); continue; }
       if (next.some((item) => fileKey(item.file) === fileKey(file))) continue;
       if (next.length >= MAX_IMAGES) { errors.push(`Chỉ có thể chọn tối đa ${MAX_IMAGES} ảnh.`); break; }
       next.push({ file });
@@ -209,11 +221,15 @@ export class TranscriptScanner {
   }
 
   scrollToManualEntry() {
-    document.getElementById("academic-score-entry")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const entry = document.getElementById("academic-score-entry");
+    entry?.scrollIntoView({ behavior: "smooth", block: "start" });
+    requestAnimationFrame(() => entry?.querySelector("[data-academic-score]")?.focus({ preventScroll: true }));
   }
 
   async scan() {
-    if (!this.files.length || this.consent?.checked !== true || this.isScanning) return;
+    if (this.isScanning) return;
+    if (!this.files.length) { this.notify("Hãy chọn ít nhất một ảnh học bạ."); return; }
+    if (this.consent?.checked !== true) { this.notify("Vui lòng tick ô đồng ý trước khi tải ảnh lên dịch vụ nhận diện."); return; }
     this.isScanning = true;
     this.onScanStart();
     this.render();
@@ -241,7 +257,7 @@ export class TranscriptScanner {
           return;
         }
         try {
-          const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js");
+          const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js?v=20260929-1");
           payload = await recognizeTranscriptInBrowser(optimizedImages, {
             assetBaseUrl: resolveTranscriptAssetBaseUrl(),
             onStatus: (message) => this.setStatus(message, "working")

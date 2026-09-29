@@ -36,6 +36,13 @@ test("HTML có tìm kiếm mobile, khóa năm 2027 và đã dọn UI cũ", async
   assert.match(html, /id="transcript-fallback-dialog"/);
   assert.match(html, /Chính sách quyền riêng tư/);
   assert.equal((html.match(/class="reference-warning/g) || []).length, 3);
+  assert.match(html, /<title>Tính Điểm THPT \| Tra cứu tuyển sinh 2026<\/title>/);
+  assert.match(html, /<meta property="og:title" content="Tính Điểm THPT \| Tra cứu tuyển sinh 2026"/);
+  assert.match(html, /<meta name="twitter:title" content="Tính Điểm THPT \| Tra cứu tuyển sinh 2026"/);
+  assert.doesNotMatch(html, /transcript-api-base|26\.75|● Đã tính/);
+  assert.match(html, /Ví dụ minh họa/);
+  assert.match(html, /<strong>26\.40<\/strong>/);
+  assert.match(html, /<b>\+ 0\.40<\/b>/);
 });
 
 test("frontend dùng API và không import private dataset", async () => {

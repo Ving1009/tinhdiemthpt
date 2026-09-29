@@ -31,17 +31,11 @@ function classifyGeminiError(error) {
   return new AppError("Không thể đọc ảnh học bạ. Hãy chụp lại rõ hơn, tránh lóa sáng và đảm bảo đủ bảng điểm.", { statusCode: 502, code: "AI_REQUEST_FAILED" });
 }
 
-function diagnosticGeminiError(error, apiKey) {
-  const rawMessage = String(error?.message || "");
-  const withoutKey = apiKey ? rawMessage.replaceAll(String(apiKey), "[redacted]") : rawMessage;
-  const message = withoutKey
-    .replace(/([?&]key=)[^&\s]+/gi, "$1[redacted]")
-    .slice(0, 800);
+function diagnosticGeminiError(error) {
   return {
     name: String(error?.name || "Error").slice(0, 80),
     status: Number(error?.status || error?.statusCode) || null,
-    code: String(error?.code || "").slice(0, 80) || null,
-    message
+    code: String(error?.code || "").slice(0, 80) || null
   };
 }
 
@@ -82,7 +76,7 @@ export function createGeminiVisionService({ apiKey, model = DEFAULT_MODEL, onErr
       }
       return validateTranscriptPayload(mergeBatchPayloads(payloads), catalog);
     } catch (error) {
-      onError(diagnosticGeminiError(error, apiKey));
+      onError(diagnosticGeminiError(error));
       throw classifyGeminiError(error);
     }
   };

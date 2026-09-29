@@ -46,6 +46,20 @@ test("endpoint từ chối tệp không phải ảnh", async () => {
   });
 });
 
+test("endpoint báo rõ khi tải quá 6 ảnh", async () => {
+  await withServer(async () => ({ data: { student: { name: null }, scores: [] }, warnings: [] }), async (baseUrl) => {
+    const form = new FormData();
+    for (let index = 0; index < 7; index += 1) {
+      form.append("images[]", new Blob([PNG], { type: "image/png" }), `page-${index + 1}.png`);
+    }
+    const response = await fetch(`${baseUrl}/api/scan-transcript`, { method: "POST", body: form });
+    const body = await response.json();
+    assert.equal(response.status, 400);
+    assert.equal(body.error.code, "LIMIT_FILE_COUNT");
+    assert.match(body.error.message, /tối đa 6 ảnh/);
+  });
+});
+
 test("endpoint cho phép Live Server tại localhost gọi backend AI", async () => {
   await withServer(async () => ({ data: { student: { name: null }, scores: [] }, warnings: [] }), async (baseUrl) => {
     const response = await fetch(`${baseUrl}/api/scan-transcript`, {

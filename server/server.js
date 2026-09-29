@@ -93,8 +93,10 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
   app.use((error, _request, response, _next) => {
     if (isUploadError(error)) {
       const tooLarge = error.code === "LIMIT_FILE_SIZE";
-      const message = tooLarge ? "Mỗi ảnh tối đa 7 MB." : "Tệp tải lên không hợp lệ.";
-      response.status(tooLarge ? 413 : 400).json({ success: false, error: { code: error.code || "INVALID_UPLOAD", message } });
+      const tooMany = error.code === "LIMIT_UNEXPECTED_FILE" || error.code === "LIMIT_FILE_COUNT";
+      const message = tooLarge ? "Mỗi ảnh tối đa 7 MB." : tooMany ? "Chỉ được tải tối đa 6 ảnh." : "Tệp tải lên không hợp lệ.";
+      const code = tooLarge ? "LIMIT_FILE_SIZE" : tooMany ? "LIMIT_FILE_COUNT" : error.code || "INVALID_UPLOAD";
+      response.status(tooLarge ? 413 : 400).json({ success: false, error: { code, message } });
       return;
     }
     if (error?.type === "entity.too.large" || error?.status === 413) {

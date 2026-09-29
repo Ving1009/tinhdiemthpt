@@ -23,6 +23,17 @@ test("điểm ưu tiên giảm đúng sau mốc 22,5 trên thang 30", () => {
   assert.equal(calculateAdmissionPriority(30, context).adjusted, 0);
 });
 
+test("các ca biên ưu tiên trong ví dụ giao diện được làm tròn đúng", () => {
+  const kv1 = { area: "KV1", priorityGroup: "none" };
+  assert.equal(calculateAdmissionPriority(26, kv1).adjusted, 0.4);
+  assert.equal(calculateAdmissionPriority(22.5, kv1).adjusted, 0.75);
+  assert.equal(calculateAdmissionPriority(22.49, kv1).adjusted, 0.75);
+  assert.equal(calculateAdmissionPriority(30, { area: "KV2", priorityGroup: "UT2" }).adjusted, 0);
+  const combined = calculateAdmissionPriority(20, { area: "KV1", priorityGroup: "UT1" });
+  assert.equal(combined.base, 2.75);
+  assert.equal(combined.adjusted, 2.75);
+});
+
 test("thang 40 quy đổi tương đương cả điểm và ưu tiên", () => {
   const priority = calculateAdmissionPriority(33, { area: "KV1", priorityGroup: "UT1" }, 40);
   assert.equal(priority.normalizedScore, 24.75);

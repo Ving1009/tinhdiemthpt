@@ -92,10 +92,6 @@ export async function recognizeTranscriptInBrowser(images, {
     };
   } catch (error) {
     if (error instanceof ClientTranscriptOcrError) throw error;
-    const hostname = globalThis.location?.hostname;
-    if (["localhost", "127.0.0.1", "[::1]"].includes(hostname)) {
-      console.warn("Browser OCR diagnostic:", error);
-    }
     throw new ClientTranscriptOcrError();
   } finally {
     if (worker) {

@@ -3,6 +3,7 @@ import test from "node:test";
 import { createCloudflareReportStore } from "../server/cloudflareReportStore.js";
 import { handleOcrRequest, MAX_IMAGES, MAX_MULTIPART_BYTES, MAX_TOTAL_BYTES } from "../worker/ocrHandler.js";
 import mainWorker from "../worker/index.js";
+import { handleAssistantApi } from "../worker/assistantApi.js";
 
 test("Cloudflare OCR nhận multipart hợp lệ và giữ schema response của frontend", async () => {
   const form = new FormData();
@@ -196,4 +197,35 @@ test("Worker khóa đăng ký nếu Turnstile chưa được cấu hình", async
   const payload = await response.json();
   assert.equal(response.status, 503);
   assert.equal(payload.error.code, "TURNSTILE_REQUIRED_FOR_REGISTRATION");
+});
+
+test("Cloudflare Worker trả lời trợ lý qua service backend", async () => {
+  let received;
+  const request = new Request("https://tinhdiemthpt.id.vn/api/assistant-chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question: "Tìm ngành CNTT" })
+  });
+  const response = await handleAssistantApi(request, {}, async (input) => {
+    received = input;
+    return { answer: "Đã tìm thấy ngành phù hợp.", model: "test-model" };
+  });
+  const payload = await response.json();
+  assert.equal(response.status, 200);
+  assert.equal(received.question, "Tìm ngành CNTT");
+  assert.deepEqual(payload.data, { answer: "Đã tìm thấy ngành phù hợp.", model: "test-model" });
+  assert.match(response.headers.get("cache-control"), /no-store/);
+});
+
+test("Cloudflare Worker giới hạn tần suất trước khi gọi Groq", async () => {
+  const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.id.vn/api/assistant-chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question: "Tìm trường BKA" })
+  }), {
+    AI_RATE_LIMITER: { async limit() { return { success: false }; } }
+  });
+  const payload = await response.json();
+  assert.equal(response.status, 429);
+  assert.equal(payload.error.code, "RATE_LIMITED");
 });

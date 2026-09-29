@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/responsive.css?v=20260927-1" />
     <link rel="stylesheet" href="css/refinement.css?v=20260928-1" />
     <link rel="stylesheet" href="css/practice-exam.css?v=20260928-1" />
-    <link rel="stylesheet" href="css/assistant.css?v=20260929-1" />
+    <link rel="stylesheet" href="css/assistant.css?v=20260929-2" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
@@ -385,7 +385,7 @@
       <section class="assistant-panel" id="assistant-panel" role="dialog" aria-labelledby="assistant-title" hidden>
         <header class="assistant-header">
           <div class="assistant-avatar" aria-hidden="true">Σ</div>
-          <div><h2 id="assistant-title">Trợ lý tuyển sinh</h2><p><span></span>Nội bộ · không dùng API AI</p></div>
+          <div><h2 id="assistant-title">Trợ lý tuyển sinh</h2><p><span></span>Groq · dữ liệu website</p></div>
           <button class="assistant-close" type="button" data-assistant-close aria-label="Đóng trợ lý">×</button>
         </header>
         <div class="assistant-chat" data-assistant-chat>
@@ -399,7 +399,7 @@
               </div>
             </article>
           </div>
-          <div class="assistant-privacy"><span aria-hidden="true">✓</span><span>Câu hỏi được xử lý trên thiết bị và không gửi tới dịch vụ AI bên ngoài.</span></div>
+          <div class="assistant-privacy"><span aria-hidden="true">✓</span><span>Câu hỏi tư vấn được gửi tới Groq; báo sai chỉ gửi khi bạn xác nhận.</span></div>
           <form class="assistant-form" id="assistant-form">
             <label class="sr-only" for="assistant-input">Hỏi trợ lý tuyển sinh</label>
             <textarea id="assistant-input" rows="1" minlength="2" maxlength="500" placeholder="Nhập tên trường, ngành, mã hoặc mức điểm…" required></textarea>
@@ -455,6 +455,6 @@
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="js/main.js?v=20260929-1"></script>
+    <script type="module" src="js/main.js?v=20260929-2"></script>
   </body>
 </html>

@@ -3,6 +3,7 @@ import { applyRateLimit, errorResponse, failure, success, withSecurityHeaders } 
 import { handleDataApi } from "./dataApi.js";
 import { publicAuthConfig } from "../lib/publicAuthConfig.js";
 import { handleAuthRequest } from "./auth.js";
+import { handleAssistantApi } from "./assistantApi.js";
 
 const PRIMARY_HOSTNAME = "tinhdiemthpt.id.vn";
 const LEGACY_HOSTNAME = "tinhdiemthpt.tinh-diem-thpt.workers.dev";
@@ -76,6 +77,13 @@ export default {
         return failure(request, "SCAN_PROVIDER_UNAVAILABLE", "Dịch vụ quét học bạ chưa sẵn sàng.", 503);
       }
       return withSecurityHeaders(request, await environment.OCR_SERVICE.fetch(request));
+    }
+    if (url.pathname === "/api/assistant-chat") {
+      if (request.method === "POST") {
+        const limited = await applyRateLimit(environment.AI_RATE_LIMITER, request, "Bạn đã hỏi trợ lý quá nhiều lần. Hãy đợi một phút.");
+        if (limited) return limited;
+      }
+      return handleAssistantApi(request, environment);
     }
     if (url.pathname === "/api/data-reports") {
       const limited = await applyRateLimit(environment.REPORT_RATE_LIMITER, request);

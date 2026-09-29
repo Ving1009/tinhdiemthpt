@@ -5,6 +5,25 @@ import { turnstileGate } from "./turnstile.js";
 const KNOWLEDGE_PATH = "data/assistant-knowledge.json";
 const REPORT_FIELDS = ["Hồ sơ trường", "Tên ngành", "Mã ngành", "Tổ hợp", "Phương thức", "Điểm chuẩn", "Công thức", "Liên kết nguồn", "Khác"];
 
+function apiUrl(path) {
+  const url = new URL(path, document.baseURI);
+  if (["localhost", "127.0.0.1", "[::1]"].includes(url.hostname) && /^55\d\d$/.test(url.port)) url.port = "3000";
+  return url;
+}
+
+async function requestGroqAnswer(input) {
+  const response = await fetch(apiUrl("/api/assistant-chat"), {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input)
+  });
+  const payload = await response.json().catch(() => null);
+  if (!response.ok || !payload?.success || !payload?.data?.answer) {
+    throw new Error(payload?.error?.message || "Groq tạm thời chưa phản hồi.");
+  }
+  return payload.data;
+}
+
 function element(tag, className, text) {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -24,6 +43,7 @@ export class AdmissionsAssistant {
     this.reportContext = {};
     this.contexts = new Map();
     this.contextSequence = 0;
+    this.history = [];
     this.busy = false;
   }
 
@@ -164,13 +184,33 @@ export class AdmissionsAssistant {
     this.input.value = "";
     this.addMessage("user", question);
     this.setBusy(true);
-    const pending = this.addMessage("assistant", "Đang đọc kho dữ liệu trên thiết bị…");
+    const pending = this.addMessage("assistant", "Đang đối chiếu dữ liệu website và hỏi Groq…");
     try {
       const knowledge = await this.loadKnowledge();
       const answer = answerAdmissionsQuestion(knowledge, question);
+      if (answer.action === "report") {
+        pending.remove();
+        this.addMessage("assistant", answer.text, answer);
+        this.history.push({ role: "user", content: question }, { role: "assistant", content: answer.text });
+        this.history = this.history.slice(-6);
+        this.openReport();
+        return;
+      }
+      let responseText = answer.text;
+      try {
+        const remote = await requestGroqAnswer({
+          question,
+          history: this.history,
+          context: { localSummary: answer.text, cards: answer.cards || [] }
+        });
+        responseText = remote.answer;
+      } catch {
+        responseText = `${answer.text}\n\nGroq đang tạm bận nên mình đã dùng chế độ tra cứu nội bộ.`;
+      }
       pending.remove();
-      this.addMessage("assistant", answer.text, answer);
-      if (answer.action === "report") this.openReport();
+      this.addMessage("assistant", responseText, answer);
+      this.history.push({ role: "user", content: question }, { role: "assistant", content: responseText });
+      this.history = this.history.slice(-6);
     } catch (error) {
       pending.remove();
       this.addMessage("assistant", error.message || "Trợ lý chưa thể đọc dữ liệu. Hãy thử lại.", {

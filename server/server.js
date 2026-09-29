@@ -10,6 +10,7 @@ import { createScanTranscriptRouter, isUploadError } from "./routes/scanTranscri
 import { createConfiguredScanProviders } from "./configuredScanProviders.js";
 import { createTranscriptScanService } from "./services/transcriptScanService.js";
 import { createReportStore } from "./reportStore.js";
+import { createConfiguredAdmissionsAssistant } from "./configuredAssistant.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
 
 const serverRequire = createRequire(import.meta.url);
@@ -55,9 +56,10 @@ function applySecurityHeaders(request, response, next) {
 
 export { createConfiguredScanProviders } from "./configuredScanProviders.js";
 
-export function createApp({ scanTranscript, dataStore = defaultDataStore, reportStore = createReportStore(), environment = process.env } = {}) {
+export function createApp({ scanTranscript, dataStore = defaultDataStore, reportStore = createReportStore(), admissionsAssistant, environment = process.env } = {}) {
   const app = express();
   const scanner = scanTranscript || createTranscriptScanService(createConfiguredScanProviders());
+  const assistant = admissionsAssistant || createConfiguredAdmissionsAssistant(environment);
   app.disable("x-powered-by");
   app.use(applySecurityHeaders);
   app.use(express.json({ limit: "100kb" }));
@@ -66,7 +68,7 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
     response.type("text/plain").sendFile(SECURITY_TXT, { dotfiles: "allow" });
   });
   app.use("/api", localDevelopmentCors);
-  app.use("/api", createPublicApiRouter({ store: dataStore, reportStore, environment }));
+  app.use("/api", createPublicApiRouter({ store: dataStore, reportStore, assistant, environment }));
   app.use("/api", createScanTranscriptRouter({ scanTranscript: scanner, environment }));
   const vendorStaticOptions = { dotfiles: "deny", index: false, etag: true, maxAge: "30d", immutable: true };
   app.use("/vendor/tesseract", localDevelopmentCors, express.static(TESSERACT_DIST_DIR, vendorStaticOptions));

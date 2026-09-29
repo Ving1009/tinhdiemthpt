@@ -6,9 +6,14 @@ import { createApp } from "../server/server.js";
 let server;
 let baseUrl;
 const receivedReports = [];
+const assistantQuestions = [];
 
 before(async () => {
-  const app = createApp({ scanTranscript: async () => ({ data: {}, warnings: [] }), reportStore: { async submit(value) { receivedReports.push(value); return { id: "report-test", status: "pending_review", receivedAt: "2026-09-14T00:00:00.000Z" }; } } });
+  const app = createApp({
+    scanTranscript: async () => ({ data: {}, warnings: [] }),
+    admissionsAssistant: async (input) => { assistantQuestions.push(input); return { answer: "Câu trả lời Groq thử nghiệm.", model: "test-model" }; },
+    reportStore: { async submit(value) { receivedReports.push(value); return { id: "report-test", status: "pending_review", receivedAt: "2026-09-14T00:00:00.000Z" }; } }
+  });
   await new Promise((resolve) => { server = app.listen(0, "127.0.0.1", resolve); });
   baseUrl = `http://127.0.0.1:${server.address().port}`;
 });
@@ -169,6 +174,20 @@ test("API lỗi dùng schema thống nhất và không gửi stack", async () =>
   const missingPayload = await missing.json();
   assert.deepEqual(missingPayload, { success: false, error: { code: "API_NOT_FOUND", message: "Không tìm thấy API." } });
   assert.equal(Object.hasOwn(missingPayload, "stack"), false);
+});
+
+test("API trợ lý giữ Groq ở backend và không cache hội thoại", async () => {
+  const response = await fetch(`${baseUrl}/api/assistant-chat`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question: "Tìm trường BKA", context: { cards: [] } })
+  });
+  const payload = await response.json();
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("cache-control"), "no-store, max-age=0");
+  assert.deepEqual(payload.data, { answer: "Câu trả lời Groq thử nghiệm.", model: "test-model" });
+  assert.equal(assistantQuestions.at(-1).question, "Tìm trường BKA");
+  assert.doesNotMatch(JSON.stringify(payload), /API_KEY|secret/i);
 });
 
 test("API quy đổi chứng chỉ độc lập đã được gỡ", async () => {

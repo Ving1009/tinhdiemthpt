@@ -8,11 +8,12 @@ function ok(response, data) { response.json({ success: true, data }); }
 function badRequest(response, code, message) { response.status(400).json({ success: false, error: { code, message } }); }
 function notFound(response, code, message) { response.status(404).json({ success: false, error: { code, message } }); }
 
-export function createPublicApiRouter({ store, reportStore, environment = process.env }) {
+export function createPublicApiRouter({ store, reportStore, assistant, environment = process.env }) {
   const router = Router();
   const bootstrapJson = JSON.stringify({ success: true, data: store.publicInitialData });
   const bootstrapGzip = gzipSync(bootstrapJson, { level: 6 });
   const reportLimiter = rateLimit({ windowMs: 10 * 60 * 1000, limit: 10, standardHeaders: "draft-8", legacyHeaders: false });
+  const assistantLimiter = rateLimit({ windowMs: 10 * 60 * 1000, limit: 30, standardHeaders: "draft-8", legacyHeaders: false });
 
   router.get("/bootstrap", (request, response) => {
     response.type("application/json");
@@ -72,6 +73,15 @@ export function createPublicApiRouter({ store, reportStore, environment = proces
   });
   router.get("/catalog/combinations", (_request, response) => ok(response, store.publicCombinations));
   router.get("/catalog/subjects", (_request, response) => ok(response, store.publicSubjects));
+  router.post("/assistant-chat", assistantLimiter, async (request, response, next) => {
+    try {
+      const result = await assistant(request.body || {});
+      response.setHeader("Cache-Control", "no-store, max-age=0");
+      ok(response, result);
+    } catch (error) {
+      next(error);
+    }
+  });
   router.post("/data-reports", reportLimiter, async (request, response, next) => {
     try {
       await verifyTurnstile({

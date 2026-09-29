@@ -28,7 +28,7 @@ function query(url) {
   return Object.fromEntries(url.searchParams.entries());
 }
 
-async function jsonBody(request, maximumBytes = 100 * 1024) {
+export async function jsonBody(request, maximumBytes = 100 * 1024) {
   const declared = Number(request.headers.get("Content-Length") || 0);
   if (declared > maximumBytes) throw new Response(null, { status: 413 });
   const source = await request.text();

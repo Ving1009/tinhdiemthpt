@@ -51,3 +51,12 @@ test("frontend dùng API và không import private dataset", async () => {
   assert.match(repository, /majorCache = new Map/);
   assert.doesNotMatch(repository, /majors\.json|\.\.\/data\//);
 });
+
+test("frontend không chặn app vì auth và dùng thông báo AI trung tính", async () => {
+  const main = await readFile(new URL("js/main.js", publicRoot), "utf8");
+  const assistant = await readFile(new URL("js/assistant.js", publicRoot), "utf8");
+  assert.doesNotMatch(main, /await\s+this\.account\.init\(\)/);
+  assert.match(main, /this\.account\.init\(\)\.catch/);
+  assert.doesNotMatch(assistant, /Groq tạm thời chưa phản hồi/);
+  assert.match(assistant, /Trợ lý AI tạm thời chưa phản hồi/);
+});

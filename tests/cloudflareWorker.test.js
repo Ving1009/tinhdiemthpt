@@ -199,6 +199,52 @@ test("Worker khóa đăng ký nếu Turnstile chưa được cấu hình", async
   assert.equal(payload.error.code, "TURNSTILE_REQUIRED_FOR_REGISTRATION");
 });
 
+test("Worker fail-closed Turnstile trên hostname lạ cho đăng ký, OCR và báo sai dữ liệu", async () => {
+  const environment = {
+    TURNSTILE_SITE_KEY: "public-site-key",
+    TURNSTILE_SECRET_KEY: "private-secret",
+    TURNSTILE_ALLOWED_HOSTNAMES: "tinhdiemthpt.id.vn",
+    AUTH_RATE_LIMITER: { async limit() { return { success: true }; } },
+    OCR_RATE_LIMITER: { async limit() { throw new Error("Không được rate-limit OCR trước Turnstile."); } },
+    REPORT_RATE_LIMITER: { async limit() { throw new Error("Không được rate-limit báo cáo trước Turnstile."); } },
+    AUTH_DB: { prepare() { throw new Error("Không được truy cập D1 trước Turnstile."); } },
+    OCR_SERVICE: { async fetch() { throw new Error("Không được gọi OCR service trước Turnstile."); } }
+  };
+  const protectedRequests = [
+    new Request("https://evil.example/api/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Turnstile-Token": "token" },
+      body: JSON.stringify({ username: "test-user", password: "Matkhau2026" })
+    }),
+    new Request("https://evil.example/api/scan-transcript", { method: "POST", headers: { "X-Turnstile-Token": "token" } }),
+    new Request("https://evil.example/api/data-reports", { method: "POST", headers: { "Content-Type": "application/json", "X-Turnstile-Token": "token" }, body: "{}" })
+  ];
+
+  for (const request of protectedRequests) {
+    const response = await mainWorker.fetch(request, environment);
+    const payload = await response.json();
+    assert.equal(response.status, 403);
+    assert.equal(payload.error.code, "TURNSTILE_HOSTNAME_NOT_ALLOWED");
+  }
+});
+
+test("Worker chặn báo sai dữ liệu khi thiếu token Turnstile", async () => {
+  let rateLimitChecked = false;
+  const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.id.vn/api/data-reports", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: "{}"
+  }), {
+    TURNSTILE_SITE_KEY: "public-site-key",
+    TURNSTILE_SECRET_KEY: "private-secret",
+    REPORT_RATE_LIMITER: { async limit() { rateLimitChecked = true; return { success: true }; } }
+  });
+  const payload = await response.json();
+  assert.equal(response.status, 403);
+  assert.equal(payload.error.code, "TURNSTILE_REQUIRED");
+  assert.equal(rateLimitChecked, false);
+});
+
 test("Cloudflare Worker trả lời trợ lý qua service backend", async () => {
   let received;
   const request = new Request("https://tinhdiemthpt.id.vn/api/assistant-chat", {

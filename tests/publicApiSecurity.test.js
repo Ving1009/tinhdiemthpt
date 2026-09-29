@@ -7,9 +7,12 @@ let server;
 let baseUrl;
 const receivedReports = [];
 const assistantQuestions = [];
+const TURNSTILE_ENV = { TURNSTILE_SITE_KEY: "site-key", TURNSTILE_SECRET_KEY: "secret-key" };
 
 before(async () => {
   const app = createApp({
+    environment: TURNSTILE_ENV,
+    turnstileFetch: async () => new Response(JSON.stringify({ success: true, action: "data_report", hostname: "127.0.0.1" })),
     scanTranscript: async () => ({ data: {}, warnings: [] }),
     admissionsAssistant: async (input) => { assistantQuestions.push(input); return { answer: "Câu trả lời Groq thử nghiệm.", model: "test-model" }; },
     reportStore: { async submit(value) { receivedReports.push(value); return { id: "report-test", status: "pending_review", receivedAt: "2026-09-14T00:00:00.000Z" }; } }
@@ -231,7 +234,7 @@ test("API chỉ nhận báo dữ liệu sai vào hàng chờ và không công kh
     context: { universityId: "u1", university: "Trường A", majorId: "m1", major: "Ngành A", code: "7480201", method: "THPT", year: 2026 },
     report: { field: "Điểm chuẩn", description: "Đề nghị kiểm tra lại mốc điểm.", proposedValue: "25", evidenceUrl: "https://example.edu.vn/thong-bao" }
   };
-  const response = await fetch(`${baseUrl}/api/data-reports`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(report) });
+  const response = await fetch(`${baseUrl}/api/data-reports`, { method: "POST", headers: { "content-type": "application/json", "X-Turnstile-Token": "test-token" }, body: JSON.stringify(report) });
   assert.equal(response.status, 202);
   const payload = await response.json();
   assert.equal(payload.data.status, "pending_review");

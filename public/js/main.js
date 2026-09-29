@@ -15,8 +15,8 @@ import { TranscriptPreview } from "./transcriptPreview.js";
 import { TranscriptScanner } from "./transcriptScanner.js?v=20260929-1";
 import { turnstileGate } from "./turnstile.js";
 import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js";
-import { AccountApp, hasStoredAuthSession } from "./account.js";
-import { AdmissionsAssistant } from "./assistant.js?v=20260929-4";
+import { AccountApp, hasStoredAuthSession } from "./account.js?v=20260930-1";
+import { AdmissionsAssistant } from "./assistant.js?v=20260930-1";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
 const THEME_STORAGE_KEY = "thpt-calculator-theme-v1";
@@ -139,7 +139,7 @@ class THPTApp {
   async init() {
     this.applyTheme(storage.get(THEME_STORAGE_KEY, "light"));
     this.bindGlobalEvents();
-    await this.account.init();
+    this.account.init().catch(() => { /* Tài khoản không được chặn các công cụ chính. */ });
     this.practiceExam.init();
     this.setView(location.hash);
     this.setupTranscriptTools();

@@ -3,9 +3,15 @@ import test from "node:test";
 import { createApp } from "../server/server.js";
 
 const PNG = Buffer.from("89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c489", "hex");
+const TURNSTILE_ENV = { TURNSTILE_SITE_KEY: "site-key", TURNSTILE_SECRET_KEY: "secret-key" };
+const TURNSTILE_HEADERS = { "X-Turnstile-Token": "test-token" };
+
+async function turnstileFetch() {
+  return new Response(JSON.stringify({ success: true, action: "scan_transcript", hostname: "127.0.0.1" }));
+}
 
 async function withServer(scanTranscript, run) {
-  const app = createApp({ scanTranscript });
+  const app = createApp({ scanTranscript, environment: TURNSTILE_ENV, turnstileFetch });
   const server = await new Promise((resolve) => {
     const instance = app.listen(0, "127.0.0.1", () => resolve(instance));
   });
@@ -27,7 +33,7 @@ test("endpoint nhận nhiều ảnh trong bộ nhớ và trả JSON đã chuẩn
     const form = new FormData();
     form.append("images[]", new Blob([PNG], { type: "image/png" }), "page-1.png");
     form.append("images[]", new Blob([PNG], { type: "image/png" }), "page-2.png");
-    const response = await fetch(`${baseUrl}/api/scan-transcript`, { method: "POST", body: form });
+    const response = await fetch(`${baseUrl}/api/scan-transcript`, { method: "POST", headers: TURNSTILE_HEADERS, body: form });
     const body = await response.json();
     assert.equal(response.status, 200);
     assert.equal(body.success, true);
@@ -39,7 +45,7 @@ test("endpoint từ chối tệp không phải ảnh", async () => {
   await withServer(async () => ({ data: { student: { name: null }, scores: [] }, warnings: [] }), async (baseUrl) => {
     const form = new FormData();
     form.append("images[]", new Blob(["not an image"], { type: "text/plain" }), "bad.txt");
-    const response = await fetch(`${baseUrl}/api/scan-transcript`, { method: "POST", body: form });
+    const response = await fetch(`${baseUrl}/api/scan-transcript`, { method: "POST", headers: TURNSTILE_HEADERS, body: form });
     const body = await response.json();
     assert.equal(response.status, 400);
     assert.equal(body.success, false);
@@ -52,7 +58,7 @@ test("endpoint báo rõ khi tải quá 6 ảnh", async () => {
     for (let index = 0; index < 7; index += 1) {
       form.append("images[]", new Blob([PNG], { type: "image/png" }), `page-${index + 1}.png`);
     }
-    const response = await fetch(`${baseUrl}/api/scan-transcript`, { method: "POST", body: form });
+    const response = await fetch(`${baseUrl}/api/scan-transcript`, { method: "POST", headers: TURNSTILE_HEADERS, body: form });
     const body = await response.json();
     assert.equal(response.status, 400);
     assert.equal(body.error.code, "LIMIT_FILE_COUNT");

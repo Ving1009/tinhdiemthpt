@@ -8,7 +8,7 @@ function ok(response, data) { response.json({ success: true, data }); }
 function badRequest(response, code, message) { response.status(400).json({ success: false, error: { code, message } }); }
 function notFound(response, code, message) { response.status(404).json({ success: false, error: { code, message } }); }
 
-export function createPublicApiRouter({ store, reportStore, assistant, environment = process.env }) {
+export function createPublicApiRouter({ store, reportStore, assistant, environment = process.env, turnstileFetch = globalThis.fetch } = {}) {
   const router = Router();
   const bootstrapJson = JSON.stringify({ success: true, data: store.publicInitialData });
   const bootstrapGzip = gzipSync(bootstrapJson, { level: 6 });
@@ -89,7 +89,9 @@ export function createPublicApiRouter({ store, reportStore, assistant, environme
         token: turnstileTokenFromHeaders(request.headers),
         action: "data_report",
         remoteIp: request.ip,
-        requestHostname: request.hostname
+        requestHostname: request.hostname,
+        fetchImpl: turnstileFetch,
+        required: true
       });
       if (!reportStore) return response.status(503).json({ success: false, error: { code: "REPORT_INTAKE_UNAVAILABLE", message: "Nơi tiếp nhận báo cáo chưa sẵn sàng." } });
       const result = await reportStore.submit(request.body);

@@ -19,7 +19,7 @@ async function requestGroqAnswer(input) {
   });
   const payload = await response.json().catch(() => null);
   if (!response.ok || !payload?.success || !payload?.data?.answer) {
-    throw new Error(payload?.error?.message || "Groq tạm thời chưa phản hồi.");
+    throw new Error(payload?.error?.message || "Trợ lý AI tạm thời chưa phản hồi.");
   }
   return payload.data;
 }

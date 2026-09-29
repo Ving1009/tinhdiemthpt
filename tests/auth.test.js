@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { AppError } from "../server/errors.js";
-import { AUTH_COOKIE, cookieValue, hashPassword, normalizeUsername, validatePassword, validateUsername, verifyPassword } from "../worker/auth.js";
+import { AUTH_COOKIE, PASSWORD_MAX_LENGTH, cookieValue, hashPassword, normalizeUsername, validatePassword, validateUsername, verifyPassword } from "../worker/auth.js";
 
 test("tên đăng nhập được chuẩn hóa và chỉ nhận ký tự an toàn", () => {
   assert.equal(normalizeUsername("  Quang.Vinh_26 "), "quang.vinh_26");
@@ -12,9 +12,11 @@ test("tên đăng nhập được chuẩn hóa và chỉ nhận ký tự an toà
 });
 
 test("mật khẩu bắt buộc đủ độ dài, chữ và số", () => {
+  const maxLengthPassword = `A1${"x".repeat(PASSWORD_MAX_LENGTH - 2)}`;
   assert.equal(validatePassword("Abcde1"), "Abcde1");
   assert.equal(validatePassword("Matkhau2026A"), "Matkhau2026A");
-  for (const invalid of ["Abcd1", "Matkhau2026AB", "abcdef", "123456"]) {
+  assert.equal(validatePassword(maxLengthPassword), maxLengthPassword);
+  for (const invalid of ["Abcd1", "abcdef", "123456", `A1${"x".repeat(PASSWORD_MAX_LENGTH - 1)}`]) {
     assert.throws(() => validatePassword(invalid), AppError);
   }
 });

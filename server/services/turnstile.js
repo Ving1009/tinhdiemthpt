@@ -45,14 +45,20 @@ export async function verifyTurnstile({
   action,
   remoteIp = "",
   requestHostname = "",
-  fetchImpl = globalThis.fetch
+  fetchImpl = globalThis.fetch,
+  required = false
 } = {}) {
   const configuration = getTurnstileConfigurationForHostname(environment, requestHostname);
-  if (!configuration.configured) return { skipped: true };
+  if (!configuration.configured) {
+    if (!required) return { skipped: true };
+    throw new AppError("Turnstile chưa được cấu hình.", { statusCode: 503, code: "TURNSTILE_MISCONFIGURED" });
+  }
   if (!configuration.credentialsReady) {
     throw new AppError("Turnstile chưa được cấu hình đầy đủ.", { statusCode: 503, code: "TURNSTILE_MISCONFIGURED" });
   }
-  if (!configuration.hostnameAllowed) return { skipped: true };
+  if (!configuration.hostnameAllowed) {
+    throw new AppError("Hostname không được phép thực hiện xác minh Turnstile.", { statusCode: 403, code: "TURNSTILE_HOSTNAME_NOT_ALLOWED" });
+  }
 
   const responseToken = String(token || "").trim();
   if (!responseToken) {

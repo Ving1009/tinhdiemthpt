@@ -10,13 +10,29 @@ const environment = {
 test("Turnstile tắt an toàn khi chưa cấu hình khóa", async () => {
   assert.deepEqual(getTurnstileConfiguration({}), { enabled: false, configured: false, credentialsReady: false, siteKey: "" });
   assert.deepEqual(await verifyTurnstile({ environment: {}, action: "data_report" }), { skipped: true });
+  await assert.rejects(
+    verifyTurnstile({ environment: {}, action: "data_report", required: true }),
+    (error) => error.code === "TURNSTILE_MISCONFIGURED" && error.statusCode === 503
+  );
 });
 
 test("Turnstile chỉ bật trên hostname đã cho phép", async () => {
   const restricted = { ...environment, TURNSTILE_ALLOWED_HOSTNAMES: "tinhdiemthpt.id.vn" };
   assert.equal(getTurnstileConfigurationForHostname(restricted, "tinhdiemthpt.id.vn").enabled, true);
   assert.equal(getTurnstileConfigurationForHostname(restricted, "tinhdiemthpt.tinh-diem-thpt.workers.dev").enabled, false);
-  assert.deepEqual(await verifyTurnstile({ environment: restricted, action: "data_report", requestHostname: "tinhdiemthpt.tinh-diem-thpt.workers.dev" }), { skipped: true });
+  await assert.rejects(
+    verifyTurnstile({ environment: restricted, action: "data_report", requestHostname: "tinhdiemthpt.tinh-diem-thpt.workers.dev" }),
+    (error) => error.code === "TURNSTILE_HOSTNAME_NOT_ALLOWED" && error.statusCode === 403
+  );
+});
+
+test("Turnstile từ chối cấu hình thiếu một nửa khóa", async () => {
+  for (const partialEnvironment of [{ TURNSTILE_SITE_KEY: "site-key" }, { TURNSTILE_SECRET_KEY: "secret-key" }]) {
+    await assert.rejects(
+      verifyTurnstile({ environment: partialEnvironment, action: "data_report", requestHostname: "tinhdiemthpt.id.vn", required: true }),
+      (error) => error.code === "TURNSTILE_MISCONFIGURED" && error.statusCode === 503
+    );
+  }
 });
 
 test("Turnstile yêu cầu token khi đã bật", async () => {

@@ -56,7 +56,7 @@ function applySecurityHeaders(request, response, next) {
 
 export { createConfiguredScanProviders } from "./configuredScanProviders.js";
 
-export function createApp({ scanTranscript, dataStore = defaultDataStore, reportStore = createReportStore(), admissionsAssistant, environment = process.env } = {}) {
+export function createApp({ scanTranscript, dataStore = defaultDataStore, reportStore = createReportStore(), admissionsAssistant, environment = process.env, turnstileFetch = globalThis.fetch } = {}) {
   const app = express();
   const scanner = scanTranscript || createTranscriptScanService(createConfiguredScanProviders());
   const assistant = admissionsAssistant || createConfiguredAdmissionsAssistant(environment);
@@ -68,8 +68,8 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
     response.type("text/plain").sendFile(SECURITY_TXT, { dotfiles: "allow" });
   });
   app.use("/api", localDevelopmentCors);
-  app.use("/api", createPublicApiRouter({ store: dataStore, reportStore, assistant, environment }));
-  app.use("/api", createScanTranscriptRouter({ scanTranscript: scanner, environment }));
+  app.use("/api", createPublicApiRouter({ store: dataStore, reportStore, assistant, environment, turnstileFetch }));
+  app.use("/api", createScanTranscriptRouter({ scanTranscript: scanner, environment, turnstileFetch }));
   const vendorStaticOptions = { dotfiles: "deny", index: false, etag: true, maxAge: "30d", immutable: true };
   app.use("/vendor/tesseract", localDevelopmentCors, express.static(TESSERACT_DIST_DIR, vendorStaticOptions));
   app.use("/vendor/tesseract-core", localDevelopmentCors, express.static(TESSERACT_CORE_DIR, vendorStaticOptions));

@@ -15,7 +15,8 @@ async function requireTurnstile(request, environment, action) {
       token: turnstileTokenFromHeaders(request.headers),
       action,
       remoteIp: request.headers.get("CF-Connecting-IP") || "",
-      requestHostname: new URL(request.url).hostname
+      requestHostname: new URL(request.url).hostname,
+      required: true
     });
     return null;
   } catch (error) {
@@ -55,7 +56,7 @@ export default {
         }
         if (request.method === "POST" && url.pathname === "/api/auth/register") {
           const turnstile = getTurnstileConfigurationForHostname(environment, url.hostname);
-          if (!turnstile.enabled) {
+          if (!turnstile.configured || !turnstile.credentialsReady) {
             return failure(request, "TURNSTILE_REQUIRED_FOR_REGISTRATION", "Hệ thống xác minh tạo tài khoản chưa sẵn sàng.", 503);
           }
           const rejected = await requireTurnstile(request, environment, "account_register");
@@ -86,12 +87,12 @@ export default {
       return handleAssistantApi(request, environment);
     }
     if (url.pathname === "/api/data-reports") {
-      const limited = await applyRateLimit(environment.REPORT_RATE_LIMITER, request);
-      if (limited) return limited;
       if (request.method === "POST") {
         const rejected = await requireTurnstile(request, environment, "data_report");
         if (rejected) return rejected;
       }
+      const limited = await applyRateLimit(environment.REPORT_RATE_LIMITER, request);
+      if (limited) return limited;
     }
     if (url.pathname.startsWith("/api/")) return handleDataApi(request, environment);
     return withSecurityHeaders(request, await environment.ASSETS.fetch(request));

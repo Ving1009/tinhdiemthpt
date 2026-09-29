@@ -8,6 +8,7 @@ test("chỉ bật tài khoản khi có D1 binding và không công khai cấu h�
   const enabled = publicAuthConfig({ AUTH_DB: { prepare() {} }, AUTH_PRIVATE_VALUE: "hidden" });
   assert.equal(enabled.enabled, true);
   assert.equal(enabled.provider, "password");
-  assert.equal(enabled.passwordMinLength, 10);
+  assert.equal(enabled.passwordMinLength, 6);
+  assert.equal(enabled.passwordMaxLength, 128);
   assert.equal(JSON.stringify(enabled).includes("hidden"), false);
 });

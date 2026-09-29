@@ -30,7 +30,7 @@ const upload = multer({
   }
 });
 
-export function createScanTranscriptRouter({ scanTranscript, environment = process.env }) {
+export function createScanTranscriptRouter({ scanTranscript, environment = process.env, turnstileFetch = globalThis.fetch } = {}) {
   const router = Router();
   router.use(rateLimit({
     windowMs: 15 * 60 * 1000,
@@ -53,7 +53,9 @@ export function createScanTranscriptRouter({ scanTranscript, environment = proce
         token: turnstileTokenFromHeaders(request.headers),
         action: "scan_transcript",
         remoteIp: request.ip,
-        requestHostname: request.hostname
+        requestHostname: request.hostname,
+        fetchImpl: turnstileFetch,
+        required: true
       });
       next();
     } catch (error) {

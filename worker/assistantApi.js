@@ -2,11 +2,13 @@ import { createConfiguredAdmissionsAssistant } from "../server/configuredAssista
 import { errorResponse, failure, optionsResponse, success } from "./http.js";
 import { jsonBody } from "./dataApi.js";
 
+let configuredAssistant;
+
 export async function handleAssistantApi(request, environment, assistant) {
   if (request.method === "OPTIONS") return optionsResponse(request);
   if (request.method !== "POST") return failure(request, "METHOD_NOT_ALLOWED", "Phương thức không được hỗ trợ.", 405, { Allow: "POST, OPTIONS" });
   try {
-    const ask = assistant || createConfiguredAdmissionsAssistant(environment);
+    const ask = assistant || (configuredAssistant ||= createConfiguredAdmissionsAssistant(environment));
     const result = await ask(await jsonBody(request, 32 * 1024));
     return success(request, result, { headers: { "Cache-Control": "no-store, max-age=0" } });
   } catch (error) {

@@ -184,7 +184,7 @@ export class AdmissionsAssistant {
     this.input.value = "";
     this.addMessage("user", question);
     this.setBusy(true);
-    const pending = this.addMessage("assistant", "Đang đối chiếu dữ liệu website và hỏi Groq…");
+    const pending = this.addMessage("assistant", "Đang đối chiếu dữ liệu website và chọn nhà cung cấp AI…");
     try {
       const knowledge = await this.loadKnowledge();
       const answer = answerAdmissionsQuestion(knowledge, question);
@@ -205,7 +205,7 @@ export class AdmissionsAssistant {
         });
         responseText = remote.answer;
       } catch {
-        responseText = `${answer.text}\n\nGroq đang tạm bận nên mình đã dùng chế độ tra cứu nội bộ.`;
+        responseText = `${answer.text}\n\nCác dịch vụ AI đang tạm bận nên mình đã dùng chế độ tra cứu nội bộ.`;
       }
       pending.remove();
       this.addMessage("assistant", responseText, answer);

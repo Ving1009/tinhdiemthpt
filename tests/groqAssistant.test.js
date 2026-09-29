@@ -40,9 +40,9 @@ test("Groq phân loại lỗi giới hạn để frontend chuyển sang tra cứ
   await assert.rejects(() => assistant({ question: "Tìm trường BKA" }), (error) => error.code === "GROQ_RATE_LIMITED" && error.statusCode === 503);
 });
 
-test("Cấu hình Groq đọc GROQ_API_KEY_1 và không gọi mạng khi thiếu khóa", async () => {
+test("Bộ điều phối không gọi mạng khi chưa có khóa AI", async () => {
   const configured = createConfiguredAdmissionsAssistant({}, { fetchImpl: async () => assert.fail("Không được gọi mạng") });
-  await assert.rejects(() => configured({ question: "Tìm trường BKA" }), (error) => error.code === "GROQ_UNAVAILABLE");
+  await assert.rejects(() => configured({ question: "Tìm trường BKA" }), (error) => error.code === "AI_ASSISTANT_UNAVAILABLE");
 });
 
 test("Đầu vào trợ lý được giới hạn trước khi gửi tới Groq", () => {

@@ -12,8 +12,11 @@ function clippedText(value, maximumLength) {
   return String(value || "").replace(/\s+/g, " ").trim().slice(0, maximumLength);
 }
 
-function clippedAnswer(value, maximumLength) {
-  return String(value || "").replace(/\r\n?/g, "\n").replace(/\*\*|__/g, "").replace(/`/g, "").replace(/[\t ]+/g, " ").replace(/\n{3,}/g, "\n\n").trim().slice(0, maximumLength);
+export function cleanAssistantAnswer(value, maximumLength = 4_000) {
+  const text = Array.isArray(value)
+    ? value.map((part) => typeof part === "string" ? part : part?.text || part?.content || "").join("\n")
+    : String(value || "");
+  return text.replace(/\r\n?/g, "\n").replace(/\*\*|__/g, "").replace(/`/g, "").replace(/[\t ]+/g, " ").replace(/\n{3,}/g, "\n\n").trim().slice(0, maximumLength);
 }
 
 function normalizedHistory(value) {
@@ -72,6 +75,15 @@ function systemPrompt(context) {
   ].join("\n");
 }
 
+export function createGroundedAssistantMessages(rawInput) {
+  const input = normalizeAssistantInput(rawInput);
+  return [
+    { role: "system", content: systemPrompt(input.context) },
+    ...input.history,
+    { role: "user", content: input.question }
+  ];
+}
+
 function groqError(status) {
   if (status === 429) return new AppError("Trợ lý AI đang nhận quá nhiều yêu cầu. Hệ thống sẽ dùng chế độ tra cứu nội bộ.", { statusCode: 503, code: "GROQ_RATE_LIMITED" });
   if (status === 401 || status === 403) return new AppError("Trợ lý AI chưa được cấu hình hợp lệ.", { statusCode: 503, code: "GROQ_AUTH" });
@@ -91,7 +103,7 @@ export function createGroqAssistantService({
   return async function askGroq(rawInput) {
     if (!key) throw new AppError("Trợ lý AI chưa được cấu hình.", { statusCode: 503, code: "GROQ_UNAVAILABLE" });
     if (typeof fetchImpl !== "function") throw new AppError("Trợ lý AI chưa sẵn sàng.", { statusCode: 503, code: "GROQ_UNAVAILABLE" });
-    const input = normalizeAssistantInput(rawInput);
+    const messages = createGroundedAssistantMessages(rawInput);
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), requestTimeout);
     let response;
@@ -104,11 +116,7 @@ export function createGroqAssistantService({
         },
         body: JSON.stringify({
           model: selectedModel,
-          messages: [
-            { role: "system", content: systemPrompt(input.context) },
-            ...input.history,
-            { role: "user", content: input.question }
-          ],
+          messages,
           temperature: 0.2,
           max_completion_tokens: 500,
           stream: false
@@ -130,8 +138,8 @@ export function createGroqAssistantService({
     } catch {
       throw new AppError("Trợ lý AI trả về dữ liệu không hợp lệ.", { statusCode: 502, code: "GROQ_INVALID_RESPONSE" });
     }
-    const answer = clippedAnswer(payload?.choices?.[0]?.message?.content, 4_000);
+    const answer = cleanAssistantAnswer(payload?.choices?.[0]?.message?.content);
     if (!answer) throw new AppError("Trợ lý AI chưa tạo được câu trả lời.", { statusCode: 502, code: "GROQ_INVALID_RESPONSE" });
-    return { answer, model: selectedModel };
+    return { answer, model: selectedModel, provider: "groq" };
   };
 }

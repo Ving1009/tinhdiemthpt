@@ -15,7 +15,7 @@ function messageFromPayload(payload, fallback) {
 }
 
 export class AccountApp {
-  constructor({ personalKeys = [], storageAdapter = storage, fetchImpl = globalThis.fetch, locationRef = globalThis.location, requestTimeoutMs = AUTH_REQUEST_TIMEOUT_MS } = {}) {
+  constructor({ personalKeys = [], storageAdapter = storage, fetchImpl = globalThis.fetch.bind(globalThis), locationRef = globalThis.location, requestTimeoutMs = AUTH_REQUEST_TIMEOUT_MS } = {}) {
     this.personalKeys = [...new Set(personalKeys)];
     this.storage = storageAdapter;
     this.fetchImpl = fetchImpl;

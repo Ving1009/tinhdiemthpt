@@ -17,6 +17,7 @@ import { turnstileGate } from "./turnstile.js";
 import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js";
 import { AccountApp, hasStoredAuthSession } from "./account.js?v=20260930-2";
 import { AdmissionsAssistant } from "./assistant.js?v=20260930-1";
+import { calculateSchoolFormula, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20260930-1";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
 const THEME_STORAGE_KEY = "thpt-calculator-theme-v1";
@@ -622,7 +623,9 @@ class THPTApp {
   }
   async populateMajorSelect() {
     const id = this.elements.universitySelect.value;
-    const loadVersion = ++this.admissionLoadVersion;
+    const loadVersion = this.admissionLoadVersion = (this.admissionLoadVersion || 0) + 1;
+    this.admissionMajorRows = [];
+    this.admissionFormulaData = null;
     this.elements.majorSelect.disabled = true; this.elements.methodSelect.disabled = true; this.elements.calculateAdmission.disabled = true;
     this.elements.majorSelect.innerHTML = '<option value="">Chọn trường trước</option>';
     this.elements.methodSelect.innerHTML = '<option value="">Đang tải phương thức...</option>';
@@ -640,12 +643,14 @@ class THPTApp {
       this.admissionMajorRows = majors;
       this.admissionFormulaData = formulaData;
       this.admissionFormulaById = new Map((formulaData.methods || []).map((method) => [method.id, method]));
-      const options = formulaData.methodOptions || [];
+      const options = formulaData.catalog
+        ? formulaData.catalog.methods.map((method) => ({ ...method, value: method.id, verified: method.status === "official_verified" }))
+        : formulaData.methodOptions || [];
       this.elements.methodSelect.innerHTML = options.length
-        ? '<option value="">Chọn phương thức</option>' + options.map((option) => `<option value="${escapeHTML(option.label)}">${option.verified ? "✓ " : ""}${escapeHTML(option.label)} · ${option.programCount} ngành</option>`).join("")
+        ? '<option value="">Chọn phương thức</option>' + options.map((option) => `<option value="${escapeHTML(option.value || option.label)}">${option.verified ? "✓ " : ""}${escapeHTML(option.label)} · ${option.programCount} ngành</option>`).join("")
         : '<option value="">Chưa có phương thức</option>';
       this.elements.methodSelect.disabled = !options.length;
-      this.elements.selectionHint.textContent = formulaData.message;
+      this.elements.selectionHint.textContent = formulaData.catalog ? (options.length ? `Đã rà soát ${options.length} phương thức. Chọn một mục để xem công thức, ngành áp dụng và trạng thái kiểm chứng.` : (formulaData.catalog.issues || []).join(' ') || 'Chưa có phương thức tuyển sinh đại học 2026 được xác nhận cho hồ sơ này.') : formulaData.message;
       this.renderAdmissionCalculator();
     } catch {
       if (loadVersion !== this.admissionLoadVersion) return;
@@ -657,15 +662,16 @@ class THPTApp {
   }
   populateMethodSelect() {
     const method = this.elements.methodSelect.value;
-    const rows = (this.admissionMajorRows || []).filter((major) => major.method === method);
+    const catalogMethod = this.admissionFormulaData?.catalog?.methods.find((formula) => formula.id === method);
+    const rows = catalogMethod?.programs || (this.admissionMajorRows || []).filter((major) => major.method === method);
     const groups = new Map();
     for (const major of rows) {
-      const key = `${major.code}|${major.name}`;
+      const key = `${major.code}|${major.name}|${major.group || ""}`;
       if (!groups.has(key)) groups.set(key, major);
     }
     const programs = [...groups.values()];
     this.elements.majorSelect.innerHTML = programs.length
-      ? `<option value="">Tất cả ${programs.length} ngành / chương trình</option>${programs.map((major) => `<option value="${escapeHTML(major.id)}">${escapeHTML(major.name)} (${escapeHTML(major.code)})</option>`).join("")}`
+      ? `<option value="">Tất cả ${programs.length} ngành / chương trình</option>${programs.map((major) => `<option value="${escapeHTML(major.id)}">${escapeHTML(major.name)}${major.code ? ` (${escapeHTML(major.code)})` : ""}${major.group ? ` · ${escapeHTML(major.group)}` : ""}</option>`).join("")}`
       : '<option value="">Không có ngành áp dụng trong dữ liệu</option>';
     this.elements.majorSelect.disabled = !method || !programs.length;
     this.syncAdmissionSelectionState();
@@ -675,33 +681,51 @@ class THPTApp {
   syncAdmissionSelectionState() {
     const method = this.elements.methodSelect.value;
     const major = this.selectedAdmissionMajor();
-    const verifiedFormula = this.admissionFormulaForMajor(major);
+    const verifiedFormula = this.admissionFormulaForMajor(major) || this.admissionFormulaForMethod(method);
     const formula = verifiedFormula?.formulaModuleId ? this.repository.getFormula(verifiedFormula.formulaModuleId) : null;
-    const ready = verifiedFormula?.autoCalculate === true && canCalculateMajor(major, formula);
+    const ready = verifiedFormula?.autoCalculate === true && (verifiedFormula.calculationRule ? verifiedFormula.status === "official_verified" : canCalculateMajor(major, formula));
     this.elements.calculateAdmission.disabled = !ready;
     this.elements.calculateAdmission.textContent = ready ? "Nhập điểm" : "Chưa hỗ trợ tự tính";
     const referenceFormula = this.referenceFormulaForMajor(major) || this.referenceFormulaForMethod(method);
     this.elements.selectionHint.textContent = verifiedFormula
-      ? `${verifiedFormula.label}: công thức đã xác minh${ready ? " và có thể tự tính cho phạm vi đã liên kết." : "; hiện chỉ hiển thị để tra cứu."}`
+      ? `${verifiedFormula.label}: ${verifiedFormula.status === "official_verified" ? "công thức đã xác minh" : "quy tắc theo dữ liệu đã tra cứu"}${ready ? " và có thể tự tính cho phạm vi đã liên kết." : "; xem trạng thái và điều kiện bên dưới."}`
       : (referenceFormula ? `${method}: đã có công thức tham khảo và nguồn đối chiếu; chưa bật tính tự động.` : (method ? "Chưa có công thức cho phương thức này." : "Chọn phương thức để xem công thức và phạm vi áp dụng."));
   }
   async restoreAdmissionSelections() {
     if (!this.state.universityId || !this.repository.getUniversity(this.state.universityId)) return;
     this.elements.universitySelect.value = this.state.universityId;
-    await this.populateMajorSelect();
+    const loading = this.populateMajorSelect();
+    const restoreVersion = this.admissionLoadVersion;
+    await loading;
+    if (restoreVersion !== this.admissionLoadVersion || this.elements.universitySelect.value !== this.state.universityId) return;
     const legacyMajor = this.state.majorId ? this.repository.getMajor(this.state.majorId) : null;
     const method = this.state.admissionMethod || legacyMajor?.method || "";
-    if ([...this.elements.methodSelect.options].some((option) => option.value === method)) this.elements.methodSelect.value = method;
+    const restoredMethod = [...this.elements.methodSelect.options].find((option) => option.value === method)
+      || [...this.elements.methodSelect.options].find((option) => this.admissionFormulaForMethod(option.value)?.label === method)
+      || [...this.elements.methodSelect.options].find((option) => legacyMajor && this.admissionFormulaForMethod(option.value)?.rowIds?.includes(legacyMajor.id));
+    if (restoredMethod) this.elements.methodSelect.value = restoredMethod.value;
     this.populateMethodSelect();
     const programId = this.state.admissionProgramId || legacyMajor?.id || "";
     if ([...this.elements.majorSelect.options].some((option) => option.value === programId)) this.elements.majorSelect.value = programId;
+    this.syncAdmissionSelectionState();
     this.renderAdmissionCalculator();
+    this.saveForm();
   }
   admissionFormulaForMethod(label, formulaData = this.admissionFormulaData) {
+    const catalog = formulaData?.catalog?.methods.find((method) => method.id === label || method.label === label);
+    if (catalog) {
+      const legacy = (formulaData.methods || []).find((method) => method.id === catalog.existingFormulaId);
+      return { ...catalog, formulaModuleId: legacy?.formulaModuleId || "", autoCalculate: catalog.autoCalculate || legacy?.autoCalculate === true };
+    }
     const option = (formulaData?.methodOptions || []).find((item) => item.label === label);
     return option?.formulaId ? (formulaData?.methods || []).find((item) => item.id === option.formulaId) || null : null;
   }
   admissionFormulaForMajor(major, formulaData = this.admissionFormulaData) {
+    if (!major) return null;
+    const selected = formulaData === this.admissionFormulaData ? this.admissionFormulaForMethod(this.elements.methodSelect.value, formulaData) : null;
+    if (selected && (selected.programs?.some((p) => p.id === major.id || p.id === major.catalogId) || selected.rowIds?.includes(major.id))) return selected;
+    const candidates = (formulaData?.catalog?.methods || []).filter((method) => method.rowIds?.includes(major.id));
+    if (candidates.length === 1) return this.admissionFormulaForMethod(candidates[0].id, formulaData);
     const formula = major ? this.admissionFormulaForMethod(major.method, formulaData) : null;
     return formula?.rowIds?.includes(major.id) || formula?.programs?.some((program) => program.id === major.id) ? formula : null;
   }
@@ -712,6 +736,13 @@ class THPTApp {
     return major ? (formulaData?.profileFormulas || []).find((item) => item.status === "reference" && item.rowIds?.includes(major.id)) || null : null;
   }
   selectedAdmissionMajor() {
+    const catalog = this.admissionFormulaData?.catalog?.methods.find((formula) => formula.id === this.elements.methodSelect.value);
+    if (catalog) {
+      const program = catalog.programs.find((p) => p.id === this.elements.majorSelect.value) || catalog.programs[0];
+      if (!program) return null;
+      const row = (this.admissionMajorRows || []).find((m) => catalog.rowIds.includes(m.id) && (m.id === program.verifiedRowId || m.code === program.code && this.normalizeSearch(m.name) === this.normalizeSearch(program.name)));
+      return row ? { ...row, combination: program.combination || row.combination, mathIsMain: program.mathIsMain === true, catalogId: program.id } : program;
+    }
     const selected = this.repository.getMajor(this.elements.majorSelect.value);
     if (selected) return selected;
     return (this.admissionMajorRows || []).find((major) => major.method === this.elements.methodSelect.value) || null;
@@ -721,13 +752,15 @@ class THPTApp {
     const source = formula?.sourceLink || formula?.officialLink;
     const sourceUrl = safeWebsite(source?.url);
     const conditions = (formula?.conditions || []).map((item) => `<li>${escapeHTML(item)}</li>`).join("");
-    const programs = (formula?.programs || []).map((item) => `<li><b>${escapeHTML(item.code)}</b> · ${escapeHTML(item.name)}</li>`).join("");
-    const combinations = (formula?.combinations || []).map((code) => `<span>${escapeHTML(code)}</span>`).join("");
+    const programs = (formula?.programs || []).map((item) => `<li>${item.code ? `<b>${escapeHTML(item.code)}</b> · ` : ""}${escapeHTML(item.name)}${item.group ? ` · ${escapeHTML(item.group)}` : ""}${item.combination ? ` · ${escapeHTML(item.combination)}` : ""}${item.note ? `<small>${escapeHTML(item.note)}</small>` : ""}</li>`).join("");
+    const combinations = (formula?.combinations || [...new Set((formula?.programs || []).flatMap((p) => String(p.combination || "").split(/[;,/|]+/)).map((c) => c.trim()).filter(Boolean))]).map((code) => `<span>${escapeHTML(code)}</span>`).join("");
     const branchNote = Number(formula.variantCount) > 1
       ? `<p class="formula-scope-note">Một công thức phương thức, gồm ${formula.variantCount} nhánh theo nhóm ngành hoặc điều kiện áp dụng.</p>`
-      : `<p class="formula-scope-note">Công thức dùng chung cho các ngành thuộc phương thức này.</p>`;
-    const badge = `<span class="verified-badge${official ? "" : " is-reference"}">${official ? "✓ Đã xác minh chính thức" : "Tham khảo · cần đối chiếu"}</span>`;
-    const details = `${branchNote}<div class="formula-box">${escapeHTML(formula.expression)}</div><dl class="formula-facts"><div><dt>Thang điểm</dt><dd>${escapeHTML(formula.scale || "Theo đề án của trường")}</dd></div><div><dt>Tổ hợp</dt><dd>${combinations || escapeHTML(formula.combinationNote || "Theo điều kiện của phương thức")}</dd></div></dl>${conditions ? `<section><h4>Điều kiện quan trọng</h4><ul>${conditions}</ul></section>` : ""}${formula.priority ? `<section><h4>Điểm ưu tiên</h4><p>${escapeHTML(formula.priority)}</p></section>` : ""}${formula.conversion ? `<section><h4>Quy đổi trong công thức</h4><p>${escapeHTML(formula.conversion)}</p></section>` : ""}${formula.combinationNote ? `<section><h4>Phạm vi tổ hợp</h4><p>${escapeHTML(formula.combinationNote)}</p></section>` : ""}<details class="formula-programs"${profile ? "" : " open"}><summary>${formula.programCount} ngành / chương trình dùng chung công thức</summary>${programs ? `<ul>${programs}</ul>` : `<p>${escapeHTML(formula.applicabilityNote || "Chưa có ngành được liên kết.")}</p>`}</details>${sourceUrl ? `<a class="formula-source" href="${escapeHTML(sourceUrl)}" target="_blank" rel="noopener">${escapeHTML(source?.label || (official ? "Nguồn chính thức" : "Nguồn dữ liệu"))} ↗</a>` : ""}`;
+      : `<p class="formula-scope-note">Quy tắc theo phương thức; áp dụng đúng nhánh, tổ hợp và điều kiện của ngành bên dưới.</p>`;
+    const statusLabels = { non_numeric: "Xét điều kiện / hồ sơ", requires_review: "Chưa đủ biểu thức", missing_evidence: "Chưa có nguồn 2026", conflicting: "Nguồn còn mâu thuẫn", scope_incomplete: "Phạm vi ngành chưa đủ", source_reported: "Biểu thức theo nguồn tra cứu", source_description: "Quy tắc theo nguồn tra cứu" };
+    const badge = `<span class="verified-badge${official ? "" : " is-reference"}">${official ? "✓ Đã xác minh chính thức" : escapeHTML(statusLabels[formula.status] || "Tham khảo · cần đối chiếu")}</span>`;
+    const issues = (formula.issues || []).map((item) => `<p class="formula-scope-note">${escapeHTML(item)}</p>`).join("");
+    const details = `${branchNote}${issues}<div class="formula-box">${escapeHTML(formula.expression)}</div><dl class="formula-facts"><div><dt>Thang điểm</dt><dd>${escapeHTML(formula.scale || "Theo đề án của trường")}</dd></div><div><dt>Tổ hợp</dt><dd>${combinations || escapeHTML(formula.combinationNote || "Theo điều kiện của phương thức")}</dd></div></dl>${conditions ? `<section><h4>Điều kiện quan trọng</h4><ul>${conditions}</ul></section>` : ""}${formula.priority ? `<section><h4>Điểm ưu tiên</h4><p>${escapeHTML(formula.priority)}</p></section>` : ""}${formula.conversion ? `<section><h4>Quy đổi trong công thức</h4><p>${escapeHTML(formula.conversion)}</p></section>` : ""}${formula.combinationNote ? `<section><h4>Phạm vi tổ hợp</h4><p>${escapeHTML(formula.combinationNote)}</p></section>` : ""}<details class="formula-programs"><summary>${formula.programCount} ngành / chương trình thuộc phạm vi đối chiếu</summary>${programs ? `<ul>${programs}</ul>` : `<p>${escapeHTML(formula.applicabilityNote || "Chưa xác nhận được ngành áp dụng.")}</p>`}</details>${sourceUrl ? `<a class="formula-source" href="${escapeHTML(sourceUrl)}" target="_blank" rel="noopener">${escapeHTML(source?.label || (official ? "Nguồn chính thức" : "Nguồn dữ liệu"))} ↗</a>` : ""}${formula.checkedAt ? `<small>Tra cứu: ${escapeHTML(formula.checkedAt)}</small>` : ""}`;
     if (profile) return `<details class="verified-formula-card is-profile profile-formula-disclosure${official ? "" : " is-reference"}"><summary class="profile-formula-summary"><span class="profile-formula-name">${escapeHTML(formula.label)}</span>${badge}</summary><div class="profile-formula-details">${details}</div></details>`;
     return `<article class="verified-formula-card${official ? "" : " is-reference"}"><div class="verified-formula-heading"><div><p class="eyebrow">CÔNG THỨC THEO PHƯƠNG THỨC</p><h3>${escapeHTML(formula.label)}</h3></div>${badge}</div>${details}</article>`;
   }
@@ -736,9 +769,16 @@ class THPTApp {
   renderAdmissionCalculator() {
     const panel = $("#admission-calculator-panel");
     const method = this.elements.methodSelect.value;
-    if (!method) { this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính"; panel.innerHTML = '<div class="result-empty"><h3>Chọn trường và phương thức</h3><p>Chỉ công thức được nguồn chính thức nêu trực tiếp mới được hiển thị là đã xác minh.</p></div>'; return; }
+    if (!method) {
+      this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính";
+      const catalog = this.admissionFormulaData?.catalog;
+      panel.innerHTML = catalog && !catalog.methods.length
+        ? `<div class="result-empty"><h3>Chưa có phương thức đại học 2026 được xác nhận</h3><p>${escapeHTML((catalog.issues || []).join(' ') || 'Xem ghi chú hồ sơ và thông báo tuyển sinh của cơ sở.')}</p></div>`
+        : '<div class="result-empty"><h3>Chọn trường và phương thức</h3><p>Chỉ công thức được nguồn chính thức nêu trực tiếp mới được hiển thị là đã xác minh.</p></div>';
+      return;
+    }
     const major = this.selectedAdmissionMajor();
-    const verifiedFormula = this.admissionFormulaForMajor(major);
+    const verifiedFormula = this.admissionFormulaForMajor(major) || this.admissionFormulaForMethod(method);
     const referenceFormula = this.referenceFormulaForMajor(major) || this.referenceFormulaForMethod(method);
     if (!verifiedFormula && !referenceFormula) {
       this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính";
@@ -752,6 +792,10 @@ class THPTApp {
     }
     const formula = verifiedFormula.formulaModuleId ? this.repository.getFormula(verifiedFormula.formulaModuleId) : null;
     const details = this.admissionFormulaMarkup(verifiedFormula);
+    if (verifiedFormula.autoCalculate && verifiedFormula.status === "official_verified" && verifiedFormula.calculationRule) {
+      this.renderStructuredAdmissionCalculator(verifiedFormula, details);
+      return;
+    }
     if (!verifiedFormula.autoCalculate || !canCalculateMajor(major, formula) || typeof formula?.getInputDefinition !== "function") {
       this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính";
       panel.innerHTML = `${details}<div class="info-callout">Công thức này được hiển thị để tra cứu; website chưa tự tính khi chưa có đủ quy tắc đầu vào an toàn.</div>`;
@@ -765,6 +809,35 @@ class THPTApp {
     $("#admission-choice-subject").addEventListener("change", refresh);
     $("#admission-calculator-form").addEventListener("submit", (event) => { event.preventDefault(); this.calculateForMajor(); });
     refresh();
+  }
+  renderStructuredAdmissionCalculator(formula, details) {
+    const rule = formula.calculationRule;
+    const fields = [...rule.inputs, ...(rule.bonus ? [{ ...rule.bonus, key: "bonus" }] : [])];
+    const context = this.getPriorityContext();
+    this.elements.calculateAdmission.disabled = false;
+    this.elements.calculateAdmission.textContent = "Nhập điểm";
+    $("#admission-calculator-panel").innerHTML = `${details}<form id="admission-calculator-form" class="form-card admission-dynamic-form"><h3>Tính theo ${escapeHTML(formula.label)}</h3><div class="form-grid form-grid-two">${fields.map((field, i) => `<div class="field"><label for="school-score-${i}">${escapeHTML(field.label)}</label><input id="school-score-${i}" data-school-score="${escapeHTML(field.key)}" inputmode="decimal" autocomplete="off" placeholder="${field.min}–${field.max}" ${field.key === "bonus" ? 'value="0"' : ""} aria-describedby="school-error-${i}" /><small id="school-error-${i}" class="field-error" role="status"></small></div>`).join("")}${rule.priority ? `<div class="field"><label for="school-priority-area">Khu vực ưu tiên</label><select id="school-priority-area">${$("#area").innerHTML}</select></div><div class="field"><label for="school-priority-group">Đối tượng ưu tiên</label><select id="school-priority-group">${$("#priority-group").innerHTML}</select></div>` : ""}</div><p class="form-note">Kết quả là phép tính theo công thức; bạn vẫn cần đáp ứng điều kiện và đúng tổ hợp của ngành.</p><button class="button button-primary" type="submit">Tính điểm xét tuyển</button></form><div id="admission-result"></div>`;
+    if (rule.priority) { $("#school-priority-area").value = context.area; $("#school-priority-group").value = context.priorityGroup; }
+    const validateField = (input) => {
+      const field = fields.find((item) => item.key === input.dataset.schoolScore);
+      const checked = validateSchoolFormulaValue(input.value, field);
+      input.setAttribute("aria-invalid", String(!checked.valid));
+      input.classList.toggle("input-invalid", !checked.valid);
+      document.getElementById(input.getAttribute("aria-describedby")).textContent = checked.valid ? "" : checked.message;
+      return checked;
+    };
+    $("#admission-calculator-form").addEventListener("input", (event) => { $("#admission-result").innerHTML = ""; if (event.target.matches("[data-school-score]")) validateField(event.target); });
+    $("#admission-calculator-form").addEventListener("change", () => { $("#admission-result").innerHTML = ""; });
+    $("#admission-calculator-form").addEventListener("submit", (event) => {
+      event.preventDefault(); $("#admission-result").innerHTML = "";
+      const inputs = $$('[data-school-score]');
+      const checked = inputs.map(validateField);
+      if (checked.some((value) => !value.valid)) { inputs[checked.findIndex((value) => !value.valid)].focus(); this.showToast(checked.find((value) => !value.valid).message); return; }
+      try {
+        const result = calculateSchoolFormula(rule, Object.fromEntries(inputs.map((input) => [input.dataset.schoolScore, input.value])), { area: $("#school-priority-area")?.value || "KV3", priorityGroup: $("#school-priority-group")?.value || "none" });
+        $("#admission-result").innerHTML = `<div class="result-content admission-result-content"><span class="result-label">KẾT QUẢ THEO CÔNG THỨC CỦA TRƯỜNG</span><h3>${escapeHTML(formula.label)}</h3><div class="result-score"><strong>${formatScore(result.total)}</strong><span>/ ${result.maxScore}</span></div><ul class="explanation-list"><li><span>Điểm nền sau trọng số</span><b>${formatScore(result.base)}</b></li><li><span>Điểm ưu tiên sau điều chỉnh</span><b>+ ${formatScore(result.priority.adjusted)}</b></li><li><span>Điểm cộng đã xác nhận</span><b>+ ${formatScore(result.bonus)}</b></li></ul><div class="formula-box">${escapeHTML(formula.expression)}</div></div>`;
+      } catch (error) { this.showToast(error.message); }
+    });
   }
   renderAdmissionInputs(formula) {
     const code = $("#admission-combination")?.value;
@@ -784,7 +857,7 @@ class THPTApp {
     $$('[data-admission-score]').forEach((input) => { const checked = validateScore(input.value); input.classList.toggle("input-invalid", !checked.valid); if (checked.valid) scores[input.dataset.admissionScore] = checked.value; else errors.push(checked.message); });
     if (errors.length) { this.showToast(errors[0]); return; }
     try {
-      const result = formula.calculate({ combinationCode: $("#admission-combination").value, choiceSubject: $("#admission-choice-subject")?.value, scores, priorityContext: this.getPriorityContext() });
+      const result = formula.calculate({ combinationCode: $("#admission-combination").value, choiceSubject: $("#admission-choice-subject")?.value, mathIsMain: major.mathIsMain === true, scores, priorityContext: this.getPriorityContext() });
       const breakdown = result.breakdown.map((item) => `<li><span>${escapeHTML(item.label)}${item.weight > 1 ? ` × ${item.weight}` : ""}</span><b>${formatScore(item.value)}</b></li>`).join("");
       $("#admission-result").innerHTML = `<div class="result-content admission-result-content"><span class="result-label">KẾT QUẢ THEO QUY TẮC ĐÃ XÁC MINH</span><h3>${escapeHTML(major.name)} · ${escapeHTML(result.combinationCode)}</h3><div class="result-score"><strong>${formatScore(result.total)}</strong><span>/ ${result.maxScore}</span></div><ul class="explanation-list">${breakdown}<li><span>Điểm sau trọng số</span><b>${formatScore(result.examScore)}</b></li><li><span>Điểm ưu tiên</span><b>+ ${formatScore(result.priority.adjusted)}</b></li></ul><div class="formula-box">${escapeHTML(formula.expression)}</div></div>`;
     } catch (error) { this.showToast(error.message); }
@@ -845,10 +918,10 @@ class THPTApp {
       const classified = UNIVERSITY_PROFILE_STATUS[evidence.status]?.full;
       const status = profileVerified ? "✓ Đã xác minh" : profilePartial ? "◐ Xác minh một phần" : reference ? "~ Dữ liệu tham khảo" : classified || "! Đang cập nhật";
       const note = publicProfileNote({ status: evidence.status, hasReference: reference, classified });
-      const profileFormulas = formulaData.profileFormulas || formulaData.methods || [];
+      const profileFormulas = formulaData.catalog ? formulaData.catalog.methods : formulaData.profileFormulas || formulaData.methods || [];
       const formulas = profileFormulas.map((item) => this.admissionFormulaMarkup(item, { profile: true })).join("");
       const formulaStats = formulaData.stats || {};
-      const formulaCoverage = formulaStats.totalMethods
+      const formulaCoverage = formulaData.catalog ? `${profileFormulas.length} phương thức đã rà soát · ${profileFormulas.filter((m) => m.status === "official_verified").length} công thức chính thức` : formulaStats.totalMethods
         ? `${formulaStats.coveredMethods}/${formulaStats.totalMethods} phương thức · ${formulaStats.officialMethodCount || 0} công thức chính thức`
         : "Không có dòng ngành áp dụng";
       const website = safeWebsite(university.website);
@@ -890,7 +963,7 @@ class THPTApp {
     const verifiedFormula = formulaData ? this.admissionFormulaForMajor(major, formulaData) : null;
     const referenceFormula = formulaData ? this.referenceFormulaForMajor(major, formulaData) : null;
     const formula = verifiedFormula || referenceFormula;
-    const formulaStatus = verifiedFormula ? "✓ Dùng chung · chính thức" : (formula ? "Dùng chung · tham khảo" : "Đang cập nhật");
+    const formulaStatus = verifiedFormula?.status === "official_verified" ? "✓ Theo phương thức · chính thức" : (formula ? "Theo phương thức · cần đối chiếu" : "Đang cập nhật");
     const formulaText = formula?.expression || major.formulaText || "Chưa có công thức cho dòng ngành này.";
     const source = formula?.sourceLink || formula?.officialLink;
     const sourceUrl = safeWebsite(source?.url);

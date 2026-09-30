@@ -2,7 +2,7 @@ import { createDataStore } from "../server/dataStoreCore.js";
 import { createCloudflareReportStore } from "../server/cloudflareReportStore.js";
 import { errorResponse, failure, optionsResponse, success } from "./http.js";
 
-const DATA_FILES = ["universities", "majors", "combinations", "subjects", "admission-formulas-2026"];
+const DATA_FILES = ["universities", "majors", "combinations", "subjects", "admission-formulas-2026", "school-formula-catalog-2026"];
 let dataStorePromise;
 
 async function loadAssetJson(assets, name) {
@@ -14,8 +14,8 @@ async function loadAssetJson(assets, name) {
 export function loadCloudflareDataStore(environment) {
   if (!dataStorePromise) {
     dataStorePromise = Promise.all(DATA_FILES.map((name) => loadAssetJson(environment.ASSETS, name)))
-      .then(([universities, majors, combinations, subjects, admissionFormulas]) =>
-        createDataStore({ universities, majors, combinations, subjects, admissionFormulas }))
+      .then(([universities, majors, combinations, subjects, admissionFormulas, schoolFormulaCatalog]) =>
+        createDataStore({ universities, majors, combinations, subjects, admissionFormulas, schoolFormulaCatalog }))
       .catch((error) => {
         dataStorePromise = undefined;
         throw error;

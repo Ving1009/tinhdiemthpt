@@ -13,5 +13,6 @@ export const defaultDataStore = createDataStore({
   combinations: readJson("combinations.json"),
   subjects: readJson("subjects.json"),
   admissionFormulas: readJson("admission-formulas-2026.json"),
+  schoolFormulaCatalog: readJson("school-formula-catalog-2026.json"),
   dataRoot: DATA_ROOT
 });

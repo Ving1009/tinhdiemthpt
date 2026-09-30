@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "year": 2026,
   "checkedAt": "2026-09-30",
-  "sourcePagesCollectedAt": "2026-09-30T10:58:13.874Z",
+  "sourcePagesCollectedAt": "2026-09-30T11:27:23.531Z",
   "purpose": "research_only",
   "summary": {
     "schools": 326,
     "sourcePages": 293,
     "methods": 1405,
-    "programMethodRows": 31453,
+    "programMethodRows": 31482,
     "statusCounts": {
-      "source_program_mapping_collected": 295,
+      "source_program_mapping_collected": 294,
       "current_policy_collected": 3,
-      "partial_program_mapping": 9,
+      "partial_program_mapping": 10,
       "missing_2026_evidence": 8,
       "specialized_or_postgraduate": 6,
       "university_system": 5
@@ -26696,20 +26696,20 @@
             {
               "code": "7860207_B",
               "displayCode": "7860207",
-              "name": "Chỉ huy - Tham mưu đặc công (miền Nam)",
+              "name": "Chỉ huy - Tham mưu đặc công (miền Bắc)",
               "group": "",
               "combinations": "A00; A01; C01",
-              "quota": 27,
+              "quota": 41,
               "note": "",
               "methodVariant": "1"
             },
             {
               "code": "7860207_N",
               "displayCode": "7860207",
-              "name": "Chỉ huy - Tham mưu đặc công (miền Bắc)",
+              "name": "Chỉ huy - Tham mưu đặc công (miền Nam)",
               "group": "",
               "combinations": "A00; A01; C01",
-              "quota": 47,
+              "quota": 27,
               "note": "",
               "methodVariant": "1"
             }
@@ -26737,20 +26737,20 @@
             {
               "code": "7860207_B",
               "displayCode": "7860207",
-              "name": "Chỉ huy - Tham mưu đặc công (miền Nam)",
+              "name": "Chỉ huy - Tham mưu đặc công (miền Bắc)",
               "group": "",
               "combinations": "",
-              "quota": 27,
+              "quota": 41,
               "note": "",
               "methodVariant": "11"
             },
             {
               "code": "7860207_N",
               "displayCode": "7860207",
-              "name": "Chỉ huy - Tham mưu đặc công (miền Bắc)",
+              "name": "Chỉ huy - Tham mưu đặc công (miền Nam)",
               "group": "",
               "combinations": "",
-              "quota": 47,
+              "quota": 27,
               "note": "",
               "methodVariant": "11"
             }
@@ -26778,20 +26778,20 @@
             {
               "code": "7860207_B",
               "displayCode": "7860207",
-              "name": "Chỉ huy - Tham mưu đặc công (miền Nam)",
+              "name": "Chỉ huy - Tham mưu đặc công (miền Bắc)",
               "group": "",
               "combinations": "",
-              "quota": 27,
+              "quota": 41,
               "note": "",
               "methodVariant": "2"
             },
             {
               "code": "7860207_N",
               "displayCode": "7860207",
-              "name": "Chỉ huy - Tham mưu đặc công (miền Bắc)",
+              "name": "Chỉ huy - Tham mưu đặc công (miền Nam)",
               "group": "",
               "combinations": "",
-              "quota": 47,
+              "quota": 27,
               "note": "",
               "methodVariant": "2"
             }
@@ -26819,20 +26819,20 @@
             {
               "code": "7860207_B",
               "displayCode": "7860207",
-              "name": "Chỉ huy - Tham mưu đặc công (miền Nam)",
+              "name": "Chỉ huy - Tham mưu đặc công (miền Bắc)",
               "group": "",
               "combinations": "Q00",
-              "quota": 27,
+              "quota": 41,
               "note": "",
               "methodVariant": "5"
             },
             {
               "code": "7860207_N",
               "displayCode": "7860207",
-              "name": "Chỉ huy - Tham mưu đặc công (miền Bắc)",
+              "name": "Chỉ huy - Tham mưu đặc công (miền Nam)",
               "group": "",
               "combinations": "Q00",
-              "quota": 47,
+              "quota": 27,
               "note": "",
               "methodVariant": "5"
             }
@@ -26860,20 +26860,20 @@
             {
               "code": "7860207_B",
               "displayCode": "7860207",
-              "name": "Chỉ huy - Tham mưu đặc công (miền Nam)",
+              "name": "Chỉ huy - Tham mưu đặc công (miền Bắc)",
               "group": "",
               "combinations": "",
-              "quota": 27,
+              "quota": 41,
               "note": "",
               "methodVariant": "15"
             },
             {
               "code": "7860207_N",
               "displayCode": "7860207",
-              "name": "Chỉ huy - Tham mưu đặc công (miền Bắc)",
+              "name": "Chỉ huy - Tham mưu đặc công (miền Nam)",
               "group": "",
               "combinations": "",
-              "quota": 47,
+              "quota": 27,
               "note": "",
               "methodVariant": "15"
             }
@@ -104657,7 +104657,7 @@
       "code": "DTB",
       "name": "Trường Đại học Thái Bình",
       "checkedAt": "2026-09-30",
-      "status": "source_program_mapping_collected",
+      "status": "partial_program_mapping",
       "sourceSchoolCode": "DTB",
       "sourceSchoolName": "Trường Đại Học Thái Bình",
       "sources": [
@@ -104686,52 +104686,12 @@
           "yearEvidence": "explicit_2026",
           "programs": [
             {
-              "code": "7140107",
-              "displayCode": "7140107",
-              "name": "Quản trị chất lượng giáo dục",
-              "group": "",
-              "combinations": "C00; C03; C04; C14; D01; D14; D15; X01; X02; X70; X78",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "1"
-            },
-            {
-              "code": "7149002",
-              "displayCode": "7149002",
-              "name": "Quản trị nhà trường",
-              "group": "",
-              "combinations": "C00; C03; C04; C14; D01; D14; D15; X01;X02; X70; X78",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "1"
-            },
-            {
-              "code": "7220201",
-              "displayCode": "7220201",
-              "name": "Ngôn ngữ Anh",
-              "group": "",
-              "combinations": "C00; C03; C04; C14; D01; D14; D15* X01; X02; X70; X78",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "1"
-            },
-            {
               "code": "7310101",
               "displayCode": "7310101",
               "name": "Kinh tế",
               "group": "",
               "combinations": "A00; C14; C03; C04; D01; X01; X02; X25; X26",
               "quota": 50,
-              "note": "",
-              "methodVariant": "1"
-            },
-            {
-              "code": "7310106",
-              "displayCode": "7310106",
-              "name": "Kinh tế quốc tế",
-              "group": "",
-              "combinations": "A00; C14; C03; C04; D01; X01; X02;X25; X26",
-              "quota": 30,
               "note": "",
               "methodVariant": "1"
             },
@@ -104756,16 +104716,6 @@
               "methodVariant": "1"
             },
             {
-              "code": "7310630",
-              "displayCode": "7310630",
-              "name": "Việt Nam học",
-              "group": "",
-              "combinations": "C00; C03; C04; C14;D01; D14; D15; X01;X02; X70; X78",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "1"
-            },
-            {
               "code": "7340101",
               "displayCode": "7340101",
               "name": "Quản trị kinh doanh",
@@ -104780,7 +104730,7 @@
               "displayCode": "7340201",
               "name": "Tài chính - Ngân hàng",
               "group": "",
-              "combinations": "A00; C14; C03; C04;D01;X01; X02; X25; X26",
+              "combinations": "A00; C14; C03; C04; D01; X01; X02; X25; X26",
               "quota": 50,
               "note": "",
               "methodVariant": "1"
@@ -104826,42 +104776,12 @@
               "methodVariant": "1"
             },
             {
-              "code": "7510205",
-              "displayCode": "7510205",
-              "name": "Công nghệ kỹ thuật ô tô",
-              "group": "",
-              "combinations": "A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26; X27",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "1"
-            },
-            {
               "code": "7510301",
               "displayCode": "7510301",
-              "name": "Công nghệ kỳ thuật điện, \nđiện tử",
+              "name": "Công nghệ kỳ thuật điện, điện tử",
               "group": "",
               "combinations": "A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26; X27",
               "quota": 250,
-              "note": "",
-              "methodVariant": "1"
-            },
-            {
-              "code": "7510303",
-              "displayCode": "7510303",
-              "name": "Công nghệ kỹ thuật điều khiển và tự động hóa (*)",
-              "group": "",
-              "combinations": "A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26;X27",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "1"
-            },
-            {
-              "code": "7540204",
-              "displayCode": "7540204",
-              "name": "Công nghệ dệt, may",
-              "group": "",
-              "combinations": "A00; A01; B00; C01; C02; C14; D01; D07; X01; X02; X03; X26;X27",
-              "quota": 30,
               "note": "",
               "methodVariant": "1"
             }
@@ -104887,52 +104807,12 @@
           "yearEvidence": "explicit_2026",
           "programs": [
             {
-              "code": "7140107",
-              "displayCode": "7140107",
-              "name": "Quản trị chất lượng giáo dục",
-              "group": "",
-              "combinations": "C00; C03; C04; C14; D01; D14; D15; X01; X02; X70; X78",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "3"
-            },
-            {
-              "code": "7149002",
-              "displayCode": "7149002",
-              "name": "Quản trị nhà trường",
-              "group": "",
-              "combinations": "C00; C03; C04; C14; D01; D14; D15; X01;X02; X70; X78",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "3"
-            },
-            {
-              "code": "7220201",
-              "displayCode": "7220201",
-              "name": "Ngôn ngữ Anh",
-              "group": "",
-              "combinations": "C00; C03; C04; C14; D01; D14; D15* X01; X02; X70; X78",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "3"
-            },
-            {
               "code": "7310101",
               "displayCode": "7310101",
               "name": "Kinh tế",
               "group": "",
               "combinations": "A00; C14; C03; C04; D01; X01; X02; X25; X26",
               "quota": 50,
-              "note": "",
-              "methodVariant": "3"
-            },
-            {
-              "code": "7310106",
-              "displayCode": "7310106",
-              "name": "Kinh tế quốc tế",
-              "group": "",
-              "combinations": "A00; C14; C03; C04; D01; X01; X02;X25; X26",
-              "quota": 30,
               "note": "",
               "methodVariant": "3"
             },
@@ -104957,16 +104837,6 @@
               "methodVariant": "3"
             },
             {
-              "code": "7310630",
-              "displayCode": "7310630",
-              "name": "Việt Nam học",
-              "group": "",
-              "combinations": "C00; C03; C04; C14;D01; D14; D15; X01;X02; X70; X78",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "3"
-            },
-            {
               "code": "7340101",
               "displayCode": "7340101",
               "name": "Quản trị kinh doanh",
@@ -104981,7 +104851,7 @@
               "displayCode": "7340201",
               "name": "Tài chính - Ngân hàng",
               "group": "",
-              "combinations": "A00; C14; C03; C04;D01;X01; X02; X25; X26",
+              "combinations": "A00; C14; C03; C04; D01; X01; X02; X25; X26",
               "quota": 50,
               "note": "",
               "methodVariant": "3"
@@ -105027,42 +104897,12 @@
               "methodVariant": "3"
             },
             {
-              "code": "7510205",
-              "displayCode": "7510205",
-              "name": "Công nghệ kỹ thuật ô tô",
-              "group": "",
-              "combinations": "A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26; X27",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "3"
-            },
-            {
               "code": "7510301",
               "displayCode": "7510301",
-              "name": "Công nghệ kỳ thuật điện, \nđiện tử",
+              "name": "Công nghệ kỳ thuật điện, điện tử",
               "group": "",
               "combinations": "A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26; X27",
               "quota": 250,
-              "note": "",
-              "methodVariant": "3"
-            },
-            {
-              "code": "7510303",
-              "displayCode": "7510303",
-              "name": "Công nghệ kỹ thuật điều khiển và tự động hóa (*)",
-              "group": "",
-              "combinations": "A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26;X27",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "3"
-            },
-            {
-              "code": "7540204",
-              "displayCode": "7540204",
-              "name": "Công nghệ dệt, may",
-              "group": "",
-              "combinations": "A00; A01; B00; C01; C02; C14; D01; D07; X01; X02; X03; X26;X27",
-              "quota": 30,
               "note": "",
               "methodVariant": "3"
             }
@@ -105088,52 +104928,12 @@
           "yearEvidence": "explicit_2026",
           "programs": [
             {
-              "code": "7140107",
-              "displayCode": "7140107",
-              "name": "Quản trị chất lượng giáo dục",
-              "group": "",
-              "combinations": "Q00",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "5"
-            },
-            {
-              "code": "7149002",
-              "displayCode": "7149002",
-              "name": "Quản trị nhà trường",
-              "group": "",
-              "combinations": "Q00",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "5"
-            },
-            {
-              "code": "7220201",
-              "displayCode": "7220201",
-              "name": "Ngôn ngữ Anh",
-              "group": "",
-              "combinations": "Q00",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "5"
-            },
-            {
               "code": "7310101",
               "displayCode": "7310101",
               "name": "Kinh tế",
               "group": "",
               "combinations": "Q00",
               "quota": 50,
-              "note": "",
-              "methodVariant": "5"
-            },
-            {
-              "code": "7310106",
-              "displayCode": "7310106",
-              "name": "Kinh tế quốc tế",
-              "group": "",
-              "combinations": "Q00",
-              "quota": 30,
               "note": "",
               "methodVariant": "5"
             },
@@ -105154,16 +104954,6 @@
               "group": "",
               "combinations": "Q00",
               "quota": 60,
-              "note": "",
-              "methodVariant": "5"
-            },
-            {
-              "code": "7310630",
-              "displayCode": "7310630",
-              "name": "Việt Nam học",
-              "group": "",
-              "combinations": "Q00",
-              "quota": 30,
               "note": "",
               "methodVariant": "5"
             },
@@ -105228,42 +105018,12 @@
               "methodVariant": "5"
             },
             {
-              "code": "7510205",
-              "displayCode": "7510205",
-              "name": "Công nghệ kỹ thuật ô tô",
-              "group": "",
-              "combinations": "Q00",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "5"
-            },
-            {
               "code": "7510301",
               "displayCode": "7510301",
-              "name": "Công nghệ kỳ thuật điện, \nđiện tử",
+              "name": "Công nghệ kỳ thuật điện, điện tử",
               "group": "",
               "combinations": "Q00",
               "quota": 250,
-              "note": "",
-              "methodVariant": "5"
-            },
-            {
-              "code": "7510303",
-              "displayCode": "7510303",
-              "name": "Công nghệ kỹ thuật điều \nkhiển và tự động hóa (*)",
-              "group": "",
-              "combinations": "Q00",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "5"
-            },
-            {
-              "code": "7540204",
-              "displayCode": "7540204",
-              "name": "Công nghệ dệt, may",
-              "group": "",
-              "combinations": "Q00",
-              "quota": 30,
               "note": "",
               "methodVariant": "5"
             }
@@ -105309,42 +105069,12 @@
               "methodVariant": "6"
             },
             {
-              "code": "7510205",
-              "displayCode": "7510205",
-              "name": "Công nghệ kỹ thuật ô tô",
-              "group": "",
-              "combinations": "K00",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "6"
-            },
-            {
               "code": "7510301",
               "displayCode": "7510301",
-              "name": "Công nghệ kỳ thuật điện, \nđiện tử",
+              "name": "Công nghệ kỳ thuật điện, điện tử",
               "group": "",
               "combinations": "K00",
               "quota": 250,
-              "note": "",
-              "methodVariant": "6"
-            },
-            {
-              "code": "7510303",
-              "displayCode": "7510303",
-              "name": "Công nghệ kỹ thuật điều \nkhiển và tự động hóa (*)",
-              "group": "",
-              "combinations": "K00",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "6"
-            },
-            {
-              "code": "7540204",
-              "displayCode": "7540204",
-              "name": "Công nghệ dệt, may",
-              "group": "",
-              "combinations": "K00",
-              "quota": 30,
               "note": "",
               "methodVariant": "6"
             }
@@ -105370,52 +105100,12 @@
           "yearEvidence": "explicit_2026",
           "programs": [
             {
-              "code": "7140107",
-              "displayCode": "7140107",
-              "name": "Quản trị chất lượng giáo dục",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "7"
-            },
-            {
-              "code": "7149002",
-              "displayCode": "7149002",
-              "name": "Quản trị nhà trường",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "7"
-            },
-            {
-              "code": "7220201",
-              "displayCode": "7220201",
-              "name": "Ngôn ngữ Anh",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "7"
-            },
-            {
               "code": "7310101",
               "displayCode": "7310101",
               "name": "Kinh tế",
               "group": "",
               "combinations": "",
               "quota": 50,
-              "note": "",
-              "methodVariant": "7"
-            },
-            {
-              "code": "7310106",
-              "displayCode": "7310106",
-              "name": "Kinh tế quốc tế",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
               "note": "",
               "methodVariant": "7"
             },
@@ -105436,16 +105126,6 @@
               "group": "",
               "combinations": "",
               "quota": 60,
-              "note": "",
-              "methodVariant": "7"
-            },
-            {
-              "code": "7310630",
-              "displayCode": "7310630",
-              "name": "Việt Nam học",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
               "note": "",
               "methodVariant": "7"
             },
@@ -105506,191 +105186,10 @@
           "sourceLabel": "ƯTXT, XT thẳng",
           "methodCode": "11",
           "codeNamespace": "tuyensinh247_internal",
-          "scopeStatus": "explicit_program_table",
+          "scopeStatus": "program_scope_missing",
           "disputed": false,
           "yearEvidence": "explicit_2026",
-          "programs": [
-            {
-              "code": "7140107",
-              "displayCode": "7140107",
-              "name": "Quản trị chất lượng giáo dục",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7149002",
-              "displayCode": "7149002",
-              "name": "Quản trị nhà trường",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7220201",
-              "displayCode": "7220201",
-              "name": "Ngôn ngữ Anh",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7310101",
-              "displayCode": "7310101",
-              "name": "Kinh tế",
-              "group": "",
-              "combinations": "",
-              "quota": 50,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7310106",
-              "displayCode": "7310106",
-              "name": "Kinh tế quốc tế",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7310201",
-              "displayCode": "7310201",
-              "name": "Chính trị học",
-              "group": "",
-              "combinations": "",
-              "quota": 50,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7310206",
-              "displayCode": "7310206",
-              "name": "Quan hệ quốc tế",
-              "group": "",
-              "combinations": "",
-              "quota": 60,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7310630",
-              "displayCode": "7310630",
-              "name": "Việt Nam học",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7340101",
-              "displayCode": "7340101",
-              "name": "Quản trị kinh doanh",
-              "group": "",
-              "combinations": "",
-              "quota": 150,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7340201",
-              "displayCode": "7340201",
-              "name": "Tài chính - Ngân hàng",
-              "group": "",
-              "combinations": "",
-              "quota": 50,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7340301",
-              "displayCode": "7340301",
-              "name": "Kế toán",
-              "group": "",
-              "combinations": "",
-              "quota": 100,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7380101",
-              "displayCode": "7380101",
-              "name": "Luật",
-              "group": "",
-              "combinations": "",
-              "quota": 100,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7480201",
-              "displayCode": "7480201",
-              "name": "Công nghệ thông tin",
-              "group": "",
-              "combinations": "",
-              "quota": 200,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7510201",
-              "displayCode": "7510201",
-              "name": "Công nghệ kỹ thuật cơ khí",
-              "group": "",
-              "combinations": "",
-              "quota": 250,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7510205",
-              "displayCode": "7510205",
-              "name": "Công nghệ kỹ thuật ô tô",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7510301",
-              "displayCode": "7510301",
-              "name": "Công nghệ kỳ thuật điện, điện tử",
-              "group": "",
-              "combinations": "",
-              "quota": 250,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7510303",
-              "displayCode": "7510303",
-              "name": "Công nghệ kỹ thuật điều khiển và tự động hóa (*)",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "11"
-            },
-            {
-              "code": "7540204",
-              "displayCode": "7540204",
-              "name": "Công nghệ dệt, may",
-              "group": "",
-              "combinations": "",
-              "quota": 30,
-              "note": "",
-              "methodVariant": "11"
-            }
-          ],
+          "programs": [],
           "requirements": [],
           "examsAndCertificatesMentioned": [],
           "availableSourceSections": [
@@ -127938,10 +127437,411 @@
           "sourceLabel": "Kết hợp điểm thi THPT + CCNN",
           "methodCode": "10",
           "codeNamespace": "tuyensinh247_internal",
-          "scopeStatus": "program_scope_missing",
+          "scopeStatus": "explicit_program_table",
           "disputed": true,
           "yearEvidence": "explicit_2026",
-          "programs": [],
+          "programs": [
+            {
+              "code": "7220112_TD",
+              "displayCode": "7220112_TD",
+              "name": "Văn hóa các dân tộc thiêu số Việt Nam",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 25,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7220201",
+              "displayCode": "7220201",
+              "name": "Ngôn ngữ Anh",
+              "group": "",
+              "combinations": "D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79",
+              "quota": 100,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7220201_AH",
+              "displayCode": "7220201_AH",
+              "name": "Song ngữ Anh - Hàn",
+              "group": "",
+              "combinations": "D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7220201_AT",
+              "displayCode": "7220201_AT",
+              "name": "Song ngữ Anh -Trung",
+              "group": "",
+              "combinations": "D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79",
+              "quota": 230,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7220201_GV",
+              "displayCode": "7220201_GV",
+              "name": "Ngôn ngữ Anh (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79",
+              "quota": 70,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7220204",
+              "displayCode": "7220204",
+              "name": "Ngôn ngữ Trung Quốc",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C14;C19;C20;D01;D04;D10;D14;D15;D20;D40;D45;D50;D55;D60;D65;D66;D71;D84;D89;X01;X02;X17;X18;X21;X22;X25;X26;X37;X38;X53;X70;X71;X74;X75;X78;X79;X90;X91;Y07",
+              "quota": 400,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7229010",
+              "displayCode": "7229010",
+              "name": "Lịch sử, Địa lý và Kinh tế Pháp luật",
+              "group": "",
+              "combinations": "A07;A08;AH5;C00;C03;C07;C10;C12;C19;D09;D14;D40;D65;DH5;X17;X18;X70;X71",
+              "quota": 200,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7229030",
+              "displayCode": "7229030",
+              "name": "Vãn học (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D04;D11;D12;D13;D14;D15;D45;D65;D66;X01;X58;X62;X66;X70;X74;X78",
+              "quota": 200,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7310110",
+              "displayCode": "7310110",
+              "name": "Quản lý kinh tế",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7310501",
+              "displayCode": "7310501",
+              "name": "Địa lý học (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A04;A06;A07;A09;AH1;B02;C00;C04;C09;C11;C13;C20;D10;D15;D20;DH1;X21;X74",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7310612",
+              "displayCode": "7310612",
+              "name": "Trung Quốc học",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C14;C19;C20;D01;D04;D10;D14;D15;D20;D40;D45;D50;D55;D60;D65;D66;D71;D84;D89;X01;X02;X17;X18;X21;X22;X25;X26;X37;X38;X53;X70;X71;X74;X75;X78;X79;X90;X91;Y07",
+              "quota": 485,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7310614",
+              "displayCode": "7310614",
+              "name": "Hàn Quốc học",
+              "group": "",
+              "combinations": "A07;A08;A09;AH1;AH5;AH6;C00;C03;C04;C14;C19;C20;D01;D10;D14;D15;D66;DD2;DH1;DH5;DH6;X01;X02;X17;X18;X21;X22;X25;X26;X49;X50;X53;X70;X71;X74;X75;X78;X79;Y03;Y04;Y07",
+              "quota": 150,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7310630",
+              "displayCode": "7310630",
+              "name": "Việt Nam học",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 35,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7320101",
+              "displayCode": "7320101",
+              "name": "Báo chí",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 90,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7320108",
+              "displayCode": "7320108",
+              "name": "Quan hệ công chúng",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7320201",
+              "displayCode": "7320201",
+              "name": "Thư viện -Thiết bị trường học",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 40,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7340401",
+              "displayCode": "7340401",
+              "name": "Quản lý nhân lực",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 150,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7380101",
+              "displayCode": "7380101",
+              "name": "Luật",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 180,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7380107",
+              "displayCode": "7380107",
+              "name": "Luật kinh tế",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7420101",
+              "displayCode": "7420101",
+              "name": "Sinh học (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A02;B00;B01;B02;B03;B04;B08;C06;C08;C13;X13;X14;X67",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7420201",
+              "displayCode": "7420201",
+              "name": "Công nghệ sinh học",
+              "group": "",
+              "combinations": "A02;B00;B01;B02;B03;B04;B08;C06;C08;C13;X13;X14;X67",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7440102",
+              "displayCode": "7440102",
+              "name": "Vật lý (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A10;C01;X05;X06",
+              "quota": 35,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7440102_TD",
+              "displayCode": "7440102_TD",
+              "name": "Công nghệ bán dẫn",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A10;C01;X05;X06",
+              "quota": 35,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7440112",
+              "displayCode": "7440112",
+              "name": "Hóa học (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7440112_ST",
+              "displayCode": "7440112_ST",
+              "name": "Khoa học Tự nhiên tích hợp STEM",
+              "group": "",
+              "combinations": "A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7440301",
+              "displayCode": "7440301",
+              "name": "Khoa học môi trường",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A07;A08;A09;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;C03;C04;C14;D01;D07;D09;D10;D84;X01;X02;X05;X06;X09;X10;X13;X14;X17;X18;X21;X22;X25;X26;X53",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7460101_TA",
+              "displayCode": "7460101_TA",
+              "name": "Toán học (CTĐT Toán học định hướng giáng dạy bàng tiếng Anh)",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7460101_TV",
+              "displayCode": "7460101_TV",
+              "name": "Toán học (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 170,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7460108",
+              "displayCode": "7460108",
+              "name": "Khoa học dữ liệu",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7460117",
+              "displayCode": "7460117",
+              "name": "Toán tin",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7460117_GV",
+              "displayCode": "7460117_GV",
+              "name": "Toán tin (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 60,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7480201",
+              "displayCode": "7480201",
+              "name": "Công nghệ thông tin",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 60,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7510401",
+              "displayCode": "7510401",
+              "name": "Công nghệ kỳ thuật Hoá học",
+              "group": "",
+              "combinations": "A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7720203",
+              "displayCode": "7720203",
+              "name": "Hóa dược",
+              "group": "",
+              "combinations": "A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7720203_TD",
+              "displayCode": "7720203_TD",
+              "name": "Chăm sóc sắc đẹp từ dược liệu",
+              "group": "",
+              "combinations": "A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7760101",
+              "displayCode": "7760101",
+              "name": "Công tác xã hội",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 75,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7810101",
+              "displayCode": "7810101",
+              "name": "Du lịch",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 80,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7810103",
+              "displayCode": "7810103",
+              "name": "Quản trị dịch vụ du lịch và lữ hành",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 160,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7810301",
+              "displayCode": "7810301",
+              "name": "Quản lý Thể dục thể thao",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.04"
+            },
+            {
+              "code": "7850101",
+              "displayCode": "7850101",
+              "name": "Quán lý Tài nguyên và Môi trường",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A07;A08;A09;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;C03;C04;C14;D01;D07;D09;D10;D84;X01;X02;X05;X06;X09;X10;X13;X14;X17;X18;X21;X22;X25;X26;X53",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.04"
+            }
+          ],
           "requirements": [],
           "examsAndCertificatesMentioned": [
             "IELTS",
@@ -127963,10 +127863,411 @@
           "sourceLabel": "Kết hợp Học bạ + CCNN",
           "methodCode": "10",
           "codeNamespace": "tuyensinh247_internal",
-          "scopeStatus": "program_scope_missing",
+          "scopeStatus": "explicit_program_table",
           "disputed": true,
           "yearEvidence": "explicit_2026",
-          "programs": [],
+          "programs": [
+            {
+              "code": "7220112_TD",
+              "displayCode": "7220112_TD",
+              "name": "Văn hóa các dân tộc thiêu số Việt Nam",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 25,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7220201",
+              "displayCode": "7220201",
+              "name": "Ngôn ngữ Anh",
+              "group": "",
+              "combinations": "D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79",
+              "quota": 100,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7220201_AH",
+              "displayCode": "7220201_AH",
+              "name": "Song ngữ Anh - Hàn",
+              "group": "",
+              "combinations": "D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7220201_AT",
+              "displayCode": "7220201_AT",
+              "name": "Song ngữ Anh -Trung",
+              "group": "",
+              "combinations": "D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79",
+              "quota": 230,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7220201_GV",
+              "displayCode": "7220201_GV",
+              "name": "Ngôn ngữ Anh (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79",
+              "quota": 70,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7220204",
+              "displayCode": "7220204",
+              "name": "Ngôn ngữ Trung Quốc",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C14;C19;C20;D01;D04;D10;D14;D15;D20;D40;D45;D50;D55;D60;D65;D66;D71;D84;D89;X01;X02;X17;X18;X21;X22;X25;X26;X37;X38;X53;X70;X71;X74;X75;X78;X79;X90;X91;Y07",
+              "quota": 400,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7229010",
+              "displayCode": "7229010",
+              "name": "Lịch sử, Địa lý và Kinh tế Pháp luật",
+              "group": "",
+              "combinations": "A07;A08;AH5;C00;C03;C07;C10;C12;C19;D09;D14;D40;D65;DH5;X17;X18;X70;X71",
+              "quota": 200,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7229030",
+              "displayCode": "7229030",
+              "name": "Vãn học (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D04;D11;D12;D13;D14;D15;D45;D65;D66;X01;X58;X62;X66;X70;X74;X78",
+              "quota": 200,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7310110",
+              "displayCode": "7310110",
+              "name": "Quản lý kinh tế",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7310501",
+              "displayCode": "7310501",
+              "name": "Địa lý học (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A04;A06;A07;A09;AH1;B02;C00;C04;C09;C11;C13;C20;D10;D15;D20;DH1;X21;X74",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7310612",
+              "displayCode": "7310612",
+              "name": "Trung Quốc học",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C14;C19;C20;D01;D04;D10;D14;D15;D20;D40;D45;D50;D55;D60;D65;D66;D71;D84;D89;X01;X02;X17;X18;X21;X22;X25;X26;X37;X38;X53;X70;X71;X74;X75;X78;X79;X90;X91;Y07",
+              "quota": 485,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7310614",
+              "displayCode": "7310614",
+              "name": "Hàn Quốc học",
+              "group": "",
+              "combinations": "A07;A08;A09;AH1;AH5;AH6;C00;C03;C04;C14;C19;C20;D01;D10;D14;D15;D66;DD2;DH1;DH5;DH6;X01;X02;X17;X18;X21;X22;X25;X26;X49;X50;X53;X70;X71;X74;X75;X78;X79;Y03;Y04;Y07",
+              "quota": 150,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7310630",
+              "displayCode": "7310630",
+              "name": "Việt Nam học",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 35,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7320101",
+              "displayCode": "7320101",
+              "name": "Báo chí",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 90,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7320108",
+              "displayCode": "7320108",
+              "name": "Quan hệ công chúng",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7320201",
+              "displayCode": "7320201",
+              "name": "Thư viện -Thiết bị trường học",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 40,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7340401",
+              "displayCode": "7340401",
+              "name": "Quản lý nhân lực",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 150,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7380101",
+              "displayCode": "7380101",
+              "name": "Luật",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 180,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7380107",
+              "displayCode": "7380107",
+              "name": "Luật kinh tế",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7420101",
+              "displayCode": "7420101",
+              "name": "Sinh học (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A02;B00;B01;B02;B03;B04;B08;C06;C08;C13;X13;X14;X67",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7420201",
+              "displayCode": "7420201",
+              "name": "Công nghệ sinh học",
+              "group": "",
+              "combinations": "A02;B00;B01;B02;B03;B04;B08;C06;C08;C13;X13;X14;X67",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7440102",
+              "displayCode": "7440102",
+              "name": "Vật lý (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A10;C01;X05;X06",
+              "quota": 35,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7440102_TD",
+              "displayCode": "7440102_TD",
+              "name": "Công nghệ bán dẫn",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A10;C01;X05;X06",
+              "quota": 35,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7440112",
+              "displayCode": "7440112",
+              "name": "Hóa học (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7440112_ST",
+              "displayCode": "7440112_ST",
+              "name": "Khoa học Tự nhiên tích hợp STEM",
+              "group": "",
+              "combinations": "A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7440301",
+              "displayCode": "7440301",
+              "name": "Khoa học môi trường",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A07;A08;A09;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;C03;C04;C14;D01;D07;D09;D10;D84;X01;X02;X05;X06;X09;X10;X13;X14;X17;X18;X21;X22;X25;X26;X53",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7460101_TA",
+              "displayCode": "7460101_TA",
+              "name": "Toán học (CTĐT Toán học định hướng giáng dạy bàng tiếng Anh)",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7460101_TV",
+              "displayCode": "7460101_TV",
+              "name": "Toán học (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 170,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7460108",
+              "displayCode": "7460108",
+              "name": "Khoa học dữ liệu",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7460117",
+              "displayCode": "7460117",
+              "name": "Toán tin",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7460117_GV",
+              "displayCode": "7460117_GV",
+              "name": "Toán tin (CTĐT định hướng giảng dạy)",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 60,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7480201",
+              "displayCode": "7480201",
+              "name": "Công nghệ thông tin",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53",
+              "quota": 60,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7510401",
+              "displayCode": "7510401",
+              "name": "Công nghệ kỳ thuật Hoá học",
+              "group": "",
+              "combinations": "A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7720203",
+              "displayCode": "7720203",
+              "name": "Hóa dược",
+              "group": "",
+              "combinations": "A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7720203_TD",
+              "displayCode": "7720203_TD",
+              "name": "Chăm sóc sắc đẹp từ dược liệu",
+              "group": "",
+              "combinations": "A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7760101",
+              "displayCode": "7760101",
+              "name": "Công tác xã hội",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 75,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7810101",
+              "displayCode": "7810101",
+              "name": "Du lịch",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 80,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7810103",
+              "displayCode": "7810103",
+              "name": "Quản trị dịch vụ du lịch và lữ hành",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 160,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7810301",
+              "displayCode": "7810301",
+              "name": "Quản lý Thể dục thể thao",
+              "group": "",
+              "combinations": "A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "10.13"
+            },
+            {
+              "code": "7850101",
+              "displayCode": "7850101",
+              "name": "Quán lý Tài nguyên và Môi trường",
+              "group": "",
+              "combinations": "A00;A01;A02;A03;A04;A05;A06;A07;A08;A09;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;C03;C04;C14;D01;D07;D09;D10;D84;X01;X02;X05;X06;X09;X10;X13;X14;X17;X18;X21;X22;X25;X26;X53",
+              "quota": 30,
+              "note": "",
+              "methodVariant": "10.13"
+            }
+          ],
           "requirements": [],
           "examsAndCertificatesMentioned": [
             "IELTS",
@@ -185001,9 +185302,9 @@
         {
           "url": "https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-am-nhac-hue-HVA.html",
           "type": "secondary",
-          "year": null,
+          "year": 2026,
           "availableYears": [
-            2024
+            2026
           ]
         },
         {
@@ -300549,10 +300850,10 @@
       "methods": [
         {
           "id": "8972",
-          "label": "Điểm thi THPT",
+          "label": "Kết hợp Học bạ + Năng khiếu",
           "year": 2026,
-          "sourceLabel": "Điểm thi THPT",
-          "methodCode": "1",
+          "sourceLabel": "Kết hợp Học bạ + Năng khiếu",
+          "methodCode": "10",
           "codeNamespace": "tuyensinh247_internal",
           "scopeStatus": "explicit_program_table",
           "disputed": false,
@@ -300566,7 +300867,7 @@
               "combinations": "T00; T02; T03; T05; T08",
               "quota": 200,
               "note": "",
-              "methodVariant": "1"
+              "methodVariant": "10.12"
             },
             {
               "code": "7729001",
@@ -300576,7 +300877,7 @@
               "combinations": "T00; T02; T03; T05; T08",
               "quota": 50,
               "note": "",
-              "methodVariant": "1"
+              "methodVariant": "10.12"
             },
             {
               "code": "7810301",
@@ -300586,7 +300887,7 @@
               "combinations": "T00; T02; T03; T05; T08",
               "quota": 50,
               "note": "",
-              "methodVariant": "1"
+              "methodVariant": "10.12"
             },
             {
               "code": "7810302",
@@ -300596,7 +300897,7 @@
               "combinations": "T00; T02; T03; T05; T08",
               "quota": 1500,
               "note": "",
-              "methodVariant": "1"
+              "methodVariant": "10.12"
             }
           ],
           "requirements": [],
@@ -300605,15 +300906,15 @@
             "Cách xét / cách tính điểm"
           ],
           "sourceUrl": "https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html",
-          "sourceSectionId": "diem-thi-thpt-8972",
+          "sourceSectionId": "xet-tuyen-ket-hop-8972",
           "issues": []
         },
         {
           "id": "8973",
-          "label": "Điểm học bạ",
+          "label": "Kết hợp Điểm THPT + Năng khiếu",
           "year": 2026,
-          "sourceLabel": "Điểm học bạ",
-          "methodCode": "3",
+          "sourceLabel": "Kết hợp Điểm THPT + Năng khiếu",
+          "methodCode": "10",
           "codeNamespace": "tuyensinh247_internal",
           "scopeStatus": "explicit_program_table",
           "disputed": false,
@@ -300627,7 +300928,7 @@
               "combinations": "T00; T02; T03; T05; T08",
               "quota": 200,
               "note": "",
-              "methodVariant": "3"
+              "methodVariant": "10.05"
             },
             {
               "code": "7729001",
@@ -300637,7 +300938,7 @@
               "combinations": "T00; T02; T03; T05; T08",
               "quota": 50,
               "note": "",
-              "methodVariant": "3"
+              "methodVariant": "10.05"
             },
             {
               "code": "7810301",
@@ -300647,7 +300948,7 @@
               "combinations": "T00; T02; T03; T05; T08",
               "quota": 50,
               "note": "",
-              "methodVariant": "3"
+              "methodVariant": "10.05"
             },
             {
               "code": "7810302",
@@ -300657,7 +300958,7 @@
               "combinations": "T00; T02; T03; T05; T08",
               "quota": 1500,
               "note": "",
-              "methodVariant": "3"
+              "methodVariant": "10.05"
             }
           ],
           "requirements": [],
@@ -300666,7 +300967,7 @@
             "Cách xét / cách tính điểm"
           ],
           "sourceUrl": "https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html",
-          "sourceSectionId": "diem-hoc-ba-8973",
+          "sourceSectionId": "xet-tuyen-ket-hop-8973",
           "issues": []
         },
         {
@@ -339914,6 +340215,11 @@
           "availableYears": [
             2026
           ]
+        },
+        {
+          "url": "https://vju.ac.vn/tuyensinhdaihoc/thong-tin-tuyen-sinh-2026/",
+          "type": "official",
+          "year": 2026
         }
       ],
       "documents": [
@@ -340486,12 +340792,12 @@
         },
         {
           "id": "7877",
-          "label": "Xét tuyển đánh giá Phỏng vấn và ĐGNL",
+          "label": "Phỏng vấn, đánh giá thí sinh",
           "year": 2026,
           "sourceLabel": "Xét tuyển đánh giá Phỏng vấn và ĐGNL",
           "methodCode": "4",
           "codeNamespace": "tuyensinh247_internal",
-          "scopeStatus": "explicit_program_table",
+          "scopeStatus": "explicit_official_program_exclusion",
           "disputed": false,
           "yearEvidence": "explicit_2026",
           "programs": [
@@ -340512,16 +340818,6 @@
               "group": "",
               "combinations": "",
               "quota": 150,
-              "note": "",
-              "methodVariant": "4"
-            },
-            {
-              "code": "VJU3",
-              "displayCode": "VJU3",
-              "name": "Cơ điện tử thông minh và sản xuất theo phương thức Nhật Bản – EMJM",
-              "group": "",
-              "combinations": "",
-              "quota": 55,
               "note": "",
               "methodVariant": "4"
             },
@@ -340586,7 +340882,9 @@
               "methodVariant": "4"
             }
           ],
-          "requirements": [],
+          "requirements": [
+            "Phỏng vấn / đánh giá theo bảng thành phần riêng của chương trình; không áp dụng Cơ điện tử thông minh và Sản xuất theo phương thức Nhật Bản."
+          ],
           "examsAndCertificatesMentioned": [],
           "availableSourceSections": [
             "Đối tượng",
@@ -340595,8 +340893,8 @@
             "Thời gian",
             "Thông tin khác"
           ],
-          "sourceUrl": "https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-nhat-ha-noi-VJU.html",
-          "sourceSectionId": "diem-thi-rieng-7877",
+          "sourceUrl": "https://vju.ac.vn/tuyensinhdaihoc/thong-tin-tuyen-sinh-2026/",
+          "sourceSectionId": "",
           "issues": []
         }
       ],

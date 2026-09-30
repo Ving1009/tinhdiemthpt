@@ -3,6 +3,7 @@ import { majorHasCombination, parseCombinationCodes } from "../lib/majorCombinat
 import { sanitizeMajor, sanitizeUniversity } from "../lib/dataValidation.js";
 import { normalizeAdmissionMethodCode } from "../lib/admissionMethod.js";
 import { createAdmissionFormulaIndex } from "../lib/admissionFormulaData.js";
+import { createSchoolFormulaCatalogIndex, publicSchoolFormulas } from "../lib/schoolFormulaCatalog.js";
 
 export function normalizeSearch(value) {
   return String(value ?? "")
@@ -44,7 +45,7 @@ function formulaScale(rows) {
   return scales.length === 1 ? `Thang ${scales[0]}` : "Theo thang điểm và bảng quy đổi của trường";
 }
 
-export function createDataStore({ universities, majors, combinations, subjects, admissionFormulas, dataRoot = null } = {}) {
+export function createDataStore({ universities, majors, combinations, subjects, admissionFormulas, schoolFormulaCatalog, dataRoot = null } = {}) {
   const allUniversities = universities || [];
   const allMajors = majors || [];
   const allCombinations = combinations || [];
@@ -53,6 +54,7 @@ export function createDataStore({ universities, majors, combinations, subjects, 
   const universitiesById = new Map(allUniversities.map((item) => [item.id, item]));
   const majorsById = new Map(allMajors.map((item) => [item.id, item]));
   const admissionFormulaIndex = createAdmissionFormulaIndex(allAdmissionFormulas, { universities: allUniversities, majors: allMajors });
+  const schoolFormulaCatalogIndex = createSchoolFormulaCatalogIndex(schoolFormulaCatalog, { universities: allUniversities, majors: allMajors });
   const majorsByUniversity = new Map();
   const validCombinationCodes = new Set(allCombinations.map((item) => item.code.toLocaleUpperCase("vi")));
   const indexedMajors = allMajors.map((major) => {
@@ -345,7 +347,8 @@ export function createDataStore({ universities, majors, combinations, subjects, 
       },
       methodOptions,
       methods,
-      profileFormulas
+      profileFormulas,
+      catalog: publicSchoolFormulas(schoolFormulaCatalogIndex.get(id), schoolFormulaCatalog?.checkedAt)
     };
   }
 

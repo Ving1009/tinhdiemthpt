@@ -17797,6 +17797,107 @@
         "PDF chính thức có 6 luồng xét, gồm tốt nghiệp THPT nước ngoài mà trang tổng hợp chưa tách. Đã dùng bảng 60 chương trình trang 4–34, giữ mã xét tuyển riêng với mã ngành.",
         "Một số mã ở nguồn tổng hợp khác PDF: Trí tuệ nhân tạo, Ngôn ngữ Nhật, Hệ thống thông tin quản lý và Digital marketing. Bản nghiên cứu ưu tiên mã và tên trong PDF chính thức."
       ]
+    },
+    "VJU": {
+      "sources": [
+        {
+          "url": "https://vju.ac.vn/tuyensinhdaihoc/thong-tin-tuyen-sinh-2026/",
+          "type": "official",
+          "year": 2026
+        }
+      ],
+      "methodCorrections": {
+        "7877": {
+          "label": "Phỏng vấn, đánh giá thí sinh",
+          "programs": [
+            {
+              "code": "VJU1",
+              "displayCode": "VJU1",
+              "name": "Nhật Bản học – BJS",
+              "group": "",
+              "combinations": "",
+              "quota": 120,
+              "note": "",
+              "methodVariant": "4"
+            },
+            {
+              "code": "VJU2",
+              "displayCode": "VJU2",
+              "name": "Khoa học & Kỹ thuật máy tính – BCSE",
+              "group": "",
+              "combinations": "",
+              "quota": 150,
+              "note": "",
+              "methodVariant": "4"
+            },
+            {
+              "code": "VJU4",
+              "displayCode": "VJU4",
+              "name": "Công nghệ Thực phẩm và sức khỏe – EFTH",
+              "group": "",
+              "combinations": "",
+              "quota": 55,
+              "note": "",
+              "methodVariant": "4"
+            },
+            {
+              "code": "VJU5",
+              "displayCode": "VJU5",
+              "name": "Nông nghiệp thông minh và bền vững – ESAS",
+              "group": "",
+              "combinations": "",
+              "quota": 20,
+              "note": "",
+              "methodVariant": "4"
+            },
+            {
+              "code": "VJU6",
+              "displayCode": "VJU6",
+              "name": "Kỹ thuật Xây dựng – ECE",
+              "group": "",
+              "combinations": "",
+              "quota": 50,
+              "note": "",
+              "methodVariant": "4"
+            },
+            {
+              "code": "VJU7",
+              "displayCode": "VJU7",
+              "name": "Đổi mới và phát triển toàn cầu (Quốc tế học) – BGDI",
+              "group": "",
+              "combinations": "",
+              "quota": 100,
+              "note": "",
+              "methodVariant": "4"
+            },
+            {
+              "code": "VJU8",
+              "displayCode": "VJU8",
+              "name": "Công nghệ kỹ thuật Chip bán dẫn – ESCT",
+              "group": "",
+              "combinations": "",
+              "quota": 100,
+              "note": "",
+              "methodVariant": "4"
+            },
+            {
+              "code": "VJU9",
+              "displayCode": "VJU9",
+              "name": "Điều khiển thông minh và Tự động hóa – BICA",
+              "group": "",
+              "combinations": "",
+              "quota": 100,
+              "note": "",
+              "methodVariant": "4"
+            }
+          ],
+          "scopeStatus": "explicit_official_program_exclusion",
+          "sourceUrl": "https://vju.ac.vn/tuyensinhdaihoc/thong-tin-tuyen-sinh-2026/",
+          "requirements": [
+            "Phỏng vấn / đánh giá theo bảng thành phần riêng của chương trình; không áp dụng Cơ điện tử thông minh và Sản xuất theo phương thức Nhật Bản."
+          ]
+        }
+      }
     }
   },
   "campuses": {

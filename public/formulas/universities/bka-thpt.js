@@ -2,6 +2,7 @@ import { calculateAdmissionPriority, rounded, subjectLabel } from "../../js/util
 
 const STANDARD_RULE = "three-subject-sum-priority-2026";
 const K01_RULE = "bka-k01-weighted-priority-2026";
+const MATH_MAIN_RULE = "bka-math-main-priority-2026";
 
 const COMBINATIONS = {
   A00: { ruleId: STANDARD_RULE, subjects: ["math", "physics", "chemistry"] },
@@ -28,7 +29,7 @@ export const bkaThptFormula = {
   type: "Thi THPT",
   description: "Hỗ trợ A00, A01 và công thức trọng số K01 theo quy tắc đã liên kết với ba chương trình trong dữ liệu.",
   inputs: ["Tổ hợp", "Điểm các môn", "Khu vực", "Đối tượng ưu tiên"],
-  expression: "A00/A01: tổng 3 môn + ưu tiên. K01: [3 × Toán + Ngữ văn + 2 × (Lí/Hóa/Sinh/Tin)] ÷ 2 + ưu tiên.",
+  expression: "Tổ hợp thường: tổng 3 môn + ưu tiên. Toán là môn chính: [2 × Toán + M2 + M3] × 3/4 + ưu tiên. K01: [3 × Toán + Ngữ văn + 2 × (Lí/Hóa/Sinh/Tin)] ÷ 2 + ưu tiên.",
   example: "K01: Toán 9, Văn 8, Vật lí 9 → (27 + 8 + 18) ÷ 2 = 26,50 trước điểm ưu tiên.",
   combinations: COMBINATIONS,
   getInputDefinition(combinationCode, choice) {
@@ -50,6 +51,9 @@ export const bkaThptFormula = {
         { label: "Ngữ văn", value: Number(scores.literature), weight: 1 },
         { label: label(definition.selectedChoice), value: Number(scores[definition.selectedChoice]), weight: 2 }
       ];
+    } else if (data.mathIsMain === true) {
+      examScore = rounded((definition.subjects.reduce((sum, key) => sum + Number(scores[key]), 0) + Number(scores.math)) * 3 / 4);
+      breakdown = definition.subjects.map((key) => ({ label: label(key), value: Number(scores[key]), weight: key === "math" ? 2 : 1 }));
     } else {
       examScore = rounded(definition.subjects.reduce((sum, key) => sum + Number(scores[key]), 0));
       breakdown = definition.subjects.map((key) => ({ label: label(key), value: Number(scores[key]), weight: 1 }));
@@ -62,8 +66,8 @@ export const bkaThptFormula = {
       priority,
       breakdown,
       combinationCode: data.combinationCode,
-      comparisonRule: definition.ruleId,
-      explanation: data.combinationCode === "K01" ? this.expression.split(". ")[1] : this.expression.split(". ")[0],
+      comparisonRule: data.combinationCode === "K01" ? K01_RULE : data.mathIsMain === true ? MATH_MAIN_RULE : definition.ruleId,
+      explanation: this.expression.split(". ")[data.combinationCode === "K01" ? 2 : data.mathIsMain === true ? 1 : 0],
       formula: this.expression
     };
   },

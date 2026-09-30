@@ -40,13 +40,14 @@ await rm(join(root, ".cloudflare"), { recursive: true, force: true });
 await mkdir(workerData, { recursive: true });
 await cp(join(root, "public"), output, { recursive: true });
 
-const [universities, majors, combinations, subjects, formulas, transcriptSubjects] = await Promise.all([
+const [universities, majors, combinations, subjects, formulas, transcriptSubjects, schoolFormulaCatalog] = await Promise.all([
   readJson("universities.json"),
   readJson("majors.json"),
   readJson("combinations.json"),
   readJson("subjects.json"),
   readJson("admission-formulas-2026.json"),
-  readJson("transcript-subjects.json")
+  readJson("transcript-subjects.json"),
+  readJson("school-formula-catalog-2026.json")
 ]);
 await Promise.all([
   writeJson("universities.json", universities.map(sanitizeUniversity)),
@@ -58,6 +59,7 @@ await Promise.all([
   writeJson("combinations.json", combinations.map(sanitizePublicValue)),
   writeJson("subjects.json", subjects.map(sanitizePublicValue)),
   writeJson("admission-formulas-2026.json", formulas),
+  writeJson("school-formula-catalog-2026.json", schoolFormulaCatalog),
   writeFile(join(workerData, "README.txt"), "Generated public API data. Requests to this directory are blocked by the Worker.\n"),
   mkdir(join(vendor, "tesseract"), { recursive: true }),
   mkdir(join(vendor, "tesseract-core"), { recursive: true }),

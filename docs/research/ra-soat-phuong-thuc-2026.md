@@ -2,15 +2,15 @@
 
 Ngày tra cứu: 2026-09-30. Phạm vi: toàn bộ 326 hồ sơ hiện có.
 
-Đã đọc 293 trang đề án trên TuyểnSinh247 và đối chiếu bổ sung tài liệu trường. Thu được 1405 mục phương thức / biến thể và 31453 dòng ngành–phương thức.
+Đã đọc 293 trang đề án trên TuyểnSinh247 và đối chiếu bổ sung tài liệu trường. Thu được 1405 mục phương thức / biến thể và 31482 dòng ngành–phương thức.
 
 Đây là tài liệu nghiên cứu, chưa nạp vào dữ liệu phục vụ website. Trạng thái ‘đã thu’ chỉ xác nhận đã lấy được bảng ngành từ nguồn; không phải chứng nhận mọi điều kiện đã được kiểm chứng độc lập hoặc mọi đề án đã đầy đủ. Không lấy phương thức năm cũ để điền năm 2026, không tự gán mọi ngành cho mọi phương thức.
 
 ## Kết quả theo trạng thái
 
-- Đã thu bảng ngành theo phương thức: **295 hồ sơ**.
+- Đã thu bảng ngành theo phương thức: **294 hồ sơ**.
 - Đã thu chính sách hiện hành — chưa có đề án riêng ghi năm 2026: **3 hồ sơ**.
-- Còn thiếu / mâu thuẫn phạm vi ngành: **9 hồ sơ**.
+- Còn thiếu / mâu thuẫn phạm vi ngành: **10 hồ sơ**.
 - Chưa đủ nguồn năm 2026: **8 hồ sơ**.
 - Đào tạo đặc thù / sau đại học: **6 hồ sơ**.
 - Hệ thống đại học — xem các trường thành viên: **5 hồ sơ**.
@@ -25,6 +25,7 @@ Ngày tra cứu: 2026-09-30. Phạm vi: toàn bộ 326 hồ sơ hiện có.
 | DDB | [Trường Đại học Thành Đông](phuong-thuc-xet-tuyen-2026.md#school-DDB) | Bảng ngành PDF trang 3–4 gắn mã 100,200; tuyển thẳng được nêu ở trang 2 nhưng chưa có ma trận môn giải–ngành. Tổng bảng thu được 28 dòng, khác thông báo bổ sung ghi 29 ngành; cần xác nhận ngành còn lại. |
 | DDG | [Khoa Giáo dục Thể chất – ĐH Đà Nẵng](phuong-thuc-xet-tuyen-2026.md#school-DDG) | Đề án 2026 có ngành Giáo dục thể chất tại Trường Đại học Sư phạm (DDS). Chưa có căn cứ DDG tuyển độc lập năm 2026.; Nguồn tổng hợp chưa có phương thức năm 2026; các năm trong nguồn: không ghi.; Chưa xác nhận được đủ phương thức và bảng ngành áp dụng cho năm 2026. |
 | DLT | [Trường Đại học Lao động - Xã hội (Cơ sở Sơn Tây)](phuong-thuc-xet-tuyen-2026.md#school-DLT) | Chưa xác nhận danh mục ngành tuyển sinh riêng tại Sơn Tây trong đề án 2026.; Chưa xác nhận được đủ phương thức và bảng ngành áp dụng cho năm 2026. |
+| DTB | [Trường Đại học Thái Bình](phuong-thuc-xet-tuyen-2026.md#school-DTB) | ƯTXT, XT thẳng (9070) — thiếu bảng ngành |
 | DTHG | [Phân hiệu Đại học Thái Nguyên tại tỉnh Hà Giang](phuong-thuc-xet-tuyen-2026.md#school-DTHG) | Học sinh hoàn thành dự bị đại học (prep) — thiếu bảng ngành; Mã hồ sơ DTHG tương ứng DTG tại nguồn; nguồn nêu 6 phương thức nhưng chia thành 7 mục vì tách các bài thi. Dự bị đại học được nhắc trong tổng quan nhưng không có bảng ngành riêng. |
 | DTZ | [Trường Đại học Khoa học (ĐH Thái Nguyên)](phuong-thuc-xet-tuyen-2026.md#school-DTZ) | Kết hợp điểm thi THPT + CCNN (9518) — mâu thuẫn nguồn; Kết hợp Học bạ + CCNN (9519) — mâu thuẫn nguồn; Tuyển thẳng theo quy chế (direct) — thiếu bảng ngành; Cử tuyển và học sinh hoàn thành dự bị đại học (nomination-prep) — thiếu bảng ngành |
 | DVH | [Trường Đại học Văn Hiến](phuong-thuc-xet-tuyen-2026.md#school-DVH) | Đã sửa nhãn nghiên cứu của phương thức 3 theo nội dung PDF. Điều kiện tuyển thẳng và ngành năng khiếu cần đối chiếu thông báo chi tiết của trường. |

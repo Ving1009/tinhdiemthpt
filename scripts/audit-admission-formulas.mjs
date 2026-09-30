@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { validateAdmissionFormulaData } from "../lib/admissionFormulaData.js";
+import { createSchoolFormulaCatalogIndex } from "../lib/schoolFormulaCatalog.js";
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
 const loadJson = async (name) => JSON.parse(await readFile(new URL(`../data/${name}`, import.meta.url), "utf8"));
@@ -85,11 +86,12 @@ function duplicateFormulaSummary(schools) {
   };
 }
 
-const [markdown, universities, majors, formulaData] = await Promise.all([
+const [markdown, universities, majors, formulaData, schoolFormulaCatalog] = await Promise.all([
   readFile(`${ROOT}công thức thpt2.md`, "utf8"),
   loadJson("universities.json"),
   loadJson("majors.json"),
-  loadJson("admission-formulas-2026.json")
+  loadJson("admission-formulas-2026.json"),
+  loadJson("school-formula-catalog-2026.json")
 ]);
 
 const parsed = parseDocument(markdown);
@@ -182,6 +184,13 @@ const criticalErrors = [
   ...(!report.document.markdown.fencedBlocksBalanced ? ["Khối mã Markdown không cân bằng."] : []),
   ...(report.document.markdown.missingAnchorTargets.length ? ["Mục lục có anchor bị gãy."] : [])
 ];
+try { createSchoolFormulaCatalogIndex(schoolFormulaCatalog, { universities, majors }); }
+catch (error) { criticalErrors.push(error.message); }
+report.schoolCatalog = {
+  ...schoolFormulaCatalog.summary,
+  automaticMethods: schoolFormulaCatalog.schools.reduce((n, school) => n + school.methods.filter((m) => m.autoCalculate).length, 0),
+  coverageMeansVerification: false
+};
 
 if (process.argv.includes("--json")) {
   console.log(JSON.stringify({ ...report, valid: criticalErrors.length === 0, criticalErrors }, null, 2));
@@ -191,6 +200,8 @@ if (process.argv.includes("--json")) {
   console.log(`Phương thức: ${report.repository.schoolMethodPairs} cặp chuẩn hóa; ${report.document.methodSections} mục tài liệu.`);
   console.log(`Tích hợp: ${report.integration.verifiedSchoolMethodFormulas} công thức của ${report.integration.mappedSchoolsWithPublishedFormulas} trường; bỏ qua ${report.integration.skippedRepositorySchoolMethodPairs} cặp chưa đủ căn cứ.`);
   console.log(`Nguồn chính thức đã kiểm tra lại: ${report.integration.sourceCheckedMethods}/${report.integration.verifiedSchoolMethodFormulas}.`);
+  console.log(`Catalog mới: ${report.schoolCatalog.schools} hồ sơ, ${report.schoolCatalog.methods} mục phương thức; ${report.schoolCatalog.statuses.official_verified || 0} biểu thức đối chiếu chính thức, ${report.schoolCatalog.automaticMethods} quy tắc tự tính mới.`);
+  console.log(`Trạng thái catalog: ${JSON.stringify(report.schoolCatalog.statuses)}. Độ phủ hồ sơ không đồng nghĩa mọi công thức đã được xác minh.`);
   console.log(`Ứng viên mang nhãn chính thức nhưng bị loại do không được nguồn nêu trực tiếp: ${report.integration.excludedOfficialNumericCandidates.length}.`);
   console.log(`Anchor lỗi: ${report.document.markdown.missingAnchorTargets.length}; nhóm công thức chính thức trùng bất thường: ${report.document.duplicateFormulas.officialDuplicateGroups}.`);
   if (report.document.extraMethodSections.length) console.log(`Mục phương thức ngoài ${report.repository.schoolMethodPairs} cặp chuẩn hóa: ${report.document.extraMethodSections.map((item) => `${item.schoolCode}–${item.method}`).join("; ")}.`);

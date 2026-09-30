@@ -4083,8 +4083,8 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
+| 7860207 | Chỉ huy - Tham mưu đặc công (miền Bắc) |  | A00; A01; C01 | 41 |  |
 | 7860207 | Chỉ huy - Tham mưu đặc công (miền Nam) |  | A00; A01; C01 | 27 |  |
-| 7860207 | Chỉ huy - Tham mưu đặc công (miền Bắc) |  | A00; A01; C01 | 47 |  |
 
 ### ƯTXT, XT thẳng
 
@@ -4096,8 +4096,8 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
+| 7860207 | Chỉ huy - Tham mưu đặc công (miền Bắc) |  |  | 41 |  |
 | 7860207 | Chỉ huy - Tham mưu đặc công (miền Nam) |  |  | 27 |  |
-| 7860207 | Chỉ huy - Tham mưu đặc công (miền Bắc) |  |  | 47 |  |
 
 ### Điểm ĐGNL V-ACT
 
@@ -4109,8 +4109,8 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
+| 7860207 | Chỉ huy - Tham mưu đặc công (miền Bắc) |  |  | 41 |  |
 | 7860207 | Chỉ huy - Tham mưu đặc công (miền Nam) |  |  | 27 |  |
-| 7860207 | Chỉ huy - Tham mưu đặc công (miền Bắc) |  |  | 47 |  |
 
 ### Điểm ĐGNL HSA
 
@@ -4122,8 +4122,8 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
+| 7860207 | Chỉ huy - Tham mưu đặc công (miền Bắc) |  | Q00 | 41 |  |
 | 7860207 | Chỉ huy - Tham mưu đặc công (miền Nam) |  | Q00 | 27 |  |
-| 7860207 | Chỉ huy - Tham mưu đặc công (miền Bắc) |  | Q00 | 47 |  |
 
 ### Điểm ĐGNL Bộ Quốc Phòng
 
@@ -4135,8 +4135,8 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
+| 7860207 | Chỉ huy - Tham mưu đặc công (miền Bắc) |  |  | 41 |  |
 | 7860207 | Chỉ huy - Tham mưu đặc công (miền Nam) |  |  | 27 |  |
-| 7860207 | Chỉ huy - Tham mưu đặc công (miền Bắc) |  |  | 47 |  |
 
 <a id="school-DCL"></a>
 
@@ -15361,7 +15361,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 ## DTB — Trường Đại học Thái Bình
 
-**Tình trạng:** Đã thu bảng ngành theo phương thức.
+**Tình trạng:** Còn thiếu / mâu thuẫn phạm vi ngành.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0618/thong-tin-tuyen-sinh-dai-hoc-thai-binh-2026.pdf)
@@ -15376,24 +15376,16 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7140107 | Quản trị chất lượng giáo dục |  | C00; C03; C04; C14; D01; D14; D15; X01; X02; X70; X78 | 30 |  |
-| 7149002 | Quản trị nhà trường |  | C00; C03; C04; C14; D01; D14; D15; X01;X02; X70; X78 | 30 |  |
-| 7220201 | Ngôn ngữ Anh |  | C00; C03; C04; C14; D01; D14; D15* X01; X02; X70; X78 | 30 |  |
 | 7310101 | Kinh tế |  | A00; C14; C03; C04; D01; X01; X02; X25; X26 | 50 |  |
-| 7310106 | Kinh tế quốc tế |  | A00; C14; C03; C04; D01; X01; X02;X25; X26 | 30 |  |
 | 7310201 | Chính trị học |  | C00; C03; C04; C14; D01; D14; D15; X01;X02; X70; X78 | 50 |  |
 | 7310206 | Quan hệ quốc tế |  | C00; C03; C04; C14; D01; D14; D15; X01; X02; X70; X78 | 60 |  |
-| 7310630 | Việt Nam học |  | C00; C03; C04; C14;D01; D14; D15; X01;X02; X70; X78 | 30 |  |
 | 7340101 | Quản trị kinh doanh |  | A00; C14; C03; C04; D01; X01; X02; X25; X26 | 150 |  |
-| 7340201 | Tài chính - Ngân hàng |  | A00; C14; C03; C04;D01;X01; X02; X25; X26 | 50 |  |
+| 7340201 | Tài chính - Ngân hàng |  | A00; C14; C03; C04; D01; X01; X02; X25; X26 | 50 |  |
 | 7340301 | Kế toán |  | A00; C14; C03; C04; D01; X01; X02; X25; X26 | 100 |  |
 | 7380101 | Luật |  | C00; C03; C04; C14; D01; D14; D15; X01; X02; X70; X78 | 100 |  |
 | 7480201 | Công nghệ thông tin |  | A00; A01;B00; C01; C02; C14; D01; D07; X01;X02; X03; X26;X27 | 200 |  |
 | 7510201 | Công nghệ kỹ thuật cơ khí |  | A00; A01; B00; C01; C02; C14; D01; D07; X01; X02; X03; X26;X27 | 250 |  |
-| 7510205 | Công nghệ kỹ thuật ô tô |  | A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26; X27 | 30 |  |
-| 7510301 | Công nghệ kỳ thuật điện,  điện tử |  | A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26; X27 | 250 |  |
-| 7510303 | Công nghệ kỹ thuật điều khiển và tự động hóa (*) |  | A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26;X27 | 30 |  |
-| 7540204 | Công nghệ dệt, may |  | A00; A01; B00; C01; C02; C14; D01; D07; X01; X02; X03; X26;X27 | 30 |  |
+| 7510301 | Công nghệ kỳ thuật điện, điện tử |  | A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26; X27 | 250 |  |
 
 ### Điểm học bạ
 
@@ -15405,24 +15397,16 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7140107 | Quản trị chất lượng giáo dục |  | C00; C03; C04; C14; D01; D14; D15; X01; X02; X70; X78 | 30 |  |
-| 7149002 | Quản trị nhà trường |  | C00; C03; C04; C14; D01; D14; D15; X01;X02; X70; X78 | 30 |  |
-| 7220201 | Ngôn ngữ Anh |  | C00; C03; C04; C14; D01; D14; D15* X01; X02; X70; X78 | 30 |  |
 | 7310101 | Kinh tế |  | A00; C14; C03; C04; D01; X01; X02; X25; X26 | 50 |  |
-| 7310106 | Kinh tế quốc tế |  | A00; C14; C03; C04; D01; X01; X02;X25; X26 | 30 |  |
 | 7310201 | Chính trị học |  | C00; C03; C04; C14; D01; D14; D15; X01;X02; X70; X78 | 50 |  |
 | 7310206 | Quan hệ quốc tế |  | C00; C03; C04; C14; D01; D14; D15; X01; X02; X70; X78 | 60 |  |
-| 7310630 | Việt Nam học |  | C00; C03; C04; C14;D01; D14; D15; X01;X02; X70; X78 | 30 |  |
 | 7340101 | Quản trị kinh doanh |  | A00; C14; C03; C04; D01; X01; X02; X25; X26 | 150 |  |
-| 7340201 | Tài chính - Ngân hàng |  | A00; C14; C03; C04;D01;X01; X02; X25; X26 | 50 |  |
+| 7340201 | Tài chính - Ngân hàng |  | A00; C14; C03; C04; D01; X01; X02; X25; X26 | 50 |  |
 | 7340301 | Kế toán |  | A00; C14; C03; C04; D01; X01; X02; X25; X26 | 100 |  |
 | 7380101 | Luật |  | C00; C03; C04; C14; D01; D14; D15; X01; X02; X70; X78 | 100 |  |
 | 7480201 | Công nghệ thông tin |  | A00; A01;B00; C01; C02; C14; D01; D07; X01;X02; X03; X26;X27 | 200 |  |
 | 7510201 | Công nghệ kỹ thuật cơ khí |  | A00; A01; B00; C01; C02; C14; D01; D07; X01; X02; X03; X26;X27 | 250 |  |
-| 7510205 | Công nghệ kỹ thuật ô tô |  | A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26; X27 | 30 |  |
-| 7510301 | Công nghệ kỳ thuật điện,  điện tử |  | A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26; X27 | 250 |  |
-| 7510303 | Công nghệ kỹ thuật điều khiển và tự động hóa (*) |  | A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26;X27 | 30 |  |
-| 7540204 | Công nghệ dệt, may |  | A00; A01; B00; C01; C02; C14; D01; D07; X01; X02; X03; X26;X27 | 30 |  |
+| 7510301 | Công nghệ kỳ thuật điện, điện tử |  | A00; A01;B00; C01; C02; C14; D01; D07; X01; X02; X03; X26; X27 | 250 |  |
 
 ### Điểm ĐGNL HSA
 
@@ -15434,24 +15418,16 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7140107 | Quản trị chất lượng giáo dục |  | Q00 | 30 |  |
-| 7149002 | Quản trị nhà trường |  | Q00 | 30 |  |
-| 7220201 | Ngôn ngữ Anh |  | Q00 | 30 |  |
 | 7310101 | Kinh tế |  | Q00 | 50 |  |
-| 7310106 | Kinh tế quốc tế |  | Q00 | 30 |  |
 | 7310201 | Chính trị học |  | Q00 | 50 |  |
 | 7310206 | Quan hệ quốc tế |  | Q00 | 60 |  |
-| 7310630 | Việt Nam học |  | Q00 | 30 |  |
 | 7340101 | Quản trị kinh doanh |  | Q00 | 150 |  |
 | 7340201 | Tài chính - Ngân hàng |  | Q00 | 50 |  |
 | 7340301 | Kế toán |  | Q00 | 100 |  |
 | 7380101 | Luật |  | Q00 | 100 |  |
 | 7480201 | Công nghệ thông tin |  | Q00 | 200 |  |
 | 7510201 | Công nghệ kỹ thuật cơ khí |  | Q00 | 250 |  |
-| 7510205 | Công nghệ kỹ thuật ô tô |  | Q00 | 30 |  |
-| 7510301 | Công nghệ kỳ thuật điện,  điện tử |  | Q00 | 250 |  |
-| 7510303 | Công nghệ kỹ thuật điều  khiển và tự động hóa (*) |  | Q00 | 30 |  |
-| 7540204 | Công nghệ dệt, may |  | Q00 | 30 |  |
+| 7510301 | Công nghệ kỳ thuật điện, điện tử |  | Q00 | 250 |  |
 
 ### Điểm Đánh giá Tư duy
 
@@ -15465,10 +15441,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 |---|---|---|---|---|---|
 | 7480201 | Công nghệ thông tin |  | K00 | 200 |  |
 | 7510201 | Công nghệ kỹ thuật cơ khí |  | K00 | 250 |  |
-| 7510205 | Công nghệ kỹ thuật ô tô |  | K00 | 30 |  |
-| 7510301 | Công nghệ kỳ thuật điện,  điện tử |  | K00 | 250 |  |
-| 7510303 | Công nghệ kỹ thuật điều  khiển và tự động hóa (*) |  | K00 | 30 |  |
-| 7540204 | Công nghệ dệt, may |  | K00 | 30 |  |
+| 7510301 | Công nghệ kỳ thuật điện, điện tử |  | K00 | 250 |  |
 
 ### Điểm ĐGNL ĐH Sư phạm HN
 
@@ -15480,14 +15453,9 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7140107 | Quản trị chất lượng giáo dục |  |  | 30 |  |
-| 7149002 | Quản trị nhà trường |  |  | 30 |  |
-| 7220201 | Ngôn ngữ Anh |  |  | 30 |  |
 | 7310101 | Kinh tế |  |  | 50 |  |
-| 7310106 | Kinh tế quốc tế |  |  | 30 |  |
 | 7310201 | Chính trị học |  |  | 50 |  |
 | 7310206 | Quan hệ quốc tế |  |  | 60 |  |
-| 7310630 | Việt Nam học |  |  | 30 |  |
 | 7340101 | Quản trị kinh doanh |  |  | 150 |  |
 | 7340201 | Tài chính - Ngân hàng |  |  | 50 |  |
 | 7340301 | Kế toán |  |  | 100 |  |
@@ -15501,26 +15469,7 @@ ID đối chiếu: 9070; mã nguồn: 11 (tuyensinh247_internal).
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
-| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
-|---|---|---|---|---|---|
-| 7140107 | Quản trị chất lượng giáo dục |  |  | 30 |  |
-| 7149002 | Quản trị nhà trường |  |  | 30 |  |
-| 7220201 | Ngôn ngữ Anh |  |  | 30 |  |
-| 7310101 | Kinh tế |  |  | 50 |  |
-| 7310106 | Kinh tế quốc tế |  |  | 30 |  |
-| 7310201 | Chính trị học |  |  | 50 |  |
-| 7310206 | Quan hệ quốc tế |  |  | 60 |  |
-| 7310630 | Việt Nam học |  |  | 30 |  |
-| 7340101 | Quản trị kinh doanh |  |  | 150 |  |
-| 7340201 | Tài chính - Ngân hàng |  |  | 50 |  |
-| 7340301 | Kế toán |  |  | 100 |  |
-| 7380101 | Luật |  |  | 100 |  |
-| 7480201 | Công nghệ thông tin |  |  | 200 |  |
-| 7510201 | Công nghệ kỹ thuật cơ khí |  |  | 250 |  |
-| 7510205 | Công nghệ kỹ thuật ô tô |  |  | 30 |  |
-| 7510301 | Công nghệ kỳ thuật điện, điện tử |  |  | 250 |  |
-| 7510303 | Công nghệ kỹ thuật điều khiển và tự động hóa (*) |  |  | 30 |  |
-| 7540204 | Công nghệ dệt, may |  |  | 30 |  |
+**Chưa xác nhận được bảng ngành áp dụng. Không tự gán các ngành của phương thức khác.**
 
 <a id="school-DTC"></a>
 
@@ -18644,7 +18593,48 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS, HSK.
 
 **Có mâu thuẫn giữa các nguồn; chưa xác nhận phương thức/phạm vi ngành này.**
 
-**Chưa xác nhận được bảng ngành áp dụng. Không tự gán các ngành của phương thức khác.**
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
+| 7220112_TD | Văn hóa các dân tộc thiêu số Việt Nam |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 25 |  |
+| 7220201 | Ngôn ngữ Anh |  | D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79 | 100 |  |
+| 7220201_AH | Song ngữ Anh - Hàn |  | D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79 | 50 |  |
+| 7220201_AT | Song ngữ Anh -Trung |  | D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79 | 230 |  |
+| 7220201_GV | Ngôn ngữ Anh (CTĐT định hướng giảng dạy) |  | D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79 | 70 |  |
+| 7220204 | Ngôn ngữ Trung Quốc |  | A07;A08;A09;C00;C03;C04;C14;C19;C20;D01;D04;D10;D14;D15;D20;D40;D45;D50;D55;D60;D65;D66;D71;D84;D89;X01;X02;X17;X18;X21;X22;X25;X26;X37;X38;X53;X70;X71;X74;X75;X78;X79;X90;X91;Y07 | 400 |  |
+| 7229010 | Lịch sử, Địa lý và Kinh tế Pháp luật |  | A07;A08;AH5;C00;C03;C07;C10;C12;C19;D09;D14;D40;D65;DH5;X17;X18;X70;X71 | 200 |  |
+| 7229030 | Vãn học (CTĐT định hướng giảng dạy) |  | C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D04;D11;D12;D13;D14;D15;D45;D65;D66;X01;X58;X62;X66;X70;X74;X78 | 200 |  |
+| 7310110 | Quản lý kinh tế |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 50 |  |
+| 7310501 | Địa lý học (CTĐT định hướng giảng dạy) |  | A04;A06;A07;A09;AH1;B02;C00;C04;C09;C11;C13;C20;D10;D15;D20;DH1;X21;X74 | 30 |  |
+| 7310612 | Trung Quốc học |  | A07;A08;A09;C00;C03;C04;C14;C19;C20;D01;D04;D10;D14;D15;D20;D40;D45;D50;D55;D60;D65;D66;D71;D84;D89;X01;X02;X17;X18;X21;X22;X25;X26;X37;X38;X53;X70;X71;X74;X75;X78;X79;X90;X91;Y07 | 485 |  |
+| 7310614 | Hàn Quốc học |  | A07;A08;A09;AH1;AH5;AH6;C00;C03;C04;C14;C19;C20;D01;D10;D14;D15;D66;DD2;DH1;DH5;DH6;X01;X02;X17;X18;X21;X22;X25;X26;X49;X50;X53;X70;X71;X74;X75;X78;X79;Y03;Y04;Y07 | 150 |  |
+| 7310630 | Việt Nam học |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 35 |  |
+| 7320101 | Báo chí |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 90 |  |
+| 7320108 | Quan hệ công chúng |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 50 |  |
+| 7320201 | Thư viện -Thiết bị trường học |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 40 |  |
+| 7340401 | Quản lý nhân lực |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 150 |  |
+| 7380101 | Luật |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 180 |  |
+| 7380107 | Luật kinh tế |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 50 |  |
+| 7420101 | Sinh học (CTĐT định hướng giảng dạy) |  | A02;B00;B01;B02;B03;B04;B08;C06;C08;C13;X13;X14;X67 | 30 |  |
+| 7420201 | Công nghệ sinh học |  | A02;B00;B01;B02;B03;B04;B08;C06;C08;C13;X13;X14;X67 | 30 |  |
+| 7440102 | Vật lý (CTĐT định hướng giảng dạy) |  | A00;A01;A02;A03;A04;A10;C01;X05;X06 | 35 |  |
+| 7440102_TD | Công nghệ bán dẫn |  | A00;A01;A02;A03;A04;A10;C01;X05;X06 | 35 |  |
+| 7440112 | Hóa học (CTĐT định hướng giảng dạy) |  | A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10 | 30 |  |
+| 7440112_ST | Khoa học Tự nhiên tích hợp STEM |  | A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10 | 30 |  |
+| 7440301 | Khoa học môi trường |  | A00;A01;A02;A03;A04;A05;A06;A07;A08;A09;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;C03;C04;C14;D01;D07;D09;D10;D84;X01;X02;X05;X06;X09;X10;X13;X14;X17;X18;X21;X22;X25;X26;X53 | 30 |  |
+| 7460101_TA | Toán học (CTĐT Toán học định hướng giáng dạy bàng tiếng Anh) |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 30 |  |
+| 7460101_TV | Toán học (CTĐT định hướng giảng dạy) |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 170 |  |
+| 7460108 | Khoa học dữ liệu |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 50 |  |
+| 7460117 | Toán tin |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 30 |  |
+| 7460117_GV | Toán tin (CTĐT định hướng giảng dạy) |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 60 |  |
+| 7480201 | Công nghệ thông tin |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 60 |  |
+| 7510401 | Công nghệ kỳ thuật Hoá học |  | A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10 | 30 |  |
+| 7720203 | Hóa dược |  | A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10 | 30 |  |
+| 7720203_TD | Chăm sóc sắc đẹp từ dược liệu |  | A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10 | 30 |  |
+| 7760101 | Công tác xã hội |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 75 |  |
+| 7810101 | Du lịch |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 80 |  |
+| 7810103 | Quản trị dịch vụ du lịch và lữ hành |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 160 |  |
+| 7810301 | Quản lý Thể dục thể thao |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 50 |  |
+| 7850101 | Quán lý Tài nguyên và Môi trường |  | A00;A01;A02;A03;A04;A05;A06;A07;A08;A09;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;C03;C04;C14;D01;D07;D09;D10;D84;X01;X02;X05;X06;X09;X10;X13;X14;X17;X18;X21;X22;X25;X26;X53 | 30 |  |
 
 ### Kết hợp Học bạ + CCNN
 
@@ -18660,7 +18650,48 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS, HSK.
 
 **Có mâu thuẫn giữa các nguồn; chưa xác nhận phương thức/phạm vi ngành này.**
 
-**Chưa xác nhận được bảng ngành áp dụng. Không tự gán các ngành của phương thức khác.**
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
+| 7220112_TD | Văn hóa các dân tộc thiêu số Việt Nam |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 25 |  |
+| 7220201 | Ngôn ngữ Anh |  | D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79 | 100 |  |
+| 7220201_AH | Song ngữ Anh - Hàn |  | D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79 | 50 |  |
+| 7220201_AT | Song ngữ Anh -Trung |  | D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79 | 230 |  |
+| 7220201_GV | Ngôn ngữ Anh (CTĐT định hướng giảng dạy) |  | D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X25;X26;X78;X79 | 70 |  |
+| 7220204 | Ngôn ngữ Trung Quốc |  | A07;A08;A09;C00;C03;C04;C14;C19;C20;D01;D04;D10;D14;D15;D20;D40;D45;D50;D55;D60;D65;D66;D71;D84;D89;X01;X02;X17;X18;X21;X22;X25;X26;X37;X38;X53;X70;X71;X74;X75;X78;X79;X90;X91;Y07 | 400 |  |
+| 7229010 | Lịch sử, Địa lý và Kinh tế Pháp luật |  | A07;A08;AH5;C00;C03;C07;C10;C12;C19;D09;D14;D40;D65;DH5;X17;X18;X70;X71 | 200 |  |
+| 7229030 | Vãn học (CTĐT định hướng giảng dạy) |  | C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D04;D11;D12;D13;D14;D15;D45;D65;D66;X01;X58;X62;X66;X70;X74;X78 | 200 |  |
+| 7310110 | Quản lý kinh tế |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 50 |  |
+| 7310501 | Địa lý học (CTĐT định hướng giảng dạy) |  | A04;A06;A07;A09;AH1;B02;C00;C04;C09;C11;C13;C20;D10;D15;D20;DH1;X21;X74 | 30 |  |
+| 7310612 | Trung Quốc học |  | A07;A08;A09;C00;C03;C04;C14;C19;C20;D01;D04;D10;D14;D15;D20;D40;D45;D50;D55;D60;D65;D66;D71;D84;D89;X01;X02;X17;X18;X21;X22;X25;X26;X37;X38;X53;X70;X71;X74;X75;X78;X79;X90;X91;Y07 | 485 |  |
+| 7310614 | Hàn Quốc học |  | A07;A08;A09;AH1;AH5;AH6;C00;C03;C04;C14;C19;C20;D01;D10;D14;D15;D66;DD2;DH1;DH5;DH6;X01;X02;X17;X18;X21;X22;X25;X26;X49;X50;X53;X70;X71;X74;X75;X78;X79;Y03;Y04;Y07 | 150 |  |
+| 7310630 | Việt Nam học |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 35 |  |
+| 7320101 | Báo chí |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 90 |  |
+| 7320108 | Quan hệ công chúng |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 50 |  |
+| 7320201 | Thư viện -Thiết bị trường học |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 40 |  |
+| 7340401 | Quản lý nhân lực |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 150 |  |
+| 7380101 | Luật |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 180 |  |
+| 7380107 | Luật kinh tế |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 50 |  |
+| 7420101 | Sinh học (CTĐT định hướng giảng dạy) |  | A02;B00;B01;B02;B03;B04;B08;C06;C08;C13;X13;X14;X67 | 30 |  |
+| 7420201 | Công nghệ sinh học |  | A02;B00;B01;B02;B03;B04;B08;C06;C08;C13;X13;X14;X67 | 30 |  |
+| 7440102 | Vật lý (CTĐT định hướng giảng dạy) |  | A00;A01;A02;A03;A04;A10;C01;X05;X06 | 35 |  |
+| 7440102_TD | Công nghệ bán dẫn |  | A00;A01;A02;A03;A04;A10;C01;X05;X06 | 35 |  |
+| 7440112 | Hóa học (CTĐT định hướng giảng dạy) |  | A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10 | 30 |  |
+| 7440112_ST | Khoa học Tự nhiên tích hợp STEM |  | A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10 | 30 |  |
+| 7440301 | Khoa học môi trường |  | A00;A01;A02;A03;A04;A05;A06;A07;A08;A09;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;C03;C04;C14;D01;D07;D09;D10;D84;X01;X02;X05;X06;X09;X10;X13;X14;X17;X18;X21;X22;X25;X26;X53 | 30 |  |
+| 7460101_TA | Toán học (CTĐT Toán học định hướng giáng dạy bàng tiếng Anh) |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 30 |  |
+| 7460101_TV | Toán học (CTĐT định hướng giảng dạy) |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 170 |  |
+| 7460108 | Khoa học dữ liệu |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 50 |  |
+| 7460117 | Toán tin |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 30 |  |
+| 7460117_GV | Toán tin (CTĐT định hướng giảng dạy) |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 60 |  |
+| 7480201 | Công nghệ thông tin |  | A00;A01;A02;A03;A04;A05;A06;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;D01;D07;D08;D09;D10;D84;X02;X05;X06;X09;X10;X13;X14;X18;X22;X25;X26;X53 | 60 |  |
+| 7510401 | Công nghệ kỳ thuật Hoá học |  | A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10 | 30 |  |
+| 7720203 | Hóa dược |  | A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10 | 30 |  |
+| 7720203_TD | Chăm sóc sắc đẹp từ dược liệu |  | A00;A05;A06;A11;B00;C02;C05;C08;D07;X09;X10 | 30 |  |
+| 7760101 | Công tác xã hội |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 75 |  |
+| 7810101 | Du lịch |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 80 |  |
+| 7810103 | Quản trị dịch vụ du lịch và lữ hành |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 160 |  |
+| 7810301 | Quản lý Thể dục thể thao |  | A07;A08;A09;C00;C03;C04;C07;C09;C10;C11;C12;C13;C14;C16;C17;C18;C19;C20;D01;D09;D10;D11;D12;D13;D14;D15;D66;D84;X01;X02;X17;X18;X21;X22;X25;X26;X53;X58;X59;X62;X63;X66;X67;X70;X71;X74;X75;X78;X79;Y07 | 50 |  |
+| 7850101 | Quán lý Tài nguyên và Môi trường |  | A00;A01;A02;A03;A04;A05;A06;A07;A08;A09;A10;A11;B00;B01;B02;B03;B04;B08;C01;C02;C03;C04;C14;D01;D07;D09;D10;D84;X01;X02;X05;X06;X09;X10;X13;X14;X17;X18;X21;X22;X25;X26;X53 | 30 |  |
 
 ### Tuyển thẳng theo quy chế
 
@@ -43191,11 +43222,11 @@ Nguồn có các mục: Đối tượng.
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0618/thong-bao-ts-2026-new-2026-lan2.pdf)
 - [Tài liệu 2026 đính kèm 2](https://images.tuyensinh247.com/picture/2026/0420/thong-tin-tuyen-sinh-truong-dai-hoc-the-duc-the-thao-bac-ninh-2026.pdf)
 
-### Điểm thi THPT
+### Kết hợp Học bạ + Năng khiếu
 
-ID đối chiếu: 8972; mã nguồn: 1 (tuyensinh247_internal).
+ID đối chiếu: 8972; mã nguồn: 10 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html#diem-thi-thpt-8972)
+[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html#xet-tuyen-ket-hop-8972)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
@@ -43206,11 +43237,11 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 | 7810301 | Quản lý TDTT |  | T00; T02; T03; T05; T08 | 50 |  |
 | 7810302 | Huấn luyện thể thao |  | T00; T02; T03; T05; T08 | 1500 |  |
 
-### Điểm học bạ
+### Kết hợp Điểm THPT + Năng khiếu
 
-ID đối chiếu: 8973; mã nguồn: 3 (tuyensinh247_internal).
+ID đối chiếu: 8973; mã nguồn: 10 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html#diem-hoc-ba-8973)
+[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html#xet-tuyen-ket-hop-8973)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
@@ -48864,6 +48895,7 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-nhat-ha-noi-VJU.html)
+- [Nguồn 2 (official)](https://vju.ac.vn/tuyensinhdaihoc/thong-tin-tuyen-sinh-2026/)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0509/thong-tin-tuyen-sinh-truong-dh-viet-nhat-dhqghn-2026.pdf)
 
 ### Điểm thi THPT
@@ -48971,11 +49003,13 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: SAT, IELTS.
 | VJU8 | Công nghệ kỹ thuật Chip bán dẫn – ESCT |  | A00; A01; D28; A02; C01; C02; D07; D23 | 100 |  |
 | VJU9 | Điều khiển thông minh và Tự động hóa – BICA |  | A00; A01; D28; C01; C02; D01; D06; D07; D23 | 100 |  |
 
-### Xét tuyển đánh giá Phỏng vấn và ĐGNL
+### Phỏng vấn, đánh giá thí sinh
 
 ID đối chiếu: 7877; mã nguồn: 4 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-nhat-ha-noi-VJU.html#diem-thi-rieng-7877)
+[Đọc quy định gốc](https://vju.ac.vn/tuyensinhdaihoc/thong-tin-tuyen-sinh-2026/)
+
+- Phỏng vấn / đánh giá theo bảng thành phần riêng của chương trình; không áp dụng Cơ điện tử thông minh và Sản xuất theo phương thức Nhật Bản.
 
 Nguồn có các mục: Đối tượng; Điều kiện; Cách xét / cách tính điểm; Thời gian; Thông tin khác.
 
@@ -48983,7 +49017,6 @@ Nguồn có các mục: Đối tượng; Điều kiện; Cách xét / cách tín
 |---|---|---|---|---|---|
 | VJU1 | Nhật Bản học – BJS |  |  | 120 |  |
 | VJU2 | Khoa học & Kỹ thuật máy tính – BCSE |  |  | 150 |  |
-| VJU3 | Cơ điện tử thông minh và sản xuất theo phương thức Nhật Bản – EMJM |  |  | 55 |  |
 | VJU4 | Công nghệ Thực phẩm và sức khỏe – EFTH |  |  | 55 |  |
 | VJU5 | Nông nghiệp thông minh và bền vững – ESAS |  |  | 20 |  |
 | VJU6 | Kỹ thuật Xây dựng – ECE |  |  | 50 |  |

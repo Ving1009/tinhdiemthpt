@@ -14,5 +14,7 @@ academic-check.png
 .local/
 .cloudflare/
 .wrangler/
+.playwright/
+.playwright-cli/
 .dev.vars
 .dev.vars.*

@@ -363,6 +363,14 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .formula-source { width:max-content; max-width:100%; color:var(--primary); font-size:12px; font-weight:700; overflow-wrap:anywhere; }
 .profile-formulas { margin:24px 0 32px; }
 .profile-formulas .verified-formula-card { margin-top:12px; }
+.profile-formula-disclosure { display:block; padding:0; overflow:hidden; }
+.profile-formula-summary { display:grid; grid-template-columns:minmax(0,1fr) auto 18px; min-height:58px; align-items:center; gap:12px; padding:12px 16px; cursor:pointer; list-style:none; }
+.profile-formula-summary::-webkit-details-marker { display:none; }
+.profile-formula-summary::after { content:"⌄"; color:var(--muted); font-size:18px; text-align:center; transition:transform .18s ease; }
+.profile-formula-disclosure[open] > .profile-formula-summary::after { transform:rotate(180deg); }
+.profile-formula-summary:focus-visible { outline:3px solid color-mix(in srgb,var(--primary) 38%,transparent); outline-offset:-3px; }
+.profile-formula-name { min-width:0; color:var(--text); font-size:15px; font-weight:750; overflow-wrap:anywhere; }
+.profile-formula-details { display:grid; gap:16px; padding:18px 16px; border-top:1px solid var(--line); }
 .formula-unverified { text-align:left; }
 .admission-form-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:18px; }
 .admission-form-heading h3 { margin:4px 0 0; }
@@ -401,6 +409,11 @@ textarea:focus-visible { outline:3px solid color-mix(in srgb,var(--primary) 38%,
 
 @media(max-width:560px) {
  .verified-formula-card { padding:17px 14px; }
+ .profile-formula-disclosure { padding:0; }
+ .profile-formula-summary { grid-template-columns:minmax(0,1fr) 18px; min-height:52px; padding:10px 12px; }
+ .profile-formula-summary .verified-badge { grid-column:1; margin-top:2px; }
+ .profile-formula-summary::after { grid-column:2; grid-row:1 / span 2; }
+ .profile-formula-details { padding:15px 12px; }
  .verified-formula-heading { display:grid; gap:10px; }
  .formula-facts { grid-template-columns:1fr; }
  .verified-formula-card .formula-box { padding:15px; font-size:12px; }

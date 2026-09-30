@@ -216,7 +216,7 @@ html,body { max-width:100%; overflow-x:clip; }
 main,.section,.container,.form-card,.field { min-width:0; }
 #score-form { display:flex; flex-direction:column; }
 #score-form .score-card { order:1; }
-#score-form .candidate-card { order:2; padding:20px 22px; }
+#score-form .candidate-card { padding:20px 22px; }
 #score-form > .form-actions { order:3; }
 .candidate-card .card-title { margin-bottom:14px; }
 .candidate-card .form-grid { grid-template-columns:minmax(200px,1.5fr) repeat(3,minmax(120px,1fr)); gap:12px; }

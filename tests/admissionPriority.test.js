@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { calculateAdmissionPriority } from "../public/js/utils.js";
 
@@ -32,6 +33,13 @@ test("các ca biên ưu tiên trong ví dụ giao diện được làm tròn đ�
   const combined = calculateAdmissionPriority(20, { area: "KV1", priorityGroup: "UT1" });
   assert.equal(combined.base, 2.75);
   assert.equal(combined.adjusted, 2.75);
+});
+
+test("ví dụ hero khớp phép tính ưu tiên KV1", async () => {
+  const html = await readFile(new URL("../public/index.html", import.meta.url), "utf8");
+  const priority = calculateAdmissionPriority(26, { area: "KV1", priorityGroup: "none" }).adjusted;
+  assert.match(html, new RegExp(`<strong>${(26 + priority).toFixed(2)}</strong>`));
+  assert.match(html, new RegExp(`<b>\\+ ${priority.toFixed(2)}</b>`));
 });
 
 test("thang 40 quy đổi tương đương cả điểm và ưu tiên", () => {

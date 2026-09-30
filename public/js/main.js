@@ -70,6 +70,16 @@ function safeWebsite(value) {
   catch { return ""; }
 }
 
+function validateAutoScore(raw, required = true) {
+  const text = String(raw ?? "").trim().replace(/,/g, ".");
+  if (!text) return required ? { valid: false, message: "Vui lòng nhập điểm." } : { valid: true, value: null };
+  if (!/^-?\d+(?:\.\d+)?$/.test(text)) return { valid: false, message: "Điểm phải là số." };
+  const value = Number(text);
+  if (!Number.isFinite(value) || value < 0 || value > 10) return { valid: false, message: "Điểm phải nằm trong khoảng 0 đến 10." };
+  if (!/^\d{1,2}(?:\.\d{1,2})?$/.test(text)) return { valid: false, message: "Dùng tối đa 2 chữ số thập phân." };
+  return { valid: true, value };
+}
+
 function downloadBlob(content, type, filename) {
   const blob = content instanceof Blob ? content : new Blob([content], { type });
   const url = URL.createObjectURL(blob);
@@ -204,6 +214,7 @@ class THPTApp {
     const autoCalculate = debounce(() => this.calculateTHPT(false), 250);
     this.elements.form.addEventListener("input", (event) => {
       if (event.target.matches("[data-auto-score], [data-manual-score]")) event.target.value = sanitizeScoreInput(event.target.value);
+      if (event.target.matches("[data-auto-score]")) this.updateAutoScoreError(event.target, false);
       if (event.target.matches("[data-auto-score], [data-manual-score]")) this.invalidateScoreDerived("Điểm môn đã thay đổi.");
       this.saveForm();
       if (this.thptMode === "auto") autoCalculate();
@@ -257,8 +268,8 @@ class THPTApp {
     this.bindSearchInput($("#global-search"), $("#search-results"));
     this.bindSearchInput($("#mobile-search"), $("#mobile-search-results"));
 
-    $("#major-filter-form").addEventListener("submit", (event) => { event.preventDefault(); this.majorPage = 1; this.majorSearchMode === "combinations" && this.allCombinationSearch?.length ? this.loadBestCombinationResults() : this.loadMajorResults(); });
     const invalidateMajorResults = debounce(() => this.invalidateMajorResults(), 120);
+    $("#major-filter-form").addEventListener("submit", (event) => { event.preventDefault(); invalidateMajorResults.cancel(); this.majorPage = 1; this.majorSearchMode === "combinations" && this.allCombinationSearch?.length ? this.loadBestCombinationResults() : this.loadMajorResults(); });
     $("#major-filter-form").addEventListener("input", (event) => {
       if (event.target.matches("#major-user-score")) this.exitAllCombinationMode(true);
       invalidateMajorResults();
@@ -268,8 +279,8 @@ class THPTApp {
       if (!event.target.matches("#major-sort")) invalidateMajorResults();
     });
     $("#major-method-filter").addEventListener("change", () => this.syncMajorScoreContext());
-    $("#major-sort").addEventListener("change", () => { if ($("#major-result-grid").children.length) this.majorSearchMode === "combinations" ? this.loadBestCombinationResults() : this.loadMajorResults(); });
-    $("#major-filter-clear").addEventListener("click", () => this.clearMajorFilters());
+    $("#major-sort").addEventListener("change", () => { invalidateMajorResults.cancel(); if ($("#major-result-grid").children.length) this.majorSearchMode === "combinations" ? this.loadBestCombinationResults() : this.loadMajorResults(); });
+    $("#major-filter-clear").addEventListener("click", () => { invalidateMajorResults.cancel(); this.clearMajorFilters(); });
     $("#clear-saved-wishes").addEventListener("click", () => { if (!this.savedWishes.length) return; this.recentWishRemoval = { items: [...this.savedWishes], index: 0 }; this.savedWishes = []; this.persistWishes(); });
     $("#clear-comparison").addEventListener("click", () => { this.comparisonItems = []; this.persistComparison(); });
     $("#export-wishes-pdf").addEventListener("click", (event) => this.exportWishesPdf(event.currentTarget));
@@ -434,8 +445,19 @@ class THPTApp {
   renderAutoSubjectRows() {
     const defaults = ["math", "physics", "chemistry", "foreignLanguage:english"];
     const saved = Array.isArray(this.state.autoEntries) && this.state.autoEntries.length === 4 ? this.state.autoEntries : defaults.map((subjectKey) => ({ subjectKey, score: "" }));
-    this.elements.autoSubjectGrid.innerHTML = saved.map((entry, index) => `<div class="auto-subject-row"><div class="field"><label for="auto-subject-${index}">Môn ${index + 1}</label><select id="auto-subject-${index}" data-auto-subject="${index}">${STANDARD_SUBJECTS.map((subject) => `<option value="${escapeHTML(subject.key)}" ${subject.key === entry.subjectKey ? "selected" : ""}>${escapeHTML(subject.label)}</option>`).join("")}</select></div><div class="field"><label for="auto-score-${index}">Điểm</label><input id="auto-score-${index}" data-auto-score="${index}" inputmode="decimal" autocomplete="off" placeholder="0.00" value="${escapeHTML(entry.score || "")}" /><small class="field-error" id="auto-error-${index}"></small></div></div>`).join("");
+    this.elements.autoSubjectGrid.innerHTML = saved.map((entry, index) => `<div class="auto-subject-row"><div class="field"><label for="auto-subject-${index}">Môn ${index + 1}</label><select id="auto-subject-${index}" data-auto-subject="${index}">${STANDARD_SUBJECTS.map((subject) => `<option value="${escapeHTML(subject.key)}" ${subject.key === entry.subjectKey ? "selected" : ""}>${escapeHTML(subject.label)}</option>`).join("")}</select></div><div class="field"><label for="auto-score-${index}">Điểm</label><input id="auto-score-${index}" data-auto-score="${index}" inputmode="decimal" autocomplete="off" placeholder="0.00" value="${escapeHTML(entry.score || "")}" aria-invalid="false" aria-describedby="auto-error-${index}" /><small class="field-error" id="auto-error-${index}"></small></div></div>`).join("");
     this.syncAutoSubjectOptions();
+  }
+  updateAutoScoreError(input, required = true) {
+    const checked = validateAutoScore(input.value, required);
+    const error = document.getElementById(`auto-error-${input.dataset.autoScore}`);
+    input.classList.toggle("input-invalid", !checked.valid);
+    input.setAttribute("aria-invalid", String(!checked.valid));
+    if (error) error.textContent = checked.valid ? "" : checked.message;
+    return checked;
+  }
+  validateAutoScores(required = true) {
+    return $$('[data-auto-score]').map((input, index) => ({ index, ...this.updateAutoScoreError(input, required) })).filter((item) => !item.valid);
   }
   syncAutoSubjectOptions() {
     const selected = $$('[data-auto-subject]').map((item) => item.value);
@@ -470,6 +492,8 @@ class THPTApp {
     try {
       if (this.thptMode === "auto") {
         const entries = this.getAutoEntries();
+        const fieldErrors = this.validateAutoScores(announce);
+        if (fieldErrors.length) { this.resetThptResult(); if (announce) this.showToast(`Môn ${fieldErrors[0].index + 1}: ${fieldErrors[0].message}`); return; }
         const calculation = calculateAutomaticCombinations({ entries, combinations: this.repository.combinations, year, priorityContext: this.getPriorityContext() });
         if (!calculation.valid) { this.resetThptResult(); if (announce) this.showToast(calculation.errors[0]); return; }
         if (!calculation.results.length) { this.resetThptResult("Không có tổ hợp ba môn tiêu chuẩn nào khớp với bốn môn đã chọn."); if (announce) this.showToast("Không tìm thấy tổ hợp phù hợp trong danh mục."); return; }

@@ -60,3 +60,15 @@ test("frontend không chặn app vì auth và dùng thông báo AI trung tính",
   assert.doesNotMatch(assistant, /Groq tạm thời chưa phản hồi/);
   assert.match(assistant, /Trợ lý AI tạm thời chưa phản hồi/);
 });
+
+test("các hồi quy giao diện chính được khóa trong source", async () => {
+  const [main, css] = await Promise.all([
+    readFile(new URL("js/main.js", publicRoot), "utf8"),
+    readFile(new URL("css/refinement.css", publicRoot), "utf8")
+  ]);
+  assert.match(main, /major-filter-form"\)\.addEventListener\("submit"[\s\S]{0,180}invalidateMajorResults\.cancel\(\)/);
+  assert.match(main, /aria-describedby="auto-error-\$\{index\}"/);
+  assert.match(main, /input\.setAttribute\("aria-invalid"/);
+  for (const message of ["Vui lòng nhập điểm.", "Điểm phải là số.", "Điểm phải nằm trong khoảng 0 đến 10.", "Dùng tối đa 2 chữ số thập phân."]) assert.match(main, new RegExp(message.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  assert.doesNotMatch(css, /#score-form \.candidate-card\s*\{[^}]*order\s*:\s*2/);
+});

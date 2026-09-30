@@ -70,7 +70,9 @@ export function calculateAdmissionPriority(examScore, context = {}, scoreScale =
 
 export function debounce(callback, wait = 180) {
   let timer;
-  return (...args) => { clearTimeout(timer); timer = window.setTimeout(() => callback(...args), wait); };
+  const debounced = (...args) => { clearTimeout(timer); timer = window.setTimeout(() => callback(...args), wait); };
+  debounced.cancel = () => { clearTimeout(timer); timer = undefined; };
+  return debounced;
 }
 
 export const storage = {

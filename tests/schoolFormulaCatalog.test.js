@@ -144,6 +144,81 @@ test('TSA Bách khoa tính ưu tiên theo thang 100 sau điểm thưởng; năng
   assert.ok(method('XDA', '8255').conditions.some((c) => c.includes('thang 20')));
 });
 
+test('UEH quy đổi đúng bảng 2026, làm tròn trước trọng số và ưu tiên theo thang 100', () => {
+  const vact = method('KSA', '8818').calculationRule;
+  assert.equal(calculateSchoolFormula(vact, { exam: 950, average: '8,6', bonus: 5 }).total, 90.5, '950 V-ACT → 25,55 trước khi nhân trọng số');
+  assert.equal(calculateSchoolFormula(vact, { exam: 950, average: 8.6, bonus: 5 }, { area: 'KV1' }).total, 91.45);
+  for (const [exam, expected] of [[945, 85], [980, 88.56], [1200, 94.4]]) assert.equal(calculateSchoolFormula(vact, { exam, average: 8.6 }).total, expected);
+  assert.throws(() => calculateSchoolFormula(vact, { exam: 450, average: 8.6 }), /ngoài các khoảng/);
+  assert.throws(() => calculateSchoolFormula(vact, { exam: 1201, average: 8.6 }), /450 đến 1200/);
+  assert.equal(calculateSchoolFormula(vact, { exam: 1200, average: 10, bonus: 10 }, { area: 'KV1', priorityGroup: 'UT1' }).total, 100);
+  const vsat = method('KSV', '9509').calculationRule;
+  assert.equal(calculateSchoolFormula(vsat, { exam: 392.5, average: 8.6 }).total, 87.4);
+  assert.throws(() => calculateSchoolFormula(vsat, { exam: 31.5, average: 8.6 }), /ngoài các khoảng/);
+  assert.equal(calculateSchoolFormula(method('KSA', '9504').calculationRule, { exam: 26, average: 8.6 }).total, 86.4);
+});
+
+test('bảng nội suy sai hoặc chồng khoảng bị từ chối; khoảng trống không được ngoại suy', () => {
+  const original = method('KSA', '8818').calculationRule;
+  for (const ranges of [false, [], [null], [{ min: 0, max: 100, minOutput: 15, maxOutput: 30 }], [...original.inputs[0].ranges, original.inputs[0].ranges[0]]]) {
+    const rule = structuredClone(original);
+    rule.inputs[0].ranges = ranges;
+    assert.throws(() => calculateSchoolFormula(rule, { exam: 950, average: 8 }), /Cấu hình ô nhập/);
+    const fixture = { ...catalog, schools: [structuredClone(school('KSA'))] };
+    fixture.schools[0].methods.find((m) => m.id === 'school-ksa-8818').calculationRule = rule;
+    assert.throws(() => createSchoolFormulaCatalogIndex(fixture, { universities: universities.filter((s) => s.code === 'KSA'), majors }), /Cấu hình bộ tính/);
+  }
+  const rule = { type: 'weighted_sum', maxScore: 30, divisor: 1, inputs: [{ key: 'score', label: 'Điểm', min: 0, max: 30, weight: 1, ranges: [{ min: 0, max: 10, minOutput: 0, maxOutput: 10 }, { min: 20, max: 30, minOutput: 20, maxOutput: 30 }] }] };
+  assert.throws(() => calculateSchoolFormula(rule, { score: 15 }), /ngoài các khoảng/);
+  assert.equal(validateSchoolFormulaValue(8, { min: 0, max: 10, ranges: [null] }).valid, false);
+});
+
+test('Ngoại thương giữ sửa đổi tháng 7 và đúng phạm vi chương trình từng phương thức', () => {
+  for (const [code, id] of [['NTH', '8134'], ['NTH', '8137'], ['NTS', '9405']]) {
+    const m = method(code, id);
+    assert.equal(m.status, 'official_verified');
+    assert.ok(m.expression.split('\n').every((line) => line.endsWith('+ 1,00')));
+    assert.doesNotMatch(m.expression, /\+ 1,00 \+ 1,00/);
+  }
+  assert.match(method('NTH', '9402').conversion, /1550–1570 → 19,90; 1580–1600 → 20/);
+  const nts = publicSchoolFormulas(school('NTS'), catalog.checkedAt);
+  const combined = nts.methods.find((m) => m.id === 'school-nts-9408');
+  assert.match(combined.label, /HSA \/ V-ACT/);
+  assert.equal(combined.programCount, 5);
+  assert.ok(combined.programs.every((p) => ['NTSKT01_CLC', 'NTSKT02', 'NTSMT04', 'NTSQT03_CLC', 'NTSTC05_CLC'].includes(p.nationalMajorCode)));
+  assert.ok(combined.programs.every((p) => /CT CLC|CT ĐHNNQT/.test(p.name)));
+  assert.match(method('NTS', '9410').label, /Học bạ/);
+  assert.equal(method('NTS', '9407').autoCalculate, false, 'Không mở TSA cho các chương trình không có phạm vi');
+});
+
+test('UEL phân biệt chương trình trong trường với liên kết quốc tế, xét thẳng không dùng tổng điểm', () => {
+  assert.match(method('QSK', '8675').expression, /0,90 × Y \+ 0,10 × Z/);
+  assert.doesNotMatch(method('QSK', '8675').expression, /0,50/);
+  const direct = publicSchoolFormulas(school('QSK'), catalog.checkedAt).methods.find((m) => m.id === 'school-qsk-8676');
+  assert.equal(direct.status, 'non_numeric');
+  assert.equal(direct.programCount, 38, 'Không lấy 76 dòng của hai phương thức trộn chung');
+  assert.equal(direct.autoCalculate, false);
+  assert.match(direct.label, /Xét tuyển thẳng/);
+  assert.doesNotMatch(method('HCP', '8723').expression, /TSA/);
+  assert.doesNotMatch(method('HCP', '8725').expression, /HSA/);
+  assert.doesNotMatch(method('SKV', '9193').expression, /Sư phạm/);
+  assert.doesNotMatch(method('SKV', '9194').expression, /150/);
+});
+
+test('PTIT giữ bảng riêng Bắc/Nam; NHH nhân môn chính và tránh cộng chứng chỉ hai lần', () => {
+  assert.equal(calculateSchoolFormula(method('BVH', '8771').calculationRule, { m1: 9, m2: 9, m3: 8 }, { area: 'KV1' }).total, 26.4);
+  assert.match(method('BVH', '8774').conversion, /20\.23–26\.8 ↔ THPT 20–22\.5/);
+  assert.match(method('BVS', '8057').conversion, /19\.03–26\.8 ↔ THPT 16\.5–22\.5/);
+  assert.match(method('BVH', '8772').conversion, /56\.8–80\.5/);
+  assert.match(method('BVS', '9118').conversion, /59\.53–80\.5/);
+  assert.equal(calculateSchoolFormula(method('NHH', '8561').calculationRule, { m1: 9, m2: 9, m3: 8, bonus: 1 }, { area: 'KV1' }).total, 27.53);
+  for (const id of ['8566', '8567', '8568']) {
+    assert.equal(method('NHH', id).status, 'official_verified');
+    assert.equal(method('NHH', id).autoCalculate, false, 'Chưa có đủ bảng tương đương để nhập điểm gốc');
+  }
+  assert.ok(method('NHH', '8566').conditions.some((c) => c.includes('không được cộng khuyến khích lần nữa')));
+});
+
 test('ô nhập công thức báo lỗi đúng loại, nhận dấu phẩy và không thực thi biểu thức', () => {
   const field = { min: 0, max: 10 };
   assert.deepEqual(validateSchoolFormulaValue('8,5', field), { valid: true, value: 8.5 });

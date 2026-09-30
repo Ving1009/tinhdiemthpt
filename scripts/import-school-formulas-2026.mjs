@@ -21,15 +21,17 @@ const schools = research.schools.map((school) => {
   const methods = school.methods.map((method) => {
     const original = page?.methods.find((m) => m.id === method.id);
     const override = overrides.methods[`${school.code}:${method.id}`] || {};
+    const label = override.label || method.label;
     const text = [original?.details?.object, original?.details?.regulations, original?.details?.condition, original?.details?.quality, original?.details?.other_infomation, ...method.requirements].filter(Boolean).join('\n');
     const equations = override.equations || scoreEquations(text);
-    const nonNumeric = formulaKind(method.label) === 'eligibility' || !equations.length ? nonNumericExpression(method.label) : '';
-    const kind = formulaKind(method.label);
+    const nonNumeric = formulaKind(label) === 'eligibility' || !equations.length ? nonNumericExpression(label) : '';
+    const kind = formulaKind(label);
     const description = describeScoring(text, kind);
     const primary = school.sources.find((s) => s.url === method.sourceUrl && ['primary', 'official'].includes(s.type));
-    const programs = [...new Map(method.programs.map((p) => [`${p.displayCode || p.code}|${p.name}|${p.group}|${p.combinations}|${p.note}`, p])).values()].map((p, i) => ({
+    const programSources = method.programs.filter((p) => (!override.programCodes || override.programCodes.includes(p.code)) && (!override.programVariants || override.programVariants.includes(p.methodVariant)));
+    const programs = [...new Map(programSources.map((p) => [`${p.displayCode || p.code}|${p.name}|${p.group}|${p.combinations}|${p.note}`, p])).values()].map((p, i) => ({
       id: `catalog:${school.code}:${method.id}:${i}`, code: p.displayCode || p.code || '', nationalMajorCode: p.code || '',
-      name: p.name, group: p.group || '', combination: p.combinations || '', note: p.note || '', method: method.label,
+      name: p.name, group: p.group || '', combination: p.combinations || '', note: p.note || '', method: label,
     }));
     for (const program of programs) {
       const rowId = override.verifiedProgramRows?.[program.code];
@@ -57,7 +59,7 @@ const schools = research.schools.map((school) => {
       note: equations.length ? 'Biểu thức lấy từ mục cách xét / cách tính điểm của phương thức năm 2026.' : 'Điều kiện và phạm vi áp dụng đã được tra cứu; biểu thức điểm số cần kiểm tra thêm.',
     };
     return {
-      id: `school-${school.code.toLowerCase()}-${method.id}`, label: method.label, year: 2026, status, kind,
+      id: `school-${school.code.toLowerCase()}-${method.id}`, label, year: 2026, status, kind,
       expression, equations, scale: override.scale || oldOfficial?.scale || (nonNumeric ? 'Không có thang điểm chung' : formulaScale(text)),
       conditions: [...new Set([...(override.conditions || oldOfficial?.conditions || method.requirements), ...(!override.conditions && !nonNumeric ? scoringDefinitions(text) : [])])],
       priority: override.priority || oldOfficial?.priority || 'Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ.',
@@ -130,5 +132,5 @@ for (const school of schools) {
       ...(method.evidence?.url ? [`[Nguồn đối chiếu](${method.evidence.url}) · ${method.evidence.checkedAt}`, ''] : []), ...(method.issues || []).map((issue) => `- ${issue}`), '');
   }
 }
-await fs.writeFile('docs/research/ra-soat-cong-thuc-2026.md', lines.join('\n').trimEnd() + '\n');
+await fs.writeFile('docs/research/ra-soat-cong-thuc-2026.md', lines.join('\n').replace(/[ \t]+$/gm, '').trimEnd() + '\n');
 console.log(JSON.stringify(dataset.summary, null, 2));

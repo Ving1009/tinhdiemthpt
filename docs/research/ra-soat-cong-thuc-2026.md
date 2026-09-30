@@ -4,17 +4,17 @@ Ngày đối chiếu: 2026-09-30. Tổng 326 hồ sơ, 1415 mục phương thứ
 
 Một công thức theo từng phương thức; các nhóm ngành, tổ hợp hoặc nhóm thí sinh có hệ số khác nhau được giữ thành nhánh trong cùng phương thức. Danh sách ngành áp dụng được lưu riêng trong catalog.
 
-Bổ sung 19 bộ tính ở 9 trường: BKA, DPX, FPT, HMV, HPS, HTN, HVA, QHI, VJU. Bộ tính THPT Bách khoa đã có vẫn giới hạn ba chương trình IT1, EE2, ET1; đã đối chiếu lại hệ số Toán và tổ hợp K01. Hai mục nguồn trùng hệt biểu thức, điều kiện và phạm vi được gộp, giữ ID đối chiếu nội bộ.
+Bổ sung 30 bộ tính ở 14 trường: BKA, BVH, BVS, DPX, FPT, HMV, HPS, HTN, HVA, KSA, KSV, NHH, QHI, VJU. Bộ tính THPT Bách khoa đã có vẫn giới hạn ba chương trình IT1, EE2, ET1; đã đối chiếu lại hệ số Toán và tổ hợp K01. Hai mục nguồn trùng hệt biểu thức, điều kiện và phạm vi được gộp, giữ ID đối chiếu nội bộ.
 
 **Đây không phải xác nhận rằng mọi phương thức đã có đủ công thức số.** Biểu thức lấy từ nguồn có thể chỉ là một thành phần hoặc còn cần bảng quy đổi. Không tự suy ra tổng ba môn hoặc điểm gốc / điểm tối đa × 30. Chỉ bật tự tính cho quy tắc đã đối chiếu trực tiếp và có đầu vào an toàn.
 
 | Trạng thái | Số phương thức |
 | --- | ---: |
-| Xét điều kiện / hồ sơ, không có phép cộng chung | 265 |
-| Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính | 499 |
-| Đã đối chiếu nguồn chính thức | 42 |
-| Có thông tin phương thức, thiếu biểu thức đầy đủ | 433 |
-| Chưa có đủ công thức | 150 |
+| Xét điều kiện / hồ sơ, không có phép cộng chung | 266 |
+| Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính | 479 |
+| Đã đối chiếu nguồn chính thức | 85 |
+| Có thông tin phương thức, thiếu biểu thức đầy đủ | 412 |
+| Chưa có đủ công thức | 147 |
 | Phạm vi ngành chưa đủ | 10 |
 | Chưa có nguồn 2026 | 12 |
 | Nguồn mâu thuẫn | 4 |
@@ -444,129 +444,167 @@ Thang: Không có thang điểm chung.
 
 ### Điểm thi THPT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 39. Tự tính mới: có.
 
-ĐXT = M1 + M2 + M3 + Điểm cộng (nếu có) + Điểm ƯT (nếu có).
+ĐXT = M1 + M2 + M3 + ĐC + ĐƯT
 
 Thang: Thang 30.
 
-- Trong đó: M1, M2, M3 là kết quả điểm thi tốt nghiệp THPT của 03 bài thi/môn thi theo tổ hợp xét tuyển tương ứng các ngành/chương trình của Học viện.
-- 2. Điểm thưởng: Áp dụng đối với đối tượng đủ điều kiện Xét tuyển thẳng nhưng không sử dụng quyền xét tuyển thẳng theo quy định tại khoản 2, Điều 8 của Quy chế tuyển sinh các ngành đào tạo trình độ đại học và ngành Giáo dục Mầm non trình độ cao đẳng hiện hành của Bộ Giáo dục và Đào tạo.
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
+- M1–M3 là điểm thi THPT 2026 theo tổ hợp hợp lệ; Học viện không thay điểm môn ngoại ngữ bằng chứng chỉ.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-bac-BVH.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Xét tuyển tài năng
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
 
-Xét tuyển dựa vào hồ sơ năng lực (HSNL):
-Điểm HSNL = Điểm HL + Điểm TT + Điểm cộng (nếu có) + Điểm ƯT (nếu có)
-Điểm HL = [Điểm BQ môn 1 + Điểm BQ môn 2 + Điểm BQ môn 3]×6/3
-Điểm BQ môn = [Điểm năm lớp 10 + Điểm năm lớp 11 + Điểm năm lớp 12]/3
+Điểm HSNL = 2 × (BQ1 + BQ2 + BQ3) + ĐTT + ĐC + ĐƯT
+BQi = (điểm cả năm lớp 10 + lớp 11 + lớp 12 môn i) / 3
 
-Thang: Thang 100.
+Thang: HSNL thang 100; cần quy đổi tương đương.
 
-- Điểm thành tích (Điểm TT) chiếm 40% (tối đa 40 điểm);
-- Điểm thành tích (Điểm TT) được xác định cụ thể như sau:
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: ĐTT: Olympic đội tuyển quốc gia / Khuyến khích quốc gia 40; giải tỉnh Nhất 35, Nhì 30, Ba 25, Khuyến khích / dự thi HSG quốc gia 20; học sinh chuyên chưa có giải 15. Chọn thành tích cao nhất. Điểm HL tối đa 60, ĐTT tối đa 40; sau đó dùng bảng quy đổi tương đương 2026.
+Bảng tương đương riêng BVH theo thông báo 1147 ngày 10/07/2026: 92.33–100 ↔ THPT 26.85–30; 84.67–92.33 ↔ THPT 25.75–26.85; 80.5–84.67 ↔ THPT 24–25.75; 56.8–80.5 ↔ THPT 22.5–24.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-bac-BVH.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### CHỨNG CHỈ SAT/ACT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
 
-Điểm xét tuyển (ĐXT) = Điểm SAT/ACT + Điểm cộng (nếu có) + Điểm ƯT (nếu có)
+ĐXT gốc = điểm SAT hoặc ACT + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang SAT / ACT trước quy đổi tương đương.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
+- SAT từ 1130/1600 hoặc ACT từ 25/36, trong thời hạn hai năm.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-bac-BVH.html) · 2026-09-30
+Quy đổi: Không cộng ưu tiên thang 30 trực tiếp vào điểm SAT/ACT thô. Dùng mức ưu tiên và điểm cộng quy đúng thang, rồi bảng quy đổi tương đương PTIT 2026.
+Bảng tương đương riêng BVH theo thông báo 1147 ngày 10/07/2026: 1450–1600 ↔ THPT 26.85–30; 1350–1450 ↔ THPT 25.75–26.85; 1250–1350 ↔ THPT 24–25.75; 1130–1250 ↔ THPT 22.5–24.
+ACT: 33–36 ↔ THPT 26.85–30; 30–33 ↔ THPT 25.75–26.85; 28–30 ↔ THPT 24–25.75; 25–28 ↔ THPT 22.5–24.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Chứng chỉ tiếng Anh quốc tế (Chứng chỉ IELTS, TOEFL) với kết quả học tập ở bậc THPT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 39. Tự tính mới: có.
 
-ĐXT = [Điểm BQ môn 1 + Điểm BQ môn 2 + Điểm BQ môn 3] + Điểm cộng (nếu có) + Điểm ƯT (nếu có).
-Điểm BQ môn = [Điểm năm lớp 10 + Điểm năm lớp 11 + Điểm năm lớp 12]/3
+ĐXT = BQ1 + BQ2 + BQ3 + ĐC + ĐƯT
+BQi = (điểm cả năm lớp 10 + lớp 11 + lớp 12 môn i) / 3
 
 Thang: Thang 30.
 
-- Điểm thưởng: Áp dụng đối với đối tượng đủ điều kiện Xét tuyển thẳng nhưng không sử dụng quyền xét tuyển thẳng theo quy định tại khoản 2, Điều 8 của Quy chế tuyển sinh các ngành đào tạo trình độ đại học và ngành Giáo dục Mầm non trình độ cao đẳng hiện hành của Bộ Giáo dục và Đào tạo.
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
+- IELTS từ 5,5 hoặc TOEFL iBT từ 65 hoặc TOEFL ITP từ 513, còn thời hạn; không chấp nhận Home Edition. Chứng chỉ là điều kiện và điểm cộng, không thay môn học bạ.
+- Bộ tính cho điểm học bạ kết hợp trước quy đổi tương đương; đối chiếu ngưỡng THPT bằng bảng riêng BVH/BVS bên dưới, không so trực tiếp hai tổng điểm.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi:
+Bảng tương đương riêng BVH theo thông báo 1147 ngày 10/07/2026: 29.5–30 ↔ THPT 26.85–30; 28.8–29.5 ↔ THPT 25.75–26.85; 27.8–28.8 ↔ THPT 24–25.75; 26.8–27.8 ↔ THPT 22.5–24; 20.23–26.8 ↔ THPT 20–22.5.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-bac-BVH.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Điểm ĐGNL V-ACT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
 
-Điểm xét tuyển (ĐXT) = Điểm ĐGNL/ĐGTD + Điểm cộng (nếu có) + Điểm ƯT (nếu có)
+ĐXT gốc = điểm ĐGNL / ĐGTD + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang bài thi trước quy đổi tương đương.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-bac-BVH.html) · 2026-09-30
+Quy đổi: Quy điểm cộng và ưu tiên về đúng thang HSA, V-ACT, TSA hoặc bài thi Sư phạm Hà Nội. Điểm cuối xét chung phải dùng bảng tương đương PTIT 2026, không tự lấy điểm gốc / điểm tối đa × 30.
+Bảng tương đương riêng BVH theo thông báo 1147 ngày 10/07/2026: 968–1200 ↔ THPT 26.85–30; 919–968 ↔ THPT 25.75–26.85; 817–919 ↔ THPT 24–25.75; 736–817 ↔ THPT 22.5–24; 600–736 ↔ THPT 20–22.5.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Điểm ĐGNL HSA
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
 
-Điểm xét tuyển (ĐXT) = Điểm ĐGNL/ĐGTD + Điểm cộng (nếu có) + Điểm ƯT (nếu có)
+ĐXT gốc = điểm ĐGNL / ĐGTD + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang bài thi trước quy đổi tương đương.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-bac-BVH.html) · 2026-09-30
+Quy đổi: Quy điểm cộng và ưu tiên về đúng thang HSA, V-ACT, TSA hoặc bài thi Sư phạm Hà Nội. Điểm cuối xét chung phải dùng bảng tương đương PTIT 2026, không tự lấy điểm gốc / điểm tối đa × 30.
+Bảng tương đương riêng BVH theo thông báo 1147 ngày 10/07/2026: 105–150 ↔ THPT 26.85–30; 99–105 ↔ THPT 25.75–26.85; 87–99 ↔ THPT 24–25.75; 79–87 ↔ THPT 22.5–24; 75–79 ↔ THPT 20–22.5.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Điểm Đánh giá Tư duy
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
 
-Điểm xét tuyển (ĐXT) = Điểm ĐGNL/ĐGTD + Điểm cộng (nếu có) + Điểm ƯT (nếu có)
+ĐXT gốc = điểm ĐGNL / ĐGTD + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang bài thi trước quy đổi tương đương.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-bac-BVH.html) · 2026-09-30
+Quy đổi: Quy điểm cộng và ưu tiên về đúng thang HSA, V-ACT, TSA hoặc bài thi Sư phạm Hà Nội. Điểm cuối xét chung phải dùng bảng tương đương PTIT 2026, không tự lấy điểm gốc / điểm tối đa × 30.
+Bảng tương đương riêng BVH theo thông báo 1147 ngày 10/07/2026: 64.4–100 ↔ THPT 26.85–30; 60.84–64.4 ↔ THPT 25.75–26.85; 54.95–60.84 ↔ THPT 24–25.75; 51.25–54.95 ↔ THPT 22.5–24; 50–51.25 ↔ THPT 20–22.5.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
 
-Điểm xét tuyển (ĐXT) = Điểm ĐGNL/ĐGTD + Điểm cộng (nếu có) + Điểm ƯT (nếu có)
+ĐXT gốc = điểm ĐGNL / ĐGTD + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang bài thi trước quy đổi tương đương.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-bac-BVH.html) · 2026-09-30
+Quy đổi: Quy điểm cộng và ưu tiên về đúng thang HSA, V-ACT, TSA hoặc bài thi Sư phạm Hà Nội. Điểm cuối xét chung phải dùng bảng tương đương PTIT 2026, không tự lấy điểm gốc / điểm tối đa × 30.
+Bảng tương đương riêng BVH theo thông báo 1147 ngày 10/07/2026: 24.5–30 ↔ THPT 26.85–30; 23.5–24.5 ↔ THPT 25.75–26.85; 21.5–23.5 ↔ THPT 24–25.75; 16–21.5 ↔ THPT 22.5–24; 15–16 ↔ THPT 20–22.5.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ## BVS — Học viện Công nghệ Bưu chính Viễn thông – Cơ sở TP.HCM
@@ -588,121 +626,165 @@ Thang: Không có thang điểm chung.
 
 ### Chứng chỉ quốc tế
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+ĐXT gốc = điểm SAT hoặc ACT + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang SAT / ACT trước quy đổi tương đương.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
+- SAT từ 1130/1600 hoặc ACT từ 25/36, trong thời hạn hai năm.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-nam-BVS.html) · 2026-09-30
+Quy đổi: Không cộng ưu tiên thang 30 trực tiếp vào điểm SAT/ACT thô. Dùng mức ưu tiên và điểm cộng quy đúng thang, rồi bảng quy đổi tương đương PTIT 2026.
+Bảng tương đương riêng BVS theo thông báo 1147 ngày 10/07/2026: 1450–1600 ↔ THPT 26.85–30; 1350–1450 ↔ THPT 25.75–26.85; 1250–1350 ↔ THPT 24–25.75; 1130–1250 ↔ THPT 22.5–24.
+ACT: 33–36 ↔ THPT 26.85–30; 30–33 ↔ THPT 25.75–26.85; 28–30 ↔ THPT 24–25.75; 25–28 ↔ THPT 22.5–24.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Điểm ĐGNL V-ACT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
 
-Điểm ĐGNL của ĐHQG TP.HCM được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT gốc = điểm ĐGNL / ĐGTD + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang bài thi trước quy đổi tương đương.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-nam-BVS.html) · 2026-09-30
+Quy đổi: Quy điểm cộng và ưu tiên về đúng thang HSA, V-ACT, TSA hoặc bài thi Sư phạm Hà Nội. Điểm cuối xét chung phải dùng bảng tương đương PTIT 2026, không tự lấy điểm gốc / điểm tối đa × 30.
+Bảng tương đương riêng BVS theo thông báo 1147 ngày 10/07/2026: 968–1200 ↔ THPT 26.85–30; 919–968 ↔ THPT 25.75–26.85; 817–919 ↔ THPT 24–25.75; 736–817 ↔ THPT 22.5–24; 600–736 ↔ THPT 16.5–22.5.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
 
-Điểm ĐGNL của ĐH Sư phạm Hà Nội được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT gốc = điểm ĐGNL / ĐGTD + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang bài thi trước quy đổi tương đương.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-nam-BVS.html) · 2026-09-30
+Quy đổi: Quy điểm cộng và ưu tiên về đúng thang HSA, V-ACT, TSA hoặc bài thi Sư phạm Hà Nội. Điểm cuối xét chung phải dùng bảng tương đương PTIT 2026, không tự lấy điểm gốc / điểm tối đa × 30.
+Bảng tương đương riêng BVS theo thông báo 1147 ngày 10/07/2026: 24.5–30 ↔ THPT 26.85–30; 23.5–24.5 ↔ THPT 25.75–26.85; 21.5–23.5 ↔ THPT 24–25.75; 16–21.5 ↔ THPT 22.5–24; 15–16 ↔ THPT 16.5–22.5.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Điểm Đánh giá Tư duy
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
 
-Điểm TSA được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT gốc = điểm ĐGNL / ĐGTD + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang bài thi trước quy đổi tương đương.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-nam-BVS.html) · 2026-09-30
+Quy đổi: Quy điểm cộng và ưu tiên về đúng thang HSA, V-ACT, TSA hoặc bài thi Sư phạm Hà Nội. Điểm cuối xét chung phải dùng bảng tương đương PTIT 2026, không tự lấy điểm gốc / điểm tối đa × 30.
+Bảng tương đương riêng BVS theo thông báo 1147 ngày 10/07/2026: 64.4–100 ↔ THPT 26.85–30; 60.84–64.4 ↔ THPT 25.75–26.85; 54.95–60.84 ↔ THPT 24–25.75; 51.25–54.95 ↔ THPT 22.5–24; 50–51.25 ↔ THPT 16.5–22.5.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Điểm ĐGNL HSA
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
 
-Điểm HSA của ĐHQG Hà Nội được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT gốc = điểm ĐGNL / ĐGTD + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang bài thi trước quy đổi tương đương.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-nam-BVS.html) · 2026-09-30
+Quy đổi: Quy điểm cộng và ưu tiên về đúng thang HSA, V-ACT, TSA hoặc bài thi Sư phạm Hà Nội. Điểm cuối xét chung phải dùng bảng tương đương PTIT 2026, không tự lấy điểm gốc / điểm tối đa × 30.
+Bảng tương đương riêng BVS theo thông báo 1147 ngày 10/07/2026: 105–150 ↔ THPT 26.85–30; 99–105 ↔ THPT 25.75–26.85; 87–99 ↔ THPT 24–25.75; 79–87 ↔ THPT 22.5–24; 75–79 ↔ THPT 16.5–22.5.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### CCTAQT với học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: có.
 
-Sử dụng kết quả học tập THPT; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Chứng chỉ ngoại ngữ được sử dụng theo điều kiện và bảng quy đổi hoặc điểm cộng do trường công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = BQ1 + BQ2 + BQ3 + ĐC + ĐƯT
+BQi = (điểm cả năm lớp 10 + lớp 11 + lớp 12 môn i) / 3
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
+- IELTS từ 5,5 hoặc TOEFL iBT từ 65 hoặc TOEFL ITP từ 513, còn thời hạn; không chấp nhận Home Edition. Chứng chỉ là điều kiện và điểm cộng, không thay môn học bạ.
+- Bộ tính cho điểm học bạ kết hợp trước quy đổi tương đương; đối chiếu ngưỡng THPT bằng bảng riêng BVH/BVS bên dưới, không so trực tiếp hai tổng điểm.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-nam-BVS.html) · 2026-09-30
+Quy đổi:
+Bảng tương đương riêng BVS theo thông báo 1147 ngày 10/07/2026: 29.5–30 ↔ THPT 26.85–30; 28.8–29.5 ↔ THPT 25.75–26.85; 27.8–28.8 ↔ THPT 24–25.75; 26.8–27.8 ↔ THPT 22.5–24; 19.03–26.8 ↔ THPT 16.5–22.5.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Điểm thi THPT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: có.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = M1 + M2 + M3 + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
+- M1–M3 là điểm thi THPT 2026 theo tổ hợp hợp lệ; Học viện không thay điểm môn ngoại ngữ bằng chứng chỉ.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-nam-BVS.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Xét tuyển tài năng
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+Điểm HSNL = 2 × (BQ1 + BQ2 + BQ3) + ĐTT + ĐC + ĐƯT
+BQi = (điểm cả năm lớp 10 + lớp 11 + lớp 12 môn i) / 3
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: HSNL thang 100; cần quy đổi tương đương.
 
+- Công thức dùng chung hai cơ sở BVH và BVS; giữ danh sách ngành riêng của từng cơ sở.
+- Điểm cộng tối đa 10% thang xét tuyển; chứng chỉ, thành tích phải được Học viện xác nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-nam-BVS.html) · 2026-09-30
+Quy đổi: ĐTT: Olympic đội tuyển quốc gia / Khuyến khích quốc gia 40; giải tỉnh Nhất 35, Nhì 30, Ba 25, Khuyến khích / dự thi HSG quốc gia 20; học sinh chuyên chưa có giải 15. Chọn thành tích cao nhất. Điểm HL tối đa 60, ĐTT tối đa 40; sau đó dùng bảng quy đổi tương đương 2026.
+Bảng tương đương riêng BVS theo thông báo 1147 ngày 10/07/2026: 92.33–100 ↔ THPT 26.85–30; 84.67–92.33 ↔ THPT 25.75–26.85; 80.5–84.67 ↔ THPT 24–25.75; 59.53–80.5 ↔ THPT 22.5–24.
+Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a) × (d − c), với a ≤ x < b và c ≤ y < d. x là ngưỡng THPT, y là ngưỡng phương thức tương ứng. Không ngoại suy phần bảng để trống.
+
+[Nguồn đối chiếu](https://tuyensinh.ptit.edu.vn/thong-baophuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ## BVU — Trường Đại học Bà Rịa - Vũng Tàu
@@ -929,32 +1011,33 @@ Thang: Không có thang điểm chung.
 
 ### Điểm học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 22. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 22. Tự tính mới: không.
 
-Sử dụng kết quả học tập lớp 12; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = M1 + M2 + M3 + ĐƯT
+Mi = (điểm cả năm lớp 10 + lớp 11 + lớp 12 môn i) / 3
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Ba môn thuộc tổ hợp ngành.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-dai-hoc-nghe-an-nau-2026-636.html) · 2026-09-30
 
 
 ### Điểm thi THPT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 22. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 22. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = M1 + M2 + M3 + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- M1–M3 là điểm thi THPT theo tổ hợp.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-dai-hoc-nghe-an-nau-2026-636.html) · 2026-09-30
 
 
 ### Điểm ĐGNL V-ACT
@@ -7792,19 +7875,20 @@ Thang: Không có thang điểm chung.
 
 ### Điểm thi THPT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 12. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 12. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Điểm tổ hợp = M1 + M2 + M3
+ĐXT = điểm tổ hợp + ĐƯT
 
 Thang: Thang 30.
 
+- M1–M3 là môn thi THPT 2026 theo tổ hợp; tổng không vượt 30.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-DTP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-2026-632.html) · 2026-09-30
 
 
 ### Điểm học bạ
@@ -9991,51 +10075,53 @@ Thang: Không có thang điểm chung.
 
 ### Điểm thi THPT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 25. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 25. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = M1 + M2 + M3 + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- M1–M3 là điểm thi THPT 2026 trong tổ hợp.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-09-30
+Quy đổi: Điểm cộng, ưu tiên và bảng quy đổi theo đúng phương thức; nguồn chưa đủ để tự tính.
+
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-hoc-vien-chinh-sach-va-phat-trien-apd-2026-626.html) · 2026-09-30
 
 
 ### Kết hợp điểm thi THPT + Học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 25. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 25. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Sử dụng kết quả học tập lớp 10, 11 và 12; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = hai môn thi THPT + điểm học tập THPT đã quy đổi + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Điểm học tập từ cả năm lớp 10, 11, 12 và quy đổi theo bảng 2026.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-09-30
+Quy đổi: Điểm cộng, ưu tiên và bảng quy đổi theo đúng phương thức; nguồn chưa đủ để tự tính.
+
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-hoc-vien-chinh-sach-va-phat-trien-apd-2026-626.html) · 2026-09-30
 
 
 ### Kết hợp điểm thi THPT với CCNN
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 25. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 25. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Chứng chỉ ngoại ngữ được sử dụng theo điều kiện và bảng quy đổi hoặc điểm cộng do trường công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = hai môn thi THPT + điểm CCTAQT đã quy đổi + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- CCQT theo bảng thang môn thi; không nhập IELTS thô.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Điểm cộng, ưu tiên và bảng quy đổi theo đúng phương thức; nguồn chưa đủ để tự tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-hoc-vien-chinh-sach-va-phat-trien-apd-2026-626.html) · 2026-09-30
 
 
 ### Kết hợp điểm học bạ với CCNN
@@ -10058,32 +10144,36 @@ Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm 
 
 ### Điểm ĐGNL HSA
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 25. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 25. Tự tính mới: không.
 
-Điểm HSA của ĐHQG Hà Nội được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = điểm HSA đã quy đổi tương đương + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Dùng đúng bảng quy đổi HSA 2026 của Học viện Chính sách và Phát triển.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-09-30
+Quy đổi: Điểm cộng, ưu tiên và bảng quy đổi theo đúng phương thức; nguồn chưa đủ để tự tính.
+
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-hoc-vien-chinh-sach-va-phat-trien-apd-2026-626.html) · 2026-09-30
 
 
 ### Điểm Đánh giá Tư duy
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 25. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 25. Tự tính mới: không.
 
-Điểm TSA được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = điểm TSA đã quy đổi tương đương + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Dùng đúng bảng quy đổi TSA 2026 của Học viện Chính sách và Phát triển.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-09-30
+Quy đổi: Điểm cộng, ưu tiên và bảng quy đổi theo đúng phương thức; nguồn chưa đủ để tự tính.
+
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-hoc-vien-chinh-sach-va-phat-trien-apd-2026-626.html) · 2026-09-30
 
 
 ### Điểm ĐGNL V-ACT
@@ -12139,19 +12229,19 @@ Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm 
 
 ### Kết hợp Học bạ + Giải HSG
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 23. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 23. Tự tính mới: không.
 
-Sử dụng kết quả học tập lớp 12; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = ĐTB6HK1 + ĐTB6HK2 + ĐTB6HK3 + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- ĐTB6HK là trung bình sáu học kỳ lớp 10, 11, 12 theo tổ hợp. Tổng trước ưu tiên gồm điểm cộng, giới hạn 30.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-nong-nghiep-viet-nam-HVN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-hoc-vien-nong-nghiep-viet-nam-vnua-2026-538.html) · 2026-09-30
 
 
 ### ƯTXT, XT thẳng
@@ -13246,38 +13336,43 @@ Thang: Không có thang điểm chung.
 
 ### Kết hợp Học bạ+ V-ACT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 82. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 82. Tự tính mới: có.
 
-Điểm xét tuyển = Điểm thi × 60% + Điểm trung bình các năm học THPT × 40% + Điểm cộng (nếu có) + Điểm ưu tiên KV, ĐT (nếu có)
-Điểm xét tuyển = Điểm trung bình các năm học THPT + Điểm cộng (nếu có) + Điểm ưu tiên KV, ĐT (nếu có)
-– Điểm trung bình (ĐTB) các năm học THPT = (ĐTB cả năm lớp 10×1 + ĐTB cả năm lớp 11×2 + ĐTB cả năm lớp 12×3)/6
+ĐXT = 0,6 × (điểm thi quy đổi × 100/30) + 0,4 × (ĐTB các năm học × 10) + ĐC + ĐƯT
+ĐTB các năm học = (ĐTB lớp 10 + 2 × ĐTB lớp 11 + 3 × ĐTB lớp 12) / 6
 
 Thang: Thang 100.
 
+- Điểm nền chưa gồm điểm cộng / ưu tiên phải đạt 65/100; các ngành Pháp luật và chương trình tiếng Anh có điều kiện riêng.
+- ĐTB là trung bình toàn bộ môn đánh giá bằng điểm số từng năm, không phải chỉ ba môn tổ hợp. Nếu không có ĐTB năm, tính trung bình các môn chấm điểm của năm đó.
+- Chọn đúng phương thức / tổ hợp; nếu có nhiều kết quả thi, xét điểm có lợi nhất sau quy đổi.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Với a < x ≤ b: y = c + (x − a) / (b − a) × (d − c). Làm tròn y hai chữ số trước khi tính trọng số.
+980 < x ≤ 1200: 27.08 < y ≤ 30; 945 < x ≤ 980: 25.3 < y ≤ 27.08; 900 < x ≤ 945: 24 < y ≤ 25.3; 835 < x ≤ 900: 22.15 < y ≤ 24; 780 < x ≤ 835: 21.15 < y ≤ 22.15; 740 < x ≤ 780: 20.55 < y ≤ 21.15; 700 < x ≤ 740: 19.61 < y ≤ 20.55; 650 < x ≤ 700: 18.85 < y ≤ 19.61; 600 < x ≤ 650: 18.1 < y ≤ 18.85; 550 < x ≤ 600: 17.2 < y ≤ 18.1; 500 < x ≤ 550: 16.15 < y ≤ 17.2; 450 < x ≤ 500: 15 < y ≤ 16.15
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tphcm-KSA.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.ueh.edu.vn/bai-viet/ueh-cong-bo-nguong-dam-bao-chat-luong-dau-vao-quy-doi-diem-giua-cac-ky-thi-va-ra-mat-cong-cu-ho-tro-tinh-diem-trong-phuong-thuc-xet-tuyen-tich-hop-khoa-52-dai-hoc-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Kết hợp Điểm THPT + Học bạ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 82. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 82. Tự tính mới: có.
 
-Điểm xét tuyển = Điểm thi × 60% + Điểm trung bình các năm học THPT × 40% + Điểm cộng (nếu có) + Điểm ưu tiên KV, ĐT (nếu có)
-Điểm xét tuyển = Điểm trung bình các năm học THPT + Điểm cộng (nếu có) + Điểm ưu tiên KV, ĐT (nếu có)
-– Điểm trung bình (ĐTB) các năm học THPT = (ĐTB cả năm lớp 10×1 + ĐTB cả năm lớp 11×2 + ĐTB cả năm lớp 12×3)/6
+ĐXT = 0,6 × (điểm thi quy đổi × 100/30) + 0,4 × (ĐTB các năm học × 10) + ĐC + ĐƯT
+ĐTB các năm học = (ĐTB lớp 10 + 2 × ĐTB lớp 11 + 3 × ĐTB lớp 12) / 6
 
 Thang: Thang 100.
 
+- Điểm nền chưa gồm điểm cộng / ưu tiên phải đạt 65/100; các ngành Pháp luật và chương trình tiếng Anh có điều kiện riêng.
+- ĐTB là trung bình toàn bộ môn đánh giá bằng điểm số từng năm, không phải chỉ ba môn tổ hợp. Nếu không có ĐTB năm, tính trung bình các môn chấm điểm của năm đó.
+- Chọn đúng phương thức / tổ hợp; nếu có nhiều kết quả thi, xét điểm có lợi nhất sau quy đổi.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Không nhân hệ số môn trong tổ hợp; tổng điểm thi THPT thang 30 được đổi × 100/30.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tphcm-KSA.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.ueh.edu.vn/bai-viet/ueh-cong-bo-nguong-dam-bao-chat-luong-dau-vao-quy-doi-diem-giua-cac-ky-thi-va-ra-mat-cong-cu-ho-tro-tinh-diem-trong-phuong-thuc-xet-tuyen-tich-hop-khoa-52-dai-hoc-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ## KSV — Phân hiệu Đại học Kinh tế TP.HCM tại tỉnh Vĩnh Long
@@ -13285,20 +13380,22 @@ Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm 
 
 ### Kết hợp Điểm THPT + Học bạ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 15. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 15. Tự tính mới: có.
 
-Điểm xét tuyển = Điểm thi × 60% + Điểm trung bình các năm học THPT × 40% + Điểm cộng (nếu có) + Điểm ưu tiên KV, ĐT (nếu có)
-Điểm xét tuyển = Điểm trung bình các năm học THPT + Điểm cộng (nếu có) + Điểm ưu tiên KV, ĐT (nếu có)
-– Điểm trung bình (ĐTB) các năm học THPT = (ĐTB cả năm lớp 10×1 + ĐTB cả năm lớp 11×2 + ĐTB cả năm lớp 12×3)/6
+ĐXT = 0,6 × (điểm thi quy đổi × 100/30) + 0,4 × (ĐTB các năm học × 10) + ĐC + ĐƯT
+ĐTB các năm học = (ĐTB lớp 10 + 2 × ĐTB lớp 11 + 3 × ĐTB lớp 12) / 6
 
-Thang: Thang 30 / Thang 100.
+Thang: Thang 100.
 
+- Điểm nền chưa gồm điểm cộng / ưu tiên phải đạt 60/100; các ngành Pháp luật và chương trình tiếng Anh có điều kiện riêng.
+- ĐTB là trung bình toàn bộ môn đánh giá bằng điểm số từng năm, không phải chỉ ba môn tổ hợp. Nếu không có ĐTB năm, tính trung bình các môn chấm điểm của năm đó.
+- Chọn đúng phương thức / tổ hợp; nếu có nhiều kết quả thi, xét điểm có lợi nhất sau quy đổi.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Không nhân hệ số môn trong tổ hợp; tổng điểm thi THPT thang 30 được đổi × 100/30.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tphcm-phan-hieu-vinh-long-KSV.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.ueh.edu.vn/bai-viet/ueh-cong-bo-nguong-dam-bao-chat-luong-dau-vao-quy-doi-diem-giua-cac-ky-thi-va-ra-mat-cong-cu-ho-tro-tinh-diem-trong-phuong-thuc-xet-tuyen-tich-hop-khoa-52-dai-hoc-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### ƯTXT, XT thẳng
@@ -13317,37 +13414,44 @@ Thang: Không có thang điểm chung.
 
 ### Kết hợp Học bạ+ V-ACT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 15. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 15. Tự tính mới: có.
 
-Điểm xét tuyển = Điểm thi × 60% + Điểm trung bình các năm học THPT × 40% + Điểm cộng (nếu có) + Điểm ưu tiên KV, ĐT (nếu có)
-Điểm xét tuyển = Điểm trung bình các năm học THPT + Điểm cộng (nếu có) + Điểm ưu tiên KV, ĐT (nếu có)
-– Điểm trung bình (ĐTB) các năm học THPT = (ĐTB cả năm lớp 10×1 + ĐTB cả năm lớp 11×2 + ĐTB cả năm lớp 12×3)/6
+ĐXT = 0,6 × (điểm thi quy đổi × 100/30) + 0,4 × (ĐTB các năm học × 10) + ĐC + ĐƯT
+ĐTB các năm học = (ĐTB lớp 10 + 2 × ĐTB lớp 11 + 3 × ĐTB lớp 12) / 6
 
 Thang: Thang 100.
 
+- Điểm nền chưa gồm điểm cộng / ưu tiên phải đạt 60/100; các ngành Pháp luật và chương trình tiếng Anh có điều kiện riêng.
+- ĐTB là trung bình toàn bộ môn đánh giá bằng điểm số từng năm, không phải chỉ ba môn tổ hợp. Nếu không có ĐTB năm, tính trung bình các môn chấm điểm của năm đó.
+- Chọn đúng phương thức / tổ hợp; nếu có nhiều kết quả thi, xét điểm có lợi nhất sau quy đổi.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Với a < x ≤ b: y = c + (x − a) / (b − a) × (d − c). Làm tròn y hai chữ số trước khi tính trọng số.
+980 < x ≤ 1200: 27.08 < y ≤ 30; 945 < x ≤ 980: 25.3 < y ≤ 27.08; 900 < x ≤ 945: 24 < y ≤ 25.3; 835 < x ≤ 900: 22.15 < y ≤ 24; 780 < x ≤ 835: 21.15 < y ≤ 22.15; 740 < x ≤ 780: 20.55 < y ≤ 21.15; 700 < x ≤ 740: 19.61 < y ≤ 20.55; 650 < x ≤ 700: 18.85 < y ≤ 19.61; 600 < x ≤ 650: 18.1 < y ≤ 18.85; 550 < x ≤ 600: 17.2 < y ≤ 18.1; 500 < x ≤ 550: 16.15 < y ≤ 17.2; 450 < x ≤ 500: 15 < y ≤ 16.15
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tphcm-phan-hieu-vinh-long-KSV.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.ueh.edu.vn/bai-viet/ueh-cong-bo-nguong-dam-bao-chat-luong-dau-vao-quy-doi-diem-giua-cac-ky-thi-va-ra-mat-cong-cu-ho-tro-tinh-diem-trong-phuong-thuc-xet-tuyen-tich-hop-khoa-52-dai-hoc-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ### Kết hợp Điểm V-SAT + Học bạ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 15. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 15. Tự tính mới: có.
 
-Điểm xét tuyển = Điểm thi × 60% + Điểm trung bình các năm học THPT × 40% + Điểm cộng (nếu có) + Điểm ưu tiên KV, ĐT (nếu có)
-– Điểm trung bình (ĐTB) các năm học THPT = (ĐTB cả năm lớp 10×1 + ĐTB cả năm lớp 11×2 + ĐTB cả năm lớp 12×3)/6
+ĐXT = 0,6 × (điểm thi quy đổi × 100/30) + 0,4 × (ĐTB các năm học × 10) + ĐC + ĐƯT
+ĐTB các năm học = (ĐTB lớp 10 + 2 × ĐTB lớp 11 + 3 × ĐTB lớp 12) / 6
 
 Thang: Thang 100.
 
+- Điểm nền chưa gồm điểm cộng / ưu tiên phải đạt 60/100; các ngành Pháp luật và chương trình tiếng Anh có điều kiện riêng.
+- ĐTB là trung bình toàn bộ môn đánh giá bằng điểm số từng năm, không phải chỉ ba môn tổ hợp. Nếu không có ĐTB năm, tính trung bình các môn chấm điểm của năm đó.
+- V-SAT của Đại học Cần Thơ năm 2026 chỉ áp dụng KSV.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Với a < x ≤ b: y = c + (x − a) / (b − a) × (d − c). Làm tròn y hai chữ số trước khi tính trọng số.
+392.5 < x ≤ 450: 26.5 < y ≤ 30; 383.5 < x ≤ 392.5: 25.75 < y ≤ 26.5; 365.5 < x ≤ 383.5: 24.5 < y ≤ 25.75; 342 < x ≤ 365.5: 24.15 < y ≤ 24.5; 324 < x ≤ 342: 22.25 < y ≤ 24.15; 307 < x ≤ 324: 21.25 < y ≤ 22.25; 291 < x ≤ 307: 20.5 < y ≤ 21.25; 274.5 < x ≤ 291: 19.75 < y ≤ 20.5; 256 < x ≤ 274.5: 18.5 < y ≤ 19.75; 235 < x ≤ 256: 17 < y ≤ 18.5; 207.5 < x ≤ 235: 15.5 < y ≤ 17; 31.5 < x ≤ 207.5: 6.25 < y ≤ 15.5
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tphcm-phan-hieu-vinh-long-KSV.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.ueh.edu.vn/bai-viet/ueh-cong-bo-nguong-dam-bao-chat-luong-dau-vao-quy-doi-diem-giua-cac-ky-thi-va-ra-mat-cong-cu-ho-tro-tinh-diem-trong-phuong-thuc-xet-tuyen-tich-hop-khoa-52-dai-hoc-chinh-quy-nam-2026/) · 2026-09-30
 
 
 ## KTA — Trường Đại học Kiến trúc Hà Nội
@@ -15203,90 +15307,102 @@ Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm 
 
 ### Điểm thi THPT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 45. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 45. Tự tính mới: có.
 
-Điểm xét theo Điểm thi THPT 2026 = [(Môn chính × 2 + Môn 2 + Môn 3) × 3]/4 + Điểm cộng + Điểm ưu tiên
+ĐXT = (2 × Môn chính + Môn 2 + Môn 3) × 3/4 + ĐC + ĐƯT
 
 Thang: Thang 30.
 
+- Mỗi môn là điểm thi THPT 2026; tổ hợp / ngưỡng đầu vào theo mã xét tuyển.
+- Môn chính phụ thuộc mã ngành / tổ hợp; nhập đúng môn chính trong phụ lục, không mặc định luôn là Toán.
+- Điểm thưởng HSG quốc gia: Nhất 3, Nhì 2,5, Ba 2. Điểm xét thưởng các diện tỉnh/chuyên/điểm thi xuất sắc tối đa 1,5; điểm khuyến khích chứng chỉ tối đa 1,5. Tổng cộng tuân thủ giới hạn 3/30.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Có thể thay môn Tiếng Anh bằng CCNN còn hạn: IELTS 5,5 → 8,5; 6,0 → 9; 6,5 → 9,5; 7,0 → 9,75; 7,5–9,0 → 10. TOEFL iBT 46–59 → 8,5; 60–78 → 9; 79–93 → 9,5; 94–101 → 9,75; trên 101 → 10. Nhập điểm đã quy đổi vào đúng ô môn của tổ hợp.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-NHH.html) · 2026-09-30
+[Nguồn đối chiếu](https://hvnh.edu.vn/medias/hvnh/vi/04.2026/system/archivedate/e4941859_2026.03.31.2028.Q%C4%90.HVNH.%20Quy%E1%BA%BFt%20%C4%91%E1%BB%8Bnh%20V%E1%BB%81%20vi%E1%BB%87c%20ban%20h%C3%A0nh%20th%C3%B4ng%20tin%20tuy%E1%BB%83n%20sinh%20%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20ch%C3%ADnh%20quy%20n%C4%83m%202026-NHH.pdf) · 2026-09-30
 
 
 ### Điểm học bạ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 45. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 45. Tự tính mới: có.
 
-Điểm xét tuyển được tính trên điểm học bạ THPT của 03 môn học tương ứng với các tổ hợp của mã xét tuyển (lấy trung bình cộng trong ba năm học THPT), trong đó nhân đôi điểm đối với môn chính và quy đổi về thang 30:
-Điểm xét tuyển (Điểm học bạ THPT) = [(Môn chính × 2 + Môn 2 + Môn 3) × 3] / 4 + Điểm cộng + Điểm ưu tiên
+ĐXT = (2 × Môn chính + Môn 2 + Môn 3) × 3/4 + ĐC + ĐƯT
 
 Thang: Thang 30.
 
-- Điểm xét tuyển được tính trên điểm học bạ THPT của 03 môn học tương ứng với các tổ hợp của mã xét tuyển (lấy trung bình cộng trong ba năm học THPT), trong đó nhân đôi điểm đối với môn chính và quy đổi về thang 30:
+- Mỗi môn là trung bình cả năm lớp 10, 11, 12; thí sinh tốt nghiệp năm 2025 hoặc 2026.
+- Môn chính phụ thuộc mã ngành / tổ hợp; nhập đúng môn chính trong phụ lục, không mặc định luôn là Toán.
+- Điểm thưởng HSG quốc gia: Nhất 3, Nhì 2,5, Ba 2. Điểm xét thưởng các diện tỉnh/chuyên/điểm thi xuất sắc tối đa 1,5; điểm khuyến khích chứng chỉ tối đa 1,5. Tổng cộng tuân thủ giới hạn 3/30.
+- Tổng ba môn thi THPT thuộc một tổ hợp của chương trình từ 16,0; đây là điều kiện dự tuyển độc lập với tổng học bạ.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-NHH.html) · 2026-09-30
+[Nguồn đối chiếu](https://hvnh.edu.vn/medias/hvnh/vi/04.2026/system/archivedate/e4941859_2026.03.31.2028.Q%C4%90.HVNH.%20Quy%E1%BA%BFt%20%C4%91%E1%BB%8Bnh%20V%E1%BB%81%20vi%E1%BB%87c%20ban%20h%C3%A0nh%20th%C3%B4ng%20tin%20tuy%E1%BB%83n%20sinh%20%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20ch%C3%ADnh%20quy%20n%C4%83m%202026-NHH.pdf) · 2026-09-30
 
 
 ### Kết hợp học bạ THPT + CCQT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 45. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 45. Tự tính mới: không.
 
 Điểm xét tuyển = Điểm học bạ THPT × 50% + Điểm CCQT quy đổi × 50% + Điểm cộng + Điểm ưu tiên
 Điểm học bạ THPT = [(Môn chính × 2 + Môn 2 + Môn 3) × 3] / 4
 
 Thang: Thang 30.
 
-- Điểm học bạ THPT: Tính trên điểm tổ hợp của 03 môn học tương ứng với từng mã xét tuyển (lấy trung bình cộng trong ba năm học THPT), trong đó nhân đôi điểm đối với môn chính và quy đổi về thang 30.
+- Thí sinh tốt nghiệp năm 2025 hoặc 2026; dùng trung bình ba năm các môn đúng tổ hợp, nhân đôi môn chính.
+- IELTS Academic từ 5,5 hoặc TOEFL iBT từ 46, SAT từ 1200, ACT từ 26; JLPT từ N5 chỉ mã ACT06.
+- Điểm thưởng HSG quốc gia: Nhất 3, Nhì 2,5, Ba 2. Điểm xét thưởng các diện tỉnh/chuyên/điểm thi xuất sắc tối đa 1,5; điểm khuyến khích chứng chỉ tối đa 1,5. Tổng cộng tuân thủ giới hạn 3/30.
+- Chứng chỉ đã dùng quy đổi không được cộng khuyến khích lần nữa; IELTS/TOEFL chỉ chọn một chứng chỉ có lợi hơn.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Điểm CCQT phải dùng bảng tương đương riêng năm 2026; đề án tháng 3 chưa chứa bảng. Không thay điểm quy đổi bằng điểm gốc hoặc quy đổi tuyến tính tự suy đoán.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-NHH.html) · 2026-09-30
+[Nguồn đối chiếu](https://hvnh.edu.vn/medias/hvnh/vi/04.2026/system/archivedate/e4941859_2026.03.31.2028.Q%C4%90.HVNH.%20Quy%E1%BA%BFt%20%C4%91%E1%BB%8Bnh%20V%E1%BB%81%20vi%E1%BB%87c%20ban%20h%C3%A0nh%20th%C3%B4ng%20tin%20tuy%E1%BB%83n%20sinh%20%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20ch%C3%ADnh%20quy%20n%C4%83m%202026-NHH.pdf) · 2026-09-30
 
 
 ### Kết hợp học bạ THPT + ĐGNL Hà Nội (HSA)
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 45. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 45. Tự tính mới: không.
 
 Điểm xét tuyển = Điểm học bạ THPT × 50% + Điểm HSA quy đổi × 50% + Điểm cộng + Điểm ưu tiên
 Điểm học bạ THPT = [(Môn chính × 2 + Môn 2 + Môn 3) × 3]/4
 
 Thang: Thang 30.
 
-- Điểm học bạ THPT: được tính trên điểm học bạ của 03 môn học tương ứng với các tổ hợp của mã xét tuyển (lấy trung bình cộng trong ba năm học THPT), trong đó nhân đôi điểm đối với môn chính và quy đổi về thang 30:
+- Thí sinh tốt nghiệp năm 2025 hoặc 2026; dùng trung bình ba năm các môn đúng tổ hợp, nhân đôi môn chính.
+- HSA từ 85.
+- Điểm thưởng HSG quốc gia: Nhất 3, Nhì 2,5, Ba 2. Điểm xét thưởng các diện tỉnh/chuyên/điểm thi xuất sắc tối đa 1,5; điểm khuyến khích chứng chỉ tối đa 1,5. Tổng cộng tuân thủ giới hạn 3/30.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Điểm HSA phải dùng bảng tương đương riêng năm 2026; đề án tháng 3 chưa chứa bảng. Không thay điểm quy đổi bằng điểm gốc hoặc quy đổi tuyến tính tự suy đoán.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-NHH.html) · 2026-09-30
+[Nguồn đối chiếu](https://hvnh.edu.vn/medias/hvnh/vi/04.2026/system/archivedate/e4941859_2026.03.31.2028.Q%C4%90.HVNH.%20Quy%E1%BA%BFt%20%C4%91%E1%BB%8Bnh%20V%E1%BB%81%20vi%E1%BB%87c%20ban%20h%C3%A0nh%20th%C3%B4ng%20tin%20tuy%E1%BB%83n%20sinh%20%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20ch%C3%ADnh%20quy%20n%C4%83m%202026-NHH.pdf) · 2026-09-30
 
 
 ### Kết hợp học bạ THPT + ĐGNL đầu vào ĐH (V-SAT)
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 45. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 45. Tự tính mới: không.
 
 Điểm xét tuyển = Điểm học bạ THPT × 50% + Điểm V-SAT quy đổi × 50% + Điểm cộng + Điểm ưu tiên
 Điểm học bạ THPT = [(Môn chính × 2 + Môn 2 + Môn 3) × 3]/4
 
 Thang: Thang 30.
 
-- Điểm học bạ THPT: được tính trên điểm học bạ của 03 môn học tương ứng với các tổ hợp của mã xét tuyển (lấy trung bình cộng trong ba năm học THPT), trong đó nhân đôi điểm đối với môn chính và quy đổi về thang 30:
+- Thí sinh tốt nghiệp năm 2025 hoặc 2026; dùng trung bình ba năm các môn đúng tổ hợp, nhân đôi môn chính.
+- V-SAT 2026 từ 300 theo tổ hợp ngành.
+- Điểm thưởng HSG quốc gia: Nhất 3, Nhì 2,5, Ba 2. Điểm xét thưởng các diện tỉnh/chuyên/điểm thi xuất sắc tối đa 1,5; điểm khuyến khích chứng chỉ tối đa 1,5. Tổng cộng tuân thủ giới hạn 3/30.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Điểm V-SAT phải dùng bảng tương đương riêng năm 2026; đề án tháng 3 chưa chứa bảng. Không thay điểm quy đổi bằng điểm gốc hoặc quy đổi tuyến tính tự suy đoán.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-NHH.html) · 2026-09-30
+[Nguồn đối chiếu](https://hvnh.edu.vn/medias/hvnh/vi/04.2026/system/archivedate/e4941859_2026.03.31.2028.Q%C4%90.HVNH.%20Quy%E1%BA%BFt%20%C4%91%E1%BB%8Bnh%20V%E1%BB%81%20vi%E1%BB%87c%20ban%20h%C3%A0nh%20th%C3%B4ng%20tin%20tuy%E1%BB%83n%20sinh%20%C4%91%E1%BA%A1i%20h%E1%BB%8Dc%20ch%C3%ADnh%20quy%20n%C4%83m%202026-NHH.pdf) · 2026-09-30
 
 
 ### ƯTXT, XT thẳng
@@ -15937,7 +16053,7 @@ Thang: Không có thang điểm chung.
 
 ### Điểm thi THPT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
 
 Nhóm thông thường: ĐXT = M1 + M2 + M3 + ĐƯT + ĐC (thang 30)
 Nhóm STEM tích hợp Khoa học máy tính / Trí tuệ nhân tạo / Khoa học dữ liệu: ĐXT = 2 × Toán + M2 + M3 + ĐƯTQĐ + ĐCQĐ (thang 40)
@@ -15945,19 +16061,18 @@ Nhóm tích hợp Ngôn ngữ thương mại: ĐXT = Toán + 1,5 × Văn + 1,5 �
 
 Thang: Thang 30 / 40 theo nhóm chương trình.
 
-- Điểm môn là thi tốt nghiệp THPT 2026.
-- Chọn tổ hợp đúng nhóm chương trình; công thức hệ số 2 hoặc 1,5 không áp dụng toàn trường.
+- Dùng điểm thi THPT 2026 và đúng tổ hợp của chương trình.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Quyết định 2818 ngày 06/07/2026: cộng thêm 1,00 điểm vào ĐXT dùng HSA; bảng SAT thang 20 được điều chỉnh. Chưa tự tính khi còn bảng tương đương hoặc chênh lệch tổ hợp. Với điểm thi THPT thang 30 tại Hà Nội/HCM, tổ hợp A01, D01, D02, D03, D04, D06, D07 có chênh lệch giảm 1 so với A00 theo thông báo; Quảng Ninh không áp dụng. Bảng chênh lệch là ngưỡng so sánh, chưa suy ra phép tự cộng / trừ vào đầu vào.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://thongtintuyensinh.ftu.edu.vn/admissions-methods) · 2026-09-30
 
 
 ### Kết hợp điểm thi THPT + CCNN
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
 
 Nhóm thông thường: ĐXT = M1 + M2 + M3 + ĐƯT + ĐC (thang 30)
 Nhóm STEM tích hợp Khoa học máy tính / Trí tuệ nhân tạo / Khoa học dữ liệu: ĐXT = 2 × Toán + M2 + M3 + ĐƯTQĐ + ĐCQĐ (thang 40)
@@ -15965,19 +16080,19 @@ Nhóm tích hợp Ngôn ngữ thương mại: ĐXT = Toán + 1,5 × Văn + 1,5 �
 
 Thang: Thang 30 / 40 theo nhóm chương trình.
 
-- Điểm môn là thi tốt nghiệp THPT 2026.
-- Ngoại ngữ là điểm chứng chỉ quy đổi theo phụ lục 3; với nhóm kết hợp Toán–Lý hoặc Toán–Hóa, điểm chứng chỉ là M3; nhóm ngôn ngữ dùng đúng nhánh.
+- Dùng điểm thi THPT 2026 và đúng tổ hợp của chương trình.
+- Môn ngoại ngữ dùng điểm chứng chỉ quy đổi thang 10 theo phụ lục, không dùng IELTS thô.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Quyết định 2818 ngày 06/07/2026: cộng thêm 1,00 điểm vào ĐXT dùng HSA; bảng SAT thang 20 được điều chỉnh. Chưa tự tính khi còn bảng tương đương hoặc chênh lệch tổ hợp. Với điểm thi THPT thang 30 tại Hà Nội/HCM, tổ hợp A01, D01, D02, D03, D04, D06, D07 có chênh lệch giảm 1 so với A00 theo thông báo; Quảng Ninh không áp dụng. Bảng chênh lệch là ngưỡng so sánh, chưa suy ra phép tự cộng / trừ vào đầu vào.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://thongtintuyensinh.ftu.edu.vn/admissions-methods) · 2026-09-30
 
 
 ### Điểm học bạ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 40. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 40. Tự tính mới: không.
 
 Nhóm thông thường: ĐXT = M1 + M2 + M3 + ĐƯT + ĐC (thang 30)
 Nhóm STEM tích hợp Khoa học máy tính / Trí tuệ nhân tạo / Khoa học dữ liệu: ĐXT = 2 × Toán + M2 + M3 + ĐƯTQĐ + ĐCQĐ (thang 40)
@@ -15985,19 +16100,18 @@ Nhóm tích hợp Ngôn ngữ thương mại: ĐXT = Toán + 1,5 × Văn + 1,5 �
 
 Thang: Thang 30 / 40 theo nhóm chương trình.
 
-- Điểm môn học bạ là trung bình cả năm lớp 10, 11, 12; không lấy riêng điểm lớp 12.
-- Chọn tổ hợp đúng nhóm chương trình; công thức hệ số 2 hoặc 1,5 không áp dụng toàn trường.
+- Mỗi môn là trung bình cả năm lớp 10, 11, 12. Xét học sinh chuyên hoặc đạt giải HSG tỉnh theo điều kiện phương thức.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Quyết định 2818 ngày 06/07/2026: cộng thêm 1,00 điểm vào ĐXT dùng HSA; bảng SAT thang 20 được điều chỉnh. Chưa tự tính khi còn bảng tương đương hoặc chênh lệch tổ hợp. Với điểm thi THPT thang 30 tại Hà Nội/HCM, tổ hợp A01, D01, D02, D03, D04, D06, D07 có chênh lệch giảm 1 so với A00 theo thông báo; Quảng Ninh không áp dụng. Bảng chênh lệch là ngưỡng so sánh, chưa suy ra phép tự cộng / trừ vào đầu vào.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://thongtintuyensinh.ftu.edu.vn/admissions-methods) · 2026-09-30
 
 
 ### Kết hợp học bạ + CCNN
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
 
 Nhóm thông thường: ĐXT = M1 + M2 + M3 + ĐƯT + ĐC (thang 30)
 Nhóm STEM tích hợp Khoa học máy tính / Trí tuệ nhân tạo / Khoa học dữ liệu: ĐXT = 2 × Toán + M2 + M3 + ĐƯTQĐ + ĐCQĐ (thang 40)
@@ -16005,81 +16119,76 @@ Nhóm tích hợp Ngôn ngữ thương mại: ĐXT = Toán + 1,5 × Văn + 1,5 �
 
 Thang: Thang 30 / 40 theo nhóm chương trình.
 
-- Điểm môn học bạ là trung bình cả năm lớp 10, 11, 12; không lấy riêng điểm lớp 12.
-- Ngoại ngữ là điểm chứng chỉ quy đổi theo phụ lục 3; với nhóm kết hợp Toán–Lý hoặc Toán–Hóa, điểm chứng chỉ là M3; nhóm ngôn ngữ dùng đúng nhánh.
+- Mỗi môn là trung bình cả năm lớp 10, 11, 12. Xét học sinh chuyên hoặc đạt giải HSG tỉnh theo điều kiện phương thức.
+- Môn ngoại ngữ dùng điểm chứng chỉ quy đổi thang 10 theo phụ lục, không dùng IELTS thô.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Quyết định 2818 ngày 06/07/2026: cộng thêm 1,00 điểm vào ĐXT dùng HSA; bảng SAT thang 20 được điều chỉnh. Chưa tự tính khi còn bảng tương đương hoặc chênh lệch tổ hợp. Với điểm thi THPT thang 30 tại Hà Nội/HCM, tổ hợp A01, D01, D02, D03, D04, D06, D07 có chênh lệch giảm 1 so với A00 theo thông báo; Quảng Ninh không áp dụng. Bảng chênh lệch là ngưỡng so sánh, chưa suy ra phép tự cộng / trừ vào đầu vào.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://thongtintuyensinh.ftu.edu.vn/admissions-methods) · 2026-09-30
 
 
 ### Điểm ĐGNL HSA
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
 
-Công thức tính điểm xét tuyển: Kết quả bài thi ĐGNL của ĐHQG Hà Nội (HSA) năm 2026
-Điểm quy đổi về thang 30 của kết quả HSA = 27 + (Điểm ĐGNL của thí sinh - 100)×3/50 + Điểm ưu tiên, điểm thưởng (nếu có)
-Công thức tính điểm xét tuyển: Kết quả bài thi ĐGNL của ĐHQG Hà Nội (HSA) năm 2026
-Điểm quy đổi về thang 40 của kết quả HSA = [27 + (Điểm ĐGNL của thí sinh - 100)×3/50 ]×4/3 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
-Công thức tính điểm xét tuyển: Kết quả bài thi ĐGNL của ĐHQG Hà Nội (HSA) năm 2026, với Phần 3 - Tiếng Anh
-Điểm quy đổi về thang 40 của kết quả HSA = [27 + (Điểm ĐGNL của thí sinh - 100)×3/50]×4/3 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
+Nhóm thông thường: ĐXT = 27 + (HSA − 100) × 3/50 + ĐƯT + ĐC + 1,00
+Nhóm STEM / Ngôn ngữ tích hợp: ĐXT = [27 + (HSA − 100) × 3/50] × 4/3 + ĐƯTQĐ + ĐCQĐ + 1,00
 
-Thang: Thang 30 / Thang 40.
+Thang: Thang 30 / 40 theo nhóm chương trình.
 
-- Điểm quy đổi về thang 30 của kết quả HSA = 27 + (Điểm ĐGNL của thí sinh - 100)*3/50 + Điểm ưu tiên, điểm thưởng (nếu có)
+- HSA 2026 từ 100; phần 3 phải phù hợp chương trình. Khoản +1,00 là điều chỉnh ĐXT theo quyết định tháng 7, không tự nhân thành 4/3.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Quyết định 2818 ngày 06/07/2026: cộng thêm 1,00 điểm vào ĐXT dùng HSA; bảng SAT thang 20 được điều chỉnh. Chưa tự tính khi còn bảng tương đương hoặc chênh lệch tổ hợp.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://drive.google.com/file/d/18ClBR1eMGmNlfKv-mp0Lv87EVIbvU7c9/view) · 2026-09-30
 
 
 ### Kết hợp ĐGNL HSA + CCNN
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
 
-Nhóm CTTT, CLC, ĐHNN&PTQT và tích hợp Luật dân sự: ĐXT = [18 + (HSA − 100) × 2/50] + CCNNQĐ + ĐƯT + ĐC
-Nhóm STEM tích hợp: ĐXT = [27 + (HSA − 100) × 3/50] + CCNNQĐ + ĐƯTQĐ + ĐCQĐ
-Nhóm tích hợp Ngôn ngữ thương mại: ĐXT = [18 + (HSA − 100) × 2/50] + 2 × CCNNQĐ + ĐƯTQĐ + ĐCQĐ
+Nhóm CTTT, CLC, ĐHNN&PTQT và tích hợp Luật dân sự: ĐXT = [18 + (HSA − 100) × 2/50] + CCNNQĐ + ĐƯT + ĐC + 1,00
+Nhóm STEM tích hợp: ĐXT = [27 + (HSA − 100) × 3/50] + CCNNQĐ + ĐƯTQĐ + ĐCQĐ + 1,00
+Nhóm tích hợp Ngôn ngữ thương mại: ĐXT = [18 + (HSA − 100) × 2/50] + 2 × CCNNQĐ + ĐƯTQĐ + ĐCQĐ + 1,00
 
 Thang: Thang 30 / 40 theo nhóm chương trình.
 
-- CCNNQĐ theo phụ lục 3, không lấy IELTS / TOEFL thô để cộng.
-- Dùng HSA năm 2026 đạt ngưỡng 100; đối chiếu đúng chương trình và điều kiện điểm thành phần.
+- HSA từ 100, chứng chỉ còn thời hạn; dùng đúng nhóm chương trình và phần 3.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Quyết định 2818 ngày 06/07/2026: cộng thêm 1,00 điểm vào ĐXT dùng HSA; bảng SAT thang 20 được điều chỉnh. Chưa tự tính khi còn bảng tương đương hoặc chênh lệch tổ hợp.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://drive.google.com/file/d/18ClBR1eMGmNlfKv-mp0Lv87EVIbvU7c9/view) · 2026-09-30
 
 
 ### Điểm ĐGNL V-ACT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 35. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 35. Tự tính mới: không.
 
 Công thức tính điểm xét tuyển: Kết quả bài thi ĐGNL của ĐHQG TP. HCM (V-ACT) năm 2026.
 Điểm quy đổi về thang 30 của kết quả V-ACT = 27 + (Điểm ĐGNL của thí sinh - 850)×3/350 + Điểm ưu tiên, điểm thưởng (nếu có)
 Công thức tính điểm xét tuyển: Kết quả bài thi ĐGNL của ĐHQG TP. HCM (V-ACT) năm 2026.
 Điểm quy đổi về thang 40 của kết quả V-ACT = [27 + (Điểm ĐGNL của thí sinh - 850)×3/350]×4/3 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
 
-Thang: Thang 30 / Thang 40.
+Thang: Thang 30 / 40 theo nhóm chương trình.
 
-- Điểm quy đổi về thang 30 của kết quả V-ACT = 27 + (Điểm ĐGNL của thí sinh - 850)*3/350 + Điểm ưu tiên, điểm thưởng (nếu có)
+- V-ACT 2026 từ 850, dùng đúng nhóm chương trình.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Nếu kết hợp CCNN, điểm chứng chỉ theo phụ lục thang 10. Điểm sau phương thức vẫn phải đối chiếu bảng tương đương và nhóm chương trình.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://thongtintuyensinh.ftu.edu.vn/admissions-methods) · 2026-09-30
 
 
 ### Kết hợp ĐGNL V-ACT + CCNN
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
 
 Nhóm CTTT, CLC, ĐHNN&PTQT và tích hợp Luật dân sự: ĐXT = [18 + (V-ACT − 850) × 2/350] + CCNNQĐ + ĐƯT + ĐC
 Nhóm STEM tích hợp: ĐXT = [27 + (V-ACT − 850) × 3/350] + CCNNQĐ + ĐƯTQĐ + ĐCQĐ
@@ -16087,35 +16196,35 @@ Nhóm tích hợp Ngôn ngữ thương mại: ĐXT = [18 + (V-ACT − 850) × 2/
 
 Thang: Thang 30 / 40 theo nhóm chương trình.
 
-- CCNNQĐ theo phụ lục 3, không lấy IELTS / TOEFL thô để cộng.
-- Dùng V-ACT năm 2026 đạt ngưỡng 850; đối chiếu đúng chương trình và điều kiện điểm thành phần.
+- V-ACT 2026 từ 850, dùng đúng nhóm chương trình.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Nếu kết hợp CCNN, điểm chứng chỉ theo phụ lục thang 10. Điểm sau phương thức vẫn phải đối chiếu bảng tương đương và nhóm chương trình.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://thongtintuyensinh.ftu.edu.vn/admissions-methods) · 2026-09-30
 
 
 ### Điểm Đánh giá Tư duy
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
 
 Điểm quy đổi về thang 40 của kết quả TSA = [27 + (Điểm ĐGNL của thí sinh - 70)×3/30]×4/3 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
 
-Thang: Thang 40.
+Thang: Thang 40, chỉ nhóm STEM.
 
+- TSA 2026 từ 70, chỉ chương trình STEM tích hợp; không mở sang các ngành khác.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Nếu kết hợp CCNN, điểm chứng chỉ theo phụ lục thang 10. Điểm sau phương thức vẫn phải đối chiếu bảng tương đương và nhóm chương trình.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://thongtintuyensinh.ftu.edu.vn/admissions-methods) · 2026-09-30
 
 
 ### Kết hợp ĐGNL quốc tế + CCNN
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
 
 Nhóm thông thường, SAT/ACT: ĐXT = điểm chứng chỉ quy đổi thang 20 + CCNNQĐ + ĐƯT + ĐC
 Nhóm STEM, SAT/ACT: ĐXT = (điểm chứng chỉ quy đổi thang 20 + CCNNQĐ) × 4/3 + ĐƯTQĐ + ĐCQĐ
@@ -16124,13 +16233,13 @@ A-Level: dùng Toán quy đổi + môn khác quy đổi + CCNNQĐ; nhóm STEM nh
 
 Thang: Thang 30 / 40 theo nhóm chương trình.
 
-- Chứng chỉ được quy đổi theo phụ lục của Ngoại thương; không thay điểm thô cho điểm quy đổi.
+- SAT từ 1380 hoặc ACT từ 30; A-Level Toán từ A. Chứng chỉ ngoại ngữ còn thời hạn và theo phụ lục.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: SAT → thang 20: 1380–1390 → 17,50; 1400–1420 → 18; 1430–1470 → 18,50; 1480–1490 → 19; 1500–1520 → 19,50; 1530–1540 → 19,75; 1550–1570 → 19,90; 1580–1600 → 20. ACT và A-Level dùng bảng riêng tại cổng tuyển sinh; không thế bằng SAT. Quyết định 2818 ngày 06/07/2026: cộng thêm 1,00 điểm vào ĐXT dùng HSA; bảng SAT thang 20 được điều chỉnh. Chưa tự tính khi còn bảng tương đương hoặc chênh lệch tổ hợp.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://drive.google.com/file/d/18ClBR1eMGmNlfKv-mp0Lv87EVIbvU7c9/view) · 2026-09-30
 
 
 ### ƯTXT, XT thẳng
@@ -16153,81 +16262,53 @@ Thang: Không có thang điểm chung.
 
 ### Điểm thi THPT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 9. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 9. Tự tính mới: không.
 
-Công thức tính điểm xét tuyển:
-ĐXT= M1 + M2 + M3 + Điểm ưu tiên, Điểm thưởng (nếu có)
-Công thức tính điểm:
-ĐXT= M1×2 + M2 + M3 + Điểm ưu tiên, Điểm thưởng quy đổi (nếu có)
-Công thức tính điểm:
-ĐXT= M1 + M2×1,5 + M3×1,5 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
-Công thức tính điểm xét tuyển:
-ĐXT= M1 + M2 + M3 + Điểm ưu tiên, điểm thưởng (nếu có)
-Công thức tính điểm xét tuyển:
-ĐXT= M1×2 + M2 + M3 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
+ĐXT = M1 + M2 + M3 + ĐƯT + ĐC
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- ĐXT= M1 + M2 + M3 + Điểm ưu tiên, Điểm thưởng (nếu có)
-- - M1, M2, M3: Điểm thi tốt nghiệp THPT năm 2026 của từng môn thuộc tổ hợp môn xét tuyển của Trường.
-- - Điểm ưu tiên, điểm thưởng: quy định chi tiết tại Phụ lục 2.
-- - M1: điểm thi tốt nghiệp THPT năm 2026 của môn Toán;
-- - M2, M3: điểm thi tốt nghiệp THPT năm 2026 của 02 môn: Vật lý + Hóa Học hoặc Vật lý + Tiếng Anh hoặc Hóa học + Tiếng Anh hoặc Ngữ văn + Tiếng Anh;
-- - Điểm ưu tiên, điểm thưởng: quy định chi tiết tại Phụ lục 2
-- - M2: điểm thi tốt nghiệp THPT năm 2026 của môn Ngữ văn;
-- - M3: điểm thi tốt nghiệp THPT năm 2026 của môn Ngoại ngữ (Tiếng Anh hoặc Tiếng Pháp hoặc Tiếng Nhật hoặc Tiếng Trung).
-- ĐXT= M1 + M2 + M3 + Điểm ưu tiên, điểm thưởng (nếu có)
-- - M2: điểm thi tốt nghiệp THPT năm 2026 của môn Vật lý hoặc Hóa học hoặc Ngữ văn;
-- - M3: điểm quy đổi Chứng chỉ Ngoại ngữ quốc tế (Bảng quy đổi chi tiết tại Phụ lục 3);
-- - M3: điểm quy đổi Chứng chỉ Ngoại ngữ quốc tế (Tiếng Anh hoặc Tiếng Pháp hoặc Tiếng Nhật hoặc Tiếng Trung) (Bảng quy đổi chi tiết tại Phụ lục 3);
+- Dùng điểm thi THPT 2026 đúng tổ hợp; các chương trình đang có trong hồ sơ HCM dùng thang 30. Không áp dụng nhánh STEM/ngôn ngữ chưa có tại cơ sở này.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Có nhánh kết hợp CCNN: M3 là điểm ngoại ngữ đã quy đổi, M1 là Toán; dùng điều kiện chương trình và bảng tương đương 2026. Chênh lệch tổ hợp tại HCM theo quyết định 2818.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-nam-NTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://thongtintuyensinh.ftu.edu.vn/admissions-methods) · 2026-09-30
 
 
 ### Điểm ĐGNL HSA
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 6. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 6. Tự tính mới: không.
 
-Công thức tính điểm xét tuyển: Kết quả bài thi ĐGNL của ĐHQG Hà Nội (HSA) năm 2026
-Điểm quy đổi về thang 30 của kết quả HSA = 27 + (Điểm ĐGNL của thí sinh - 100)×3/50 + Điểm ưu tiên, điểm thưởng (nếu có)
-Công thức tính điểm xét tuyển: Kết quả bài thi ĐGNL của ĐHQG Hà Nội (HSA) năm 2026
-Điểm quy đổi về thang 40 của kết quả HSA = [27 + (Điểm ĐGNL của thí sinh - 100)×3/50 ]×4/3 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
-Công thức tính điểm xét tuyển: Kết quả bài thi ĐGNL của ĐHQG Hà Nội (HSA) năm 2026, với Phần 3 - Tiếng Anh
-Điểm quy đổi về thang 40 của kết quả HSA = [27 + (Điểm ĐGNL của thí sinh - 100)×3/50]×4/3 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
+ĐXT = 27 + (HSA − 100) × 3/50 + ĐƯT + ĐC + 1,00
 
-Thang: Thang 30 / Thang 40.
+Thang: Thang 30.
 
-- Điểm quy đổi về thang 30 của kết quả HSA = 27 + (Điểm ĐGNL của thí sinh - 100)*3/50 + Điểm ưu tiên, điểm thưởng (nếu có)
+- HSA 2026 từ 100; chỉ các chương trình đã có trong phạm vi phương thức ở HCM.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Quyết định 2818 ngày 06/07/2026: cộng thêm 1,00 điểm vào ĐXT dùng HSA; bảng SAT thang 20 được điều chỉnh. Chưa tự tính khi còn bảng tương đương hoặc chênh lệch tổ hợp.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-nam-NTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://drive.google.com/file/d/18ClBR1eMGmNlfKv-mp0Lv87EVIbvU7c9/view) · 2026-09-30
 
 
 ### Điểm ĐGNL V-ACT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 6. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 6. Tự tính mới: không.
 
-Công thức tính điểm xét tuyển: Kết quả bài thi ĐGNL của ĐHQG TP. HCM (V-ACT) năm 2026.
-Điểm quy đổi về thang 30 của kết quả V-ACT = 27 + (Điểm ĐGNL của thí sinh - 850)×3/350 + Điểm ưu tiên, điểm thưởng (nếu có)
-Công thức tính điểm xét tuyển: Kết quả bài thi ĐGNL của ĐHQG TP. HCM (V-ACT) năm 2026.
-Điểm quy đổi về thang 40 của kết quả V-ACT = [27 + (Điểm ĐGNL của thí sinh - 850)×3/350]×4/3 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
+ĐXT = 27 + (V-ACT − 850) × 3/350 + ĐƯT + ĐC
 
-Thang: Thang 30 / Thang 40.
+Thang: Thang 30.
 
-- Điểm quy đổi về thang 30 của kết quả V-ACT = 27 + (Điểm ĐGNL của thí sinh - 850)*3/350 + Điểm ưu tiên, điểm thưởng (nếu có)
+- V-ACT 2026 từ 850; chỉ các chương trình đã có trong phạm vi phương thức ở HCM.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Cần đối chiếu bảng điểm tương đương 2026 trước khi so sánh ngưỡng.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-nam-NTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://thongtintuyensinh.ftu.edu.vn/admissions-methods) · 2026-09-30
 
 
 ### Điểm Đánh giá Tư duy
@@ -16248,29 +16329,23 @@ Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm 
 - Quy định TSA chỉ cho Khoa học máy tính, Trí tuệ nhân tạo, Khoa học dữ liệu; danh mục của cơ sở phía Nam không có ba chương trình này. Không lấy ngành ở Hà Nội để gán cho NTS.
 - Có mâu thuẫn giữa các nguồn; chưa xác nhận biểu thức và phạm vi.
 
-### Điểm thi THPT
+### Kết hợp HSA / V-ACT + chứng chỉ ngoại ngữ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 9. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 5. Tự tính mới: không.
 
-M1: điểm quy đổi về thang 20 của kết quả HSA = 18 + (Điểm ĐGNL của thí sinh - 100)×2/50.
-M1: điểm quy đổi về thang 20 của kết quả V-ACT = 18 + (Điểm ĐGNL của thí sinh - 850)×2/350.
-M1: điểm quy đổi về thang 30 của kết quả HSA = 27 + (Điểm ĐGNL của thí sinh - 100)×3/50.
-M1: điểm quy đổi về thang 30 của kết quả V-ACT = 27 + (Điểm ĐGNL của thí sinh - 850)×3/350.
+HSA: ĐXT = 18 + (HSA − 100) × 2/50 + CCNNQĐ + ĐƯT + ĐC + 1,00
+V-ACT: ĐXT = 18 + (V-ACT − 850) × 2/350 + CCNNQĐ + ĐƯT + ĐC
 
 Thang: Thang 30.
 
-- M1 + M2 + Điểm ưu tiên, điểm thưởng (nếu có) |
-- M1: điểm quy đổi về thang 20 của kết quả HSA = 18 + (Điểm ĐGNL của thí sinh - 100)*2/50.
-- M2: điểm quy đổi Chứng chỉ Ngoại ngữ quốc tế. |
-- M1: điểm quy đổi về thang 20 của kết quả V-ACT = 18 + (Điểm ĐGNL của thí sinh - 850)*2/350.
-- M1: điểm quy đổi về thang 30 của kết quả HSA = 27 + (Điểm ĐGNL của thí sinh - 100)*3/50.
-- M1: điểm quy đổi về thang 30 của kết quả V-ACT = 27 + (Điểm ĐGNL của thí sinh - 850)*3/350.
+- Chỉ chương trình CLC hoặc ĐHNN&PTQT tại HCM trong danh mục; không mở nhánh này cho chương trình tiêu chuẩn.
+- CCNNQĐ là điểm quy đổi thang 10; HSA từ 100 hoặc V-ACT từ 850 và đáp ứng điều kiện phần 3.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Quyết định 2818 ngày 06/07/2026: cộng thêm 1,00 điểm vào ĐXT dùng HSA; bảng SAT thang 20 được điều chỉnh. Chưa tự tính khi còn bảng tương đương hoặc chênh lệch tổ hợp.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-nam-NTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://drive.google.com/file/d/18ClBR1eMGmNlfKv-mp0Lv87EVIbvU7c9/view) · 2026-09-30
 
 
 ### ƯTXT, XT thẳng
@@ -16287,66 +16362,41 @@ Thang: Không có thang điểm chung.
 [Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-nam-NTS.html) · 2026-09-30
 
 
-### Điểm thi THPT
+### Học bạ / học bạ kết hợp chứng chỉ ngoại ngữ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 9. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 9. Tự tính mới: không.
 
-Công thức xét tuyển:
-ĐXT = M1 + M2 + M3 + Điểm ưu tiên, điểm thưởng (nếu có)
-Công thức xét tuyển:
-ĐXT= M1×2 + M2 + M3 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
-ĐXT= M1 + M2×1,5 + M3×1,5 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
-Công thức tính điểm xét tuyển:
-ĐXT= M1 + M2 + M3 + Điểm ưu tiên, điểm thưởng (Nếu có)
-Công thức tính điểm xét tuyển:
-ĐTX= M1×2 + M2 + M3 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
-Công thức tính điểm xét tuyển:
-ĐXT= M1 + M2×1,5 + M3×1,5 + Điểm ưu tiên, điểm thưởng quy đổi (nếu có)
+ĐXT = M1 + M2 + M3 + ĐƯT + ĐC
+Mi = (điểm cả năm lớp 10 + lớp 11 + lớp 12 môn i) / 3; nhánh kết hợp dùng M3 = CCNNQĐ
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- ĐXT = M1 + M2 + M3 + Điểm ưu tiên, điểm thưởng (nếu có)
-- - M1, M2, M3: điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 của từng môn thuộc tổ hợp môn xét tuyển của Trường;
-- - Điểm ưu tiên, điểm thưởng: quy định chi tiết tại Phụ lục 2.
-- - M1: điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 của môn Toán; M2, M3: điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 của 02 môn: Hóa học + Vật Lý hoặc Hóa học + Tiếng Anh hoặc Vật lý + Tiếng Anh hoặc Ngữ văn + Tiếng Anh;
-- - M1: điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 của môn Toán;
-- - M2: điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 của môn Ngữ văn;
-- - M3: điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 môn Ngoại ngữ (Tiếng Anh hoặc Tiếng Pháp hoặc Tiếng Nhật hoặc Tiếng Trung);
-- ĐXT= M1 + M2 + M3 + Điểm ưu tiên, điểm thưởng (Nếu có)
-- - M2: điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 của môn Vật lý hoặc Hóa học hoặc Ngữ văn;
-- - M3: điểm quy đổi Chứng chỉ Ngoại ngữ quốc tế (Bảng quy đổi chi tiết tại Phụ lục 3);
-- - M2 là điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 của môn Vật lý hoặc Hóa học hoặc Ngữ văn;
+- M1–M3 dùng trung bình môn ba năm; nhánh kết hợp thay ngoại ngữ bằng chứng chỉ quy đổi thang 10.
+- Chỉ học sinh chuyên hoặc đạt giải HSG tỉnh theo điều kiện 2026; giữ chương trình HCM.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Dùng bảng tương đương học bạ hoặc học bạ + CCNN và nhóm chương trình tại phụ lục quyết định 2818; không lấy tổng học bạ so trực tiếp với điểm chuẩn THPT.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-nam-NTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://thongtintuyensinh.ftu.edu.vn/admissions-methods) · 2026-09-30
 
 
 ### Đánh giá năng lực quốc tế kết hợp với CCQT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 5. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 5. Tự tính mới: không.
 
-Điểm chứng chỉ bài thi quốc tế được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Chứng chỉ ngoại ngữ được sử dụng theo điều kiện và bảng quy đổi hoặc điểm cộng do trường công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+SAT/ACT: ĐXT = điểm chứng chỉ quy đổi thang 20 + CCNNQĐ + ĐƯT + ĐC
+A-Level: ĐXT = Toán quy đổi + môn khác quy đổi + CCNNQĐ + ĐƯT + ĐC
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- M1 + M2 + Điểm ưu tiên, điểm thưởng (nếu có) |
-- M1: điểm quy đổi kết quả chứng chỉ SAT hoặc ACT (thang 20 điểm).
-- M2: điểm quy đổi Chứng chỉ Ngoại ngữ quốc tế.
-- M1 + M2 + M3 + Điểm ưu tiên, điểm thưởng (nếu có) |
-- M1: điểm quy đổi môn Toán (Mathematics) trong chứng chỉ A-Level.
-- M2: điểm quy đổi môn bất kỳ khác môn Toán (Mathematics) trong chứng chỉ A-Level.
-- M3: điểm quy đổi Chứng chỉ Ngoại ngữ quốc tế.
+- Chỉ chương trình CLC hoặc ĐHNN&PTQT trong danh mục HCM.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: SAT → thang 20: 1380–1390 → 17,50; 1400–1420 → 18; 1430–1470 → 18,50; 1480–1490 → 19; 1500–1520 → 19,50; 1530–1540 → 19,75; 1550–1570 → 19,90; 1580–1600 → 20. ACT/A-Level và CCNN có bảng riêng. Chưa tự tính nếu chưa đối chiếu đủ bảng và ngưỡng tương đương.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-nam-NTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://drive.google.com/file/d/18ClBR1eMGmNlfKv-mp0Lv87EVIbvU7c9/view) · 2026-09-30
 
 
 ## NTT — Trường Đại học Nguyễn Tất Thành
@@ -16383,17 +16433,17 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 ### Điểm học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 63. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 63. Tự tính mới: không.
 
-Sử dụng kết quả học tập lớp 12; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = ĐTB môn 1 + ĐTB môn 2 + ĐTB môn 3 + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Dùng điểm trung bình môn theo điều kiện học bạ của phương thức; không suy ra học kỳ khác khi chưa được nguồn xác nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-tat-thanh-NTT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-truong-dai-hoc-nguyen-tat-thanh-nttu-2026-638.html) · 2026-09-30
 
 
 ### Điểm ĐGNL HSA
@@ -17997,36 +18047,41 @@ Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm 
 
 ### Điểm xét tuyển kết hợp
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
 
-Thang điểm: 100 điểm.
-Điểm ĐGNL quy đổi = Điểm bài thi ĐGNL × 100/1.200
-Điểm TNTHPT quy đổi = Tổng điểm các bài thi tốt nghiệp THPT theo tổ hợp × 100/30.
-Điểm Học bạ quy đổi = Tổng điểm trung bình các môn học ở bậc THPT theo tổ hợp × 100/30. Tổ hợp xét tuyển sử dụng điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12.
+ĐXT = ĐHL + ĐC + ĐƯT
+ĐT1 có V-ACT: ĐHL = 0,55 × X + 0,35 × Y + 0,10 × Z
+ĐT2 không có V-ACT: ĐHL = 0,90 × Y + 0,10 × Z
+ĐT3 tự do chỉ có V-ACT: ĐHL = 0,90 × X + 0,10 × Z
+ĐT4 chứng chỉ quốc tế: ĐHL = điểm CCQT quy đổi
+X = V-ACT × 100/1200; Y = tổng tổ hợp thi THPT × 100/30
+Z = tổng điểm trung bình sáu học kỳ của ba môn tổ hợp × 100/30
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 100.
+
+- Năm 2026: α = 1, β1 = 0,55, β2 = 0,35, β3 = 0,10; xét điểm có lợi nhất nếu đủ nhiều đối tượng.
+- Không dùng công thức 50% THPT + 50% học bạ của chương trình liên kết cử nhân Anh quốc cho các chương trình đại học UEL này.
+
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
+
+Quy đổi: CCQT quốc tế dùng phụ lục riêng; điểm cộng không quá 10/100. Ngưỡng nguồn tuyển, chuẩn tiếng Anh và chương trình phải được kiểm tra riêng.
+
+[Nguồn đối chiếu](https://tuyensinh.uel.edu.vn/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026/) · 2026-09-30
 
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+### Xét tuyển thẳng / hồ sơ thí sinh nước ngoài
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Xét điều kiện / hồ sơ, không có phép cộng chung. Ngành / chương trình trong phạm vi: 38. Tự tính mới: không.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-luat-tphcm-QSK.html) · 2026-09-30
+Xét điều kiện xét tuyển thẳng và hồ sơ thí sinh nước ngoài; hội đồng xếp hạng theo thành tích / học lực và chỉ tiêu. Không tính tổng điểm theo phương thức tổng hợp.
 
+Thang: Xét điều kiện / hồ sơ.
 
-### Xét tuyển tổng hợp
+- Đối chiếu điều kiện giải HSG, học lực và ngôn ngữ của phương thức 1; tên mục nguồn ban đầu ghi “Xét tuyển tổng hợp” không khớp nội dung.
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 76. Tự tính mới: không.
+Ưu tiên: Theo chính sách đối tượng của từng diện xét tuyển thẳng..
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
-
-Thang: Theo quy định và bảng quy đổi của trường.
-
-- Đối với thí sinh đoạt giải học sinh giỏi Nhất, Nhì, Ba quốc gia phải có môn thi đoạt giải nằm trong tổ hợp xét tuyển của Trường. Điểm trung bình cộng học lực 03 năm THPT đạt loại Tốt từ 8,0 trở lên.
-
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
-
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-luat-tphcm-QSK.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.uel.edu.vn/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026/) · 2026-09-30
 
 
 ## QSP — Phân hiệu Đại học Quốc gia TP.HCM tại tỉnh Bến Tre
@@ -18693,62 +18748,64 @@ Thang: Không có thang điểm chung.
 
 ### Điểm thi THPT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 16. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 16. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = M1 + M2 + M3 + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Điểm thi THPT theo tổ hợp; ưu tiên giảm từ 22,5.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-SKV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-truong-dai-hoc-su-pham-ky-thuat-vinh-vuted-2026-635.html) · 2026-09-30
 
 
 ### Điểm học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 16. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 16. Tự tính mới: không.
 
-Sử dụng kết quả học tập lớp 10, 11 và 12; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = điểm học tập × 3 + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Điểm học tập là trung bình ba môn tổ hợp qua sáu học kỳ, làm tròn một chữ số trước khi nhân 3.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-SKV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-truong-dai-hoc-su-pham-ky-thuat-vinh-vuted-2026-635.html) · 2026-09-30
 
 
 ### Điểm ĐGNL HSA
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 16. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 16. Tự tính mới: không.
 
-Điểm HSA của ĐHQG Hà Nội được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = HSA × 30/150 + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-SKV.html) · 2026-09-30
+Quy đổi: Quy định quy đổi HSA theo nguồn năm 2026; chưa bật tự tính khi chưa đối chiếu nguồn chính thức.
+
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-truong-dai-hoc-su-pham-ky-thuat-vinh-vuted-2026-635.html) · 2026-09-30
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 16. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 16. Tự tính mới: không.
 
-Điểm ĐGNL của ĐH Sư phạm Hà Nội được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = điểm ĐGNL Sư phạm Hà Nội đã quy đổi + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-SKV.html) · 2026-09-30
+Quy đổi: Bài thi Sư phạm Hà Nội cần bảng riêng; không lấy điểm gốc / 150 × 30.
+
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-truong-dai-hoc-su-pham-ky-thuat-vinh-vuted-2026-635.html) · 2026-09-30
 
 
 ### ƯTXT, XT thẳng

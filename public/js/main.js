@@ -12,11 +12,11 @@ import { createFinderScoreContext, createScoreProfile, finderContextIsFresh, for
 import { moveWishById, normalizeWish, normalizeWishList, removeWishById, wishIdentity } from "./core/wishList.js";
 import { autoFillTranscript } from "./autoFillTranscript.js";
 import { TranscriptPreview } from "./transcriptPreview.js";
-import { TranscriptScanner } from "./transcriptScanner.js?v=20260929-1";
+import { TranscriptScanner } from "./transcriptScanner.js?v=20261001-1";
 import { turnstileGate } from "./turnstile.js";
-import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js";
-import { AccountApp, hasStoredAuthSession } from "./account.js?v=20260930-2";
-import { AdmissionsAssistant } from "./assistant.js?v=20260930-1";
+import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261001-1";
+import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-1";
+import { AdmissionsAssistant } from "./assistant.js?v=20261001-1";
 import { calculateSchoolFormula, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20260930-2";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";

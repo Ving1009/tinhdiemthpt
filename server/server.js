@@ -50,7 +50,7 @@ function localDevelopmentCors(request, response, next) {
 function applySecurityHeaders(request, response, next) {
   const forwardedProtocol = String(request.headers["x-forwarded-proto"] || "").split(",", 1)[0].trim().toLocaleLowerCase("en");
   const isHttps = request.secure || forwardedProtocol === "https";
-  for (const [name, value] of Object.entries(securityHeaders({ isHttps }))) response.setHeader(name, value);
+  for (const [name, value] of Object.entries(securityHeaders({ isHttps, pathname: request.path }))) response.setHeader(name, value);
   next();
 }
 

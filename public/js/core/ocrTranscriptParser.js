@@ -11,21 +11,21 @@ function normalizeText(value) {
 }
 
 function scoreNumbers(value) {
-  return [...String(value).matchAll(/(?:^|\s)(10(?:[.,]0{1,2})?|[0-9](?:[.,][0-9]{1,2})?)(?=\s|$)/g)]
+  return [...String(value).matchAll(/(?:^|\s)([0-9]+(?:[.,][0-9]{1,2})?)(?=\s|$)/g)]
     .map((match) => Number(match[1].replace(",", ".")))
-    .filter((score) => Number.isFinite(score) && score >= 0 && score <= 10);
+    .map((score) => Number.isFinite(score) && score >= 0 && score <= 10 ? score : null);
 }
 
 function gradeFrom(value) {
-  const match = normalizeText(value).match(/\b(?:lop|khoi|grade)\s*(10|11|12)\b/);
+  const match = normalizeText(value).match(/\b(?:lop|khoi|grade)\s*[:.-]?\s*(10|11|12)(?=$|[^0-9])/);
   return match ? Number(match[1]) : null;
 }
 
 function layoutFrom(text) {
   const value = normalizeText(text);
   return {
-    semester1: /\b(?:hk\s*1|hk\s*i|hoc k[yi]\s*1|hoc k[yi]\s*i)\b/.test(value),
-    semester2: /\b(?:hk\s*2|hk\s*ii|hoc k[yi]\s*2|hoc k[yi]\s*ii)\b/.test(value),
+    semester1: /\b(?:hk|hoc\s*k[yi])\s*(?:1|i)\b/.test(value),
+    semester2: /\b(?:hk|hoc\s*k[yi])\s*(?:2|ii)\b/.test(value),
     year: /\b(?:ca\s*nam|tbcn|tbm\s*cn|trung binh nam)\b/.test(value),
     threeGrades: [10, 11, 12].every((grade) => new RegExp(`\\b(?:lop|khoi|grade)\\s*${grade}\\b`).test(value))
   };
@@ -95,7 +95,7 @@ export function parseOcrTranscriptPages(pages, catalog) {
     const lines = String(page.text || "").split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
     studentName ||= studentNameFrom(lines);
     const layout = layoutFrom(page.text);
-    const explicitGrades = [...new Set(lines.map(gradeFrom).filter(Boolean))];
+    const explicitGrades = [...new Set([gradeFrom(page.text), ...lines.map(gradeFrom)].filter(Boolean))];
     const pageGrade = gradeFrom(page.originalname) || (!layout.threeGrades && explicitGrades.length === 1 ? explicitGrades[0] : null);
     let currentGrade = pageGrade;
 
@@ -127,7 +127,10 @@ export function parseOcrTranscriptPages(pages, catalog) {
         continue;
       }
       const parsed = row(match.subject, currentGrade, values, confidence, layout);
-      if (parsed) scores.push(parsed);
+      if (parsed) {
+        scores.push(parsed);
+        if (values.includes(null)) warnings.push(`${match.subject} lớp ${currentGrade}: ô điểm ngoài 0–10 được để trống, hãy đối chiếu ảnh gốc.`);
+      }
       else warnings.push(`${match.subject} lớp ${currentGrade}: chưa xác định chắc cột HK1, HK2 hoặc cả năm.`);
     }
   }

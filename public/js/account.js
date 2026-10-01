@@ -199,7 +199,12 @@ export class AccountApp {
   async logout() {
     this.cancelPendingSync();
     try { await this.request("/api/auth/logout", { method: "POST" }); }
-    catch { /* Cookie cục bộ vẫn được coi là hết phiên ở giao diện. */ }
+    catch (error) {
+      if (error?.code !== "AUTH_REQUIRED") {
+        this.setStatus("Chưa thể đăng xuất. Hãy kiểm tra kết nối và thử lại.", true);
+        return;
+      }
+    }
     this.isChangingAccount = true;
     try {
       this.dataIsolation.clearSession();
@@ -298,7 +303,7 @@ export class AccountApp {
     this.button.classList.add("is-signed-in");
     this.button.textContent = initial;
     this.button.setAttribute("aria-label", `Tài khoản ${username}`);
-    this.root.querySelector("[data-account-content]").innerHTML = `<div class="account-profile"><span aria-hidden="true">${escapeHTML(initial)}</span><div><strong>${escapeHTML(username)}</strong><small>Tài khoản Tính Điểm THPT</small></div></div><p>Dữ liệu tính điểm, nguyện vọng và lịch sử thi thử có thể tự sao lưu khi bạn thay đổi.</p><div class="account-actions"><button class="button button-primary" type="button" data-account-backup>Sao lưu ngay</button><button class="button button-light" type="button" data-account-restore>Khôi phục bản sao</button></div><p class="account-status" data-account-status aria-live="polite">Đã đăng nhập bằng phiên bảo mật.</p><button class="account-logout" type="button" data-account-logout>Đăng xuất</button>`;
+    this.root.querySelector("[data-account-content]").innerHTML = `<div class="account-profile"><span aria-hidden="true">${escapeHTML(initial)}</span><div><strong id="account-title">${escapeHTML(username)}</strong><small>Tài khoản Tính Điểm THPT</small></div></div><p>Dữ liệu tính điểm, nguyện vọng và lịch sử thi thử có thể tự sao lưu khi bạn thay đổi.</p><div class="account-actions"><button class="button button-primary" type="button" data-account-backup>Sao lưu ngay</button><button class="button button-light" type="button" data-account-restore>Khôi phục bản sao</button></div><p class="account-status" data-account-status aria-live="polite">Đã đăng nhập bằng phiên bảo mật.</p><button class="account-logout" type="button" data-account-logout>Đăng xuất</button>`;
   }
 
   renderGuest() {

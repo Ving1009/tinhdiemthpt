@@ -11,17 +11,24 @@ function apiUrl(path) {
   return url;
 }
 
-async function requestGroqAnswer(input) {
-  const response = await fetch(apiUrl("/api/assistant-chat"), {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(input)
-  });
-  const payload = await response.json().catch(() => null);
-  if (!response.ok || !payload?.success || !payload?.data?.answer) {
-    throw new Error(payload?.error?.message || "Trợ lý AI tạm thời chưa phản hồi.");
+export async function requestAssistantAnswer(input, { fetchImpl = globalThis.fetch.bind(globalThis), timeoutMs = 25_000 } = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetchImpl(apiUrl("/api/assistant-chat"), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(input),
+      signal: controller.signal
+    });
+    const payload = await response.json().catch(() => null);
+    if (!response.ok || !payload?.success || !payload?.data?.answer) {
+      throw new Error(payload?.error?.message || "Trợ lý AI tạm thời chưa phản hồi.");
+    }
+    return payload.data;
+  } finally {
+    clearTimeout(timer);
   }
-  return payload.data;
 }
 
 function element(tag, className, text) {
@@ -198,7 +205,7 @@ export class AdmissionsAssistant {
       }
       let responseText = answer.text;
       try {
-        const remote = await requestGroqAnswer({
+        const remote = await requestAssistantAnswer({
           question,
           history: this.history,
           context: { localSummary: answer.text, cards: answer.cards || [] }

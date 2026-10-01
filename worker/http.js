@@ -5,8 +5,9 @@ export const JSON_HEADERS = { "Content-Type": "application/json; charset=utf-8" 
 
 export function withSecurityHeaders(request, response) {
   const headers = new Headers(response.headers);
-  const isHttps = new URL(request.url).protocol === "https:";
-  for (const [name, value] of Object.entries(securityHeaders({ isHttps }))) headers.set(name, value);
+  const url = new URL(request.url);
+  const isHttps = url.protocol === "https:";
+  for (const [name, value] of Object.entries(securityHeaders({ isHttps, pathname: url.pathname }))) headers.set(name, value);
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
 

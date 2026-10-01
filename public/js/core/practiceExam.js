@@ -46,7 +46,7 @@ function shortAnswerMatches(selected, expected) {
   const normalizedExpected = normalizeShortAnswer(expected);
   if (!normalizedSelected) return false;
   if (normalizedSelected === normalizedExpected) return true;
-  const selectedNumber = normalizedSelected.match(/^-?\d+(?:\.\d+)?/)?.[0];
+  const selectedNumber = normalizedSelected.match(/^-?\d+(?:\.\d+)?$/)?.[0];
   const expectedNumber = normalizedExpected.match(/^-?\d+(?:\.\d+)?/)?.[0];
   return selectedNumber !== undefined
     && expectedNumber !== undefined

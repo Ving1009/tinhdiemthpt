@@ -34,3 +34,23 @@ test("OCR đọc bảng điểm cả năm ba lớp nhưng không tự suy diễn
   assert.equal(ambiguous.payload.scores.length, 0);
   assert.match(ambiguous.warnings.join(" "), /bố cục điểm chưa đủ rõ/i);
 });
+
+test("OCR nhận lớp có dấu hai chấm và hậu tố tên lớp, không nhầm lớp 101", () => {
+  for (const grade of [10, 11, 12]) {
+    const result = parseOcrTranscriptPages([{
+      text: `Lớp: ${grade}TN7\nMôn học HọckìI HọckìII Cả năm\nToán học 5.6 6.2 6.0`, confidence: 85
+    }], catalog);
+    assert.equal(result.payload.scores.length, 1);
+    assert.deepEqual(result.payload.scores[0], { subject: "Toán", grade, semester1: 5.6, semester2: 6.2, year: 6, confidence: 0.61 });
+  }
+  const invalid = parseOcrTranscriptPages([{ text: "Lớp: 101\nHK1 HK2 Cả năm\nToán 5 6 7" }], catalog);
+  assert.equal(invalid.payload.scores.length, 0);
+});
+
+test("OCR giữ đúng vị trí cột bị mất dấu thập phân, không đoán 62 thành 6.2", () => {
+  const result = parseOcrTranscriptPages([{ text: "Lớp:\n11TN7\nHọc kì I Học kì II Cả năm\nToán 5.6 62 6.0" }], catalog);
+  assert.deepEqual(result.payload.scores.map(({ grade, semester1, semester2, year }) => ({ grade, semester1, semester2, year })), [
+    { grade: 11, semester1: 5.6, semester2: null, year: 6 }
+  ]);
+  assert.match(result.warnings.join(" "), /để trống/);
+});

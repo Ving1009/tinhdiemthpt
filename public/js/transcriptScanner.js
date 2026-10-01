@@ -231,11 +231,12 @@ export class TranscriptScanner {
     if (!this.files.length) { this.notify("Hãy chọn ít nhất một ảnh học bạ."); return; }
     if (this.consent?.checked !== true) { this.notify("Vui lòng tick ô đồng ý trước khi tải ảnh lên dịch vụ nhận diện."); return; }
     this.isScanning = true;
+    const sourceFiles = this.files.map((item) => item.file);
     this.onScanStart();
     this.render();
     let optimizedImages = [];
     try {
-      optimizedImages = await optimizeTranscriptImagesSequentially(this.files.map((item) => item.file), {
+      optimizedImages = await optimizeTranscriptImagesSequentially(sourceFiles, {
         onProgress: (index, total) => this.setStatus(`Đang xử lý ảnh ${index + 1}/${total}...`, "working")
       });
       if (optimizedImages.reduce((total, image) => total + image.blob.size, 0) > MAX_UPLOAD_BYTES) {
@@ -256,15 +257,11 @@ export class TranscriptScanner {
           this.scrollToManualEntry();
           return;
         }
-        try {
-          const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js?v=20260929-1");
-          payload = await recognizeTranscriptInBrowser(optimizedImages, {
-            assetBaseUrl: resolveTranscriptAssetBaseUrl(),
-            onStatus: (message) => this.setStatus(message, "working")
-          });
-        } catch {
-          throw error;
-        }
+        const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js?v=20261001-1");
+        payload = await recognizeTranscriptInBrowser(optimizedImages, {
+          assetBaseUrl: resolveTranscriptAssetBaseUrl(),
+          onStatus: (message) => this.setStatus(message, "working")
+        });
       }
       this.setStatus("Đang kiểm tra...", "working");
       this.onScanSuccess(payload);

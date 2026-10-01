@@ -6,7 +6,7 @@ import {
   isPracticeQuestionAnswered,
   normalizePracticeHistory,
   remainingExamSeconds
-} from "./core/practiceExam.js";
+} from "./core/practiceExam.js?v=20261001-1";
 import { escapeHTML, storage } from "./utils.js";
 
 export const PRACTICE_ACTIVE_KEY = "thpt-practice-active-v1";
@@ -308,7 +308,7 @@ export class PracticeExamApp {
   toggleFlag(questionId) {
     if (!this.active) return;
     const selectedExam = this.examById(this.active.examId);
-    const questionIndex = selectedExam?.questions.findIndex((item) => item.id === questionId) ?? -1;
+    const questionIndex = this.questionsForAttempt(selectedExam).findIndex((item) => item.id === questionId);
     const flags = new Set(this.active.flagged || []);
     flags.has(questionId) ? flags.delete(questionId) : flags.add(questionId);
     this.active.flagged = [...flags];

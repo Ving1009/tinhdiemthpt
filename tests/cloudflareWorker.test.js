@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFile } from "node:fs/promises";
 import { createCloudflareReportStore } from "../server/cloudflareReportStore.js";
 import { handleOcrRequest, MAX_IMAGES, MAX_MULTIPART_BYTES, MAX_TOTAL_BYTES } from "../worker/ocrHandler.js";
 import mainWorker from "../worker/index.js";
@@ -139,6 +140,19 @@ test("Worker chuyển HTTP sang HTTPS trước khi đọc static asset", async (
   assert.equal(response.headers.get("location"), "https://tinhdiemthpt.id.vn/?from=test");
   assert.equal(response.headers.get("strict-transport-security"), null);
   assert.equal(assetFetched, false);
+});
+
+test("Cloudflare cấp quyền WebAssembly riêng cho Tesseract worker", async () => {
+  const deployment = JSON.parse(await readFile(new URL("../wrangler.jsonc", import.meta.url), "utf8"));
+  assert.ok(deployment.assets.run_worker_first.includes("/vendor/tesseract/worker.min.js"), "static asset phải đi qua worker để nhận CSP riêng");
+  for (const path of ["/vendor/tesseract/worker.min.js", "/js/main.js", "/api/security-config"]) {
+    const response = await mainWorker.fetch(new Request(`https://tinhdiemthpt.id.vn${path}`), {
+      ASSETS: { async fetch() { return new Response("worker script"); } }
+    });
+    const csp = response.headers.get("content-security-policy");
+    assert.equal(csp.includes("'wasm-unsafe-eval'"), path === "/vendor/tesseract/worker.min.js");
+    assert.doesNotMatch(csp, /'unsafe-eval'|'unsafe-inline'/);
+  }
 });
 
 test("Worker chuyển tên miền workers.dev cũ sang tên miền chính", async () => {

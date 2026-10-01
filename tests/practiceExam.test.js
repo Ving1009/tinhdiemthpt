@@ -3,6 +3,7 @@ import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import test from "node:test";
 import { PRACTICE_EXAMS_2026 } from "../public/js/data/practiceExams2026.js";
+import { PracticeExamApp } from "../public/js/practiceExam.js";
 import {
   createPracticeAttempt,
   formatExamTime,
@@ -11,6 +12,32 @@ import {
   normalizePracticeHistory,
   remainingExamSeconds
 } from "../public/js/core/practiceExam.js";
+
+test("trả lời ngắn không chấp nhận phần số đúng kèm ký tự rác", () => {
+  const exam = { questions: [{ id: "short", type: "short", answerText: "2,52 mA", points: 1 }] };
+  for (const value of ["2,52", "2.520"]) assert.equal(gradePracticeExam(exam, { short: value }).score, 10);
+  for (const value of ["2.52abc", "2.52.9", "2.52+1", "2.52e9"]) assert.equal(gradePracticeExam(exam, { short: value }).score, 0);
+});
+
+test("đánh dấu câu ở định hướng Tin học dùng số thứ tự của nhánh đang làm", () => {
+  const originalDocument = globalThis.document;
+  const scrolled = [];
+  globalThis.document = { getElementById: (id) => ({ scrollIntoView: () => scrolled.push(id) }) };
+  try {
+    const app = new PracticeExamApp({});
+    const exam = PRACTICE_EXAMS_2026.find((item) => item.answerBranches?.length);
+    app.active = createPracticeAttempt(exam);
+    app.active.branch = exam.answerBranches.at(-1);
+    app.persistActive = () => {};
+    app.renderExam = () => {};
+    const questions = app.questionsForAttempt(exam);
+    app.toggleFlag(questions.at(-1).id);
+    assert.deepEqual(scrolled, [`practice-question-${questions.length}`]);
+  } finally {
+    if (originalDocument === undefined) delete globalThis.document;
+    else globalThis.document = originalDocument;
+  }
+});
 
 test("phòng thi 2026 có đủ 18 môn và 17 đề nguồn", () => {
   assert.equal(PRACTICE_EXAMS_2026.length, 18);

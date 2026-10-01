@@ -71,6 +71,16 @@ test("mọi response có security headers và HTTPS proxy nhận HSTS", async ()
   assert.match(response.headers.get("strict-transport-security") || "", /max-age=31536000/);
 });
 
+test("chỉ OCR worker được chạy WebAssembly, trang và các script khác vẫn giữ CSP chặt", async () => {
+  for (const path of ["/", "/js/main.js", "/vendor/tesseract/worker.min.js", "/favicon.svg"]) {
+    const response = await fetch(`${baseUrl}${path}`);
+    assert.equal(response.status, 200);
+    const csp = response.headers.get("content-security-policy");
+    assert.equal(csp.includes("'wasm-unsafe-eval'"), path === "/vendor/tesseract/worker.min.js");
+    assert.doesNotMatch(csp, /'unsafe-eval'|'unsafe-inline'/);
+  }
+});
+
 test("security.txt công khai kênh báo lỗi bảo mật mà không lộ email cá nhân", async () => {
   const response = await fetch(`${baseUrl}/.well-known/security.txt`);
   const body = await response.text();

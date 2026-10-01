@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css?v=20260927-1" />
     <link rel="stylesheet" href="css/responsive.css?v=20260927-1" />
-    <link rel="stylesheet" href="css/refinement.css?v=20260928-1" />
+    <link rel="stylesheet" href="css/refinement.css?v=20261001-1" />
     <link rel="stylesheet" href="css/practice-exam.css?v=20260928-1" />
     <link rel="stylesheet" href="css/assistant.css?v=20260929-2" />
   </head>
@@ -65,7 +65,7 @@
       </div>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <section class="hero section" id="home">
         <div class="container hero-grid">
           <div class="hero-copy">
@@ -164,7 +164,7 @@
           <div class="calculator-layout academic-layout">
             <form id="academic-form" novalidate>
               <div class="form-card">
-                <div class="card-title"><span class="card-number">1</span><div><h3>Quét học bạ</h3><p>Tải ảnh, kiểm tra kết quả rồi xác nhận để điền điểm.</p></div></div>
+                <div class="card-title"><span class="card-number">1</span><div><h3>Quét học bạ (không bắt buộc)</h3><p>Tải ảnh để nhận diện hoặc nhập điểm trực tiếp vào bảng bên dưới.</p><button class="button button-text" id="academic-enter-manually" type="button">Nhập điểm bằng tay ↓</button></div></div>
                 <div class="privacy-callout"><strong>💡 Mẹo bảo mật:</strong> Hệ thống chỉ cần bảng điểm môn học. Bạn nên dùng công cụ sửa ảnh trên điện thoại để che Họ và tên, Ngày sinh, Số CCCD trước khi tải lên.</div>
                 <input class="sr-only" id="transcript-images" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" multiple />
                 <div class="transcript-dropzone" id="transcript-dropzone" role="button" tabindex="0" aria-describedby="transcript-scan-status">
@@ -184,7 +184,7 @@
               </div>
 
               <div class="form-card transcript-preview is-hidden" id="transcript-preview">
-                <div class="card-title"><span class="card-number">2</span><div><h3>Kiểm tra dữ liệu đã đọc</h3><p id="transcript-student">Không đọc được tên học sinh.</p></div></div>
+                <div class="card-title"><span class="card-number" aria-hidden="true">✓</span><div><h3>Kiểm tra dữ liệu đã đọc</h3><p id="transcript-student">Không đọc được tên học sinh.</p></div></div>
                 <div class="transcript-warnings is-hidden" id="transcript-warnings"></div>
                 <div class="transcript-table-wrap">
                   <table class="transcript-table">
@@ -198,7 +198,7 @@
               </div>
 
               <div class="form-card">
-                <div class="card-title"><span class="card-number">3</span><div><h3>Phương thức xét học bạ</h3><p>Các lựa chọn mô phỏng nhóm phương thức phổ biến khi xét học bạ.</p></div></div>
+                <div class="card-title"><span class="card-number">2</span><div><h3>Phương thức xét học bạ</h3><p>Các lựa chọn mô phỏng nhóm phương thức phổ biến khi xét học bạ.</p></div></div>
                 <div class="form-grid form-grid-two">
                   <div class="field">
                     <label for="academic-method">Phương thức</label>
@@ -233,7 +233,7 @@
                 <p class="score-note is-hidden" id="academic-multiplier-note">Điểm có trọng số dùng thang 40. Điểm ưu tiên chỉ được áp dụng khi có quy tắc quy đổi đã xác minh của trường.</p>
               </div>
               <div class="form-card" id="academic-score-entry">
-                <div class="card-title"><span class="card-number">4</span><div><h3>Bảng điểm học bạ</h3><p>Nhập điểm cho tối thiểu 3 môn. Ô trống sẽ được bỏ qua khi dò tổ hợp.</p></div></div>
+                <div class="card-title"><span class="card-number">3</span><div><h3>Bảng điểm học bạ</h3><p>Nhập điểm cho tối thiểu 3 môn. Ô trống sẽ được bỏ qua khi dò tổ hợp.</p></div></div>
                 <p class="table-scroll-hint">Trên điện thoại, từng môn được xếp thành thẻ để nhập điểm mà không cần vuốt ngang.</p>
                 <div class="academic-table-wrap">
                   <table class="academic-table">
@@ -456,6 +456,6 @@
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="js/main.js?v=20261001-3"></script>
+  <script type="module" src="js/main.js?v=20261001-4"></script>
   </body>
 </html>

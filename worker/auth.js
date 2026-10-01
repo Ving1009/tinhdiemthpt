@@ -1,6 +1,7 @@
 import { AppError } from "../server/errors.js";
 import { failure, success } from "./http.js";
 import { scrypt as scryptCallback, timingSafeEqual } from "node:crypto";
+import { readJsonObject } from "../lib/requestBody.js";
 
 export const AUTH_COOKIE = "__Host-thpt_session";
 export const PASSWORD_COST = 16_384;
@@ -84,7 +85,8 @@ export function cookieValue(cookieHeader, name = AUTH_COOKIE) {
   for (const item of String(cookieHeader || "").split(";")) {
     const separator = item.indexOf("=");
     if (separator < 0 || item.slice(0, separator).trim() !== name) continue;
-    return decodeURIComponent(item.slice(separator + 1).trim());
+    try { return decodeURIComponent(item.slice(separator + 1).trim()); }
+    catch { return ""; }
   }
   return "";
 }
@@ -101,18 +103,7 @@ function requireDatabase(environment) {
 }
 
 async function readJson(request, maxBytes = MAX_AUTH_BODY_BYTES) {
-  const declared = Number(request.headers.get("Content-Length") || 0);
-  if (declared > maxBytes) throw new AppError("Dữ liệu gửi lên quá lớn.", { statusCode: 413, code: "REQUEST_TOO_LARGE" });
-  let body;
-  try { body = await request.json(); }
-  catch { throw new AppError("Dữ liệu JSON không hợp lệ.", { statusCode: 400, code: "INVALID_JSON" }); }
-  if (!body || typeof body !== "object" || Array.isArray(body)) {
-    throw new AppError("Dữ liệu JSON không hợp lệ.", { statusCode: 400, code: "INVALID_JSON" });
-  }
-  if (encoder.encode(JSON.stringify(body)).byteLength > maxBytes) {
-    throw new AppError("Dữ liệu gửi lên quá lớn.", { statusCode: 413, code: "REQUEST_TOO_LARGE" });
-  }
-  return body;
+  return readJsonObject(request, maxBytes);
 }
 
 function sameOriginRequest(request) {
@@ -152,6 +143,10 @@ async function authenticatedUser(request, environment) {
 async function requireUser(request, environment) {
   const user = await authenticatedUser(request, environment);
   if (!user) throw new AppError("Phiên đăng nhập đã hết hạn.", { statusCode: 401, code: "AUTH_REQUIRED" });
+  const expectedUserId = request.headers.get("X-Account-User-Id");
+  if (expectedUserId && expectedUserId !== user.id) {
+    throw new AppError("Tài khoản đã thay đổi. Hãy tải lại trang trước khi tiếp tục.", { statusCode: 409, code: "AUTH_ACCOUNT_CHANGED" });
+  }
   return user;
 }
 

@@ -33,6 +33,7 @@ export function createOpenAiCompatibleAssistantService({
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), requestTimeout);
     let response;
+    let payload;
     try {
       response = await fetchImpl(selectedEndpoint, {
         method: "POST",
@@ -46,6 +47,11 @@ export function createOpenAiCompatibleAssistantService({
         }),
         signal: controller.signal
       });
+      if (response.ok) payload = await response.json().catch((error) => {
+        if (controller.signal.aborted) throw error;
+        return null;
+      });
+      else await response.body?.cancel().catch(() => {});
     } catch (error) {
       if (error?.name === "AbortError") {
         throw new AppError(`${label} phản hồi quá chậm.`, { statusCode: 504, code: `${code}_TIMEOUT` });
@@ -55,7 +61,6 @@ export function createOpenAiCompatibleAssistantService({
       clearTimeout(timeout);
     }
     if (!response.ok) throw providerError(code, label, response.status);
-    const payload = await response.json().catch(() => null);
     const answer = cleanAssistantAnswer(payload?.choices?.[0]?.message?.content);
     if (!answer) throw new AppError(`${label} trả về dữ liệu không hợp lệ.`, { statusCode: 502, code: `${code}_INVALID_RESPONSE` });
     return { answer, model: selectedModel, provider };

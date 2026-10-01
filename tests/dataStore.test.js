@@ -20,6 +20,15 @@ const combinations = [
 ];
 const store = createDataStore({ universities, majors, combinations, subjects: [] });
 
+test("phân trang dùng số nguyên và đầu vào tổ hợp không hợp lệ không gây crash", () => {
+  const result = store.listMajors({ page: 1.5, pageSize: 2.5 });
+  assert.equal(result.pagination.page, 1);
+  assert.equal(result.pagination.pageSize, 2);
+  assert.equal(result.items.length, 2);
+  assert.equal(store.findBestMajorCombinations({ results: [null, false, [], "invalid"] }).pagination.total, 0);
+  assert.ok(store.findBestMajorCombinations({ results: [null, { combination: "A00", score: 26.4, scale: 30, year: 2026, method: "THPT", ruleId: "three-subject-sum-priority-2026" }] }).pagination.total > 0);
+});
+
 test("normalize search hỗ trợ tiếng Việt có và không dấu", () => {
   assert.equal(normalizeSearch("Tự động hóa"), "tu dong hoa");
   assert.equal(normalizeSearch("ĐẠI HỌC"), "dai hoc");

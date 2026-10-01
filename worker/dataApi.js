@@ -1,6 +1,7 @@
 import { createDataStore } from "../server/dataStoreCore.js";
 import { createCloudflareReportStore } from "../server/cloudflareReportStore.js";
 import { errorResponse, failure, optionsResponse, success } from "./http.js";
+import { readJsonObject } from "../lib/requestBody.js";
 
 const DATA_FILES = ["universities", "majors", "combinations", "subjects", "admission-formulas-2026", "school-formula-catalog-2026"];
 let dataStorePromise;
@@ -29,15 +30,7 @@ function query(url) {
 }
 
 export async function jsonBody(request, maximumBytes = 100 * 1024) {
-  const declared = Number(request.headers.get("Content-Length") || 0);
-  if (declared > maximumBytes) throw new Response(null, { status: 413 });
-  const source = await request.text();
-  if (new TextEncoder().encode(source).byteLength > maximumBytes) throw new Response(null, { status: 413 });
-  try {
-    return JSON.parse(source || "{}");
-  } catch {
-    throw new Response(null, { status: 400 });
-  }
+  return readJsonObject(request, maximumBytes, { allowEmpty: true });
 }
 
 function universityRoute(pathname) {

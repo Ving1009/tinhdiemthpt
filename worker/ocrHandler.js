@@ -1,6 +1,7 @@
 import { Buffer } from "node:buffer";
 import { AppError } from "../server/errors.js";
 import { errorResponse, failure, json, optionsResponse } from "./http.js";
+import { readLimitedBody } from "../lib/requestBody.js";
 
 export const MAX_IMAGES = 6;
 export const MAX_IMAGE_BYTES = 7 * 1024 * 1024;
@@ -19,13 +20,15 @@ export async function handleOcrRequest(request, scanTranscript) {
   if (request.method === "OPTIONS") return optionsResponse(request);
   if (request.method !== "POST") return failure(request, "API_NOT_FOUND", "Không tìm thấy API.", 404);
   try {
-    const declaredBytes = Number(request.headers.get("Content-Length") || 0);
-    if (Number.isFinite(declaredBytes) && declaredBytes > MAX_MULTIPART_BYTES) {
-      throw new AppError("Tổng dung lượng yêu cầu vượt quá giới hạn 11 MB.", { statusCode: 413, code: "REQUEST_TOO_LARGE" });
-    }
-    const form = await request.formData();
+    const bytes = await readLimitedBody(request, MAX_MULTIPART_BYTES);
+    let form;
+    try { form = await new Response(bytes, { headers: { "Content-Type": request.headers.get("Content-Type") || "" } }).formData(); }
+    catch { throw new AppError("Dữ liệu tải ảnh không hợp lệ. Hãy chọn lại ảnh và thử lại.", { statusCode: 400, code: "INVALID_MULTIPART" }); }
     const files = form.getAll("images[]").filter((file) => file && typeof file.arrayBuffer === "function");
     if (!files.length) throw new AppError("Hãy chọn ít nhất một ảnh học bạ.", { statusCode: 400, code: "MISSING_IMAGES" });
+    if ([...form.entries()].some(([key, file]) => key !== "images[]" || !file || typeof file.arrayBuffer !== "function")) {
+      throw new AppError("Yêu cầu chỉ được chứa các ảnh học bạ đã chọn.", { statusCode: 400, code: "LIMIT_UNEXPECTED_FILE" });
+    }
     if (files.length > MAX_IMAGES) throw new AppError(`Chỉ được tải tối đa ${MAX_IMAGES} ảnh.`, { statusCode: 400, code: "LIMIT_FILE_COUNT" });
     if (files.some((file) => !ALLOWED_MIME_TYPES.has(file.type))) {
       throw new AppError("Chỉ hỗ trợ ảnh JPG, PNG hoặc WEBP.", { statusCode: 400, code: "UNSUPPORTED_IMAGE" });

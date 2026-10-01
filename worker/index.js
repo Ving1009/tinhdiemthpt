@@ -69,15 +69,16 @@ export default {
     }
     if (url.pathname === "/api/scan-transcript") {
       if (request.method === "POST") {
-        const rejected = await requireTurnstile(request, environment, "scan_transcript");
-        if (rejected) return rejected;
         const limited = await applyRateLimit(environment.OCR_RATE_LIMITER, request);
         if (limited) return limited;
+        const rejected = await requireTurnstile(request, environment, "scan_transcript");
+        if (rejected) return rejected;
       }
       if (!environment.OCR_SERVICE || typeof environment.OCR_SERVICE.fetch !== "function") {
         return failure(request, "SCAN_PROVIDER_UNAVAILABLE", "Dịch vụ quét học bạ chưa sẵn sàng.", 503);
       }
-      return withSecurityHeaders(request, await environment.OCR_SERVICE.fetch(request));
+      try { return withSecurityHeaders(request, await environment.OCR_SERVICE.fetch(request)); }
+      catch { return failure(request, "SCAN_PROVIDER_UNAVAILABLE", "Dịch vụ quét học bạ đang bận. Hãy thử lại hoặc nhập điểm bằng tay.", 503); }
     }
     if (url.pathname === "/api/assistant-chat") {
       if (request.method === "POST") {
@@ -88,11 +89,11 @@ export default {
     }
     if (url.pathname === "/api/data-reports") {
       if (request.method === "POST") {
+        const limited = await applyRateLimit(environment.REPORT_RATE_LIMITER, request);
+        if (limited) return limited;
         const rejected = await requireTurnstile(request, environment, "data_report");
         if (rejected) return rejected;
       }
-      const limited = await applyRateLimit(environment.REPORT_RATE_LIMITER, request);
-      if (limited) return limited;
     }
     if (url.pathname.startsWith("/api/")) return handleDataApi(request, environment);
     return withSecurityHeaders(request, await environment.ASSETS.fetch(request));

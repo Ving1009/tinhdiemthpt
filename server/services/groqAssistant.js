@@ -106,6 +106,7 @@ export function createGroqAssistantService({
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), requestTimeout);
     let response;
+    let payload;
     try {
       response = await fetchImpl(GROQ_CHAT_ENDPOINT, {
         method: "POST",
@@ -123,6 +124,11 @@ export function createGroqAssistantService({
         }),
         signal: controller.signal
       });
+      if (response.ok) payload = await response.json().catch((error) => {
+        if (controller.signal.aborted) throw error;
+        return null;
+      });
+      else await response.body?.cancel().catch(() => {});
     } catch (error) {
       if (error?.name === "AbortError") {
         throw new AppError("Trợ lý AI phản hồi quá chậm. Hệ thống sẽ dùng chế độ tra cứu nội bộ.", { statusCode: 504, code: "GROQ_TIMEOUT" });
@@ -132,12 +138,6 @@ export function createGroqAssistantService({
       clearTimeout(timeout);
     }
     if (!response.ok) throw groqError(response.status);
-    let payload;
-    try {
-      payload = await response.json();
-    } catch {
-      throw new AppError("Trợ lý AI trả về dữ liệu không hợp lệ.", { statusCode: 502, code: "GROQ_INVALID_RESPONSE" });
-    }
     const answer = cleanAssistantAnswer(payload?.choices?.[0]?.message?.content);
     if (!answer) throw new AppError("Trợ lý AI chưa tạo được câu trả lời.", { statusCode: 502, code: "GROQ_INVALID_RESPONSE" });
     return { answer, model: selectedModel, provider: "groq" };

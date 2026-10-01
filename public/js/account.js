@@ -22,6 +22,12 @@ export class AccountApp {
     this.locationRef = locationRef;
     this.requestTimeoutMs = requestTimeoutMs;
     this.dataIsolation = new AccountDataIsolation({ storage: this.storage, personalKeys: this.personalKeys, authSessionKey: AUTH_SESSION_KEY });
+    this.localOwnerId = this.dataIsolation.marker().userId;
+    this.storage.canWrite = (key) => {
+      if (this.writingAccountData || !this.personalKeys.includes(key)) return true;
+      const marker = this.dataIsolation.marker();
+      return marker.userId === this.localOwnerId && (!marker.authenticated || marker.hydrated);
+    };
     this.config = null;
     this.user = null;
     this.mode = "login";
@@ -34,6 +40,12 @@ export class AccountApp {
 
   isAuthenticated() { return Boolean(this.user?.id); }
 
+  changeLocalAccountData(callback) {
+    this.writingAccountData = true;
+    try { return callback(); }
+    finally { this.writingAccountData = false; }
+  }
+
   async init() {
     if (!this.root || !this.button) return;
     this.button.addEventListener("click", () => this.toggle(true));
@@ -42,6 +54,10 @@ export class AccountApp {
     window.addEventListener("thpt-storage-change", (event) => {
       if (this.isChangingAccount || !this.isAuthenticated() || !this.personalKeys.includes(event.detail?.key)) return;
       this.scheduleBackup();
+    });
+    window.addEventListener("storage", (event) => this.handleStorageChange(event));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !this.root.classList.contains("is-hidden")) this.toggle(false);
     });
     await this.loadConfig();
     const authState = this.config?.enabled ? await this.refreshUser() : { reload: false };
@@ -53,7 +69,12 @@ export class AccountApp {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), this.requestTimeoutMs);
     try {
-      return await this.fetchImpl(path, { ...options, signal: controller.signal });
+      const response = await this.fetchImpl(path, { ...options, signal: controller.signal });
+      const payload = await response.json().catch((error) => {
+        if (controller.signal.aborted) throw error;
+        return null;
+      });
+      return { response, payload };
     } catch (error) {
       if (controller.signal.aborted) {
         const timeoutError = new Error("Hệ thống tài khoản phản hồi quá lâu.");
@@ -68,20 +89,18 @@ export class AccountApp {
 
   async loadConfig() {
     try {
-      const response = await this.fetchWithTimeout("/api/auth-config", { headers: { Accept: "application/json" }, cache: "no-store" });
-      const payload = await response.json();
-      this.config = payload.success ? payload.data : { enabled: false };
+      const { response, payload } = await this.fetchWithTimeout("/api/auth-config", { headers: { Accept: "application/json" }, cache: "no-store" });
+      this.config = response.ok && payload?.success ? payload.data : { enabled: false };
     } catch { this.config = { enabled: false }; }
   }
 
   async request(path, options = {}) {
-    const response = await this.fetchWithTimeout(path, {
+    const { response, payload } = await this.fetchWithTimeout(path, {
       credentials: "same-origin",
       cache: "no-store",
       ...options,
-      headers: { Accept: "application/json", ...(options.headers || {}) }
+      headers: { Accept: "application/json", ...(path === "/api/auth/data" && this.user?.id ? { "X-Account-User-Id": this.user.id } : {}), ...(options.headers || {}) }
     });
-    const payload = await response.json().catch(() => null);
     if (!response.ok || !payload?.success) {
       const error = new Error(messageFromPayload(payload, "Không thể xử lý yêu cầu tài khoản."));
       error.code = payload?.error?.code || "AUTH_REQUEST_FAILED";
@@ -97,6 +116,7 @@ export class AccountApp {
       const identityChanged = marker.userId !== String(data.user.id);
       const needsHydration = identityChanged || !marker.hydrated;
       this.user = data.user;
+      this.localOwnerId = String(data.user.id);
       clearGuestSessionMarker(this.storage);
       if (!needsHydration) {
         this.dataIsolation.keepUser(data.user.id);
@@ -110,8 +130,9 @@ export class AccountApp {
         const hadSession = this.dataIsolation.marker().authenticated;
         this.cancelPendingSync();
         this.isChangingAccount = true;
-        try { this.dataIsolation.clearSession(); }
+        try { this.changeLocalAccountData(() => this.dataIsolation.clearSession()); }
         finally { this.isChangingAccount = false; }
+        this.localOwnerId = "";
         return { reload: hadSession };
       }
       return { reload: false };
@@ -122,6 +143,14 @@ export class AccountApp {
     clearTimeout(this.syncTimer);
     this.syncTimer = null;
     this.syncGeneration += 1;
+  }
+
+  handleStorageChange(event) {
+    if (event.key !== AUTH_SESSION_KEY && event.key !== null) return;
+    if (this.dataIsolation.marker().userId === this.localOwnerId) return;
+    this.cancelPendingSync();
+    this.user = null;
+    this.reloadPage();
   }
 
   scheduleBackup() {
@@ -139,11 +168,12 @@ export class AccountApp {
     this.cancelPendingSync();
     this.isChangingAccount = true;
     try {
-      this.dataIsolation.beginUser(userId);
+      this.changeLocalAccountData(() => this.dataIsolation.beginUser(userId));
       this.user = user;
+      this.localOwnerId = userId;
       clearGuestSessionMarker(this.storage);
       const result = await this.request("/api/auth/data");
-      return this.dataIsolation.completeUser(userId, result.data);
+      return this.changeLocalAccountData(() => this.dataIsolation.completeUser(userId, result.data));
     } catch {
       return false;
     } finally {
@@ -207,8 +237,9 @@ export class AccountApp {
     }
     this.isChangingAccount = true;
     try {
-      this.dataIsolation.clearSession();
+      this.changeLocalAccountData(() => this.dataIsolation.clearSession());
       this.user = null;
+      this.localOwnerId = "";
       this.mode = "login";
     } finally {
       this.isChangingAccount = false;
@@ -248,7 +279,7 @@ export class AccountApp {
       if (!result.data) throw new Error("Tài khoản chưa có bản sao dữ liệu.");
       this.cancelPendingSync();
       this.isChangingAccount = true;
-      try { this.dataIsolation.completeUser(userId, result.data); }
+      try { this.changeLocalAccountData(() => this.dataIsolation.completeUser(userId, result.data)); }
       finally { this.isChangingAccount = false; }
       this.reloadPage();
     } catch (error) { this.setStatus(error.message, true); }
@@ -258,6 +289,7 @@ export class AccountApp {
     this.root.classList.toggle("is-hidden", !open);
     this.button.setAttribute("aria-expanded", String(open));
     if (open) this.root.querySelector("button, input")?.focus();
+    else this.button.focus();
   }
 
   handleClick(event) {

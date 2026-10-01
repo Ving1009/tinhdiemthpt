@@ -68,9 +68,11 @@ export function errorResponse(request, error) {
 }
 
 export async function applyRateLimit(binding, request, message = "Bạn đã gửi nhiều yêu cầu. Hãy thử lại sau ít phút.") {
-  if (!binding || typeof binding.limit !== "function") return null;
+  if (!binding || typeof binding.limit !== "function") return failure(request, "RATE_LIMIT_UNAVAILABLE", "Hệ thống bảo vệ đang bận. Hãy thử lại sau.", 503);
   const key = request.headers.get("CF-Connecting-IP") || "unknown";
-  const result = await binding.limit({ key });
-  if (result.success) return null;
+  let result;
+  try { result = await binding.limit({ key }); }
+  catch { return failure(request, "RATE_LIMIT_UNAVAILABLE", "Hệ thống bảo vệ đang bận. Hãy thử lại sau.", 503); }
+  if (result?.success === true) return null;
   return failure(request, "RATE_LIMITED", message, 429, { "Retry-After": "60" });
 }

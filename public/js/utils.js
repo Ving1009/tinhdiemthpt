@@ -33,9 +33,10 @@ export function sanitizeScoreInput(value) {
 export function validateScore(raw, required = true) {
   const text = String(raw ?? "").trim().replace(/,/g, ".");
   if (!text) return required ? { valid: false, message: "Vui lòng nhập điểm." } : { valid: true, value: null };
-  if (!/^\d{1,2}(\.\d{1,2})?$/.test(text)) return { valid: false, message: "Dùng tối đa 2 chữ số thập phân." };
+  if (!/^-?\d+(?:\.\d+)?$/.test(text)) return { valid: false, message: "Điểm phải là số." };
   const value = Number(text);
   if (!Number.isFinite(value) || value < 0 || value > 10) return { valid: false, message: "Điểm phải nằm trong khoảng 0 đến 10." };
+  if (!/^\d{1,2}(\.\d{1,2})?$/.test(text)) return { valid: false, message: "Dùng tối đa 2 chữ số thập phân." };
   return { valid: true, value };
 }
 
@@ -80,12 +81,14 @@ export const storage = {
     try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; } catch { return fallback; }
   },
   set(key, value) {
+    if (this.canWrite?.(key) === false) return;
     try {
       localStorage.setItem(key, JSON.stringify(value));
       window.dispatchEvent(new CustomEvent("thpt-storage-change", { detail: { key, action: "set" } }));
     } catch { /* Private mode or full storage: app remains usable. */ }
   },
   remove(key) {
+    if (this.canWrite?.(key) === false) return;
     try {
       localStorage.removeItem(key);
       window.dispatchEvent(new CustomEvent("thpt-storage-change", { detail: { key, action: "remove" } }));

@@ -29,7 +29,7 @@ test("HTML có tìm kiếm mobile, khóa năm 2027 và đã dọn UI cũ", async
   const html = await readFile(new URL("index.html", publicRoot), "utf8");
   assert.match(html, /id="mobile-search"/);
   assert.match(html, /value="2027" disabled/);
-  assert.match(html, />Quét học bạ</);
+  assert.match(html, /<h3>Quét học bạ \(không bắt buộc\)<\/h3>/);
   assert.doesNotMatch(html, /AI \+ OCR|Độ tin cậy|id="certificate"|Quy đổi chứng chỉ theo trường|id="formulas"|Mục 8/i);
   assert.equal((html.match(/id="export-wishes-pdf"/g) || []).length, 1);
   assert.match(html, /id="transcript-consent"/);
@@ -62,13 +62,15 @@ test("frontend không chặn app vì auth và dùng thông báo AI trung tính",
 });
 
 test("các hồi quy giao diện chính được khóa trong source", async () => {
-  const [main, css] = await Promise.all([
+  const [main, css, utils] = await Promise.all([
     readFile(new URL("js/main.js", publicRoot), "utf8"),
-    readFile(new URL("css/refinement.css", publicRoot), "utf8")
+    readFile(new URL("css/refinement.css", publicRoot), "utf8"),
+    readFile(new URL("js/utils.js", publicRoot), "utf8")
   ]);
   assert.match(main, /major-filter-form"\)\.addEventListener\("submit"[\s\S]{0,180}invalidateMajorResults\.cancel\(\)/);
   assert.match(main, /aria-describedby="auto-error-\$\{index\}"/);
   assert.match(main, /input\.setAttribute\("aria-invalid"/);
-  for (const message of ["Vui lòng nhập điểm.", "Điểm phải là số.", "Điểm phải nằm trong khoảng 0 đến 10.", "Dùng tối đa 2 chữ số thập phân."]) assert.match(main, new RegExp(message.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  assert.match(main, /validateScore\(input\.value, required\)/);
+  for (const message of ["Vui lòng nhập điểm.", "Điểm phải là số.", "Điểm phải nằm trong khoảng 0 đến 10.", "Dùng tối đa 2 chữ số thập phân."]) assert.match(utils, new RegExp(message.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   assert.doesNotMatch(css, /#score-form \.candidate-card\s*\{[^}]*order\s*:\s*2/);
 });

@@ -6,6 +6,21 @@ import { handleOcrRequest, MAX_IMAGES, MAX_MULTIPART_BYTES, MAX_TOTAL_BYTES } fr
 import mainWorker from "../worker/index.js";
 import { handleAssistantApi } from "../worker/assistantApi.js";
 
+test("API bảo vệ fail-closed khi limiter thiếu, lỗi hoặc đã chạm hạn mức", async () => {
+  const endpoints = [["/api/auth/login", "AUTH_RATE_LIMITER"], ["/api/scan-transcript", "OCR_RATE_LIMITER"], ["/api/data-reports", "REPORT_RATE_LIMITER"], ["/api/assistant-chat", "AI_RATE_LIMITER"]];
+  for (const [path, key] of endpoints) {
+    for (const [binding, status] of [[undefined, 503], [{ limit: async () => { throw new Error("Unavailable"); } }, 503], [{ limit: async () => ({ success: false }) }, 429]]) {
+      const response = await mainWorker.fetch(new Request(`https://tinhdiemthpt.id.vn${path}`, { method: "POST" }), {
+        [key]: binding,
+        AUTH_DB: { prepare() { assert.fail("Không được gọi D1"); } },
+        OCR_SERVICE: { fetch() { assert.fail("Không được gọi OCR"); } }
+      });
+      assert.equal(response.status, status, `${path}: ${status}`);
+      if (status === 429) assert.equal(response.headers.get("retry-after"), "60");
+    }
+  }
+});
+
 test("Cloudflare OCR nhận multipart hợp lệ và giữ schema response của frontend", async () => {
   const form = new FormData();
   form.append("images[]", new File([Uint8Array.from([0xff, 0xd8, 0xff, 0x00])], "hoc-ba.jpg", { type: "image/jpeg" }));
@@ -27,6 +42,26 @@ test("Cloudflare OCR nhận multipart hợp lệ và giữ schema response của
     warnings: ["Kiểm tra lại"],
     engine: "mock"
   });
+});
+
+test("OCR service mất kết nối trả JSON 503 để frontend mở luồng dự phòng", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify({ success: true, action: "scan_transcript", hostname: "tinhdiemthpt.id.vn" }));
+  try {
+    const response = await mainWorker.fetch(new Request("https://tinhdiemthpt.id.vn/api/scan-transcript", {
+      method: "POST", headers: { "X-Turnstile-Token": "test-token" }
+    }), {
+      TURNSTILE_SITE_KEY: "public-test-site-key",
+      TURNSTILE_SECRET_KEY: "private-test-secret",
+      OCR_RATE_LIMITER: { limit: async () => ({ success: true }) },
+      OCR_SERVICE: { fetch: async () => { throw new Error("Service unavailable with internal details"); } }
+    });
+    assert.equal(response.status, 503);
+    const payload = await response.json();
+    assert.equal(payload.error.code, "SCAN_PROVIDER_UNAVAILABLE");
+    assert.match(payload.error.message, /nhập điểm bằng tay/);
+    assert.doesNotMatch(JSON.stringify(payload), /internal details/);
+  } finally { globalThis.fetch = originalFetch; }
 });
 
 test("Cloudflare OCR từ chối nội dung giả mạo kiểu ảnh", async () => {
@@ -177,7 +212,7 @@ test("Worker chặn request OCR trước service khi thiếu token Turnstile", a
   const payload = await response.json();
   assert.equal(response.status, 403);
   assert.equal(payload.error.code, "TURNSTILE_REQUIRED");
-  assert.equal(rateLimitChecked, false);
+  assert.equal(rateLimitChecked, true);
   assert.equal(forwarded, false);
 });
 
@@ -219,8 +254,8 @@ test("Worker fail-closed Turnstile trên hostname lạ cho đăng ký, OCR và b
     TURNSTILE_SECRET_KEY: "private-secret",
     TURNSTILE_ALLOWED_HOSTNAMES: "tinhdiemthpt.id.vn",
     AUTH_RATE_LIMITER: { async limit() { return { success: true }; } },
-    OCR_RATE_LIMITER: { async limit() { throw new Error("Không được rate-limit OCR trước Turnstile."); } },
-    REPORT_RATE_LIMITER: { async limit() { throw new Error("Không được rate-limit báo cáo trước Turnstile."); } },
+    OCR_RATE_LIMITER: { async limit() { return { success: true }; } },
+    REPORT_RATE_LIMITER: { async limit() { return { success: true }; } },
     AUTH_DB: { prepare() { throw new Error("Không được truy cập D1 trước Turnstile."); } },
     OCR_SERVICE: { async fetch() { throw new Error("Không được gọi OCR service trước Turnstile."); } }
   };
@@ -256,7 +291,7 @@ test("Worker chặn báo sai dữ liệu khi thiếu token Turnstile", async () 
   const payload = await response.json();
   assert.equal(response.status, 403);
   assert.equal(payload.error.code, "TURNSTILE_REQUIRED");
-  assert.equal(rateLimitChecked, false);
+  assert.equal(rateLimitChecked, true);
 });
 
 test("Cloudflare Worker trả lời trợ lý qua service backend", async () => {

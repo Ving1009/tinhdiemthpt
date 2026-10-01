@@ -15,7 +15,7 @@ import { TranscriptPreview } from "./transcriptPreview.js";
 import { TranscriptScanner } from "./transcriptScanner.js?v=20261001-2";
 import { turnstileGate } from "./turnstile.js";
 import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261001-1";
-import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-1";
+import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-2";
 import { AdmissionsAssistant } from "./assistant.js?v=20261001-1";
 import { calculateSchoolFormula, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20260930-2";
 
@@ -69,16 +69,6 @@ const UNIVERSITY_PROFILE_STATUS = {
 function safeWebsite(value) {
   try { const url = new URL(value); return ["http:", "https:"].includes(url.protocol) ? url.href : ""; }
   catch { return ""; }
-}
-
-function validateAutoScore(raw, required = true) {
-  const text = String(raw ?? "").trim().replace(/,/g, ".");
-  if (!text) return required ? { valid: false, message: "Vui lòng nhập điểm." } : { valid: true, value: null };
-  if (!/^-?\d+(?:\.\d+)?$/.test(text)) return { valid: false, message: "Điểm phải là số." };
-  const value = Number(text);
-  if (!Number.isFinite(value) || value < 0 || value > 10) return { valid: false, message: "Điểm phải nằm trong khoảng 0 đến 10." };
-  if (!/^\d{1,2}(?:\.\d{1,2})?$/.test(text)) return { valid: false, message: "Dùng tối đa 2 chữ số thập phân." };
-  return { valid: true, value };
 }
 
 function downloadBlob(content, type, filename) {
@@ -215,7 +205,7 @@ class THPTApp {
     const autoCalculate = debounce(() => this.calculateTHPT(false), 250);
     this.elements.form.addEventListener("input", (event) => {
       if (event.target.matches("[data-auto-score], [data-manual-score]")) event.target.value = sanitizeScoreInput(event.target.value);
-      if (event.target.matches("[data-auto-score]")) this.updateAutoScoreError(event.target, false);
+      if (event.target.matches("[data-auto-score], [data-manual-score]")) this.updateScoreError(event.target, false);
       if (event.target.matches("[data-auto-score], [data-manual-score]")) this.invalidateScoreDerived("Điểm môn đã thay đổi.");
       this.saveForm();
       if (this.thptMode === "auto") autoCalculate();
@@ -229,7 +219,7 @@ class THPTApp {
       this.saveForm();
       if (this.thptMode === "auto") autoCalculate();
     });
-    this.elements.form.addEventListener("submit", (event) => { event.preventDefault(); this.calculateTHPT(true); });
+    this.elements.form.addEventListener("submit", (event) => { event.preventDefault(); autoCalculate.cancel(); this.calculateTHPT(true); });
     $$("[data-thpt-mode]").forEach((button) => button.addEventListener("click", () => this.setThptMode(button.dataset.thptMode)));
     this.elements.combinationSelect.addEventListener("change", () => { this.invalidateScoreDerived("Tổ hợp đã thay đổi."); this.renderManualScoreFields(); this.saveForm(); });
     $("#clear-score-data").addEventListener("click", () => this.clearFormData());
@@ -240,6 +230,7 @@ class THPTApp {
 
     this.elements.academicForm.addEventListener("input", (event) => {
       if (event.target.matches("[data-academic-score]")) event.target.value = sanitizeScoreInput(event.target.value);
+      if (event.target.matches("[data-academic-score]")) this.updateScoreError(event.target, false);
       if (event.target.matches("[data-academic-score]")) this.markAcademicResultStale("Điểm học bạ đã thay đổi, cần tính lại.");
       this.saveForm();
     });
@@ -251,6 +242,10 @@ class THPTApp {
     $("#academic-multiplier-enabled").addEventListener("change", () => { this.markAcademicResultStale("Hệ số học bạ đã thay đổi, cần tính lại."); this.syncAcademicMultiplier(); this.saveForm(); });
     $("#academic-multiplier-subject").addEventListener("change", () => { this.markAcademicResultStale("Môn hệ số đã thay đổi, cần tính lại."); this.saveForm(); });
     $("#clear-academic-data").addEventListener("click", () => this.clearAcademicData());
+    $("#academic-enter-manually").addEventListener("click", () => {
+      this.elements.academicBody.closest(".form-card")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      this.elements.academicBody.querySelector("input")?.focus({ preventScroll: true });
+    });
     $("#show-academic-calculation").addEventListener("click", () => this.openAcademicCalculationModal());
 
     this.elements.universitySelect.addEventListener("change", () => { this.admissionLoadVersion = (this.admissionLoadVersion || 0) + 1; this.populateMajorSelect(); });
@@ -291,9 +286,12 @@ class THPTApp {
     if (event.key === "Escape") {
       if (!this.elements.modal.classList.contains("is-hidden")) this.closeModal();
       this.hideSearch();
+      if ($("#site-nav").classList.contains("open")) { this.closeMenu(); $("#menu-toggle").focus(); }
+      if (!$("#mobile-search-panel").classList.contains("is-hidden")) this.toggleMobileSearch();
     }
-    if (event.key === "Tab" && !this.elements.modal.classList.contains("is-hidden")) {
-      const nodes = [...this.elements.modal.querySelectorAll('button, a[href], input, select, summary, [tabindex="0"]')].filter((node) => !node.disabled && node.getClientRects().length);
+    const dialog = !this.elements.modal.classList.contains("is-hidden") ? this.elements.modal : $("#account-panel:not(.is-hidden)");
+    if (event.key === "Tab" && dialog) {
+      const nodes = [...dialog.querySelectorAll('button, a[href], input, textarea, select, summary, [tabindex="0"]')].filter((node) => !node.disabled && node.getClientRects().length);
       const first = nodes[0], last = nodes.at(-1);
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
       if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
@@ -309,6 +307,11 @@ class THPTApp {
   }
 
   handleDocumentClick(event) {
+    if (event.target.closest(".skip-link")) {
+      event.preventDefault();
+      $("#main-content").focus();
+      return;
+    }
     if (!event.target.closest(".global-search, .mobile-search-panel, #mobile-search-toggle")) this.hideSearch();
     if (event.target.closest("[data-close-modal]")) this.closeModal();
     const privacyPolicy = event.target.closest("[data-privacy-policy]");
@@ -359,7 +362,7 @@ class THPTApp {
   toggleTheme() { const next = document.body.classList.contains("dark") ? "light" : "dark"; this.applyTheme(next); storage.set(THEME_STORAGE_KEY, next); }
   toggleMenu() { const nav = $("#site-nav"), button = $("#menu-toggle"), open = !nav.classList.contains("open"); nav.classList.toggle("open", open); button.setAttribute("aria-expanded", String(open)); }
   closeMenu() { $("#site-nav").classList.remove("open"); $("#menu-toggle").setAttribute("aria-expanded", "false"); }
-  toggleMobileSearch() { const panel = $("#mobile-search-panel"), button = $("#mobile-search-toggle"), open = panel.classList.contains("is-hidden"); panel.classList.toggle("is-hidden", !open); button.setAttribute("aria-expanded", String(open)); if (open) $("#mobile-search").focus(); }
+  toggleMobileSearch() { const panel = $("#mobile-search-panel"), button = $("#mobile-search-toggle"), open = panel.classList.contains("is-hidden"); panel.classList.toggle("is-hidden", !open); button.setAttribute("aria-expanded", String(open)); if (open) $("#mobile-search").focus(); else button.focus(); }
   hideSearch() { $$(".search-results").forEach((item) => item.classList.add("is-hidden")); }
 
   restoreCommonControls() {
@@ -449,16 +452,16 @@ class THPTApp {
     this.elements.autoSubjectGrid.innerHTML = saved.map((entry, index) => `<div class="auto-subject-row"><div class="field"><label for="auto-subject-${index}">Môn ${index + 1}</label><select id="auto-subject-${index}" data-auto-subject="${index}">${STANDARD_SUBJECTS.map((subject) => `<option value="${escapeHTML(subject.key)}" ${subject.key === entry.subjectKey ? "selected" : ""}>${escapeHTML(subject.label)}</option>`).join("")}</select></div><div class="field"><label for="auto-score-${index}">Điểm</label><input id="auto-score-${index}" data-auto-score="${index}" inputmode="decimal" autocomplete="off" placeholder="0.00" value="${escapeHTML(entry.score || "")}" aria-invalid="false" aria-describedby="auto-error-${index}" /><small class="field-error" id="auto-error-${index}"></small></div></div>`).join("");
     this.syncAutoSubjectOptions();
   }
-  updateAutoScoreError(input, required = true) {
-    const checked = validateAutoScore(input.value, required);
-    const error = document.getElementById(`auto-error-${input.dataset.autoScore}`);
+  updateScoreError(input, required = true) {
+    const checked = validateScore(input.value, required);
+    const error = document.getElementById(input.getAttribute("aria-describedby"));
     input.classList.toggle("input-invalid", !checked.valid);
     input.setAttribute("aria-invalid", String(!checked.valid));
     if (error) error.textContent = checked.valid ? "" : checked.message;
     return checked;
   }
   validateAutoScores(required = true) {
-    return $$('[data-auto-score]').map((input, index) => ({ index, ...this.updateAutoScoreError(input, required) })).filter((item) => !item.valid);
+    return $$('[data-auto-score]').map((input, index) => ({ index, ...this.updateScoreError(input, required) })).filter((item) => !item.valid);
   }
   syncAutoSubjectOptions() {
     const selected = $$('[data-auto-subject]').map((item) => item.value);
@@ -485,7 +488,7 @@ class THPTApp {
     if (!combination) { this.elements.scoreGrid.innerHTML = '<p class="empty-state">Không có tổ hợp tiêu chuẩn phù hợp.</p>'; return; }
     const keys = combinationSubjectKeys(combination);
     const saved = this.state.manualScores || {};
-    this.elements.scoreGrid.innerHTML = keys.map((key, index) => `<div class="field score-field"><label for="manual-score-${index}">${escapeHTML(subjectLabelForKey(key))}</label><input id="manual-score-${index}" data-manual-score="${escapeHTML(key)}" inputmode="decimal" autocomplete="off" placeholder="0.00" value="${escapeHTML(saved[key] || "")}" /><small class="field-error" id="manual-error-${index}"></small></div>`).join("");
+    this.elements.scoreGrid.innerHTML = keys.map((key, index) => `<div class="field score-field"><label for="manual-score-${index}">${escapeHTML(subjectLabelForKey(key))}</label><input id="manual-score-${index}" data-manual-score="${escapeHTML(key)}" inputmode="decimal" autocomplete="off" placeholder="0.00" value="${escapeHTML(saved[key] || "")}" aria-invalid="false" aria-describedby="manual-error-${index}" /><small class="field-error" id="manual-error-${index}"></small></div>`).join("");
   }
 
   calculateTHPT(announce = true) {
@@ -501,6 +504,8 @@ class THPTApp {
         this.lastThptInput = { automatic: true, entries: entries.map((item) => ({ ...item, score: Number(String(item.score).replace(",", ".")) })), year, priorityContext: this.getPriorityContext() };
         this.showThptResults(calculation.results, true, announce);
       } else {
+        const errors = $$('[data-manual-score]').map((input) => this.updateScoreError(input)).filter((checked) => !checked.valid);
+        if (errors.length) { if (announce) this.showToast(errors[0].message); return; }
         const combination = this.getSelectedCombination();
         const entries = $$('[data-manual-score]').map((input) => ({ subjectKey: input.dataset.manualScore, score: input.value }));
         const input = validateSubjectEntries(entries, 3);
@@ -546,14 +551,13 @@ class THPTApp {
     const method = ACADEMIC_METHODS[this.elements.academicMethod.value] || ACADEMIC_METHODS["three-years"];
     const saved = this.state.academicScores || {};
     this.elements.academicHead.innerHTML = `<tr><th>Môn học</th>${method.columns.map((column) => `<th>${escapeHTML(column.label)}</th>`).join("")}</tr>`;
-    this.elements.academicBody.innerHTML = ACADEMIC_SUBJECTS.map((subject) => `<tr><th scope="row">${escapeHTML(subject.label)}</th>${method.columns.map((column) => { const id = `academic-${subject.id}-${column.id}`; return `<td data-label="${escapeHTML(column.label)}"><input id="${id}" data-academic-score="${subject.id}__${column.id}" inputmode="decimal" autocomplete="off" placeholder="0.00" aria-label="${escapeHTML(subject.label)} ${escapeHTML(column.label)}" value="${escapeHTML(saved[id] || "")}" /></td>`; }).join("")}</tr>`).join("");
+    this.elements.academicBody.innerHTML = ACADEMIC_SUBJECTS.map((subject) => `<tr><th scope="row">${escapeHTML(subject.label)}</th>${method.columns.map((column) => { const id = `academic-${subject.id}-${column.id}`; return `<td data-label="${escapeHTML(column.label)}"><input id="${id}" data-academic-score="${subject.id}__${column.id}" inputmode="decimal" autocomplete="off" placeholder="0.00" aria-label="${escapeHTML(subject.label)} ${escapeHTML(column.label)}" value="${escapeHTML(saved[id] || "")}" aria-invalid="false" aria-describedby="${id}-error" /><small class="field-error" id="${id}-error"></small></td>`; }).join("")}</tr>`).join("");
     $("#academic-note").innerHTML = `<span aria-hidden="true">i</span> Đang dùng <b>${escapeHTML(method.name)}</b>. Chỉ các tổ hợp có đủ điểm mới được tính.`;
   }
   getAcademicScoreData() {
     const scores = {}; const errors = [];
     $$('[data-academic-score]').forEach((input) => {
-      const checked = validateScore(input.value, false);
-      input.classList.toggle("input-invalid", !checked.valid);
+      const checked = this.updateScoreError(input, false);
       if (!checked.valid) errors.push(checked.message);
       const [subject, column] = input.dataset.academicScore.split("__");
       scores[subject] ||= {};
@@ -598,7 +602,7 @@ class THPTApp {
     if (shouldScroll && window.matchMedia("(max-width: 820px)").matches) requestAnimationFrame(() => this.elements.academicResultContent.closest(".academic-result-panel")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
   selectAcademicResult(index) { const item = this.lastAcademicTrigger?.results?.[index]; if (item) this.showAcademicResult(item.result, this.lastAcademicTrigger); }
-  clearAcademicData() { $$('[data-academic-score]').forEach((input) => { input.value = ""; input.classList.remove("input-invalid"); }); this.elements.academicResultEmpty.classList.remove("is-hidden"); this.elements.academicResultContent.classList.add("is-hidden"); this.state.academicScores = {}; this.saveForm(); this.showToast("Đã xóa điểm học bạ trên thiết bị."); }
+  clearAcademicData() { $$('[data-academic-score]').forEach((input) => { input.value = ""; this.updateScoreError(input, false); }); this.elements.academicResultEmpty.classList.remove("is-hidden"); this.elements.academicResultContent.classList.add("is-hidden"); this.state.academicScores = {}; this.saveForm(); this.showToast("Đã xóa điểm học bạ trên thiết bị."); }
 
   setupTranscriptTools() {
     this.transcriptPreview = new TranscriptPreview({ notify: (message) => this.showToast(message), onConfirm: (data) => this.confirmTranscriptAutofill(data) });

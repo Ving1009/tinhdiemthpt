@@ -3,8 +3,21 @@ import test from "node:test";
 import { createConfiguredAdmissionsAssistant } from "../server/configuredAssistant.js";
 import { createCloudflareWorkersAssistantService } from "../server/services/cloudflareWorkersAssistant.js";
 import { createOpenAiCompatibleAssistantService } from "../server/services/openAiCompatibleAssistant.js";
+import { createGroqAssistantService } from "../server/services/groqAssistant.js";
 
 const question = { question: "Tìm trường BKA", context: { localSummary: "Có dữ liệu trường BKA.", cards: [] } };
+
+test("mọi provider AI giữ timeout trong khi đọc response body chậm", async () => {
+  const fetchImpl = async (_url, options) => new Response(new ReadableStream({
+    start(controller) { options.signal.addEventListener("abort", () => controller.error(new DOMException("Aborted", "AbortError")), { once: true }); }
+  }));
+  const assistants = [
+    createGroqAssistantService({ apiKey: "test", timeoutMs: 3000, fetchImpl }),
+    createCloudflareWorkersAssistantService({ apiToken: "test", accountId: "a".repeat(32), timeoutMs: 3000, fetchImpl }),
+    createOpenAiCompatibleAssistantService({ apiKey: "test", endpoint: "https://test.example", model: "test", provider: "test", providerCode: "TEST", providerLabel: "Test", timeoutMs: 3000, fetchImpl })
+  ];
+  await Promise.all(assistants.map((assistant) => assert.rejects(() => assistant(question), (error) => error.statusCode === 504 && /TIMEOUT$/.test(error.code))));
+});
 
 test("Cloudflare Workers AI đọc response Chat Completions và không lộ token", async () => {
   let request;

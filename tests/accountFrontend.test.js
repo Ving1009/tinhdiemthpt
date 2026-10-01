@@ -42,6 +42,82 @@ function accountFixture() {
   } };
 }
 
+test("đổi tài khoản ở tab khác chặn ghi local của tab cũ và hủy auto-sync", async () => {
+  const fixture = accountFixture();
+  const { account, values } = fixture;
+  try {
+    let uploads = 0;
+    account.request = async (_path, options) => {
+      if (options?.method === "PUT") uploads += 1;
+      return { data: { scores: [9] } };
+    };
+    await account.activateUser({ id: "A" });
+    assert.equal(account.storage.canWrite("scores"), true);
+    account.scheduleBackup();
+    values.set(AUTH_SESSION_KEY, { authenticated: true, userId: "B", hydrated: true });
+    values.set("scores", [7]);
+    assert.equal(account.storage.canWrite("scores"), false);
+    assert.equal(account.storage.canWrite("theme"), true);
+    await account.backup(false, "A");
+    assert.equal(uploads, 0);
+    account.handleStorageChange({ key: AUTH_SESSION_KEY });
+    assert.equal(account.syncTimer, null);
+    assert.equal(account.user, null);
+    assert.equal(fixture.reloads(), 1);
+    assert.deepEqual(values.get("scores"), [7]);
+    assert.equal(values.get("theme"), "dark");
+  } finally { fixture.cleanup(); }
+});
+
+test("request bản sao luôn kèm định danh tài khoản để backend kiểm tra cookie", async () => {
+  const fixture = accountFixture();
+  try {
+    const headers = [];
+    fixture.account.user = { id: "A" };
+    fixture.account.fetchWithTimeout = async (_path, options) => {
+      headers.push(options.headers);
+      return { response: new Response(), payload: { success: true, data: {} } };
+    };
+    await fixture.account.request("/api/auth/data");
+    await fixture.account.request("/api/auth/data", { method: "PUT", body: JSON.stringify({ data: {} }) });
+    assert.equal(headers[0]["X-Account-User-Id"], "A");
+    assert.equal(headers[1]["X-Account-User-Id"], "A");
+  } finally { fixture.cleanup(); }
+});
+
+test("không ghi điểm từ UI cũ trong khi đang restore tài khoản mới", async () => {
+  const fixture = accountFixture();
+  const { account, values } = fixture;
+  let finishRestore;
+  try {
+    const originalSet = account.storage.set;
+    account.storage.set = (key, value) => { if (account.storage.canWrite(key)) originalSet(key, value); };
+    account.request = () => new Promise((resolve) => { finishRestore = resolve; });
+    const restoring = account.activateUser({ id: "B" });
+    assert.equal(account.storage.canWrite("scores"), false);
+    assert.equal(account.storage.canWrite("theme"), true);
+    assert.equal(values.get(AUTH_SESSION_KEY).hydrated, false);
+    account.storage.set("scores", [9]);
+    assert.equal(values.has("scores"), false);
+    finishRestore({ data: { scores: [7], wishes: ["B"] } });
+    await restoring;
+    assert.equal(account.storage.canWrite("scores"), true);
+    assert.equal(values.get(AUTH_SESSION_KEY).hydrated, true);
+    assert.deepEqual(values.get("scores"), [7]);
+  } finally { fixture.cleanup(); }
+});
+
+test("auth timeout bao gồm cả response body chậm sau khi đã nhận header", async () => {
+  const fixture = accountFixture();
+  try {
+    fixture.account.requestTimeoutMs = 20;
+    fixture.account.fetchImpl = async (_path, options) => new Response(new ReadableStream({
+      start(controller) { options.signal.addEventListener("abort", () => controller.error(new DOMException("Aborted", "AbortError")), { once: true }); }
+    }));
+    await assert.rejects(() => fixture.account.request("/api/auth/me"), { code: "AUTH_REQUEST_TIMEOUT" });
+  } finally { fixture.cleanup(); }
+});
+
 test("đăng xuất lỗi mạng không giả vờ xóa phiên rồi đăng nhập lại sau reload", async () => {
   const fixture = accountFixture();
   const { account, values } = fixture;

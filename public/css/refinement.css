@@ -2,6 +2,8 @@
 :root { --bg:#f8fafc; --surface-soft:#f1f5f9; --text:#0f172a; --muted:#64748b; --faint:#64748b; --line:#e2e8f0; --primary:#3b49df; --primary-dark:#2f3ab2; --primary-soft:#eef2ff; --accent:#0d9488; --accent-soft:#ecfdf5; --radius:14px; --shadow:0 8px 28px #182c5010; }
 body { font-size:16px; }
 body.dark { --bg:#0b0f17; --surface:#151d2a; --surface-soft:#1c2636; --text:#f1f5f9; --muted:#94a3b8; --faint:#94a3b8; --line:#26354a; --primary:#8290ff; --primary-dark:#aab3ff; --primary-soft:#242d57; --accent:#5eead4; --accent-soft:#143c3a; }
+body.dark .button-primary { color:var(--bg); }
+body.dark .button-light { color:#3539be; }
 .container { width:min(1240px,calc(100% - 64px)); }
 .site-header { background:var(--surface); border-bottom:1px solid var(--line); backdrop-filter:none; }
 .header-inner { flex-wrap:wrap; gap:0 24px; padding:17px 0 0; min-height:112px; }
@@ -53,6 +55,8 @@ body.dark { --bg:#0b0f17; --surface:#151d2a; --surface-soft:#1c2636; --text:#f1f
 .score-note { line-height:1.7; }
 .academic-section,.admission-section,.universities-section,.combinations-section,.guide-section { background:none!important; }
 .academic-table th,.academic-table td input,.academic-note,.academic-result-item,.academic-result-list h3,.transcript-dropzone p,.transcript-status { font-size:14px; }
+.academic-table .field-error { display:block; margin-top:5px; white-space:normal; }
+.academic-table .field-error:empty { display:none; }
 .admission-flow { grid-template-columns:repeat(3,minmax(0,1fr)) auto; padding:24px; box-shadow:none; gap:16px; }
 .flow-arrow { display:none; }
 .admission-calculate { grid-column:auto; }

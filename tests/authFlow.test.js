@@ -113,6 +113,32 @@ async function register(environment, username, password = "Matkhau2026") {
   return { cookie: response.headers.get("set-cookie").match(new RegExp(`${AUTH_COOKIE}=[^;]+`))[0], payload, setCookie: response.headers.get("set-cookie") };
 }
 
+test("auth bỏ qua cookie hỏng thay vì trả lỗi máy chủ", async () => {
+  const environment = { AUTH_DB: createFakeAuthDatabase() };
+  for (const token of ["%", "%E0%A4%A"]) {
+    const cookie = `${AUTH_COOKIE}=${token}`;
+    assert.equal((await handleAuthRequest(authRequest("/api/auth/me", { cookie }), environment)).status, 401);
+    assert.equal((await handleAuthRequest(authRequest("/api/auth/logout", { cookie, method: "POST" }), environment)).status, 200);
+  }
+});
+
+test("request đang chờ của A không được restore hoặc backup sang B khi cookie đổi", async () => {
+  const environment = { AUTH_DB: createFakeAuthDatabase() };
+  const a = await register(environment, "race-user-a");
+  const b = await register(environment, "race-user-b");
+  const ownData = { scores: [7] };
+  assert.equal((await handleAuthRequest(authRequest("/api/auth/data", { cookie: b.cookie, method: "PUT", body: { data: ownData } }), environment)).status, 200);
+  for (const method of ["GET", "PUT"]) {
+    const request = authRequest("/api/auth/data", { cookie: b.cookie, method, body: method === "PUT" ? { data: { scores: [9] } } : null });
+    request.headers.set("X-Account-User-Id", a.payload.data.user.id);
+    await assert.rejects(() => handleAuthRequest(request, environment), { code: "AUTH_ACCOUNT_CHANGED", statusCode: 409 });
+  }
+  const request = authRequest("/api/auth/data", { cookie: b.cookie });
+  request.headers.set("X-Account-User-Id", b.payload.data.user.id);
+  const response = await handleAuthRequest(request, environment);
+  assert.deepEqual((await response.json()).data.data, ownData);
+});
+
 test("auth flow cô lập dữ liệu theo user và không cho đọc ghi chéo", async () => {
   const environment = { AUTH_DB: createFakeAuthDatabase() };
   const accountA = await register(environment, "user-a");

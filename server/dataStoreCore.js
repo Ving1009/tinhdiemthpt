@@ -18,9 +18,9 @@ export function normalizeSearch(value) {
 }
 
 function page(items, requestedPage, requestedSize, { defaultSize = 24, maxSize = 200 } = {}) {
-  const pageSize = Math.max(1, Math.min(maxSize, Number(requestedSize) || defaultSize));
+  const pageSize = Math.max(1, Math.min(maxSize, Math.floor(Number(requestedSize)) || defaultSize));
   const pages = Math.max(1, Math.ceil(items.length / pageSize));
-  const current = Math.max(1, Math.min(pages, Number(requestedPage) || 1));
+  const current = Math.max(1, Math.min(pages, Math.floor(Number(requestedPage)) || 1));
   return {
     items: items.slice((current - 1) * pageSize, current * pageSize),
     pagination: { page: current, pageSize, pages, total: items.length }
@@ -414,7 +414,7 @@ export function createDataStore({ universities, majors, combinations, subjects, 
 
   function findBestMajorCombinations(input = {}) {
     const rawContexts = Array.isArray(input.results) ? input.results.slice(0, 20) : [];
-    const contexts = rawContexts.map((item) => ({
+    const contexts = rawContexts.filter((item) => item && typeof item === "object" && !Array.isArray(item)).map((item) => ({
       combination: String(item.combination || "").toLocaleUpperCase("vi"),
       score: Number(item.score),
       scale: Number(item.scale),

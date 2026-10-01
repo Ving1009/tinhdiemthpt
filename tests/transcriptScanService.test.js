@@ -57,3 +57,30 @@ test("báo cho trình duyệt dùng Tesseract khi tất cả provider đều h�
   ]);
   await assert.rejects(() => scan([]), (error) => error.code === "SCAN_QUOTA_EXHAUSTED" && /Tesseract/i.test(error.message));
 });
+
+test("Gemini hết quota chuyển sang Groq, thành công thì không gọi OCR.space", async () => {
+  const calls = [];
+  const scan = createTranscriptScanService([
+    { name: "gemini", scan: async () => { calls.push("gemini"); throw new AppError("quota", { code: "AI_QUOTA" }); } },
+    { name: "groq", scan: async () => { calls.push("groq"); return { data: { scores: [] }, warnings: [] }; } },
+    { name: "ocr-space", scan: async () => assert.fail("Không được tải ảnh thêm sau khi Groq thành công") }
+  ]);
+  const result = await scan([]);
+  assert.equal(result.engine, "groq");
+  assert.deepEqual(calls, ["gemini", "groq"]);
+  assert.match(result.warnings[0], /dự phòng/);
+});
+
+test("Groq lỗi quota, auth, timeout, phản hồi sai đều chuyển sang OCR.space", async () => {
+  for (const code of ["GROQ_VISION_QUOTA", "GROQ_VISION_AUTH", "GROQ_VISION_TIMEOUT", "GROQ_VISION_REQUEST_FAILED", "GROQ_VISION_INVALID_RESPONSE", "GROQ_VISION_UNAVAILABLE"]) {
+    const scan = createTranscriptScanService([
+      { name: "groq", scan: async () => { throw new AppError("failed", { code }); } },
+      { name: "ocr-space", scan: async () => ({ data: { scores: [] }, warnings: [] }) }
+    ]);
+    assert.equal((await scan([])).engine, "ocr-space", code);
+  }
+  const exhausted = createTranscriptScanService([
+    { name: "groq", scan: async () => { throw new AppError("quota", { code: "GROQ_VISION_QUOTA" }); } }
+  ]);
+  await assert.rejects(() => exhausted([]), (error) => error.code === "SCAN_QUOTA_EXHAUSTED" && /Tesseract/.test(error.message));
+});

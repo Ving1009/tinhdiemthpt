@@ -4,9 +4,11 @@ const FALLBACK_CODES = new Set([
   "MISSING_API_KEY", "AI_QUOTA", "AI_TIMEOUT", "AI_AUTH", "AI_REQUEST_FAILED", "INVALID_AI_JSON", "NO_TRANSCRIPT_DATA",
   "MISSING_OCR_SPACE_API_KEY", "OCR_SPACE_QUOTA", "OCR_SPACE_TIMEOUT", "OCR_SPACE_AUTH", "OCR_SPACE_REQUEST_FAILED",
   "OCR_SPACE_INVALID_RESPONSE", "OCR_SPACE_UNSUPPORTED_IMAGE", "OCR_SPACE_FILE_TOO_LARGE", "OCR_SPACE_CONFIG",
+  "GROQ_VISION_UNAVAILABLE", "GROQ_VISION_QUOTA", "GROQ_VISION_TIMEOUT", "GROQ_VISION_AUTH",
+  "GROQ_VISION_REQUEST_FAILED", "GROQ_VISION_INVALID_RESPONSE",
   "SCAN_PROVIDER_UNAVAILABLE"
 ]);
-const QUOTA_CODES = new Set(["AI_QUOTA", "OCR_SPACE_QUOTA"]);
+const QUOTA_CODES = new Set(["AI_QUOTA", "OCR_SPACE_QUOTA", "GROQ_VISION_QUOTA"]);
 
 export function shouldUseTranscriptFallback(error) {
   return FALLBACK_CODES.has(error?.code);
@@ -32,7 +34,7 @@ export function createTranscriptScanService(providers = [], { onProviderError = 
         onProviderError({ provider: provider.name, code: error?.code || "UNKNOWN", statusCode: error?.statusCode || 500, hasNext });
         if (!hasNext || !shouldUseTranscriptFallback(error)) {
           if (!hasNext && QUOTA_CODES.has(error?.code)) {
-            throw new AppError("Gemini và OCR.space đang hết hạn mức. Bạn có thể tiếp tục nhận diện bằng Tesseract ngay trên thiết bị.", {
+            throw new AppError("Các dịch vụ nhận diện đang hết hạn mức. Bạn có thể tiếp tục nhận diện bằng Tesseract ngay trên thiết bị.", {
               statusCode: 503,
               code: "SCAN_QUOTA_EXHAUSTED"
             });

@@ -58,7 +58,7 @@ export { createConfiguredScanProviders } from "./configuredScanProviders.js";
 
 export function createApp({ scanTranscript, dataStore = defaultDataStore, reportStore = createReportStore(), admissionsAssistant, environment = process.env, turnstileFetch = globalThis.fetch } = {}) {
   const app = express();
-  const scanner = scanTranscript || createTranscriptScanService(createConfiguredScanProviders());
+  const scanner = scanTranscript || createTranscriptScanService(createConfiguredScanProviders(environment));
   const assistant = admissionsAssistant || createConfiguredAdmissionsAssistant(environment);
   app.disable("x-powered-by");
   app.use(applySecurityHeaders);

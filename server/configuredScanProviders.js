@@ -1,4 +1,5 @@
 import { createGeminiVisionService } from "./services/geminiVision.js";
+import { createGroqVisionService } from "./services/groqVision.js";
 import { createOcrSpaceVisionService } from "./services/ocrSpaceVision.js";
 import { collectApiKeys, createProviderPool } from "./services/providerPool.js";
 
@@ -15,6 +16,16 @@ export function createConfiguredScanProviders(environment = process.env, { onGem
       createService: (apiKey) => createGeminiVisionService({ apiKey, model: environment.GEMINI_MODEL, onError: onGeminiError }),
       retryCodes: new Set(["AI_QUOTA", "AI_TIMEOUT", "AI_AUTH", "AI_REQUEST_FAILED"]),
       cooldownMsByCode: { AI_QUOTA: 5 * 60_000, AI_TIMEOUT: 30_000, AI_AUTH: 60 * 60_000, AI_REQUEST_FAILED: 30_000 }
+    })
+  });
+  const groqKeys = collectApiKeys(environment, {
+    primaryName: "GROQ_API_KEY", listName: "GROQ_API_KEYS", numberedStart: 1, numberedEnd: 5
+  });
+  if (groqKeys.length) configuredProviders.push({
+    name: "groq",
+    label: "Groq",
+    scan: createGroqVisionService({
+      apiKeys: groqKeys, model: environment.GROQ_VISION_MODEL, timeoutMs: environment.GROQ_VISION_TIMEOUT_MS
     })
   });
   const ocrSpaceKeys = collectApiKeys(environment, {

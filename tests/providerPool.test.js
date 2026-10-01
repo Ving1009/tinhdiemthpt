@@ -69,3 +69,12 @@ test("backend chỉ cấu hình Gemini và OCR.space; biến Tesseract cũ bị 
   });
   assert.deepEqual(providers.map((provider) => provider.name), ["gemini", "ocr-space"]);
 });
+
+test("Groq nhận ảnh dùng model riêng và các key hiện có sau Gemini trước OCR.space", () => {
+  const providers = createConfiguredScanProviders({
+    GEMINI_API_KEY: "gemini-key", GROQ_API_KEY_1: "groq-key", OCR_SPACE_API_KEY_1: "ocr-key",
+    GROQ_MODEL: "text-only-chat-model", GROQ_VISION_MODEL: "vision-model"
+  });
+  assert.deepEqual(providers.map((provider) => provider.name), ["gemini", "groq", "ocr-space"]);
+  assert.deepEqual(createConfiguredScanProviders({ GROQ_API_KEYS: "groq-one,groq-two" }).map((provider) => provider.name), ["groq"]);
+});

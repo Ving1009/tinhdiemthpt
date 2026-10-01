@@ -54,3 +54,8 @@ test("OCR giữ đúng vị trí cột bị mất dấu thập phân, không đo
   ]);
   assert.match(result.warnings.join(" "), /để trống/);
 });
+
+test("OCR nhận tiêu đề học kì I bị đọc thành dấu gạch đứng", () => {
+  const result = parseOcrTranscriptPages([{ text: "Lớp: 12TN7\nMôn học Hoc ki | Học kì II Cả năm\nToán học 8.0 9.0 8.5" }], catalog);
+  assert.deepEqual(result.payload.scores.map(({ semester1, semester2, year }) => ({ semester1, semester2, year })), [{ semester1: 8, semester2: 9, year: 8.5 }]);
+});

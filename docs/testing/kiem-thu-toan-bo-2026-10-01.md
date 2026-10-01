@@ -14,17 +14,19 @@ Kiểm tra bản trong repository bằng Express (`npm start`, cổng 3000), tr�
 | Logout lỗi mạng nhưng giao diện báo đã thoát | Chỉ xóa phiên, dữ liệu cá nhân và tải lại trang khi server xác nhận logout hoặc báo phiên đã hết; lỗi mạng giữ tài khoản và thông báo để thử lại. Thêm tên truy cập cho dialog tài khoản đã đăng nhập. | `public/js/account.js` |
 | Đáp án ngắn chứa ký tự thừa vẫn được chấm đúng | Regex chỉ nhận toàn bộ chuỗi số nhập vào; vẫn chấp nhận dấu phẩy thập phân và đáp án nguồn có đơn vị. | `public/js/core/practiceExam.js` |
 | Đánh dấu câu ở nhánh Tin học cuộn sai câu | Tính chỉ số từ danh sách câu của nhánh đang thi. | `public/js/practiceExam.js` |
+| Tìm “điện điện tử” không ra ngành có tên “điện, điện tử” hoặc “điện – điện tử” | Chuẩn hóa dấu câu thành khoảng trắng ở cả chỉ mục và từ khóa, dùng chung cho Express và Worker. | `server/dataStoreCore.js` |
+| Đóng hộp mô phỏng điểm quá nhanh gây lỗi JavaScript | Hủy debounce khi đóng hoặc thay hộp thoại, xóa kết quả mô phỏng cũ. | `public/js/main.js` |
 | Trợ lý giữ trạng thái chờ khi API không kết thúc | Hủy request sau 25 giây và dùng tra cứu nội bộ đã có. | `public/js/assistant.js` |
 | Yêu cầu favicon trả 404 | Thêm biểu tượng SVG cùng nhận diện Sigma của website. | `public/favicon.svg`, `public/index.html` |
 
-Các test hồi quy nằm trong `tests/accountFrontend.test.js`, `tests/assistantFrontend.test.js`, `tests/clientTranscriptOcr.test.js`, `tests/ocrTranscriptParser.test.js`, `tests/practiceExam.test.js`, `tests/publicApiSecurity.test.js`, `tests/cloudflareWorker.test.js`.
+Các test hồi quy nằm trong `tests/accountFrontend.test.js`, `tests/assistantFrontend.test.js`, `tests/clientTranscriptOcr.test.js`, `tests/ocrTranscriptParser.test.js`, `tests/practiceExam.test.js`, `tests/publicApiSecurity.test.js`, `tests/cloudflareWorker.test.js`, `tests/dataStore.test.js`, `tests/scoreSimulation.test.js`.
 
 ## Kiểm chứng tự động
 
 | Lệnh | Kết quả |
 | --- | --- |
 | `npm run check` | Đạt |
-| `npm test` | 244/244 đạt, không bỏ qua test; tăng 12 ca so với đầu đợt |
+| `npm test` | 247/247 đạt, không bỏ qua test; tăng 15 ca so với đầu đợt |
 | `npm run verify:data` | Không có lỗi; 19 cảnh báo về hồ sơ hệ thống, sau đại học hoặc tuyển sinh đặc thù chưa có dòng ngành đại học phổ thông |
 | `npm run audit:formulas` | Đạt kiểm tra ánh xạ, anchor và tính nhất quán; mức xác minh được nêu riêng bên dưới |
 | `npm run audit:logos` | 319 logo đọc được; 31 SVG và 288 ảnh raster; không phát hiện tệp hỏng hoặc độ phân giải thấp theo tiêu chí script |
@@ -45,6 +47,7 @@ Các test hồi quy nằm trong `tests/accountFrontend.test.js`, `tests/assistan
 - Dữ liệu khách hết hạn sau 15 phút rời trang được xóa khi truy cập lại, giữ theme. Trợ lý lỗi 503/quá hạn quay về tra cứu nội bộ; báo sai kiểm tra validation, lỗi gửi và trạng thái nhận thành công bằng fixture.
 - OCR: ép endpoint từ xa trả 503 để thực sự chạy Tesseract trong Brave với ba ảnh học bạ người dùng đã cung cấp. Bảng kiểm tra đã mở và spinner kết thúc. Không gửi báo cáo thử vào Supabase hoặc tạo tài khoản thật để tránh dữ liệu rác.
 - Mười kiểm tra bổ sung: auth chậm vẫn tính được và chuyển sang thông báo dự phòng; chọn ảnh sẵn trên điện thoại; từ chối loại file sai/quá 7 MB/ảnh thứ bảy; chỉ tải sau khi đồng ý; nút nhập tay đóng hộp dự phòng, focus bảng điểm và kết thúc trạng thái chờ; không lưu ảnh hoặc học bạ chưa xác nhận vào localStorage.
+- Hai ca hồi quy bổ sung: gõ “điện điện tử” trả 169 kết quả (24 thẻ trang đầu); đóng hộp mô phỏng ngay trong lúc callback đang debounce không gây lỗi JavaScript.
 
 ## Giới hạn cần biết
 
@@ -54,7 +57,12 @@ Các test hồi quy nằm trong `tests/accountFrontend.test.js`, `tests/assistan
 4. **PDF hiện là nội dung ảnh.** Xem/in được; chưa hỗ trợ chọn văn bản. Những danh sách tổ hợp dài có thể được rút gọn bằng dấu ba chấm để giữ 15 nguyện vọng/trang.
 5. **Độ phân giải logo không xác minh danh tính logo.** Script kiểm tra chất lượng tệp; việc khẳng định mọi biểu tượng là phiên bản chính thức mới nhất cần đối chiếu website của từng trường.
 6. Kiểm thử lỗi dịch vụ, chuyển tài khoản và gửi báo cáo bằng fixture không thay thế toàn bộ kiểm thử tích hợp tài khoản D1/Supabase/nhà cung cấp AI/Turnstile trên production. Chỉ ghi nhận những thao tác production đã thực hiện sau deploy.
+7. Cloudflare đang chèn script analytics và script inline ở cạnh mạng; CSP hiện chặn các script này. Không mở `unsafe-inline` để che thông báo console. Việc điều chỉnh các tính năng tự chèn script trên dashboard cần đối chiếu cấu hình Cloudflare; không coi các thông báo này là lỗi JavaScript chưa xử lý của ứng dụng.
 
 ## Kiểm chứng production sau triển khai
 
-Thực hiện sau khi các kiểm tra trên đạt; kết quả được báo riêng trong thông báo triển khai. Phần trên là kết quả kiểm thử local và build, không phải cam kết đã kiểm thử mọi dịch vụ production.
+Đã kiểm tra thực tế 13 tình huống API/static trên `https://tinhdiemthpt.id.vn`: bootstrap đủ 326 trường; favicon và mã JS đúng bản phát hành; ví dụ hero 26,40; chỉ worker Tesseract được cấp quyền WebAssembly; auth bật và giới hạn mật khẩu 128 ký tự; khách đọc `/api/auth/me`, `/api/auth/data` nhận 401; đăng ký/quét ảnh/báo sai thiếu Turnstile nhận 403; đăng nhập tài khoản không tồn tại nhận 401 `INVALID_CREDENTIALS`, không có lỗi crypto/D1.
+
+Tesseract được khởi tạo thực tế trong Brave từ asset production, đã nhận diện fixture canvas không chứa thông tin cá nhân; xác nhận worker, WebAssembly và mô hình ngôn ngữ tải/chạy được. Đọc được chữ không đồng nghĩa parser hoặc nhận diện ảnh học bạ thật luôn đầy đủ.
+
+Kiểm tra trình duyệt production và phiên bản triển khai cuối được báo thêm trong thông báo hoàn tất. Không có báo cáo rác hoặc tài khoản thử được ghi vào production.

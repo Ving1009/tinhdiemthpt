@@ -25,6 +25,16 @@ test("normalize search hỗ trợ tiếng Việt có và không dấu", () => {
   assert.equal(normalizeSearch("ĐẠI HỌC"), "dai hoc");
 });
 
+test("tìm ngành điện điện tử không cần nhập đúng dấu phẩy hoặc gạch ngang của tên ngành", () => {
+  const names = ["Công nghệ kỹ thuật điện, điện tử", "Kỹ thuật điện – điện tử", "Kỹ thuật điện-điện tử"];
+  const electricalStore = createDataStore({ universities, combinations, majors: names.map((name, index) => ({ ...majors[0], id: `electrical-${index}`, name })) });
+  for (const q of ["điện điện tử", "DIEN DIEN TU", "điện, điện tử", "điện-điện tử"]) {
+    assert.equal(electricalStore.listMajors({ q }).pagination.total, 3);
+    assert.equal(electricalStore.findBestMajorCombinations({ q, year: 2026, results: [{ combination: "A00", score: 26.4, scale: 30, method: "THPT", ruleId: "three-subject-sum-priority-2026" }] }).pagination.total, 3);
+  }
+  assert.equal(electricalStore.listMajors({ q: "ngôn ngữ" }).pagination.total, 0);
+});
+
 test("major filter dùng đúng token tổ hợp", () => {
   const result = store.listMajors({ combination: "A01", pageSize: 100 });
   assert.deepEqual(result.items.map((item) => item.id), ["m-a01"]);

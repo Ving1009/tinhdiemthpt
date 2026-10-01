@@ -257,7 +257,7 @@ export class TranscriptScanner {
           this.scrollToManualEntry();
           return;
         }
-        const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js?v=20261001-1");
+        const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js?v=20261001-2");
         payload = await recognizeTranscriptInBrowser(optimizedImages, {
           assetBaseUrl: resolveTranscriptAssetBaseUrl(),
           onStatus: (message) => this.setStatus(message, "working")

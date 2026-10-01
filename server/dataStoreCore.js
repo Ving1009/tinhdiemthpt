@@ -12,6 +12,7 @@ export function normalizeSearch(value) {
     .replace(/đ/g, "d")
     .replace(/Đ/g, "D")
     .toLocaleLowerCase("vi")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
 }

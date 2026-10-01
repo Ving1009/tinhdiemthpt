@@ -22,7 +22,7 @@ function gradeFrom(value) {
 }
 
 function layoutFrom(text) {
-  const value = normalizeText(text);
+  const value = normalizeText(String(text).replace(/((?:h[ọo]c\s*k[ìíiyỳ]|hk)\s*)\|/gi, "$1 I"));
   return {
     semester1: /\b(?:hk|hoc\s*k[yi])\s*(?:1|i)\b/.test(value),
     semester2: /\b(?:hk|hoc\s*k[yi])\s*(?:2|ii)\b/.test(value),

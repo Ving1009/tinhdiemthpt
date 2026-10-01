@@ -1,4 +1,4 @@
-import { parseOcrTranscriptPages } from "./core/ocrTranscriptParser.js?v=20261001-1";
+import { parseOcrTranscriptPages } from "./core/ocrTranscriptParser.js?v=20261001-2";
 import { validateTranscriptPayload } from "./core/transcriptValidator.js";
 
 const GENERIC_OCR_ERROR = "Không thể nhận diện ảnh. Hãy dùng ảnh thẳng, rõ chữ hoặc nhập điểm thủ công.";

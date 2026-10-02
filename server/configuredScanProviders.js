@@ -1,5 +1,6 @@
 import { createGeminiVisionService } from "./services/geminiVision.js";
 import { createGroqVisionService } from "./services/groqVision.js";
+import { createHuggingFaceVisionService, createRequestyVisionService } from "./services/extraVisionProviders.js";
 import { createOcrSpaceVisionService } from "./services/ocrSpaceVision.js";
 import { collectApiKeys, createProviderPool } from "./services/providerPool.js";
 
@@ -47,6 +48,19 @@ export function createConfiguredScanProviders(environment = process.env, { onGem
       cooldownMsByCode: { OCR_SPACE_QUOTA: 5 * 60_000, OCR_SPACE_TIMEOUT: 30_000, OCR_SPACE_AUTH: 60 * 60_000, OCR_SPACE_REQUEST_FAILED: 30_000 }
     })
   });
+  for (const { name, prefix, label, createService, alias } of [
+    { name: "huggingface", prefix: "HUGGINGFACE", label: "Hugging Face", createService: createHuggingFaceVisionService, alias: environment.HF_TOKEN },
+    { name: "requesty", prefix: "REQUESTY", label: "Requesty", createService: createRequestyVisionService }
+  ]) {
+    const keys = [...new Set([...collectApiKeys(environment, {
+      primaryName: `${prefix}_API_KEY`, listName: `${prefix}_API_KEYS`, numberedStart: 1, numberedEnd: 5
+    }), ...collectApiKeys({ HF_TOKEN: alias }, { primaryName: "HF_TOKEN" })])];
+    // A chat token alone must not enable unverified transcript uploads.
+    if (keys.length && String(environment[`${prefix}_VISION_MODEL`] || "").trim()) configuredProviders.push({
+      name, label,
+      scan: createService({ apiKeys: keys, model: environment[`${prefix}_VISION_MODEL`], timeoutMs: environment[`${prefix}_VISION_TIMEOUT_MS`] })
+    });
+  }
   if (!configuredProviders.length) configuredProviders.push({
     name: "gemini", label: "Gemini", scan: createGeminiVisionService()
   });

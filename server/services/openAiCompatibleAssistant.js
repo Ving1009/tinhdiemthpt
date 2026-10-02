@@ -16,6 +16,7 @@ export function createOpenAiCompatibleAssistantService({
   providerLabel,
   timeoutMs = 20_000,
   maxTokensProperty = "max_tokens",
+  extraBody = {},
   extraHeaders = {},
   fetchImpl = globalThis.fetch
 } = {}) {
@@ -30,6 +31,7 @@ export function createOpenAiCompatibleAssistantService({
     if (!key || !selectedEndpoint || !selectedModel || typeof fetchImpl !== "function") {
       throw new AppError(`${label} chưa được cấu hình.`, { statusCode: 503, code: `${code}_UNAVAILABLE` });
     }
+    const messages = createGroundedAssistantMessages(rawInput);
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), requestTimeout);
     let response;
@@ -39,8 +41,9 @@ export function createOpenAiCompatibleAssistantService({
         method: "POST",
         headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json", ...extraHeaders },
         body: JSON.stringify({
+          ...extraBody,
           model: selectedModel,
-          messages: createGroundedAssistantMessages(rawInput),
+          messages,
           temperature: 0.2,
           [maxTokensProperty]: 800,
           stream: false

@@ -3,7 +3,7 @@ import { AppError } from "../errors.js";
 import { buildTranscriptPrompt, transcriptResponseSchema } from "../prompts/transcriptPrompt.js";
 import { loadTranscriptSubjectCatalog, validateTranscriptPayload } from "../validators/transcriptValidator.js";
 
-const DEFAULT_MODEL = "gemini-2.5-flash-lite";
+const DEFAULT_MODEL = "gemini-3.5-flash-lite";
 const BATCH_SIZE = 4;
 const REQUEST_TIMEOUT_MS = 45_000;
 
@@ -40,9 +40,8 @@ function diagnosticGeminiError(error) {
 }
 
 function mergeBatchPayloads(payloads) {
-  const firstStudent = payloads.map((item) => item.student?.name).find((name) => typeof name === "string" && name.trim());
   return {
-    student: { name: firstStudent || null },
+    student: { name: null },
     scores: payloads.flatMap((item) => Array.isArray(item.scores) ? item.scores : [])
   };
 }
@@ -56,7 +55,7 @@ export function createGeminiVisionService({ apiKey, model = DEFAULT_MODEL, onErr
   const ai = new GoogleGenAI({ apiKey });
   return async function scanTranscript(images) {
     const catalog = await loadTranscriptSubjectCatalog();
-    const prompt = buildTranscriptPrompt(catalog);
+    const prompt = `${buildTranscriptPrompt(catalog)}\nKhông trích xuất tên học sinh; luôn trả student.name là null.`;
     const payloads = [];
     try {
       for (let index = 0; index < images.length; index += BATCH_SIZE) {

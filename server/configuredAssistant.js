@@ -3,6 +3,8 @@ import { collectApiKeys, createProviderPool } from "./services/providerPool.js";
 import { createGroqAssistantService, DEFAULT_GROQ_MODEL } from "./services/groqAssistant.js";
 import { createOpenAiCompatibleAssistantService } from "./services/openAiCompatibleAssistant.js";
 import { createCloudflareWorkersAssistantService, DEFAULT_CLOUDFLARE_AI_MODEL } from "./services/cloudflareWorkersAssistant.js";
+import { createGeminiAssistantService } from "./services/geminiAssistant.js";
+import { createHuggingFaceAssistantService, createRequestyAssistantService } from "./services/extraAssistantProviders.js";
 
 const MISTRAL_ENDPOINT = "https://api.mistral.ai/v1/chat/completions";
 const OPENROUTER_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
@@ -152,6 +154,27 @@ export function createConfiguredAdmissionsAssistant(environment = process.env, {
     })
   });
 
+  for (const { name, prefix, label, createService, aliases = [] } of [
+    { name: "gemini", prefix: "GEMINI", label: "Gemini", createService: createGeminiAssistantService },
+    { name: "huggingface", prefix: "HUGGINGFACE", label: "Hugging Face", createService: createHuggingFaceAssistantService, aliases: [environment.HF_TOKEN] },
+    { name: "requesty", prefix: "REQUESTY", label: "Requesty", createService: createRequestyAssistantService }
+  ]) {
+    const keys = unique([...collectApiKeys(environment, {
+      primaryName: `${prefix}_API_KEY`, listName: `${prefix}_API_KEYS`, numberedStart: 1, numberedEnd: 5
+    }), ...collectApiKeys({ HF_TOKEN: aliases[0] }, { primaryName: "HF_TOKEN" })]);
+    const codePrefix = prefix === "GEMINI" ? "GEMINI_CHAT" : prefix;
+    if (keys.length) providers.push({
+      name,
+      ask: keyPool({
+        keys, codePrefix, label,
+        createService: (apiKey) => createService({
+          apiKey, model: environment[`${prefix}_CHAT_MODEL`] || (prefix !== "GEMINI" ? environment[`${prefix}_MODEL`] : undefined),
+          timeoutMs: environment[`${prefix}_CHAT_TIMEOUT_MS`], fetchImpl
+        })
+      })
+    });
+  }
+
   return createProviderPool({
     keys: providers,
     createService: (provider) => provider.ask,
@@ -159,10 +182,13 @@ export function createConfiguredAdmissionsAssistant(environment = process.env, {
       ...retryCodes("GROQ"),
       ...retryCodes("CLOUDFLARE_AI"),
       ...retryCodes("MISTRAL"),
-      ...retryCodes("OPENROUTER")
+      ...retryCodes("OPENROUTER"),
+      ...retryCodes("GEMINI_CHAT"),
+      ...retryCodes("HUGGINGFACE"),
+      ...retryCodes("REQUESTY")
     ]),
     cooldownMsByCode: Object.fromEntries(
-      ["GROQ", "CLOUDFLARE_AI", "MISTRAL", "OPENROUTER"].flatMap((prefix) =>
+      ["GROQ", "CLOUDFLARE_AI", "MISTRAL", "OPENROUTER", "GEMINI_CHAT", "HUGGINGFACE", "REQUESTY"].flatMap((prefix) =>
         RETRY_SUFFIXES.map((suffix) => [`${prefix}_${suffix}`, suffix === "AUTH" || suffix === "UNAVAILABLE" ? 60 * 60_000 : suffix === "RATE_LIMITED" ? 5 * 60_000 : 30_000]))
     ),
     unavailableError: () => new AppError("Trợ lý AI chưa có nhà cung cấp khả dụng.", { statusCode: 503, code: "AI_ASSISTANT_UNAVAILABLE" })

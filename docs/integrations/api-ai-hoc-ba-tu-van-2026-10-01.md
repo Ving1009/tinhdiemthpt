@@ -1,5 +1,7 @@
 # API đọc học bạ và tư vấn tuyển sinh — 01/10/2026
 
+Đây là bản khảo sát tại ngày 01/10. Trạng thái tích hợp, tài khoản và kiểm thử đã thay đổi trong đợt tiếp theo: xem [cập nhật ngày 02/10/2026](api-providers-2026-10-02.md).
+
 Đối chiếu README `public-apis/public-apis`, tài liệu và bảng giá chính thức ngày 01/10/2026. Không cần đăng ký thêm tài khoản trong đợt này vì website đã có key Groq. Quota và model có thể thay đổi; trang Limits của tài khoản là nguồn quyết định khi triển khai. Kết quả thử ảnh thật được ghi riêng bên dưới, không suy rộng thành độ chính xác trên mọi học bạ.
 
 ## Website đã hỗ trợ gì

@@ -32,6 +32,19 @@ const targetKeys = {
     "OpenRouter_Free_API_1", "OpenRouter_Free_API_2", "OpenRouter_Free_API_3", "OpenRouter_Free_API_4", "OpenRouter_Free_API_5", "OPENROUTER_MODEL", "OPENROUTER_TIMEOUT_MS"
   ]
 };
+const extraProviderKeys = ["HUGGINGFACE", "REQUESTY"].flatMap((prefix) => [
+  `${prefix}_API_KEY`, `${prefix}_API_KEYS`,
+  ...Array.from({ length: 5 }, (_, index) => `${prefix}_API_KEY_${index + 1}`)
+]);
+for (const keys of Object.values(targetKeys)) keys.push(...extraProviderKeys, "HF_TOKEN");
+targetKeys["wrangler.ocr.jsonc"].push(
+  "HUGGINGFACE_VISION_MODEL", "HUGGINGFACE_VISION_TIMEOUT_MS", "REQUESTY_VISION_MODEL", "REQUESTY_VISION_TIMEOUT_MS"
+);
+targetKeys["wrangler.jsonc"].push(
+  "GEMINI_API_KEY", "GEMINI_API_KEYS", ...Array.from({ length: 5 }, (_, index) => `GEMINI_API_KEY_${index + 1}`),
+  ...["GEMINI", "HUGGINGFACE", "REQUESTY"].flatMap((prefix) => [`${prefix}_CHAT_MODEL`, `${prefix}_CHAT_TIMEOUT_MS`]),
+  "HUGGINGFACE_MODEL", "REQUESTY_MODEL"
+);
 const wrangler = require.resolve("wrangler");
 
 function select(keys) {

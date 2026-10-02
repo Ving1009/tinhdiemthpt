@@ -16,6 +16,7 @@ export function createOpenAiCompatibleAssistantService({
   providerLabel,
   timeoutMs = 20_000,
   maxTokensProperty = "max_tokens",
+  maxTokens = 800,
   extraBody = {},
   extraHeaders = {},
   fetchImpl = globalThis.fetch
@@ -45,7 +46,7 @@ export function createOpenAiCompatibleAssistantService({
           model: selectedModel,
           messages,
           temperature: 0.2,
-          [maxTokensProperty]: 800,
+          [maxTokensProperty]: maxTokens,
           stream: false
         }),
         signal: controller.signal

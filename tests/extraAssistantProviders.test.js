@@ -44,7 +44,7 @@ for (const provider of providers) {
     assert.equal(request.options.headers["Content-Type"], "application/json");
     const body = JSON.parse(request.options.body);
     assert.equal(body.model, provider.model);
-    assert.equal(body.max_tokens, 800);
+    assert.equal(body.max_tokens, provider.provider === "requesty" ? 1600 : 800);
     assert.equal(body.stream, false);
     assert.deepEqual(body.messages.map((message) => message.role), ["system", "user", "assistant", "user"]);
     assert.match(body.messages[0].content, /DỮ LIỆU WEBSITE/);
@@ -108,6 +108,38 @@ test("HF và Requesty giữ timeout trong khi đọc response body", async () =>
     const assistant = provider.create({ apiKey: "test", timeoutMs: 3000, fetchImpl });
     await assert.rejects(() => assistant(question), (error) => error.code === `${provider.code}_TIMEOUT` && error.statusCode === 504);
   }));
+});
+
+test("Requesty mặc định cho phép phản hồi trong 40 giây", async (context) => {
+  context.mock.timers.enable({ apis: ["setTimeout"] });
+  let signal;
+  const assistant = createRequestyAssistantService({ apiKey: "test", fetchImpl: async (_url, options) => {
+    signal = options.signal;
+    return new Promise((_resolve, reject) => {
+      signal.addEventListener("abort", () => reject(new DOMException("Aborted", "AbortError")), { once: true });
+    });
+  } });
+  const response = assistant(question);
+  assert.equal(signal.aborted, false);
+  context.mock.timers.tick(39_999);
+  assert.equal(signal.aborted, false);
+  context.mock.timers.tick(1);
+  assert.equal(signal.aborted, true);
+  await assert.rejects(() => response, (error) => error.code === "REQUESTY_TIMEOUT" && error.statusCode === 504);
+});
+
+test("Requesty từ chối phản hồi chỉ có reasoning và không hiển thị nội dung đó", async () => {
+  for (const reasoningField of ["reasoning", "reasoning_content"]) {
+    const assistant = createRequestyAssistantService({ apiKey: "test", fetchImpl: async () => new Response(JSON.stringify({
+      choices: [{ message: { content: null, [reasoningField]: "private-provider-reasoning" }, finish_reason: "length" }]
+    })) });
+    await assert.rejects(() => assistant(question), (error) => {
+      assert.equal(error.code, "REQUESTY_INVALID_RESPONSE");
+      assert.equal(error.statusCode, 502);
+      assert.doesNotMatch(error.message + error.stack, /private-provider-reasoning/);
+      return true;
+    });
+  }
 });
 
 test("bộ điều phối chuyển từ HF hết hạn mức sang Requesty", async () => {

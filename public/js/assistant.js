@@ -11,7 +11,7 @@ function apiUrl(path) {
   return url;
 }
 
-export async function requestAssistantAnswer(input, { fetchImpl = globalThis.fetch.bind(globalThis), timeoutMs = 25_000 } = {}) {
+export async function requestAssistantAnswer(input, { fetchImpl = globalThis.fetch.bind(globalThis), timeoutMs = 45_000 } = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {

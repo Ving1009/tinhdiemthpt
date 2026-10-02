@@ -33,8 +33,8 @@ Model nhận ảnh đang ở Preview; cần giữ các phương án dự phòng 
 ## Provider tư vấn bổ sung (02/10/2026)
 
 - Gemini: Worker chính cần các key `GEMINI_API_KEY`, `GEMINI_API_KEYS`, `GEMINI_API_KEY_1..5`, `GEMINI_CHAT_MODEL` và tùy chọn `GEMINI_CHAT_TIMEOUT_MS`. Model mặc định tư vấn/quét hiện là `gemini-3.5-flash-lite`; `GEMINI_MODEL` chỉ cấu hình quét, không thay model chat.
-- Hugging Face: `HUGGINGFACE_API_KEY` (cũng nhận `HF_TOKEN`), model chat mặc định `Qwen/Qwen3-4B-Instruct-2507:cheapest`. Token chỉ cần quyền gọi Inference Providers.
-- Requesty: `REQUESTY_API_KEY`, chat mặc định `google/gemma-4-31b-it`, thuộc danh sách free đã kiểm tra. Key chỉ cần quyền completions.
+- Hugging Face: `HUGGINGFACE_API_KEY` (cũng nhận `HF_TOKEN`), model chat mặc định `Qwen/Qwen3-4B-Instruct-2507:nscale`. Token chỉ cần quyền gọi Inference Providers.
+- Requesty: `REQUESTY_API_KEY`, chat mặc định `google/gemma-4-31b-it`, thuộc danh sách free đã kiểm tra. Key chỉ cần quyền completions; timeout mặc định 40 giây, ngân sách 1600 token gồm cả reasoning.
 - HF/Requesty cũng nhận danh sách `*_API_KEYS` hoặc `*_API_KEY_1..5`, cùng `*_CHAT_MODEL`, `*_CHAT_TIMEOUT_MS`.
 - **Để trống `HUGGINGFACE_VISION_MODEL` và `REQUESTY_VISION_MODEL`**: key chat không tự bật gửi học bạ. Adapter ảnh chỉ hoạt động sau khi chọn model rõ ràng và đưa cả key/model vào Worker OCR; hiện chưa triển khai hai luồng ảnh này.
 

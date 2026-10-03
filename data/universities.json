@@ -5682,7 +5682,7 @@
     "code": "CCM",
     "logo": "./assets/logos/truong-dai-hoc-cong-nghiep-det-may-ha-noi.png",
     "description": "Cơ sở đào tạo nguồn nhân lực ứng dụng cho ngành dệt may Việt Nam.",
-    "website": "https://htu.edu.vn",
+    "website": "https://hict.edu.vn",
     "year": 2026,
     "region": "north",
     "formulas": [
@@ -5730,10 +5730,15 @@
         }
       ],
       "sources": [
-        "https://htu.edu.vn",
-        "https://htu.edu.vn/tin-t%E1%BB%A9c-s%E1%BB%B1-ki%E1%BB%87n/1967-thong-tin-ts-dhcq-2026",
-        "https://htu.edu.vn/tin-t%E1%BB%A9c-s%E1%BB%B1-ki%E1%BB%87n/1967-thong-tin-ts-dhcq-2026?tmpl=component&print=1&layout=default",
-        "https://htu.edu.vn/17-thong-bao/1973-lich-thi-nang-khieu-mam-non-nam-2026"
+        "https://hict.edu.vn/",
+        "https://hict.edu.vn/thong-tin-tuyen-sinh-nam-2026.htm",
+        "https://hict.edu.vn/quyet-dinh-ban-hanh-thong-tin-tuyen-sinh-nam-2026.htm",
+        "https://hict.edu.vn/quy-tac-quy-doi-diem-giua-cac-phuong-thuc-nam-2026.htm",
+        "https://hict.edu.vn/pic/general/files/2026/Th%C3%A1ng%204/QD%20ban%20hanh%20Thong%20tin%20tuyen%20sinh%20nam%202026%20cua%20truong%20Dai%20hoc%20Cong%20nghiep%20va%20Thuong%20mai%20Ha%20Noi_banchinh.pdf",
+        "https://hict.edu.vn/thong-bao-tuyen-sinh-bo-sung-nam-2026.htm",
+        "https://hict.edu.vn/diem-trung-tuyen-dai-hoc-nam-2026.htm",
+        "https://hict.edu.vn/huong-dan-dang-ky-xet-tuyen-bo-sung-nam-2026.htm",
+        "https://hict.edu.vn/cong-bo-nguong-diem-nhan-ho-so-xet-tuyen-dai-hoc-he-chinh-quy-nam-2026.htm"
       ],
       "note": "Danh mục đang được đối chiếu với đề án và thông báo chính thức năm 2026.",
       "referenceSources": [
@@ -5753,74 +5758,96 @@
       "referenceNote": "Đã bổ sung điểm chuẩn năm 2026 từ nguồn tham khảo VnExpress; nên đối chiếu lại thông báo chính thức của trường.",
       "information2026": {
         "year": 2026,
-        "checkedAt": "2026-10-03",
+        "checkedAt": "2026-10-04",
         "status": "official_documents_available",
         "notice": "Thông tin tuyển sinh năm 2026 chỉ mang tính tham khảo. Hãy đối chiếu thông báo chính thức của trường trước khi đăng ký; không áp dụng mặc định cho năm khác.",
-        "note": "Đã tìm được tài liệu tuyển sinh 2026 của trường. Các bảng bổ sung chỉ gồm phần đọc được từ tài liệu, có thể chưa đầy đủ. Mức độ xác minh của ngành, điểm và công thức vẫn được ghi riêng ở từng mục.",
+        "note": "Đã sửa liên kết website nhầm cơ sở. Tài liệu 2026 lấy từ website của Trường Đại học Công nghiệp và Thương mại Hà Nội (trước đây là Công nghiệp Dệt may Hà Nội); thông tin chỉ để tham khảo.",
         "scopeNote": "",
         "documents": [
           {
-            "title": "Thông tin tuyển sinh đại học chính quy năm 2026",
-            "url": "https://htu.edu.vn/tin-t%E1%BB%A9c-s%E1%BB%B1-ki%E1%BB%87n/1967-thong-tin-ts-dhcq-2026",
+            "title": "TUYỂN SINH NĂM 2026 Xem thêm",
+            "url": "https://hict.edu.vn/",
+            "topics": [
+              "Điểm trúng tuyển"
+            ],
+            "checkedAt": "2026-10-03"
+          },
+          {
+            "title": "Thông tin tuyển sinh năm 2026",
+            "url": "https://hict.edu.vn/thong-tin-tuyen-sinh-nam-2026.htm",
             "topics": [
               "Phương thức",
               "Ngành, mã ngành",
               "Điều kiện, ngưỡng đầu vào",
-              "Công thức, quy đổi",
-              "Lịch tuyển sinh"
+              "Điểm trúng tuyển",
+              "Công thức, quy đổi"
             ],
-            "checkedAt": "2026-10-03",
-            "provisional": false
+            "checkedAt": "2026-10-03"
           },
           {
-            "title": "Thông tin tuyển sinh đại học chính quy năm 2026",
-            "url": "https://htu.edu.vn/tin-t%E1%BB%A9c-s%E1%BB%B1-ki%E1%BB%87n/1967-thong-tin-ts-dhcq-2026?tmpl=component&print=1&layout=default",
+            "title": "Quyết định ban hành thông tin tuyển sinh năm 2026",
+            "url": "https://hict.edu.vn/quyet-dinh-ban-hanh-thong-tin-tuyen-sinh-nam-2026.htm",
+            "topics": [
+              "Điều kiện, ngưỡng đầu vào",
+              "Điểm trúng tuyển",
+              "Công thức, quy đổi"
+            ],
+            "checkedAt": "2026-10-03"
+          },
+          {
+            "title": "Quy tắc quy đổi điểm giữa các phương thức năm 2026",
+            "url": "https://hict.edu.vn/quy-tac-quy-doi-diem-giua-cac-phuong-thuc-nam-2026.htm",
+            "topics": [
+              "Điều kiện, ngưỡng đầu vào",
+              "Điểm trúng tuyển",
+              "Công thức, quy đổi"
+            ],
+            "checkedAt": "2026-10-03"
+          },
+          {
+            "title": "Xem chi tiết tại đ&acirc;y · Quyết định ban hành thông tin tuyển sinh năm 2026",
+            "url": "https://hict.edu.vn/pic/general/files/2026/Th%C3%A1ng%204/QD%20ban%20hanh%20Thong%20tin%20tuyen%20sinh%20nam%202026%20cua%20truong%20Dai%20hoc%20Cong%20nghiep%20va%20Thuong%20mai%20Ha%20Noi_banchinh.pdf",
+            "topics": [],
+            "checkedAt": "2026-10-03",
+            "kind": "pdf"
+          },
+          {
+            "title": "Thông báo tuyển sinh bổ sung năm 2026",
+            "url": "https://hict.edu.vn/thong-bao-tuyen-sinh-bo-sung-nam-2026.htm",
             "topics": [
               "Phương thức",
               "Điều kiện, ngưỡng đầu vào",
+              "Điểm trúng tuyển",
               "Công thức, quy đổi",
               "Lịch tuyển sinh"
             ],
-            "checkedAt": "2026-10-03",
-            "provisional": false
+            "checkedAt": "2026-10-03"
           },
           {
-            "title": "Lịch thi, danh sách thi năng khiếu xét tuyển ngành Giáo dục mầm non năm 2026",
-            "url": "https://htu.edu.vn/17-thong-bao/1973-lich-thi-nang-khieu-mam-non-nam-2026",
+            "title": "Điểm trúng tuyển đại học năm 2026",
+            "url": "https://hict.edu.vn/diem-trung-tuyen-dai-hoc-nam-2026.htm",
+            "topics": [
+              "Điều kiện, ngưỡng đầu vào",
+              "Điểm trúng tuyển",
+              "Công thức, quy đổi"
+            ],
+            "checkedAt": "2026-10-03"
+          },
+          {
+            "title": "Hướng dẫn đăng ký xét tuyển bổ sung năm 2026",
+            "url": "https://hict.edu.vn/huong-dan-dang-ky-xet-tuyen-bo-sung-nam-2026.htm",
             "topics": [
               "Ngành, mã ngành",
               "Điều kiện, ngưỡng đầu vào",
-              "Lịch tuyển sinh",
-              "Học phí"
+              "Điểm trúng tuyển",
+              "Công thức, quy đổi",
+              "Lịch tuyển sinh"
             ],
-            "checkedAt": "2026-10-03",
-            "provisional": false
+            "checkedAt": "2026-10-03"
           }
         ],
-        "methods": [
-          {
-            "code": "100",
-            "label": "1.1. Phương thức 1: Xét tuyển kết quả kỳ thi tốt nghiệp THPT năm 2026 (Mã 100)"
-          },
-          {
-            "code": "200",
-            "label": "1.2. Phương thức 2: Xét tuyển kết quả học tập cấp THPT (Mã 200)"
-          },
-          {
-            "code": "402",
-            "label": "1.3. Phương thức 3: Sử dụng kết quả thi đánh giá năng lực, đánh giá tư duy do đơn vị khác tổ chức để xét tuyển (Mã 402)"
-          },
-          {
-            "code": "411",
-            "label": "1.4. Phương thức 4: Xét tuyển thí sinh tốt nghiệp THPT nước ngoài (Mã 411)"
-          },
-          {
-            "code": "301",
-            "label": "1.5. Phương thức 5: Xét tuyển thẳng và ưu tiên xét tuyển (theo điều 8, quy chế tuyển sinh) (Mã 301)."
-          }
-        ],
-        "programs": [],
-        "methodTableUrl": "https://htu.edu.vn/tin-t%E1%BB%A9c-s%E1%BB%B1-ki%E1%BB%87n/1967-thong-tin-ts-dhcq-2026"
+        "methods": [],
+        "programs": []
       }
     },
     "logoStatus": "clear_local",

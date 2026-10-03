@@ -9,6 +9,7 @@ const [research, raw, universities, majors, verified] = await Promise.all([
   load('data/universities.json'), load('data/majors.json'), load('data/admission-formulas-2026.json'),
 ]);
 const overrides = await load('data/research/school-formulas-2026-overrides.json');
+const officialExcerpts = await load('data/research/school-formulas-2026-official-excerpts.json');
 const universityByCode = new Map(universities.map((s) => [s.code, s]));
 const pageByCode = new Map(raw.pages.map((p) => [p.code, p]));
 const verifiedByCode = new Map(verified.schools.map((s) => [s.schoolCode, s.methods]));
@@ -20,7 +21,7 @@ const schools = research.schools.map((school) => {
   const equivalentMethods = new Map();
   const methods = school.methods.map((method) => {
     const original = page?.methods.find((m) => m.id === method.id);
-    const override = overrides.methods[`${school.code}:${method.id}`] || {};
+    const override = { ...(officialExcerpts.methods[`${school.code}:${method.id}`] || {}), ...(overrides.methods[`${school.code}:${method.id}`] || {}) };
     const label = override.label || method.label;
     const text = [original?.details?.object, original?.details?.regulations, original?.details?.condition, original?.details?.quality, original?.details?.other_infomation, ...method.requirements].filter(Boolean).join('\n');
     const equations = override.equations || scoreEquations(text);
@@ -31,7 +32,7 @@ const schools = research.schools.map((school) => {
     const programSources = method.programs.filter((p) => (!override.programCodes || override.programCodes.includes(p.code)) && (!override.programVariants || override.programVariants.includes(p.methodVariant)));
     const programs = [...new Map(programSources.map((p) => [`${p.displayCode || p.code}|${p.name}|${p.group}|${p.combinations}|${p.note}`, p])).values()].map((p, i) => ({
       id: `catalog:${school.code}:${method.id}:${i}`, code: p.displayCode || p.code || '', nationalMajorCode: p.code || '',
-      name: p.name, group: p.group || '', combination: p.combinations || '', note: p.note || '', method: label,
+      name: p.name, group: p.group || '', combination: override.programCombinations?.[p.displayCode || p.code] || override.programCombinations?.[p.code] || override.programCombination || p.combinations || '', note: p.note || '', method: label,
     }));
     for (const program of programs) {
       const rowId = override.verifiedProgramRows?.[program.code];
@@ -66,7 +67,9 @@ const schools = research.schools.map((school) => {
       conversion: override.conversion || oldOfficial?.conversion || (/quy đổi/i.test(text) ? 'Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.' : ''),
       programs, rowIds: candidates.map((m) => m.id),
       repositoryMethods: [...new Set(candidates.map((m) => m.method))],
-      calculationRule: override.calculationRule || null, autoCalculate: Boolean(override.calculationRule) && status === 'official_verified',
+      calculationRule: override.calculationRule || null,
+      ...(override.calculationBranches?.length ? { calculationBranches: override.calculationBranches } : {}),
+      autoCalculate: Boolean(override.calculationRule || override.calculationBranches?.length) && status === 'official_verified',
       existingFormulaId: oldOfficial?.id || '', scopeStatus: method.scopeStatus,
       issues: [...method.issues, ...(method.disputed ? ['Có mâu thuẫn giữa các nguồn; chưa xác nhận biểu thức và phạm vi.'] : []), ...(override.issues || [])],
       evidence,
@@ -74,7 +77,7 @@ const schools = research.schools.map((school) => {
   });
   for (let i = 0; i < methods.length; i++) {
     const method = methods[i];
-    const signature = JSON.stringify([method.label, method.kind, method.status, method.expression, method.conditions, method.scale, method.priority, method.conversion, method.calculationRule, method.existingFormulaId, method.rowIds, method.programs.map(({ id, ...p }) => p)]);
+    const signature = JSON.stringify([method.label, method.kind, method.status, method.expression, method.conditions, method.scale, method.priority, method.conversion, method.calculationRule, method.calculationBranches, method.existingFormulaId, method.rowIds, method.programs.map(({ id, ...p }) => p)]);
     const previous = equivalentMethods.get(signature);
     if (!previous) { equivalentMethods.set(signature, method); continue; }
     previous.mergedMethodIds = [...(previous.mergedMethodIds || [previous.id]), method.id];
@@ -110,7 +113,7 @@ const schools = research.schools.map((school) => {
 });
 const counts = {};
 for (const school of schools) for (const method of school.methods) counts[method.status] = (counts[method.status] || 0) + 1;
-const dataset = { schemaVersion: 1, year: 2026, checkedAt: research.checkedAt, policy: 'Biểu thức theo nguồn 2026; không suy luận từ tên phương thức. Chỉ bật tự tính cho quy tắc số đã đối chiếu trực tiếp.',
+const dataset = { schemaVersion: 1, year: 2026, checkedAt: [research.checkedAt, officialExcerpts.checkedAt, ...Object.values(overrides.methods).map((m) => m.evidence?.checkedAt || '')].sort().at(-1), policy: 'Biểu thức theo nguồn 2026; không suy luận từ tên phương thức. Chỉ bật tự tính cho quy tắc số đã đối chiếu trực tiếp.',
   summary: { schools: schools.length, methods: schools.reduce((n, s) => n + s.methods.length, 0), statuses: counts }, schools };
 createSchoolFormulaCatalogIndex(dataset, { universities, majors });
 await fs.writeFile('data/school-formula-catalog-2026.json', JSON.stringify(dataset, null, 2) + '\n');

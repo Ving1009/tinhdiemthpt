@@ -1,5 +1,16 @@
 import { calculateAdmissionPriority, rounded } from '../utils.js';
 
+export function schoolFormulaBranches(formula, program = null) {
+  return (formula?.calculationBranches || []).filter((branch) => !branch.programCodes || program && [program.code, program.nationalMajorCode].some((code) => branch.programCodes.includes(code)));
+}
+
+export function selectSchoolFormulaRule(formula, branchId = '', program = null) {
+  if (!formula?.calculationBranches?.length) return formula?.calculationRule || null;
+  const branch = schoolFormulaBranches(formula, program).find((item) => item.id === branchId);
+  if (!branch) throw new Error('Hãy chọn đúng nhóm thí sinh hoặc nhánh công thức của ngành.');
+  return branch.rule;
+}
+
 export function validSchoolFormulaRanges(field, maxScore) {
   if (field.ranges == null) return true;
   if (field.lookup || !Array.isArray(field.ranges) || !field.ranges.length || field.ranges.some((range) => !range || typeof range !== 'object')) return false;

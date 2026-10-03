@@ -21,7 +21,9 @@ export function scoreEquations(text) {
     if (/i\s*=\s*1\s*,\s*2|stt|học phí|số tiền|chỉ tiêu/i.test(value)) continue;
     const context = clean(lines[i - 1]);
     const heading = /^(?:[-•]\s*)?(?:\d+[.)]\s*)?(?:Đối với|Nhóm|Ngành|Tổ hợp|Thang điểm|Công thức|Phương thức|Xét tuyển)/i.test(context) && context.length < 160 && !context.includes('=') ? `${context}\n` : '';
-    equations.push(heading + value.replace(/\s[xX]\s/g, ' × ').replace(/\*/g, '×'));
+    // X can name a weight or input (e.g. DDS: ĐTHPT × X + ĐHB × Y).
+    // Preserve x/X from the source instead of turning variables into operators.
+    equations.push(heading + value.replace(/\*/g, '×'));
   }
   return [...new Set(equations)];
 }

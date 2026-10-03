@@ -17,7 +17,7 @@ import { turnstileGate } from "./turnstile.js";
 import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261001-1";
 import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-2";
 import { AdmissionsAssistant } from "./assistant.js?v=20261001-1";
-import { calculateSchoolFormula, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20260930-2";
+import { calculateSchoolFormula, schoolFormulaBranches, selectSchoolFormulaRule, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20261004-2";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
 const THEME_STORAGE_KEY = "thpt-calculator-theme-v1";
@@ -703,7 +703,7 @@ class THPTApp {
     const major = this.selectedAdmissionMajor();
     const verifiedFormula = this.admissionFormulaForMajor(major) || this.admissionFormulaForMethod(method);
     const formula = verifiedFormula?.formulaModuleId ? this.repository.getFormula(verifiedFormula.formulaModuleId) : null;
-    const ready = verifiedFormula?.autoCalculate === true && (verifiedFormula.calculationRule ? verifiedFormula.status === "official_verified" : canCalculateMajor(major, formula));
+    const ready = verifiedFormula?.autoCalculate === true && (verifiedFormula.calculationRule || verifiedFormula.calculationBranches?.length ? verifiedFormula.status === "official_verified" : canCalculateMajor(major, formula));
     this.elements.calculateAdmission.disabled = !ready;
     this.elements.calculateAdmission.textContent = ready ? "Nhập điểm" : "Chưa hỗ trợ tự tính";
     const referenceFormula = this.referenceFormulaForMajor(major) || this.referenceFormulaForMethod(method);
@@ -784,7 +784,7 @@ class THPTApp {
     if (profile) return `<details class="verified-formula-card is-profile profile-formula-disclosure${official ? "" : " is-reference"}"><summary class="profile-formula-summary"><span class="profile-formula-name">${escapeHTML(formula.label)}</span>${badge}</summary><div class="profile-formula-details">${details}</div></details>`;
     return `<article class="verified-formula-card${official ? "" : " is-reference"}"><div class="verified-formula-heading"><div><p class="eyebrow">Công thức theo phương thức</p><h3>${escapeHTML(formula.label)}</h3></div>${badge}</div>${details}</article>`;
   }
-  focusAdmissionCalculator() { $("#admission-calculator-form input")?.focus(); }
+  focusAdmissionCalculator() { ($("#admission-calculator-form input") || $("#school-formula-branch"))?.focus(); }
   clearAdmissionResult() { const result = $("#admission-result"); if (result) result.innerHTML = '<p class="result-stale">Thông tin đã thay đổi, cần tính lại.</p>'; }
   renderAdmissionCalculator() {
     const panel = $("#admission-calculator-panel");
@@ -812,6 +812,26 @@ class THPTApp {
     }
     const formula = verifiedFormula.formulaModuleId ? this.repository.getFormula(verifiedFormula.formulaModuleId) : null;
     const details = this.admissionFormulaMarkup(verifiedFormula);
+    if (verifiedFormula.autoCalculate && verifiedFormula.status === "official_verified" && verifiedFormula.calculationBranches?.length) {
+      const selected = this.elements.majorSelect.value ? major : null;
+      const branches = schoolFormulaBranches(verifiedFormula, selected);
+      this.elements.calculateAdmission.disabled = true;
+      this.elements.calculateAdmission.textContent = "Chọn nhánh công thức";
+      const selector = `<div class="form-card"><div class="field"><label for="school-formula-branch">Nhóm thí sinh / nhánh công thức</label><select id="school-formula-branch"><option value="">Chọn đúng trường hợp của bạn</option>${branches.map((branch) => `<option value="${escapeHTML(branch.id)}">${escapeHTML(branch.label)}</option>`).join("")}</select></div><p class="form-note">${branches.length ? "Mỗi nhánh dùng thành phần điểm riêng. Đổi nhánh sẽ xóa kết quả đang hiển thị." : "Chọn ngành để xem các nhánh công thức áp dụng."}</p></div>`;
+      panel.innerHTML = `${details}${selector}<div id="school-formula-branch-panel"></div>`;
+      $("#school-formula-branch").addEventListener("change", (event) => {
+        const branch = branches.find((item) => item.id === event.target.value);
+        if (!branch) {
+          $("#school-formula-branch-panel").innerHTML = "";
+          this.elements.calculateAdmission.disabled = true;
+          this.elements.calculateAdmission.textContent = "Chọn nhánh công thức";
+          return;
+        }
+        const rule = selectSchoolFormulaRule(verifiedFormula, branch.id, selected);
+        this.renderStructuredAdmissionCalculator({ ...verifiedFormula, label: `${verifiedFormula.label} · ${branch.label}`, calculationRule: rule }, "", $("#school-formula-branch-panel"));
+      });
+      return;
+    }
     if (verifiedFormula.autoCalculate && verifiedFormula.status === "official_verified" && verifiedFormula.calculationRule) {
       this.renderStructuredAdmissionCalculator(verifiedFormula, details);
       return;
@@ -830,13 +850,13 @@ class THPTApp {
     $("#admission-calculator-form").addEventListener("submit", (event) => { event.preventDefault(); this.calculateForMajor(); });
     refresh();
   }
-  renderStructuredAdmissionCalculator(formula, details) {
+  renderStructuredAdmissionCalculator(formula, details, target = $("#admission-calculator-panel")) {
     const rule = formula.calculationRule;
     const fields = [...rule.inputs, ...(rule.bonus ? [{ ...rule.bonus, key: "bonus" }] : [])];
     const context = this.getPriorityContext();
     this.elements.calculateAdmission.disabled = false;
     this.elements.calculateAdmission.textContent = "Nhập điểm";
-    $("#admission-calculator-panel").innerHTML = `${details}<form id="admission-calculator-form" class="form-card admission-dynamic-form"><h3>Tính theo ${escapeHTML(formula.label)}</h3><div class="form-grid form-grid-two">${fields.map((field, i) => `<div class="field"><label for="school-score-${i}">${escapeHTML(field.label)}</label><input id="school-score-${i}" data-school-score="${escapeHTML(field.key)}" inputmode="decimal" autocomplete="off" placeholder="${field.min} đến ${field.max}" ${field.key === "bonus" ? 'value="0"' : ""} aria-describedby="school-error-${i}" /><small id="school-error-${i}" class="field-error" role="status"></small></div>`).join("")}${rule.priority ? `<div class="field"><label for="school-priority-area">Khu vực ưu tiên</label><select id="school-priority-area">${$("#area").innerHTML}</select></div><div class="field"><label for="school-priority-group">Đối tượng ưu tiên</label><select id="school-priority-group">${$("#priority-group").innerHTML}</select></div>` : ""}</div><p class="form-note">Điểm này được tính theo công thức của trường. Bạn vẫn cần đáp ứng điều kiện xét tuyển và dùng đúng tổ hợp của ngành.</p><button class="button button-primary" type="submit">Tính điểm xét tuyển</button></form><div id="admission-result"></div>`;
+    target.innerHTML = `${details}<form id="admission-calculator-form" class="form-card admission-dynamic-form"><h3>Tính theo ${escapeHTML(formula.label)}</h3><div class="form-grid form-grid-two">${fields.map((field, i) => `<div class="field"><label for="school-score-${i}">${escapeHTML(field.label)}</label><input id="school-score-${i}" data-school-score="${escapeHTML(field.key)}" inputmode="decimal" autocomplete="off" placeholder="${field.min} đến ${field.max}" ${field.key === "bonus" ? 'value="0"' : ""} aria-describedby="school-error-${i}" /><small id="school-error-${i}" class="field-error" role="status"></small></div>`).join("")}${rule.priority ? `<div class="field"><label for="school-priority-area">Khu vực ưu tiên</label><select id="school-priority-area">${$("#area").innerHTML}</select></div><div class="field"><label for="school-priority-group">Đối tượng ưu tiên</label><select id="school-priority-group">${$("#priority-group").innerHTML}</select></div>` : ""}</div><p class="form-note">Điểm này được tính theo công thức của trường. Bạn vẫn cần đáp ứng điều kiện xét tuyển và dùng đúng tổ hợp của ngành.</p><button class="button button-primary" type="submit">Tính điểm xét tuyển</button></form><div id="admission-result"></div>`;
     if (rule.priority) { $("#school-priority-area").value = context.area; $("#school-priority-group").value = context.priorityGroup; }
     const validateField = (input) => {
       const field = fields.find((item) => item.key === input.dataset.schoolScore);

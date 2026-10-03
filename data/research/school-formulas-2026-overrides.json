@@ -3446,23 +3446,25 @@
       }
     },
     "HVN:8335": {
-      "status": "source_reported",
-      "expression": "ĐXT = ĐTB6HK1 + ĐTB6HK2 + ĐTB6HK3 + ĐC + ĐƯT",
+      "status": "non_numeric",
+      "expression": "Xét kết hợp kết quả học tập lớp 12 mức Tốt với thành tích vượt trội; đủ điều kiện được tuyển thẳng trong phạm vi chỉ tiêu. Khi vượt chỉ tiêu, xếp theo mức thành tích rồi thứ tự nhóm, không cộng học bạ với điểm chứng chỉ.",
       "equations": [
-        "ĐXT = ĐTB6HK1 + ĐTB6HK2 + ĐTB6HK3 + ĐC + ĐƯT"
+        "Xét kết hợp kết quả học tập lớp 12 mức Tốt với thành tích vượt trội; đủ điều kiện được tuyển thẳng trong phạm vi chỉ tiêu. Khi vượt chỉ tiêu, xếp theo mức thành tích rồi thứ tự nhóm, không cộng học bạ với điểm chứng chỉ."
       ],
-      "scale": "Thang 30",
+      "scale": "Xét điều kiện và mức độ thành tích",
       "conditions": [
-        "ĐTB6HK là trung bình sáu học kỳ lớp 10, 11, 12 theo tổ hợp. Tổng trước ưu tiên gồm điểm cộng, giới hạn 30."
+        "Kết quả học tập cả năm lớp 12 mức Tốt, tương đương học lực Giỏi trở lên.",
+        "Đoạt giải Nhất, Nhì, Ba học sinh giỏi hoặc khoa học kỹ thuật cấp tỉnh/thành phố.",
+        "Khi bằng mức thành tích, ưu tiên nhóm giải HSG/KHKT, ngoại ngữ, SAT, ACT rồi kỳ thi VNUA theo đúng thông báo."
       ],
-      "priority": "Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số.",
-      "conversion": "",
+      "priority": "Mức độ ưu tiên trong bảng PT4 là thứ hạng thành tích, không phải điểm ưu tiên khu vực/đối tượng để cộng vào học bạ.",
+      "conversion": "Mức 1/2/3: HSG Ba/Nhì/Nhất; IELTS 6,0/6,5/từ 7,0; HSK4 từ 240/HSK5/HSK6; SAT 1200–1300/1301–1400/1401–1600. Bảng ACT ghi 25–27/28–30/30–36, trùng mốc 30 giữa hai mức: trường phải xác nhận mức tại 30. Đây là bảng thứ hạng, không quy đổi sang điểm 30.",
       "calculationRule": null,
       "evidence": {
-        "kind": "secondary",
-        "url": "https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-hoc-vien-nong-nghiep-viet-nam-vnua-2026-538.html",
-        "checkedAt": "2026-09-30",
-        "note": "Đối chiếu bài cách tính điểm 2026 của Tuyển sinh 247 với loại phương thức; chỉ tra cứu, chưa đủ nguồn chính thức để tự tính."
+        "kind": "official_primary",
+        "url": "https://vnua.edu.vn/thong-bao/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026-58444",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 2026, mục 4.5 và bảng mức độ ưu tiên của PT4."
       }
     },
     "HCP:8726": {
@@ -3628,61 +3630,112 @@
       }
     },
     "SKV:9191": {
-      "status": "source_reported",
-      "expression": "ĐXT = M1 + M2 + M3 + ĐƯT",
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT",
       "equations": [
-        "ĐXT = M1 + M2 + M3 + ĐƯT"
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT"
       ],
       "scale": "Thang 30",
       "conditions": [
-        "Điểm thi THPT theo tổ hợp; ưu tiên giảm từ 22,5."
+        "Tổ hợp của đúng ngành, đáp ứng ngưỡng của Bộ và của Trường.",
+        "Khi bằng điểm, Trường ưu tiên thí sinh có điểm Toán cao hơn."
       ],
-      "priority": "Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số.",
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
       "conversion": "",
-      "calculationRule": null,
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
       "evidence": {
-        "kind": "secondary",
-        "url": "https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-truong-dai-hoc-su-pham-ky-thuat-vinh-vuted-2026-635.html",
-        "checkedAt": "2026-09-30",
-        "note": "Đối chiếu bài cách tính điểm 2026 của Tuyển sinh 247 với loại phương thức; chỉ tra cứu, chưa đủ nguồn chính thức để tự tính."
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vuted.edu.vn/bai-viet/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026.html",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 2026, mục 3.2: tổng 3 môn thi và ưu tiên giảm từ 22,50."
       }
     },
     "SKV:9192": {
-      "status": "source_reported",
-      "expression": "ĐXT = điểm học tập × 3 + ĐƯT",
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm học tập × 3 + ĐƯT\nĐiểm học tập = trung bình của 3 môn trong tổ hợp qua 6 học kỳ, làm tròn 1 chữ số thập phân trước khi nhân 3",
       "equations": [
-        "ĐXT = điểm học tập × 3 + ĐƯT"
+        "ĐXT = Điểm học tập × 3 + ĐƯT",
+        "Điểm học tập = trung bình của 3 môn trong tổ hợp qua 6 học kỳ, làm tròn 1 chữ số thập phân trước khi nhân 3"
       ],
       "scale": "Thang 30",
       "conditions": [
-        "Điểm học tập là trung bình ba môn tổ hợp qua sáu học kỳ, làm tròn một chữ số trước khi nhân 3."
+        "Dùng học kỳ I, II của đủ lớp 10, 11, 12; không thay bằng điểm cả năm.",
+        "Tổ hợp phải có Toán hoặc Văn ít nhất 1/3 trọng số; tổng Toán + Văn + một môn thi khác đạt ít nhất 15,00.",
+        "Thực hiện đúng bước làm tròn 1 chữ số trước khi nhân; không chỉ làm tròn tổng cuối."
       ],
-      "priority": "Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số.",
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
       "conversion": "",
       "calculationRule": null,
       "evidence": {
-        "kind": "secondary",
-        "url": "https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-truong-dai-hoc-su-pham-ky-thuat-vinh-vuted-2026-635.html",
-        "checkedAt": "2026-09-30",
-        "note": "Đối chiếu bài cách tính điểm 2026 của Tuyển sinh 247 với loại phương thức; chỉ tra cứu, chưa đủ nguồn chính thức để tự tính."
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vuted.edu.vn/bai-viet/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026.html",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 3.3: sáu học kỳ, làm tròn điểm học tập trước khi nhân."
       }
     },
     "SKV:9193": {
-      "status": "source_reported",
-      "expression": "ĐXT = HSA × 30/150 + ĐƯT",
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm HSA × 30 / 150 + ĐƯT",
       "equations": [
-        "ĐXT = HSA × 30/150 + ĐƯT"
+        "ĐXT = Điểm HSA × 30 / 150 + ĐƯT"
       ],
       "scale": "Thang 30",
-      "conditions": [],
-      "priority": "Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số.",
-      "conversion": "Quy định quy đổi HSA theo nguồn năm 2026; chưa bật tự tính khi chưa đối chiếu nguồn chính thức.",
-      "calculationRule": null,
+      "conditions": [
+        "Dùng kết quả kỳ thi HSA năm 2026 và đủ điều kiện, ngưỡng ngành.",
+        "Không dùng phép quy đổi này cho trường yêu cầu bảng bách phân vị."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 5,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "hsa",
+            "label": "Điểm HSA ĐHQGHN năm 2026",
+            "min": 0,
+            "max": 150,
+            "weight": 1
+          }
+        ]
+      },
       "evidence": {
-        "kind": "secondary",
-        "url": "https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-truong-dai-hoc-su-pham-ky-thuat-vinh-vuted-2026-635.html",
-        "checkedAt": "2026-09-30",
-        "note": "Đối chiếu bài cách tính điểm 2026 của Tuyển sinh 247 với loại phương thức; chỉ tra cứu, chưa đủ nguồn chính thức để tự tính."
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vuted.edu.vn/bai-viet/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026.html",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 3.4 nêu rõ quy đổi tuyến tính HSA 30/150, chỉ cho Trường này."
       }
     },
     "HCP:8725": {
@@ -3706,21 +3759,23 @@
       }
     },
     "SKV:9194": {
-      "status": "source_reported",
-      "expression": "ĐXT = điểm ĐGNL Sư phạm Hà Nội đã quy đổi + ĐƯT",
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm SPT đã quy đổi + ĐƯT",
       "equations": [
-        "ĐXT = điểm ĐGNL Sư phạm Hà Nội đã quy đổi + ĐƯT"
+        "ĐXT = Điểm SPT đã quy đổi + ĐƯT"
       ],
       "scale": "Thang 30",
-      "conditions": [],
-      "priority": "Tổng trước ưu tiên gồm điểm nền và điểm cộng đã xác nhận, giới hạn ở điểm tối đa. Quy về thang 30: dưới 22,5 giữ mức ưu tiên; từ 22,5 giảm theo (30 − tổng trước ưu tiên) / 7,5. Mức ưu tiên khu vực + đối tượng được quy theo thang xét tuyển; làm tròn 2 chữ số.",
-      "conversion": "Bài thi Sư phạm Hà Nội cần bảng riêng; không lấy điểm gốc / 150 × 30.",
+      "conditions": [
+        "Dùng kết quả Đại học Sư phạm Hà Nội năm 2026 đúng tổ hợp."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Cần bảng quy đổi SPT của Trường; không mặc định tổng điểm gốc SPT bằng điểm THPT.",
       "calculationRule": null,
       "evidence": {
-        "kind": "secondary",
-        "url": "https://diemthi.tuyensinh247.com/tin/cach-tinh-diem-xet-tuyen-truong-dai-hoc-su-pham-ky-thuat-vinh-vuted-2026-635.html",
-        "checkedAt": "2026-09-30",
-        "note": "Đối chiếu bài cách tính điểm 2026 của Tuyển sinh 247 với loại phương thức; chỉ tra cứu, chưa đủ nguồn chính thức để tự tính."
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vuted.edu.vn/bai-viet/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026.html",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 3.4 tách SPT: điểm quy đổi rồi cộng ưu tiên."
       }
     },
     "NHH:8566": {
@@ -3792,6 +3847,3873 @@
         "checkedAt": "2026-09-30",
         "note": "Đối chiếu trực tiếp mục 2.2 và 7 của quyết định 2028 ngày 31/03/2026; công thức xác minh, bảng tương đương chưa hoàn tất."
       }
+    },
+    "HTC:8320": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 + M2 + M3 + ĐƯT",
+      "equations": [
+        "ĐXT = M1 + M2 + M3 + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng đúng tổ hợp trong bảng ngành; chứng chỉ tiếng Anh có thể thay điểm môn tiếng Anh theo bảng quy đổi.",
+        "Chương trình liên kết quốc tế có điều kiện tiếng Anh riêng; tổng điểm không xác nhận đủ điều kiện trúng tuyển."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.hvtc.edu.vn/Uploads/files/2026/06/27/THONG%20TIN%20TUYEN%20SINH%20DAI%20HOC%20CHINH%20QUY%20NAM%202026%20-%20CN.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin tuyển sinh cập nhật tháng 6/2026, mục 2.3; FAQ 2026 xác nhận tổng 3 môn và ưu tiên, thang 30."
+      }
+    },
+    "HTC:8321": {
+      "status": "official_verified",
+      "expression": "Nhóm 1: ĐXT = TBC Toán + TBC cao nhất của Văn/Lý/Hóa/Tin + điểm thành tích quy đổi + ĐƯT\nNhóm 2: ĐXT = Toán thi THPT + TBC của tổ hợp 3 môn cao nhất (thang 10) + điểm thành tích quy đổi + ĐƯT\nNhóm 3: ĐXT = Toán thi THPT + TBC của tổ hợp 3 môn cao nhất (thang 10) + điểm thi cao nhất của Lý/Hóa/Văn/Anh/Tin + ĐƯT",
+      "equations": [
+        "Nhóm 1: ĐXT = TBC Toán + TBC cao nhất của Văn/Lý/Hóa/Tin + điểm thành tích quy đổi + ĐƯT",
+        "Nhóm 2: ĐXT = Toán thi THPT + TBC của tổ hợp 3 môn cao nhất (thang 10) + điểm thành tích quy đổi + ĐƯT",
+        "Nhóm 3: ĐXT = Toán thi THPT + TBC của tổ hợp 3 môn cao nhất (thang 10) + điểm thi cao nhất của Lý/Hóa/Văn/Anh/Tin + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "TBC mỗi môn lấy trung bình cả năm lớp 10, 11, 12. Kiểm tra điều kiện học lực và thành tích của đúng nhóm trước khi tính.",
+        "Nếu các thí sinh bằng điểm ở cuối danh sách, Học viện dùng điểm thi Toán THPT 2026 làm tiêu chí phụ.",
+        "Nhóm 2/3 dùng TBC của cả tổ hợp 3 môn cao nhất, không dùng điểm của riêng môn cao nhất."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Điểm thành tích 8,50; 9,00; 9,50; 9,75; 10,00 theo bảng chứng chỉ/giải thưởng của Học viện; chỉ nhập mức đã đối chiếu.",
+      "calculationRule": null,
+      "calculationBranches": [
+        {
+          "id": "group-1",
+          "label": "Nhóm 1 · học bạ + thành tích",
+          "rule": {
+            "type": "weighted_sum",
+            "maxScore": 30,
+            "divisor": 1,
+            "priority": true,
+            "priorityIncludesBonus": true,
+            "inputs": [
+              {
+                "key": "math",
+                "label": "TBC môn Toán cả 3 năm",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              },
+              {
+                "key": "best",
+                "label": "TBC cao nhất trong Văn, Lý, Hóa, Tin",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              },
+              {
+                "key": "achievement",
+                "label": "Điểm thành tích / chứng chỉ đã quy đổi",
+                "min": 8.5,
+                "max": 10,
+                "weight": 1,
+                "lookup": {
+                  "9": 9,
+                  "10": 10,
+                  "8.5": 8.5,
+                  "9.5": 9.5,
+                  "9.75": 9.75
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "group-2",
+          "label": "Nhóm 2 · Toán thi + học bạ + thành tích",
+          "rule": {
+            "type": "weighted_sum",
+            "maxScore": 30,
+            "divisor": 1,
+            "priority": true,
+            "priorityIncludesBonus": true,
+            "inputs": [
+              {
+                "key": "math",
+                "label": "Toán thi THPT 2026",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              },
+              {
+                "key": "best",
+                "label": "TBC tổ hợp 3 môn cao nhất · thang 10",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              },
+              {
+                "key": "achievement",
+                "label": "Điểm thành tích / chứng chỉ đã quy đổi",
+                "min": 8.5,
+                "max": 10,
+                "weight": 1,
+                "lookup": {
+                  "9": 9,
+                  "10": 10,
+                  "8.5": 8.5,
+                  "9.5": 9.5,
+                  "9.75": 9.75
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "group-3",
+          "label": "Nhóm 3 · Toán thi + học bạ + môn thi",
+          "rule": {
+            "type": "weighted_sum",
+            "maxScore": 30,
+            "divisor": 1,
+            "priority": true,
+            "priorityIncludesBonus": true,
+            "inputs": [
+              {
+                "key": "math",
+                "label": "Toán thi THPT 2026",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              },
+              {
+                "key": "best",
+                "label": "TBC tổ hợp 3 môn cao nhất · thang 10",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              },
+              {
+                "key": "exam",
+                "label": "Điểm thi cao nhất trong Lý, Hóa, Văn, Anh, Tin",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              }
+            ]
+          }
+        }
+      ],
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.hvtc.edu.vn/Uploads/files/2026/06/27/THONG%20TIN%20TUYEN%20SINH%20DAI%20HOC%20CHINH%20QUY%20NAM%202026%20-%20CN.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2.2.2, Nhóm 1/2/3 và bảng thành tích; không trộn các nhóm."
+      }
+    },
+    "HTC:9266": {
+      "status": "official_verified",
+      "expression": "ĐXT học bạ = TBC M1 + TBC M2 + TBC M3 + ĐƯT\nTBC Mi = (Mi lớp 10 + Mi lớp 11 + Mi lớp 12) / 3",
+      "equations": [
+        "ĐXT học bạ = TBC M1 + TBC M2 + TBC M3 + ĐƯT",
+        "TBC Mi = (Mi lớp 10 + Mi lớp 11 + Mi lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chỉ áp dụng chương trình liên kết Đại học Toulon có trong danh sách ngành của phương thức.",
+        "Tổng học bạ và ưu tiên tối thiểu 18 điểm trước quy đổi; cần đáp ứng điều kiện tiếng Anh."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Đề án yêu cầu quy đổi tương đương với THPT; không sử dụng điểm học bạ thô để so trực tiếp với điểm chuẩn THPT.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.hvtc.edu.vn/Uploads/files/2026/06/27/THONG%20TIN%20TUYEN%20SINH%20DAI%20HOC%20CHINH%20QUY%20NAM%202026%20-%20CN.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2.4, chỉ chương trình liên kết với Đại học Toulon."
+      }
+    },
+    "LPH:9119": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 + M2 + M3 + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = M1 + M2 + M3 + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chọn đúng tổ hợp theo ngành. Điểm cộng nhập là mức đã được Trường xác nhận; không cộng cùng thành tích hai lần.",
+        "Nếu dùng chứng chỉ để thay điểm môn ngoại ngữ, không cộng khuyến khích từ chính chứng chỉ đó."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.hlu.edu.vn/Images/Post/files/Tuyensinh/DHCQ/Thong%20tin%20tuyen%20sinh%202026%20K51.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin tuyển sinh K51/2026, mục 2(c), 5(b), 7; các môn hệ số 1, điểm cộng tối đa 10% thang."
+      }
+    },
+    "LPH:9121": {
+      "status": "official_verified",
+      "expression": "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Phương thức học bạ dành cho thí sinh tốt nghiệp THPT năm 2026.",
+        "Mỗi môn dùng điểm cả năm của đủ 3 lớp, không chỉ điểm lớp 12. Điểm cộng phải được trường xác nhận.",
+        "Không dùng chứng chỉ vừa quy đổi môn ngoại ngữ vừa cộng khuyến khích."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Công thức tính điểm theo phương thức học bạ; quy đổi tương đương điểm chuẩn giữa các phương thức theo thông báo riêng của Trường.",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 3,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1_10",
+            "label": "Môn 1 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_11",
+            "label": "Môn 1 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_12",
+            "label": "Môn 1 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_10",
+            "label": "Môn 2 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_11",
+            "label": "Môn 2 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_12",
+            "label": "Môn 2 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_10",
+            "label": "Môn 3 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_11",
+            "label": "Môn 3 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_12",
+            "label": "Môn 3 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.hlu.edu.vn/Images/Post/files/Tuyensinh/DHCQ/Thong%20tin%20tuyen%20sinh%202026%20K51.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2(b), 5(b), 7 trong thông tin K51/2026."
+      }
+    },
+    "DTK:8801": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng tổ hợp của đúng ngành; Công nghệ điện tử, bán dẫn và vi mạch có điều kiện phân vị riêng cho tổng điểm và Toán."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://admission.tnut.edu.vn/uploads/20260612225135-b8b78d5bfa194.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Bản điều chỉnh 12/6/2026, mục 1.3.1."
+      }
+    },
+    "DTK:8802": {
+      "status": "official_verified",
+      "expression": "Điểm học bạ = TBC M1 + TBC M2 + TBC M3 + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "Điểm học bạ = TBC M1 + TBC M2 + TBC M3 + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Tính đủ cả 3 năm cho từng môn."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Điểm xét tuyển học bạ tương đương THPT phải qua bảng do Trường công bố; chưa bật bộ tính điểm cuối từ học bạ thô.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://admission.tnut.edu.vn/uploads/20260612225135-b8b78d5bfa194.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Bản điều chỉnh 12/6/2026, mục 1.3.2."
+      }
+    },
+    "DTK:8805": {
+      "status": "official_verified",
+      "expression": "ĐXT = QĐ V-SAT M1 + QĐ V-SAT M2 + QĐ V-SAT M3 + ĐƯT",
+      "equations": [
+        "ĐXT = QĐ V-SAT M1 + QĐ V-SAT M2 + QĐ V-SAT M3 + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Điểm từng môn phải được quy đổi đúng môn và đúng năm theo hướng dẫn Đại học Thái Nguyên."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Không chia tổng V-SAT cho 15; cần bảng từng môn 2026.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://admission.tnut.edu.vn/uploads/20260612225135-b8b78d5bfa194.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 1.3.4: quy đổi từng môn theo bảng Đại học Thái Nguyên."
+      }
+    },
+    "DVB:9340": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng đúng tổ hợp của ngành; đáp ứng ngưỡng đầu vào và điều kiện riêng ngành Luật."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.tuetech.edu.vn/Documents/Articles/260629/Thong%20bao%20tuyen%20sinh%20chinh%20quy%202026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 165/2026/TB-TUETECH-TS, mục 6.1."
+      }
+    },
+    "DVB:9339": {
+      "status": "official_verified",
+      "expression": "Điểm học bạ = TBC M1 + TBC M2 + TBC M3 + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "Điểm học bạ = TBC M1 + TBC M2 + TBC M3 + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng đủ điểm cả năm lớp 10, 11, 12 của mỗi môn trong tổ hợp."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Điểm học bạ trước quy đổi; điểm tương đương THPT theo bảng công bố riêng của Trường.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.tuetech.edu.vn/Documents/Articles/260629/Thong%20bao%20tuyen%20sinh%20chinh%20quy%202026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 165/2026/TB-TUETECH-TS, mục 6.2."
+      }
+    },
+    "DDV:8690": {
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm V-ACT ĐHQG-HCM / 40 + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = Điểm V-ACT ĐHQG-HCM / 40 + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng kết quả kỳ thi đúng đơn vị tổ chức và đúng năm; điểm cộng phải được Viện xác nhận."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Nguồn quy định chia trực tiếp cho 40; không áp dụng phép chia này cho trường khác.",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 40,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "exam",
+            "label": "Điểm V-ACT ĐHQG-HCM năm 2026",
+            "min": 0,
+            "max": 1200,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vnuk.udn.vn/wp-content/uploads/2026/02/Thong-tin-tuyen-sinh-VNUK-2026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin tuyển sinh VNUK 2026, mục 2.3."
+      }
+    },
+    "DDV:8691": {
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm HSA ĐHQGHN / 5 + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = Điểm HSA ĐHQGHN / 5 + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng kết quả kỳ thi đúng đơn vị tổ chức và đúng năm; điểm cộng phải được Viện xác nhận."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Nguồn quy định chia trực tiếp cho 5; không áp dụng phép chia này cho trường khác.",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 5,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "exam",
+            "label": "Điểm HSA ĐHQGHN năm 2026",
+            "min": 0,
+            "max": 150,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vnuk.udn.vn/wp-content/uploads/2026/02/Thong-tin-tuyen-sinh-VNUK-2026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin tuyển sinh VNUK 2026, mục 2.4."
+      }
+    },
+    "DDV:8692": {
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm phỏng vấn + (2/3) × Điểm đối tượng + ĐC + ĐƯT\nĐiểm đối tượng = max(ĐT1 chứng chỉ quốc tế, ĐT2 học bạ, ĐT3 V-SAT)",
+      "equations": [
+        "ĐXT = Điểm phỏng vấn + (2/3) × Điểm đối tượng + ĐC + ĐƯT",
+        "Điểm đối tượng = max(ĐT1 chứng chỉ quốc tế, ĐT2 học bạ, ĐT3 V-SAT)"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Phỏng vấn thang 10; điểm đối tượng quy về thang 30 theo bảng riêng.",
+        "Nhóm học bạ nhân Toán hệ số 2, nhân tổng 3/4; mỗi môn dùng TBC cả năm lớp 10, 11, 12."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "ĐT1 và ĐT3 cần bảng chứng chỉ/V-SAT tại mục 5.4; không mặc định tổng điểm gốc là điểm đối tượng.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vnuk.udn.vn/wp-content/uploads/2026/02/Thong-tin-tuyen-sinh-VNUK-2026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin tuyển sinh VNUK 2026, mục 2.5.2 và 5.4."
+      }
+    },
+    "DDV:9258": {
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm phỏng vấn + (2/3) × Điểm đối tượng V-SAT quy đổi + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = Điểm phỏng vấn + (2/3) × Điểm đối tượng V-SAT quy đổi + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Cần điểm phỏng vấn do Viện tổ chức và đủ điều kiện xét tuyển của ngành."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Phải quy đổi V-SAT bằng bảng của Viện trước khi áp dụng trọng số 2/3.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vnuk.udn.vn/wp-content/uploads/2026/02/Thong-tin-tuyen-sinh-VNUK-2026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Nhóm 3 trong mục 2.5.2; điểm đối tượng theo bảng V-SAT."
+      }
+    },
+    "HPN:8198": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Luật và Luật kinh tế: môn Toán hoặc Văn trong tổ hợp từ 6,00, tổng thi từ 18,00.",
+        "Công nghệ thông tin, Thiết kế và phát triển Game có ngưỡng Toán riêng; chương trình chất lượng cao có yêu cầu ngoại ngữ.",
+        "Chỉ nhập điểm cộng đã được Học viện xác nhận; không cộng cùng chứng chỉ đã dùng để thay điểm môn ngoại ngữ."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://hvpnvn.edu.vn/cat-tin-tuc/su-kien/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-ban-hanh-lan-02/",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo lần 02/2026, PT2, nguyên tắc xét tuyển và giới hạn điểm cộng."
+      }
+    },
+    "HPN:8199": {
+      "status": "official_verified",
+      "expression": "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chỉ nhận thí sinh tốt nghiệp năm 2026, hạnh kiểm Tốt.",
+        "Luật và Luật kinh tế cần đáp ứng ngưỡng riêng về học lực, điểm thi hoặc điểm xét tốt nghiệp và môn Toán/Văn.",
+        "Công nghệ thông tin, Game và chương trình chất lượng cao có điều kiện bổ sung; tổng tính được không thay kiểm tra các điều kiện này."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 3,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1_10",
+            "label": "Môn 1 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_11",
+            "label": "Môn 1 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_12",
+            "label": "Môn 1 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_10",
+            "label": "Môn 2 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_11",
+            "label": "Môn 2 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_12",
+            "label": "Môn 2 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_10",
+            "label": "Môn 3 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_11",
+            "label": "Môn 3 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_12",
+            "label": "Môn 3 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://hvpnvn.edu.vn/cat-tin-tuc/su-kien/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-ban-hanh-lan-02/",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo lần 02/2026, PT3 và nguyên tắc xét tuyển."
+      }
+    },
+    "HVN:8333": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Tổ hợp theo ngành, không chênh lệch điểm giữa các tổ hợp.",
+        "Điểm cộng tối đa 3,00. Chứng chỉ IELTS/HSK đã dùng thay điểm môn ngoại ngữ không được dùng để cộng điểm lần nữa."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://vnua.edu.vn/thong-bao/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026-58444",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 2026, mục 4.3 và 4.6; tổng trước ưu tiên gồm điểm cộng."
+      }
+    },
+    "HVN:8334": {
+      "status": "official_verified",
+      "expression": "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng đủ 3 năm cho từng môn; ngành Luật và Sư phạm công nghệ có ngưỡng đầu vào riêng.",
+        "Không dùng cùng IELTS/HSK cho cả thay điểm môn và cộng điểm. Điểm cộng nhập phải có minh chứng hợp lệ."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 3,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1_10",
+            "label": "Môn 1 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_11",
+            "label": "Môn 1 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_12",
+            "label": "Môn 1 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_10",
+            "label": "Môn 2 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_11",
+            "label": "Môn 2 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_12",
+            "label": "Môn 2 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_10",
+            "label": "Môn 3 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_11",
+            "label": "Môn 3 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_12",
+            "label": "Môn 3 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://vnua.edu.vn/thong-bao/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026-58444",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 2026, mục 4.4 và 4.6: trung bình cả năm 10, 11, 12."
+      }
+    },
+    "GTA:8736": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng tổ hợp của đúng ngành; chứng chỉ tiếng Anh chỉ thay điểm theo bảng của Trường nếu đủ điều kiện."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://www.utt.edu.vn/vn/tuyensinh/tuyen-sinh/dai-hoc-chinh-quy/thong-tin-tuyen-sinh-dai-hoc-nam-2026-a16905.html",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin tuyển sinh 2026, mục 2.2; điểm thi theo thang 30, làm tròn 2 chữ số."
+      }
+    },
+    "GTA:8737": {
+      "status": "official_verified",
+      "expression": "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Phương thức học bạ kết hợp có điều kiện thành tích hoặc ngoại ngữ; không chỉ xét tổng 3 môn.",
+        "Điểm cộng phải theo bảng đúng đối tượng; tổng THM + ĐC từ 30 thì ưu tiên bằng 0."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 3,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1_10",
+            "label": "Môn 1 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_11",
+            "label": "Môn 1 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_12",
+            "label": "Môn 1 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_10",
+            "label": "Môn 2 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_11",
+            "label": "Môn 2 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_12",
+            "label": "Môn 2 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_10",
+            "label": "Môn 3 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_11",
+            "label": "Môn 3 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_12",
+            "label": "Môn 3 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://www.utt.edu.vn/vn/tuyensinh/tuyen-sinh/dai-hoc-chinh-quy/thong-tin-tuyen-sinh-dai-hoc-nam-2026-a16905.html",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2.3: học bạ kết hợp; công thức THM, điểm cộng và ưu tiên trên tổng THM + ĐC."
+      }
+    },
+    "DDN:8248": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Ngành sức khỏe và pháp luật phải đáp ứng ngưỡng riêng của Bộ GDĐT và của Trường."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://xettuyen.dainam.edu.vn/",
+        "checkedAt": "2026-10-04",
+        "note": "Trang xét tuyển 2026, Phương thức 1."
+      }
+    },
+    "DDN:8249": {
+      "status": "official_verified",
+      "expression": "ĐXT = TBC M1 + TBC M2 + TBC M3\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "ĐXT = TBC M1 + TBC M2 + TBC M3",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Ngành Y khoa, Dược học, Điều dưỡng, Luật và Luật kinh tế có điều kiện học lực/điểm thi hoặc xét tốt nghiệp riêng.",
+        "Không cộng ưu tiên khu vực hoặc đối tượng vào tổng học bạ của phương thức này."
+      ],
+      "priority": "Trường không cộng điểm ưu tiên cho phương thức học bạ này.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 3,
+        "priority": false,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1_10",
+            "label": "Môn 1 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_11",
+            "label": "Môn 1 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_12",
+            "label": "Môn 1 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_10",
+            "label": "Môn 2 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_11",
+            "label": "Môn 2 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_12",
+            "label": "Môn 2 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_10",
+            "label": "Môn 3 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_11",
+            "label": "Môn 3 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_12",
+            "label": "Môn 3 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://xettuyen.dainam.edu.vn/",
+        "checkedAt": "2026-10-04",
+        "note": "Phương thức 2 trên cổng xét tuyển 2026 nói rõ không cộng ưu tiên."
+      }
+    },
+    "QHQ:9291": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng đúng tổ hợp của ngành và đáp ứng điều kiện tiếng Anh đầu vào.",
+        "Thông báo có ghi dự kiến; kết quả chỉ tham khảo và cần đối chiếu thông báo cuối cùng."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://www.is.vnu.edu.vn/truong-quoc-te-thong-bao-thong-tin-du-kien-tuyen-sinh-dhcq-nam-2026/",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin tuyển sinh 2026, phương thức kết quả thi THPT; công thức và chính sách cộng điểm."
+      }
+    },
+    "QHQ:9292": {
+      "status": "official_verified",
+      "expression": "ĐXT = Tiếng Anh chứng chỉ quy đổi + M1 thi THPT + M2 thi THPT + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = Tiếng Anh chứng chỉ quy đổi + M1 thi THPT + M2 thi THPT + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chứng chỉ phải hợp lệ và còn thời hạn; không dùng cùng chứng chỉ cho cả quy đổi và điểm cộng."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Dùng bảng 6 của Trường Quốc tế để thay môn tiếng Anh; không dùng bảng của đơn vị thành viên khác.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://www.is.vnu.edu.vn/truong-quoc-te-thong-bao-thong-tin-du-kien-tuyen-sinh-dhcq-nam-2026/",
+        "checkedAt": "2026-10-04",
+        "note": "Phương thức kết hợp CCTA và THPT, bảng 6."
+      }
+    },
+    "QHQ:9293": {
+      "status": "official_verified",
+      "expression": "ĐXT = HSA quy đổi + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = HSA quy đổi + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng đúng kết quả HSA hợp lệ, phạm vi ngành và ngưỡng của Trường."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Cần bảng quy đổi HSA 2026 của Trường/ĐHQGHN; không mặc định HSA / 5.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://www.is.vnu.edu.vn/truong-quoc-te-thong-bao-thong-tin-du-kien-tuyen-sinh-dhcq-nam-2026/",
+        "checkedAt": "2026-10-04",
+        "note": "Phương thức HSA; điểm HSA được quy đổi trước khi cộng điểm và ưu tiên."
+      }
+    },
+    "QHX:7857": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐKK\nĐXT = Tổng trước ưu tiên + ĐƯT",
+      "equations": [
+        "Tổng trước ưu tiên = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐKK",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chọn tổ hợp của đúng ngành; điểm khuyến khích phải được trường xác nhận theo thành tích hợp lệ.",
+        "Không áp dụng hệ số hoặc độ lệch tổ hợp từ năm trước."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://ussh.vnu.edu.vn/vi/news/dao-tao/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-24126.html",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin 2026, công thức phương thức THPT và điểm khuyến khích."
+      }
+    },
+    "QHX:7858": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = HSA quy đổi về thang 30 + ĐKK\nĐXT = Tổng trước ưu tiên + ĐƯT",
+      "equations": [
+        "Tổng trước ưu tiên = HSA quy đổi về thang 30 + ĐKK",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng kết quả HSA đáp ứng ngưỡng và thời hạn công bố trong đề án."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Dùng bảng tương đương HSA–THPT 2026 được ĐHQGHN công bố; không dùng tỉ lệ 30/150.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://ussh.vnu.edu.vn/vi/news/dao-tao/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-24126.html",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin 2026, phương thức HSA và thứ tự cộng điểm."
+      }
+    },
+    "QHL:7946": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Môn Toán hoặc Ngữ văn trong tổ hợp từ 6,00; đáp ứng ngưỡng đầu vào lĩnh vực pháp luật.",
+        "Điểm cộng không vượt 3,00; cùng thành tích/ngoại ngữ chỉ được hưởng một lần theo mức phù hợp."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://law.vnu.edu.vn/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/?print=print",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin 2026, mục 2.1.1: 10 tổ hợp, các môn hệ số 1; mục 5.2 và 7."
+      }
+    },
+    "QHL:7947": {
+      "status": "official_verified",
+      "expression": "ĐXT = Toán thi THPT + Ngữ văn thi THPT + Tiếng Anh chứng chỉ quy đổi + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = Toán thi THPT + Ngữ văn thi THPT + Tiếng Anh chứng chỉ quy đổi + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Áp dụng D01; IELTS tối thiểu 5,5 hoặc TOEFL iBT tối thiểu 72, đủ 4 kỹ năng, không thi online, còn hạn 2 năm.",
+        "Không dùng cùng chứng chỉ để vừa thay môn vừa cộng khuyến khích."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Tiếng Anh theo Phụ lục III của Trường; không lấy điểm IELTS làm điểm môn thi.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://law.vnu.edu.vn/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/?print=print",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2.1.2 giới hạn tổ hợp D01, chứng chỉ thay môn tiếng Anh."
+      },
+      "programCombination": "D01"
+    },
+    "QHL:9239": {
+      "status": "official_verified",
+      "expression": "ĐXT = HSA quy đổi theo bảng 2026 + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = HSA quy đổi theo bảng 2026 + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "HSA còn thời hạn 2 năm; đáp ứng ngưỡng của Trường và của lĩnh vực pháp luật."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Cần dùng bảng tương đương 2026; không quy đổi mặc định HSA / 5.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://law.vnu.edu.vn/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/?print=print",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2.3, 5.2 và 7: HSA theo quy đổi ĐHQGHN và Bộ GDĐT."
+      }
+    },
+    "MDA:8323": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = min(M1 + M2 + M3 + ĐC, 30)\nĐXT = Tổng trước ưu tiên + ĐƯT",
+      "equations": [
+        "Tổng trước ưu tiên = min(M1 + M2 + M3 + ĐC, 30)",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng điểm thi THPT 2026 trong tổ hợp của đúng ngành.",
+        "Điểm cộng tối đa 3,00 phải được Trường xác nhận. Ưu tiên giảm trên tổng sau điểm cộng và không âm."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.humg.edu.vn/tuyen-sinh/Pages/Thong-tin-tuyen-sinh.aspx?ItemID=7117",
+        "checkedAt": "2026-10-04",
+        "note": "Quy định xét tuyển 2026 HUMG: điểm thi THPT, điểm cộng và trần trước ưu tiên."
+      }
+    },
+    "MDA:8326": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = min(Điểm TSA sau quy đổi + ĐC, 30)\nĐXT = Tổng trước ưu tiên + ĐƯT",
+      "equations": [
+        "Tổng trước ưu tiên = min(Điểm TSA sau quy đổi + ĐC, 30)",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Cần đúng thành phần điểm, bảng quy đổi và điều kiện của phương thức; không dùng điểm gốc thay cho điểm sau quy đổi."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Tra bảng 2026 của Trường cho phương thức được chọn; chưa đủ bảng để tự tính từ điểm gốc.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.humg.edu.vn/tuyen-sinh/Pages/Thong-tin-tuyen-sinh.aspx?ItemID=7117",
+        "checkedAt": "2026-10-04",
+        "note": "Quy định HUMG 2026: các phương thức khác phải quy đổi trước khi cộng."
+      }
+    },
+    "MDA:8327": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = min(Điểm HSA sau quy đổi + ĐC, 30)\nĐXT = Tổng trước ưu tiên + ĐƯT",
+      "equations": [
+        "Tổng trước ưu tiên = min(Điểm HSA sau quy đổi + ĐC, 30)",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Cần đúng thành phần điểm, bảng quy đổi và điều kiện của phương thức; không dùng điểm gốc thay cho điểm sau quy đổi."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Tra bảng 2026 của Trường cho phương thức được chọn; chưa đủ bảng để tự tính từ điểm gốc.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.humg.edu.vn/tuyen-sinh/Pages/Thong-tin-tuyen-sinh.aspx?ItemID=7117",
+        "checkedAt": "2026-10-04",
+        "note": "Quy định HUMG 2026: các phương thức khác phải quy đổi trước khi cộng."
+      }
+    },
+    "MDA:8328": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = min(Điểm học bạ sau quy đổi + ĐC, 30)\nĐXT = Tổng trước ưu tiên + ĐƯT",
+      "equations": [
+        "Tổng trước ưu tiên = min(Điểm học bạ sau quy đổi + ĐC, 30)",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Cần đúng thành phần điểm, bảng quy đổi và điều kiện của phương thức; không dùng điểm gốc thay cho điểm sau quy đổi."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Tra bảng 2026 của Trường cho phương thức được chọn; chưa đủ bảng để tự tính từ điểm gốc.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.humg.edu.vn/tuyen-sinh/Pages/Thong-tin-tuyen-sinh.aspx?ItemID=7117",
+        "checkedAt": "2026-10-04",
+        "note": "Quy định HUMG 2026: các phương thức khác phải quy đổi trước khi cộng."
+      }
+    },
+    "MDA:9474": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = min(Điểm THPT kết hợp chứng chỉ ngoại ngữ sau quy đổi + ĐC, 30)\nĐXT = Tổng trước ưu tiên + ĐƯT",
+      "equations": [
+        "Tổng trước ưu tiên = min(Điểm THPT kết hợp chứng chỉ ngoại ngữ sau quy đổi + ĐC, 30)",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Cần đúng thành phần điểm, bảng quy đổi và điều kiện của phương thức; không dùng điểm gốc thay cho điểm sau quy đổi."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Tra bảng 2026 của Trường cho phương thức được chọn; chưa đủ bảng để tự tính từ điểm gốc.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.humg.edu.vn/tuyen-sinh/Pages/Thong-tin-tuyen-sinh.aspx?ItemID=7117",
+        "checkedAt": "2026-10-04",
+        "note": "Quy định HUMG 2026: các phương thức khác phải quy đổi trước khi cộng."
+      }
+    },
+    "MDA:8324": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = min(Điểm học bạ kết hợp chứng chỉ quốc tế sau quy đổi + ĐC, 30)\nĐXT = Tổng trước ưu tiên + ĐƯT",
+      "equations": [
+        "Tổng trước ưu tiên = min(Điểm học bạ kết hợp chứng chỉ quốc tế sau quy đổi + ĐC, 30)",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Cần đúng thành phần điểm, bảng quy đổi và điều kiện của phương thức; không dùng điểm gốc thay cho điểm sau quy đổi."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Tra bảng 2026 của Trường cho phương thức được chọn; chưa đủ bảng để tự tính từ điểm gốc.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.humg.edu.vn/tuyen-sinh/Pages/Thong-tin-tuyen-sinh.aspx?ItemID=7117",
+        "checkedAt": "2026-10-04",
+        "note": "Quy định HUMG 2026: các phương thức khác phải quy đổi trước khi cộng."
+      }
+    },
+    "MDA:9473": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = min(Điểm học bạ kết hợp hồ sơ năng lực sau quy đổi + ĐC, 30)\nĐXT = Tổng trước ưu tiên + ĐƯT",
+      "equations": [
+        "Tổng trước ưu tiên = min(Điểm học bạ kết hợp hồ sơ năng lực sau quy đổi + ĐC, 30)",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Cần đúng thành phần điểm, bảng quy đổi và điều kiện của phương thức; không dùng điểm gốc thay cho điểm sau quy đổi."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Tra bảng 2026 của Trường cho phương thức được chọn; chưa đủ bảng để tự tính từ điểm gốc.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.humg.edu.vn/tuyen-sinh/Pages/Thong-tin-tuyen-sinh.aspx?ItemID=7117",
+        "checkedAt": "2026-10-04",
+        "note": "Quy định HUMG 2026: các phương thức khác phải quy đổi trước khi cộng."
+      }
+    },
+    "DDM:8849": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐKK + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐKK + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng tổ hợp của đúng ngành. Điểm khuyến khích ngoại ngữ theo bảng từ 0,50 đến 1,50; không cộng cùng chứng chỉ đã dùng để thay điểm môn."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 1.5
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.qui.edu.vn/tuyen-sinh-dai-hoc/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-1075.html",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 2026, mục IV.2 và bảng chứng chỉ ngoại ngữ."
+      }
+    },
+    "DDM:8850": {
+      "status": "official_verified",
+      "expression": "ĐXT học bạ = TBC M1 + TBC M2 + TBC M3 + ĐKK + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "ĐXT học bạ = TBC M1 + TBC M2 + TBC M3 + ĐKK + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng đủ 3 năm cho mỗi môn và đáp ứng ngưỡng đầu vào của Trường."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Đây là điểm theo phương thức học bạ. Khi so với điểm chuẩn THPT, cần bảng tương đương 2026 được Trường công bố riêng.",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 3,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1_10",
+            "label": "Môn 1 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_11",
+            "label": "Môn 1 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_12",
+            "label": "Môn 1 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_10",
+            "label": "Môn 2 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_11",
+            "label": "Môn 2 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_12",
+            "label": "Môn 2 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_10",
+            "label": "Môn 3 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_11",
+            "label": "Môn 3 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_12",
+            "label": "Môn 3 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 1.5
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.qui.edu.vn/tuyen-sinh-dai-hoc/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-1075.html",
+        "checkedAt": "2026-10-04",
+        "note": "Mục IV.3; bảng điểm khuyến khích ngoại ngữ."
+      }
+    },
+    "DDM:8851": {
+      "status": "official_verified",
+      "expression": "ĐXT = (Điểm HSA / 150) × 30 + ĐƯT",
+      "equations": [
+        "ĐXT = (Điểm HSA / 150) × 30 + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chỉ áp dụng kết quả đúng kỳ thi và ngưỡng 2026 của Trường."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Thông báo đầu năm ghi quy đổi về 30 theo tỷ lệ 30/150. Cần kiểm tra bảng quy đổi tương đương công bố sau kỳ thi trước khi tính điểm cuối cùng.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.qui.edu.vn/tuyen-sinh-dai-hoc/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-1075.html",
+        "checkedAt": "2026-10-04",
+        "note": "Mục IV.4 nêu quy đổi tuyến tính; cần đối chiếu thông báo bảng tương đương cuối cùng."
+      }
+    },
+    "DDM:8852": {
+      "status": "official_verified",
+      "expression": "ĐXT = (Điểm TSA / 100) × 30 + ĐƯT",
+      "equations": [
+        "ĐXT = (Điểm TSA / 100) × 30 + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chỉ áp dụng kết quả đúng kỳ thi và ngưỡng 2026 của Trường."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Thông báo đầu năm ghi quy đổi về 30 theo tỷ lệ 30/100. Cần kiểm tra bảng quy đổi tương đương công bố sau kỳ thi trước khi tính điểm cuối cùng.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.qui.edu.vn/tuyen-sinh-dai-hoc/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-1075.html",
+        "checkedAt": "2026-10-04",
+        "note": "Mục IV.4 nêu quy đổi tuyến tính; cần đối chiếu thông báo bảng tương đương cuối cùng."
+      }
+    },
+    "DDM:8853": {
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm thi THPT Toán hoặc Ngữ văn + TBC M2 + TBC M3 + ĐKK + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "ĐXT = Điểm thi THPT Toán hoặc Ngữ văn + TBC M2 + TBC M3 + ĐKK + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Môn thi là Toán hoặc Ngữ văn; hai môn học bạ còn lại phải tạo thành tổ hợp hợp lệ của ngành.",
+        "Không nhập điểm học bạ vào ô môn thi THPT. Điểm cộng ngoại ngữ phải theo bảng của Trường."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "exam",
+            "label": "Toán hoặc Ngữ văn thi THPT 2026",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_10",
+            "label": "Môn 2 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 0.3333333333333333
+          },
+          {
+            "key": "m2_11",
+            "label": "Môn 2 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 0.3333333333333333
+          },
+          {
+            "key": "m2_12",
+            "label": "Môn 2 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 0.3333333333333333
+          },
+          {
+            "key": "m3_10",
+            "label": "Môn 3 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 0.3333333333333333
+          },
+          {
+            "key": "m3_11",
+            "label": "Môn 3 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 0.3333333333333333
+          },
+          {
+            "key": "m3_12",
+            "label": "Môn 3 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 0.3333333333333333
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 1.5
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.qui.edu.vn/tuyen-sinh-dai-hoc/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-1075.html",
+        "checkedAt": "2026-10-04",
+        "note": "Mục IV.5 và bảng khuyến khích; thành phần thi và học bạ không thay thế nhau."
+      }
+    },
+    "DPC:8208": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Ngành sức khỏe có ngưỡng riêng; tổng điểm không thay kiểm tra các điều kiện đầu vào.",
+        "Nếu thay môn Anh bằng IELTS, phải dùng điểm quy đổi đúng bảng của Trường và chọn mức cao hơn điểm thi."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://pctu.edu.vn/vn/thong-tin-tuyen-sinh-dai-hoc-nam-2026.html",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin tuyển sinh 2026, PT1; độ lệch tổ hợp bằng 0."
+      }
+    },
+    "DPC:8210": {
+      "status": "official_verified",
+      "expression": "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Y khoa và Răng–Hàm–Mặt: tốt nghiệp từ 2023, không hệ GDTX; học lực Tốt cả 3 năm và đáp ứng ngưỡng thi/xét tốt nghiệp theo thông báo.",
+        "Điều dưỡng và Kỹ thuật xét nghiệm có yêu cầu năm tốt nghiệp, học lực và ngưỡng đầu vào riêng.",
+        "Nếu dùng IELTS thay môn Anh, cần điểm quy đổi đã được Trường xác nhận; các ô học bạ dùng điểm gốc cả năm."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Bộ tính dùng học bạ gốc. Trường hợp thay môn Anh bằng chứng chỉ cần áp dụng riêng bảng IELTS của Trường.",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 3,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1_10",
+            "label": "Môn 1 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_11",
+            "label": "Môn 1 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_12",
+            "label": "Môn 1 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_10",
+            "label": "Môn 2 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_11",
+            "label": "Môn 2 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_12",
+            "label": "Môn 2 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_10",
+            "label": "Môn 3 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_11",
+            "label": "Môn 3 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_12",
+            "label": "Môn 3 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://pctu.edu.vn/vn/thong-tin-tuyen-sinh-dai-hoc-nam-2026.html",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin tuyển sinh 2026, PT2; trung bình mỗi môn đủ cả năm 3 lớp."
+      }
+    },
+    "DPC:8211": {
+      "status": "official_verified",
+      "expression": "ĐXT = (Điểm V-ACT ĐHQG-HCM + ĐƯT theo thang gốc) / 1200 × 100",
+      "equations": [
+        "ĐXT = (Điểm V-ACT ĐHQG-HCM + ĐƯT theo thang gốc) / 1200 × 100"
+      ],
+      "scale": "Thang 100",
+      "conditions": [
+        "Dùng lần thi cao nhất hợp lệ. Nhóm ngành sức khỏe có yêu cầu học lực, điểm thi và điểm xét tốt nghiệp riêng."
+      ],
+      "priority": "Điểm ưu tiên phải được xác định trên thang gốc của kỳ thi theo quy chế, rồi mới quy về 100; không cộng trực tiếp 0,75 vào điểm thi gốc.",
+      "conversion": "Đã có biểu thức quy về 100, nhưng chưa bật tự tính khi chưa xác nhận đầy đủ mức ưu tiên trên thang gốc.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://pctu.edu.vn/vn/thong-tin-tuyen-sinh-dai-hoc-nam-2026.html",
+        "checkedAt": "2026-10-04",
+        "note": "PT3, ba kỳ thi được tách theo thang gốc, điểm xét tuyển về thang 100."
+      }
+    },
+    "DPC:8212": {
+      "status": "official_verified",
+      "expression": "ĐXT = (Điểm HSA ĐHQGHN + ĐƯT theo thang gốc) / 150 × 100",
+      "equations": [
+        "ĐXT = (Điểm HSA ĐHQGHN + ĐƯT theo thang gốc) / 150 × 100"
+      ],
+      "scale": "Thang 100",
+      "conditions": [
+        "Dùng lần thi cao nhất hợp lệ. Nhóm ngành sức khỏe có yêu cầu học lực, điểm thi và điểm xét tốt nghiệp riêng."
+      ],
+      "priority": "Điểm ưu tiên phải được xác định trên thang gốc của kỳ thi theo quy chế, rồi mới quy về 100; không cộng trực tiếp 0,75 vào điểm thi gốc.",
+      "conversion": "Đã có biểu thức quy về 100, nhưng chưa bật tự tính khi chưa xác nhận đầy đủ mức ưu tiên trên thang gốc.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://pctu.edu.vn/vn/thong-tin-tuyen-sinh-dai-hoc-nam-2026.html",
+        "checkedAt": "2026-10-04",
+        "note": "PT3, ba kỳ thi được tách theo thang gốc, điểm xét tuyển về thang 100."
+      }
+    },
+    "DPC:8213": {
+      "status": "official_verified",
+      "expression": "ĐXT = (Điểm V-SAT + ĐƯT theo thang gốc) / 450 × 100",
+      "equations": [
+        "ĐXT = (Điểm V-SAT + ĐƯT theo thang gốc) / 450 × 100"
+      ],
+      "scale": "Thang 100",
+      "conditions": [
+        "Dùng lần thi cao nhất hợp lệ. Nhóm ngành sức khỏe có yêu cầu học lực, điểm thi và điểm xét tốt nghiệp riêng.",
+        "V-SAT: tổ hợp Toán–Hóa–Sinh, Toán–Lý–Sinh hoặc Toán–Sinh–Anh. Y khoa/Răng–Hàm–Mặt cần có thi hoặc có học môn Sinh."
+      ],
+      "priority": "Điểm ưu tiên phải được xác định trên thang gốc của kỳ thi theo quy chế, rồi mới quy về 100; không cộng trực tiếp 0,75 vào điểm thi gốc.",
+      "conversion": "Đã có biểu thức quy về 100, nhưng chưa bật tự tính khi chưa xác nhận đầy đủ mức ưu tiên trên thang gốc.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://pctu.edu.vn/vn/thong-tin-tuyen-sinh-dai-hoc-nam-2026.html",
+        "checkedAt": "2026-10-04",
+        "note": "PT3, ba kỳ thi được tách theo thang gốc, điểm xét tuyển về thang 100."
+      }
+    },
+    "DPT:9363": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Luật, Luật kinh tế và Kỹ thuật xét nghiệm y học có ngưỡng riêng theo quy định của Bộ."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://upt.edu.vn/tuyen-sinh-dai-hoc/thong-tin-tuyen-sinh-nam-2026/",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin tuyển sinh 2026, PT1: điểm tổ hợp và ưu tiên theo quy chế."
+      }
+    },
+    "DPT:9364": {
+      "status": "official_verified",
+      "expression": "ĐXT = (Tổng điểm cả năm 10, 11, 12 của 3 môn tổ hợp) / 3 + ĐƯT",
+      "equations": [
+        "ĐXT = (Tổng điểm cả năm 10, 11, 12 của 3 môn tổ hợp) / 3 + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Ngưỡng học bạ thông thường từ 16,00.",
+        "Kỹ thuật xét nghiệm: xét tuyển từ 19,00, học lực lớp 12 từ Khá và đáp ứng điều kiện thi/xét tốt nghiệp.",
+        "Luật và Luật kinh tế: xét tuyển từ 21,00, học lực lớp 12 từ Giỏi và đáp ứng điều kiện thi/xét tốt nghiệp."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Đây là điểm phương thức học bạ; so sánh chéo phương thức phải dùng bảng tương đương 2026 của Trường.",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 3,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1_10",
+            "label": "Môn 1 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_11",
+            "label": "Môn 1 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_12",
+            "label": "Môn 1 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_10",
+            "label": "Môn 2 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_11",
+            "label": "Môn 2 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_12",
+            "label": "Môn 2 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_10",
+            "label": "Môn 3 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_11",
+            "label": "Môn 3 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_12",
+            "label": "Môn 3 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://upt.edu.vn/tuyen-sinh-dai-hoc/thong-tin-tuyen-sinh-nam-2026/",
+        "checkedAt": "2026-10-04",
+        "note": "PT2 và mục 6; dùng 9 điểm cả năm, ưu tiên theo quy chế."
+      }
+    },
+    "DPT:9365": {
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm V-ACT sau quy đổi về thang 30 theo bảng 2026 của Trường",
+      "equations": [
+        "ĐXT = Điểm V-ACT sau quy đổi về thang 30 theo bảng 2026 của Trường"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng kết quả V-ACT năm 2026 và đáp ứng điều kiện theo ngành."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Không mặc định V-ACT / 40. Cần bảng quy đổi tương đương của Đại học Phan Thiết.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://upt.edu.vn/tuyen-sinh-dai-hoc/thong-tin-tuyen-sinh-nam-2026/",
+        "checkedAt": "2026-10-04",
+        "note": "PT3 và mục 4 yêu cầu quy đổi theo bảng công bố riêng, không nêu phép chia cố định."
+      }
+    },
+    "DHE:8379": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Nguồn ghi dự kiến; cần đối chiếu thông báo cuối cùng và tổ hợp của đúng ngành."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://huet.hueuni.edu.vn/index.php/huong-dan-dang-ky-dai-hoc-2026/",
+        "checkedAt": "2026-10-04",
+        "note": "Hướng dẫn tuyển sinh 2026 dự kiến, mục I.3."
+      }
+    },
+    "DHE:8380": {
+      "status": "official_verified",
+      "expression": "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐƯT\nTBC mỗi môn = (điểm cả năm 10 + 11 + 12) / 3, làm tròn 1 chữ số thập phân trước khi cộng",
+      "equations": [
+        "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐƯT",
+        "TBC mỗi môn = (điểm cả năm 10 + 11 + 12) / 3, làm tròn 1 chữ số thập phân trước khi cộng"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Tổng 3 TBC từ 18,00 chưa gồm ưu tiên. Nguồn ghi dự kiến.",
+        "Phải làm tròn từng TBC môn trước khi cộng; không dùng công thức trung bình chưa làm tròn."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Cần đối chiếu thông báo chính thức cuối cùng và bảng tương đương các phương thức.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://huet.hueuni.edu.vn/index.php/huong-dan-dang-ky-dai-hoc-2026/",
+        "checkedAt": "2026-10-04",
+        "note": "Mục I.2 nêu rõ làm tròn từng TBC đến 1 chữ số; không gộp 9 điểm rồi mới làm tròn."
+      }
+    },
+    "DHE:8381": {
+      "status": "official_verified",
+      "expression": "ĐXT = TBC môn 1 + TBC môn 2 + Ngoại ngữ chứng chỉ quy đổi + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = TBC môn 1 + TBC môn 2 + Ngoại ngữ chứng chỉ quy đổi + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chứng chỉ quy đổi thay đúng môn ngoại ngữ của tổ hợp, theo bảng trường công bố.",
+        "Không dùng cùng chứng chỉ vừa thay môn vừa cộng điểm; kiểm tra điều kiện của ngành."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Dùng bảng chứng chỉ và điểm cộng ở mục 5 của Khoa; không dùng bảng ngoại ngữ của đơn vị khác.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://huet.hueuni.edu.vn/index.php/huong-dan-dang-ky-dai-hoc-2026/",
+        "checkedAt": "2026-10-04",
+        "note": "Mục I.4 và bảng quy đổi tại mục 5, phiên bản dự kiến 2026."
+      }
+    },
+    "DHE:9507": {
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm thi môn 1 + Điểm thi môn 2 + Ngoại ngữ chứng chỉ quy đổi + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = Điểm thi môn 1 + Điểm thi môn 2 + Ngoại ngữ chứng chỉ quy đổi + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chứng chỉ quy đổi thay đúng môn ngoại ngữ của tổ hợp, theo bảng trường công bố.",
+        "Không dùng cùng chứng chỉ vừa thay môn vừa cộng điểm; kiểm tra điều kiện của ngành."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Dùng bảng chứng chỉ và điểm cộng ở mục 5 của Khoa; không dùng bảng ngoại ngữ của đơn vị khác.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://huet.hueuni.edu.vn/index.php/huong-dan-dang-ky-dai-hoc-2026/",
+        "checkedAt": "2026-10-04",
+        "note": "Mục I.4 và bảng quy đổi tại mục 5, phiên bản dự kiến 2026."
+      }
+    },
+    "DBG:7864": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chọn đúng tổ hợp của ngành. Chứng chỉ ngoại ngữ có thể thay điểm nếu đủ điều kiện và quy đổi cao hơn điểm thi.",
+        "Không lấy điểm IELTS/TOEIC gốc làm điểm môn ngoại ngữ."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://bafu.edu.vn/home/tin-tuc/dao-tao-tuyen-sinh/4581-thong-tin-tuyen-sinh-nam-2026.html",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 1.2.2, phương thức 100, công thức và giảm ưu tiên từ 22,50."
+      }
+    },
+    "INU:9348": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng tổ hợp của đúng ngành, đáp ứng ngưỡng và điều kiện tuyển sinh."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.intracomuni.edu.vn/",
+        "checkedAt": "2026-10-04",
+        "note": "Cổng tuyển sinh Intracom 2026, mục phương thức THPT."
+      }
+    },
+    "INU:9349": {
+      "status": "official_verified",
+      "expression": "Điểm học bạ = TBC 6 học kỳ môn 1 + TBC 6 học kỳ môn 2 + TBC 6 học kỳ môn 3",
+      "equations": [
+        "Điểm học bạ = TBC 6 học kỳ môn 1 + TBC 6 học kỳ môn 2 + TBC 6 học kỳ môn 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Mỗi môn dùng đủ 6 học kỳ lớp 10, 11, 12; không thay bằng 3 điểm cả năm.",
+        "Cần đối chiếu đề án đầy đủ để xác nhận chính sách ưu tiên trước khi tính điểm cuối."
+      ],
+      "priority": "Biểu thức trên cổng không ghi ưu tiên cho học bạ. Chưa đủ căn cứ kết luận có cộng hay không; chưa bật tự tính.",
+      "conversion": "",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.intracomuni.edu.vn/",
+        "checkedAt": "2026-10-04",
+        "note": "Cổng tuyển sinh 2026 nêu 6 học kỳ; biểu thức công bố chưa ghi phần ưu tiên."
+      }
+    },
+    "YDS:8779": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT + ĐKK\nĐKK = min(Điểm khuyến khích ngoại ngữ + Điểm khuyến khích SAT, 1,50)",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT + ĐKK",
+        "ĐKK = min(Điểm khuyến khích ngoại ngữ + Điểm khuyến khích SAT, 1,50)"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Các môn hệ số 1; tổ hợp có Anh phải dự thi Anh, không thay môn bằng chứng chỉ.",
+        "IELTS Academic từ 6,0 hoặc TOEFL iBT từ 80; SAT từ 1340. Chọn một chứng chỉ ngoại ngữ hợp lệ, có thể kết hợp SAT; tổng khuyến khích tối đa 1,50.",
+        "Khuyến khích IELTS = 0,9 × IELTS / 9; TOEFL iBT = 0,9 × điểm / 120; SAT = 0,9 × điểm / 1600. Minh chứng phải được Trường chấp nhận.",
+        "Hộ sinh chỉ tuyển nữ; vẫn phải đáp ứng ngưỡng đầu vào ngành sức khỏe."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Chứng chỉ dùng cho khuyến khích, không thay điểm môn. Tổng cuối làm tròn 2 chữ số; cần đối chiếu cách xác định tổng trước ưu tiên trong hướng dẫn cuối cùng.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://admin.ump.edu.vn/uploads/ckeditor/files/Truong/DaoTaoDaiHoc/TuyenSinh/2026/2415_ThongBao_XetTuyenDHCQ2026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 2415/2026, mục 6.2.2; điểm khuyến khích và nguyên tắc làm tròn."
+      }
+    },
+    "CCM:8187": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Tất cả môn hệ số 1; điểm cộng phải được Trường xác nhận, không nhập tổng thành tích chưa được duyệt.",
+        "Có điểm môn Anh thì dùng điểm môn và điểm khuyến khích theo bảng IELTS. Chỉ thay điểm bằng chứng chỉ khi không có điểm môn Anh; không cộng cùng chứng chỉ hai lần."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://hict.edu.vn/pic/general/files/2026/Th%C3%A1ng%204/QD%20ban%20hanh%20Thong%20tin%20tuyen%20sinh%20nam%202026%20cua%20truong%20Dai%20hoc%20Cong%20nghiep%20va%20Thuong%20mai%20Ha%20Noi_banchinh.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Đọc trực tiếp PDF bản chính, trang 2, 8–11; tổ hợp, điểm cộng và chứng chỉ."
+      },
+      "programCombinations": {
+        "7210403": "D01",
+        "7210404": "D01",
+        "7340101": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7340115": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7340122": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7340301": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7510201": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7510301": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7510601": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7540202": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7540209": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23"
+      }
+    },
+    "CCM:8186": {
+      "status": "official_verified",
+      "expression": "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Tất cả môn hệ số 1; điểm cộng phải được Trường xác nhận, không nhập tổng thành tích chưa được duyệt.",
+        "Có điểm môn Anh thì dùng điểm môn và điểm khuyến khích theo bảng IELTS. Chỉ thay điểm bằng chứng chỉ khi không có điểm môn Anh; không cộng cùng chứng chỉ hai lần.",
+        "Bộ tính dùng điểm học bạ gốc đủ 3 năm. Trường hợp không có điểm Anh cần áp dụng riêng bảng chứng chỉ của Trường."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Khi so với THPT, dùng bảng tương đương 2026 của Trường; không so điểm học bạ gốc với điểm chuẩn phương thức khác.",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 3,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1_10",
+            "label": "Môn 1 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_11",
+            "label": "Môn 1 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_12",
+            "label": "Môn 1 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_10",
+            "label": "Môn 2 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_11",
+            "label": "Môn 2 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_12",
+            "label": "Môn 2 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_10",
+            "label": "Môn 3 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_11",
+            "label": "Môn 3 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_12",
+            "label": "Môn 3 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://hict.edu.vn/pic/general/files/2026/Th%C3%A1ng%204/QD%20ban%20hanh%20Thong%20tin%20tuyen%20sinh%20nam%202026%20cua%20truong%20Dai%20hoc%20Cong%20nghiep%20va%20Thuong%20mai%20Ha%20Noi_banchinh.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "PDF trang 3, 8–11: đủ 3 năm mỗi môn, không hệ số."
+      },
+      "programCombinations": {
+        "7210403": "D01",
+        "7210404": "D01",
+        "7340101": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7340115": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7340122": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7340301": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7510201": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7510301": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7510601": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7540202": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23",
+        "7540209": "A00; A01; B00; D01; D07; C01; C03; C04; C14; X03; X23"
+      }
+    },
+    "CCM:8188": {
+      "status": "official_verified",
+      "expression": "ĐXT = HSA sau quy đổi + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = HSA sau quy đổi + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Tất cả môn hệ số 1; điểm cộng phải được Trường xác nhận, không nhập tổng thành tích chưa được duyệt.",
+        "Có điểm môn Anh thì dùng điểm môn và điểm khuyến khích theo bảng IELTS. Chỉ thay điểm bằng chứng chỉ khi không có điểm môn Anh; không cộng cùng chứng chỉ hai lần."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Cần bảng quy đổi HSA 2026 của Trường; không mặc định HSA / 5.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://hict.edu.vn/pic/general/files/2026/Th%C3%A1ng%204/QD%20ban%20hanh%20Thong%20tin%20tuyen%20sinh%20nam%202026%20cua%20truong%20Dai%20hoc%20Cong%20nghiep%20va%20Thuong%20mai%20Ha%20Noi_banchinh.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "PDF trang 3, mục 2.4: dùng HSA quy đổi; quy tắc công bố riêng."
+      }
+    },
+    "CCM:9238": {
+      "status": "official_verified",
+      "expression": "Thi + năng khiếu: ĐXT = M1 thi THPT + M2 thi THPT + Vẽ + ĐC + ĐƯT\nHọc bạ + năng khiếu: ĐXT = TBC M1 + TBC M2 + Vẽ + ĐC + ĐƯT\nTổ hợp H00: thay hai môn văn hóa bằng Ngữ văn + Vẽ mỹ thuật + Bố cục màu; môn văn hóa dùng điểm thi hoặc TBC cả năm 10, 11, 12",
+      "equations": [
+        "Thi + năng khiếu: ĐXT = M1 thi THPT + M2 thi THPT + Vẽ + ĐC + ĐƯT",
+        "Học bạ + năng khiếu: ĐXT = TBC M1 + TBC M2 + Vẽ + ĐC + ĐƯT",
+        "Tổ hợp H00: thay hai môn văn hóa bằng Ngữ văn + Vẽ mỹ thuật + Bố cục màu; môn văn hóa dùng điểm thi hoặc TBC cả năm 10, 11, 12"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chỉ Thiết kế thời trang và Thiết kế đồ họa; V01, V05, H00, H06, H08, H09.",
+        "Năng khiếu do Trường tổ chức hoặc nhận kết quả khối V/H của trường có tổ chức thi năm 2026.",
+        "Tất cả môn hệ số 1; điểm cộng phải được Trường xác nhận, không nhập tổng thành tích chưa được duyệt.",
+        "Có điểm môn Anh thì dùng điểm môn và điểm khuyến khích theo bảng IELTS. Chỉ thay điểm bằng chứng chỉ khi không có điểm môn Anh; không cộng cùng chứng chỉ hai lần."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": null,
+      "calculationBranches": [
+        {
+          "id": "thpt-one-aptitude",
+          "label": "PT5 · V01/V05/H06/H08/H09: hai môn thi + Vẽ",
+          "rule": {
+            "type": "weighted_sum",
+            "maxScore": 30,
+            "divisor": 1,
+            "priority": true,
+            "priorityIncludesBonus": true,
+            "inputs": [
+              {
+                "key": "m1",
+                "label": "Môn văn hóa 1 thi THPT",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              },
+              {
+                "key": "m2",
+                "label": "Môn văn hóa 2 thi THPT",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              },
+              {
+                "key": "drawing",
+                "label": "Vẽ mỹ thuật năm 2026",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              }
+            ],
+            "bonus": {
+              "label": "Điểm cộng đã được trường xác nhận",
+              "min": 0,
+              "max": 3
+            }
+          }
+        },
+        {
+          "id": "thpt-h00",
+          "label": "PT5 · H00: Văn thi + hai môn năng khiếu",
+          "rule": {
+            "type": "weighted_sum",
+            "maxScore": 30,
+            "divisor": 1,
+            "priority": true,
+            "priorityIncludesBonus": true,
+            "inputs": [
+              {
+                "key": "literature",
+                "label": "Ngữ văn thi THPT",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              },
+              {
+                "key": "drawing",
+                "label": "Vẽ mỹ thuật năm 2026",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              },
+              {
+                "key": "color",
+                "label": "Bố cục màu năm 2026",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              }
+            ],
+            "bonus": {
+              "label": "Điểm cộng đã được trường xác nhận",
+              "min": 0,
+              "max": 3
+            }
+          }
+        },
+        {
+          "id": "transcript-one-aptitude",
+          "label": "PT6 · V01/V05/H06/H08/H09: hai môn học bạ + Vẽ",
+          "rule": {
+            "type": "weighted_sum",
+            "maxScore": 30,
+            "divisor": 1,
+            "priority": true,
+            "priorityIncludesBonus": true,
+            "inputs": [
+              {
+                "key": "m1_10",
+                "label": "Môn văn hóa 1 · cả năm lớp 10",
+                "min": 0,
+                "max": 10,
+                "weight": 0.3333333333333333
+              },
+              {
+                "key": "m1_11",
+                "label": "Môn văn hóa 1 · cả năm lớp 11",
+                "min": 0,
+                "max": 10,
+                "weight": 0.3333333333333333
+              },
+              {
+                "key": "m1_12",
+                "label": "Môn văn hóa 1 · cả năm lớp 12",
+                "min": 0,
+                "max": 10,
+                "weight": 0.3333333333333333
+              },
+              {
+                "key": "m2_10",
+                "label": "Môn văn hóa 2 · cả năm lớp 10",
+                "min": 0,
+                "max": 10,
+                "weight": 0.3333333333333333
+              },
+              {
+                "key": "m2_11",
+                "label": "Môn văn hóa 2 · cả năm lớp 11",
+                "min": 0,
+                "max": 10,
+                "weight": 0.3333333333333333
+              },
+              {
+                "key": "m2_12",
+                "label": "Môn văn hóa 2 · cả năm lớp 12",
+                "min": 0,
+                "max": 10,
+                "weight": 0.3333333333333333
+              },
+              {
+                "key": "drawing",
+                "label": "Vẽ mỹ thuật năm 2026",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              }
+            ],
+            "bonus": {
+              "label": "Điểm cộng đã được trường xác nhận",
+              "min": 0,
+              "max": 3
+            }
+          }
+        },
+        {
+          "id": "transcript-h00",
+          "label": "PT6 · H00: Văn học bạ + hai môn năng khiếu",
+          "rule": {
+            "type": "weighted_sum",
+            "maxScore": 30,
+            "divisor": 1,
+            "priority": true,
+            "priorityIncludesBonus": true,
+            "inputs": [
+              {
+                "key": "literature_10",
+                "label": "Ngữ văn · cả năm lớp 10",
+                "min": 0,
+                "max": 10,
+                "weight": 0.3333333333333333
+              },
+              {
+                "key": "literature_11",
+                "label": "Ngữ văn · cả năm lớp 11",
+                "min": 0,
+                "max": 10,
+                "weight": 0.3333333333333333
+              },
+              {
+                "key": "literature_12",
+                "label": "Ngữ văn · cả năm lớp 12",
+                "min": 0,
+                "max": 10,
+                "weight": 0.3333333333333333
+              },
+              {
+                "key": "drawing",
+                "label": "Vẽ mỹ thuật năm 2026",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              },
+              {
+                "key": "color",
+                "label": "Bố cục màu năm 2026",
+                "min": 0,
+                "max": 10,
+                "weight": 1
+              }
+            ],
+            "bonus": {
+              "label": "Điểm cộng đã được trường xác nhận",
+              "min": 0,
+              "max": 3
+            }
+          }
+        }
+      ],
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://hict.edu.vn/pic/general/files/2026/Th%C3%A1ng%204/QD%20ban%20hanh%20Thong%20tin%20tuyen%20sinh%20nam%202026%20cua%20truong%20Dai%20hoc%20Cong%20nghiep%20va%20Thuong%20mai%20Ha%20Noi_banchinh.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "PDF trang 4–6 và bảng ngành trang 8; PT5/PT6, năng khiếu không nhân hệ số."
+      },
+      "programCombination": "V01; V05; H00; H06; H08; H09"
+    },
+    "HTH:8565": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chỉ 3 ngành được liệt kê cho Phân hiệu TP.HCM; tổ hợp phải gồm Toán hoặc Ngữ văn.",
+        "Dùng điểm thi năm 2026; không dùng điểm bảo lưu hoặc cộng ưu tiên chứng chỉ nghề."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vya.edu.vn/thong-bao-tuyen-sinh-2026-vya",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo Học viện 2026, mục 8 và bảng Phân hiệu TP.HCM, 3 ngành."
+      }
+    },
+    "HTH:8367": {
+      "status": "official_verified",
+      "expression": "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chỉ thí sinh tốt nghiệp năm 2026, rèn luyện từ Khá.",
+        "TBC Toán/Ngữ văn theo tổ hợp từ 6,00, tổng 3 TBC từ 18,00; dùng đúng tổ hợp của ngành tại Phân hiệu."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 3,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1_10",
+            "label": "Môn 1 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_11",
+            "label": "Môn 1 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m1_12",
+            "label": "Môn 1 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_10",
+            "label": "Môn 2 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_11",
+            "label": "Môn 2 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2_12",
+            "label": "Môn 2 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_10",
+            "label": "Môn 3 · cả năm lớp 10",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_11",
+            "label": "Môn 3 · cả năm lớp 11",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3_12",
+            "label": "Môn 3 · cả năm lớp 12",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ],
+        "bonus": {
+          "label": "Điểm cộng đã được trường xác nhận",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vya.edu.vn/thong-bao-tuyen-sinh-2026-vya",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 2026, mục 8: học bạ và bảng 3 ngành ở Phân hiệu TP.HCM."
+      }
+    },
+    "DAD:8355": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Điểm cộng tối đa 3,00; giảm ưu tiên từ 22,50; tổng cuối tối đa 30, làm tròn 2 chữ số.",
+        "Nhóm sức khỏe, pháp luật và tổ hợp năng khiếu có điều kiện riêng; không suy phạm vi năng khiếu từ công thức 3 môn văn hóa."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://donga.edu.vn/tin-tuc/ttsk-chi-tiet/Dai-hoc-Dong-A-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin 2026, mục II.3.1: biểu thức PT2, 3, 5."
+      }
+    },
+    "DAD:8356": {
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm học bạ sau quy đổi tương đương thang 30 + ĐC + ĐƯT\nĐiểm học bạ gốc = TBC M1 + TBC M2 + TBC M3, mỗi TBC dùng cả năm lớp 10, 11, 12",
+      "equations": [
+        "ĐXT = Điểm học bạ sau quy đổi tương đương thang 30 + ĐC + ĐƯT",
+        "Điểm học bạ gốc = TBC M1 + TBC M2 + TBC M3, mỗi TBC dùng cả năm lớp 10, 11, 12"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Ngưỡng học lực, thi/xét tốt nghiệp theo từng nhóm ngành sức khỏe và pháp luật.",
+        "Điểm cộng tối đa 3,00, tổng cuối không vượt 30."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Phải dùng bảng 2026 của Đông Á trước khi cộng ưu tiên; không coi học bạ gốc là điểm sau quy đổi.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://donga.edu.vn/tin-tuc/ttsk-chi-tiet/Dai-hoc-Dong-A-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971",
+        "checkedAt": "2026-10-04",
+        "note": "Mục II.3.1: quy đổi điểm học bạ trước khi cộng; không cộng trực tiếp trên học bạ thô."
+      }
+    },
+    "DAD:8357": {
+      "status": "official_verified",
+      "expression": "ĐXT = V-ACT sau quy đổi tương đương thang 30 + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = V-ACT sau quy đổi tương đương thang 30 + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng V-ACT ĐHQG-HCM năm 2026; tổng điểm cộng tối đa 3,00.",
+        "Nhóm sức khỏe và pháp luật cần đáp ứng các ngưỡng riêng."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Cần bảng tương đương 2026 của Trường; không mặc định chia điểm thi cho 40.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://donga.edu.vn/tin-tuc/ttsk-chi-tiet/Dai-hoc-Dong-A-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971",
+        "checkedAt": "2026-10-04",
+        "note": "Mục II.3.2: ĐGNL phải quy đổi về thang 30 trước khi cộng."
+      }
+    },
+    "DAD:8358": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + Ngoại ngữ chứng chỉ quy đổi + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + Ngoại ngữ chứng chỉ quy đổi + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chứng chỉ còn hạn 2 năm, đủ mức quy định và đúng ngoại ngữ trong bảng.",
+        "Thí sinh đã dự thi và có điểm Anh THPT 2026 không dùng quy đổi chứng chỉ theo trường hợp này.",
+        "Không cộng lại cùng chứng chỉ đã dùng thay môn; tổng cộng tối đa 3,00."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Dùng bảng tại mục 6 của Trường, không dùng bảng của trường khác.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://donga.edu.vn/tin-tuc/ttsk-chi-tiet/Dai-hoc-Dong-A-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971",
+        "checkedAt": "2026-10-04",
+        "note": "PT5, mục II.3.1 và 6: ngoại ngữ quy đổi thay một môn trong tổ hợp."
+      }
+    },
+    "HQT:8157": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = M1 thi THPT + M2 thi THPT + M3 thi THPT + Điểm xét thưởng\nĐXT = Tổng trước ưu tiên + ĐƯT",
+      "equations": [
+        "Tổng trước ưu tiên = M1 thi THPT + M2 thi THPT + M3 thi THPT + Điểm xét thưởng",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Tổng cuối tối đa 30, làm tròn 2 chữ số; tổng điểm xét thưởng và ưu tiên tối đa 3,00 theo đề án.",
+        "Không dùng chứng chỉ thi trực tuyến tại nhà; ưu tiên khu vực chỉ cho người tốt nghiệp 2025 hoặc 2026.",
+        "Luật quốc tế và Luật thương mại quốc tế có điều kiện đầu vào riêng.",
+        "Dùng điểm thi 2026; môn ngoại ngữ có thể thay bằng chứng chỉ theo bảng 2, chọn phương án có lợi.",
+        "Theo thông báo cập nhật: C00 có độ lệch +1,50 so với D01; các tổ hợp còn lại không chênh lệch. Không trừ 1,50 vào điểm gốc khi đối chiếu điểm chuẩn riêng của C00."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Đối chiếu điểm xét tuyển với điểm chuẩn của đúng tổ hợp và phương thức. Bảng tương đương kết hợp–THPT dùng nội suy theo khoảng, không tuyến tính toàn thang.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://static.dav.edu.vn/files/2026/05/20/hqt-thong-tin-tuyen-sinh-2026-dav-updated-18-05-2026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Đề án cập nhật 18/5, mục 2.4.2; thông báo cập nhật tháng 8 xác nhận độ lệch tổ hợp.",
+        "additionalUrls": [
+          "https://static.dav.edu.vn/files/2026/08/04/15-07-hqt-nguong-dbcl-do-lech-va-bang-quy-doi.pdf"
+        ]
+      }
+    },
+    "HQT:8159": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = Ngoại ngữ chứng chỉ quy đổi thang 10 + TBC M2 + TBC M3 + Điểm xét thưởng\nĐXT = Tổng trước ưu tiên + ĐƯT\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+      "equations": [
+        "Tổng trước ưu tiên = Ngoại ngữ chứng chỉ quy đổi thang 10 + TBC M2 + TBC M3 + Điểm xét thưởng",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Tổng cuối tối đa 30, làm tròn 2 chữ số; tổng điểm xét thưởng và ưu tiên tối đa 3,00 theo đề án.",
+        "Không dùng chứng chỉ thi trực tuyến tại nhà; ưu tiên khu vực chỉ cho người tốt nghiệp 2025 hoặc 2026.",
+        "Luật quốc tế và Luật thương mại quốc tế có điều kiện đầu vào riêng.",
+        "M2 là Toán hoặc Ngữ văn; M3 khác M2 và không phải ngoại ngữ, phải có trong các tổ hợp của Học viện.",
+        "Chọn chứng chỉ có điểm quy đổi cao nhất trong các ngoại ngữ được chấp nhận; đủ ngưỡng chứng chỉ và đầu vào."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Chứng chỉ ngoại ngữ theo bảng 2 của Học viện; không dùng điểm gốc IELTS/TOEFL/PTE làm điểm môn.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://static.dav.edu.vn/files/2026/05/20/hqt-thong-tin-tuyen-sinh-2026-dav-updated-18-05-2026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2.2.2: chứng chỉ thang 10 và hai môn học bạ.",
+        "additionalUrls": [
+          "https://static.dav.edu.vn/files/2026/08/04/15-07-hqt-nguong-dbcl-do-lech-va-bang-quy-doi.pdf"
+        ]
+      }
+    },
+    "HQT:8160": {
+      "status": "official_verified",
+      "expression": "Tổng trước ưu tiên = Ngoại ngữ chứng chỉ quy đổi thang 10 + SAT hoặc ACT quy đổi thang 20 + Điểm xét thưởng\nĐXT = Tổng trước ưu tiên + ĐƯT",
+      "equations": [
+        "Tổng trước ưu tiên = Ngoại ngữ chứng chỉ quy đổi thang 10 + SAT hoặc ACT quy đổi thang 20 + Điểm xét thưởng",
+        "ĐXT = Tổng trước ưu tiên + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Tổng cuối tối đa 30, làm tròn 2 chữ số; tổng điểm xét thưởng và ưu tiên tối đa 3,00 theo đề án.",
+        "Không dùng chứng chỉ thi trực tuyến tại nhà; ưu tiên khu vực chỉ cho người tốt nghiệp 2025 hoặc 2026.",
+        "Luật quốc tế và Luật thương mại quốc tế có điều kiện đầu vào riêng.",
+        "SAT từ 1330 hoặc ACT từ 29 và có chứng chỉ ngoại ngữ đủ mức; tham gia kỳ thi tốt nghiệp THPT Việt Nam.",
+        "Không thay bằng tổng hai điểm gốc và không quy SAT/ACT về 10."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Ngoại ngữ theo bảng 2, SAT/ACT theo bảng 3 (thang 20) của Học viện. Ngưỡng/điểm chuẩn kết hợp theo bảng cập nhật 2026.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://static.dav.edu.vn/files/2026/05/20/hqt-thong-tin-tuyen-sinh-2026-dav-updated-18-05-2026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2.3.2: hai chứng chỉ, hai thang thành phần khác nhau.",
+        "additionalUrls": [
+          "https://static.dav.edu.vn/files/2026/08/04/15-07-hqt-nguong-dbcl-do-lech-va-bang-quy-doi.pdf"
+        ]
+      }
+    },
+    "HVN:9466": {
+      "status": "non_numeric",
+      "expression": "Xét kết hợp kết quả học tập lớp 12 mức Tốt với thành tích vượt trội; đủ điều kiện được tuyển thẳng trong phạm vi chỉ tiêu. Khi vượt chỉ tiêu, xếp theo mức thành tích rồi thứ tự nhóm, không cộng học bạ với điểm chứng chỉ.",
+      "equations": [
+        "Xét kết hợp kết quả học tập lớp 12 mức Tốt với thành tích vượt trội; đủ điều kiện được tuyển thẳng trong phạm vi chỉ tiêu. Khi vượt chỉ tiêu, xếp theo mức thành tích rồi thứ tự nhóm, không cộng học bạ với điểm chứng chỉ."
+      ],
+      "scale": "Xét điều kiện và mức độ thành tích",
+      "conditions": [
+        "Kết quả học tập cả năm lớp 12 mức Tốt, tương đương học lực Giỏi trở lên.",
+        "IELTS từ 6,0; riêng nhóm HVN18 Ngôn ngữ Trung Quốc chấp nhận HSK4 từ 240. Chứng chỉ được cấp trong 2 năm tính đến 14/7/2026.",
+        "Khi bằng mức thành tích, ưu tiên nhóm giải HSG/KHKT, ngoại ngữ, SAT, ACT rồi kỳ thi VNUA theo đúng thông báo."
+      ],
+      "priority": "Mức độ ưu tiên trong bảng PT4 là thứ hạng thành tích, không phải điểm ưu tiên khu vực/đối tượng để cộng vào học bạ.",
+      "conversion": "Mức 1/2/3: HSG Ba/Nhì/Nhất; IELTS 6,0/6,5/từ 7,0; HSK4 từ 240/HSK5/HSK6; SAT 1200–1300/1301–1400/1401–1600. Bảng ACT ghi 25–27/28–30/30–36, trùng mốc 30 giữa hai mức: trường phải xác nhận mức tại 30. Đây là bảng thứ hạng, không quy đổi sang điểm 30.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://vnua.edu.vn/thong-bao/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026-58444",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 2026, mục 4.5 và bảng mức độ ưu tiên của PT4."
+      }
+    },
+    "HVN:9467": {
+      "status": "non_numeric",
+      "expression": "Xét kết hợp kết quả học tập lớp 12 mức Tốt với thành tích vượt trội; đủ điều kiện được tuyển thẳng trong phạm vi chỉ tiêu. Khi vượt chỉ tiêu, xếp theo mức thành tích rồi thứ tự nhóm, không cộng học bạ với điểm chứng chỉ.",
+      "equations": [
+        "Xét kết hợp kết quả học tập lớp 12 mức Tốt với thành tích vượt trội; đủ điều kiện được tuyển thẳng trong phạm vi chỉ tiêu. Khi vượt chỉ tiêu, xếp theo mức thành tích rồi thứ tự nhóm, không cộng học bạ với điểm chứng chỉ."
+      ],
+      "scale": "Xét điều kiện và mức độ thành tích",
+      "conditions": [
+        "Kết quả học tập cả năm lớp 12 mức Tốt, tương đương học lực Giỏi trở lên.",
+        "SAT từ 1200 hoặc ACT từ 25, được cấp trong 2 năm tính đến 14/7/2026.",
+        "Khi bằng mức thành tích, ưu tiên nhóm giải HSG/KHKT, ngoại ngữ, SAT, ACT rồi kỳ thi VNUA theo đúng thông báo."
+      ],
+      "priority": "Mức độ ưu tiên trong bảng PT4 là thứ hạng thành tích, không phải điểm ưu tiên khu vực/đối tượng để cộng vào học bạ.",
+      "conversion": "Mức 1/2/3: HSG Ba/Nhì/Nhất; IELTS 6,0/6,5/từ 7,0; HSK4 từ 240/HSK5/HSK6; SAT 1200–1300/1301–1400/1401–1600. Bảng ACT ghi 25–27/28–30/30–36, trùng mốc 30 giữa hai mức: trường phải xác nhận mức tại 30. Đây là bảng thứ hạng, không quy đổi sang điểm 30.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://vnua.edu.vn/thong-bao/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026-58444",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 2026, mục 4.5 và bảng mức độ ưu tiên của PT4."
+      }
+    },
+    "GTA:8739": {
+      "status": "official_verified",
+      "expression": "Điểm xét tuyển HSA = Điểm bài thi HSA + Điểm ưu tiên theo thang của phương thức",
+      "equations": [
+        "Điểm xét tuyển HSA = Điểm bài thi HSA + Điểm ưu tiên theo thang của phương thức"
+      ],
+      "scale": "Thang gốc 150; tương đương THPT theo bảng 2026",
+      "conditions": [
+        "Dùng kỳ thi năm 2026 do đúng đơn vị tổ chức; xét đúng chương trình và ngưỡng từng phương thức.",
+        "Các chương trình luật, vi mạch bán dẫn và đường sắt có ngưỡng hoặc điều kiện bổ sung."
+      ],
+      "priority": "Ưu tiên khu vực và đối tượng phải quy theo thang điểm bài thi; không cộng trực tiếp mức 0,75 của thang 30 vào HSA/TSA.",
+      "conversion": "Bảng tương đương 2026 của Trường dùng nội suy theo khoảng: y = a + (x − c) × (b − a) / (d − c), với (a,b) là khoảng THPT và (c,d) là khoảng phương thức cần quy đổi. Không dùng một tỉ lệ cho toàn thang.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://utt.edu.vn/vn/tuyensinh/tuyen-sinh/dai-hoc-chinh-quy/thong-bao-diem-san-dang-ky-xet-tuyen-giua-cac-phuong-thuc-xet-tuyen-nam-2026-a17263.html",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo điểm sàn 2026, ghi rõ PT tư duy/năng lực TSA, HSA, SPT; không dùng biểu thức THPT thay cho bài thi.",
+        "additionalUrls": [
+          "https://utt.edu.vn/vn/tuyensinh/tuyen-sinh/dai-hoc-chinh-quy/bang-quy-doi-tuong-duong-diem-trung-tuyen-giua-cac-phuong-thuc-xet-tuyen-dai-hoc-chinh-quy-nam-2026-a17264.html"
+        ]
+      }
+    },
+    "GTA:8738": {
+      "status": "official_verified",
+      "expression": "Điểm xét tuyển TSA = Điểm bài thi TSA + Điểm ưu tiên theo thang của phương thức",
+      "equations": [
+        "Điểm xét tuyển TSA = Điểm bài thi TSA + Điểm ưu tiên theo thang của phương thức"
+      ],
+      "scale": "Thang gốc 100; tương đương THPT theo bảng 2026",
+      "conditions": [
+        "Dùng kỳ thi năm 2026 do đúng đơn vị tổ chức; xét đúng chương trình và ngưỡng từng phương thức.",
+        "Các chương trình luật, vi mạch bán dẫn và đường sắt có ngưỡng hoặc điều kiện bổ sung."
+      ],
+      "priority": "Ưu tiên khu vực và đối tượng phải quy theo thang điểm bài thi; không cộng trực tiếp mức 0,75 của thang 30 vào HSA/TSA.",
+      "conversion": "Bảng tương đương 2026 của Trường dùng nội suy theo khoảng: y = a + (x − c) × (b − a) / (d − c), với (a,b) là khoảng THPT và (c,d) là khoảng phương thức cần quy đổi. Không dùng một tỉ lệ cho toàn thang.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://utt.edu.vn/vn/tuyensinh/tuyen-sinh/dai-hoc-chinh-quy/thong-bao-diem-san-dang-ky-xet-tuyen-giua-cac-phuong-thuc-xet-tuyen-nam-2026-a17263.html",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo điểm sàn 2026, ghi rõ PT tư duy/năng lực TSA, HSA, SPT; không dùng biểu thức THPT thay cho bài thi.",
+        "additionalUrls": [
+          "https://utt.edu.vn/vn/tuyensinh/tuyen-sinh/dai-hoc-chinh-quy/bang-quy-doi-tuong-duong-diem-trung-tuyen-giua-cac-phuong-thuc-xet-tuyen-dai-hoc-chinh-quy-nam-2026-a17264.html"
+        ]
+      }
+    },
+    "GTA:8740": {
+      "status": "official_verified",
+      "expression": "Điểm xét tuyển SPT = Điểm bài thi SPT + Điểm ưu tiên theo thang của phương thức",
+      "equations": [
+        "Điểm xét tuyển SPT = Điểm bài thi SPT + Điểm ưu tiên theo thang của phương thức"
+      ],
+      "scale": "Thang gốc của tổ hợp SPT; tương đương THPT theo bảng 2026",
+      "conditions": [
+        "Dùng kỳ thi năm 2026 do đúng đơn vị tổ chức; xét đúng chương trình và ngưỡng từng phương thức.",
+        "Các chương trình luật, vi mạch bán dẫn và đường sắt có ngưỡng hoặc điều kiện bổ sung."
+      ],
+      "priority": "Ưu tiên khu vực và đối tượng phải quy theo thang điểm bài thi; không cộng trực tiếp mức 0,75 của thang 30 vào HSA/TSA.",
+      "conversion": "Bảng tương đương 2026 của Trường dùng nội suy theo khoảng: y = a + (x − c) × (b − a) / (d − c), với (a,b) là khoảng THPT và (c,d) là khoảng phương thức cần quy đổi. Không dùng một tỉ lệ cho toàn thang.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://utt.edu.vn/vn/tuyensinh/tuyen-sinh/dai-hoc-chinh-quy/thong-bao-diem-san-dang-ky-xet-tuyen-giua-cac-phuong-thuc-xet-tuyen-nam-2026-a17263.html",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo điểm sàn 2026, ghi rõ PT tư duy/năng lực TSA, HSA, SPT; không dùng biểu thức THPT thay cho bài thi.",
+        "additionalUrls": [
+          "https://utt.edu.vn/vn/tuyensinh/tuyen-sinh/dai-hoc-chinh-quy/bang-quy-doi-tuong-duong-diem-trung-tuyen-giua-cac-phuong-thuc-xet-tuyen-dai-hoc-chinh-quy-nam-2026-a17264.html"
+        ]
+      }
+    },
+    "HPN:8200": {
+      "status": "source_description",
+      "expression": "Thông báo tuyển sinh lần 02/2026 xác nhận sử dụng kỳ thi đánh giá năng lực; cách tính điểm được Học viện quy định trong thông báo riêng, chưa có biểu thức đầy đủ trong tài liệu này.",
+      "equations": [],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng kết quả năm 2026 của ĐHQGHN hoặc Đại học Sư phạm Hà Nội đúng với phương thức.",
+        "Luật/Luật kinh tế có điều kiện học lực lớp 12 mức Tốt và ngưỡng thi/xét tốt nghiệp; SPT yêu cầu Toán hoặc Văn từ 6,00 và tổng tổ hợp từ 18,00.",
+        "Công nghệ thông tin, Game và chương trình chất lượng cao có ngưỡng riêng."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Chưa đủ biểu thức và bảng quy đổi trong nguồn đã đọc; không mặc định HSA / 5 hoặc tổng SPT ba môn cộng ưu tiên.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://hvpnvn.edu.vn/cat-tin-tuc/su-kien/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-ban-hanh-lan-02/",
+        "checkedAt": "2026-10-04",
+        "note": "PT4, mục 11.3: Học viện sẽ quy định về cách tính điểm trong Thông báo sau."
+      }
+    },
+    "HPN:8201": {
+      "status": "source_description",
+      "expression": "Thông báo tuyển sinh lần 02/2026 xác nhận sử dụng kỳ thi đánh giá năng lực; cách tính điểm được Học viện quy định trong thông báo riêng, chưa có biểu thức đầy đủ trong tài liệu này.",
+      "equations": [],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng kết quả năm 2026 của ĐHQGHN hoặc Đại học Sư phạm Hà Nội đúng với phương thức.",
+        "Luật/Luật kinh tế có điều kiện học lực lớp 12 mức Tốt và ngưỡng thi/xét tốt nghiệp; SPT yêu cầu Toán hoặc Văn từ 6,00 và tổng tổ hợp từ 18,00.",
+        "Công nghệ thông tin, Game và chương trình chất lượng cao có ngưỡng riêng."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Chưa đủ biểu thức và bảng quy đổi trong nguồn đã đọc; không mặc định HSA / 5 hoặc tổng SPT ba môn cộng ưu tiên.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://hvpnvn.edu.vn/cat-tin-tuc/su-kien/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-ban-hanh-lan-02/",
+        "checkedAt": "2026-10-04",
+        "note": "PT4, mục 11.3: Học viện sẽ quy định về cách tính điểm trong Thông báo sau."
+      }
+    },
+    "DTC:9200": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT + ĐKK",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT + ĐKK"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Tổ hợp của đúng ngành, có môn Toán theo danh mục của Trường.",
+        "Điểm khuyến khích phải được Trường xác nhận; không thay bằng điểm chứng chỉ gốc."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.ictu.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin tuyển sinh ICTU 2026, mục 1.1: tổng kết quả 3 môn, ưu tiên và khuyến khích."
+      }
+    },
+    "DTC:9201": {
+      "status": "official_verified",
+      "expression": "Điểm học bạ gốc = TBC M1 + TBC M2 + TBC M3\nTBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3\nĐXT = Điểm học bạ đã quy đổi + ĐƯT + ĐKK",
+      "equations": [
+        "Điểm học bạ gốc = TBC M1 + TBC M2 + TBC M3",
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+        "ĐXT = Điểm học bạ đã quy đổi + ĐƯT + ĐKK"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng đủ cả năm 10, 11, 12; tổng thi Toán + Văn + một môn khác hoặc tổ hợp đạt tối thiểu 15,00, trừ các đối tượng được miễn theo quy chế."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Bảng quy đổi tương đương 2026 của ICTU áp dụng cho tổng học bạ; không dùng điểm học bạ gốc đối chiếu điểm chuẩn THPT.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.ictu.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 1.2: quy đổi tổng học bạ trước khi cộng ưu tiên và khuyến khích."
+      }
+    },
+    "DTC:9202": {
+      "status": "official_verified",
+      "expression": "ĐXT = QĐ V-SAT M1 + QĐ V-SAT M2 + QĐ V-SAT M3 + ĐƯT + ĐKK",
+      "equations": [
+        "ĐXT = QĐ V-SAT M1 + QĐ V-SAT M2 + QĐ V-SAT M3 + ĐƯT + ĐKK"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "V-SAT-TNU, chỉ tổ hợp A00 hoặc D01 theo thông báo.",
+        "Quy đổi từng môn theo đúng bảng Đại học Thái Nguyên, không chia tổng cho một hệ số."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Cần bảng V-SAT từng môn 2026 do Đại học Thái Nguyên/ICTU công bố.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.ictu.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 1.3: ba môn V-SAT-TNU đã quy đổi, rồi cộng ưu tiên/khuyến khích."
+      },
+      "programCombination": "A00; D01"
+    },
+    "DTN:8384": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Chọn đúng tổ hợp; điểm giữa các tổ hợp tương đương, không có độ lệch."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "",
+      "calculationRule": {
+        "type": "weighted_sum",
+        "maxScore": 30,
+        "divisor": 1,
+        "priority": true,
+        "priorityIncludesBonus": true,
+        "inputs": [
+          {
+            "key": "m1",
+            "label": "Điểm môn 1 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m2",
+            "label": "Điểm môn 2 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          },
+          {
+            "key": "m3",
+            "label": "Điểm môn 3 trong tổ hợp hợp lệ",
+            "min": 0,
+            "max": 10,
+            "weight": 1
+          }
+        ]
+      },
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuaf.edu.vn/gallery/files/Admin/%5BTUAF%5D%20Th%C3%B4ng%20b%C3%A1o%20ng%C6%B0%E1%BB%A1ng%20%C4%91i%E1%BB%83m%20x%C3%A9t%20tuy%E1%BB%83n%20%C4%91%E1%BB%A3t%201%20n%C4%83m%202026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 727-TB/ĐHNL ngày 7/7/2026, mục 2.1."
+      }
+    },
+    "DTN:8385": {
+      "status": "official_verified",
+      "expression": "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + 2 × Mi cả năm lớp 12) / 4\nĐiểm học bạ = TBC M1 + TBC M2 + TBC M3 + ĐƯT\nĐiểm tương đương THPT = c + (x − a) × (d − c) / (b − a)",
+      "equations": [
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + 2 × Mi cả năm lớp 12) / 4",
+        "Điểm học bạ = TBC M1 + TBC M2 + TBC M3 + ĐƯT",
+        "Điểm tương đương THPT = c + (x − a) × (d − c) / (b − a)"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Lớp 12 có hệ số 2; không dùng trung bình đều 3 năm.",
+        "Môn không học đủ 6 học kỳ do đổi lựa chọn có thể dùng môn gần lĩnh vực thay thế theo xác nhận của Trường."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Các khoảng học bạ (a,b] → THPT (c,d]: (17,20] → (16,17]; (20,23] → (17,21]; (23,26] → (21,25]; (26,27] → (25,26,5]; (27,30] → (26,5,30]. Ngoài các khoảng này chưa có quy tắc trong bảng; không ngoại suy.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuaf.edu.vn/gallery/files/Admin/%5BTUAF%5D%20Th%C3%B4ng%20b%C3%A1o%20ng%C6%B0%E1%BB%A1ng%20%C4%91i%E1%BB%83m%20x%C3%A9t%20tuy%E1%BB%83n%20%C4%91%E1%BB%A3t%201%20n%C4%83m%202026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 727-TB/ĐHNL, mục 2.2: lớp 12 hệ số 2, rồi nội suy từng khoảng."
+      }
+    },
+    "DTN:8386": {
+      "status": "official_verified",
+      "expression": "ĐXT = QĐ V-SAT M1 + QĐ V-SAT M2 + QĐ V-SAT M3 + ĐƯT\nQĐ mỗi môn = c + (x − a) × (d − c) / (b − a) trong đúng khoảng của môn",
+      "equations": [
+        "ĐXT = QĐ V-SAT M1 + QĐ V-SAT M2 + QĐ V-SAT M3 + ĐƯT",
+        "QĐ mỗi môn = c + (x − a) × (d − c) / (b − a) trong đúng khoảng của môn"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Từng môn dùng bảng bách phân vị tương ứng của Đại học Thái Nguyên; không quy đổi tổng V-SAT bằng một phép chia.",
+        "Khoảng đầu ra hằng thì dùng đúng giá trị hằng theo bảng; không ngoại suy ngoài khoảng công bố."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Dùng bảng từng môn trong mục 2.3 và làm tròn điểm quy đổi theo hướng dẫn; các tổ hợp không có độ lệch.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuaf.edu.vn/gallery/files/Admin/%5BTUAF%5D%20Th%C3%B4ng%20b%C3%A1o%20ng%C6%B0%E1%BB%A1ng%20%C4%91i%E1%BB%83m%20x%C3%A9t%20tuy%E1%BB%83n%20%C4%91%E1%BB%A3t%201%20n%C4%83m%202026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông báo 727-TB/ĐHNL, mục 2.3: bảng theo từng môn, có khoảng đầu ra hằng."
+      }
+    },
+    "DDV:8688": {
+      "status": "official_verified",
+      "expression": "ĐXT = Tổng điểm thi THPT 3 môn theo hệ số, đã quy về thang 30 + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = Tổng điểm thi THPT 3 môn theo hệ số, đã quy về thang 30 + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Điểm cộng tối đa 3,00; ưu tiên áp dụng sau điểm cộng.",
+        "Chứng chỉ ngoại ngữ chỉ được dùng cho một trong hai việc: thay điểm môn hoặc khuyến khích.",
+        "Hệ số từng môn phải theo bảng ngành, không lấy hệ số của nhóm học bạ trong phương thức phỏng vấn áp dụng sang phương thức này."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Điểm môn và trọng số cần đúng bảng của ngành/tổ hợp; tổng sau trọng số quy về 30 trước khi cộng. Chưa mở tự tính khi chưa đối chiếu đủ hệ số cho mọi chương trình.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vnuk.udn.vn/wp-content/uploads/2026/02/Thong-tin-tuyen-sinh-VNUK-2026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin VNUK 2026, mục 2.1: giữ hệ số của đúng ngành/tổ hợp."
+      }
+    },
+    "DDV:8689": {
+      "status": "official_verified",
+      "expression": "ĐXT = Tổng điểm học bạ 3 môn theo hệ số, đã quy về thang 30 + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = Tổng điểm học bạ 3 môn theo hệ số, đã quy về thang 30 + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Điểm cộng tối đa 3,00; ưu tiên áp dụng sau điểm cộng.",
+        "Chứng chỉ ngoại ngữ chỉ được dùng cho một trong hai việc: thay điểm môn hoặc khuyến khích.",
+        "Hệ số từng môn phải theo bảng ngành, không lấy hệ số của nhóm học bạ trong phương thức phỏng vấn áp dụng sang phương thức này."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Điểm môn và trọng số cần đúng bảng của ngành/tổ hợp; tổng sau trọng số quy về 30 trước khi cộng. Chưa mở tự tính khi chưa đối chiếu đủ hệ số cho mọi chương trình.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.vnuk.udn.vn/wp-content/uploads/2026/02/Thong-tin-tuyen-sinh-VNUK-2026.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin VNUK 2026, mục 2.2: giữ hệ số của đúng ngành/tổ hợp."
+      }
+    },
+    "DTQ:8942": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC thực + ĐƯT\nĐC thực = mức ĐC nếu tổng ba môn dưới 22,50; từ 22,50: (30 − tổng ba môn) / 7,50 × mức ĐC",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC thực + ĐƯT",
+        "ĐC thực = mức ĐC nếu tổng ba môn dưới 22,50; từ 22,50: (30 − tổng ba môn) / 7,50 × mức ĐC"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Từ tổng ba môn 22,50 trở lên, tài liệu giảm cả mức điểm cộng: ĐC thực = (30 − tổng ba môn) / 7,50 × mức ĐC; tổng ba môn + ĐC không vượt 30. Không nhập mức khuyến khích đầy đủ vào bộ tính chung.",
+        "Dùng điểm thi năm 2026; chứng chỉ ngoại ngữ chỉ thay môn theo bảng 1, không dùng kết quả miễn thi thay cho điểm môn.",
+        "Các tổ hợp có điểm trúng tuyển tương đương nhau."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Nếu thay điểm ngoại ngữ, dùng đúng bảng 1 của Khoa Quốc tế; chứng chỉ từ 1/6/2024 đến hạn nộp hồ sơ 2026.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://is.tnu.edu.vn/wp-content/uploads/2026/04/Thong-tin-tuyen-sinh_-DTQ-DHCQ-2026-19.3.2026-CHINH-QUY.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Thông tin Khoa Quốc tế 2026, mục 2.2 và 5.2: giảm cả điểm cộng."
+      }
+    },
+    "DTQ:8943": {
+      "status": "official_verified",
+      "expression": "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3\nĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC thực + ĐƯT\nĐC thực = mức ĐC nếu tổng TBC dưới 22,50; từ 22,50: (30 − tổng TBC) / 7,50 × mức ĐC",
+      "equations": [
+        "TBC Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3",
+        "ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐC thực + ĐƯT",
+        "ĐC thực = mức ĐC nếu tổng TBC dưới 22,50; từ 22,50: (30 − tổng TBC) / 7,50 × mức ĐC"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Từ tổng ba môn 22,50 trở lên, tài liệu giảm cả mức điểm cộng: ĐC thực = (30 − tổng ba môn) / 7,50 × mức ĐC; tổng ba môn + ĐC không vượt 30. Không nhập mức khuyến khích đầy đủ vào bộ tính chung.",
+        "Toán hoặc Văn có trọng số tối thiểu 1/3. Có thể dùng 3 TBC hoặc 2 TBC (gồm Toán/Văn) và ngoại ngữ chứng chỉ quy đổi."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Chứng chỉ thay môn ngoại ngữ theo bảng 1, không cộng trực tiếp điểm chứng chỉ gốc vào học bạ.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://is.tnu.edu.vn/wp-content/uploads/2026/04/Thong-tin-tuyen-sinh_-DTQ-DHCQ-2026-19.3.2026-CHINH-QUY.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2.3: đủ ba năm, giảm mức cộng, chứng chỉ thay môn theo bảng 1."
+      }
+    },
+    "DTQ:8944": {
+      "status": "official_verified",
+      "expression": "ĐXT = QĐ V-SAT M1 + QĐ V-SAT M2 + QĐ V-SAT M3 + ĐƯT",
+      "equations": [
+        "ĐXT = QĐ V-SAT M1 + QĐ V-SAT M2 + QĐ V-SAT M3 + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Kỳ thi V-SAT năm 2026, dùng đúng tổ hợp trong 16 tổ hợp được Khoa công bố."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Cần bảng quy đổi từng môn 2026; không chia tổng V-SAT cho 15.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://is.tnu.edu.vn/wp-content/uploads/2026/04/Thong-tin-tuyen-sinh_-DTQ-DHCQ-2026-19.3.2026-CHINH-QUY.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2.4: từng môn theo bảng quy đổi V-SAT."
+      }
+    },
+    "DTQ:8945": {
+      "status": "official_verified",
+      "expression": "ĐXT = Điểm tổ hợp HSA đã quy đổi thang 30 + ĐƯT",
+      "equations": [
+        "ĐXT = Điểm tổ hợp HSA đã quy đổi thang 30 + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng HSA ĐHQGHN năm 2026; giảm ưu tiên theo điểm sau quy đổi."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Cần bảng quy đổi HSA 2026, không mặc định HSA / 5.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://is.tnu.edu.vn/wp-content/uploads/2026/04/Thong-tin-tuyen-sinh_-DTQ-DHCQ-2026-19.3.2026-CHINH-QUY.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2.5.1: HSA quy về 30 trước khi cộng ưu tiên."
+      }
+    },
+    "DTQ:8946": {
+      "status": "requires_review",
+      "expression": "Theo tài liệu: ĐXT = M1 TSA quy đổi + M2 TSA quy đổi + M3 TSA quy đổi + ĐƯT",
+      "equations": [
+        "Theo tài liệu: ĐXT = M1 TSA quy đổi + M2 TSA quy đổi + M3 TSA quy đổi + ĐƯT"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Dùng kết quả TSA Bách khoa Hà Nội năm 2026.",
+        "Cần Khoa xác nhận cách xác định M1, M2, M3 từ bài TSA và bảng quy đổi; không yêu cầu thí sinh tự tách tổng TSA thành ba môn."
+      ],
+      "priority": "Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm.",
+      "conversion": "Biểu thức trong thông báo chưa đủ bảng thành phần để tự tính từ điểm TSA gốc; cần đối chiếu thông báo quy đổi cuối cùng.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://is.tnu.edu.vn/wp-content/uploads/2026/04/Thong-tin-tuyen-sinh_-DTQ-DHCQ-2026-19.3.2026-CHINH-QUY.pdf",
+        "checkedAt": "2026-10-04",
+        "note": "Mục 2.5.2 ghi các thành phần M1, M2, M3 theo bảng TSA; chưa đủ bảng xác định các thành phần này."
+      },
+      "issues": [
+        "Chưa xác định được ba thành phần TSA nêu trong biểu thức; không mở tự tính."
+      ]
+    },
+    "THU:8928": {
+      "status": "source_reported",
+      "expression": "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ƯT + KK",
+      "equations": [
+        "ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ƯT + KK"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "Ngành sức khỏe phải đủ ngưỡng của Bộ GDĐT và của Trường.",
+        "JLPT: N5 cộng 0,50; N4 cộng 1,00; N3/N2/N1 cộng 1,50. Chỉ dùng minh chứng được Trường chấp nhận."
+      ],
+      "priority": "Nguồn định nghĩa ƯT ở PT2 là ưu tiên khu vực, chưa thể hiện đủ cách cộng đối tượng và bước điều chỉnh trên tổng có khuyến khích. Chưa bật tự tính để tránh áp dụng khác thông báo của Trường.",
+      "conversion": "",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tokyo-human.edu.vn/tuyen-sinh/thong-tin-tuyen-sinh/",
+        "checkedAt": "2026-10-04",
+        "note": "Quyết định 260306/001/QĐ-THUV, PT2 và mục 5."
+      }
+    },
+    "THU:8929": {
+      "status": "source_reported",
+      "expression": "ĐXT = (A10 + A11 + A12) / 3 + (B10 + B11 + B12) / 3 + (C10 + C11 + C12) / 3 + KK",
+      "equations": [
+        "ĐXT = (A10 + A11 + A12) / 3 + (B10 + B11 + B12) / 3 + (C10 + C11 + C12) / 3 + KK"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "A/B/C là ba môn trong tổ hợp; mỗi môn dùng điểm cả năm lớp 10, 11, 12.",
+        "Học lực lớp 12 từ Khá; thi tốt nghiệp 2026: tổng ba môn có Toán hoặc Văn từ 16,50 hoặc điểm xét tốt nghiệp từ 6,50.",
+        "JLPT: N5 cộng 0,50; N4 cộng 1,00; N3/N2/N1 cộng 1,50. Chỉ dùng minh chứng được Trường chấp nhận.",
+        "Tổng vượt 30 quy về 30 theo thông báo."
+      ],
+      "priority": "Ảnh công thức học bạ chỉ có KK, không có ƯT; mục 5 nói tổng bao gồm ưu tiên và điểm cộng. Cần Trường xác nhận bước ưu tiên, không tự thêm hoặc bỏ ưu tiên trong bộ tính.",
+      "conversion": "",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tokyo-human.edu.vn/tuyen-sinh/thong-tin-tuyen-sinh/",
+        "checkedAt": "2026-10-04",
+        "note": "Đọc trực tiếp ảnh công thức DXT.webp trong PT3, không suy phép cộng từ phần chú thích.",
+        "additionalUrls": [
+          "https://tokyo-human.edu.vn/wp-content/uploads/2026/03/DXT.webp"
+        ]
+      },
+      "issues": [
+        "Cách thể hiện ưu tiên giữa ảnh công thức PT3 và mục 5 chưa nhất quán; chưa bật tự tính."
+      ]
     }
   }
 }

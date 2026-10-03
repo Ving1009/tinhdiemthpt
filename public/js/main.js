@@ -140,6 +140,15 @@ class THPTApp {
   async init() {
     this.applyTheme(storage.get(THEME_STORAGE_KEY, "light"));
     this.bindGlobalEvents();
+    window.googlefc = window.googlefc || {};
+    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+    window.googlefc.callbackQueue.push({ CONSENT_API_READY: () => {
+      if (typeof window.__tcfapi !== "function") return;
+      window.__tcfapi("addEventListener", 0, (data, success) => {
+        const link = document.querySelector("[data-ad-consent]");
+        if (link) link.hidden = !(success && data?.gdprApplies);
+      });
+    } });
     this.account.init().catch(() => { /* Tài khoản không được chặn các công cụ chính. */ });
     this.practiceExam.init();
     this.setView(location.hash);
@@ -316,6 +325,8 @@ class THPTApp {
     if (!event.target.closest(".global-search, .mobile-search-panel, #mobile-search-toggle")) this.hideSearch();
     if (event.target.closest("[data-close-modal]")) this.closeModal();
     const privacyPolicy = event.target.closest("[data-privacy-policy]");
+    const adConsent = event.target.closest("[data-ad-consent]");
+    if (adConsent) { event.preventDefault(); window.googlefc?.showRevocationMessage?.(); return; }
     if (privacyPolicy) { event.preventDefault(); this.openPrivacyPolicy(privacyPolicy); }
     const retry = event.target.closest("[data-retry-load]"); if (retry) location.reload();
     const page = event.target.closest("[data-page-kind]");

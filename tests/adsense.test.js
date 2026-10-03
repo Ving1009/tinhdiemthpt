@@ -50,6 +50,8 @@ test('quảng cáo dùng nonce mới cho từng HTML, khớp mọi script và st
   assert.match(scriptPolicy, /strict-dynamic/);
   assert.doesNotMatch(scriptPolicy, /unsafe-inline/);
   assert.match(csp, /object-src 'none'; frame-ancestors 'none'/);
+  assert.equal(securityHeaders({ adsenseNonce: first.nonce })['Referrer-Policy'], 'strict-origin');
+  assert.equal(securityHeaders()['Referrer-Policy'], 'no-referrer');
   assert.equal(securityHeaders({ adsenseNonce: "'unsafe-inline'" })['Content-Security-Policy'], CONTENT_SECURITY_POLICY);
   assert.equal(securityHeaders({ pathname: '/vendor/tesseract/worker.min.js', adsenseNonce: first.nonce })['Content-Security-Policy'].includes('strict-dynamic'), false);
 });
@@ -106,4 +108,20 @@ test('Express phục vụ cùng ads.txt và HTML; API giữ CSP cũ và cấu h�
   const api = await fetch(base + '/api/bootstrap');
   assert.equal(api.headers.get('content-security-policy'), CONTENT_SECURITY_POLICY);
   assert.equal((await api.json()).success, true);
+});
+
+test('trang chính sách riêng không tải quảng cáo hoặc CMP dù quảng cáo đã bật', async t => {
+  const server = createApp({ environment: { ...enabled, ADSENSE_CMP_READY: 'true' } }).listen(0, '127.0.0.1');
+  t.after(() => new Promise(resolve => server.close(resolve)));
+  await new Promise(resolve => server.once('listening', resolve));
+  const base = `http://127.0.0.1:${server.address().port}`;
+  const home = await fetch(base + '/');
+  assert.match(await home.text(), /adsbygoogle\.js/);
+  assert.equal(home.headers.get('referrer-policy'), 'strict-origin');
+  assert.equal(home.headers.get('cache-control'), 'no-store');
+  const privacy = await fetch(base + '/privacy.html');
+  assert.equal(privacy.status, 200);
+  assert.doesNotMatch(await privacy.text(), /<script\b|<iframe\b|adsbygoogle\.js|fundingchoicesmessages/i);
+  assert.equal(privacy.headers.get('content-security-policy'), CONTENT_SECURITY_POLICY);
+  assert.equal(privacy.headers.get('referrer-policy'), 'no-referrer');
 });

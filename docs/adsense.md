@@ -2,6 +2,10 @@
 
 Publisher: `ca-pub-5701300811077965`. Đây là mã công khai của tài khoản, không phải API key.
 
+Ngày 03/10/2026: Google đã xác minh quyền sở hữu website qua ads.txt và nhận yêu cầu xét duyệt. Thông báo Google CMP đã xuất bản cho tên miền này, có ba lựa chọn đồng ý, không đồng ý và quản lý lựa chọn; URL chính sách là `/privacy.html`. `ADSENSE_CMP_READY=true` tương ứng với cấu hình đã xuất bản trong tài khoản.
+
+Auto ads đã bật cho banner trong trang. Đã tắt cả ba định dạng lớp phủ, định dạng dựa trên ý định, Multiplex, tự tối ưu và tự tìm thêm vị trí trong bài viết. Giới hạn banner đặt ở mức thấp nhất giao diện cho phép (tối đa 6), khoảng cách ở mức cao nhất (60 trên thang của AdSense). Tiền tố `/privacy` đã được loại trừ. Bản xem trước AdSense hiện chưa tải được website, nên chưa xác minh được từng vị trí banner hoặc cấu hình loại trừ vùng nhập điểm/bài thi; kiểm tra lại khi Google duyệt và bản xem trước hoạt động.
+
 Website tự gắn meta xác minh tài khoản và mã AdSense trong `<head>`, đồng thời phục vụ [ads.txt](https://tinhdiemthpt.id.vn/ads.txt):
 
 ```text
@@ -25,5 +29,7 @@ HTML có quảng cáo dùng nonce ngẫu nhiên mới cho mỗi phản hồi và
 Khi `ADSENSE_CMP_READY=false`, mã quảng cáo không tải ở EEA, Anh, Thụy Sĩ hoặc khi chưa xác định được quốc gia. Các lượt truy cập đó vẫn có meta xác minh và dùng đầy đủ công cụ. Cloudflare lấy quốc gia từ `request.cf.country`, không tin header do khách tự gửi. Express không có nguồn geography tin cậy nên chỉ tải quảng cáo sau khi CMP đã sẵn sàng.
 
 Chính sách quyền riêng tư đã bổ sung việc sử dụng cookie quảng cáo và cách quản lý lựa chọn. Thời hạn 15 phút của dữ liệu khách không áp dụng cho cookie bên quảng cáo.
+
+Nút “Lựa chọn quảng cáo” ở chân trang chỉ hiện khi Google CMP đã sẵn sàng và xác nhận GDPR áp dụng cho khách. Nút gọi API chính thức để mở lại thông báo và cho phép đổi hoặc rút lại lựa chọn. Nút không hiện khi quảng cáo/CMP chưa tải hoặc đã bị trình duyệt chặn.
 
 Tài liệu Google: [tích hợp CSP](https://support.google.com/adsense/answer/16283098?hl=en), [ads.txt](https://support.google.com/adsense/answer/12171612?hl=vi), [Auto ads](https://support.google.com/adsense/answer/9261307?hl=vi), [yêu cầu CMP](https://support.google.com/adsense/answer/13554116?hl=vi), [vị trí quảng cáo](https://support.google.com/adsense/answer/1346295?hl=vi).

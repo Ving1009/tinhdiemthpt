@@ -7,7 +7,7 @@
   "vars": {
     "ADSENSE_CLIENT": "ca-pub-5701300811077965",
     "ADSENSE_ENABLED": "true",
-    "ADSENSE_CMP_READY": "false"
+    "ADSENSE_CMP_READY": "true"
   },
   "routes": [
     {

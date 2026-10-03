@@ -17,7 +17,7 @@ import { turnstileGate } from "./turnstile.js";
 import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261001-1";
 import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-2";
 import { AdmissionsAssistant } from "./assistant.js?v=20261001-1";
-import { calculateSchoolFormula, schoolFormulaBranches, selectSchoolFormulaRule, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20261004-2";
+import { calculateSchoolFormula, schoolFormulaBranches, selectSchoolFormulaRule, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20261004-3";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
 const THEME_STORAGE_KEY = "thpt-calculator-theme-v1";

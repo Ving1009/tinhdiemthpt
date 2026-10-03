@@ -45,50 +45,6 @@
         "note": "Mục: 3. Xét tuyển kết quả các kỳ thi đánh giá năng lực (ĐGNL). Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
       }
     },
-    "CMC:8351": {
-      "status": "source_reported",
-      "expression": "Điểm xét tuyển = Điểm thi môn Toán × 2 + Điểm thi môn 2 + Điểm thi môn 3 + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có).\nĐiểm xét tuyển = Điểm thi môn Toán x 2 + Điểm thi môn Lý/Hóa + Điểm thi môn 3 + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có).\nĐiểm xét tuyển = Điểm thi môn Văn × 2 + Điểm thi môn 2 + Điểm thi môn 3 + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có).\nĐiểm xét tuyển = Điểm thi môn Toán × 2 + Điểm thi môn 2 + Điểm quy đổi CCNNQT + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có).\nĐiểm xét tuyển = Điểm thi môn Toán x 2 + Điểm thi môn Lý/Hóa + Điểm quy đổi CCNNQT + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có).\nĐiểm xét tuyển = Điểm thi môn Văn × 2 + Điểm thi môn 2 + Điểm quy đổi CCNNQT + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có).",
-      "equations": [
-        "Điểm xét tuyển = Điểm thi môn Toán × 2 + Điểm thi môn 2 + Điểm thi môn 3 + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có).",
-        "Điểm xét tuyển = Điểm thi môn Toán x 2 + Điểm thi môn Lý/Hóa + Điểm thi môn 3 + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có).",
-        "Điểm xét tuyển = Điểm thi môn Văn × 2 + Điểm thi môn 2 + Điểm thi môn 3 + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có).",
-        "Điểm xét tuyển = Điểm thi môn Toán × 2 + Điểm thi môn 2 + Điểm quy đổi CCNNQT + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có).",
-        "Điểm xét tuyển = Điểm thi môn Toán x 2 + Điểm thi môn Lý/Hóa + Điểm quy đổi CCNNQT + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có).",
-        "Điểm xét tuyển = Điểm thi môn Văn × 2 + Điểm thi môn 2 + Điểm quy đổi CCNNQT + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có)."
-      ],
-      "conditions": [],
-      "issues": [
-        "Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính."
-      ],
-      "evidence": {
-        "kind": "official_primary",
-        "url": "https://tuyensinh.cmc-u.edu.vn/",
-        "checkedAt": "2026-10-04",
-        "note": "Mục: Phương thức 3 (CMC100): Xét tuyển dựa trên kết quả thi tốt nghiệp THPT.. Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
-      }
-    },
-    "CMC:8352": {
-      "status": "source_reported",
-      "expression": "Điểm xét tuyển = Điểm TB môn Toán × 2 + Điểm TB môn 2 + Điểm TB môn 3 + Điểm cộng (nếu có).\nĐiểm xét tuyển = Điểm TB môn Toán x 2 + Điểm TB môn Lý/Hóa + Điểm TB môn 3 + Điểm cộng (nếu có).\nĐiểm xét tuyển = Điểm TB môn Văn × 2 + Điểm TB môn 2 + Điểm TB môn 3 + Điểm cộng (nếu có).\nĐiểm xét tuyển = Điểm TB môn Toán × 2 + Điểm TB môn 2 + Điểm quy đổi CCNNQT + Điểm cộng (nếu có).\nĐiểm xét tuyển = Điểm TB môn Toán x 2 + Điểm TB môn Lý/Hóa + Điểm quy đổi CCNNQT + Điểm cộng (nếu có).\nĐiểm xét tuyển = Điểm TB môn Văn × 2 + Điểm TB môn 2 + Điểm quy đổi CCNNQT + Điểm cộng (nếu có).",
-      "equations": [
-        "Điểm xét tuyển = Điểm TB môn Toán × 2 + Điểm TB môn 2 + Điểm TB môn 3 + Điểm cộng (nếu có).",
-        "Điểm xét tuyển = Điểm TB môn Toán x 2 + Điểm TB môn Lý/Hóa + Điểm TB môn 3 + Điểm cộng (nếu có).",
-        "Điểm xét tuyển = Điểm TB môn Văn × 2 + Điểm TB môn 2 + Điểm TB môn 3 + Điểm cộng (nếu có).",
-        "Điểm xét tuyển = Điểm TB môn Toán × 2 + Điểm TB môn 2 + Điểm quy đổi CCNNQT + Điểm cộng (nếu có).",
-        "Điểm xét tuyển = Điểm TB môn Toán x 2 + Điểm TB môn Lý/Hóa + Điểm quy đổi CCNNQT + Điểm cộng (nếu có).",
-        "Điểm xét tuyển = Điểm TB môn Văn × 2 + Điểm TB môn 2 + Điểm quy đổi CCNNQT + Điểm cộng (nếu có)."
-      ],
-      "conditions": [],
-      "issues": [
-        "Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính."
-      ],
-      "evidence": {
-        "kind": "official_primary",
-        "url": "https://tuyensinh.cmc-u.edu.vn/",
-        "checkedAt": "2026-10-04",
-        "note": "Mục: Phương thức 2 (CMC200): Xét tuyển dựa vào kết quả học tập bậc THPT (Xét học bạ) với điểm trung bình (TB) môn theo tổ hợp môn xét tuyển, không cộng điểm ưu tiên.. Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
-      }
-    },
     "DKC:7906": {
       "status": "source_reported",
       "expression": "Điểm xét tuyển là tổng điểm trung bình 03 môn theo tổ hợp xét tuyển của 06 học kỳ (lớp 10, lớp 11 và lớp 12).",
@@ -104,60 +60,6 @@
         "url": "https://www.hutech.edu.vn/tuyensinh/tin-tuyen-sinh/14630721-hutech-cong-bo-phuong-an-tuyen-sinh-dai-hoc-chinh-quy-du-kien-nam-2026",
         "checkedAt": "2026-10-04",
         "note": "Mục: 2. Xét tuyển học bạ THPT theo tổ hợp xét tuyển của 06 học kỳ. Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
-      }
-    },
-    "DQK:8346": {
-      "status": "source_reported",
-      "expression": "- Điểm xét tuyển = Điểm tổ hợp xét tuyển(1) + Điểm ưu tiên(2)",
-      "equations": [
-        "- Điểm xét tuyển = Điểm tổ hợp xét tuyển(1) + Điểm ưu tiên(2)"
-      ],
-      "conditions": [],
-      "issues": [
-        "Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính."
-      ],
-      "evidence": {
-        "kind": "official_primary",
-        "url": "https://tuyensinh.hubt.edu.vn/wp-content/uploads/2026/03/TT_TS_2026_Full_Final_2026_05_19.pdf",
-        "checkedAt": "2026-10-04",
-        "note": "Mục: 2.1. Phương thức 1: Xét tuyển dựa vào kết quả kỳ thi tốt nghiệp THPT năm 2026. Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
-      }
-    },
-    "DQK:8349": {
-      "status": "source_reported",
-      "expression": "- Điểm xét tuyển = Điểm tổ hợp xét tuyển(1) + Điểm ưu tiên(2)",
-      "equations": [
-        "- Điểm xét tuyển = Điểm tổ hợp xét tuyển(1) + Điểm ưu tiên(2)"
-      ],
-      "conditions": [],
-      "issues": [
-        "Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính."
-      ],
-      "evidence": {
-        "kind": "official_primary",
-        "url": "https://tuyensinh.hubt.edu.vn/wp-content/uploads/2026/03/TT_TS_2026_Full_Final_2026_05_19.pdf",
-        "checkedAt": "2026-10-04",
-        "note": "Mục: 2.2. Phương thức 2: Xét tuyển dựa vào kết quả học tập cấp THPT (hoặc tương đương) – Xét học bạ.. Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
-      }
-    },
-    "DQK:8350": {
-      "status": "source_reported",
-      "expression": "- Điểm xét tuyển = Điểm tổ hợp xét tuyển(1) + Điểm ưu tiên(2)",
-      "equations": [
-        "- Điểm xét tuyển = Điểm tổ hợp xét tuyển(1) + Điểm ưu tiên(2)"
-      ],
-      "conditions": [
-        "Hai biến thể: THPT + năng khiếu (405); học bạ cả năm lớp 10–12 + năng khiếu (406).",
-        "Năng khiếu do trường tổ chức hoặc nhận kết quả trường đại học khác."
-      ],
-      "issues": [
-        "Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính."
-      ],
-      "evidence": {
-        "kind": "official_primary",
-        "url": "https://tuyensinh.hubt.edu.vn/wp-content/uploads/2026/03/TT_TS_2026_Full_Final_2026_05_19.pdf",
-        "checkedAt": "2026-10-04",
-        "note": "Mục: 2.4. Phương thức 4: Xét tuyển kết hợp điểm thi năng khiếu và xét k ết quả kỳ thi tốt nghiệp THPT năm 2026 hoặc kết quả học tập cả năm cấp THPT.. Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
       }
     },
     "DQT:8537": {
@@ -176,23 +78,6 @@
         "url": "https://qtu.edu.vn/de-an-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/",
         "checkedAt": "2026-10-04",
         "note": "Mục: 4.2. Phương thức 2: Xét tuyển kết quả thi tốt nghiệp THPT năm 2026.. Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
-      }
-    },
-    "DTT:8023": {
-      "status": "source_reported",
-      "expression": "Điểm xét tuyển (thang điểm 1200) = Tổng điểm bài thi ĐGNL + Điểm ưu tiên",
-      "equations": [
-        "Điểm xét tuyển (thang điểm 1200) = Tổng điểm bài thi ĐGNL + Điểm ưu tiên"
-      ],
-      "conditions": [],
-      "issues": [
-        "Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính."
-      ],
-      "evidence": {
-        "kind": "official_primary",
-        "url": "https://admission.tdtu.edu.vn/dai-hoc/tuyen-sinh/phuong-thuc-tuyen-sinh-2026",
-        "checkedAt": "2026-10-04",
-        "note": "Mục: 1.2. Phương thức 2: xét tuyển theo kết quả bài thi đánh giá năng lực năm 2026 của Đại học Quốc gia TP. Hồ Chí Minh. Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
       }
     },
     "DVL:7922": {
@@ -267,40 +152,6 @@
         "url": "https://htu.edu.vn/tin-t%E1%BB%A9c-s%E1%BB%B1-ki%E1%BB%87n/1967-thong-tin-ts-dhcq-2026?tmpl=component&print=1&layout=default",
         "checkedAt": "2026-10-04",
         "note": "Mục: - Phương thức sử dụng kết quả học tập THPT, tổ hợp xét tuyển sử dụng điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 của tối thiểu 03 môn không nhỏ hơn 18.0.. Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
-      }
-    },
-    "MBS:8980": {
-      "status": "source_reported",
-      "expression": "ĐXT = [(Điểm môn 1 + Điểm môn 2 + Điểm môn 3) + Điểm cộng (nếu có)] + Điểm ưu tiên (nếu có).",
-      "equations": [
-        "ĐXT = [(Điểm môn 1 + Điểm môn 2 + Điểm môn 3) + Điểm cộng (nếu có)] + Điểm ưu tiên (nếu có)."
-      ],
-      "conditions": [],
-      "issues": [
-        "Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính."
-      ],
-      "evidence": {
-        "kind": "official_primary",
-        "url": "https://tuyensinh.ou.edu.vn/thong-bao-dang-ky-nguyen-vong-xet-tuyen-dai-hoc-chinh-quy-dot-1-nam-2026",
-        "checkedAt": "2026-10-04",
-        "note": "Mục: 5.1. Phương thức xét điểm thi tốt nghiệp THPT năm 2026.. Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
-      }
-    },
-    "MBS:8982": {
-      "status": "source_reported",
-      "expression": "ĐXT = [NL_QĐ + Điểm cộng (nếu có)] + Điểm ưu tiên (nếu có).",
-      "equations": [
-        "ĐXT = [NL_QĐ + Điểm cộng (nếu có)] + Điểm ưu tiên (nếu có)."
-      ],
-      "conditions": [],
-      "issues": [
-        "Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính."
-      ],
-      "evidence": {
-        "kind": "official_primary",
-        "url": "https://tuyensinh.ou.edu.vn/thong-bao-dang-ky-nguyen-vong-xet-tuyen-dai-hoc-chinh-quy-dot-1-nam-2026",
-        "checkedAt": "2026-10-04",
-        "note": "Mục: 5.3. Phương thức xét điểm kỳ thi đánh giá năng lực của Đại học Quốc gia TP. Hồ Chí Minh.. Trích phục vụ tra cứu, không xác nhận đủ điều kiện tự tính."
       }
     },
     "MIT:9168": {

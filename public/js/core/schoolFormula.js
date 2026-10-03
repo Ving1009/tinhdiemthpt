@@ -17,8 +17,12 @@ export function validSchoolFormulaRanges(field, maxScore) {
   const ranges = [...field.ranges].sort((a, b) => a.min - b.min);
   return ranges.every((range, i) => [range.min, range.max, range.minOutput, range.maxOutput].every(Number.isFinite) &&
     range.min >= field.min && range.max <= field.max && range.min < range.max && range.minOutput >= 0 &&
-    range.minOutput <= range.maxOutput && range.maxOutput <= maxScore && (!i || ranges[i - 1].max <= range.min));
+    range.minOutput <= range.maxOutput && range.maxOutput <= maxScore &&
+    (range.inclusiveMin === undefined || typeof range.inclusiveMin === 'boolean') &&
+    (!i || ranges[i - 1].max < range.min || ranges[i - 1].max === range.min && !range.inclusiveMin));
 }
+
+const contains = (range, value) => range && (range.inclusiveMin ? value >= range.min : value > range.min) && value <= range.max;
 
 export function validateSchoolFormulaValue(raw, field) {
   const text = String(raw ?? '').trim().replace(',', '.');
@@ -27,8 +31,9 @@ export function validateSchoolFormulaValue(raw, field) {
   const value = Number(text);
   if (!Number.isFinite(value) || value < field.min || value > field.max) return { valid: false, message: `Điểm phải từ ${field.min} đến ${field.max}.` };
   if ((text.split('.')[1] || '').length > 2) return { valid: false, message: 'Dùng tối đa 2 chữ số thập phân.' };
+  if (field.integer && !Number.isInteger(value)) return { valid: false, message: 'Điểm bài thi phải là số nguyên.' };
   if (field.lookup && !Object.hasOwn(field.lookup, String(value))) return { valid: false, message: 'Điểm này chưa có trong bảng quy đổi đã xác minh.' };
-  if (field.ranges && (!Array.isArray(field.ranges) || !field.ranges.some((range) => value > range?.min && value <= range?.max))) return { valid: false, message: 'Điểm này nằm ngoài các khoảng quy đổi đã xác minh.' };
+  if (field.ranges && (!Array.isArray(field.ranges) || !field.ranges.some((range) => contains(range, value)))) return { valid: false, message: 'Điểm này nằm ngoài các khoảng quy đổi đã xác minh.' };
   return { valid: true, value };
 }
 
@@ -38,8 +43,8 @@ export function calculateSchoolFormula(rule, rawValues, context = {}) {
     if (![field.min, field.max, field.weight].every(Number.isFinite) || field.min > field.max || field.weight < 0 || !validSchoolFormulaRanges(field, rule.maxScore)) throw new Error('Cấu hình ô nhập không hợp lệ.');
     const result = validateSchoolFormulaValue(rawValues[field.key], field);
     if (!result.valid) throw new Error(`${field.label}: ${result.message}`);
-    const range = field.ranges?.find((range) => result.value > range.min && result.value <= range.max);
-    // Published intervals use a < x <= b and round the converted score before weighting.
+    const range = field.ranges?.find((range) => contains(range, result.value));
+    // Keep the published endpoint convention; round conversion before weighting.
     const converted = range ? rounded(range.minOutput + (result.value - range.min) / (range.max - range.min) * (range.maxOutput - range.minOutput)) : field.lookup ? field.lookup[String(result.value)] : result.value;
     if (!Number.isFinite(converted) || converted < 0) throw new Error('Bảng quy đổi chưa hợp lệ.');
     return { field, value: result.value, converted };

@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import test from 'node:test';
 import vm from 'node:vm';
 import { createSchoolFormulaCatalogIndex, publicSchoolFormulas } from '../lib/schoolFormulaCatalog.js';
-import { calculateSchoolFormula, schoolFormulaBranches, selectSchoolFormulaRule, validateSchoolFormulaValue } from '../public/js/core/schoolFormula.js';
+import { calculateSchoolFormula, schoolFormulaBranches, selectSchoolFormulaRule, validateSchoolFormulaValue, validSchoolFormulaRanges } from '../public/js/core/schoolFormula.js';
 import { describeScoring, formulaKind, scoreEquations } from '../scripts/lib/school-formulas.mjs';
 import { officialFormulaDocument, officialFormulaSections } from '../scripts/research-school-formulas-2026.mjs';
 import { defaultDataStore } from '../server/dataStore.js';
@@ -13,6 +13,81 @@ const load = async (name) => JSON.parse(await fs.readFile(new URL(`../data/${nam
 const [catalog, universities, majors] = await Promise.all([load('school-formula-catalog-2026'), load('universities'), load('majors')]);
 const school = (code) => catalog.schools.find((s) => s.schoolCode === code);
 const method = (code, id) => school(code).methods.find((m) => m.id === `school-${code.toLowerCase()}-${id}`);
+
+test('Mở TP.HCM dùng đúng bảng V-ACT đóng hai đầu, không ngoại suy hoặc gộp Đồng Nai', () => {
+  const formula = method('MBS', '8982');
+  assert.equal(formula.autoCalculate, true);
+  assert.equal(formula.programIndexes.length, 67);
+  assert.ok(formula.programIndexes.every(i => !school('MBS').programs[i].code.endsWith('D')));
+  assert.match(formula.evidence.url, /quy-tac-quy-doi/);
+  const rule = formula.calculationRule;
+  assert.equal(rule.inputs[0].ranges.length, 13);
+  for (const [x,y] of [[27,6.7],[475,15.2],[476,15.25],[817,21.67],[818,21.75],[884,23],[885,23.1],[1003,25.25],[1004,25.5],[1139,28.5]]) {
+    assert.equal(calculateSchoolFormula(rule,{vact:x}).base,y, `mốc ${x}`);
+  }
+  assert.equal(calculateSchoolFormula(rule,{vact:1004},{area:'KV1'}).total,25.95);
+  assert.equal(calculateSchoolFormula(rule,{vact:818},{area:'KV1'}).total,22.5);
+  assert.throws(()=>calculateSchoolFormula(rule,{vact:26}),/ngoài các khoảng/);
+  assert.throws(()=>calculateSchoolFormula(rule,{vact:1140}),/ngoài các khoảng/);
+  assert.throws(()=>calculateSchoolFormula(rule,{vact:880.5}),/số nguyên/);
+  assert.equal(calculateSchoolFormula(method('MBS','8980').calculationRule,{m1:9,m2:9,m3:8},{area:'KV1'}).total,26.4);
+  assert.equal(method('MBS','8983').autoCalculate,false,'bảng SAT chưa bao phủ IB/A-Level và SAT=1100');
+  assert.equal(method('MBS','8981').autoCalculate,false,'không tính từ tổng học bạ thô trước quy đổi từng môn');
+  assert.match(method('MBS','8981').evidence.url,/hoc-ba-va-diem-sat/);
+});
+
+test('Tôn Đức Thắng giữ thang 1200 và mức ưu tiên, không dùng thang 100 của phương thức khác', () => {
+  const formula = method('DTT','8023');
+  assert.equal(formula.autoCalculate,true);
+  assert.equal(formula.calculationRule.maxScore,1200);
+  assert.equal(calculateSchoolFormula(formula.calculationRule,{vact:900},{area:'KV1'}).total,930);
+  assert.equal(calculateSchoolFormula(formula.calculationRule,{vact:1050},{area:'KV1',priorityGroup:'UT1'}).total,1105);
+  assert.equal(calculateSchoolFormula(formula.calculationRule,{vact:1200},{area:'KV1',priorityGroup:'UT1'}).priority.adjusted,0);
+  assert.match(method('DTT','9455').expression,/0,75[\s\S]*1.5 LKQT[\s\S]*0,50/);
+  assert.match(method('DTT','9457').conditions.join(' '),/Không có phương thức học bạ độc lập/);
+  assert.equal(method('DTT','9457').autoCalculate,false);
+});
+
+test('UIT chọn điểm thành phần cao nhất và NTT không nhầm học lực với điểm xét tuyển cuối', () => {
+  const uit = method('QSC','8079');
+  assert.match(uit.expression,/0,475[\s\S]*0,475[\s\S]*0,05/);
+  assert.match(uit.expression,/max\(THPT_ĐT, THPT_QĐ, THPT_QT\)/);
+  assert.match(uit.expression,/max\(ĐGNL_ĐT, ĐGNL_QĐ, ĐGNL_QT\)/);
+  assert.equal(uit.autoCalculate,false);
+  assert.equal(method('NTT','7910').autoCalculate,false);
+  assert.match(method('NTT','7910').conditions.join(' '),/chưa phải công thức điểm xét tuyển cuối/);
+  assert.equal(method('NTT','7912').status,'source_description');
+  assert.equal(method('NTT','7913').autoCalculate,false);
+});
+
+test('khoảng đóng không được chồng nhau hoặc dùng cờ biên sai kiểu; khoảng mở cũ giữ nguyên', () => {
+  const field = {min:0,max:30,ranges:[{min:0,max:10,minOutput:0,maxOutput:10},{min:10,max:30,minOutput:10,maxOutput:30}]};
+  assert.equal(validSchoolFormulaRanges(field,30),true);
+  assert.equal(validateSchoolFormulaValue(10,field).valid,true);
+  field.ranges[1].inclusiveMin = true;
+  assert.equal(validSchoolFormulaRanges(field,30),false,'10 thuộc hai khoảng');
+  field.ranges[1].min = 11;
+  assert.equal(validSchoolFormulaRanges(field,30),true);
+  assert.equal(validateSchoolFormulaValue(11,field).valid,true);
+  assert.equal(validateSchoolFormulaValue(10.5,field).valid,false,'không nội suy khoảng trống');
+  field.ranges[1].inclusiveMin = 'true';
+  assert.equal(validSchoolFormulaRanges(field,30),false);
+});
+
+test('học bạ HUNRE/HUBT dùng ba năm; nhánh thiếu phép tính cuối CMC/PVU vẫn không tự tính', () => {
+  const values = Object.fromEntries([1,2,3].flatMap(i=>[[`m${i}_10`,6],[`m${i}_11`,9],[`m${i}_12`,9]]));
+  assert.equal(calculateSchoolFormula(method('DMT','8729').calculationRule,{...values,bonus:1.5},{area:'KV1'}).total,25.95);
+  assert.equal(calculateSchoolFormula(method('DQK','8349').calculationRule,values,{area:'KV1'}).total,24.6);
+  assert.equal(method('DQK','8350').programIndexes.length,3);
+  assert.equal(method('DQK','8347').autoCalculate,false,'không tự thêm ưu tiên vào biểu thức còn thiếu bước xác nhận');
+  assert.equal(method('CMC','8353').status,'requires_review');
+  assert.equal(method('CMC','8352').autoCalculate,false);
+  assert.match(method('CMC','8352').priority,/không cộng ưu tiên/);
+  for (const id of ['9413','9414','9415','9416']) {
+    assert.equal(method('PVU',id).autoCalculate,false);
+    assert.match(method('PVU',id).priority,/chưa nêu đủ bước ưu tiên/);
+  }
+});
 
 test('catalog công thức rà soát mọi hồ sơ, không biến mô tả hay nguồn thiếu thành công thức tự tính', () => {
   const index = createSchoolFormulaCatalogIndex(catalog, { universities, majors });

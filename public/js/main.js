@@ -1,6 +1,6 @@
 import { ADMISSIONS_2026_NOTICE, canCalculateMajor, cutoffLabel, cutoffStatusLabel, paginate, publicProfileNote, publishableCutoff, verifiedCutoff } from "./admissions.js?v=20261003-1";
 import { UniversityRepository } from "./university.js?v=20260914-2";
-import { $, $$, debounce, escapeHTML, formatScore, sanitizeScoreInput, storage, validateScore } from "./utils.js";
+import { $, $$, debounce, escapeHTML, formatScore, resolveAppView, sanitizeScoreInput, storage, validateScore } from "./utils.js";
 import { ACADEMIC_METHODS } from "../formulas/hocba.js";
 import { calculateAcademicCombinations } from "./core/academicCalculator.js";
 import { STANDARD_SUBJECTS, combinationSubjectKeys, isStandardCombination, subjectLabelForKey } from "./core/subjectMatching.js";
@@ -182,8 +182,8 @@ class THPTApp {
     window.addEventListener("hashchange", () => this.handleLocationChange());
     window.addEventListener("popstate", () => this.handleLocationChange());
     $("#theme-toggle").addEventListener("click", () => this.toggleTheme());
-    $("#menu-toggle").addEventListener("click", () => this.toggleMenu());
-    $$(".site-nav a").forEach((link) => link.addEventListener("click", () => this.closeMenu()));
+    $$("#menu-toggle, #mobile-more-toggle").forEach((button) => button.addEventListener("click", () => { this.menuTrigger = button; this.toggleMenu(); }));
+    $$(".site-nav a, .mobile-bottom-nav a, .tool-switch a").forEach((link) => link.addEventListener("click", () => this.closeMenu()));
     $("#mobile-search-toggle").addEventListener("click", () => this.toggleMobileSearch());
     window.addEventListener("scroll", () => $("#site-header").classList.toggle("scrolled", window.scrollY > 4), { passive: true });
     const markGuestLeft = () => markGuestSessionLeft(storage, Date.now(), this.account.isAuthenticated() || hasStoredAuthSession());
@@ -296,7 +296,7 @@ class THPTApp {
     if (event.key === "Escape") {
       if (!this.elements.modal.classList.contains("is-hidden")) this.closeModal();
       this.hideSearch();
-      if ($("#site-nav").classList.contains("open")) { this.closeMenu(); $("#menu-toggle").focus(); }
+      if ($("#site-nav").classList.contains("open")) { this.closeMenu(); (this.menuTrigger || $("#menu-toggle")).focus(); }
       if (!$("#mobile-search-panel").classList.contains("is-hidden")) this.toggleMobileSearch();
     }
     const dialog = !this.elements.modal.classList.contains("is-hidden") ? this.elements.modal : $("#account-panel:not(.is-hidden)");
@@ -317,6 +317,7 @@ class THPTApp {
   }
 
   handleDocumentClick(event) {
+    if (!event.target.closest("#site-nav, #menu-toggle, #mobile-more-toggle")) this.closeMenu();
     if (event.target.closest(".skip-link")) {
       event.preventDefault();
       $("#main-content").focus();
@@ -354,12 +355,14 @@ class THPTApp {
   }
 
   setView(hash) {
-    const allowed = ["calculator", "academic", "admission", "major-finder", "combinations", "universities", "practice-exams", "guide"];
-    const rawValue = String(hash || "").replace(/^#/, "");
-    const value = /^(?:truong|nganh)\//.test(rawValue) ? "universities" : rawValue;
-    const view = allowed.includes(value) ? value : "calculator";
-    document.querySelectorAll("main > .section").forEach((section) => { section.hidden = section.id !== view && !(section.id === "home" && view === "calculator"); });
-    document.querySelectorAll(".site-nav a").forEach((link) => { const active = link.hash === `#${view}`; link.classList.toggle("is-active", active); active ? link.setAttribute("aria-current", "page") : link.removeAttribute("aria-current"); });
+    const view = resolveAppView(hash);
+    document.body.dataset.view = view;
+    document.querySelectorAll("main > .section").forEach((section) => { section.hidden = section.id !== view; });
+    document.querySelectorAll(".site-nav a, .mobile-bottom-nav a, .tool-switch a").forEach((link) => {
+      const active = link.dataset.views ? link.dataset.views.split(" ").includes(view) : link.hash === `#${view}`;
+      link.classList.toggle("is-active", active);
+      active ? link.setAttribute("aria-current", link.dataset.views && link.hash !== `#${view}` ? "true" : "page") : link.removeAttribute("aria-current");
+    });
     document.title = "Tính Điểm THPT | Tra cứu tuyển sinh 2026";
   }
   async handleLocationChange() {
@@ -373,8 +376,8 @@ class THPTApp {
   goTo(hash) { this.setView(hash); if (location.hash !== hash) history.pushState(null, "", hash); document.querySelector(hash)?.scrollIntoView({ behavior: "smooth", block: "start" }); }
   applyTheme(theme) { const dark = theme === "dark"; document.body.classList.toggle("dark", dark); $("#theme-toggle span").textContent = dark ? "☀" : "☾"; $("#theme-toggle").setAttribute("aria-label", dark ? "Bật giao diện sáng" : "Bật giao diện tối"); }
   toggleTheme() { const next = document.body.classList.contains("dark") ? "light" : "dark"; this.applyTheme(next); storage.set(THEME_STORAGE_KEY, next); }
-  toggleMenu() { const nav = $("#site-nav"), button = $("#menu-toggle"), open = !nav.classList.contains("open"); nav.classList.toggle("open", open); button.setAttribute("aria-expanded", String(open)); }
-  closeMenu() { $("#site-nav").classList.remove("open"); $("#menu-toggle").setAttribute("aria-expanded", "false"); }
+  toggleMenu() { const nav = $("#site-nav"), open = !nav.classList.contains("open"); nav.classList.toggle("open", open); $$("#menu-toggle, #mobile-more-toggle").forEach((button) => button.setAttribute("aria-expanded", String(open))); }
+  closeMenu() { $("#site-nav").classList.remove("open"); $$("#menu-toggle, #mobile-more-toggle").forEach((button) => button.setAttribute("aria-expanded", "false")); }
   toggleMobileSearch() { const panel = $("#mobile-search-panel"), button = $("#mobile-search-toggle"), open = panel.classList.contains("is-hidden"); panel.classList.toggle("is-hidden", !open); button.setAttribute("aria-expanded", String(open)); if (open) $("#mobile-search").focus(); else button.focus(); }
   hideSearch() { $$(".search-results").forEach((item) => item.classList.add("is-hidden")); }
 

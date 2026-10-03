@@ -19,9 +19,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css?v=20260927-1" />
     <link rel="stylesheet" href="css/responsive.css?v=20260927-1" />
-    <link rel="stylesheet" href="css/refinement.css?v=20261003-1" />
+    <link rel="stylesheet" href="css/refinement.css?v=20261004-1" />
     <link rel="stylesheet" href="css/practice-exam.css?v=20260928-1" />
     <link rel="stylesheet" href="css/assistant.css?v=20260929-2" />
+    <link rel="stylesheet" href="css/redesign.css?v=20261004-1" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
@@ -30,12 +31,14 @@
         <a class="brand" href="#home" aria-label="Tính Điểm THPT - Trang chủ">
           <span class="brand-mark" aria-hidden="true">Σ</span>
           <span>Tính Điểm <strong>THPT</strong></span>
+          <span class="brand-year">2026</span>
         </a>
 
         <nav class="site-nav" id="site-nav" aria-label="Điều hướng chính">
+          <a href="#home">Khám phá</a>
           <a href="#calculator">Tính điểm THPT</a>
           <a href="#academic">Tính học bạ</a>
-          <a href="#admission">Điểm xét tuyển</a>
+          <a href="#admission">Công thức theo trường</a>
           <a href="#combinations">Tổ hợp</a>
           <a href="#universities">Hồ sơ trường</a>
           <a href="#major-finder">Tìm ngành</a>
@@ -66,12 +69,12 @@
     </header>
 
     <main id="main-content" tabindex="-1">
-      <section class="hero section" id="home">
+      <section class="hero section" id="home" aria-labelledby="home-title">
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow"><span aria-hidden="true">✦</span> Công cụ tham khảo tuyển sinh 2026</p>
-            <h1>Tính điểm, <span>tra cứu tuyển sinh.</span></h1>
-            <p class="hero-description">Nhập điểm thi hoặc học bạ, tìm ngành và xem phương thức xét tuyển của từng trường.</p>
+            <h1 id="home-title">Từ điểm số đến <span>lựa chọn của bạn.</span></h1>
+            <p class="hero-description">Tính điểm thi, xét học bạ và tìm hiểu ngành học. Các công cụ tuyển sinh và luyện đề ở cùng một nơi.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#calculator">Bắt đầu tính điểm <span aria-hidden="true">→</span></a>
               <a class="button button-secondary" href="#universities">Xem danh sách trường</a>
@@ -92,6 +95,17 @@
             <div class="preview-card preview-mini"><span class="mini-icon" aria-hidden="true">⌁</span><div><small>Cách tính điểm</small><b>Xem từng bước tính</b></div></div>
           </div>
         </div>
+        <div class="container home-tools" aria-labelledby="home-tools-title">
+          <div class="home-tools-heading"><h2 id="home-tools-title">Bạn muốn bắt đầu từ đâu?</h2><span>Chọn công cụ phù hợp với bạn</span></div>
+          <div class="home-tool-grid">
+            <a class="home-tool-card" href="#calculator"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M8 6h8M8 11h1m3 0h1m3 0h.01M8 15h1m3 0h1m3 0h.01M8 19h1m3 0h1m3 0h.01"/></svg></span><h3>Tính điểm THPT</h3><p>Nhập 4 môn, xem các tổ hợp và điểm ưu tiên sau điều chỉnh.</p><span class="tool-link">Mở công cụ <span aria-hidden="true">→</span></span></a>
+            <a class="home-tool-card" href="#academic"><span class="tool-icon tool-icon-teal" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h4l2-3h4l2 3h4v13H4z"/><circle cx="12" cy="13" r="4"/></svg></span><h3>Quét và tính học bạ</h3><p>Tải ảnh hoặc tự nhập điểm để xem kết quả theo phương thức học bạ.</p><span class="tool-link">Tính học bạ <span aria-hidden="true">→</span></span></a>
+            <a class="home-tool-card" href="#universities"><span class="tool-icon tool-icon-amber" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 8 9-5 9 5H3zm2 12h14M6 10v7m4-7v7m4-7v7m4-7v7M3 22h18"/></svg></span><h3>Ngành học và trường</h3><p>Tra cứu hồ sơ, phương thức, ngành đào tạo và thông tin tuyển sinh.</p><span class="tool-link">Xem hồ sơ trường <span aria-hidden="true">→</span></span></a>
+            <a class="home-tool-card" href="#practice-exams"><span class="tool-icon tool-icon-pink" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H5v18h14V9M14 3v6h5M8 13h8M8 17h5"/><path d="m14 3 5 6"/></svg></span><h3>Phòng thi 2026</h3><p>Làm đề có đếm giờ, xem điểm và lời giải của từng câu nếu có.</p><span class="tool-link">Chọn môn thi <span aria-hidden="true">→</span></span></a>
+          </div>
+          <div class="home-shortcuts" aria-label="Công cụ tra cứu khác"><a href="#major-finder">Tìm ngành theo điểm <span aria-hidden="true">↗</span></a><a href="#admission">Công thức theo trường <span aria-hidden="true">↗</span></a><a href="#combinations">Tra cứu tổ hợp <span aria-hidden="true">↗</span></a><a href="#guide">Hướng dẫn sử dụng <span aria-hidden="true">↗</span></a></div>
+          <p class="home-notice">Thông tin tuyển sinh năm 2026 và kết quả tính điểm chỉ để tham khảo. Hãy đối chiếu thông báo chính thức của trường trước khi đăng ký nguyện vọng.</p>
+        </div>
       </section>
 
       <section class="section calculator-section" id="calculator" aria-labelledby="calculator-title">
@@ -100,6 +114,7 @@
             <p class="eyebrow">01 · Tính điểm</p>
             <h2 id="calculator-title">Điểm thi THPT của bạn</h2>
             <p>Điền điểm theo thang 10. Bạn có thể dùng dấu phẩy hoặc dấu chấm cho phần thập phân.</p>
+            <nav class="tool-switch" aria-label="Công cụ tính điểm"><a href="#calculator">Điểm thi THPT</a><a href="#academic">Điểm học bạ</a></nav>
           </div>
           <div class="calculator-layout">
             <form id="score-form" novalidate>
@@ -160,6 +175,7 @@
             <p class="eyebrow">02 · Học bạ</p>
             <h2 id="academic-title">Tính điểm xét học bạ THPT</h2>
             <p>Chọn phương thức và nhập điểm các môn để tìm tổ hợp đủ dữ liệu. Nếu có môn nhân hệ số 2, điểm chưa quy đổi được giữ trên thang 40.</p>
+            <nav class="tool-switch" aria-label="Công cụ tính điểm"><a href="#calculator">Điểm thi THPT</a><a href="#academic">Điểm học bạ</a></nav>
           </div>
           <div class="calculator-layout academic-layout">
             <form id="academic-form" novalidate>
@@ -375,6 +391,14 @@
       <div class="container footer-bottom"><span>© 2026 Tính Điểm THPT</span><span>Dữ liệu khách được xóa khi bạn quay lại sau ít nhất 15 phút rời website</span></div>
     </footer>
 
+    <nav class="mobile-bottom-nav" aria-label="Điều hướng nhanh trên điện thoại">
+      <a href="#home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v11h-6v-7H9v7H3z"/></svg><span>Khám phá</span></a>
+      <a href="#calculator" data-views="calculator academic admission"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M8 6h8M8 11h1m3 0h1m3 0h.01M8 16h1m3 0h1m3 0h.01"/></svg><span>Tính điểm</span></a>
+      <a href="#universities" data-views="universities major-finder combinations"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><span>Tra cứu</span></a>
+      <a href="#practice-exams"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"/></svg><span>Phòng thi</span></a>
+      <button id="mobile-more-toggle" type="button" aria-controls="site-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Thêm</span></button>
+    </nav>
+
     <div class="account-panel is-hidden" id="account-panel" role="dialog" aria-modal="true" aria-labelledby="account-title">
       <section class="account-card">
         <button class="account-close" type="button" data-account-close aria-label="Đóng">×</button>
@@ -403,7 +427,7 @@
           <div class="assistant-privacy"><span aria-hidden="true">✓</span><span>Câu hỏi được gửi tới dịch vụ AI. Báo thông tin sai chỉ được gửi sau khi bạn xác nhận.</span></div>
           <form class="assistant-form" id="assistant-form">
             <label class="sr-only" for="assistant-input">Hỏi trợ lý tuyển sinh</label>
-            <textarea id="assistant-input" rows="1" minlength="2" maxlength="500" placeholder="Nhập tên trường, ngành, mã hoặc mức điểm…" required></textarea>
+            <textarea id="assistant-input" rows="1" minlength="2" maxlength="500" placeholder="Hỏi về ngành, trường, điểm…" required></textarea>
             <button type="submit" aria-label="Gửi câu hỏi">➤</button>
           </form>
           <button class="assistant-report-shortcut" type="button" data-assistant-report-open>⚑ Báo thông tin sai</button>
@@ -456,6 +480,6 @@
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="js/main.js?v=20261003-1"></script>
+  <script type="module" src="js/main.js?v=20261004-1"></script>
   </body>
 </html>

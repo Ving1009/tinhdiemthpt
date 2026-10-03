@@ -312,7 +312,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 }
 @media(max-width:560px) {
  .candidate-card .form-grid { grid-template-columns:1fr; }
- .candidate-card .field { grid-column:1 !important; }
+ .candidate-card .field { grid-column:auto; }
  .header-inner { min-height:64px; padding-top:0; }
  .header-actions { gap:7px; }
  .mobile-search-toggle { display:grid; place-items:center; }

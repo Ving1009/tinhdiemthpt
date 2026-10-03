@@ -25,6 +25,12 @@ export const subjectLabel = (key) => SUBJECT_LABELS[key] || key;
 export const formatScore = (value, digits = 2) => Number(value || 0).toFixed(digits);
 export const escapeHTML = (value = "") => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[character]));
 
+export function resolveAppView(hash) {
+  const value = String(hash || "").replace(/^#/, "");
+  if (/^(?:truong|nganh)\//.test(value)) return "universities";
+  return ["home", "calculator", "academic", "admission", "major-finder", "combinations", "universities", "practice-exams", "guide"].includes(value) ? value : "home";
+}
+
 /** Converts 8,5 to 8.5 and keeps the input safe for a decimal score. */
 export function sanitizeScoreInput(value) {
   return String(value ?? "").replace(/,/g, ".").replace(/\s+/g, "");

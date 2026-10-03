@@ -1,0 +1,1034 @@
+{
+  "BMU": {
+    "urls": [
+      "https://bmu.edu.vn/dsts/tuyen-sinh-dai-hoc",
+      "https://bmu.edu.vn/ds/tuyen-sinh-dai-hoc",
+      "https://thuvien.bmu.edu.vn/tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026",
+      "https://bmu.edu.vn/ds/thong-tin-tuyen-sinh",
+      "https://bmu.edu.vn/de-an-tuyen-sinh"
+    ]
+  },
+  "CEA": {
+    "website": "https://nau.edu.vn",
+    "urls": [
+      "https://nau.edu.vn/dai-hoc-chinh-quy-802/quyet-dinh-ban-hanh-thong-10625.aspx",
+      "https://nau.edu.vn/dv-10/tin-tuc-su-kien-67/cong-bo-thong-tin-tuyen-sinh-2026-du-kien-them-co-hoi-vung-tuong-lai-10371.aspx"
+    ]
+  },
+  "DBH": {
+    "website": "https://www.bhiu.edu.vn",
+    "websiteStatus": "needs_review",
+    "urls": [
+      "https://www.bhiu.edu.vn"
+    ]
+  },
+  "DCL": {
+    "urls": [
+      "https://tuyensinh.mku.edu.vn/thong-tin-tuyen-sinh-nam-2026",
+      "https://tuyensinh.mku.edu.vn/thong-bao-tuyen-sinh",
+      "https://tuyensinh.mku.edu.vn/thong-bao-tuyen-sinh-he-dai-hoc-chinh-quy-nam-2026-khoa-27",
+      "https://tuyensinh.mku.edu.vn/dai-hoc-chinh-quy"
+    ]
+  },
+  "DCT": {
+    "urls": [
+      "https://ts.huit.edu.vn/ctdtdh/chuong-trinh-dao-tao-dai-hoc-chinh-quy-khoa-26-nam-2026",
+      "https://ts.huit.edu.vn/quocte/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-va-he-lien-ket-quoc-te-nam-2026",
+      "https://iei.huit.edu.vn/thong-bao/thong-tin-tuyen-sinh-dai-hoc-nam-2026",
+      "https://ts.huit.edu.vn/hd/",
+      "https://ts.huit.edu.vn/thong-bao/bieu-mau-tuyen-sinh-dai-hoc-nam-2026"
+    ]
+  },
+  "BUV": {
+    "urls": [
+      "https://buv.edu.vn/vi/tuyen-sinh-va-hoc-phi",
+      "https://financialaid.buv.edu.vn/",
+      "https://buv.edu.vn/vi/tuyen-sinh-va-hoc-phi/cach-dang-ky"
+    ]
+  },
+  "CSS": {
+    "urls": [
+      "https://dhcsnd.edu.vn/thong-tin-tuyen-sinh-nam-2026-hinh-thuc-dao-tao-dao-tao-trinh-do-dai-hoc",
+      "https://dhcsnd.edu.vn/article/thong-bao-vv-to-chuc-tuyen-sinh-nam-hoc-2026-2027",
+      "https://dhcsnd.edu.vn/article/cong-bo-nguong-bao-dam-chat-luong-dau-vao-tuyen-sinh-dao-tao-trinh-do-dai-hoc-chinh-quy-tuyen-moi-doi-voi-nguoi-da-tot-nghiep-trung-hoc-pho-thong-hoac-tuong-duong-nam-2026",
+      "https://dhcsnd.edu.vn/article/thong-bao-tuyen-sinh-dao-tao-trinh-do-dai-hoc-chinh-quy-tuyen-moi-doi-voi-nguoi-da-tot-nghiep-trung-hoc-pho-thong-hoac-tuong-duong-nam-2026"
+    ]
+  },
+  "ANS": {
+    "urls": [
+      "https://dhannd.edu.vn/Thong-tin-tuyen-sinh/thong-bao-diem-trung-tuyen-dai-hoc-chinh-quy-tuyen-moi-nam-2025-a-3769"
+    ]
+  },
+  "DDA": {
+    "urls": [
+      "https://tracuu.eaut.edu.vn/",
+      "https://eaut.edu.vn/thong-tin-tuyen-sinh-dai-hoc-he-chinh-quy/",
+      "https://tuyendung.eaut.edu.vn/tin-tuc-noi-bo/eaut-nextgen-2026-mot-ngay-lam-sinh-vien-dai-hoc-mot-ngay-kham-pha-tuong-lai/",
+      "https://eaut.edu.vn/dang-ky-xet-tuyen/"
+    ]
+  },
+  "DDG": {
+    "urls": [
+      "https://fpe.udn.vn/BaiViet/ChiTiet/303"
+    ]
+  },
+  "DDK": {
+    "urls": [
+      "https://tuyensinh.dut.udn.vn/bai-viet-tuyen-sinh",
+      "https://tuyensinh.dut.udn.vn/dangkyxettuyen/dot-tuyen-sinh",
+      "https://tuyensinh.dut.udn.vn/dangkyxettuyen/dot-tuyen-sinh?page=2",
+      "https://tuyensinh.dut.udn.vn/dangkyxettuyen/dot-tuyen-sinh?loai_tuyen_sinh=2",
+      "https://tuyensinh.dut.udn.vn/bai-viet-tuyen-sinh?page=1"
+    ]
+  },
+  "DDL": {
+    "urls": [
+      "https://tuyensinh.epu.edu.vn/danh-sach-tin/dao-tao-1121-1.html"
+    ]
+  },
+  "DDP": {
+    "urls": [
+      "https://kontum.udn.vn/assets/img/hinhdangbai/Thong-bao-TS-DHTX-khoa%2033-2-2026-tai-Quang-Ngai.pdf",
+      "https://kontum.udn.vn/assets/img/hinhdangbai/Huong-dan-cong-tac-tuyen-sinh-nam-2026_Q.pdf",
+      "https://ts.kontum.udn.vn/?act=chi-tiet-tin-tuc&rel=297-UDCK-cap-nhat-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-dem-moi-doi-voi-phuong-thuc-xet-hoc-ba.html",
+      "https://ts.kontum.udn.vn/?act=tin-tuc&id=3.html",
+      "https://ts.kontum.udn.vn/?act=tin-tuc&idloai=1&num=2"
+    ]
+  },
+  "DDS": {
+    "urls": [
+      "https://tuyensinh.ued.udn.vn/",
+      "https://tuyensinh.ued.udn.vn/wp-content/uploads/2026/02/DDS.-THONG-TIN-TUYEN-SINH-08.6.2026-1.pdf",
+      "https://tuyensinh.ued.udn.vn/wp-content/uploads/2026/03/1.-THONG-TIN-TuyenSinh-TienSi-29.5.2026.pdf",
+      "https://tuyensinh.ued.udn.vn/wp-content/uploads/2026/02/2026_3_20.dds_._thong_tin_tuyen_sinh-20.3.2026.pdf",
+      "https://qlht.ued.udn.vn/dkxettuyensaudaihoc/dangnhap"
+    ]
+  },
+  "DFA": {
+    "urls": [
+      "https://tuyensinh.ufba.edu.vn/tim-kiem-tin-tuc.html",
+      "https://tuyensinh.ufba.edu.vn/",
+      "https://tuyensinh.ufba.edu.vn/tin-tuyen-sinh.html",
+      "https://tuyensinh.ufba.edu.vn/tuyen-sinh-dai-hoc.html"
+    ]
+  },
+  "DHI": {
+    "urls": [
+      "https://huis.hueuni.edu.vn/vi/chuong-trinh-dao-tao/dai-hoc-chinh-quy/73102026",
+      "https://huis.hueuni.edu.vn/vi/tuyen-sinh",
+      "https://huis.hueuni.edu.vn/vi/tuyen-sinh/thong-tin-tuyen-sinh-nam-2026_khoa-quoc-te-dai-hoc-hue",
+      "https://huis.hueuni.edu.vn/vi/tuyen-sinh/thong-bao-diem-chuan-tuyen-sinh-nam-2026"
+    ]
+  },
+  "DKK": {
+    "urls": [
+      "https://tuyensinh.uneti.edu.vn/thong-tin-tuyen-sinh-nam-2026.html",
+      "https://tuyensinh.uneti.edu.vn/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026.html",
+      "https://tuyensinh.uneti.edu.vn/tb-nhap-hoc-2026.html",
+      "https://tuyensinh.uneti.edu.vn/tb-bsd1-nam-2026.html",
+      "https://tuyensinh.uneti.edu.vn/huong-nop-le-phi-xet-tuyen-dai-hoc-nam-2026.html"
+    ]
+  },
+  "DKB": {
+    "urls": [
+      "https://tuyensinh.ktkt.edu.vn/thong-bao-tuyen-sinh/betu-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+      "https://tuyensinh.ktkt.edu.vn/thong-bao-tuyen-sinh/betu-thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+      "https://tuyensinh.ktkt.edu.vn/blog-tuyen-sinh/huong-dan-nhap-hoc-tan-sinh-vien-2026",
+      "https://tuyensinh.ktkt.edu.vn/blog-tuyen-sinh/nhung-luu-y-quan-trong-ve-quy-che-tuyen-sinh-dai-hoc-nam-2026",
+      "https://tuyensinh.ktkt.edu.vn/thong-bao-tuyen-sinh/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-dot-1"
+    ]
+  },
+  "DHN": {
+    "urls": [
+      "https://hufa.hueuni.edu.vn/tin-tuc-su-kien/tin-tuc/khai-giang-nam-hoc-2025-2026-tai-truong-dai-hoc-nghe-thuat-dai-hoc-hue/",
+      "https://hufa.hueuni.edu.vn/tuyen-sinh-dai-hoc/"
+    ]
+  },
+  "DHQ": {
+    "urls": [
+      "https://qtb.hueuni.edu.vn/chuyen-muc/cuoc-thi-y-tuong-khoi-nghiep-doi-moi-sang-tao-dai-hoc-hue-lan-thu-ix-nam-2026-1778747971/7"
+    ]
+  },
+  "DKS": {
+    "website": "https://kiemsat.edu.vn",
+    "urls": [
+      "https://tuyensinh.kiemsat.edu.vn/thong-tin-tuyen-sinh-dai-hoc-nam-2026-chinh-thuc.html"
+    ]
+  },
+  "DKY": {
+    "urls": [
+      "https://tuyensinh.hmtu.edu.vn/",
+      "https://tuyensinh.hmtu.edu.vn/%3Fp%3D8330/",
+      "https://tuyensinh.hmtu.edu.vn/?page_id=13841",
+      "https://tuyensinh.hmtu.edu.vn/?p=13137",
+      "https://tuyensinh.hmtu.edu.vn/%3Fp%3D749/"
+    ]
+  },
+  "DLX": {
+    "urls": [
+      "https://tuyensinh.ulsa.edu.vn/thong-bao-tuyen-sinh-dhcq-2026/",
+      "https://tuyensinh.ulsa.edu.vn/wp-content/uploads/sites/17/2026/03/ULSA_Thong-tin-tuyen-sinh-2026-new.pdf",
+      "https://tuyensinh.ulsa.edu.vn/wp-content/uploads/sites/17/2026/05/HD_NopHoSo.pdf",
+      "https://tuyensinh.ulsa.edu.vn/tin-tuc-chung/%F0%9F%93%A2-thong-bao-cap-nhat-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cua-ulsa/",
+      "https://tuyensinh.ulsa.edu.vn/tin-tuc-chung/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/"
+    ]
+  },
+  "DLS": {
+    "urls": [
+      "https://tuyensinh.ulsa.edu.vn/thong-bao-tuyen-sinh-dhcq-2026/",
+      "https://tuyensinh.ulsa.edu.vn/wp-content/uploads/sites/17/2026/03/ULSA_Thong-tin-tuyen-sinh-2026-new.pdf",
+      "https://tuyensinh.ulsa.edu.vn/wp-content/uploads/sites/17/2026/05/HD_NopHoSo.pdf",
+      "https://tuyensinh.ulsa.edu.vn/tin-tuc-chung/%F0%9F%93%A2-thong-bao-cap-nhat-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cua-ulsa/",
+      "https://tuyensinh.ulsa.edu.vn/tin-tuc-chung/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/"
+    ]
+  },
+  "DPD": {
+    "urls": [
+      "https://nckh.phuongdong.edu.vn/tuyensinh.phuongdong.edu.vn/QUYET-DINH-Ve-viec-ban-hanh-Quy-che-tuyen-sinh-cac-nganh-dao-tao-trinh-do-dai-hoc-cua-Truong-Dai-hoc-Phuong-Dong-17092026-14021.html",
+      "https://ngoaingu.phuongdong.edu.vn/tuyensinh.phuongdong.edu.vn/QUYET-DINH-Ve-viec-ban-hanh-Quy-che-tuyen-sinh-cac-nganh-dao-tao-trinh-do-dai-hoc-cua-Truong-Dai-hoc-Phuong-Dong-17092026-14021.html",
+      "https://cntt.phuongdong.edu.vn/Phong-Cong-tac-Sinh-vien/PHONG-CONG-TAC-SINH-VIEN-DONG-HANH-CUNG-NGAY-HOI-TU-VAN-TUY%E1%BB%82N-SINH-%E2%80%93-HUONG-NGHIEP-2026-12032026-13968.html"
+    ]
+  },
+  "DNC": {
+    "urls": [
+      "https://tuyensinh.nctu.edu.vn/",
+      "https://tuyensinh.nctu.edu.vn/news/2026/truong-dai-hoc-nam-can-tho-cong-bo-diem-san-xet-tuyen-dai-hoc-chinh-quy-nam-2026",
+      "https://tuyensinh.nctu.edu.vn/news/2026/thong-tin-tuyen-sinh-trinh-do-dai-hoc-nam-2026-hinh-thuc-dao-tao-chinh-quy",
+      "https://tuyensinh.nctu.edu.vn/news-events",
+      "https://tuyensinh.nctu.edu.vn/news/2026/top-nganh-hoc-noi-bat-tai-dai-hoc-nam-can-tho-nam-2026-tai-sao"
+    ]
+  },
+  "DQK": {
+    "urls": [
+      "https://tuyensinh.hubt.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/",
+      "https://tuyensinh.hubt.edu.vn/tin-tuc/huong-dan-xet-tuyen-dai-hoc-chinh-quy-2026/",
+      "https://tuyensinh.hubt.edu.vn/tin-tuc/thong-bao-xet-tuyen-dhcq-nam-2026/",
+      "https://tuyensinh.hubt.edu.vn/dai-hoc/nguong-dam-bao-chat-luong-dau-vao-dhcq-nam-2026/",
+      "https://tuyensinh.hubt.edu.vn/tin-tuc/nguong-dam-bao-chat-luong-dau-vao-dhcq-nam-2026/"
+    ]
+  },
+  "DPQ": {
+    "urls": [
+      "https://tuyensinh.pdu.edu.vn/",
+      "https://tuyensinh.pdu.edu.vn/thong-tin-tuyen-sinh-nam-2026/",
+      "https://tuyensinh.pdu.edu.vn/thong-bao-nhan-ho-so-xet-tuyen-bo-sung-dot-1-ky-tuyen-sinh-chinh-quy-nam-2026/"
+    ]
+  },
+  "DSK": {
+    "urls": [
+      "https://tuyensinh.ute.udn.vn/ChuyenMuc/Thong-bao-thu-minh-chung-hoc-ba-THPT-thanh-tich-hoc-tap-ap-dung-cong-diem-trong-tuyen-sinh-dao-tao-trinh-do-dai-hoc-hinh-thuc-chinh-quy-nam-2026_16472.html",
+      "https://tuyensinh.ute.udn.vn/chuyenmuc/Thong-tin-tuyen-sinh-trinh-do-dai-hoc-nam-2026_16467.html",
+      "https://tuyensinh.ute.udn.vn/ChuyenMuc/PHUONG-THUC-XET-TUYEN-THANG-THEO-QUY-CHE-TUYEN-SINH-DAI-HOC-CHINH-QUY-NAM-2026_16459.html",
+      "https://tuyensinh.ute.udn.vn/ChuyenMucs/KET-QUA-TS_25.html",
+      "https://tuyensinh.ute.udn.vn/ChuyenMucs/Tin-tuc_4.html"
+    ]
+  },
+  "DTC": {
+    "urls": [
+      "https://tuyensinh.ictu.edu.vn/",
+      "https://tuyensinh.ictu.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+      "https://tuyensinh.ictu.edu.vn/tuyen-sinh/chinh-quy",
+      "https://tuyensinh.ictu.edu.vn/tin-tuc",
+      "https://tuyensinh.ictu.edu.vn/hdnh"
+    ]
+  },
+  "DTK": {
+    "urls": [
+      "https://tnut.edu.vn/uploads/art/files/202604/21211/s%E1%BB%91%20493_%20Q%C4%90%20H%C4%90%20TS%20%C4%90TTX%20%C4%91%E1%BB%A3t%20th%C3%A1ng%203.2026.pdf",
+      "https://tnut.edu.vn/uploads/art/files/202603/20199/s%E1%BB%91%20372_Q%C4%90%20BST%20%C4%91%E1%BB%81%20%C3%A1n%20tuy%E1%BB%83n%20sinh%20SV%20qu%E1%BB%91c%20t%E1%BA%BF.pdf",
+      "https://admission.tnut.edu.vn/thong-bao/quyet-dinh-v-v-phe-duyet-dieu-chinh-thong-tin-tuyen-sinh-nam-2026",
+      "https://admission.tnut.edu.vn/?lv=kinhte"
+    ]
+  },
+  "DTQ": {
+    "urls": [
+      "https://is.tnu.edu.vn/wp-content/uploads/2026/04/Thong-tin-tuyen-sinh_-DTQ-DHCQ-2026-19.3.2026-CHINH-QUY.pdf",
+      "https://is.tnu.edu.vn/diem-chuan-tuyen-sinh-dai-hoc-nam-2026-chinh-thuc-duoc-cong-bo-chao-don-tan-sinh-vien-k16-khoa-quoc-te/",
+      "https://is.tnu.edu.vn/thong-bao-muc-diem-san-xet-tuyen-dai-hoc-chinh-quy-nam-2026-cua-khoa-quoc-te-dai-hoc-thai-nguyen/",
+      "https://is.tnu.edu.vn/huong-dan-dang-ky-cap-tai-khoan-danh-cho-thi-sinh-tu-do-xet-tuyen-dai-hoc-nam-2026/"
+    ]
+  },
+  "DTS": {
+    "urls": [
+      "https://admissions.tnue.edu.vn/dai-hoc-chinh-quy/tu-van-truc-tuyen-tuyen-sinh-dai-hoc-nam-2026",
+      "https://admissions.tnue.edu.vn/dai-hoc-chinh-quy/quy-doi-diem-doi-voi-phuong-thuc-2-pt2-spt-va-phuong-thuc-3-pt3-vsat-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+      "https://tnue.edu.vn/thong-tin-hoc-bong-du-an/thong-bao-tuyen-sinh-di-hoc-tai-cong-hoa-sec-nam-2026"
+    ]
+  },
+  "DVD": {
+    "urls": [
+      "https://tucst.edu.vn/file/download/637714400.html",
+      "https://tucst.edu.vn/file/download/637714566.html",
+      "https://tucst.edu.vn/file/download/637714395.html",
+      "https://tucst.edu.vn/file/download/637714406.html",
+      "https://tucst.edu.vn/file/download/637714404.html"
+    ]
+  },
+  "DTZ": {
+    "urls": [
+      "https://tuyensinh.tnus.edu.vn/article/cap-nhat-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/page1",
+      "https://tuyensinh.tnus.edu.vn/article/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/page1",
+      "https://tuyensinh.tnus.edu.vn/tracuu/hosoxettuyen"
+    ]
+  },
+  "DVL": {
+    "urls": [
+      "https://tuyensinh.vlu.edu.vn/xet-tuyen/dang-ky-tuyen-sinh-2026",
+      "https://tuyensinh.vlu.edu.vn/dang-ky-xet-tuyen/dang-ky-tuyen-sinh-2026",
+      "https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026"
+    ]
+  },
+  "DVT": {
+    "urls": [
+      "https://tuyensinh.tvu.edu.vn/boc-hanh-trang-san-hoc-bong-khung-2026-cung-dai-hoc-tra-vinh-tvu/",
+      "https://tuyensinh.tvu.edu.vn/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-dot-1-nam-2026-nguoi-co-bang-tot-nghiep-trung-hoc-pho-thong/",
+      "https://tuyensinh.tvu.edu.vn/thong-bao-ve-viec-to-chuc-ky-thi-danh-gia-dau-vao-dai-hoc-tren-may-tinh-v-sat-nam-2026-2/",
+      "https://daotao.tvu.edu.vn/images/tuyensinh/2026/2026-3-20-tb-dhtv-xet-tuyen-tot-nghiep-tu-tc-gdtx-ket-hop.pdf-11225_1_1_1_1_1.pdf.pdf"
+    ]
+  },
+  "ETU": {
+    "urls": [
+      "https://tuyensinh.daihochoabinh.edu.vn/truong-dai-hoc-hoa-binh-cong-bo-thong-bao-tuyen-sinh-trinh-do-dai-hoc-chinh-quy-nam-2026/",
+      "https://tuyensinh.daihochoabinh.edu.vn/bo-xet-rieng-hoc-ba-giam-15-diem-cong-ielt-va-loat-thay-doi-du-kien-ap-dung-cho-ky-thi-tot-nghiep-thpt-2026/",
+      "https://tuyensinh.daihochoabinh.edu.vn/"
+    ]
+  },
+  "FUV": {
+    "urls": [
+      "https://fulbright.edu.vn/vi/hoi-dap-ve-tuyen-sinh/",
+      "https://fulbright.edu.vn/vi/de-an-tuyen-sinh-va-huong-dan-nop-ho-so-tuyen-sinh/",
+      "https://fulbright.edu.vn/vi/ban-tuyen-sinh/"
+    ]
+  },
+  "GDU": {
+    "urls": [
+      "https://giadinh.edu.vn/gdu-cong-bo-de-an-tuyen-sinh-2026",
+      "https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026",
+      "https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-cong-bo-05-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+      "https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-cong-bo-diem-san-xet-tuyen-nam-2026"
+    ]
+  },
+  "GSA": {
+    "urls": [
+      "https://tuyensinh.utc2.edu.vn/vi/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-cap-nhat-2450",
+      "https://tuyensinh.utc2.edu.vn/vi/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-2444",
+      "https://dept.utc2.edu.vn/khoacoban/vi/news/Ban-tin-noi-bo/thong-tin-tuyen-sinh-nam-2026-362.html",
+      "https://dept.utc2.edu.vn/khoacoban/vi/news/Ban-tin-noi-bo/thong-tin-tuyen-sinh-phan-hieu-truong-dai-hoc-giao-thong-van-tai-tai-tp-ho-chi-minh-nam-2026-361.html",
+      "https://tuyensinh.utc2.edu.vn/vi/khan-thi-sinh-can-khan-truong-hoan-thanh-dang-ky-nguyen-vong-xet-tuyen-truoc-15h00-ngay-hom-nay-14-07-2458",
+      "https://tuyensinh.utc2.edu.vn/"
+    ]
+  },
+  "FBU": {
+    "urls": [
+      "https://tuyensinh.fbu.edu.vn/cam-nang-tuyen-sinh-2026-2027/",
+      "https://tuyensinh.fbu.edu.vn/hoi-nghi-tap-huan-va-trien-khai-cong-tac-tu-van-tuyen-sinh-lan-2-nam-2026/",
+      "https://tuyensinh.fbu.edu.vn/thong-bao-thong-tin-tuyen-sinh-dai-hoc-nam-2026/",
+      "https://tuyensinh.fbu.edu.vn/truong-dai-hoc-tai-chinh-ngan-hang-ha-noi-tham-gia-ngay-hoi-tu-van-tuyen-sinh-huong-nghiep-2026-tai-dai-hoc-bach-khoa-ha-noi/",
+      "https://tuyensinh.fbu.edu.vn/quyet-dinh-ve-viec-ban-hanh-thong-tin-tuyen-sinh-trinh-do-dai-hoc-nam-2026-cua-truong-dai-hoc-tai-chinh-ngan-hang-ha-noi/"
+    ]
+  },
+  "HCP": {
+    "urls": [
+      "https://tuyensinh.apd.edu.vn/wp-content/uploads/2026/03/Thong-tu-Quy-che-tuyen-sinh-dai-hoc-2026.pdf",
+      "https://tuyensinh.apd.edu.vn/lo-trinh-tuyen-sinh-2026/",
+      "https://tuyensinh.apd.edu.vn/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/",
+      "https://tuyensinh.apd.edu.vn/thong-bao-diem-trung-tuyen-dai-hoc-he-chinh-quy-khoa-17-nam-2026/",
+      "https://tuyensinh.apd.edu.vn/thong-bao-so-158-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-tai-hoc-vien-chinh-sach-va-phat-trien-phan-hieu-thanh-pho-da-nang/"
+    ]
+  },
+  "HCN": {
+    "urls": [
+      "https://hvktcnan.bocongan.gov.vn/TrangChu/tin-tuc/1831-thong-tin-tuyen-sinh-trinh-do-dai-hoc-nam-2026-hoc-vien-ky-thuat-va-cong-nghe-an-ninh.html",
+      "https://hvktcnan.bocongan.gov.vn/TrangChu/tin-tuc/2168-hoc-vien-ky-thuat-va-cong-nghe-an-ninh-thong-bao-diem-trung-tuyen-dai-hoc-chinh-quy-tuyen-moi-nam-2026.html",
+      "https://hvktcnan.bocongan.gov.vn/TrangChu/tin-tuc/1926-tap-san-dien-tu-so-04-co-hoi-va-hen-uoc-mua-tuyen-sinh-nam-2026.html",
+      "https://hvktcnan.bocongan.gov.vn/TrangChu/tin-tuc/2194-thong-bao-tuyen-sinh-dot-2-he-dan-su-nam-hoc-2026-2027.html",
+      "https://hvktcnan.bocongan.gov.vn/TrangChu/tin-tuc/2270-thong-bao-tuyen-sinh-dot-3-he-dan-su-nam-hoc-2026-2027.html"
+    ]
+  },
+  "HDT": {
+    "urls": [
+      "https://media.hdu.edu.vn/Media/1001_hdu_tuyensinh/FolderFunc/202604/Documents/thong-bao-so-49-20260401103250-e.pdf",
+      "https://tuyensinh.hdu.edu.vn/thong-tin-tuyen-sinh-truong-dai-hoc-hong-duc-nam-2026",
+      "https://media.hdu.edu.vn/Media/2005_knn.hdu.edu.vn/FolderFunc/202601/Documents/thong-bao-tuyen-sinh-lt-vlvh-trinh-do-dai-hoc-dot-1-nam-2026-0001-20260121092129-e.pdf",
+      "https://tuyensinh.hdu.edu.vn/thong-tin-tuyen-sinh-dao-tao-trinh-do-dai-hoc-nam-2026"
+    ]
+  },
+  "HFA": {
+    "urls": [
+      "https://hfa.tckt.edu.vn/thong-tin-tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+      "https://hfa.tckt.edu.vn/thong-tin-tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2025"
+    ]
+  },
+  "HHA": {
+    "urls": [
+      "https://tuyensinh.vimaru.edu.vn/taxonomy/term/8",
+      "https://tuyensinh.vimaru.edu.vn/tuyensinh/2026-thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026.vmu",
+      "https://tuyensinh.vimaru.edu.vn/thong-tin-ts",
+      "https://tuyensinh.vimaru.edu.vn/tuyensinh/2026-thong-bao-diem-trung-tuyen-dai-hoc-he-chinh-quy-nam-2026.vmu",
+      "https://tuyensinh.vimaru.edu.vn/node/474"
+    ]
+  },
+  "HLQ": {
+    "urls": [
+      "https://hvlq.vn/tin-tuc/hoat-dong-hoc-vien/hoi-dong-tuyen-sinh-sau-dai-to-chuc-hoi-nghi-thong-qua-ket-qua-va-rut-kinh-nghiem-cong-tac-tuyen-sinh-nam-2026.html"
+    ]
+  },
+  "HHK": {
+    "urls": [
+      "https://vaa.edu.vn/khoa-quan-tri-kinh-doanh-to-chuc-gap-mat-tan-sinh-vien-k20-khoa-tuyen-sinh-nam-2026/",
+      "https://vaa.edu.vn/hoi-nghi-so-ket-6-thang-dau-nam-2026-va-trien-khai-nhiem-vu-trong-tam-6-thang-cuoi-nam-2026/",
+      "https://tuyensinh.vaa.edu.vn/"
+    ]
+  },
+  "HLU": {
+    "urls": [
+      "https://tuyensinh.uhl.edu.vn/search.php"
+    ]
+  },
+  "HMV": {
+    "urls": [
+      "https://www.vnad.edu.vn/tuy%E1%BB%83n-sinh/%C4%91%E1%BA%A1i-h%E1%BB%8Dc/t%C4%912026/t%C4%91260421-1",
+      "https://www.vnad.edu.vn/tuy%E1%BB%83n-sinh/trung-c%E1%BA%A5p/tt2026/tt260421-1",
+      "https://www.vnad.edu.vn/th%C3%B4ng-tin/th%C3%B4ng-b%C3%A1o/tb2026/tb260514-1",
+      "https://www.vnad.edu.vn/th%C3%B4ng-tin/th%C3%B4ng-b%C3%A1o/tb2026",
+      "https://www.vnad.edu.vn/th%C3%B4ng-tin/th%C3%B4ng-b%C3%A1o/tb2026/tb260508-1"
+    ]
+  },
+  "HNM": {
+    "urls": [
+      "https://hnmu.edu.vn/ban-hanh-thong-tin-tuyen-sinh-trinh-do-dai-hoc-hinh-thuc-chinh-quy-nam-2026-cap-nhat-lan-1",
+      "https://cpdca.hnmu.edu.vn/sites/default/files/2026-05/10.-qd-ban-hanh-thong-tin-tuyen-sinh-2026.dttx_.signed.pdf",
+      "https://hnmu.edu.vn/tuyen-sinh"
+    ]
+  },
+  "HCB": {
+    "urls": [
+      "https://hvktcnan.bocongan.gov.vn/TrangChu/tin-tuc/1831-thong-tin-tuyen-sinh-trinh-do-dai-hoc-nam-2026-hoc-vien-ky-thuat-va-cong-nghe-an-ninh.html",
+      "https://hvktcnan.bocongan.gov.vn/TrangChu/tin-tuc/2168-hoc-vien-ky-thuat-va-cong-nghe-an-ninh-thong-bao-diem-trung-tuyen-dai-hoc-chinh-quy-tuyen-moi-nam-2026.html",
+      "https://hvktcnan.bocongan.gov.vn/TrangChu/tin-tuc/1926-tap-san-dien-tu-so-04-co-hoi-va-hen-uoc-mua-tuyen-sinh-nam-2026.html",
+      "https://hvktcnan.bocongan.gov.vn/TrangChu/tin-tuc/2194-thong-bao-tuyen-sinh-dot-2-he-dan-su-nam-hoc-2026-2027.html",
+      "https://hvktcnan.bocongan.gov.vn/TrangChu/tin-tuc/2270-thong-bao-tuyen-sinh-dot-3-he-dan-su-nam-hoc-2026-2027.html"
+    ]
+  },
+  "HVQ": {
+    "urls": [
+      "https://www.niem.edu.vn/vi/tin-tuc/thong-bao-dieu-chinh-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+      "https://www.niem.edu.vn/vi/tin-tuc/thong-bao-vv-nhap-hoc-doi-voi-thi-sinh-trung-tuyen-dai-hoc-chinh-quy-nam-2026-cua-hoc-vien-quan-ly-giao-duc",
+      "https://www.niem.edu.vn/uploads/files/328%20Rumani%2003-13-2026%2015-37-53.pdf"
+    ]
+  },
+  "HYD": {
+    "urls": [
+      "https://vutm.edu.vn/FileUpload/Documents/TUY%E1%BB%82N%20SINH%20S%C4%90H%202026/945-TB-HVYDCT.pdf",
+      "https://vutm.edu.vn/vi/tuyen-sinh-dai-hoc.nd/quyet-dinh-ban-hanh-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026.html",
+      "https://vutm.edu.vn/vi/tuyen-sinh-dai-hoc.nd/thong-bao-ve-viec-nhap-hoc-doi-voi-thi-sinh-trung-tuyen-dai-hoc-chinh-quy-nam-2026.html",
+      "https://vutm.edu.vn/vi/tuyen-sinh-dai-hoc.nd/quyet-dinh-ve-viec-cong-bo-nguong-bao-dam-chat-luong-dau-vao-tuyen-sinh-trinh-do-dai-hoc-nam-2026.html",
+      "https://vutm.edu.vn/vi/tuyen-sinh-dai-hoc.nd/quyet-dinh-ve-viec-cong-nhan-thi-sinh-trung-tuyen-dai-hoc-he-chinh-quy-nam-2026.html"
+    ]
+  },
+  "INU": {
+    "urls": [
+      "https://daihoc.intracomuni.edu.vn/",
+      "https://tuyensinh.intracomuni.edu.vn/",
+      "https://intracomuni.edu.vn/tin-tuyen-sinh/cham-ngo-tuong-lai-khep-lai-chang-1-livestream-day-y-nghia-cung-2k8/"
+    ]
+  },
+  "KQH": {
+    "urls": [
+      "https://mta.edu.vn/wp/hoc-vien-ktqs-to-chuc-thi-danh-gia-nang-luc-tieng-anh-cho-hoc-vien-du-khoa-cao-hoc-he-dan-su-nam-2026/",
+      "https://mta.edu.vn/wp/hoc-vien-ky-thuat-quan-su-tham-gia-ngay-hoi-tu-van-tuyen-sinh-huong-nghiep-nam-2026/",
+      "https://mta.edu.vn/wp/thong-tin-tuyen-sinh-2025/",
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "LDA": {
+    "urls": [
+      "https://www.dhcd.edu.vn/b/Tin-Dao-tao/-BUT-PHA-GIOI-HAN%2C-LAM-CHU-TUONG-LAI-CUNG-CHUONG-TRINH-DINH-HUONG-CHUYEN-SAU-NGHE-NGHIEP-QUOC-TE-%28IPOP%29-NAM-2026.html",
+      "https://beta.dhcd.edu.vn/tuyen-sinh"
+    ]
+  },
+  "MTU": {
+    "urls": [
+      "https://tuyensinh.mtu.edu.vn/DangKyXetTuyenHocBa2026.aspx",
+      "https://www.mtu.edu.vn/Resources/Docs/2.%20Th%C3%B4ng%20tin%20tuy%E1%BB%83n%20Sinh%20H%E1%BA%B1ng%20N%C4%83m/1.%20Th%C3%B4ng%20tin%20Tuy%E1%BB%83n%20sinh/Tuy%E1%BB%83n%20sinh%202026/THONG%20TIN%20TUYEN%20SINH%202026.pdf",
+      "https://xttt.mtu.edu.vn/Ph%C6%B0%C6%A1ng%20Th%E1%BB%A9c%20XT/PH%C6%AF%C6%A0NG%20TH%E1%BB%A8C%20TUY%E1%BB%82N%20SINH%20N%C4%82M%202026.pdf",
+      "https://xttt.mtu.edu.vn/Thongtintuyensinh.aspx",
+      "https://tuyensinh.mtu.edu.vn/"
+    ]
+  },
+  "NLG": {
+    "urls": [
+      "https://phgl.hcmuaf.edu.vn/phnt-44246-1/vn/thong-bao-ve-viec-nop-ho-so-dang-ky-thi-mon-nang-khieu-xet-tuyen-vao-nganh-giao-duc-mam-non-trinh-do-dai-hoc-cao-dang-chinh-quy-nam-2026.html"
+    ]
+  },
+  "NLN": {
+    "urls": [
+      "https://phnt.hcmuaf.edu.vn/phnt-44179-1/vn/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-va-cao-dang-nganh-giao-duc-mam-non-nam-2026-du-kien.html",
+      "https://phnt.hcmuaf.edu.vn/phnt-44180-1/vn/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-va-cao-dang-nganh-giao-duc-mam-non-nam-2026-du-kien.html",
+      "https://phnt.hcmuaf.edu.vn/contents.php?ids=44247&lng=vn&ur=phnt",
+      "https://phnt.hcmuaf.edu.vn/contents.php?ids=44246&lng=vn&ur=phnt"
+    ]
+  },
+  "NLS": {
+    "urls": [
+      "https://ns.hcmuaf.edu.vn/thongke/chitietthang.php?lng=vn&thang=062026&user=ts",
+      "https://ts.hcmuaf.edu.vn/ts-44271-1/vn/span-stylecolor-redthong-bao-livestream-tu-van-huong-nghiep-tuyen-sinh-nam-2026-.html",
+      "https://pdt.hcmuaf.edu.vn/data/file/Kehoachhoctap/BIEU%20DO%20KE%20HOACH%20DAO%20TAO%20BAC%20DAI%20HOC%20NAM%20HOC%202025_2026.pdf",
+      "https://ts.hcmuaf.edu.vn/contents.php?ids=40339&lng=vn&ur=ts"
+    ]
+  },
+  "NHF": {
+    "urls": [
+      "https://www.hanu.edu.vn/a/254611/Thong-tin-tuyen-sinh-dai-hoc-hinh-thuc-chinh-quy-nam-2026",
+      "https://www.hanu.edu.vn/a/289174/Thong-bao-muc-thu-hoc-phi-nam-hoc-2026-2027-cac-chuong-trinh-dao-tao-trinh-do-dai-hoc-doi-voi-khoa-tuyen-sinh-nam-hoc-2026-2027",
+      "https://www.hanu.edu.vn/a/279939/Cap-nhat-Thong-tin-tuyen-sinh-dai-hoc-nam-2026-hinh-thuc-dao-tao-Chinh-quy",
+      "https://www.hanu.edu.vn/a/260695/Truong-Dai-hoc-Ha-Noi-tham-du-truc-tuyen-Hoi-nghi-tuyen-sinh-nam-2026-do-Bo-Giao-duc-va-Dao-tao-to-chuc?c=6984"
+    ]
+  },
+  "NTT": {
+    "urls": [
+      "https://tuyensinh.ntt.edu.vn/huong-dan-suaxoa-hoac-thay-doi-thu-tu-uu-tien-nguyen-vong-xet-tuyen-sinh-tren-cong-thong-tin-bo-gddt-nam-2026-p703.html",
+      "https://nn.ntt.edu.vn/tuyen-sinh-2026/",
+      "https://tuyensinh.ntt.edu.vn/nttu-thong-bao-nhan-ho-so-xet-tuyen-nguyen-vong-bo-sung-2026-tu-ngay-1308-p946.html",
+      "https://tuyensinh.ntt.edu.vn/thong-tin-tuyen-sinh-nam2026-tai-truong-dai-hoc-nguyen-tat-thanh-p792.html",
+      "https://tuyensinh.ntt.edu.vn/"
+    ]
+  },
+  "NVH": {
+    "urls": [
+      "https://daotao.vnam.edu.vn/ords/f?p=103%3A1%3A%3A%3A%3A%3A%3A"
+    ]
+  },
+  "NTA": {
+    "urls": [
+      "https://csquangninh.ftu.edu.vn/2352-c%C6%A1-s%E1%BB%9F-qu%E1%BA%A3ng-ninh-tr%C6%B0%E1%BB%9Dng-%C4%91%E1%BA%A1i-h%E1%BB%8Dc-ngo%E1%BA%A1i-th%C6%B0%C6%A1ng-tham-gia-ng%C3%A0y-h%E1%BB%99i-t%C6%B0-v%E1%BA%A5n-tuy%E1%BB%83n-sinh-h%C6%B0%E1%BB%9Bng-nghi%E1%BB%87p-n%C4%83m-2026-do-b%C3%A1o-tu%E1%BB%95i-tr%E1%BA%BB-t%E1%BB%95-ch%E1%BB%A9c.html",
+      "https://csquangninh.ftu.edu.vn/2360-th%C3%B4ng-b%C3%A1o-h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%C4%83ng-k%C3%BD-x%C3%A9t-tuy%E1%BB%83n-%C4%91%E1%BA%A1i-h%E1%BB%8Dc-ch%C3%ADnh-quy-n%C4%83m-2026.html",
+      "https://csquangninh.ftu.edu.vn/2349-tr%C6%B0%E1%BB%9Dng-%C4%91%E1%BA%A1i-h%E1%BB%8Dc-ngo%E1%BA%A1i-th%C6%B0%C6%A1ng-c%C6%A1-s%E1%BB%9F-qu%E1%BA%A3ng-ninh-trao-h%E1%BB%8Dc-b%E1%BB%95ng-khuy%E1%BA%BFn-kh%C3%ADch-h%E1%BB%8Dc-t%E1%BA%ADp-nh%C3%A2n-d%E1%BB%8Bp-t%E1%BA%BFt-nguy%C3%AAn-%C4%91%C3%A1n-b%C3%ADnh-ng%E1%BB%8D-n%C4%83m-2026.html",
+      "https://csquangninh.ftu.edu.vn/2344-th%25C3%25B4ng-tin-tuy%25E1%25BB%2583n-sinh-%25C4%2591%25E1%25BA%25A1i-h%25E1%25BB%258Dc-ch%25C3%25ADnh-quy-n%25C4%2583m-2026-t%25E1%25BA%25A1i-tr%25C6%25B0%25E1%25BB%259Dng-%25C4%2591%25E1%25BA%25A1i-h%25E1%25BB%258Dc-ngo%25E1%25BA%25A1i-th%25C6%25B0%25C6%25A1ng-c%25C6%25A1-s%25E1%25BB%259F-qu%25E1%25BA%25A3ng-ninh.html",
+      "https://csquangninh.ftu.edu.vn/tuy%E1%BB%83n-sinh/tuy%E1%BB%83n-sinh-%C4%91%E1%BA%A1i-h%E1%BB%8Dc/m%E1%BB%99t-s%E1%BB%91-c%C3%A2u-h%E1%BB%8Fi-tuy%E1%BB%83n-sinh-th%C6%B0%E1%BB%9Dng-g%E1%BA%B7p.html"
+    ]
+  },
+  "NVS": {
+    "urls": [
+      "https://hcmcons.vn/tin-tuc/thong-tin-tuyen-sinh-nam-2026-1067.html",
+      "https://hcmcons.vn/tin-tuc/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nhac-vien-tp-ho-chi-minh-nh-2026-2027-dot-2-1143.html",
+      "https://hcmcons.vn/tin-tuc/thong-bao-tuyen-sinh-trung-cap-va-dai-hoc-he-chinh-quy-nhac-vien-tp-ho-chi-minh-nh-2026-2027-va-nhung-luu-y-khi-dang-ky-du-thi-dai-hoc-he-chinh-quy-1030.html",
+      "https://hcmcons.vn/tin-tuc/diem-chuan-va-ket-qua-tuyen-sinh-bac-dai-hoc-nam-2026-1129.html"
+    ]
+  },
+  "QHK": {
+    "urls": [
+      "https://sis.vnu.edu.vn/Images/images/2026/260601_TTTS/260514_%20Thong%20bao%20tuyen%20sinh%20hoc%20sinh%20du%20bi%20dai%20hoc%20nam%202026.pdf",
+      "https://sis.vnu.edu.vn/Images/images/2026/260605_Q%C4%90%20ban%20h%C3%A0nh%20CT%C4%90T%20m%E1%BB%9Bi%202026/260602_%20Thong%20bao%20tuyen%20sinh%20CTDT%20Quan%20tri%20thuong%20hieu%20day%20bang%20tieng%20Anh.pdf",
+      "https://sis.vnu.edu.vn/Images/images/2026/260212_D%E1%BA%A1ng%20th%E1%BB%A9c%20thi%20n%C4%83ng%20khi%E1%BA%BFu/260211_%20NA_%20DangthucbaithinangkhieuNTTGtuyensinhdaihocCTDTNhiepanhnghethuat.pdf",
+      "https://sis.vnu.edu.vn/chi-tiet-tin/Tuyen-sinh-dai-hoc-chinh-quy-nam-2026-Phuong-thuc-xet-tuyen-chuong-trinh-dao-tao-chi-tieu-va-to-hop-xet-tuyen-du-kien_1154.html",
+      "https://sis.vnu.edu.vn/chi-tiet-tin/Truong-Khoa-hoc-lien-nganh-va-Nghe-thuat-tuyen-sinh-1200-chi-tieu-dai-hoc-chinh-quy-nam-2026_1345.html"
+    ]
+  },
+  "PKA": {
+    "urls": [
+      "https://fjl.phenikaa-uni.edu.vn/vi/post/tuyen-sinh/huong-dan-dang-ky-tuyen-sinh-he-dai-hoc-chinh-quy-nam-2026-phenikaa",
+      "https://vee.phenikaa-uni.edu.vn/vi/post/tin-tuc/tin-tuc-/huong-dan-dang-ky-tuyen-sinh-he-dai-hoc-chinh-quy-nam-2026-1",
+      "https://tuyensinh.phenikaa-uni.edu.vn/tra-cuu-ket-qua-2026",
+      "https://mse.phenikaa-uni.edu.vn/vi/post/tuyen-sinh/huong-dan-dang-ky-tuyen-sinh-he-dai-hoc-chinh-quy",
+      "https://pseb.phenikaa-uni.edu.vn/vi/post/tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026"
+    ]
+  },
+  "QHX": {
+    "urls": [
+      "https://ussh.vnu.edu.vn/vi/news/dao-tao/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-24126.html"
+    ]
+  },
+  "QHL": {
+    "urls": [
+      "https://law.vnu.edu.vn/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/?print=print",
+      "https://law.vnu.edu.vn/thong-bao-quy-doi-diem-tuong-duong-giua-diem-thi-danh-gia-nang-luc-hsa-va-diem-thi-thpt-nam-2026-cua-truong-dai-hoc-luat-dai-hoc-quoc-gia-ha-noi/"
+    ]
+  },
+  "QHY": {
+    "urls": [
+      "https://ump.vnu.edu.vn/article-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-%28hinh-thuc-dao-tao-chinh-quy%29-19647-19218.html"
+    ]
+  },
+  "QSP": {
+    "urls": [
+      "https://vnuhcm-cbt.edu.vn/tuyen-sinh3426326"
+    ]
+  },
+  "QSQ": {
+    "urls": [
+      "https://hcmiu.edu.vn/wp-content/uploads/2026/03/Thu-moi-chao-gia-31-Dat-banner-quang-cao_HNTVTS-Signed.pdf",
+      "https://hcmiu.edu.vn/wp-content/uploads/2026/03/Thu-moi-chao-gia-truyen-thong-so-Quy-II.2026-Signed.pdf",
+      "https://ketquaxt.hcmiu.edu.vn/tra-cuu-ket-qua"
+    ]
+  },
+  "RMIT": {
+    "urls": [
+      "https://rmitenglishevent.rmit.edu.vn/mua-he-tu-teen-hcm",
+      "https://www.rmit.edu.vn/assets/vn/en/assets-for-production/documents/pdfs/study-at-rmit/tuition-fees/student-fees-and-charges-guide-04-2026.pdf"
+    ]
+  },
+  "SIU": {
+    "urls": [
+      "https://tuyensinh.siu.edu.vn/ThongTinTuyenSinh/thong-tin-tuyen-sinh-2026.aspx",
+      "https://tuyensinh.siu.edu.vn/ThongTinTuyenSinh/thong-tin-tuyen-sinh-2025.aspx",
+      "https://siug.siu.edu.vn/TuyenSinh/2026/thong-tin-tuyen-sinh-mcs-dot-2-2026.aspx",
+      "https://tuyensinh.siu.edu.vn/DangKyXetTuyen/2026/Default.aspx",
+      "https://siug.siu.edu.vn/TuyenSinh/2026/thong-tin-tuyen-sinh-mel-dot-1-2026.aspx"
+    ]
+  },
+  "SKH": {
+    "urls": [
+      "https://tuyensinh.utehy.edu.vn/",
+      "https://tuyensinh.utehy.edu.vn/TraCuuTrungTuyen/",
+      "https://tuyensinh.utehy.edu.vn/Trangchu/Index",
+      "https://tuyensinh.utehy.edu.vn/TinTuc/ChiTiet?ID_tin_tuc=1250"
+    ]
+  },
+  "SKN": {
+    "urls": [
+      "https://www.nute.edu.vn/bai-viet/16-nganh-chuyen-nganh-tuyen-sinh-nam-2026-dao-tao-viec-lam-phat-trien-nang-luc-nghe-nghiep-cho-sinh-vien-6704.html",
+      "https://www.nute.edu.vn/bai-viet/bao-cao-ket-qua-thuc-hien-chi-tieu-tuyen-sinh-nam-2025-va-dang-ky-so-luong-tuyen-sinh-nam-2026-6689.html",
+      "https://nute.edu.vn/bai-viet/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-bo-sung-dot-1-6730.html",
+      "https://www.nute.edu.vn/bai-viet/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026-6621.html",
+      "https://www.nute.edu.vn/bai-viet/thong-bao-ve-viec-xac-dinh-nguong-dam-bao-chat-luong-dau-vao-va-quy-tac-quy-doi-diem-tuong-duong-giua-cac-phuong-thuc-xet-tuyen-nam-2026-6705.html"
+    ]
+  },
+  "SPK": {
+    "urls": [
+      "https://nmo.hcmute.edu.vn/Resources/Docs/SubDomain/nmo/639105661142981185THONG%20BAO%20TUYEN%20SINH%20VLVH%202026-TAI%20TRUONG-FN%20-%20Signed%20%283%29.pdf",
+      "https://hcmute.edu.vn/Resources/Docs/SubDomain/HomePage/Th%C3%B4ng%20b%C3%A1o/N%C4%83m%202026/TB%20%C4%91%C4%83ng%20k%C3%BD%20v%C3%A0%20d%E1%BB%B1%20thi%20c%C3%A1c%20m%C3%B4n%20n%C4%83ng%20khi%E1%BA%BFu%20n%C4%83m%202026_DH%20CNKT%20TPHCM.pdf",
+      "https://tuyensinh.hcmute.edu.vn/"
+    ]
+  },
+  "SKV": {
+    "urls": [
+      "https://tuyensinh.vuted.edu.vn/bai-viet/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026.html",
+      "https://tuyensinh.vuted.edu.vn/bai-viet/thong-bao-tuyen-sinh-dao-tao-cao-dang-chinh-quy-nam-2026.html",
+      "https://tuyensinh.vuted.edu.vn/bai-viet/thong-bao-nguong-dam-bao-chat-luong-dau-vao-dhcq-nam-2026.html",
+      "https://tuyensinh.vuted.edu.vn/?id=11",
+      "https://tuyensinh.vuted.edu.vn/nhaphoc-online"
+    ]
+  },
+  "STS": {
+    "urls": [
+      "https://tuyensinh.upes.edu.vn/2026/04/14/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/",
+      "https://tuyensinh.upes.edu.vn/2026/07/13/nguong-dam-bao-chat-luong-dau-vao-dai-hoc-chinh-quy-nam-2026/",
+      "https://upes.edu.vn/thong-bao-huong-dan-thu-tuc-nhap-hoc-dai-hoc-chinh-quy-nam-2026/",
+      "https://tuyensinh.upes.edu.vn/"
+    ]
+  },
+  "TAG": {
+    "urls": [
+      "https://tuyensinh.agu.edu.vn/tin-tuc/thong-bao-viec-nop-ho-so-dang-ky-xet-tuyen-dai-hoc-hinh-thuc-dao-tao-chinh-quy-nam-2026",
+      "https://tuyensinh.agu.edu.vn/tin-tuc?tag=Tuy%E1%BB%83n+sinh+2026",
+      "https://tuyensinh.agu.edu.vn/nganh-dao-tao/viet-nam-hoc",
+      "https://tuyensinh.agu.edu.vn/nganh-dao-tao/luat",
+      "https://tuyensinh.agu.edu.vn/nganh-dao-tao/triet-hoc"
+    ]
+  },
+  "TDH": {
+    "urls": [
+      "https://hupes.edu.vn/hoi-nghi-ra-mat-ban-giam-hieu-nhiem-ky-2026-2031-va-trien-khai-cong-tac-dao-tao-tuyen-sinh-nam-hoc-2026-2027.html",
+      "https://hupes.edu.vn/tuyensinh/media-detail/thong-bao-lich-thi-nang-khieu-2026.html",
+      "https://hupes.edu.vn/lich-cong-tac-tuan-tu-ngay-14-6-den-ngay-21-6-2026.html",
+      "https://tuyensinhdaihoc.hupes.edu.vn/",
+      "https://hupes.edu.vn/tuyensinh/"
+    ]
+  },
+  "TDL": {
+    "urls": [
+      "https://klh.dlu.edu.vn/vi/su-kien-hoat-dong/cam-nang-thong-tin-tuyen-sinh-he-chinh-quy-nam-2026-truong-dai-hoc-da-lat",
+      "https://tuyensinh.dlu.edu.vn/"
+    ]
+  },
+  "TLS": {
+    "urls": [
+      "https://ee.tlu.edu.vn/ho-tro/truong-dai-hoc-thuy-loi-thong-bao-thong-tin-tuyen-8546",
+      "https://ts.tlu.edu.vn/Portals/4/2026/Cao%20h%E1%BB%8Dc/TB_tuyen_sinh_cao_hoc_dot_1-2026.pdf?ver=2026-01-05-094225-490",
+      "https://env.tlu.edu.vn/Portals/0/2026/Thong-bao-tuyen-sinh-2026.pdf",
+      "https://ce.tlu.edu.vn/sinh-vien/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-5449",
+      "https://ce.tlu.edu.vn/dai-hoc-tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2025-5410"
+    ]
+  },
+  "TDS": {
+    "urls": [
+      "https://ush.edu.vn/thong-bao/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-1500.html?download=1&id=0",
+      "https://ush.edu.vn/laws/detail/Quy-che-Tuyen-sinh-cac-nganh-dao-tao-trinh-do-dai-hoc-va-nganh-Giao-duc-Mam-non-trinh-do-cao-dang-nam-2026-58/?download=1&id=0",
+      "https://nhaphoc.ush.edu.vn/"
+    ]
+  },
+  "TLA": {
+    "urls": [
+      "https://ee.tlu.edu.vn/ho-tro/truong-dai-hoc-thuy-loi-thong-bao-thong-tin-tuyen-8546",
+      "https://ts.tlu.edu.vn/Portals/4/2026/Cao%20h%E1%BB%8Dc/TB_tuyen_sinh_cao_hoc_dot_1-2026.pdf?ver=2026-01-05-094225-490",
+      "https://env.tlu.edu.vn/Portals/0/2026/Thong-bao-tuyen-sinh-2026.pdf",
+      "https://ce.tlu.edu.vn/sinh-vien/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-5449",
+      "https://ce.tlu.edu.vn/dai-hoc-tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2025-5410"
+    ]
+  },
+  "TMU": {
+    "urls": [
+      "https://knnn.tmu.edu.vn/thong-bao-to-chuc-thi-va-cap-chung-chi-tieng-anh-bac-3-4-5-vstep-nam-2026-p619.html",
+      "https://dangkyxettuyen.tmu.edu.vn/",
+      "https://tuyensinh.tmu.edu.vn/upload/pagefile/cncn26-cqpdf-1767773804.pdf",
+      "https://dangkyxettuyen.tmu.edu.vn/tuyen-sinh",
+      "https://dangkyxettuyen.tmu.edu.vn/tuyen-sinh/dang-ky/65/nhapdiem/null/13"
+    ]
+  },
+  "TTG": {
+    "urls": [
+      "https://www.tgu.edu.vn/upload/files/1832_KEHOACH_TUYENSINH_20260119.pdf",
+      "https://www.tgu.edu.vn/topics/?0.0.-2026.0=&p=5",
+      "https://ts.tgu.edu.vn/"
+    ]
+  },
+  "TSN": {
+    "urls": [
+      "https://www.ntu.edu.vn/Trang-chu/ao-tao/tin-tuc/tin-tuc/tin-tuc/truong-dai-hoc-nha-trang-to-chuc-le-chao-co-quy-iii-nam-2026",
+      "https://pdtsaudaihoc.ntu.edu.vn/uploads/22/Quy%C3%AAn/207-6.%20Q%C4%90%20759%20%2826.5.26%29%20cong%20nhan%20ket%20qua%20danh%20gia%20nang%20luc%20TA%20Dot%201%202026.pdf",
+      "https://tuyensinh.ntu.edu.vn/thong-bao",
+      "https://tuyensinh.ntu.edu.vn/thong-bao/quy-doi-diem-tuong-duong"
+    ]
+  },
+  "TNU": {
+    "urls": [
+      "https://dienbien.tnu.edu.vn/uploads/files/6a2b9759dfbe8-4.%20DTO-%20DB-%20TH%C3%94NG%20TIN%20TUY%E1%BB%82N%20SINH-%202026%20%28final%29.pdf",
+      "https://tnu.edu.vn/upload/2006712/20260507/739-TB-BGDDTsigned-1_231f7.pdf",
+      "https://tnu.edu.vn/upload/2006712/20260507/TB_TS_Maroc_2026signed-2_39bfd.pdf",
+      "https://tnu.edu.vn/vi/dao-tao/thong-tin-tuyen-sinh/huong-dan-tuyen-sinh-trinh-do-dai-hoc-cao-dang-nam-2026.html"
+    ]
+  },
+  "TTN": {
+    "urls": [
+      "https://tuyensinh.ttn.edu.vn/wp-content/uploads/2026/01/TTNQuyetDinhBanHanhKeHoachTuyenSinh2026V2Full.pdf",
+      "https://tuyensinh.ttn.edu.vn/wp-content/uploads/2026/06/TTNThongTinTuyenSinhVLVH2026.pdf",
+      "https://tuyensinh.ttn.edu.vn/2026/07/10/tbmdnhsxtdh2026/",
+      "https://tuyensinh.ttn.edu.vn/wp-content/uploads/2026/04/ThongTinTuyenSinh2026TTNChinhQuyCTFull.pdf",
+      "https://tuyensinh.ttn.edu.vn/2026/"
+    ]
+  },
+  "UFA": {
+    "urls": [
+      "https://quangngai.ufm.edu.vn/ufm-dong-hanh-cung-hoc-sinh-thpt-chuoi-hoat-dong-tu-van-tuyen-sinh-huong-nghiep-soi-noi-tu-ngay-10-den-12-01-2026-1926.html",
+      "https://quangngai.ufm.edu.vn/ufm-cong-bo-xu-huong-thiet-ke-nam-2026-1909.html"
+    ]
+  },
+  "VGU": {
+    "urls": [
+      "https://tuyensinh.vgu.edu.vn/nhaphoc-1",
+      "https://tuyensinh.vgu.edu.vn/post/th%C3%B4ng-b%C3%A1o-tuy%E1%BB%83n-sinh-b%E1%BB%95-sung-n%C4%83m-2026",
+      "https://tuyensinh.vgu.edu.vn/post/tr%C6%B0%E1%BB%9Dng-%C4%91%E1%BA%A1i-h%E1%BB%8Dc-vi%E1%BB%87t-%C4%91%E1%BB%A9c-c%C3%B4ng-b%E1%BB%91-%C4%91i%E1%BB%83m-s%C3%A0n-x%C3%A9t-tuy%E1%BB%83n-v%C3%A0o-c%C3%A1c-ch%C6%B0%C6%A1ng-tr%C3%ACnh-%C4%91%C3%A0o-t%E1%BA%A1o-b%E1%BA%ADc-%C4%91%E1%BA%A1i-h%E1%BB%8Dc-n%C4%83m-2026",
+      "https://tuyensinh.vgu.edu.vn/challenge-page/vgutestas2026",
+      "https://vgu.edu.vn/vi/new-model-university?id-bai-viet=14979385&pid=CmsHienThiBaiViet_WAR_cmsportlet_INSTANCE_Ui9vxs95kvTY&reCall=1&title=VGU-khai-giang-nam-hoc-20262027-chao-don-gan-900-tan-sinh-vien"
+    ]
+  },
+  "VHH": {
+    "urls": [
+      "https://law.huc.edu.vn/a/257680/THONG-TIN-TUYEN-SINH-NAM-2026?c=5889",
+      "https://fch.huc.edu.vn/a/245713/THONG-TIN-TUYEN-SINH-DAI-HOC-CHINH-QUY-NAM-2026-Du-kien",
+      "https://tmil.huc.edu.vn/a/252207/-KHOA-QUAN-TRI-DU-LICH-NGON-NGU-QUOC-TE-TAI-NGAY-HOI-TU-VAN-TUYEN-SINH-2026-",
+      "https://fch.huc.edu.vn/a/279750/THONG-TIN-TUYEN-SINH-DAI-HOC-CHINH-QUY-NAM-2026?c=5963",
+      "https://fcwj.huc.edu.vn/a/266572/THONG-TIN-TUYEN-SINH-DAI-HOC-CHINH-QUY-NAM-2026?c=5850"
+    ]
+  },
+  "VHS": {
+    "urls": [
+      "https://www.hcmuc.edu.vn/img_data/images/VHS%20-%20Phi%E1%BA%BFu%20%C4%91%C4%83ng%20k%C3%BD%20thi%20n%C4%83ng%20khi%E1%BA%BFu%20-%202026%281%29.pdf",
+      "https://www.hcmuc.edu.vn/khoa-thu-vien-va-xuat-ban-truong-dai-hoc-van-hoa-tp-ho-chi-minh-chao-don-hon-150-tan-sinh-vien-khoa-2026-2030.html",
+      "https://www.hcmuc.edu.vn/bolg/hon-190-thi-sinh-tranh-tai-tai-ky-thi-nang-khieu-nghe-thuat-nam-2026-cua-truong-dai-hoc-van-hoa-tp-ho-chi-minh.html",
+      "https://www.hcmuc.edu.vn/bolg/danh-muc-cong-khai-cac-hoat-dong-giao-duc-truong-dai-hoc-van-hoa-tp-ho-chi-minh-nam-hoc-2026-2027.html",
+      "https://hcmuc.edu.vn/bolg/truong-dai-hoc-van-hoa-tp-ho-chi-minh-thong-bao-thong-tin-tuyen-sinh-trinh-do-dai-hoc-chinh-quy-nam-2026.html"
+    ]
+  },
+  "VLU": {
+    "urls": [
+      "https://tuyensinh.vlute.edu.vn/nguoidung/nguoidungcontroller/index",
+      "https://tuyensinh.vlute.edu.vn/vlvh",
+      "https://tuyensinh.vlute.edu.vn/ttts-vlvh",
+      "https://tuyensinh.vlute.edu.vn/mo-ta-nganh/7510102",
+      "https://tuyensinh.vlute.edu.vn/mo-ta-nganh/7510203"
+    ]
+  },
+  "VINUNI": {
+    "urls": [
+      "https://admissions.vinuni.edu.vn/vi/dai-hoc/nhung-moc-quan-trong/",
+      "https://vinuni.edu.vn/vi/chinh-thuc-mo-cong-nhan-ho-so-tuyen-sinh-khoa-2-3-chuong-trinh-dao-tao-20-000-nhan-tai-ai-thuc-chien-cua-tap-doan-vingroup/"
+    ]
+  },
+  "YCT": {
+    "urls": [
+      "https://tuyensinh.ctump.edu.vn/thong-tin-tuyen-sinh-dai-hoc-nam-2026.html",
+      "https://ctump.edu.vn/thong-tin-tuyen-sinh-nam-2026-hinh-thuc-dao-tao-chinh-quy.html",
+      "https://tuyensinh.ctump.edu.vn/thong-bao-tuyen-sinh-dai-hoc-nam-2026.html",
+      "https://tuyensinh.ctump.edu.vn/xet-tuyen-bang-ket-qua-ky-thi-v-sat-2026-tai-truong-dai-hoc-y-duoc-can-tho-030114.html",
+      "https://www.ctump.edu.vn/khoa/thong-tin-tuyen-sinh-nam-2026-truong-dai-hoc-y-duoc-can-tho.html",
+      "https://tuyensinh.ctump.edu.vn/thong-bao-danh-sach-du-dieu-kien-trung-tuyen-xet-tuyen-thang-vao-dai-hoc-nam-2026.html",
+      "https://tuyensinh.ctump.edu.vn/tuyen-sinh-dai-hoc_portal_25.html?page=1",
+      "https://tuyensinh.ctump.edu.vn/tuyen-sinh-dai-hoc_portal_25.html"
+    ]
+  },
+  "VNU-HCM": {
+    "urls": [
+      "https://tuyensinh.vnuhcm.edu.vn/index.php?route=catalog%2Fnganh",
+      "https://tuyensinh.vnuhcm.edu.vn/index.php?order=DESC&route=catalog%2Fnganh&sort=n.tennganh",
+      "https://tuyensinh.vnuhcm.edu.vn/index.php?order=DESC&route=catalog%2Fnganh&sort=chitieu",
+      "https://tuyensinh.vnuhcm.edu.vn/index.php?order=DESC&route=catalog%2Fnganh&sort=diemchuan",
+      "https://tuyensinh.vnuhcm.edu.vn/index.php?route=catalog%2Ftintuc%2Fnoidung&tintuc_id=107"
+    ]
+  },
+  "YDN": {
+    "urls": [
+      "https://ydn.edu.vn/news-posts/news-event/hoat-dong-nha-truong-1033/truong-dai-hoc-ky-thuat-y---duoc-da-nang-to-chuc-le-khai-giang-nam-hoc-2026---2027-bef7",
+      "https://ydn.edu.vn/news-posts/dumpt-admission/dai-hoc-081c/giay-bao-trung-tuyen--thong-bao-huong-dan-nhap-hoc-va-danh-sach-sinh-vien-nhap-hoc-dai-hoc-chinh-quy-nam-2026-7a64"
+    ]
+  },
+  "YHB": {
+    "urls": [
+      "https://hmu.edu.vn/vn/tID7319_cap-nhat-dieu-chinh-trong-de-an-tuyen-sinh-dai-hoc-nam-2026.html",
+      "https://hmu.edu.vn/vn/tID7465_thong-tin-tuyen-sinh-trinh-do-dai-hoc-cua-truong-dai-hoc-y-ha-noi-nam-2026.html",
+      "https://sdh.hmu.edu.vn/images/2026/1491_TB-%C4%90HYHN%20Th%C3%B4ng%20b%C3%A1o%20k%E1%BA%BF%20ho%E1%BA%A1ch%20%C3%B4n%20t%E1%BA%ADp%20v%C3%A0%20thi%20tuy%E1%BB%83n%20CKI-CKII.pdf",
+      "https://hmu.edu.vn/vn/xc66_tuyen-sinh.html",
+      "https://hmu.edu.vn/vn/p2_66tuyen-sinh.html"
+    ]
+  },
+  "YHT": {
+    "urls": [
+      "https://hmu.edu.vn/vn/tID7319_cap-nhat-dieu-chinh-trong-de-an-tuyen-sinh-dai-hoc-nam-2026.html",
+      "https://hmu.edu.vn/vn/tID7465_thong-tin-tuyen-sinh-trinh-do-dai-hoc-cua-truong-dai-hoc-y-ha-noi-nam-2026.html",
+      "https://sdh.hmu.edu.vn/images/2026/1491_TB-%C4%90HYHN%20Th%C3%B4ng%20b%C3%A1o%20k%E1%BA%BF%20ho%E1%BA%A1ch%20%C3%B4n%20t%E1%BA%ADp%20v%C3%A0%20thi%20tuy%E1%BB%83n%20CKI-CKII.pdf",
+      "https://hmu.edu.vn/vn/xc66_tuyen-sinh.html",
+      "https://hmu.edu.vn/vn/p2_66tuyen-sinh.html"
+    ]
+  },
+  "YTB": {
+    "urls": [
+      "https://daotao.tbump.edu.vn/thong-tin-tuyen-sinh/"
+    ]
+  },
+  "YDS": {
+    "urls": [
+      "https://admin.ump.edu.vn/uploads/ckeditor/files/Truong/DaoTaoDaiHoc/TuyenSinh/2026/Danhsachthisinh_CCTA_19062026_Web.pdf",
+      "https://admin.ump.edu.vn/uploads/ckeditor/files/TB%20Tuy%E1%BB%83n%20sinh%20TS%202026/TB%20tuy%E1%BB%83n%20sinh%202026%2027_02_2026.pdf",
+      "https://admin.ump.edu.vn/uploads/ckeditor/files/Truong/DaoTaoDaiHoc/TuyenSinh/2026/2415_ThongBao_XetTuyenDHCQ2026.pdf",
+      "https://admin.ump.edu.vn/uploads/ckeditor/files/Truong/DaoTaoDaiHoc/TuyenSinh/2026/1592_03042026_Quychetuyensinh_DHCQ.pdf"
+    ]
+  },
+  "QHQ": {
+    "urls": [
+      "https://www.is.vnu.edu.vn/truong-quoc-te-thong-bao-thong-tin-du-kien-tuyen-sinh-dhcq-nam-2026/"
+    ]
+  },
+  "DDV": {
+    "website": "https://vnuk.udn.vn",
+    "urls": [
+      "https://tuyensinh.vnuk.udn.vn/trang-chu/",
+      "https://tuyensinh.vnuk.udn.vn/thong-tin-tuyen-sinh-nam-2026/",
+      "https://tuyensinh.vnuk.udn.vn/wp-content/uploads/2026/04/TB-DHDN_TBXT-Dai-hoc-nguoi-ngoai-nuoc-nam-2026.pdf",
+      "https://tuyensinh.vnuk.udn.vn/tin-tuc/",
+      "https://vnuk.udn.vn/en/2026-admissions-update-vnuk-officially-expands-direct-admission-opportunities/",
+      "https://vnuk.udn.vn/phong-van-xet-tuyen-ket-hop-mo-canh-cua-den-vnuk/",
+      "https://vnuk.udn.vn/phien-toa-gia-dinh-ve-toi-pham-ma-tuy-va-tuyen-truyen-nghi-quyet-205-2025-qh15-trai-nghiem-hoc-phap-luat-sinh-dong-tai-vnuk/",
+      "https://vnuk.udn.vn/en/mock-trial-on-drug-crimes-and-advocacy-for-resolution-205-2025-qh15-a-vivid-legal-learning-experience-at-vnuk/",
+      "https://vnuk.udn.vn/diem-moi-tuyen-sinh-2026-vnuk-chinh-thuc-mo-rong-co-hoi-xet-tuyen-thang/",
+      "https://vnuk.udn.vn/thong-bao-thoi-han-ke-khai-ket-qua-ky-thi-danh-gia-nang-luc-xet-tuyen-vao-vnuk-nam-2026/",
+      "https://vnuk.udn.vn/major/cong-nghe-vat-lieu/",
+      "https://vnuk.udn.vn/xet-tuyen-ket-hop-tai-vnuk-2026-mo-rong-co-hoi-buoc-vao-canh-cua-dai-hoc/",
+      "https://vnuk.udn.vn/thong-bao-thoi-han-ke-khai-thong-tin-xet-tuyen-vao-vnuk-nam-2026/",
+      "https://vnuk.udn.vn/en/notice-of-the-2026-vnuk-admission-information-submission-deadline/"
+    ]
+  },
+  "QSY": {
+    "website": "https://uhsvnu.edu.vn",
+    "urls": [
+      "https://tuyensinh.uhsvnu.edu.vn/news.php?slug=thongtintuyensinh",
+      "https://tuyensinh.uhsvnu.edu.vn/news.php?slug=thongtintuyensinh1",
+      "https://www.uhsvnu.edu.vn/tin-tuc/thong-bao/thong-tin-tuyen-sinh-nam-2026-18052026",
+      "https://tuyensinh.uhsvnu.edu.vn/",
+      "https://www.uhsvnu.edu.vn/vi/tin-tuc/thong-bao/hoc-tap-cung-doi-ngu-chuyen-gia-dau-nganh-truc-tiep-giang-day-sau-dai-hoc-tai-uhs-04052026",
+      "https://tuyensinh.uhsvnu.edu.vn/news.php?slug=diemcong1",
+      "https://www.uhsvnu.edu.vn/vi/search/thong-tin-tuyen-sinh-nam-2026-dai-hoc-18052026",
+      "https://tuyensinh.uhsvnu.edu.vn/category.php?slug=tin-t-c",
+      "https://tuyensinh.uhsvnu.edu.vn/news.php?slug=th-",
+      "https://pdt.uhsvnu.edu.vn/TraCuu/Default.aspx?mode=6",
+      "https://www.uhsvnu.edu.vn/tin-tuc/thong-bao/uhs-tuyen-sinh-thac-si-cong-nghe-y-duoc-dot-1-nhan-ho-so-den-ngay-15-5-2026-08052026",
+      "https://tuyensinh.uhsvnu.edu.vn/news.php%3Fslug%3Dquyche"
+    ]
+  },
+  "BPH": {
+    "website": "https://www.hvbp.edu.vn",
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "HQH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "HEH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "NQH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "PKH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "YQH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "LCH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "DCH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "KGH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "LAH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "LBH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "PBH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "HGH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "SNH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "TGH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "TTH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "VPH": {
+    "urls": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ],
+    "sharedDocuments": [
+      "https://cdn.haiphong.gov.vn/gov-hpg/6799/tintuc/2026/3/8e.-quyen-nhung-dieu-can-biet-bqp-2026-xong-12-3.-1-639101330473873868.pdf"
+    ]
+  },
+  "HTC": {
+    "urls": [
+      "https://hvtc.edu.vn/Uploads/files/T6-2026/3_TTTS%20DHCQ%20NAM%202026%20-%20BAN%20CAP%20NHAT.pdf",
+      "https://tuyensinh.hvtc.edu.vn/Cau-hoi-thuong-gap-va-tra-loi-tu-van-tuyen-sinh-Dai-hoc-chinh-quy-nam-2026_34208.html",
+      "https://hvtc.edu.vn/Uploads/files/T6-2026/2_TTTS%20DHCQ%20NAM%202026%20-%20CAP%20NHAT.pdf"
+    ]
+  },
+  "LPH": {
+    "urls": [
+      "https://tuyensinh.hlu.edu.vn/Images/Post/files/Tuyensinh/DHCQ/Thong%20tin%20tuyen%20sinh%202026%20K51.pdf"
+    ]
+  },
+  "DTHG": {
+    "urls": [
+      "https://tnu.edu.vn/dao-tao/thong-tin-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-thong-bao-xet-tuyen-bo-sung-dot-1-nam-2026-voi-85-chi-tieu.html",
+      "https://tnu.edu.vn/dao-tao/thong-tin-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-nhan-ho-so-xet-tuyen-hoc-ba-cho-thi-sinh-tu-do-nam-2026.html"
+    ]
+  },
+  "QSC": {
+    "urls": [
+      "https://tuyensinh.uit.edu.vn/sites/default/files/uploads/files/202603/phuongts2026_dieuching.pdf",
+      "https://tuyensinh.uit.edu.vn/2026-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026"
+    ]
+  },
+  "PCH": {
+    "website": "https://hocvienpccc.bocongan.gov.vn",
+    "urls": [
+      "https://hocvienpccc.bocongan.gov.vn/blog/thong-bao-diem-trung-tuyen-phuong-thuc-2-3-xet-tuyen-dai-hoc-he-chinh-quy-tuyen-moi-nam-2026_7602"
+    ]
+  },
+  "PCS": {
+    "website": "https://hocvienpccc.bocongan.gov.vn",
+    "urls": [
+      "https://hocvienpccc.bocongan.gov.vn/blog/thong-bao-diem-trung-tuyen-phuong-thuc-2-3-xet-tuyen-dai-hoc-he-chinh-quy-tuyen-moi-nam-2026_7602"
+    ]
+  }
+}

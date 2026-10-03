@@ -502,6 +502,11 @@ body.turnstile-open { overflow:hidden; }
 .profile-overview { margin-top: 22px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
 .profile-overview > summary { min-height: 48px; padding: 13px 16px; color: var(--text); font-size: 14px; font-weight: 700; cursor: pointer; }
 .profile-overview-body { padding: 0 16px 16px; }
+.profile-information-2026 .profile-overview-body { font-size: 14px; line-height: 1.65; }
+.profile-official-documents { padding-left: 20px; }
+.profile-official-documents li + li { margin-top: 8px; }
+.profile-official-documents a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.profile-information-2026 .reference-warning, .profile-status .reference-warning { color: var(--text); background: var(--primary-soft); font-size: 13px; line-height: 1.6; }
 .profile-overview .profile-sections { margin-bottom: 0; }
 .report-context { margin: 10px 0 2px; padding: 10px 12px; border-left: 3px solid var(--primary); border-radius: 0 8px 8px 0; color: var(--text); background: var(--primary-soft); font-size: 13px; font-weight: 650; line-height: 1.55; }
 

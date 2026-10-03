@@ -43,17 +43,17 @@ function asConfidence(value) {
 
 function createCandidate(rawScore, index, catalog, warnings) {
   if (!rawScore || typeof rawScore !== "object") {
-    warnings.push(`Dòng ${index + 1} không đúng cấu trúc nên được bỏ qua.`);
+    warnings.push(`Dòng ${index + 1} có dữ liệu sai định dạng nên đã bỏ qua.`);
     return null;
   }
   const subject = getSubjectMatch(rawScore.subject, catalog);
   if (!subject) {
-    warnings.push(`Dòng ${index + 1} không xác định được môn học nên được bỏ qua.`);
+    warnings.push(`Dòng ${index + 1}: không xác định được môn học nên đã bỏ qua.`);
     return null;
   }
   const grade = Number(rawScore.grade);
   if (!Number.isInteger(grade) || ![10, 11, 12].includes(grade)) {
-    warnings.push(`${subject.canonical} không xác định được lớp 10, 11 hoặc 12 nên được bỏ qua.`);
+    warnings.push(`${subject.canonical}: không xác định được lớp 10, 11 hoặc 12 nên đã bỏ qua.`);
     return null;
   }
   const confidence = asConfidence(rawScore.confidence);
@@ -88,9 +88,9 @@ function mergeCandidate(existing, candidate, warnings) {
     if (incomingConfidence > currentConfidence) {
       existing.score[field] = incoming;
       existing.fieldConfidence[field] = incomingConfidence;
-      warnings.push(`${label} có dữ liệu trùng, đã chọn giá trị rõ hơn.`);
+      warnings.push(`${label} có dữ liệu trùng. Đã chọn điểm được nhận diện rõ hơn.`);
     } else if (incomingConfidence < currentConfidence) {
-      warnings.push(`${label} có dữ liệu trùng, giữ giá trị rõ hơn.`);
+      warnings.push(`${label} có dữ liệu trùng. Đã giữ điểm được nhận diện rõ hơn.`);
     } else {
       warnings.push(`${label} có dữ liệu trùng. Hãy kiểm tra lại trước khi điền điểm.`);
     }
@@ -121,7 +121,7 @@ export function validateTranscriptPayload(payload, catalog) {
   });
   const scores = [...rows.values()].map(finalizeScore).sort((a, b) => a.grade - b.grade || a.subject.localeCompare(b.subject, "vi"));
   if (!scores.length) {
-    throw new TranscriptPayloadError("Không tìm thấy bảng điểm có thể đọc được. Hãy chụp lại rõ hơn.", { statusCode: 422, code: "NO_TRANSCRIPT_DATA" });
+    throw new TranscriptPayloadError("Không đọc được bảng điểm trong ảnh. Bạn hãy chụp lại rõ hơn.", { statusCode: 422, code: "NO_TRANSCRIPT_DATA" });
   }
   const name = typeof payload.student?.name === "string" && payload.student.name.trim() ? payload.student.name.trim().slice(0, 120) : null;
   return { data: { student: { name }, scores }, warnings };

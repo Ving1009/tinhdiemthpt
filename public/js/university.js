@@ -40,7 +40,7 @@ async function requestJson(path, { signal, method = "GET", body, headers = {} } 
       body: body ? JSON.stringify(body) : undefined
     });
   } catch (error) {
-    if (isVsCodeLiveServer) throw new Error("Máy chủ dữ liệu chưa chạy. Hãy chạy npm.cmd run dev rồi gửi lại.");
+    if (isVsCodeLiveServer) throw new Error("Máy chủ dữ liệu chưa chạy. Chạy npm.cmd run dev rồi thử lại.");
     throw error;
   }
   const payload = await response.json().catch(() => null);

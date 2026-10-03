@@ -67,7 +67,7 @@ export function errorResponse(request, error) {
   return failure(request, "INTERNAL_ERROR", "Không thể xử lý yêu cầu. Hãy thử lại sau.", 500);
 }
 
-export async function applyRateLimit(binding, request, message = "Bạn đã gửi nhiều yêu cầu. Hãy thử lại sau ít phút.") {
+export async function applyRateLimit(binding, request, message = "Bạn đã gửi quá nhiều yêu cầu. Hãy thử lại sau ít phút.") {
   if (!binding || typeof binding.limit !== "function") return failure(request, "RATE_LIMIT_UNAVAILABLE", "Hệ thống bảo vệ đang bận. Hãy thử lại sau.", 503);
   const key = request.headers.get("CF-Connecting-IP") || "unknown";
   let result;

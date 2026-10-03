@@ -33,9 +33,9 @@ export function createOpenAiCompatibleVisionService({
   }
 
   function responseError(status) {
-    if (status === 429) return serviceError("QUOTA", `${label} đang quá tải hoặc đã hết hạn mức. Hệ thống sẽ thử bộ máy khác.`, 503);
+    if (status === 429) return serviceError("QUOTA", `${label} đang quá tải hoặc đã hết hạn mức. Website sẽ thử dịch vụ nhận diện khác.`, 503);
     if (status === 401 || status === 403) return serviceError("AUTH", `Không thể xác thực ${label}. Hãy kiểm tra cấu hình máy chủ.`, 503);
-    return serviceError("REQUEST_FAILED", `${label} chưa xử lý được ảnh học bạ. Hệ thống sẽ thử bộ máy khác.`);
+    return serviceError("REQUEST_FAILED", `${label} chưa xử lý được ảnh học bạ. Website sẽ thử dịch vụ nhận diện khác.`);
   }
 
   function parseTranscript(payload) {
@@ -58,8 +58,8 @@ export function createOpenAiCompatibleVisionService({
         if (options.signal.aborted) throw new DOMException("Aborted", "AbortError");
         response = await fetchImpl(selectedEndpoint, { ...options, headers: { ...options.headers, Authorization: `Bearer ${key}` } });
       } catch (error) {
-        if (options.signal.aborted || error?.name === "AbortError") throw serviceError("TIMEOUT", `${label} đọc ảnh học bạ quá lâu. Hệ thống sẽ thử bộ máy khác.`, 504);
-        throw serviceError("REQUEST_FAILED", `Không thể kết nối ${label} OCR. Hệ thống sẽ thử bộ máy khác.`);
+        if (options.signal.aborted || error?.name === "AbortError") throw serviceError("TIMEOUT", `${label} đọc ảnh học bạ quá lâu. Website sẽ thử dịch vụ nhận diện khác.`, 504);
+        throw serviceError("REQUEST_FAILED", `Không kết nối được dịch vụ nhận diện ${label}. Website sẽ thử dịch vụ khác.`);
       }
       if (!response.ok) {
         await response.body?.cancel().catch(() => {});
@@ -69,11 +69,11 @@ export function createOpenAiCompatibleVisionService({
     },
     retryCodes: new Set([`${code}_QUOTA`, `${code}_AUTH`]),
     cooldownMsByCode: { [`${code}_QUOTA`]: 5 * 60_000, [`${code}_AUTH`]: 60 * 60_000 },
-    unavailableError: () => serviceError("UNAVAILABLE", `Máy chủ chưa được cấu hình ${label} OCR.`, 503)
+    unavailableError: () => serviceError("UNAVAILABLE", `Máy chủ chưa được cấu hình dịch vụ nhận diện ${label}.`, 503)
   });
 
   return async function scanTranscriptWithCompatibleProvider(images) {
-    if (!keys.length || !selectedEndpoint || !selectedModel || typeof fetchImpl !== "function") throw serviceError("UNAVAILABLE", `Máy chủ chưa được cấu hình ${label} OCR.`, 503);
+    if (!keys.length || !selectedEndpoint || !selectedModel || typeof fetchImpl !== "function") throw serviceError("UNAVAILABLE", `Máy chủ chưa được cấu hình dịch vụ nhận diện ${label}.`, 503);
     if (!Array.isArray(images) || !images.length || images.length > MAX_IMAGES || images.some((image) =>
       !Buffer.isBuffer(image?.buffer) || !image.buffer.length || image.buffer.length > MAX_IMAGE_BYTES || !SUPPORTED_MIME_TYPES.has(image.mimetype))) {
       throw serviceError("REQUEST_FAILED", "Hãy chọn tối đa 6 ảnh JPG, PNG hoặc WEBP, mỗi ảnh không quá 7 MB.", 400);
@@ -117,9 +117,9 @@ Nếu không có dòng xác định chắc được cả môn và lớp, trả {
           });
           if (controller.signal.aborted) throw new DOMException("Aborted", "AbortError");
         } catch (error) {
-          if (controller.signal.aborted || error?.name === "AbortError") throw serviceError("TIMEOUT", `${label} đọc ảnh học bạ quá lâu. Hệ thống sẽ thử bộ máy khác.`, 504);
+          if (controller.signal.aborted || error?.name === "AbortError") throw serviceError("TIMEOUT", `${label} đọc ảnh học bạ quá lâu. Website sẽ thử dịch vụ nhận diện khác.`, 504);
           if (error instanceof AppError) throw error;
-          throw serviceError("REQUEST_FAILED", `Không thể kết nối ${label} OCR. Hệ thống sẽ thử bộ máy khác.`);
+          throw serviceError("REQUEST_FAILED", `Không kết nối được dịch vụ nhận diện ${label}. Website sẽ thử dịch vụ khác.`);
         }
         scores.push(...parseTranscript(payload));
       }

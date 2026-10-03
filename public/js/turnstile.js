@@ -21,7 +21,7 @@ async function loadConfiguration(fetchImpl = globalThis.fetch, { force = false }
     configurationPromise = fetchImpl(resolveApiUrl("/api/security-config"), { cache: "no-store" })
       .then(async (response) => {
         const payload = await response.json().catch(() => null);
-        if (!response.ok || !payload?.success) throw new TurnstileClientError("Không tải được cấu hình xác minh bảo mật.", "TURNSTILE_CONFIG_UNAVAILABLE");
+        if (!response.ok || !payload?.success) throw new TurnstileClientError("Chưa tải được bước xác minh bảo mật. Bạn hãy thử lại.", "TURNSTILE_CONFIG_UNAVAILABLE");
         return payload.data?.turnstile || { enabled: false, siteKey: "" };
       })
       .catch((error) => {
@@ -56,18 +56,18 @@ function loadScript(documentRef = document) {
 
 function challengeCopy(action) {
   if (action === "account_register") {
-    return { title: "Xác minh trước khi tạo tài khoản", description: "Bước này giúp ngăn tài khoản rác và bảo vệ hệ thống đăng ký." };
+    return { title: "Xác minh trước khi tạo tài khoản", description: "Cloudflare Turnstile xác minh để ngăn tài khoản rác và bảo vệ chức năng đăng ký." };
   }
   return action === "scan_transcript"
-    ? { title: "Xác minh trước khi quét", description: "Bước này giúp bảo vệ lượt quét ảnh và các khóa AI của hệ thống." }
-    : { title: "Xác minh trước khi gửi", description: "Bước này giúp ngăn báo cáo rác tự động." };
+    ? { title: "Xác minh trước khi quét", description: "Cloudflare Turnstile xác minh để bảo vệ lượt quét ảnh và khóa truy cập dịch vụ AI." }
+    : { title: "Xác minh trước khi gửi", description: "Cloudflare Turnstile xác minh để ngăn báo cáo rác do máy tự động gửi." };
 }
 
 export class TurnstileGate {
   async getToken(action, { forceConfiguration = false } = {}) {
     const configuration = await loadConfiguration(globalThis.fetch, { force: forceConfiguration });
     if (!configuration.enabled) return "";
-    if (!configuration.siteKey) throw new TurnstileClientError("Turnstile chưa có site key.", "TURNSTILE_MISCONFIGURED");
+    if (!configuration.siteKey) throw new TurnstileClientError("Cloudflare Turnstile chưa có khóa xác minh cho trang web.", "TURNSTILE_MISCONFIGURED");
     const api = await loadScript();
     return this.openChallenge(api, configuration.siteKey, action);
   }
@@ -117,7 +117,7 @@ export class TurnstileGate {
           },
           "error-callback": () => finish(new TurnstileClientError("Cloudflare chưa thể xác minh. Hãy thử lại.", "TURNSTILE_CLIENT_ERROR")),
           "expired-callback": () => api.reset(widgetId),
-          "timeout-callback": () => finish(new TurnstileClientError("Xác minh đã hết thời gian. Hãy bấm quét và thử lại.", "TURNSTILE_TIMEOUT"))
+          "timeout-callback": () => finish(new TurnstileClientError("Đã hết thời gian xác minh. Bạn hãy thực hiện lại thao tác vừa chọn.", "TURNSTILE_TIMEOUT"))
         });
       } catch {
         finish(new TurnstileClientError("Không khởi tạo được bước xác minh bảo mật.", "TURNSTILE_CLIENT_ERROR"));

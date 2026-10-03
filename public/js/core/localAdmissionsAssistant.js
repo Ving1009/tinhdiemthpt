@@ -41,7 +41,7 @@ function programFromTuple(item) {
 
 export function createAssistantKnowledge(raw) {
   if (!raw || Number(raw.v) !== 1 || !Array.isArray(raw.s) || !Array.isArray(raw.p)) {
-    throw new Error("Kho kiến thức trợ lý không đúng định dạng.");
+    throw new Error("Dữ liệu của trợ lý không đúng định dạng. Bạn hãy tải lại trang.");
   }
   const schools = raw.s.map(schoolFromTuple);
   const schoolById = new Map(schools.map((item) => [item.id, item]));
@@ -230,7 +230,7 @@ function scoreAdvice(knowledge, query, score) {
   }).slice(0, 6);
   if (!ranked.length) return null;
   return {
-    text: `Mình tìm thấy ${ranked.length} ngành có mốc THPT 2026 trong dữ liệu website không cao hơn ${score}. Đây chỉ là đối chiếu theo điểm đã công bố, chưa phải dự đoán trúng tuyển; bạn cần kiểm tra tổ hợp và điều kiện của từng trường.`,
+    text: `Có ${ranked.length} ngành trong dữ liệu website có mốc điểm THPT 2026 không cao hơn ${score}. Kết quả chỉ đối chiếu với điểm đã công bố, chưa phải dự đoán khả năng trúng tuyển. Bạn cần kiểm tra tổ hợp và điều kiện của từng trường.`,
     cards: ranked.map(({ program, method }) => scoreProgramCard(knowledge, program, method, score)),
     suggestions: ["Tìm ngành Công nghệ thông tin", "Xem các trường miền Bắc", "Báo thông tin sai"]
   };
@@ -243,7 +243,7 @@ function combinationAnswer(knowledge, query) {
   const subjects = knowledge.combinations.get(code);
   if (!subjects) return null;
   return {
-    text: `Tổ hợp ${code} gồm: ${subjects}. Bạn có thể mở mục Tổ hợp để xem và dùng tổ hợp này trong công cụ tính điểm.`,
+    text: `Tổ hợp ${code} gồm ${subjects}. Bạn có thể xem tổ hợp này ở mục Tổ hợp và dùng trong công cụ tính điểm.`,
     cards: [],
     suggestions: ["Tìm ngành Công nghệ thông tin", "25 điểm THPT nên xem ngành nào?", "Báo thông tin sai"]
   };
@@ -261,7 +261,7 @@ function combinationProgramAnswer(knowledge, query) {
   )).slice(0, 6);
   if (!programs.length) return null;
   return {
-    text: `Mình tìm thấy các ngành có ghi tổ hợp ${code} trong dữ liệu website. Danh sách chỉ hiển thị một số kết quả đầu tiên; hãy mở hồ sơ để kiểm tra phương thức và điều kiện đi kèm.`,
+    text: `Các ngành dưới đây có ghi tổ hợp ${code} trong dữ liệu website. Danh sách hiển thị một số kết quả đầu tiên. Bạn hãy mở hồ sơ để kiểm tra phương thức và điều kiện đi kèm.`,
     cards: programs.map((program) => programCard(knowledge, program)),
     suggestions: ["Tìm ngành Công nghệ thông tin", "25 điểm THPT nên xem ngành nào?", "Báo thông tin sai"]
   };
@@ -269,18 +269,18 @@ function combinationProgramAnswer(knowledge, query) {
 
 export function answerAdmissionsQuestion(knowledge, input) {
   const query = String(input ?? "").replace(/[\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim();
-  if (query.length < 2) throw new Error("Hãy nhập câu hỏi có ít nhất 2 ký tự.");
-  if (query.length > 500) throw new Error("Mỗi câu hỏi tối đa 500 ký tự.");
+  if (query.length < 2) throw new Error("Bạn hãy nhập câu hỏi có ít nhất 2 ký tự.");
+  if (query.length > 500) throw new Error("Mỗi câu hỏi có tối đa 500 ký tự. Bạn hãy rút ngắn câu hỏi.");
   const normalized = normalizeAssistantText(query);
   if (/\b(bao sai|bao loi|sai thong tin|chinh sua|gop y)\b/.test(normalized)) {
     return {
-      text: "Bạn có thể gửi thông tin cần sửa kèm nguồn kiểm chứng. Báo cáo chỉ được gửi sau khi bạn điền biểu mẫu và xác nhận Cloudflare Turnstile.",
+      text: "Bạn hãy điền thông tin cần sửa và nguồn kiểm chứng vào biểu mẫu. Báo cáo chỉ được gửi sau khi bạn hoàn tất biểu mẫu và xác minh bằng Cloudflare Turnstile.",
       cards: [], suggestions: [], action: "report"
     };
   }
   if (/^(xin chao|chao|hello|hi|alo)\b/.test(normalized)) {
     return {
-      text: `Chào bạn! Mình là trợ lý nội bộ của Tính Điểm THPT. Mình tra cứu dữ liệu ${knowledge.year} ngay trên thiết bị, tư vấn cách dùng website và hỗ trợ gửi báo sai.`,
+      text: `Chào bạn. Bạn có thể hỏi về dữ liệu tuyển sinh ${knowledge.year}, cách dùng website hoặc gửi thông tin cần sửa. Phần tra cứu nội bộ của Tính Điểm THPT chạy ngay trên thiết bị của bạn.`,
       cards: [], suggestions: ["Tìm ngành Công nghệ thông tin", "25 điểm THPT nên xem ngành nào?", "Báo thông tin sai"]
     };
   }
@@ -303,23 +303,23 @@ export function answerAdmissionsQuestion(knowledge, input) {
   if (cards.length) {
     const asksCutoff = /\b(diem chuan|bao nhieu diem|moc diem)\b/.test(normalized);
     const asksFormula = /\b(cong thuc|cach tinh)\b/.test(normalized);
-    const detail = asksCutoff ? "Các mốc điểm hiển thị trên thẻ lấy từ hồ sơ website và ghi rõ thang điểm."
-      : asksFormula ? "Mở hồ sơ để xem công thức theo từng phương thức và nguồn đã kiểm tra."
-        : "Mở hồ sơ để xem đầy đủ ngành, tổ hợp, phương thức, điểm và công thức.";
+    const detail = asksCutoff ? "Điểm trên mỗi thẻ lấy từ hồ sơ website, kèm thang điểm."
+      : asksFormula ? "Bạn hãy mở hồ sơ để xem công thức của từng phương thức và nguồn đã kiểm tra."
+        : "Bạn hãy mở hồ sơ để xem đầy đủ ngành, tổ hợp, phương thức, điểm và công thức.";
     return {
-      text: `Mình tìm thấy ${cards.length} kết quả phù hợp trong kho dữ liệu ${knowledge.year}. ${detail}`,
+      text: `Có ${cards.length} kết quả phù hợp trong dữ liệu ${knowledge.year}. ${detail}`,
       cards,
     suggestions: ["Tìm ngành 7480201", "25 điểm THPT nên xem ngành nào?", "Báo thông tin sai"]
     };
   }
   if (/\b(lam gi|giup gi|chuc nang|tu van)\b/.test(normalized)) {
     return {
-      text: "Mình có thể tìm trường hoặc ngành theo tên/mã, giải thích tổ hợp, đối chiếu mức điểm THPT và hướng dẫn dùng các công cụ. Mình chỉ dùng dữ liệu đang có trên website; chỗ chưa đủ căn cứ mình sẽ không tự đoán.",
+      text: "Bạn có thể tìm trường hoặc ngành theo tên, mã; hỏi về tổ hợp, đối chiếu điểm THPT và cách dùng các công cụ. Câu trả lời chỉ dùng dữ liệu trên website. Trợ lý không tự đoán khi chưa đủ căn cứ.",
       cards: [], suggestions: ["Tìm trường Bách khoa Hà Nội", "Tổ hợp A00 gồm môn gì?", "Báo thông tin sai"]
     };
   }
   return {
-    text: "Mình chưa tìm thấy nội dung khớp trong kho dữ liệu của website. Bạn hãy thử tên đầy đủ, mã trường, mã ngành hoặc hỏi theo dạng “25 điểm THPT nên xem ngành nào?”.",
+    text: 'Chưa tìm thấy nội dung phù hợp trong dữ liệu website. Bạn hãy thử tên đầy đủ, mã trường, mã ngành hoặc hỏi "25 điểm THPT nên xem ngành nào?".',
     cards: [], suggestions: ["Tìm trường Bách khoa Hà Nội", "25 điểm THPT nên xem ngành nào?", "Báo thông tin sai"]
   };
 }

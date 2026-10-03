@@ -23,7 +23,7 @@ export async function requestAssistantAnswer(input, { fetchImpl = globalThis.fet
     });
     const payload = await response.json().catch(() => null);
     if (!response.ok || !payload?.success || !payload?.data?.answer) {
-      throw new Error(payload?.error?.message || "Trợ lý AI tạm thời chưa phản hồi.");
+      throw new Error(payload?.error?.message || "Trợ lý AI tạm thời chưa phản hồi. Bạn hãy thử lại sau.");
     }
     return payload.data;
   } finally {
@@ -91,7 +91,7 @@ export class AdmissionsAssistant {
     if (!this.knowledgePromise) {
       this.knowledgePromise = fetch(new URL(KNOWLEDGE_PATH, document.baseURI), { cache: "force-cache" })
         .then(async (response) => {
-          if (!response.ok) throw new Error("Không tải được kho dữ liệu tư vấn.");
+          if (!response.ok) throw new Error("Không tải được dữ liệu tư vấn. Bạn hãy thử lại.");
           return createAssistantKnowledge(await response.json());
         })
         .then((knowledge) => {
@@ -175,7 +175,7 @@ export class AdmissionsAssistant {
     link.href = card.type === "program"
       ? `#nganh/${encodeURIComponent(card.universityId)}/${encodeURIComponent(card.majorId)}`
       : `#truong/${encodeURIComponent(card.universityId)}`;
-    const report = element("button", "assistant-card-report", "Báo sai");
+    const report = element("button", "assistant-card-report", "Báo thông tin sai");
     report.type = "button";
     const contextId = `context-${++this.contextSequence}`;
     this.contexts.set(contextId, card.reportContext || {});
@@ -191,7 +191,7 @@ export class AdmissionsAssistant {
     this.input.value = "";
     this.addMessage("user", question);
     this.setBusy(true);
-    const pending = this.addMessage("assistant", "Đang đối chiếu dữ liệu website và chọn nhà cung cấp AI…");
+    const pending = this.addMessage("assistant", "Đang tìm thông tin và chuẩn bị câu trả lời…");
     try {
       const knowledge = await this.loadKnowledge();
       const answer = answerAdmissionsQuestion(knowledge, question);
@@ -212,7 +212,7 @@ export class AdmissionsAssistant {
         });
         responseText = remote.answer;
       } catch {
-        responseText = `${answer.text}\n\nCác dịch vụ AI đang tạm bận nên mình đã dùng chế độ tra cứu nội bộ.`;
+        responseText = `${answer.text}\n\nTrợ lý AI tạm thời chưa phản hồi. Câu trả lời này dùng dữ liệu tra cứu trên website.`;
       }
       pending.remove();
       this.addMessage("assistant", responseText, answer);
@@ -220,7 +220,7 @@ export class AdmissionsAssistant {
       this.history = this.history.slice(-6);
     } catch (error) {
       pending.remove();
-      this.addMessage("assistant", error.message || "Trợ lý chưa thể đọc dữ liệu. Hãy thử lại.", {
+      this.addMessage("assistant", error.message || "Chưa đọc được dữ liệu. Bạn hãy thử lại.", {
         suggestions: ["Tìm trường, ngành", "Báo thông tin sai"]
       });
     } finally {
@@ -284,7 +284,7 @@ export class AdmissionsAssistant {
     if (button.disabled) return;
     try {
       const context = this.resolvedReportContext();
-      if (!context.university) throw new Error("Hãy chọn hoặc nhập tên trường cần báo sai.");
+      if (!context.university) throw new Error("Bạn hãy chọn hoặc nhập tên trường có thông tin cần sửa.");
       const report = createDataReport(context, {
         field: this.reportForm.elements.field.value,
         description: this.reportForm.elements.description.value,
@@ -293,16 +293,16 @@ export class AdmissionsAssistant {
       });
       button.disabled = true;
       button.textContent = "Đang xác minh…";
-      this.reportStatus.textContent = "Báo cáo chưa được gửi. Hãy hoàn tất bước xác minh.";
+      this.reportStatus.textContent = "Bạn cần hoàn tất xác minh để gửi báo cáo. Báo cáo hiện chưa được gửi.";
       const turnstileToken = await turnstileGate.getToken("data_report");
       button.textContent = "Đang gửi…";
       const result = await this.repository.submitDataReport(report, { turnstileToken });
       const shortId = String(result.id || "").slice(0, 8);
-      this.reportStatus.textContent = `Đã gửi báo cáo vào hàng chờ duyệt${shortId ? ` · Mã ${shortId}` : ""}.`;
+      this.reportStatus.textContent = `Đã gửi báo cáo và đang chờ duyệt${shortId ? ` · Mã ${shortId}` : ""}.`;
       button.textContent = "Đã gửi";
-      this.addMessage("assistant", "Mình đã tiếp nhận báo cáo và chuyển vào hàng chờ để quản trị viên đối chiếu. Cảm ơn bạn đã giúp cập nhật dữ liệu.");
+      this.addMessage("assistant", "Đã nhận báo cáo của bạn và chuyển vào hàng chờ để quản trị viên đối chiếu.");
     } catch (error) {
-      this.reportStatus.textContent = error.message || "Không thể gửi báo cáo. Hãy thử lại.";
+      this.reportStatus.textContent = error.message || "Chưa gửi được báo cáo. Bạn hãy thử lại.";
       button.disabled = false;
       button.textContent = "Gửi báo cáo";
     }

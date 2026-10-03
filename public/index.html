@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
-    <meta name="description" content="Công cụ tham khảo tính điểm thi tốt nghiệp THPT và xét tuyển đại học, cao đẳng." />
+    <meta name="description" content="Tính điểm THPT, học bạ và tra cứu tuyển sinh đại học, cao đẳng năm 2026. Kết quả dùng để tham khảo." />
     <meta name="theme-color" content="#4f46e5" />
     <meta name="robots" content="index,follow" />
     <meta property="og:title" content="Tính Điểm THPT | Tra cứu tuyển sinh 2026" />
@@ -35,7 +35,7 @@
         <nav class="site-nav" id="site-nav" aria-label="Điều hướng chính">
           <a href="#calculator">Tính điểm THPT</a>
           <a href="#academic">Tính học bạ</a>
-          <a href="#admission">Tính xét tuyển</a>
+          <a href="#admission">Điểm xét tuyển</a>
           <a href="#combinations">Tổ hợp</a>
           <a href="#universities">Hồ sơ trường</a>
           <a href="#major-finder">Tìm ngành</a>
@@ -70,8 +70,8 @@
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow"><span aria-hidden="true">✦</span> Công cụ tham khảo tuyển sinh 2026</p>
-            <h1>Điểm của bạn. <span>Nguyện vọng của bạn.</span></h1>
-            <p class="hero-description">Tính điểm, tra cứu ngành học và đối chiếu thông tin tuyển sinh của từng trường.</p>
+            <h1>Tính điểm, <span>tra cứu tuyển sinh.</span></h1>
+            <p class="hero-description">Nhập điểm thi hoặc học bạ, tìm ngành và xem phương thức xét tuyển của từng trường.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#calculator">Bắt đầu tính điểm <span aria-hidden="true">→</span></a>
               <a class="button button-secondary" href="#universities">Xem danh sách trường</a>
@@ -89,7 +89,7 @@
               <div class="preview-line"><span>Điểm tổ hợp</span><b>26.00</b></div>
               <div class="preview-line"><span>Ưu tiên sau điều chỉnh</span><b>+ 0.40</b></div>
             </div>
-            <div class="preview-card preview-mini"><span class="mini-icon" aria-hidden="true">⌁</span><div><small>Công thức minh bạch</small><b>Xem từng bước tính</b></div></div>
+            <div class="preview-card preview-mini"><span class="mini-icon" aria-hidden="true">⌁</span><div><small>Cách tính điểm</small><b>Xem từng bước tính</b></div></div>
           </div>
         </div>
       </section>
@@ -104,17 +104,17 @@
           <div class="calculator-layout">
             <form id="score-form" novalidate>
               <div class="form-card candidate-card">
-                <div class="card-title"><span class="card-number">1</span><div><h3>Thông tin thí sinh</h3><p>Phục vụ việc tính điểm ưu tiên.</p></div></div>
+                <div class="card-title"><span class="card-number">1</span><div><h3>Thông tin thí sinh</h3><p>Chọn khu vực và đối tượng để tính điểm ưu tiên.</p></div></div>
                 <div class="form-grid form-grid-two">
                   <div class="field full-field"><label for="candidate-name">Họ và tên <span class="optional">(không bắt buộc)</span></label><input id="candidate-name" name="name" type="text" autocomplete="name" placeholder="Ví dụ: Nguyễn Minh Anh" /></div>
-                  <div class="field"><label for="admission-year">Năm xét tuyển</label><select id="admission-year" name="year"><option value="2026">2026</option><option value="2027" disabled>2027 — Đang cập nhật</option></select></div>
+                  <div class="field"><label for="admission-year">Năm xét tuyển</label><select id="admission-year" name="year"><option value="2026">2026</option><option value="2027" disabled>2027 (đang cập nhật)</option></select></div>
                   <div class="field"><label for="area">Khu vực ưu tiên</label><select id="area" name="area"><option value="KV3">KV3 — Không cộng</option><option value="KV2">KV2 — +0.25</option><option value="KV2-NT">KV2-NT — +0.50</option><option value="KV1">KV1 — +0.75</option></select></div>
                   <div class="field full-field"><label for="priority-group">Đối tượng ưu tiên</label><select id="priority-group" name="priorityGroup"><option value="none">Không ưu tiên</option><option value="UT2">UT2 — +1.00</option><option value="UT1">UT1 — +2.00</option></select></div>
                 </div>
               </div>
 
               <div class="form-card score-card">
-                <div class="card-title"><span class="card-number">2</span><div><h3>Điểm 4 môn thi</h3><p>Chọn bốn môn khác nhau. Khi đủ điểm hợp lệ, hệ thống tự tính mọi tổ hợp ba môn có trong danh mục.</p></div></div>
+                <div class="card-title"><span class="card-number">2</span><div><h3>Điểm 4 môn thi</h3><p>Chọn bốn môn khác nhau và nhập điểm. Khi điểm hợp lệ, các tổ hợp ba môn có trong danh mục sẽ được tính tự động.</p></div></div>
                 <div class="mode-tabs" role="tablist" aria-label="Chế độ tính điểm THPT">
                   <button class="mode-tab is-active" id="thpt-mode-auto" type="button" role="tab" aria-selected="true" aria-controls="thpt-auto-panel" data-thpt-mode="auto">Tự động từ 4 môn</button>
                   <button class="mode-tab" id="thpt-mode-manual" type="button" role="tab" aria-selected="false" aria-controls="thpt-manual-panel" data-thpt-mode="manual">Tổ hợp cụ thể</button>
@@ -130,7 +130,7 @@
                 </div>
               </div>
               <div class="form-actions">
-                <button class="button button-primary" type="submit">TÍNH ĐIỂM <span aria-hidden="true">→</span></button>
+                <button class="button button-primary" type="submit">Tính điểm <span aria-hidden="true">→</span></button>
                 <button class="button button-text" id="clear-score-data" type="button">Xóa dữ liệu đã lưu</button>
               </div>
             </form>
@@ -138,7 +138,7 @@
             <aside class="result-panel" aria-live="polite" aria-atomic="true">
               <div class="result-empty" id="result-empty"><span aria-hidden="true">✦</span><h3>Kết quả sẽ hiện ở đây</h3><p>Chọn và nhập đủ bốn môn để xem các tổ hợp phù hợp.</p></div>
               <div class="result-content is-hidden" id="result-content">
-                <span class="result-label" id="result-label">CÁC TỔ HỢP TỪ 4 MÔN CỦA BẠN</span>
+                <span class="result-label" id="result-label">Các tổ hợp từ 4 môn của bạn</span>
                 <p class="result-context" id="result-context">Xếp theo tổng xét tuyển từ cao xuống thấp</p>
                 <div class="result-score"><strong id="result-total">0.00</strong><span id="result-max">/ 30</span></div>
                 <div class="result-details" id="result-details"></div>
@@ -147,7 +147,7 @@
                 <button class="button button-light is-hidden" id="simulate-score" type="button">Mô phỏng thay đổi điểm</button>
                 <button class="button button-light" id="show-calculation" type="button">Xem cách tính <span aria-hidden="true">↗</span></button>
                 <button class="link-button" id="recalculate" type="button">Tính lại</button>
-                <p class="reference-warning"><strong>⚠️ Lưu ý:</strong> Điểm số và danh sách ngành chỉ mang tính chất mô phỏng tham khảo theo quy chế 2026. Thí sinh bắt buộc phải đối chiếu đề án tuyển sinh chính thức do trường đại học công bố trước khi đăng ký nguyện vọng.</p>
+                <p class="reference-warning"><strong>Lưu ý:</strong> Điểm và ngành gợi ý là kết quả mô phỏng theo quy chế 2026, chỉ để tham khảo. Hãy kiểm tra đề án tuyển sinh chính thức của trường trước khi đăng ký nguyện vọng.</p>
               </div>
             </aside>
           </div>
@@ -159,24 +159,24 @@
           <div class="section-heading">
             <p class="eyebrow">02 · Học bạ</p>
             <h2 id="academic-title">Tính điểm xét học bạ THPT</h2>
-            <p>Chọn phương thức học bạ rồi nhập bảng điểm nhiều môn. Hệ thống tự tìm các tổ hợp đủ dữ liệu; chế độ có môn hệ số 2 giữ đúng điểm thô trên thang 40.</p>
+            <p>Chọn phương thức và nhập điểm các môn để tìm tổ hợp đủ dữ liệu. Nếu có môn nhân hệ số 2, điểm chưa quy đổi được giữ trên thang 40.</p>
           </div>
           <div class="calculator-layout academic-layout">
             <form id="academic-form" novalidate>
               <div class="form-card">
                 <div class="card-title"><span class="card-number">1</span><div><h3>Quét học bạ (không bắt buộc)</h3><p>Tải ảnh để nhận diện hoặc nhập điểm trực tiếp vào bảng bên dưới.</p><button class="button button-text" id="academic-enter-manually" type="button">Nhập điểm bằng tay ↓</button></div></div>
-                <div class="privacy-callout"><strong>💡 Mẹo bảo mật:</strong> Hệ thống chỉ cần bảng điểm môn học. Bạn nên dùng công cụ sửa ảnh trên điện thoại để che Họ và tên, Ngày sinh, Số CCCD trước khi tải lên.</div>
+                <div class="privacy-callout"><strong>Trước khi tải ảnh:</strong> Website chỉ cần bảng điểm môn học. Bạn nên dùng công cụ sửa ảnh trên điện thoại để che họ tên, ngày sinh và số CCCD.</div>
                 <input class="sr-only" id="transcript-images" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" multiple />
                 <div class="transcript-dropzone" id="transcript-dropzone" role="button" tabindex="0" aria-describedby="transcript-scan-status">
                   <span class="transcript-camera" aria-hidden="true">⌾</span>
                   <strong>Tải ảnh học bạ</strong>
-                  <p>Chọn tối đa 6 ảnh có sẵn trên thiết bị. JPG, PNG, WEBP; tối đa 7 MB mỗi ảnh. Ảnh sẽ được tự động tối ưu trước khi gửi.</p>
+                  <p>Chọn tối đa 6 ảnh JPG, PNG hoặc WEBP từ thiết bị, mỗi ảnh tối đa 7 MB. Ảnh được tối ưu tự động trước khi gửi.</p>
                   <button class="button button-secondary" id="transcript-choose-images" type="button">Chọn ảnh từ thiết bị</button>
                 </div>
                 <ul class="transcript-file-list" id="transcript-file-list" aria-label="Ảnh học bạ đã chọn"></ul>
                 <label class="transcript-consent" for="transcript-consent"><input id="transcript-consent" type="checkbox" /> <span>Tôi đồng ý gửi ảnh học bạ đã tối ưu tới dịch vụ nhận diện điểm và hiểu rằng website chỉ xử lý ảnh tạm thời, không lưu ảnh vào ổ đĩa hoặc cơ sở dữ liệu.</span></label>
                 <div class="transcript-scan-actions">
-                  <button class="button button-primary" id="transcript-scan" type="button" disabled>QUÉT HỌC BẠ <span aria-hidden="true">→</span></button>
+                  <button class="button button-primary" id="transcript-scan" type="button" disabled>Quét học bạ <span aria-hidden="true">→</span></button>
                   <button class="button button-text" id="transcript-clear-images" type="button" disabled>Xóa ảnh</button>
                 </div>
                 <p class="transcript-status" id="transcript-scan-status" role="status">Chọn ảnh học bạ để bắt đầu quét.</p>
@@ -184,7 +184,7 @@
               </div>
 
               <div class="form-card transcript-preview is-hidden" id="transcript-preview">
-                <div class="card-title"><span class="card-number" aria-hidden="true">✓</span><div><h3>Kiểm tra dữ liệu đã đọc</h3><p id="transcript-student">Không đọc được tên học sinh.</p></div></div>
+                <div class="card-title"><span class="card-number" aria-hidden="true">✓</span><div><h3>Kiểm tra điểm đã đọc</h3><p id="transcript-student">Đối chiếu từng điểm với ảnh gốc trước khi xác nhận.</p></div></div>
                 <div class="transcript-warnings is-hidden" id="transcript-warnings"></div>
                 <div class="transcript-table-wrap">
                   <table class="transcript-table">
@@ -194,11 +194,11 @@
                   <datalist id="transcript-subject-options"><option value="Toán"></option><option value="Ngữ văn"></option><option value="Tiếng Anh"></option><option value="Tiếng Pháp"></option><option value="Tiếng Trung"></option><option value="Tiếng Nhật"></option><option value="Tiếng Nga"></option><option value="Tiếng Đức"></option><option value="Tiếng Hàn"></option><option value="Vật lí"></option><option value="Hóa học"></option><option value="Sinh học"></option><option value="Lịch sử"></option><option value="Địa lí"></option><option value="Tin học"></option><option value="Công nghệ công nghiệp"></option><option value="Công nghệ nông nghiệp"></option><option value="Giáo dục kinh tế và pháp luật"></option><option value="Giáo dục quốc phòng và an ninh"></option></datalist>
                 </div>
                 <p class="transcript-preview-message" id="transcript-preview-message" role="status"></p>
-                <div class="form-actions"><button class="button button-primary" id="transcript-confirm-autofill" type="button">XÁC NHẬN VÀ ĐIỀN ĐIỂM <span aria-hidden="true">→</span></button></div>
+                <div class="form-actions"><button class="button button-primary" id="transcript-confirm-autofill" type="button">Xác nhận và điền điểm <span aria-hidden="true">→</span></button></div>
               </div>
 
               <div class="form-card">
-                <div class="card-title"><span class="card-number">2</span><div><h3>Phương thức xét học bạ</h3><p>Các lựa chọn mô phỏng nhóm phương thức phổ biến khi xét học bạ.</p></div></div>
+                <div class="card-title"><span class="card-number">2</span><div><h3>Phương thức xét học bạ</h3><p>Chọn cách tính để mô phỏng các phương thức học bạ phổ biến.</p></div></div>
                 <div class="form-grid form-grid-two">
                   <div class="field">
                     <label for="academic-method">Phương thức</label>
@@ -230,11 +230,11 @@
                   <label class="check-field" for="academic-multiplier-enabled"><input id="academic-multiplier-enabled" type="checkbox" /> <span>Có môn nhân hệ số 2</span></label>
                   <div class="field is-hidden" id="academic-multiplier-field"><label for="academic-multiplier-subject">Môn nhân hệ số</label><select id="academic-multiplier-subject"><option value="">Chọn môn</option></select></div>
                 </div>
-                <p class="score-note is-hidden" id="academic-multiplier-note">Điểm có trọng số dùng thang 40. Điểm ưu tiên chỉ được áp dụng khi có quy tắc quy đổi đã xác minh của trường.</p>
+                <p class="score-note is-hidden" id="academic-multiplier-note">Điểm có môn nhân hệ số dùng thang 40. Chỉ cộng điểm ưu tiên khi trường có quy tắc quy đổi đã được xác minh.</p>
               </div>
               <div class="form-card" id="academic-score-entry">
-                <div class="card-title"><span class="card-number">3</span><div><h3>Bảng điểm học bạ</h3><p>Nhập điểm cho tối thiểu 3 môn. Ô trống sẽ được bỏ qua khi dò tổ hợp.</p></div></div>
-                <p class="table-scroll-hint">Trên điện thoại, từng môn được xếp thành thẻ để nhập điểm mà không cần vuốt ngang.</p>
+                <div class="card-title"><span class="card-number">3</span><div><h3>Bảng điểm học bạ</h3><p>Nhập điểm cho ít nhất 3 môn. Các môn còn ô trống sẽ được bỏ qua khi tìm tổ hợp.</p></div></div>
+                <p class="table-scroll-hint">Trên điện thoại, nhập điểm trong thẻ của từng môn, không cần vuốt ngang.</p>
                 <div class="academic-table-wrap">
                   <table class="academic-table">
                     <thead id="academic-head"></thead>
@@ -244,7 +244,7 @@
                 <div class="score-note" id="academic-note"><span aria-hidden="true">i</span> Chọn phương thức để tạo bảng điểm học bạ.</div>
               </div>
               <div class="form-actions">
-                <button class="button button-primary" type="submit">TÍNH HỌC BẠ <span aria-hidden="true">→</span></button>
+                <button class="button button-primary" type="submit">Tính học bạ <span aria-hidden="true">→</span></button>
                 <button class="button button-text" id="clear-academic-data" type="button">Xóa điểm học bạ</button>
               </div>
             </form>
@@ -252,13 +252,13 @@
             <aside class="result-panel academic-result-panel" aria-live="polite" aria-atomic="true">
               <div class="result-empty" id="academic-result-empty"><span aria-hidden="true">✦</span><h3>Kết quả học bạ sẽ hiện ở đây</h3><p>Nhập bảng điểm rồi bấm “Tính học bạ”.</p></div>
               <div class="result-content is-hidden" id="academic-result-content">
-                <span class="result-label" id="academic-result-label">KẾT QUẢ HỌC BẠ</span>
+                <span class="result-label" id="academic-result-label">Kết quả học bạ</span>
                 <p class="result-context" id="academic-result-context">Tổ hợp D01</p>
                 <div class="result-score"><strong id="academic-result-total">0.00</strong><span id="academic-result-max">/ 30</span></div>
                 <div class="result-details" id="academic-result-details"></div>
                 <div class="academic-result-list" id="academic-result-list"></div>
                 <button class="button button-light" id="show-academic-calculation" type="button">Xem cách tính <span aria-hidden="true">↗</span></button>
-                <p class="reference-warning"><strong>⚠️ Lưu ý:</strong> Điểm số và danh sách ngành chỉ mang tính chất mô phỏng tham khảo theo quy chế 2026. Thí sinh bắt buộc phải đối chiếu đề án tuyển sinh chính thức do trường đại học công bố trước khi đăng ký nguyện vọng.</p>
+                <p class="reference-warning"><strong>Lưu ý:</strong> Điểm và ngành gợi ý là kết quả mô phỏng theo quy chế 2026, chỉ để tham khảo. Hãy kiểm tra đề án tuyển sinh chính thức của trường trước khi đăng ký nguyện vọng.</p>
               </div>
             </aside>
           </div>
@@ -270,7 +270,7 @@
           <div class="section-heading centered">
             <p class="eyebrow">03 · Theo trường/ngành</p>
             <h2 id="admission-title">Công thức xét tuyển theo trường</h2>
-            <p>Chọn trường và phương thức để xem công thức, phạm vi áp dụng và nguồn đã kiểm tra.</p>
+            <p>Chọn trường và phương thức để xem cách tính điểm, ngành áp dụng và tài liệu đã kiểm tra.</p>
           </div>
           <div class="admission-flow">
             <div class="selection-field"><span class="step-badge">1</span><label for="university-select">Chọn trường</label><select id="university-select"><option value="">Đang tải danh sách trường...</option></select></div>
@@ -280,14 +280,14 @@
             <div class="selection-field"><span class="step-badge">3</span><label for="major-select">Ngành áp dụng</label><select id="major-select" disabled><option value="">Chọn phương thức trước</option></select></div>
             <button class="button button-primary admission-calculate" id="calculate-admission" type="button" disabled>Chưa hỗ trợ tự tính</button>
           </div>
-          <p class="selection-hint" id="selection-hint">Hãy chọn trường để xem từng phương thức và trạng thái công thức.</p>
-          <div class="admission-calculator-panel" id="admission-calculator-panel" aria-live="polite"><div class="result-empty"><span aria-hidden="true">∑</span><h3>Chọn trường và phương thức</h3><p>Chỉ công thức được nguồn chính thức nêu trực tiếp mới được hiển thị là đã xác minh.</p></div></div>
+          <p class="selection-hint" id="selection-hint">Chọn trường để xem các phương thức và mức độ xác minh của từng công thức.</p>
+          <div class="admission-calculator-panel" id="admission-calculator-panel" aria-live="polite"><div class="result-empty"><span aria-hidden="true">∑</span><h3>Chọn trường và phương thức</h3><p>Công thức chỉ được ghi là đã xác minh khi có trong tài liệu chính thức.</p></div></div>
         </div>
       </section>
 
       <section class="section major-finder-section" id="major-finder" aria-labelledby="major-finder-title">
         <div class="container">
-          <div class="section-heading"><p class="eyebrow">04 · Nguyện vọng</p><h2 id="major-finder-title">Tìm ngành phù hợp với điểm</h2><p>So sánh đúng năm, phương thức, tổ hợp và thang điểm. Kết quả chỉ mang tính tham khảo.</p></div>
+          <div class="section-heading"><p class="eyebrow">04 · Nguyện vọng</p><h2 id="major-finder-title">Tìm ngành theo điểm</h2><p>Đối chiếu điểm cùng năm, phương thức, tổ hợp và thang điểm. Dùng kết quả để tham khảo khi chọn nguyện vọng.</p></div>
           <div class="major-workspace">
             <div>
               <details class="major-filter-panel" open><summary>Bộ lọc ngành</summary>
@@ -299,24 +299,24 @@
                     <div class="field"><label for="major-university-filter">Trường</label><select id="major-university-filter"><option value="">Tất cả trường</option></select></div>
                     <div class="field"><label for="major-combination-filter">Tổ hợp</label><select id="major-combination-filter"><option value="">Tất cả tổ hợp</option></select></div>
                     <div class="field"><label for="major-score-scale">Thang điểm đối chiếu</label><select id="major-score-scale" disabled><option value="">Chọn phương thức trước</option></select></div>
-                    <div class="field"><label for="major-user-score">Điểm của tôi</label><input id="major-user-score" type="text" inputmode="decimal" placeholder="Điểm cùng phương thức" disabled /><small>Điểm thi gốc hoặc điểm xét tuyển đúng thang đã chọn.</small></div>
+                    <div class="field"><label for="major-user-score">Điểm của bạn</label><input id="major-user-score" type="text" inputmode="decimal" placeholder="Điểm cùng phương thức" disabled /><small>Điểm thi gốc hoặc điểm xét tuyển đúng thang đã chọn.</small></div>
                     <div class="field"><label for="major-score-filter">Điểm chuẩn tối đa</label><input id="major-score-filter" type="text" inputmode="decimal" placeholder="Ví dụ 25,5" disabled /></div>
                     <div class="field"><label for="major-status-filter">Trạng thái dữ liệu</label><select id="major-status-filter"><option value="verified,reference">Đã xác minh + Tham khảo</option><option value="verified">Đã xác minh</option><option value="reference">Tham khảo</option><option value="unverified">Chưa xác minh</option></select></div>
                     <div class="field"><label for="major-sort">Sắp xếp</label><select id="major-sort"><option value="school">Tên trường</option><option value="difference-desc">Chênh lệch cao nhất</option><option value="difference-asc">Chênh lệch thấp nhất</option><option value="cutoff-asc">Điểm chuẩn tăng dần</option><option value="cutoff-desc">Điểm chuẩn giảm dần</option></select></div>
                   </div></details>
                   <div class="form-actions major-filter-actions"><button class="button button-primary" type="submit">Tìm ngành</button><button class="button button-text" id="major-filter-clear" type="button">Xóa bộ lọc</button></div>
                 </form>
-                <p class="form-note">Lọc tỉnh/thành, cơ sở và học phí chưa được bật vì dữ liệu hiện chưa đủ đồng nhất theo năm, đơn vị và phạm vi chương trình.</p>
+                <p class="form-note">Chưa thể lọc theo tỉnh/thành, cơ sở hay học phí: dữ liệu còn khác nhau về năm, đơn vị và chương trình đào tạo.</p>
               </details>
               <div class="finder-score-context is-hidden" id="major-score-context" role="status"></div>
               <p class="directory-summary" id="major-result-summary" role="status">Chọn bộ lọc hoặc dùng nút “Tìm ngành” trong kết quả tính điểm.</p>
-              <p class="reference-warning finder-reference-warning"><strong>⚠️ Lưu ý:</strong> Điểm số và danh sách ngành chỉ mang tính chất mô phỏng tham khảo theo quy chế 2026. Thí sinh bắt buộc phải đối chiếu đề án tuyển sinh chính thức do trường đại học công bố trước khi đăng ký nguyện vọng.</p>
+              <p class="reference-warning finder-reference-warning"><strong>Lưu ý:</strong> Điểm và ngành gợi ý là kết quả mô phỏng theo quy chế 2026, chỉ để tham khảo. Hãy kiểm tra đề án tuyển sinh chính thức của trường trước khi đăng ký nguyện vọng.</p>
               <div class="major-result-grid" id="major-result-grid" aria-live="polite"></div>
               <nav class="pagination" id="major-pagination" aria-label="Trang kết quả ngành"></nav>
             </div>
             <aside class="saved-wishes-panel" id="saved-wishes-panel"><div class="saved-wishes-heading"><div><p class="eyebrow">DANH SÁCH ĐÃ CHỌN</p><h3>Nguyện vọng đã lưu</h3></div><button class="button button-text" id="clear-saved-wishes" type="button">Xóa tất cả</button></div><div id="saved-wishes" aria-live="polite"></div><div class="wish-export-actions"><button class="button button-primary" id="export-wishes-pdf" type="button">Xuất file PDF</button></div><p class="saved-wishes-note" id="wish-export-status" role="status" aria-live="polite">PDF ngang chứa tối đa 15 nguyện vọng mỗi trang, gồm điểm, phương thức và thông tin ngành.</p><section class="comparison-panel" aria-labelledby="comparison-title"><div class="saved-wishes-heading"><div><p class="eyebrow">SO SÁNH 2–4 MỤC</p><h3 id="comparison-title">Bảng so sánh</h3></div><button class="button button-text" id="clear-comparison" type="button">Xóa bảng</button></div><div id="comparison-items" aria-live="polite"></div></section></aside>
           </div>
-          <p class="finder-disclaimer">Kết quả chỉ dùng để tham khảo. Kết quả tuyển sinh thực tế còn phụ thuộc phương thức, điều kiện và quy định của từng trường.</p>
+          <p class="finder-disclaimer">Kết quả tra cứu chỉ để tham khảo. Việc trúng tuyển còn phụ thuộc phương thức, điều kiện và quy định của từng trường.</p>
         </div>
       </section>
 
@@ -332,7 +332,7 @@
 
       <section class="section universities-section" id="universities" aria-labelledby="universities-title">
         <div class="container">
-          <div class="section-heading split-heading"><div><p class="eyebrow">06 · Tra cứu tuyển sinh 2026</p><h2 id="universities-title">Tìm trường, chọn ngành</h2><p>Xem ngành học, mã ngành, tổ hợp, phương thức, điểm chuẩn và trạng thái xác minh trong từng hồ sơ.</p></div><div class="university-tools"><div class="university-region-filters" id="university-region-filters" aria-label="Lọc trường theo miền"><button class="region-filter is-active" type="button" data-university-region="all" aria-pressed="true">Tất cả</button><button class="region-filter" type="button" data-university-region="north" aria-pressed="false">Miền Bắc</button><button class="region-filter" type="button" data-university-region="central" aria-pressed="false">Miền Trung</button><button class="region-filter" type="button" data-university-region="south" aria-pressed="false">Miền Nam</button></div><div class="section-search"><label class="sr-only" for="university-query">Lọc danh sách trường</label><span aria-hidden="true">⌕</span><input id="university-query" type="search" placeholder="Tìm tên hoặc mã trường" /></div></div></div>
+          <div class="section-heading split-heading"><div><p class="eyebrow">06 · Tra cứu tuyển sinh 2026</p><h2 id="universities-title">Hồ sơ các trường</h2><p>Tra cứu ngành, mã ngành, tổ hợp, phương thức và điểm chuẩn. Mỗi hồ sơ có trạng thái xác minh để bạn kiểm tra thông tin.</p></div><div class="university-tools"><div class="university-region-filters" id="university-region-filters" aria-label="Lọc trường theo miền"><button class="region-filter is-active" type="button" data-university-region="all" aria-pressed="true">Tất cả</button><button class="region-filter" type="button" data-university-region="north" aria-pressed="false">Miền Bắc</button><button class="region-filter" type="button" data-university-region="central" aria-pressed="false">Miền Trung</button><button class="region-filter" type="button" data-university-region="south" aria-pressed="false">Miền Nam</button></div><div class="section-search"><label class="sr-only" for="university-query">Lọc danh sách trường</label><span aria-hidden="true">⌕</span><input id="university-query" type="search" placeholder="Tìm tên hoặc mã trường" /></div></div></div>
           <div class="directory-summary" id="university-summary" role="status"></div>
           <div class="university-grid" id="university-grid" aria-live="polite"></div>
           <nav class="pagination" id="university-pagination" aria-label="Trang danh sách trường"></nav>
@@ -344,15 +344,15 @@
         <div class="container">
           <div class="section-heading practice-heading">
             <div>
-              <p class="eyebrow">07 · LUYỆN THI TỐT NGHIỆP</p>
+              <p class="eyebrow">07 · Luyện thi tốt nghiệp</p>
               <h2 id="practice-exams-title">Phòng thi 2026</h2>
-              <p>Chọn môn, làm trọn bộ đề có đồng hồ và xem lại đáp án, lời giải sau khi nộp. Bài dở và kết quả được lưu ngay trên thiết bị.</p>
+              <p>Chọn môn để làm đề đầy đủ với đồng hồ đếm ngược. Sau khi nộp, bạn có thể xem đáp án và lời giải nếu có. Bài đang làm và kết quả được lưu trên thiết bị.</p>
             </div>
             <div class="practice-heading-badge"><strong>18</strong><span>môn và ngoại ngữ</span></div>
           </div>
           <div class="practice-notice">
             <span aria-hidden="true">i</span>
-              <p><strong>Danh mục có 17 đề thi tốt nghiệp THPT 2026 đầy đủ nguyên trang do người dùng cung cấp và 1 đề luyện Ngữ văn.</strong> Đáp án đã được số hóa để chấm theo từng câu; môn có tài liệu lời giải cho phép chọn và mở đúng lời giải của câu cần xem. <a href="https://vqa.moet.gov.vn/vi/news/thong-bao/cau-truc-dinh-dang-de-thi-tot-nghiep-thpt-tu-nam-2025-74.html" target="_blank" rel="noopener">Xem cấu trúc đề thi ↗</a></p>
+              <p><strong>Có 17 đề thi tốt nghiệp THPT 2026 đầy đủ nguyên trang do người dùng cung cấp và 1 đề luyện Ngữ văn.</strong> Bài được chấm theo đáp án đã số hóa. Với môn có lời giải, bạn có thể chọn từng câu để xem. <a href="https://vqa.moet.gov.vn/vi/news/thong-bao/cau-truc-dinh-dang-de-thi-tot-nghiep-thpt-tu-nam-2025-74.html" target="_blank" rel="noopener">Xem cấu trúc đề thi ↗</a></p>
           </div>
           <div id="practice-exam-app" aria-live="polite"></div>
         </div>
@@ -360,9 +360,9 @@
 
       <section class="section guide-section" id="guide" aria-labelledby="guide-title">
         <div class="container guide-layout">
-          <div><p class="eyebrow">08 · Hướng dẫn</p><h2 id="guide-title">Đọc kết quả đúng cách</h2><p class="guide-intro">Kết quả là công cụ tham khảo nhanh. Hãy đối chiếu đề án tuyển sinh chính thức của từng trường trước khi đăng ký nguyện vọng.</p><a class="button button-secondary" href="#calculator">Tính điểm ngay</a></div>
+          <div><p class="eyebrow">08 · Hướng dẫn</p><h2 id="guide-title">Hiểu kết quả tính điểm</h2><p class="guide-intro">Dùng kết quả để tham khảo. Trước khi đăng ký nguyện vọng, hãy kiểm tra đề án tuyển sinh chính thức của từng trường.</p><a class="button button-secondary" href="#calculator">Tính điểm ngay</a></div>
           <div class="accordion" id="guide-accordion">
-            <details open><summary>Điểm ưu tiên được tính như thế nào?<span aria-hidden="true">+</span></summary><p>Điểm ưu tiên bao gồm khu vực và đối tượng. Với điểm tổ hợp từ 22.5 trở lên, mức cộng được điều chỉnh giảm theo quy định. Bạn luôn có thể mở “Xem cách tính” để kiểm tra số cụ thể.</p></details>
+            <details open><summary>Điểm ưu tiên được tính như thế nào?<span aria-hidden="true">+</span></summary><p>Điểm ưu tiên gồm mức cộng theo khu vực và đối tượng. Khi điểm tổ hợp từ 22.5 trở lên, mức cộng giảm theo quy định. Mở “Xem cách tính” để kiểm tra điểm ưu tiên thực tế của bạn.</p></details>
             <details><summary>Tôi có thể nhập 8,5 không?<span aria-hidden="true">+</span></summary><p>Có. Hệ thống tự đổi dấu phẩy thành dấu chấm và chỉ nhận điểm từ 0 đến 10 với tối đa 2 chữ số thập phân.</p></details>
             <details><summary>Trạng thái “Đã xác minh” và “Tham khảo” khác nhau thế nào?<span aria-hidden="true">+</span></summary><p>“Đã xác minh” là dữ liệu đã qua kiểm tra chặt hơn. “Tham khảo” là dữ liệu đủ năm, điểm và thang điểm nhưng vẫn cần đối chiếu đề án tuyển sinh của trường trước khi đăng ký.</p></details>
           </div>
@@ -371,8 +371,8 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-grid"><div><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">Σ</span><span>Tính Điểm <strong>THPT</strong></span></a><p>Công cụ hỗ trợ tham khảo điểm xét tuyển.</p></div><div class="footer-links"><a href="#calculator">Tính điểm</a><a href="#major-finder">Tìm ngành</a><a href="#universities">Hồ sơ trường</a><a href="#practice-exams">Thi thử 2026</a><a href="#privacy-policy" data-privacy-policy>Chính sách quyền riêng tư</a></div><p class="footer-warning">Thông tin và kết quả trên website chỉ mang tính chất tham khảo. Người dùng cần kiểm tra thông tin tuyển sinh chính thức từ nhà trường.</p></div>
-      <div class="container footer-bottom"><span>© 2026 Tính Điểm THPT</span><span>Phiên khách tự xóa khi quay lại sau 15 phút rời website</span></div>
+      <div class="container footer-grid"><div><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">Σ</span><span>Tính Điểm <strong>THPT</strong></span></a><p>Tính điểm và tra cứu tuyển sinh để tham khảo.</p></div><div class="footer-links"><a href="#calculator">Tính điểm</a><a href="#major-finder">Tìm ngành</a><a href="#universities">Hồ sơ trường</a><a href="#practice-exams">Thi thử 2026</a><a href="#privacy-policy" data-privacy-policy>Chính sách quyền riêng tư</a></div><p class="footer-warning">Thông tin và kết quả chỉ để tham khảo. Hãy kiểm tra thông báo tuyển sinh chính thức của trường trước khi sử dụng.</p></div>
+      <div class="container footer-bottom"><span>© 2026 Tính Điểm THPT</span><span>Dữ liệu khách được xóa khi bạn quay lại sau ít nhất 15 phút rời website</span></div>
     </footer>
 
     <div class="account-panel is-hidden" id="account-panel" role="dialog" aria-modal="true" aria-labelledby="account-title">
@@ -386,13 +386,13 @@
       <section class="assistant-panel" id="assistant-panel" role="dialog" aria-labelledby="assistant-title" hidden>
         <header class="assistant-header">
           <div class="assistant-avatar" aria-hidden="true">Σ</div>
-          <div><h2 id="assistant-title">Trợ lý tuyển sinh</h2><p><span></span>Đa AI · dữ liệu website</p></div>
+          <div><h2 id="assistant-title">Trợ lý tuyển sinh</h2><p><span></span>Tư vấn từ thông tin trên website</p></div>
           <button class="assistant-close" type="button" data-assistant-close aria-label="Đóng trợ lý">×</button>
         </header>
         <div class="assistant-chat" data-assistant-chat>
           <div class="assistant-messages" id="assistant-messages" aria-live="polite">
             <article class="assistant-message assistant-message-assistant">
-              <div class="assistant-message-body"><p>Chào bạn! Mình có thể tìm trường/ngành, đối chiếu mức điểm, giải thích tổ hợp và tiếp nhận báo thông tin sai.</p></div>
+              <div class="assistant-message-body"><p>Nhập tên trường, ngành hoặc mức điểm để tra cứu. Bạn cũng có thể hỏi về tổ hợp và gửi thông tin cần sửa.</p></div>
               <div class="assistant-suggestions">
                 <button class="assistant-chip" type="button" data-assistant-suggestion="Tìm ngành Công nghệ thông tin">Tìm ngành CNTT</button>
                 <button class="assistant-chip" type="button" data-assistant-suggestion="25 điểm THPT nên xem ngành nào?">Tư vấn theo điểm</button>
@@ -400,7 +400,7 @@
               </div>
             </article>
           </div>
-          <div class="assistant-privacy"><span aria-hidden="true">✓</span><span>Câu hỏi được gửi qua nhà cung cấp AI đang khả dụng; báo sai chỉ gửi khi bạn xác nhận.</span></div>
+          <div class="assistant-privacy"><span aria-hidden="true">✓</span><span>Câu hỏi được gửi tới dịch vụ AI. Báo thông tin sai chỉ được gửi sau khi bạn xác nhận.</span></div>
           <form class="assistant-form" id="assistant-form">
             <label class="sr-only" for="assistant-input">Hỏi trợ lý tuyển sinh</label>
             <textarea id="assistant-input" rows="1" minlength="2" maxlength="500" placeholder="Nhập tên trường, ngành, mã hoặc mức điểm…" required></textarea>
@@ -449,13 +449,13 @@
     <dialog class="fallback-dialog" id="transcript-fallback-dialog" aria-labelledby="transcript-fallback-title">
       <p class="modal-kicker">Nhận diện dự phòng</p>
       <h2 id="transcript-fallback-title">Quét trực tiếp trên thiết bị?</h2>
-      <p>Dịch vụ nhận diện từ xa đang gián đoạn. Chế độ dự phòng sẽ tải Tesseract.js và dữ liệu ngôn ngữ khoảng 15 MB, sau đó dùng CPU và RAM của thiết bị để đọc ảnh.</p>
+      <p>Dịch vụ nhận diện đang gián đoạn. Bạn có thể tải Tesseract.js và dữ liệu ngôn ngữ khoảng 15 MB để quét ảnh ngay trên thiết bị. Cách này dùng bộ xử lý và bộ nhớ của thiết bị.</p>
       <div class="fallback-dialog-actions">
-        <button class="button button-primary" id="transcript-fallback-continue" type="button">Tiếp tục quét trên thiết bị (~15 MB data)</button>
+        <button class="button button-primary" id="transcript-fallback-continue" type="button">Quét trên thiết bị (tải khoảng 15 MB)</button>
         <button class="button button-light" id="transcript-fallback-manual" type="button">Tự nhập điểm bằng tay</button>
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="js/main.js?v=20261001-4"></script>
+  <script type="module" src="js/main.js?v=20261002-1"></script>
   </body>
 </html>

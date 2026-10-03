@@ -13,11 +13,11 @@ export function publishableCutoff(major, year = 2026) {
 }
 
 export function publicProfileNote({ status = "", hasReference = false, classified = "" } = {}) {
-  if (status === "official_verified_partial") return "Một phần thông tin tuyển sinh 2026 đã được xác minh; các mục còn lại giữ trạng thái tham khảo hoặc đang cập nhật.";
+  if (status === "official_verified_partial") return "Một phần thông tin tuyển sinh 2026 đã được xác minh; các mục còn lại chỉ để tham khảo hoặc đang cập nhật.";
   if (["official_verified", "official_announced", "official_proposed_methods_with_published_results"].includes(status)) {
     return "Thông tin tuyển sinh 2026 đã được xác minh.";
   }
-  if (status === "reference_2026" || hasReference) return "Thông tin tuyển sinh 2026 đang ở mức tham khảo.";
+  if (status === "reference_2026" || hasReference) return "Thông tin tuyển sinh 2026 chỉ để tham khảo.";
   return classified || "Thông tin tuyển sinh đang được cập nhật.";
 }
 

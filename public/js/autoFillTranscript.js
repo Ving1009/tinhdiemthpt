@@ -77,11 +77,11 @@ function preferDestination(destinations, candidate, warnings) {
   if (current.value === candidate.value) return;
   if (candidate.confidence > current.confidence) {
     destinations.set(candidate.fieldId, candidate);
-    warnings.push(`${candidate.label} có dữ liệu trùng, đã chọn giá trị rõ hơn.`);
+    warnings.push(`${candidate.label} có dữ liệu trùng. Đã chọn điểm được nhận diện rõ hơn.`);
   } else if (candidate.confidence < current.confidence) {
-    warnings.push(`${candidate.label} có dữ liệu trùng, giữ giá trị rõ hơn.`);
+    warnings.push(`${candidate.label} có dữ liệu trùng. Đã giữ điểm được nhận diện rõ hơn.`);
   } else {
-    warnings.push(`${candidate.label} có dữ liệu trùng, chưa tự ghi đè.`);
+    warnings.push(`${candidate.label} có dữ liệu trùng nên giữ điểm hiện có. Bạn hãy kiểm tra lại.`);
   }
 }
 
@@ -114,7 +114,7 @@ export function buildTranscriptAutofillPlan(transcript, { methodId } = {}) {
     }
   }
   const language = detectedLanguages.size === 1 ? [...detectedLanguages][0] : "";
-  if (detectedLanguages.size > 1) warnings.push("Ảnh có nhiều môn ngoại ngữ, hãy tự chọn lại môn ngoại ngữ trước khi tính.");
+  if (detectedLanguages.size > 1) warnings.push("Ảnh có nhiều môn ngoại ngữ. Bạn hãy chọn lại môn ngoại ngữ trước khi tính.");
   return { assignments: [...destinations.values()], warnings, language, method: method.name };
 }
 
@@ -132,7 +132,7 @@ export function autoFillTranscript(transcript, { root = document, methodId, over
     const existing = String(input.value ?? "").trim().replace(",", ".");
     if (existing && Number(existing) !== destination.value && !overwriteConflicts) {
       conflicts.push({ fieldId: destination.fieldId, label: destination.label, existing: Number(existing), incoming: destination.value });
-      warnings.push(`${destination.label} khác điểm đã nhập nên chưa được ghi đè.`);
+      warnings.push(`${destination.label} khác điểm bạn đã nhập. Điểm đã nhập được giữ lại.`);
       continue;
     }
     input.value = String(destination.value);

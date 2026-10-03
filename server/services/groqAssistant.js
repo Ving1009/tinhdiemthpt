@@ -43,7 +43,7 @@ function normalizedCard(value) {
 export function normalizeAssistantInput(value) {
   const question = clippedText(value?.question, MAX_QUESTION_LENGTH);
   if (question.length < 2) {
-    throw new AppError("Câu hỏi cần có ít nhất 2 ký tự.", { statusCode: 400, code: "INVALID_ASSISTANT_QUESTION" });
+    throw new AppError("Bạn hãy nhập câu hỏi có ít nhất 2 ký tự.", { statusCode: 400, code: "INVALID_ASSISTANT_QUESTION" });
   }
   const cards = Array.isArray(value?.context?.cards)
     ? value.context.cards.slice(0, MAX_CONTEXT_CARDS).map(normalizedCard).filter(Boolean)
@@ -61,6 +61,7 @@ export function normalizeAssistantInput(value) {
 function systemPrompt(context) {
   return [
     "Bạn là Trợ lý tuyển sinh của website Tính Điểm THPT. Trả lời bằng tiếng Việt, rõ ràng, thân thiện và ngắn gọn.",
+    "Gọi người dùng là bạn. Đi thẳng vào câu trả lời và bước họ cần làm tiếp theo. Dùng lời tự nhiên, không mở đầu bằng lời khen, không thêm câu kết nhắc lại ý, không dùng giọng quảng cáo hoặc gạch ngang dài.",
     "Chỉ khẳng định thông tin về trường, ngành, mã ngành, tổ hợp, phương thức, điểm chuẩn hoặc công thức khi thông tin đó xuất hiện trong DỮ LIỆU WEBSITE bên dưới.",
     "Nếu dữ liệu chưa đủ, nói rõ website chưa có thông tin và hướng dẫn người dùng mở hồ sơ trường hoặc kiểm tra thông báo chính thức. Không tự bịa dữ liệu tuyển sinh 2026.",
     "Không cam kết khả năng trúng tuyển. Không yêu cầu số CCCD, mật khẩu, ảnh học bạ hoặc dữ liệu nhạy cảm.",
@@ -84,9 +85,9 @@ export function createGroundedAssistantMessages(rawInput) {
 }
 
 function groqError(status) {
-  if (status === 429) return new AppError("Trợ lý AI đang nhận quá nhiều yêu cầu. Hệ thống sẽ dùng chế độ tra cứu nội bộ.", { statusCode: 503, code: "GROQ_RATE_LIMITED" });
+  if (status === 429) return new AppError("Trợ lý AI đang nhận quá nhiều yêu cầu. Website sẽ dùng dữ liệu tra cứu nội bộ để trả lời.", { statusCode: 503, code: "GROQ_RATE_LIMITED" });
   if (status === 401 || status === 403) return new AppError("Trợ lý AI chưa được cấu hình hợp lệ.", { statusCode: 503, code: "GROQ_AUTH" });
-  return new AppError("Trợ lý AI tạm thời chưa phản hồi.", { statusCode: 502, code: "GROQ_REQUEST_FAILED" });
+  return new AppError("Trợ lý AI chưa phản hồi. Bạn hãy thử lại sau.", { statusCode: 502, code: "GROQ_REQUEST_FAILED" });
 }
 
 export function createGroqAssistantService({
@@ -131,7 +132,7 @@ export function createGroqAssistantService({
       else await response.body?.cancel().catch(() => {});
     } catch (error) {
       if (error?.name === "AbortError") {
-        throw new AppError("Trợ lý AI phản hồi quá chậm. Hệ thống sẽ dùng chế độ tra cứu nội bộ.", { statusCode: 504, code: "GROQ_TIMEOUT" });
+        throw new AppError("Trợ lý AI phản hồi quá lâu. Website sẽ dùng dữ liệu tra cứu nội bộ để trả lời.", { statusCode: 504, code: "GROQ_TIMEOUT" });
       }
       throw new AppError("Không thể kết nối trợ lý AI.", { statusCode: 502, code: "GROQ_REQUEST_FAILED" });
     } finally {

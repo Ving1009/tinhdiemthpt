@@ -37,7 +37,7 @@ export function createScanTranscriptRouter({ scanTranscript, environment = proce
     max: 12,
     standardHeaders: "draft-8",
     legacyHeaders: false,
-    handler: (_request, response) => response.status(429).json({ success: false, error: { code: "RATE_LIMITED", message: "Bạn đã gửi nhiều yêu cầu. Hãy thử lại sau ít phút." } })
+    handler: (_request, response) => response.status(429).json({ success: false, error: { code: "RATE_LIMITED", message: "Bạn đã gửi quá nhiều yêu cầu. Hãy thử lại sau ít phút." } })
   }));
   router.post("/scan-transcript", (request, _response, next) => {
     const declaredBytes = Number(request.headers["content-length"] || 0);
@@ -64,9 +64,9 @@ export function createScanTranscriptRouter({ scanTranscript, environment = proce
   }, upload.array("images[]", MAX_IMAGES), async (request, response, next) => {
     try {
       const images = request.files || [];
-      if (!images.length) throw new AppError("Hãy chọn ít nhất một ảnh học bạ.", { statusCode: 400, code: "MISSING_IMAGES" });
-      if (images.reduce((total, image) => total + image.size, 0) > MAX_TOTAL_BYTES) throw new AppError("Tổng dung lượng ảnh vượt quá giới hạn 10 MB.", { statusCode: 413, code: "IMAGES_TOO_LARGE" });
-      if (!images.every(isRealImage)) throw new AppError("Có ảnh không hợp lệ. Hãy chọn đúng ảnh JPG, PNG hoặc WEBP.", { statusCode: 400, code: "INVALID_IMAGE" });
+      if (!images.length) throw new AppError("Bạn hãy chọn ít nhất một ảnh học bạ.", { statusCode: 400, code: "MISSING_IMAGES" });
+      if (images.reduce((total, image) => total + image.size, 0) > MAX_TOTAL_BYTES) throw new AppError("Tổng dung lượng ảnh vượt giới hạn 10 MB. Bạn hãy chọn ít ảnh hơn hoặc giảm dung lượng ảnh.", { statusCode: 413, code: "IMAGES_TOO_LARGE" });
+      if (!images.every(isRealImage)) throw new AppError("Có ảnh không hợp lệ. Bạn hãy chọn lại ảnh JPG, PNG hoặc WEBP.", { statusCode: 400, code: "INVALID_IMAGE" });
       const safeImages = images.map((image, index) => ({
         ...image,
         originalname: `hoc-ba-${index + 1}.${image.mimetype === "image/png" ? "png" : image.mimetype === "image/webp" ? "webp" : "jpg"}`

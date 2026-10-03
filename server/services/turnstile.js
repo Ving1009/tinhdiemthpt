@@ -57,15 +57,15 @@ export async function verifyTurnstile({
     throw new AppError("Turnstile chưa được cấu hình đầy đủ.", { statusCode: 503, code: "TURNSTILE_MISCONFIGURED" });
   }
   if (!configuration.hostnameAllowed) {
-    throw new AppError("Hostname không được phép thực hiện xác minh Turnstile.", { statusCode: 403, code: "TURNSTILE_HOSTNAME_NOT_ALLOWED" });
+    throw new AppError("Tên miền này chưa được phép xác minh bằng Turnstile.", { statusCode: 403, code: "TURNSTILE_HOSTNAME_NOT_ALLOWED" });
   }
 
   const responseToken = String(token || "").trim();
   if (!responseToken) {
-    throw new AppError("Hãy hoàn tất bước xác minh bảo mật rồi thử lại.", { statusCode: 403, code: "TURNSTILE_REQUIRED" });
+    throw new AppError("Bạn hãy hoàn tất xác minh bảo mật rồi thử lại.", { statusCode: 403, code: "TURNSTILE_REQUIRED" });
   }
   if (responseToken.length > MAX_TOKEN_LENGTH) {
-    throw new AppError("Mã xác minh bảo mật không hợp lệ.", { statusCode: 403, code: "TURNSTILE_INVALID" });
+    throw new AppError("Mã xác minh bảo mật không hợp lệ. Bạn hãy xác minh lại.", { statusCode: 403, code: "TURNSTILE_INVALID" });
   }
 
   const body = new FormData();
@@ -93,11 +93,11 @@ export async function verifyTurnstile({
     throw new AppError("Phiên xác minh đã hết hạn hoặc không hợp lệ. Hãy thử lại.", { statusCode: 403, code: "TURNSTILE_FAILED" });
   }
   if (action && result.action !== action) {
-    throw new AppError("Phiên xác minh không khớp thao tác đang thực hiện.", { statusCode: 403, code: "TURNSTILE_ACTION_MISMATCH" });
+    throw new AppError("Phiên xác minh không khớp thao tác này. Bạn hãy xác minh lại.", { statusCode: 403, code: "TURNSTILE_ACTION_MISMATCH" });
   }
   const hostnames = allowedHostnames(environment, requestHostname);
   if (hostnames.length && !hostnames.includes(String(result.hostname || "").toLocaleLowerCase("en"))) {
-    throw new AppError("Phiên xác minh không thuộc website này.", { statusCode: 403, code: "TURNSTILE_HOSTNAME_MISMATCH" });
+    throw new AppError("Phiên xác minh không thuộc website này. Bạn hãy xác minh lại trên website.", { statusCode: 403, code: "TURNSTILE_HOSTNAME_MISMATCH" });
   }
   return result;
 }

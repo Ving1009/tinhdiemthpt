@@ -4,7 +4,7 @@ import { cleanAssistantAnswer, createGroundedAssistantMessages } from "./groqAss
 function providerError(providerCode, providerLabel, status) {
   if (status === 429) return new AppError(`${providerLabel} đang hết hạn mức hoặc nhận quá nhiều yêu cầu.`, { statusCode: 503, code: `${providerCode}_RATE_LIMITED` });
   if (status === 401 || status === 403) return new AppError(`${providerLabel} chưa được cấu hình hợp lệ.`, { statusCode: 503, code: `${providerCode}_AUTH` });
-  return new AppError(`${providerLabel} tạm thời chưa phản hồi.`, { statusCode: 502, code: `${providerCode}_REQUEST_FAILED` });
+  return new AppError(`${providerLabel} chưa phản hồi. Bạn hãy thử lại sau.`, { statusCode: 502, code: `${providerCode}_REQUEST_FAILED` });
 }
 
 export function createOpenAiCompatibleAssistantService({

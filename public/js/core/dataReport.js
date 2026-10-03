@@ -17,9 +17,9 @@ export function isGibberishReportText(value) {
 export function createDataReport(context, input, createdAt = new Date().toISOString()) {
   const field = REPORT_FIELDS.has(input?.field) ? input.field : "Khác";
   const description = normalizedText(input?.description);
-  if (description.length < 15) throw new Error("Mô tả dữ liệu cần kiểm tra phải có ít nhất 15 ký tự.");
-  if (description.length > 1000) throw new Error("Mô tả dữ liệu cần kiểm tra tối đa 1.000 ký tự.");
-  if (isGibberishReportText(description)) throw new Error("Mô tả có dấu hiệu lặp hoặc vô nghĩa. Hãy nêu rõ dữ liệu cần sửa.");
+  if (description.length < 15) throw new Error("Mô tả cần ít nhất 15 ký tự. Bạn hãy nêu rõ thông tin cần kiểm tra.");
+  if (description.length > 1000) throw new Error("Mô tả có tối đa 1.000 ký tự. Bạn hãy rút ngắn nội dung.");
+  if (isGibberishReportText(description)) throw new Error("Mô tả có nội dung lặp hoặc chưa rõ nghĩa. Bạn hãy nêu rõ thông tin cần sửa.");
   let evidenceUrl = "";
   if (input?.evidenceUrl) {
     try { const url = new URL(input.evidenceUrl); if (!["http:", "https:"].includes(url.protocol)) throw new Error(); evidenceUrl = url.href; }

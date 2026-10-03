@@ -49,7 +49,7 @@ export async function handleDataApi(request, environment) {
   try {
     if (request.method === "POST" && url.pathname === "/api/data-reports") {
       const reportStore = createCloudflareReportStore(environment);
-      if (!reportStore) return failure(request, "REPORT_INTAKE_UNAVAILABLE", "Nơi tiếp nhận báo cáo chưa sẵn sàng.", 503);
+      if (!reportStore) return failure(request, "REPORT_INTAKE_UNAVAILABLE", "Hệ thống nhận báo cáo chưa sẵn sàng. Bạn hãy thử lại sau.", 503);
       const result = await reportStore.submit(await jsonBody(request));
       return success(request, result, { status: 202 });
     }

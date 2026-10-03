@@ -53,7 +53,7 @@ async function decodeImage(file, {
     }
   }
   if (typeof ImageCtor !== "function" || !urlApi?.createObjectURL || !urlApi?.revokeObjectURL) {
-    throw new Error("Không thể giải mã ảnh trên trình duyệt này.");
+    throw new Error("Trình duyệt này không đọc được ảnh. Bạn hãy thử trình duyệt khác.");
   }
   return decodeWithImageElement(file, { ImageCtor, urlApi });
 }
@@ -61,7 +61,7 @@ async function decodeImage(file, {
 function canvasBlob(canvas, type, quality) {
   if (typeof canvas.convertToBlob === "function") return canvas.convertToBlob({ type, quality });
   return new Promise((resolve, reject) => canvas.toBlob(
-    (blob) => blob ? resolve(blob) : reject(new Error("Không thể tạo ảnh đã tối ưu.")),
+    (blob) => blob ? resolve(blob) : reject(new Error("Không tạo được ảnh sau khi xử lý. Bạn hãy thử lại.")),
     type,
     quality
   ));

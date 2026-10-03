@@ -19,16 +19,16 @@ function parseModelJson(text) {
   try {
     return JSON.parse(text);
   } catch {
-    throw new AppError("Dịch vụ AI trả về dữ liệu không hợp lệ. Hãy thử quét lại ảnh rõ hơn.", { statusCode: 502, code: "INVALID_AI_JSON" });
+    throw new AppError("Dịch vụ AI trả về dữ liệu không hợp lệ. Bạn hãy dùng ảnh rõ hơn rồi quét lại.", { statusCode: 502, code: "INVALID_AI_JSON" });
   }
 }
 
 function classifyGeminiError(error) {
   if (error instanceof AppError) return error;
   const status = Number(error?.status || error?.statusCode || error?.code);
-  if (status === 429) return new AppError("Dịch vụ AI đang quá tải hoặc đã hết hạn mức. Vui lòng nhập điểm thủ công thay vì quét lại liên tục.", { statusCode: 503, code: "AI_QUOTA" });
+  if (status === 429) return new AppError("Dịch vụ AI đang quá tải hoặc đã hết hạn mức. Bạn hãy nhập điểm bằng tay và tránh quét lại liên tục.", { statusCode: 503, code: "AI_QUOTA" });
   if (status === 401 || status === 403) return new AppError("Không thể xác thực dịch vụ AI. Hãy kiểm tra cấu hình máy chủ.", { statusCode: 503, code: "AI_AUTH" });
-  return new AppError("Không thể đọc ảnh học bạ. Hãy chụp lại rõ hơn, tránh lóa sáng và đảm bảo đủ bảng điểm.", { statusCode: 502, code: "AI_REQUEST_FAILED" });
+  return new AppError("Chưa đọc được ảnh học bạ. Bạn hãy chụp rõ toàn bộ bảng điểm, tránh lóa sáng rồi thử lại.", { statusCode: 502, code: "AI_REQUEST_FAILED" });
 }
 
 function diagnosticGeminiError(error) {

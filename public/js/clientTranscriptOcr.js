@@ -1,14 +1,14 @@
 import { parseOcrTranscriptPages } from "./core/ocrTranscriptParser.js?v=20261001-2";
 import { validateTranscriptPayload } from "./core/transcriptValidator.js";
 
-const GENERIC_OCR_ERROR = "Không thể nhận diện ảnh. Hãy dùng ảnh thẳng, rõ chữ hoặc nhập điểm thủ công.";
+const GENERIC_OCR_ERROR = "Chưa đọc được ảnh. Bạn hãy dùng ảnh thẳng, rõ chữ hoặc nhập điểm thủ công.";
 
 async function withOcrTimeout(promise, timeoutMs) {
   let timer;
   try {
     return await Promise.race([promise, new Promise((_, reject) => {
       timer = setTimeout(() => reject(new ClientTranscriptOcrError(
-        "Nhận diện trên thiết bị phản hồi quá lâu. Hãy thử một ảnh hoặc nhập điểm thủ công.",
+        "Quét trên thiết bị mất quá nhiều thời gian. Bạn hãy thử với một ảnh hoặc nhập điểm thủ công.",
         "CLIENT_OCR_TIMEOUT"
       )), timeoutMs);
     })]);
@@ -121,8 +121,8 @@ export async function recognizeTranscriptInBrowser(images, {
       success: true,
       data: validated.data,
       warnings: [
-        "Hãy đối chiếu từng ô với ảnh gốc trước khi điền.",
-        "Nhận diện trên thiết bị có thể bỏ sót môn hoặc cột điểm. Hãy bổ sung ô còn thiếu bằng tay; không tự suy đoán điểm.",
+        "Bạn hãy đối chiếu từng ô với ảnh gốc trước khi điền điểm.",
+        "Quét trên thiết bị có thể bỏ sót môn hoặc cột điểm. Bạn hãy nhập tay các ô còn thiếu theo ảnh gốc, không đoán điểm.",
         ...parsed.warnings,
         ...validated.warnings
       ],

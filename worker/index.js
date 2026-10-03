@@ -37,7 +37,7 @@ export default {
       return withSecurityHeaders(request, Response.redirect(url, 308));
     }
     if (url.pathname.startsWith("/_worker-data/")) {
-      return withSecurityHeaders(request, new Response("Not found", { status: 404 }));
+      return withSecurityHeaders(request, new Response("Không tìm thấy trang.", { status: 404 }));
     }
     if (request.method === "GET" && url.pathname === "/api/security-config") {
       const turnstile = getTurnstileConfigurationForHostname(environment, url.hostname);

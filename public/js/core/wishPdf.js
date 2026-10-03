@@ -110,8 +110,8 @@ function drawPage(context, model, pageItems, pageNumber, pageCount) {
   context.fillText(`Xuất ngày ${model.exportedAt} · ${model.items.length} nguyện vọng`, 54, 132);
 
   const columns = [
-    [54, "STT"], [104, "TRƯỜNG · NGÀNH / CHƯƠNG TRÌNH"], [748, "MÃ NGÀNH · NĂM"],
-    [926, "PHƯƠNG THỨC · TỔ HỢP"], [1240, "ĐIỂM CỦA BẠN · ĐIỂM CHUẨN"], [1505, "TRẠNG THÁI"]
+    [54, "STT"], [104, "Trường · Ngành / chương trình"], [748, "Mã ngành · Năm"],
+    [926, "Phương thức · Tổ hợp"], [1240, "Điểm của bạn · Điểm chuẩn"], [1505, "Trạng thái"]
   ];
   context.fillStyle = "#e8ecff"; context.fillRect(42, 176, 1670, 42);
   context.fillStyle = "#334155"; context.font = `700 13px ${font}`;
@@ -155,7 +155,7 @@ function drawPage(context, model, pageItems, pageNumber, pageCount) {
   });
 
   context.fillStyle = "#64748b"; context.font = `400 15px ${font}`;
-  context.fillText("Kết quả chỉ để tham khảo. Hãy kiểm tra thông tin tuyển sinh chính thức của từng trường.", 42, 1189);
+  context.fillText("Kết quả chỉ để tham khảo. Bạn cần kiểm tra thông tin tuyển sinh chính thức của từng trường.", 42, 1189);
   context.textAlign = "right"; context.fillText(`Trang ${pageNumber} / ${pageCount}`, 1712, 1189); context.textAlign = "left";
 }
 

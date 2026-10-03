@@ -26,7 +26,7 @@ export function createProviderPool({
   retryCodes,
   cooldownMsByCode = {},
   now = Date.now,
-  unavailableError = () => new AppError("Dịch vụ nhận diện tạm thời chưa sẵn sàng.", { statusCode: 503, code: "SCAN_PROVIDER_UNAVAILABLE" })
+  unavailableError = () => new AppError("Dịch vụ nhận diện chưa sẵn sàng. Bạn hãy thử lại sau.", { statusCode: 503, code: "SCAN_PROVIDER_UNAVAILABLE" })
 }) {
   const entries = keys.map((key, index) => ({
     scan: createService(key, index),

@@ -18,7 +18,7 @@ function endpointValue(value) {
     if (endpoint.protocol !== "https:") throw new Error("HTTPS required");
     return endpoint.toString();
   } catch {
-    throw new AppError("Địa chỉ OCR.space không hợp lệ. Hãy dùng endpoint HTTPS.", { statusCode: 503, code: "OCR_SPACE_CONFIG" });
+    throw new AppError("Địa chỉ dịch vụ OCR.space không hợp lệ. Địa chỉ phải dùng HTTPS.", { statusCode: 503, code: "OCR_SPACE_CONFIG" });
   }
 }
 
@@ -34,12 +34,12 @@ function serviceError(code, message, statusCode = 503) {
 function classifyResponseError(status, payload) {
   const message = messageFrom(payload);
   if (status === 429 || /quota|rate.?limit|maximum.*request|daily.*limit/.test(message)) {
-    return serviceError("OCR_SPACE_QUOTA", "OCR.space đang quá tải hoặc đã hết hạn mức. Hệ thống sẽ thử bộ máy khác.");
+    return serviceError("OCR_SPACE_QUOTA", "OCR.space đang quá tải hoặc đã hết hạn mức. Website sẽ thử dịch vụ nhận diện khác.");
   }
   if (status === 401 || status === 403 || /api.?key|unauthori[sz]ed|forbidden|invalid key/.test(message)) {
     return serviceError("OCR_SPACE_AUTH", "Không thể xác thực OCR.space. Hãy kiểm tra cấu hình máy chủ.");
   }
-  return serviceError("OCR_SPACE_REQUEST_FAILED", "OCR.space chưa xử lý được ảnh. Hệ thống sẽ thử bộ máy khác.", 502);
+  return serviceError("OCR_SPACE_REQUEST_FAILED", "OCR.space chưa xử lý được ảnh. Website sẽ thử dịch vụ nhận diện khác.", 502);
 }
 
 async function fetchJsonWithTimeout(fetchImpl, endpoint, options, milliseconds) {
@@ -57,9 +57,9 @@ async function fetchJsonWithTimeout(fetchImpl, endpoint, options, milliseconds) 
     if (!response.ok || payload?.IsErroredOnProcessing) throw classifyResponseError(response.status, payload);
     return payload;
   } catch (error) {
-    if (error?.name === "AbortError") throw serviceError("OCR_SPACE_TIMEOUT", "OCR.space phản hồi quá lâu. Hệ thống sẽ thử bộ máy khác.", 504);
+    if (error?.name === "AbortError") throw serviceError("OCR_SPACE_TIMEOUT", "OCR.space phản hồi quá lâu. Website sẽ thử dịch vụ nhận diện khác.", 504);
     if (error instanceof AppError) throw error;
-    throw serviceError("OCR_SPACE_REQUEST_FAILED", "Không kết nối được OCR.space. Hệ thống sẽ thử bộ máy khác.", 502);
+    throw serviceError("OCR_SPACE_REQUEST_FAILED", "Không kết nối được OCR.space. Website sẽ thử dịch vụ nhận diện khác.", 502);
   } finally {
     clearTimeout(timeoutId);
   }
@@ -88,10 +88,10 @@ export function createOcrSpaceVisionService({
   return async function scanTranscriptWithOcrSpace(images) {
     for (const image of images) {
       if (!SUPPORTED_MIME_TYPES.has(image.mimetype)) {
-        throw serviceError("OCR_SPACE_UNSUPPORTED_IMAGE", "OCR.space không nhận định dạng ảnh này. Hệ thống sẽ dùng OCR cục bộ.", 422);
+        throw serviceError("OCR_SPACE_UNSUPPORTED_IMAGE", "Dịch vụ không nhận định dạng ảnh này. Bạn có thể chọn quét trên thiết bị hoặc nhập điểm bằng tay.", 422);
       }
       if (image.buffer.length > imageLimit) {
-        throw serviceError("OCR_SPACE_FILE_TOO_LARGE", "Ảnh vượt giới hạn dung lượng OCR.space. Hệ thống sẽ dùng OCR cục bộ.", 413);
+        throw serviceError("OCR_SPACE_FILE_TOO_LARGE", "Ảnh vượt giới hạn dung lượng của dịch vụ nhận diện. Bạn có thể chọn quét trên thiết bị hoặc nhập điểm bằng tay.", 413);
       }
     }
 
@@ -101,7 +101,7 @@ export function createOcrSpaceVisionService({
     const warnings = [];
     for (let index = 0; index < images.length; index += 1) {
       const remaining = deadline - Date.now();
-      if (remaining <= 0) throw serviceError("OCR_SPACE_TIMEOUT", "OCR.space phản hồi quá lâu. Hệ thống sẽ thử bộ máy khác.", 504);
+      if (remaining <= 0) throw serviceError("OCR_SPACE_TIMEOUT", "OCR.space phản hồi quá lâu. Website sẽ thử dịch vụ nhận diện khác.", 504);
       const image = images[index];
       const form = new FormData();
       form.append("file", new Blob([image.buffer], { type: image.mimetype }), `hoc-ba-${index + 1}.${fileExtension(image.mimetype)}`);
@@ -120,7 +120,7 @@ export function createOcrSpaceVisionService({
         throw serviceError("OCR_SPACE_INVALID_RESPONSE", "OCR.space không trả về kết quả nhận diện hợp lệ.", 502);
       }
       const parsedText = payload.ParsedResults.map((result) => String(result?.ParsedText || "")).join("\n");
-      if (payload.ParsedResults.some((result) => Number(result?.FileParseExitCode) === 2)) warnings.push(`Ảnh ${index + 1} chỉ được OCR.space đọc một phần.`);
+      if (payload.ParsedResults.some((result) => Number(result?.FileParseExitCode) === 2)) warnings.push(`OCR.space chỉ đọc được một phần ảnh ${index + 1}.`);
       if (payload.ParsedResults.every((result) => Number(result?.FileParseExitCode) >= 3)) throw classifyResponseError(200, payload);
       pages.push({ text: parsedText, confidence: 55, originalname: image.originalname });
     }
@@ -130,7 +130,7 @@ export function createOcrSpaceVisionService({
     return {
       data: validated.data,
       warnings: [
-        "Kết quả được nhận diện qua OCR.space. Hãy đối chiếu từng ô với ảnh gốc trước khi điền.",
+        "OCR.space đã nhận diện ảnh. Bạn hãy đối chiếu từng ô với ảnh gốc trước khi điền.",
         ...warnings,
         ...parsed.warnings,
         ...validated.warnings

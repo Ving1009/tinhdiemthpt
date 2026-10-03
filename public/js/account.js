@@ -77,7 +77,7 @@ export class AccountApp {
       return { response, payload };
     } catch (error) {
       if (controller.signal.aborted) {
-        const timeoutError = new Error("Hệ thống tài khoản phản hồi quá lâu.");
+        const timeoutError = new Error("Yêu cầu tài khoản mất quá nhiều thời gian. Bạn hãy thử lại.");
         timeoutError.code = "AUTH_REQUEST_TIMEOUT";
         throw timeoutError;
       }
@@ -102,7 +102,7 @@ export class AccountApp {
       headers: { Accept: "application/json", ...(path === "/api/auth/data" && this.user?.id ? { "X-Account-User-Id": this.user.id } : {}), ...(options.headers || {}) }
     });
     if (!response.ok || !payload?.success) {
-      const error = new Error(messageFromPayload(payload, "Không thể xử lý yêu cầu tài khoản."));
+      const error = new Error(messageFromPayload(payload, "Chưa xử lý được yêu cầu tài khoản. Bạn hãy thử lại."));
       error.code = payload?.error?.code || "AUTH_REQUEST_FAILED";
       throw error;
     }
@@ -272,11 +272,11 @@ export class AccountApp {
   async restore() {
     if (!this.isAuthenticated()) return;
     const userId = String(this.user.id);
-    this.setStatus("Đang tải bản sao…");
+    this.setStatus("Đang tải bản sao lưu…");
     try {
       const result = await this.request("/api/auth/data");
       if (String(this.user?.id || "") !== userId) return;
-      if (!result.data) throw new Error("Tài khoản chưa có bản sao dữ liệu.");
+      if (!result.data) throw new Error("Tài khoản của bạn chưa có bản sao dữ liệu.");
       this.cancelPendingSync();
       this.isChangingAccount = true;
       try { this.changeLocalAccountData(() => this.dataIsolation.completeUser(userId, result.data)); }
@@ -335,16 +335,16 @@ export class AccountApp {
     this.button.classList.add("is-signed-in");
     this.button.textContent = initial;
     this.button.setAttribute("aria-label", `Tài khoản ${username}`);
-    this.root.querySelector("[data-account-content]").innerHTML = `<div class="account-profile"><span aria-hidden="true">${escapeHTML(initial)}</span><div><strong id="account-title">${escapeHTML(username)}</strong><small>Tài khoản Tính Điểm THPT</small></div></div><p>Dữ liệu tính điểm, nguyện vọng và lịch sử thi thử có thể tự sao lưu khi bạn thay đổi.</p><div class="account-actions"><button class="button button-primary" type="button" data-account-backup>Sao lưu ngay</button><button class="button button-light" type="button" data-account-restore>Khôi phục bản sao</button></div><p class="account-status" data-account-status aria-live="polite">Đã đăng nhập bằng phiên bảo mật.</p><button class="account-logout" type="button" data-account-logout>Đăng xuất</button>`;
+    this.root.querySelector("[data-account-content]").innerHTML = `<div class="account-profile"><span aria-hidden="true">${escapeHTML(initial)}</span><div><strong id="account-title">${escapeHTML(username)}</strong><small>Tài khoản Tính Điểm THPT</small></div></div><p>Điểm, nguyện vọng và lịch sử thi thử có thể được tự động sao lưu khi bạn thay đổi.</p><div class="account-actions"><button class="button button-primary" type="button" data-account-backup>Sao lưu ngay</button><button class="button button-light" type="button" data-account-restore>Khôi phục bản sao</button></div><p class="account-status" data-account-status aria-live="polite">Phiên đăng nhập của bạn được bảo mật.</p><button class="account-logout" type="button" data-account-logout>Đăng xuất</button>`;
   }
 
   renderGuest() {
     if (!this.config?.enabled) {
-      this.root.querySelector("[data-account-content]").innerHTML = `<h2 id="account-title">Tài khoản đang được cấu hình</h2><p>Bạn vẫn dùng đầy đủ mọi công cụ mà không cần đăng nhập.</p>`;
+      this.root.querySelector("[data-account-content]").innerHTML = `<h2 id="account-title">Tài khoản đang được thiết lập</h2><p>Bạn có thể dùng mọi công cụ mà không cần đăng nhập.</p>`;
       return;
     }
     const register = this.mode === "register";
-    this.root.querySelector("[data-account-content]").innerHTML = `<div class="account-intro-icon" aria-hidden="true">♙</div><h2 id="account-title">Tài khoản Tính Điểm THPT</h2><div class="account-auth-tabs" role="tablist" aria-label="Đăng nhập hoặc tạo tài khoản"><button type="button" role="tab" aria-selected="${!register}" class="${!register ? "is-active" : ""}" data-account-mode="login">Đăng nhập</button><button type="button" role="tab" aria-selected="${register}" class="${register ? "is-active" : ""}" data-account-mode="register">Tạo tài khoản</button></div>${register ? `<form class="account-auth-form" data-account-register><label>Tên đăng nhập<input name="username" required minlength="4" maxlength="24" pattern="[a-z0-9][a-z0-9._-]{2,22}[a-z0-9]" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="ví dụ: quangvinh26"></label><label>Mật khẩu<input name="password" type="password" required minlength="6" maxlength="128" autocomplete="new-password" placeholder="Từ 6 đến 128 ký tự"></label><label>Nhập lại mật khẩu<input name="passwordConfirmation" type="password" required minlength="6" maxlength="128" autocomplete="new-password"></label><p class="account-form-note">Mật khẩu cần 6–128 ký tự, có chữ và số. Cloudflare Turnstile sẽ xác minh trước khi tạo tài khoản.</p><button class="button button-primary" type="submit">Xác minh và tạo tài khoản</button><p class="account-status" data-account-status aria-live="polite"></p></form>` : `<form class="account-auth-form" data-account-login><label>Tên đăng nhập<input name="username" required autocomplete="username" autocapitalize="none" spellcheck="false"></label><label>Mật khẩu<input name="password" type="password" required minlength="6" maxlength="128" autocomplete="current-password"></label><button class="button button-primary" type="submit">Đăng nhập</button><p class="account-status" data-account-status aria-live="polite"></p></form>`}<ul><li>Sao lưu điểm, nguyện vọng và lịch sử thi thử.</li><li>Khôi phục dữ liệu trên thiết bị khác.</li><li>Không đăng nhập vẫn dùng đầy đủ công cụ.</li></ul>`;
+    this.root.querySelector("[data-account-content]").innerHTML = `<div class="account-intro-icon" aria-hidden="true">♙</div><h2 id="account-title">Tài khoản Tính Điểm THPT</h2><div class="account-auth-tabs" role="tablist" aria-label="Đăng nhập hoặc tạo tài khoản"><button type="button" role="tab" aria-selected="${!register}" class="${!register ? "is-active" : ""}" data-account-mode="login">Đăng nhập</button><button type="button" role="tab" aria-selected="${register}" class="${register ? "is-active" : ""}" data-account-mode="register">Tạo tài khoản</button></div>${register ? `<form class="account-auth-form" data-account-register><label>Tên đăng nhập<input name="username" required minlength="4" maxlength="24" pattern="[a-z0-9][a-z0-9._-]{2,22}[a-z0-9]" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="ví dụ: quangvinh26"></label><label>Mật khẩu<input name="password" type="password" required minlength="6" maxlength="128" autocomplete="new-password" placeholder="Từ 6 đến 128 ký tự"></label><label>Nhập lại mật khẩu<input name="passwordConfirmation" type="password" required minlength="6" maxlength="128" autocomplete="new-password"></label><p class="account-form-note">Mật khẩu cần từ 6 đến 128 ký tự, gồm chữ và số. Bạn cần xác minh qua Cloudflare Turnstile trước khi tạo tài khoản.</p><button class="button button-primary" type="submit">Xác minh và tạo tài khoản</button><p class="account-status" data-account-status aria-live="polite"></p></form>` : `<form class="account-auth-form" data-account-login><label>Tên đăng nhập<input name="username" required autocomplete="username" autocapitalize="none" spellcheck="false"></label><label>Mật khẩu<input name="password" type="password" required minlength="6" maxlength="128" autocomplete="current-password"></label><button class="button button-primary" type="submit">Đăng nhập</button><p class="account-status" data-account-status aria-live="polite"></p></form>`}<ul><li>Sao lưu điểm, nguyện vọng và lịch sử thi thử.</li><li>Khôi phục dữ liệu trên thiết bị khác.</li><li>Không đăng nhập vẫn dùng đầy đủ công cụ.</li></ul>`;
   }
 
   render() {

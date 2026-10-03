@@ -12,7 +12,7 @@ export function validSchoolFormulaRanges(field, maxScore) {
 export function validateSchoolFormulaValue(raw, field) {
   const text = String(raw ?? '').trim().replace(',', '.');
   if (!text) return { valid: false, message: 'Vui lòng nhập điểm.' };
-  if (!/^-?\d+(?:\.\d+)?$/.test(text)) return { valid: false, message: 'Vui lòng nhập một số hợp lệ.' };
+  if (!/^-?\d+(?:\.\d+)?$/.test(text)) return { valid: false, message: 'Hãy nhập một số hợp lệ.' };
   const value = Number(text);
   if (!Number.isFinite(value) || value < field.min || value > field.max) return { valid: false, message: `Điểm phải từ ${field.min} đến ${field.max}.` };
   if ((text.split('.')[1] || '').length > 2) return { valid: false, message: 'Dùng tối đa 2 chữ số thập phân.' };
@@ -36,7 +36,7 @@ export function calculateSchoolFormula(rule, rawValues, context = {}) {
   const multiplier = rule.multiplier ?? 1;
   if (!Number.isFinite(multiplier) || multiplier <= 0) throw new Error('Hệ số công thức không hợp lệ.');
   const base = values.reduce((sum, { field, converted }) => sum + field.weight * converted, 0) * multiplier / rule.divisor;
-  if (base < 0 || base > rule.maxScore + 1e-8) throw new Error('Điểm nền vượt thang điểm; hãy kiểm tra đầu vào.');
+  if (base < 0 || base > rule.maxScore + 1e-8) throw new Error('Điểm sau trọng số vượt thang điểm. Bạn hãy kiểm tra lại điểm đã nhập.');
   const bonusResult = rule.bonus ? validateSchoolFormulaValue(rawValues.bonus ?? '0', rule.bonus) : { valid: true, value: 0 };
   if (!bonusResult.valid) throw new Error(bonusResult.message);
   const priorityBasis = Math.min(rule.maxScore, base + (rule.priorityIncludesBonus ? bonusResult.value : 0));

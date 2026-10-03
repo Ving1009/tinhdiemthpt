@@ -76,7 +76,7 @@ export async function requestRemoteTranscriptScan(images, {
     const response = await fetchImpl(apiUrl, { method: "POST", headers, body: formData, signal: controller.signal });
     const payload = await response.json().catch(() => null);
     if (!response.ok || !payload?.success) {
-      throw new RemoteTranscriptScanError(payload?.error?.message || "Dịch vụ nhận diện tạm thời chưa sẵn sàng.", {
+      throw new RemoteTranscriptScanError(payload?.error?.message || "Dịch vụ nhận diện chưa sẵn sàng. Bạn hãy thử lại sau.", {
         code: payload?.error?.code,
         statusCode: response.status
       });
@@ -84,7 +84,7 @@ export async function requestRemoteTranscriptScan(images, {
     return payload;
   } catch (error) {
     if (controller.signal.aborted) {
-      throw new RemoteTranscriptScanError("Dịch vụ nhận diện phản hồi quá lâu. Bạn có thể quét trực tiếp trên thiết bị.", {
+      throw new RemoteTranscriptScanError("Dịch vụ nhận diện mất quá nhiều thời gian. Bạn có thể chuyển sang quét trên thiết bị.", {
         code: "REMOTE_SCAN_TIMEOUT",
         statusCode: 504
       });
@@ -159,7 +159,7 @@ export class TranscriptScanner {
       const validationMessage = transcriptImageValidationMessage(file);
       if (validationMessage) { errors.push(validationMessage); continue; }
       if (next.some((item) => fileKey(item.file) === fileKey(file))) continue;
-      if (next.length >= MAX_IMAGES) { errors.push(`Chỉ có thể chọn tối đa ${MAX_IMAGES} ảnh.`); break; }
+      if (next.length >= MAX_IMAGES) { errors.push(`Bạn có thể chọn tối đa ${MAX_IMAGES} ảnh.`); break; }
       next.push({ file });
     }
     this.files = next;
@@ -229,7 +229,7 @@ export class TranscriptScanner {
   async scan() {
     if (this.isScanning) return;
     if (!this.files.length) { this.notify("Hãy chọn ít nhất một ảnh học bạ."); return; }
-    if (this.consent?.checked !== true) { this.notify("Vui lòng tick ô đồng ý trước khi tải ảnh lên dịch vụ nhận diện."); return; }
+    if (this.consent?.checked !== true) { this.notify("Bạn hãy chọn ô đồng ý trước khi gửi ảnh đến dịch vụ nhận diện."); return; }
     this.isScanning = true;
     const sourceFiles = this.files.map((item) => item.file);
     this.onScanStart();
@@ -240,12 +240,12 @@ export class TranscriptScanner {
         onProgress: (index, total) => this.setStatus(`Đang xử lý ảnh ${index + 1}/${total}...`, "working")
       });
       if (optimizedImages.reduce((total, image) => total + image.blob.size, 0) > MAX_UPLOAD_BYTES) {
-        throw new RemoteTranscriptScanError("Ảnh sau tối ưu vẫn vượt giới hạn 10 MB. Hãy giảm số ảnh hoặc chụp lại ở độ phân giải thấp hơn.", {
+        throw new RemoteTranscriptScanError("Tổng dung lượng ảnh sau khi xử lý vẫn vượt 10 MB. Bạn hãy giảm số ảnh hoặc chụp lại ở độ phân giải thấp hơn.", {
           code: "IMAGES_TOO_LARGE",
           statusCode: 413
         });
       }
-      this.setStatus("Đang nhận diện...", "working");
+      this.setStatus("Đang nhận diện điểm...", "working");
       let payload;
       try {
         payload = await requestProtectedTranscriptScan(optimizedImages);
@@ -263,11 +263,11 @@ export class TranscriptScanner {
           onStatus: (message) => this.setStatus(message, "working")
         });
       }
-      this.setStatus("Đang kiểm tra...", "working");
+      this.setStatus("Đang kiểm tra điểm đã đọc...", "working");
       this.onScanSuccess(payload);
       this.files = [];
       if (this.consent) this.consent.checked = false;
-      this.setStatus("Hoàn tất. Hãy kiểm tra bảng điểm trước khi xác nhận.", "success");
+      this.setStatus("Đã đọc xong ảnh. Bạn hãy kiểm tra bảng điểm trước khi xác nhận.", "success");
     } catch (error) {
       const message = error?.message || "Không thể nhận diện ảnh. Hãy dùng ảnh rõ hơn hoặc nhập điểm thủ công.";
       this.setStatus(message, "error");

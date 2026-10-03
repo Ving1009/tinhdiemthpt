@@ -94,7 +94,7 @@ export class PracticeExamApp {
       return `<article class="practice-subject-card">
         <div class="practice-card-top"><span class="practice-icon" aria-hidden="true">${escapeHTML(item.icon)}</span><span class="practice-category ${official ? "is-official" : ""}">${official ? "Đề chính thức" : "Đề luyện"}</span></div>
         <h3>${escapeHTML(item.subject)}</h3>
-        <p>${escapeHTML(item.title)} · ${item.questionCount || item.questions.length} câu phải làm</p>
+        <p>${escapeHTML(item.title)} · ${item.questionCount || item.questions.length} câu cần làm</p>
         <dl><div><dt>Thời gian</dt><dd>${item.durationMinutes} phút</dd></div><div><dt>Tài liệu</dt><dd>${item.digitizedSolutionCount ? `${item.digitizedSolutionCount} lời giải theo câu` : item.answerImages?.length ? "Đáp án đã số hóa" : item.answerSource ? "Có đáp án đối chiếu" : official ? "Có đáp án chấm" : "Có lời giải"}</dd></div></dl>
         ${latest ? `<div class="practice-latest">Lần gần nhất <strong>${Number(latest.result?.score || 0).toFixed(2)}</strong>/10</div>` : ""}
         <button class="button button-primary" type="button" data-start-exam="${escapeHTML(item.id)}">${latest ? "Thi lại" : "Bắt đầu"}</button>
@@ -107,7 +107,7 @@ export class PracticeExamApp {
     const replace = this.pendingStartExamId ? (() => {
       const pendingExam = this.examById(this.pendingStartExamId);
       const activeExam = this.examById(this.active?.examId);
-      return pendingExam && activeExam ? `<aside class="practice-replace" role="alert"><div><strong>Bắt đầu ${escapeHTML(pendingExam.subject)}?</strong><span>Bài ${escapeHTML(activeExam.subject)} chưa nộp sẽ được thay thế.</span></div><div><button class="button button-primary" type="button" data-confirm-start="${escapeHTML(pendingExam.id)}">Bắt đầu môn mới</button><button class="button button-light" type="button" data-cancel-start>Giữ bài đang làm</button></div></aside>` : "";
+      return pendingExam && activeExam ? `<aside class="practice-replace" role="alert"><div><strong>Bắt đầu ${escapeHTML(pendingExam.subject)}?</strong><span>Nếu bắt đầu môn mới, bài ${escapeHTML(activeExam.subject)} chưa nộp sẽ được thay thế.</span></div><div><button class="button button-primary" type="button" data-confirm-start="${escapeHTML(pendingExam.id)}">Bắt đầu môn mới</button><button class="button button-light" type="button" data-cancel-start>Giữ bài đang làm</button></div></aside>` : "";
     })() : "";
     const history = this.history.slice(0, 8).map((item) => {
       const subject = this.examById(item.examId)?.subject || "Đề luyện tập";
@@ -121,10 +121,10 @@ export class PracticeExamApp {
       </div>
       <div class="practice-directory">
         <div>
-          <p class="practice-count">${cards ? `${filteredExams.length} đề thi và đề luyện tập` : "Không tìm thấy môn phù hợp."}</p>
+          <p class="practice-count">${cards ? `${filteredExams.length} đề thi và đề luyện tập` : "Không tìm thấy môn phù hợp. Bạn hãy thử tên môn khác."}</p>
           <div class="practice-subject-grid">${cards}</div>
         </div>
-        <aside class="practice-history"><div class="practice-history-heading"><div><span>Kết quả trên thiết bị</span><h3>Lịch sử thi thử</h3></div><b>${this.history.length}</b></div>${history || '<p class="practice-empty">Kết quả sau khi nộp bài sẽ xuất hiện tại đây.</p>'}</aside>
+        <aside class="practice-history"><div class="practice-history-heading"><div><span>Kết quả trên thiết bị</span><h3>Lịch sử thi thử</h3></div><b>${this.history.length}</b></div>${history || '<p class="practice-empty">Nộp bài để xem kết quả tại đây.</p>'}</aside>
       </div>`;
   }
 
@@ -260,11 +260,11 @@ export class PracticeExamApp {
     const answers = this.active.answers || {};
     const flagged = new Set(this.active.flagged || []);
     const branchPicker = selectedExam.answerBranches?.length ? `<div class="practice-branch-picker"><span>Chọn định hướng Tin học</span><div>${selectedExam.answerBranches.map((branch) => `<button type="button" data-practice-branch="${escapeHTML(branch)}" class="${this.active.branch === branch ? "is-active" : ""}" aria-pressed="${this.active.branch === branch}">${escapeHTML(branch)}</button>`).join("")}</div></div>` : "";
-    const sourcePages = selectedExam.pageImages?.length ? `<details class="practice-paper"><summary><span><b>Đối chiếu bản đề gốc · Mã ${escapeHTML(selectedExam.examCode)}</b><small>Chỉ mở khi cần kiểm tra hình, bảng hoặc công thức</small></span><strong>${selectedExam.pageImages.length} trang</strong></summary>${renderPageGallery(selectedExam.pageImages, `Đề ${selectedExam.subject}`, "practice-paper-pages")}</details>` : "";
+    const sourcePages = selectedExam.pageImages?.length ? `<details class="practice-paper"><summary><span><b>Đối chiếu đề gốc · Mã ${escapeHTML(selectedExam.examCode)}</b><small>Chỉ mở khi bạn cần kiểm tra hình, bảng hoặc công thức</small></span><strong>${selectedExam.pageImages.length} trang</strong></summary>${renderPageGallery(selectedExam.pageImages, `Đề ${selectedExam.subject}`, "practice-paper-pages")}</details>` : "";
     this.root.innerHTML = `
       <div class="practice-exam-shell">
         <header class="practice-exam-header">
-          <div><p class="eyebrow">PHÒNG THI 2026 · ${selectedExam.sourceKind === "official-paper" ? "ĐỀ CHÍNH THỨC" : "ĐỀ LUYỆN"}</p><h3>${escapeHTML(selectedExam.subject)}</h3><p>${escapeHTML(selectedExam.title)} · ${questions.length} câu phải làm · thang 10</p></div>
+          <div><p class="eyebrow">Thi thử 2026 · ${selectedExam.sourceKind === "official-paper" ? "Đề chính thức" : "Đề luyện"}</p><h3>${escapeHTML(selectedExam.subject)}</h3><p>${escapeHTML(selectedExam.title)} · ${questions.length} câu cần làm · thang 10</p></div>
           <div class="practice-timer-wrap"><span>Thời gian còn lại</span><strong id="practice-timer" aria-live="polite">${formatExamTime(remainingExamSeconds(this.active))}</strong></div>
         </header>
         <div class="practice-progress"><span id="practice-progress-label">Đã làm 0/${questions.length}</span><div><i id="practice-progress-bar"></i></div></div>
@@ -278,7 +278,7 @@ export class PracticeExamApp {
           <aside class="practice-question-nav">
             <h4>Phiếu trả lời</h4>
             <div class="practice-nav-grid">${questions.map((question, index) => `<button type="button" data-question-nav="${index + 1}" data-question-id="${escapeHTML(question.id)}" class="${isPracticeQuestionAnswered(question, answers[question.id]) ? "is-answered" : ""} ${flagged.has(question.id) ? "is-flagged" : ""}">${index + 1}</button>`).join("")}</div>
-            <p id="practice-submit-note">Bài được lưu tự động trên thiết bị.</p>
+            <p id="practice-submit-note">Bài làm của bạn được tự động lưu trên thiết bị.</p>
             <button class="button button-primary" type="button" data-submit-exam>Nộp bài</button>
             <button class="button button-text" type="button" data-exit-exam>Thoát và làm tiếp sau</button>
           </aside>
@@ -325,7 +325,7 @@ export class PracticeExamApp {
     const note = this.root.querySelector("#practice-submit-note");
     if (unanswered > 0 && !this.submitArmed) {
       this.submitArmed = true;
-      if (note) note.textContent = `Còn ${unanswered} câu chưa trả lời. Bấm “Nộp bài” lần nữa để xác nhận.`;
+      if (note) note.textContent = `Còn ${unanswered} câu chưa trả lời. Bạn hãy bấm Nộp bài lần nữa để xác nhận.`;
       return;
     }
     this.finishAttempt(false);
@@ -372,19 +372,19 @@ export class PracticeExamApp {
     const detailById = new Map(result.details.map((item) => [item.questionId, item]));
     const sourcePages = selectedExam.pageImages?.length ? `<details class="practice-solutions"><summary>Đề thi gốc (${selectedExam.pageImages.length} trang)</summary>${renderPageGallery(selectedExam.pageImages, `Đề ${selectedExam.subject}`, "practice-paper-pages")}</details>` : "";
     const answers = selectedExam.answerImages?.length ? `<details class="practice-solutions" open><summary>Đáp án trong tài liệu nguồn (${selectedExam.answerImages.length} trang)</summary>${renderPageGallery(selectedExam.answerImages, `Đáp án ${selectedExam.subject}`, "practice-solution-pages")}</details>` : "";
-    const answerSource = selectedExam.answerSource ? `<p class="practice-answer-source">Đáp án được đối chiếu tại <a href="${escapeHTML(selectedExam.answerSource)}" target="_blank" rel="noopener">trang đáp án ↗</a>.</p>` : "";
-    const solutions = selectedExam.solutionImages?.length ? `<details class="practice-solutions"><summary>Ảnh lời giải gốc để đối chiếu (${selectedExam.solutionImages.length} trang)</summary>${renderPageGallery(selectedExam.solutionImages, `Lời giải ${selectedExam.subject}`, "practice-solution-pages")}</details>` : (!answers && !answerSource ? `<p class="practice-no-solution">Tệp nguồn chưa có lời giải chi tiết; hệ thống chỉ hiển thị đáp án chấm bài.</p>` : "");
+    const answerSource = selectedExam.answerSource ? `<p class="practice-answer-source">Đáp án được đối chiếu với <a href="${escapeHTML(selectedExam.answerSource)}" target="_blank" rel="noopener">trang đáp án</a>.</p>` : "";
+    const solutions = selectedExam.solutionImages?.length ? `<details class="practice-solutions"><summary>Ảnh lời giải gốc để đối chiếu (${selectedExam.solutionImages.length} trang)</summary>${renderPageGallery(selectedExam.solutionImages, `Lời giải ${selectedExam.subject}`, "practice-solution-pages")}</details>` : (!answers && !answerSource ? `<p class="practice-no-solution">Tài liệu nguồn chưa có lời giải chi tiết. Bạn chỉ xem được đáp án dùng để chấm bài.</p>` : "");
     const solvedQuestions = questions.map((question, index) => ({ question, index })).filter(({ question }) => question.explanation);
     const solutionPicker = solvedQuestions.length ? `<label class="practice-solution-picker"><span>Chọn câu cần xem lời giải</span><select data-solution-jump><option value="">Chọn một câu…</option>${solvedQuestions.map(({ question, index }) => `<option value="practice-solution-${index + 1}">${escapeHTML(question.section)} · Câu ${question.number}</option>`).join("")}</select></label>` : "";
     this.root.innerHTML = `
       <div class="practice-result">
         <header class="practice-result-hero ${scoreTone(result.score)}">
-          <div><p class="eyebrow">KẾT QUẢ · ${escapeHTML(selectedExam.subject)}</p><h3>${result.score.toFixed(2)}<span>/10</span></h3><p>${attempt.autoSubmitted ? "Hết giờ, hệ thống đã tự nộp bài." : "Bài đã được chấm và lưu trên thiết bị."}</p></div>
-          <dl><div><dt>Trọn điểm</dt><dd>${result.correctCount}/${result.totalQuestions}</dd></div><div><dt>Đã trả lời</dt><dd>${result.answeredCount}</dd></div><div><dt>Bỏ trống</dt><dd>${result.unansweredCount}</dd></div></dl>
+          <div><p class="eyebrow">Kết quả · ${escapeHTML(selectedExam.subject)}</p><h3>${result.score.toFixed(2)}<span>/10</span></h3><p>${attempt.autoSubmitted ? "Đã tự động nộp bài vì hết giờ." : "Bài của bạn đã được chấm và lưu trên thiết bị."}</p></div>
+          <dl><div><dt>Câu đạt trọn điểm</dt><dd>${result.correctCount}/${result.totalQuestions}</dd></div><div><dt>Đã trả lời</dt><dd>${result.answeredCount}</dd></div><div><dt>Bỏ trống</dt><dd>${result.unansweredCount}</dd></div></dl>
         </header>
         <div class="practice-result-actions"><button class="button button-primary" type="button" data-retry-exam="${escapeHTML(selectedExam.id)}">Làm lại đề</button><button class="button button-secondary" type="button" data-back-practice>Về danh sách môn</button></div>
         ${solutionPicker}${solutions}${answers}${answerSource}${sourcePages}
-        <div class="practice-review-heading"><div><p class="eyebrow">XEM LẠI BÀI LÀM</p><h3>Đáp án và điểm từng câu</h3></div><span>Đỏ: trả lời sai · Xanh: trả lời đúng</span></div>
+        <div class="practice-review-heading"><div><p class="eyebrow">Xem lại bài làm</p><h3>Đáp án và điểm từng câu</h3></div><span>Đỏ: trả lời sai · Xanh: trả lời đúng</span></div>
         <div class="practice-review-list">${questions.map((question, index) => this.renderReview(question, index, detailById.get(question.id))).join("")}</div>
       </div>`;
     this.root.scrollIntoView({ behavior: "smooth", block: "start" });

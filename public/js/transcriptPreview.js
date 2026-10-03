@@ -1,6 +1,7 @@
 import { escapeHTML } from "./utils.js";
 
 const SCORE_FIELDS = ["semester1", "semester2", "year"];
+const SCORE_FIELD_LABELS = { semester1: "Điểm học kỳ I", semester2: "Điểm học kỳ II", year: "Điểm cả năm" };
 
 function inputValue(value) { return value === null || value === undefined ? "" : String(value); }
 function normalized(value) { return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").toLocaleLowerCase("vi").trim(); }
@@ -37,7 +38,7 @@ export class TranscriptPreview {
     this.data = structuredClone(payload.data);
     this.backendWarnings = payload.warnings || [];
     this.panel.classList.remove("is-hidden");
-    this.setMessage("Bạn có thể sửa các ô trước khi điền vào bảng học bạ.");
+    this.setMessage("Bạn hãy kiểm tra và sửa các ô cần thiết trước khi điền vào bảng học bạ.");
     this.render();
     this.panel.scrollIntoView({ behavior: "smooth", block: "center" });
   }
@@ -46,7 +47,7 @@ export class TranscriptPreview {
     this.data = null;
     this.backendWarnings = [];
     this.panel.classList.add("is-hidden");
-    this.student.textContent = "Không đọc được tên học sinh.";
+    this.student.textContent = "Đối chiếu từng điểm với ảnh gốc trước khi xác nhận.";
     this.warnings.innerHTML = "";
     this.warnings.classList.add("is-hidden");
     this.table.innerHTML = "";
@@ -64,7 +65,7 @@ export class TranscriptPreview {
     const row = this.data.scores[Number(input.dataset.transcriptRow)];
     if (!row) return;
     row[input.dataset.transcriptField] = input.value;
-    this.setMessage("Có thay đổi chưa được xác nhận.");
+    this.setMessage("Bạn đã sửa dữ liệu nhưng chưa xác nhận.");
   }
 
   getEditedData() {
@@ -76,7 +77,7 @@ export class TranscriptPreview {
       if (Number.isNaN(grade) || grade === null) errors.push(`Dòng ${index + 1}: lớp phải là 10, 11 hoặc 12.`);
       const values = Object.fromEntries(SCORE_FIELDS.map((field) => {
         const value = readNumber(row[field], { min: 0, max: 10 });
-        if (Number.isNaN(value)) errors.push(`Dòng ${index + 1}: ${field} phải nằm trong khoảng 0 đến 10.`);
+        if (Number.isNaN(value)) errors.push(`Dòng ${index + 1}: ${SCORE_FIELD_LABELS[field]} phải nằm trong khoảng 0 đến 10.`);
         return [field, Number.isNaN(value) ? null : value];
       }));
       const confidence = Number(row.confidence);
@@ -103,15 +104,15 @@ export class TranscriptPreview {
 
   render() {
     if (!this.data) return;
-    this.student.textContent = this.data.student?.name ? `Học sinh: ${this.data.student.name}` : "Không đọc được tên học sinh.";
+    this.student.textContent = this.data.student?.name ? `Học sinh: ${this.data.student.name}` : "Đối chiếu từng điểm với ảnh gốc trước khi xác nhận.";
     const warnings = this.backendWarnings || [];
     this.warnings.innerHTML = warnings.length ? `<ul>${warnings.map((warning) => `<li>${escapeHTML(warning)}</li>`).join("")}</ul>` : "";
     this.warnings.classList.toggle("is-hidden", !warnings.length);
     this.table.innerHTML = this.data.scores.map((row, index) => {
       const subjectControl = normalized(row.subject) === "cong nghe"
-        ? `<select data-transcript-row="${index}" data-transcript-field="subject" aria-label="Chọn định hướng Công nghệ dòng ${index + 1}"><option value="">Chọn định hướng</option><option value="Công nghệ công nghiệp">Công nghệ công nghiệp</option><option value="Công nghệ nông nghiệp">Công nghệ nông nghiệp</option></select><small>Cần xác định trước khi điền</small>`
+        ? `<select data-transcript-row="${index}" data-transcript-field="subject" aria-label="Chọn định hướng Công nghệ dòng ${index + 1}"><option value="">Chọn định hướng</option><option value="Công nghệ công nghiệp">Công nghệ công nghiệp</option><option value="Công nghệ nông nghiệp">Công nghệ nông nghiệp</option></select><small>Chọn định hướng trước khi điền điểm</small>`
         : `<input list="transcript-subject-options" data-transcript-row="${index}" data-transcript-field="subject" value="${escapeHTML(inputValue(row.subject))}" aria-label="Môn dòng ${index + 1}" />`;
-      return `<tr><td>${subjectControl}</td><td><input data-transcript-row="${index}" data-transcript-field="grade" inputmode="numeric" value="${escapeHTML(inputValue(row.grade))}" aria-label="Lớp dòng ${index + 1}" /></td>${SCORE_FIELDS.map((field) => `<td><input data-transcript-row="${index}" data-transcript-field="${field}" inputmode="decimal" value="${escapeHTML(inputValue(row[field]))}" aria-label="${field} dòng ${index + 1}" /></td>`).join("")}<td><button class="icon-button transcript-remove" type="button" data-remove-transcript-row="${index}" aria-label="Xóa dòng ${index + 1}" title="Xóa dòng">×</button></td></tr>`;
+      return `<tr><td>${subjectControl}</td><td><input data-transcript-row="${index}" data-transcript-field="grade" inputmode="numeric" value="${escapeHTML(inputValue(row.grade))}" aria-label="Lớp dòng ${index + 1}" /></td>${SCORE_FIELDS.map((field) => `<td><input data-transcript-row="${index}" data-transcript-field="${field}" inputmode="decimal" value="${escapeHTML(inputValue(row[field]))}" aria-label="${SCORE_FIELD_LABELS[field]} dòng ${index + 1}" /></td>`).join("")}<td><button class="icon-button transcript-remove" type="button" data-remove-transcript-row="${index}" aria-label="Xóa dòng ${index + 1}" title="Xóa dòng">×</button></td></tr>`;
     }).join("");
   }
 }

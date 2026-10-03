@@ -89,12 +89,12 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
     }
   }));
   app.use("/api", (_request, response) => response.status(404).json({ success: false, error: { code: "API_NOT_FOUND", message: "Không tìm thấy API." } }));
-  app.use((_request, response) => response.status(404).send("Not found"));
+  app.use((_request, response) => response.status(404).send("Không tìm thấy trang."));
   app.use((error, _request, response, _next) => {
     if (isUploadError(error)) {
       const tooLarge = error.code === "LIMIT_FILE_SIZE";
       const tooMany = error.code === "LIMIT_UNEXPECTED_FILE" || error.code === "LIMIT_FILE_COUNT";
-      const message = tooLarge ? "Mỗi ảnh tối đa 7 MB." : tooMany ? "Chỉ được tải tối đa 6 ảnh." : "Tệp tải lên không hợp lệ.";
+      const message = tooLarge ? "Mỗi ảnh có dung lượng tối đa 7 MB. Bạn hãy giảm dung lượng ảnh rồi thử lại." : tooMany ? "Bạn có thể tải tối đa 6 ảnh mỗi lần." : "Tệp tải lên không hợp lệ. Bạn hãy chọn lại ảnh.";
       const code = tooLarge ? "LIMIT_FILE_SIZE" : tooMany ? "LIMIT_FILE_COUNT" : error.code || "INVALID_UPLOAD";
       response.status(tooLarge ? 413 : 400).json({ success: false, error: { code, message } });
       return;

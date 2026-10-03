@@ -6,7 +6,7 @@ export const DEFAULT_CLOUDFLARE_AI_MODEL = "@cf/openai/gpt-oss-20b";
 function cloudflareError(status) {
   if (status === 429) return new AppError("Cloudflare Workers AI đang hết hạn mức hoặc nhận quá nhiều yêu cầu.", { statusCode: 503, code: "CLOUDFLARE_AI_RATE_LIMITED" });
   if (status === 401 || status === 403) return new AppError("Cloudflare Workers AI chưa được cấu hình hợp lệ.", { statusCode: 503, code: "CLOUDFLARE_AI_AUTH" });
-  return new AppError("Cloudflare Workers AI tạm thời chưa phản hồi.", { statusCode: 502, code: "CLOUDFLARE_AI_REQUEST_FAILED" });
+  return new AppError("Cloudflare Workers AI chưa phản hồi. Bạn hãy thử lại sau.", { statusCode: 502, code: "CLOUDFLARE_AI_REQUEST_FAILED" });
 }
 
 export function createCloudflareWorkersAssistantService({

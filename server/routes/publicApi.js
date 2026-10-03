@@ -12,8 +12,8 @@ export function createPublicApiRouter({ store, reportStore, assistant, environme
   const router = Router();
   const bootstrapJson = JSON.stringify({ success: true, data: store.publicInitialData });
   const bootstrapGzip = gzipSync(bootstrapJson, { level: 6 });
-  const reportLimiter = rateLimit({ windowMs: 10 * 60 * 1000, limit: 10, standardHeaders: "draft-8", legacyHeaders: false });
-  const assistantLimiter = rateLimit({ windowMs: 10 * 60 * 1000, limit: 30, standardHeaders: "draft-8", legacyHeaders: false });
+  const reportLimiter = rateLimit({ windowMs: 10 * 60 * 1000, limit: 10, standardHeaders: "draft-8", legacyHeaders: false, message: "Bạn đã gửi quá nhiều báo cáo. Hãy thử lại sau ít phút." });
+  const assistantLimiter = rateLimit({ windowMs: 10 * 60 * 1000, limit: 30, standardHeaders: "draft-8", legacyHeaders: false, message: "Bạn đã hỏi trợ lý quá nhiều lần. Hãy thử lại sau ít phút." });
 
   router.get("/bootstrap", (request, response) => {
     response.type("application/json");
@@ -93,7 +93,7 @@ export function createPublicApiRouter({ store, reportStore, assistant, environme
         fetchImpl: turnstileFetch,
         required: true
       });
-      if (!reportStore) return response.status(503).json({ success: false, error: { code: "REPORT_INTAKE_UNAVAILABLE", message: "Nơi tiếp nhận báo cáo chưa sẵn sàng." } });
+      if (!reportStore) return response.status(503).json({ success: false, error: { code: "REPORT_INTAKE_UNAVAILABLE", message: "Hệ thống nhận báo cáo chưa sẵn sàng. Bạn hãy thử lại sau." } });
       const result = await reportStore.submit(request.body);
       response.status(202).json({ success: true, data: result });
     } catch (error) {

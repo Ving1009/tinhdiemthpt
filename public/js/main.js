@@ -161,7 +161,7 @@ class THPTApp {
       this.renderUniversities();
       await this.restoreAdmissionSelections();
       await this.openDeepLinkFromHash();
-      if (this.personalDataRetention.expired) this.showToast("Đã xóa phiên khách cũ sau 15 phút rời website.");
+      if (this.personalDataRetention.expired) this.showToast("Đã xóa dữ liệu phiên khách cũ sau 15 phút rời website.");
     } catch (error) {
       this.elements.universityGrid.innerHTML = '<p class="empty-state error-state">Không thể tải dữ liệu. <button class="button button-text" type="button" data-retry-load>Thử lại</button></p>';
       this.showToast(error.message);
@@ -190,7 +190,7 @@ class THPTApp {
       fallback.className = "school-logo logo-fallback";
       fallback.textContent = event.target.dataset.code || "ĐH";
       fallback.setAttribute("role", "img");
-      fallback.setAttribute("aria-label", `${event.target.alt} — đang cập nhật`);
+      fallback.setAttribute("aria-label", `${event.target.alt} · đang cập nhật`);
       event.target.replaceWith(fallback);
     }, true);
 
@@ -477,10 +477,10 @@ class THPTApp {
 
   populateCombinationSelects() {
     const combinations = this.repository.combinations.filter(isStandardCombination);
-    this.elements.combinationSelect.innerHTML = combinations.map((item) => `<option value="${escapeHTML(item.id)}">${escapeHTML(item.code)} — ${escapeHTML(item.subjectText)}</option>`).join("");
+    this.elements.combinationSelect.innerHTML = combinations.map((item) => `<option value="${escapeHTML(item.id)}">${escapeHTML(item.code)} · ${escapeHTML(item.subjectText)}</option>`).join("");
     const saved = this.repository.getCombination(this.state.manualCombinationId);
     this.elements.combinationSelect.value = saved && isStandardCombination(saved) ? saved.id : this.repository.getCombinationByCode("D01")?.id || combinations[0]?.id || "";
-    $("#major-combination-filter").innerHTML = '<option value="">Tất cả tổ hợp</option>' + combinations.map((item) => `<option value="${escapeHTML(item.code)}">${escapeHTML(item.code)} — ${escapeHTML(item.subjectText)}</option>`).join("");
+    $("#major-combination-filter").innerHTML = '<option value="">Tất cả tổ hợp</option>' + combinations.map((item) => `<option value="${escapeHTML(item.code)}">${escapeHTML(item.code)} · ${escapeHTML(item.subjectText)}</option>`).join("");
   }
   getSelectedCombination() { return this.repository.getCombination(this.elements.combinationSelect.value); }
   renderManualScoreFields() {
@@ -533,10 +533,10 @@ class THPTApp {
     this.lastTrigger = { context: `Tổ hợp ${top.combination.code} · ${top.combination.subjectText}` };
     this.elements.resultEmpty.classList.add("is-hidden");
     this.elements.resultContent.classList.remove("is-hidden");
-    this.elements.resultLabel.textContent = automatic ? "CÁC TỔ HỢP TỪ 4 MÔN CỦA BẠN" : "KẾT QUẢ TỔ HỢP CỤ THỂ";
+    this.elements.resultLabel.textContent = automatic ? "Các tổ hợp từ 4 môn của bạn" : "Kết quả tổ hợp đã chọn";
     const scoreResults = results.map(({ combination, result }) => ({ combination: combination.code, score: result.total, scale: result.maxScore, year: Number($("#admission-year").value), method: "THPT", ruleId: result.comparisonRule || "three-subject-sum-priority-2026" }));
     this.scoreProfile = createScoreProfile({ type: "THPT", method: "THPT", year: Number($("#admission-year").value), results: scoreResults, subjects: this.lastThptInput?.entries || [], priorityContext: this.getPriorityContext(), inputVersion: this.scoreRevision });
-    this.elements.resultContext.textContent = automatic ? `${results.length} tổ hợp hợp lệ · ${top.combination.code} — ${formatScore(top.result.total)}/${top.result.maxScore} — THPT ${this.scoreProfile.year}` : `${top.combination.code} — ${formatScore(top.result.total)}/${top.result.maxScore} — THPT ${this.scoreProfile.year}`;
+    this.elements.resultContext.textContent = automatic ? `${results.length} tổ hợp hợp lệ · ${top.combination.code} · ${formatScore(top.result.total)}/${top.result.maxScore} · THPT ${this.scoreProfile.year}` : `${top.combination.code} · ${formatScore(top.result.total)}/${top.result.maxScore} · THPT ${this.scoreProfile.year}`;
     this.elements.resultTotal.textContent = formatScore(top.result.total);
     this.elements.resultMax.textContent = `/ ${top.result.maxScore}`;
     this.elements.resultDetails.innerHTML = `<div class="result-row"><span>Điểm tổ hợp cao nhất</span><b>${formatScore(top.result.examScore)}</b></div><div class="result-row"><span>Điểm ưu tiên</span><b>+ ${formatScore(top.result.priority.adjusted)}</b></div>`;
@@ -552,7 +552,7 @@ class THPTApp {
     const saved = this.state.academicScores || {};
     this.elements.academicHead.innerHTML = `<tr><th>Môn học</th>${method.columns.map((column) => `<th>${escapeHTML(column.label)}</th>`).join("")}</tr>`;
     this.elements.academicBody.innerHTML = ACADEMIC_SUBJECTS.map((subject) => `<tr><th scope="row">${escapeHTML(subject.label)}</th>${method.columns.map((column) => { const id = `academic-${subject.id}-${column.id}`; return `<td data-label="${escapeHTML(column.label)}"><input id="${id}" data-academic-score="${subject.id}__${column.id}" inputmode="decimal" autocomplete="off" placeholder="0.00" aria-label="${escapeHTML(subject.label)} ${escapeHTML(column.label)}" value="${escapeHTML(saved[id] || "")}" aria-invalid="false" aria-describedby="${id}-error" /><small class="field-error" id="${id}-error"></small></td>`; }).join("")}</tr>`).join("");
-    $("#academic-note").innerHTML = `<span aria-hidden="true">i</span> Đang dùng <b>${escapeHTML(method.name)}</b>. Chỉ các tổ hợp có đủ điểm mới được tính.`;
+    $("#academic-note").innerHTML = `<span aria-hidden="true">i</span> Đang dùng <b>${escapeHTML(method.name)}</b>. Chỉ tính tổ hợp bạn đã nhập đủ điểm.`;
   }
   getAcademicScoreData() {
     const scores = {}; const errors = [];
@@ -594,7 +594,7 @@ class THPTApp {
     this.lastAcademicResult = result;
     this.lastAcademicTrigger = view;
     this.elements.academicResultEmpty.classList.add("is-hidden"); this.elements.academicResultContent.classList.remove("is-hidden");
-    this.elements.academicResultLabel.textContent = result.weighted ? "ĐIỂM HỌC BẠ CÓ TRỌNG SỐ" : "KẾT QUẢ HỌC BẠ";
+    this.elements.academicResultLabel.textContent = result.weighted ? "Điểm học bạ có trọng số" : "Kết quả học bạ";
     this.elements.academicResultContext.textContent = `${view.method} · ${first.combination.code} · ${first.combination.subjectText}`;
     this.elements.academicResultTotal.textContent = formatScore(result.total); this.elements.academicResultMax.textContent = `/ ${result.maxScore}`;
     this.elements.academicResultDetails.innerHTML = `<div class="result-row"><span>${result.maxScore === 30 ? "Điểm học bạ" : "Điểm có trọng số"}</span><b>${formatScore(result.examScore)} / ${result.maxScore}</b></div><div class="result-row"><span>Điểm ưu tiên${result.maxScore === 30 ? "" : " quy đổi"}</span><b>+ ${formatScore(result.priority.adjusted)}</b></div>`;
@@ -614,14 +614,14 @@ class THPTApp {
   }
   confirmTranscriptAutofill(data) {
     const result = autoFillTranscript(data, { methodId: this.elements.academicMethod.value });
-    if (!result.filled && result.conflicts?.length) throw new Error("Các điểm nhận diện khác dữ liệu đã nhập. Hãy kiểm tra và xóa điểm cũ trước khi áp dụng.");
+    if (!result.filled && result.conflicts?.length) throw new Error("Điểm quét được khác với điểm bạn đã nhập. Bạn cần kiểm tra và xóa điểm cũ trước khi áp dụng.");
     if (!result.filled) throw new Error("Không có điểm phù hợp với phương thức học bạ đang chọn.");
     if (result.language && [...this.elements.academicLanguage.options].some((item) => item.value === result.language)) this.elements.academicLanguage.value = result.language;
     this.saveForm(); this.showToast(`Đã điền ${result.filled} ô. Hãy kiểm tra lại trước khi tính.`); return result;
   }
 
   populateUniversitySelects() {
-    const options = this.repository.universities.map((item) => `<option value="${escapeHTML(item.id)}">${item.verifiedFormulaCount ? "✓ " : ""}${escapeHTML(item.shortName)} — ${escapeHTML(item.name)}</option>`).join("");
+    const options = this.repository.universities.map((item) => `<option value="${escapeHTML(item.id)}">${item.verifiedFormulaCount ? "✓ " : ""}${escapeHTML(item.shortName)} · ${escapeHTML(item.name)}</option>`).join("");
     this.elements.universitySelect.innerHTML = '<option value="">Chọn trường</option>' + options;
     $("#major-university-filter").innerHTML = '<option value="">Tất cả trường</option>' + options;
   }
@@ -635,7 +635,7 @@ class THPTApp {
     this.elements.methodSelect.innerHTML = '<option value="">Đang tải phương thức...</option>';
     if (!id) {
       this.elements.methodSelect.innerHTML = '<option value="">Chọn trường trước</option>';
-      this.elements.selectionHint.textContent = "Hãy chọn trường để xem từng phương thức và trạng thái công thức.";
+      this.elements.selectionHint.textContent = "Chọn trường để xem từng phương thức và trạng thái xác minh của công thức.";
       this.renderAdmissionCalculator(); this.saveForm(); return;
     }
     try {
@@ -654,11 +654,11 @@ class THPTApp {
         ? '<option value="">Chọn phương thức</option>' + options.map((option) => `<option value="${escapeHTML(option.value || option.label)}">${option.verified ? "✓ " : ""}${escapeHTML(option.label)} · ${option.programCount} ngành</option>`).join("")
         : '<option value="">Chưa có phương thức</option>';
       this.elements.methodSelect.disabled = !options.length;
-      this.elements.selectionHint.textContent = formulaData.catalog ? (options.length ? `Đã rà soát ${options.length} phương thức. Chọn một mục để xem công thức, ngành áp dụng và trạng thái kiểm chứng.` : (formulaData.catalog.issues || []).join(' ') || 'Chưa có phương thức tuyển sinh đại học 2026 được xác nhận cho hồ sơ này.') : formulaData.message;
+      this.elements.selectionHint.textContent = formulaData.catalog ? (options.length ? `${options.length} phương thức đã được kiểm tra. Chọn phương thức để xem công thức, ngành áp dụng và trạng thái xác minh.` : (formulaData.catalog.issues || []).join(' ') || 'Chưa có phương thức tuyển sinh đại học 2026 được xác nhận cho hồ sơ này.') : formulaData.message;
       this.renderAdmissionCalculator();
     } catch {
       if (loadVersion !== this.admissionLoadVersion) return;
-      this.elements.methodSelect.innerHTML = '<option value="">Không thể tải phương thức — chọn lại để thử</option>';
+      this.elements.methodSelect.innerHTML = '<option value="">Không thể tải phương thức · chọn lại để thử</option>';
       this.elements.selectionHint.textContent = "Không thể tải dữ liệu. Hãy thử lại.";
       this.renderAdmissionCalculator();
     }
@@ -676,7 +676,7 @@ class THPTApp {
     const programs = [...groups.values()];
     this.elements.majorSelect.innerHTML = programs.length
       ? `<option value="">Tất cả ${programs.length} ngành / chương trình</option>${programs.map((major) => `<option value="${escapeHTML(major.id)}">${escapeHTML(major.name)}${major.code ? ` (${escapeHTML(major.code)})` : ""}${major.group ? ` · ${escapeHTML(major.group)}` : ""}</option>`).join("")}`
-      : '<option value="">Không có ngành áp dụng trong dữ liệu</option>';
+      : '<option value="">Chưa có ngành áp dụng trong dữ liệu</option>';
     this.elements.majorSelect.disabled = !method || !programs.length;
     this.syncAdmissionSelectionState();
     this.renderAdmissionCalculator();
@@ -692,8 +692,8 @@ class THPTApp {
     this.elements.calculateAdmission.textContent = ready ? "Nhập điểm" : "Chưa hỗ trợ tự tính";
     const referenceFormula = this.referenceFormulaForMajor(major) || this.referenceFormulaForMethod(method);
     this.elements.selectionHint.textContent = verifiedFormula
-      ? `${verifiedFormula.label}: ${verifiedFormula.status === "official_verified" ? "công thức đã xác minh" : "quy tắc theo dữ liệu đã tra cứu"}${ready ? " và có thể tự tính cho phạm vi đã liên kết." : "; xem trạng thái và điều kiện bên dưới."}`
-      : (referenceFormula ? `${method}: đã có công thức tham khảo và nguồn đối chiếu; chưa bật tính tự động.` : (method ? "Chưa có công thức cho phương thức này." : "Chọn phương thức để xem công thức và phạm vi áp dụng."));
+      ? `${verifiedFormula.label}: ${verifiedFormula.status === "official_verified" ? "công thức đã xác minh" : "quy tắc từ nguồn đã tra cứu"}${ready ? " và có thể tự tính điểm trong phạm vi áp dụng đã xác nhận." : ". Bạn hãy xem trạng thái xác minh và điều kiện bên dưới."}`
+      : (referenceFormula ? `${method}: có công thức và nguồn tham khảo; bạn chưa thể tính điểm tự động.` : (method ? "Chưa có công thức cho phương thức này." : "Chọn phương thức để xem công thức và phạm vi áp dụng."));
   }
   async restoreAdmissionSelections() {
     if (!this.state.universityId || !this.repository.getUniversity(this.state.universityId)) return;
@@ -759,14 +759,14 @@ class THPTApp {
     const programs = (formula?.programs || []).map((item) => `<li>${item.code ? `<b>${escapeHTML(item.code)}</b> · ` : ""}${escapeHTML(item.name)}${item.group ? ` · ${escapeHTML(item.group)}` : ""}${item.combination ? ` · ${escapeHTML(item.combination)}` : ""}${item.note ? `<small>${escapeHTML(item.note)}</small>` : ""}</li>`).join("");
     const combinations = (formula?.combinations || [...new Set((formula?.programs || []).flatMap((p) => String(p.combination || "").split(/[;,/|]+/)).map((c) => c.trim()).filter(Boolean))]).map((code) => `<span>${escapeHTML(code)}</span>`).join("");
     const branchNote = Number(formula.variantCount) > 1
-      ? `<p class="formula-scope-note">Một công thức phương thức, gồm ${formula.variantCount} nhánh theo nhóm ngành hoặc điều kiện áp dụng.</p>`
-      : `<p class="formula-scope-note">Quy tắc theo phương thức; áp dụng đúng nhánh, tổ hợp và điều kiện của ngành bên dưới.</p>`;
+      ? `<p class="formula-scope-note">Công thức của phương thức này có ${formula.variantCount} nhánh, tùy nhóm ngành hoặc điều kiện áp dụng.</p>`
+      : `<p class="formula-scope-note">Bạn cần dùng đúng nhánh công thức và tổ hợp của phương thức, đồng thời đáp ứng điều kiện của ngành bên dưới.</p>`;
     const statusLabels = { non_numeric: "Xét điều kiện / hồ sơ", requires_review: "Chưa đủ biểu thức", missing_evidence: "Chưa có nguồn 2026", conflicting: "Nguồn còn mâu thuẫn", scope_incomplete: "Phạm vi ngành chưa đủ", source_reported: "Biểu thức theo nguồn tra cứu", source_description: "Quy tắc theo nguồn tra cứu" };
     const badge = `<span class="verified-badge${official ? "" : " is-reference"}">${official ? "✓ Đã xác minh chính thức" : escapeHTML(statusLabels[formula.status] || "Tham khảo · cần đối chiếu")}</span>`;
     const issues = (formula.issues || []).map((item) => `<p class="formula-scope-note">${escapeHTML(item)}</p>`).join("");
-    const details = `${branchNote}${issues}<div class="formula-box">${escapeHTML(formula.expression)}</div><dl class="formula-facts"><div><dt>Thang điểm</dt><dd>${escapeHTML(formula.scale || "Theo đề án của trường")}</dd></div><div><dt>Tổ hợp</dt><dd>${combinations || escapeHTML(formula.combinationNote || "Theo điều kiện của phương thức")}</dd></div></dl>${conditions ? `<section><h4>Điều kiện quan trọng</h4><ul>${conditions}</ul></section>` : ""}${formula.priority ? `<section><h4>Điểm ưu tiên</h4><p>${escapeHTML(formula.priority)}</p></section>` : ""}${formula.conversion ? `<section><h4>Quy đổi trong công thức</h4><p>${escapeHTML(formula.conversion)}</p></section>` : ""}${formula.combinationNote ? `<section><h4>Phạm vi tổ hợp</h4><p>${escapeHTML(formula.combinationNote)}</p></section>` : ""}<details class="formula-programs"><summary>${formula.programCount} ngành / chương trình thuộc phạm vi đối chiếu</summary>${programs ? `<ul>${programs}</ul>` : `<p>${escapeHTML(formula.applicabilityNote || "Chưa xác nhận được ngành áp dụng.")}</p>`}</details>${sourceUrl ? `<a class="formula-source" href="${escapeHTML(sourceUrl)}" target="_blank" rel="noopener">${escapeHTML(source?.label || (official ? "Nguồn chính thức" : "Nguồn dữ liệu"))} ↗</a>` : ""}${formula.checkedAt ? `<small>Tra cứu: ${escapeHTML(formula.checkedAt)}</small>` : ""}`;
+    const details = `${branchNote}${issues}<div class="formula-box">${escapeHTML(formula.expression)}</div><dl class="formula-facts"><div><dt>Thang điểm</dt><dd>${escapeHTML(formula.scale || "Theo đề án của trường")}</dd></div><div><dt>Tổ hợp</dt><dd>${combinations || escapeHTML(formula.combinationNote || "Theo điều kiện của phương thức")}</dd></div></dl>${conditions ? `<section><h4>Điều kiện xét tuyển</h4><ul>${conditions}</ul></section>` : ""}${formula.priority ? `<section><h4>Điểm ưu tiên</h4><p>${escapeHTML(formula.priority)}</p></section>` : ""}${formula.conversion ? `<section><h4>Quy đổi trong công thức</h4><p>${escapeHTML(formula.conversion)}</p></section>` : ""}${formula.combinationNote ? `<section><h4>Phạm vi tổ hợp</h4><p>${escapeHTML(formula.combinationNote)}</p></section>` : ""}<details class="formula-programs"><summary>${formula.programCount} ngành / chương trình trong phạm vi đối chiếu</summary>${programs ? `<ul>${programs}</ul>` : `<p>${escapeHTML(formula.applicabilityNote || "Chưa xác nhận được ngành áp dụng.")}</p>`}</details>${sourceUrl ? `<a class="formula-source" href="${escapeHTML(sourceUrl)}" target="_blank" rel="noopener">${escapeHTML(source?.label || (official ? "Nguồn chính thức" : "Nguồn dữ liệu"))} ↗</a>` : ""}${formula.checkedAt ? `<small>Tra cứu: ${escapeHTML(formula.checkedAt)}</small>` : ""}`;
     if (profile) return `<details class="verified-formula-card is-profile profile-formula-disclosure${official ? "" : " is-reference"}"><summary class="profile-formula-summary"><span class="profile-formula-name">${escapeHTML(formula.label)}</span>${badge}</summary><div class="profile-formula-details">${details}</div></details>`;
-    return `<article class="verified-formula-card${official ? "" : " is-reference"}"><div class="verified-formula-heading"><div><p class="eyebrow">CÔNG THỨC THEO PHƯƠNG THỨC</p><h3>${escapeHTML(formula.label)}</h3></div>${badge}</div>${details}</article>`;
+    return `<article class="verified-formula-card${official ? "" : " is-reference"}"><div class="verified-formula-heading"><div><p class="eyebrow">Công thức theo phương thức</p><h3>${escapeHTML(formula.label)}</h3></div>${badge}</div>${details}</article>`;
   }
   focusAdmissionCalculator() { $("#admission-calculator-form input")?.focus(); }
   clearAdmissionResult() { const result = $("#admission-result"); if (result) result.innerHTML = '<p class="result-stale">Thông tin đã thay đổi, cần tính lại.</p>'; }
@@ -777,8 +777,8 @@ class THPTApp {
       this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính";
       const catalog = this.admissionFormulaData?.catalog;
       panel.innerHTML = catalog && !catalog.methods.length
-        ? `<div class="result-empty"><h3>Chưa có phương thức đại học 2026 được xác nhận</h3><p>${escapeHTML((catalog.issues || []).join(' ') || 'Xem ghi chú hồ sơ và thông báo tuyển sinh của cơ sở.')}</p></div>`
-        : '<div class="result-empty"><h3>Chọn trường và phương thức</h3><p>Chỉ công thức được nguồn chính thức nêu trực tiếp mới được hiển thị là đã xác minh.</p></div>';
+        ? `<div class="result-empty"><h3>Chưa xác nhận được phương thức tuyển sinh đại học 2026</h3><p>${escapeHTML((catalog.issues || []).join(' ') || 'Xem ghi chú hồ sơ và thông báo tuyển sinh của cơ sở.')}</p></div>`
+        : '<div class="result-empty"><h3>Chọn trường và phương thức</h3><p>Nhãn "Đã xác minh" chỉ dành cho công thức được nêu trực tiếp trong nguồn chính thức.</p></div>';
       return;
     }
     const major = this.selectedAdmissionMajor();
@@ -791,7 +791,7 @@ class THPTApp {
     }
     if (!verifiedFormula) {
       this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính";
-      panel.innerHTML = `${this.admissionFormulaMarkup(referenceFormula)}<div class="info-callout">Công thức này được hiển thị để tra cứu. Hãy đối chiếu lại đề án của trường trước khi nộp hồ sơ; website chưa tự tính khi quy tắc chưa được nguồn chính thức xác nhận đầy đủ.</div>`;
+      panel.innerHTML = `${this.admissionFormulaMarkup(referenceFormula)}<div class="info-callout">Công thức này chỉ để tham khảo. Bạn cần đối chiếu đề án của trường trước khi nộp hồ sơ. Website chưa tự tính vì nguồn chính thức chưa xác nhận đầy đủ quy tắc.</div>`;
       return;
     }
     const formula = verifiedFormula.formulaModuleId ? this.repository.getFormula(verifiedFormula.formulaModuleId) : null;
@@ -802,12 +802,12 @@ class THPTApp {
     }
     if (!verifiedFormula.autoCalculate || !canCalculateMajor(major, formula) || typeof formula?.getInputDefinition !== "function") {
       this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính";
-      panel.innerHTML = `${details}<div class="info-callout">Công thức này được hiển thị để tra cứu; website chưa tự tính khi chưa có đủ quy tắc đầu vào an toàn.</div>`;
+      panel.innerHTML = `${details}<div class="info-callout">Bạn có thể tra cứu công thức này. Website chưa tự tính vì chưa có đủ quy tắc đầu vào để tính đúng.</div>`;
       return;
     }
     this.elements.calculateAdmission.disabled = false; this.elements.calculateAdmission.textContent = "Nhập điểm";
     const supported = Object.keys(formula.combinations || {}).filter((code) => String(major.combination || "").toLocaleUpperCase("vi").split(/[;,/|]+/).map((item) => item.trim()).includes(code));
-    panel.innerHTML = `${details}<form id="admission-calculator-form" class="form-card admission-dynamic-form"><div class="admission-form-heading"><div><p class="eyebrow">CÓ THỂ TỰ TÍNH</p><h3>${escapeHTML(major.name)}</h3></div><span class="verified-badge">✓ Quy tắc đã xác minh</span></div><div class="form-grid form-grid-two"><div class="field"><label for="admission-combination">Tổ hợp</label><select id="admission-combination">${supported.map((code) => `<option value="${code}">${code}</option>`).join("")}</select></div><div class="field is-hidden" id="admission-choice-field"><label for="admission-choice-subject">Môn tự chọn K01</label><select id="admission-choice-subject"><option value="physics">Vật lí</option><option value="chemistry">Hóa học</option><option value="biology">Sinh học</option><option value="informatics">Tin học</option></select></div></div><div class="score-grid" id="admission-inputs"></div><div class="priority-context-note">Ưu tiên đang dùng: <b>${escapeHTML($("#area").selectedOptions[0]?.textContent || "KV3")}</b> · <b>${escapeHTML($("#priority-group").selectedOptions[0]?.textContent || "Không thuộc nhóm ưu tiên")}</b></div><div class="form-actions"><button class="button button-primary" type="submit">Tính theo ngành</button></div></form><div id="admission-result"></div>`;
+    panel.innerHTML = `${details}<form id="admission-calculator-form" class="form-card admission-dynamic-form"><div class="admission-form-heading"><div><p class="eyebrow">Có thể tự tính</p><h3>${escapeHTML(major.name)}</h3></div><span class="verified-badge">✓ Quy tắc đã xác minh</span></div><div class="form-grid form-grid-two"><div class="field"><label for="admission-combination">Tổ hợp</label><select id="admission-combination">${supported.map((code) => `<option value="${code}">${code}</option>`).join("")}</select></div><div class="field is-hidden" id="admission-choice-field"><label for="admission-choice-subject">Môn tự chọn K01</label><select id="admission-choice-subject"><option value="physics">Vật lí</option><option value="chemistry">Hóa học</option><option value="biology">Sinh học</option><option value="informatics">Tin học</option></select></div></div><div class="score-grid" id="admission-inputs"></div><div class="priority-context-note">Ưu tiên đang dùng: <b>${escapeHTML($("#area").selectedOptions[0]?.textContent || "KV3")}</b> · <b>${escapeHTML($("#priority-group").selectedOptions[0]?.textContent || "Không thuộc nhóm ưu tiên")}</b></div><div class="form-actions"><button class="button button-primary" type="submit">Tính theo ngành</button></div></form><div id="admission-result"></div>`;
     const refresh = () => { const result = $("#admission-result"); if (result) result.innerHTML = ""; this.renderAdmissionInputs(formula); };
     $("#admission-combination").addEventListener("change", refresh);
     $("#admission-choice-subject").addEventListener("change", refresh);
@@ -820,7 +820,7 @@ class THPTApp {
     const context = this.getPriorityContext();
     this.elements.calculateAdmission.disabled = false;
     this.elements.calculateAdmission.textContent = "Nhập điểm";
-    $("#admission-calculator-panel").innerHTML = `${details}<form id="admission-calculator-form" class="form-card admission-dynamic-form"><h3>Tính theo ${escapeHTML(formula.label)}</h3><div class="form-grid form-grid-two">${fields.map((field, i) => `<div class="field"><label for="school-score-${i}">${escapeHTML(field.label)}</label><input id="school-score-${i}" data-school-score="${escapeHTML(field.key)}" inputmode="decimal" autocomplete="off" placeholder="${field.min}–${field.max}" ${field.key === "bonus" ? 'value="0"' : ""} aria-describedby="school-error-${i}" /><small id="school-error-${i}" class="field-error" role="status"></small></div>`).join("")}${rule.priority ? `<div class="field"><label for="school-priority-area">Khu vực ưu tiên</label><select id="school-priority-area">${$("#area").innerHTML}</select></div><div class="field"><label for="school-priority-group">Đối tượng ưu tiên</label><select id="school-priority-group">${$("#priority-group").innerHTML}</select></div>` : ""}</div><p class="form-note">Kết quả là phép tính theo công thức; bạn vẫn cần đáp ứng điều kiện và đúng tổ hợp của ngành.</p><button class="button button-primary" type="submit">Tính điểm xét tuyển</button></form><div id="admission-result"></div>`;
+    $("#admission-calculator-panel").innerHTML = `${details}<form id="admission-calculator-form" class="form-card admission-dynamic-form"><h3>Tính theo ${escapeHTML(formula.label)}</h3><div class="form-grid form-grid-two">${fields.map((field, i) => `<div class="field"><label for="school-score-${i}">${escapeHTML(field.label)}</label><input id="school-score-${i}" data-school-score="${escapeHTML(field.key)}" inputmode="decimal" autocomplete="off" placeholder="${field.min} đến ${field.max}" ${field.key === "bonus" ? 'value="0"' : ""} aria-describedby="school-error-${i}" /><small id="school-error-${i}" class="field-error" role="status"></small></div>`).join("")}${rule.priority ? `<div class="field"><label for="school-priority-area">Khu vực ưu tiên</label><select id="school-priority-area">${$("#area").innerHTML}</select></div><div class="field"><label for="school-priority-group">Đối tượng ưu tiên</label><select id="school-priority-group">${$("#priority-group").innerHTML}</select></div>` : ""}</div><p class="form-note">Điểm này được tính theo công thức của trường. Bạn vẫn cần đáp ứng điều kiện xét tuyển và dùng đúng tổ hợp của ngành.</p><button class="button button-primary" type="submit">Tính điểm xét tuyển</button></form><div id="admission-result"></div>`;
     if (rule.priority) { $("#school-priority-area").value = context.area; $("#school-priority-group").value = context.priorityGroup; }
     const validateField = (input) => {
       const field = fields.find((item) => item.key === input.dataset.schoolScore);
@@ -839,7 +839,7 @@ class THPTApp {
       if (checked.some((value) => !value.valid)) { inputs[checked.findIndex((value) => !value.valid)].focus(); this.showToast(checked.find((value) => !value.valid).message); return; }
       try {
         const result = calculateSchoolFormula(rule, Object.fromEntries(inputs.map((input) => [input.dataset.schoolScore, input.value])), { area: $("#school-priority-area")?.value || "KV3", priorityGroup: $("#school-priority-group")?.value || "none" });
-        $("#admission-result").innerHTML = `<div class="result-content admission-result-content"><span class="result-label">KẾT QUẢ THEO CÔNG THỨC CỦA TRƯỜNG</span><h3>${escapeHTML(formula.label)}</h3><div class="result-score"><strong>${formatScore(result.total)}</strong><span>/ ${result.maxScore}</span></div><ul class="explanation-list"><li><span>Điểm nền sau trọng số</span><b>${formatScore(result.base)}</b></li><li><span>Điểm ưu tiên sau điều chỉnh</span><b>+ ${formatScore(result.priority.adjusted)}</b></li><li><span>Điểm cộng đã xác nhận</span><b>+ ${formatScore(result.bonus)}</b></li></ul><div class="formula-box">${escapeHTML(formula.expression)}</div></div>`;
+        $("#admission-result").innerHTML = `<div class="result-content admission-result-content"><span class="result-label">Kết quả theo công thức của trường</span><h3>${escapeHTML(formula.label)}</h3><div class="result-score"><strong>${formatScore(result.total)}</strong><span>/ ${result.maxScore}</span></div><ul class="explanation-list"><li><span>Điểm nền sau trọng số</span><b>${formatScore(result.base)}</b></li><li><span>Điểm ưu tiên sau điều chỉnh</span><b>+ ${formatScore(result.priority.adjusted)}</b></li><li><span>Điểm cộng đã xác nhận</span><b>+ ${formatScore(result.bonus)}</b></li></ul><div class="formula-box">${escapeHTML(formula.expression)}</div></div>`;
       } catch (error) { this.showToast(error.message); }
     });
   }
@@ -863,7 +863,7 @@ class THPTApp {
     try {
       const result = formula.calculate({ combinationCode: $("#admission-combination").value, choiceSubject: $("#admission-choice-subject")?.value, mathIsMain: major.mathIsMain === true, scores, priorityContext: this.getPriorityContext() });
       const breakdown = result.breakdown.map((item) => `<li><span>${escapeHTML(item.label)}${item.weight > 1 ? ` × ${item.weight}` : ""}</span><b>${formatScore(item.value)}</b></li>`).join("");
-      $("#admission-result").innerHTML = `<div class="result-content admission-result-content"><span class="result-label">KẾT QUẢ THEO QUY TẮC ĐÃ XÁC MINH</span><h3>${escapeHTML(major.name)} · ${escapeHTML(result.combinationCode)}</h3><div class="result-score"><strong>${formatScore(result.total)}</strong><span>/ ${result.maxScore}</span></div><ul class="explanation-list">${breakdown}<li><span>Điểm sau trọng số</span><b>${formatScore(result.examScore)}</b></li><li><span>Điểm ưu tiên</span><b>+ ${formatScore(result.priority.adjusted)}</b></li></ul><div class="formula-box">${escapeHTML(formula.expression)}</div></div>`;
+      $("#admission-result").innerHTML = `<div class="result-content admission-result-content"><span class="result-label">Kết quả theo quy tắc đã xác minh</span><h3>${escapeHTML(major.name)} · ${escapeHTML(result.combinationCode)}</h3><div class="result-score"><strong>${formatScore(result.total)}</strong><span>/ ${result.maxScore}</span></div><ul class="explanation-list">${breakdown}<li><span>Điểm sau trọng số</span><b>${formatScore(result.examScore)}</b></li><li><span>Điểm ưu tiên</span><b>+ ${formatScore(result.priority.adjusted)}</b></li></ul><div class="formula-box">${escapeHTML(formula.expression)}</div></div>`;
     } catch (error) { this.showToast(error.message); }
   }
 
@@ -890,7 +890,7 @@ class THPTApp {
         : university.logoFit === "mark" ? " logo-mark-crop" : "";
     return `<img class="school-logo${fitClass}" src="${escapeHTML(university.logo)}" alt="Logo ${escapeHTML(university.name)}" data-code="${escapeHTML(university.shortName || university.code || "ĐH")}" width="56" height="56" loading="lazy" />`;
   }
-  universityCard(university) { const label = university.programCount ? `${university.programCount} ngành / chương trình` : UNIVERSITY_PROFILE_STATUS[university.admissionsStatus]?.compact || "Đang cập nhật dữ liệu ngành"; const code = university.officialAdmissionsCode || university.code; return `<article class="university-card"><div class="university-card-identity">${this.logoMarkup(university)}<div><h3>${escapeHTML(university.name)}</h3><span class="school-code">${escapeHTML(code)} · ${escapeHTML(university.shortName)}</span></div></div><div class="university-actions"><span class="school-count">${escapeHTML(label)}</span><button class="card-link" data-school-id="${escapeHTML(university.id)}" type="button" aria-label="Hồ sơ ${escapeHTML(university.name)}">Hồ sơ ↗</button></div></article>`; }
+  universityCard(university) { const label = university.programCount ? `${university.programCount} ngành / chương trình` : UNIVERSITY_PROFILE_STATUS[university.admissionsStatus]?.compact || "Đang cập nhật ngành"; const code = university.officialAdmissionsCode || university.code; return `<article class="university-card"><div class="university-card-identity">${this.logoMarkup(university)}<div><h3>${escapeHTML(university.name)}</h3><span class="school-code">${escapeHTML(code)} · ${escapeHTML(university.shortName)}</span></div></div><div class="university-actions"><span class="school-count">${escapeHTML(label)}</span><button class="card-link" data-school-id="${escapeHTML(university.id)}" type="button" aria-label="Hồ sơ ${escapeHTML(university.name)}">Hồ sơ ↗</button></div></article>`; }
 
   async openUniversityModal(universityId, trigger, targetMajorId = "", updateRoute = true) {
     const summary = this.repository.getUniversity(universityId); if (!summary) return;
@@ -925,12 +925,12 @@ class THPTApp {
       const profileFormulas = formulaData.catalog ? formulaData.catalog.methods : formulaData.profileFormulas || formulaData.methods || [];
       const formulas = profileFormulas.map((item) => this.admissionFormulaMarkup(item, { profile: true })).join("");
       const formulaStats = formulaData.stats || {};
-      const formulaCoverage = formulaData.catalog ? `${profileFormulas.length} phương thức đã rà soát · ${profileFormulas.filter((m) => m.status === "official_verified").length} công thức chính thức` : formulaStats.totalMethods
+      const formulaCoverage = formulaData.catalog ? `${profileFormulas.length} phương thức đã kiểm tra · ${profileFormulas.filter((m) => m.status === "official_verified").length} công thức chính thức` : formulaStats.totalMethods
         ? `${formulaStats.coveredMethods}/${formulaStats.totalMethods} phương thức · ${formulaStats.officialMethodCount || 0} công thức chính thức`
-        : "Không có dòng ngành áp dụng";
+        : "Chưa có ngành áp dụng";
       const website = safeWebsite(university.website);
       const admissionsCode = university.officialAdmissionsCode || university.code;
-      this.elements.modalBody.innerHTML = `<div class="detail-header">${this.logoMarkup(university)}<div><p class="modal-kicker">Hồ sơ tuyển sinh 2026</p><h2 id="modal-title">${escapeHTML(university.name)}</h2><p>Mã tuyển sinh: ${escapeHTML(admissionsCode)} · ${escapeHTML(this.regionLabel(university.region))}</p></div><button class="button button-text report-school-button" type="button" data-report-school="${escapeHTML(university.id)}">Báo dữ liệu sai</button></div><div class="profile-status profile-status-compact"><p><b>${escapeHTML(status)}</b> · ${verifiedRows} mục xác minh · ${referenceRows} mục tham khảo</p><p>${escapeHTML(note)}</p>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Website chính thức ↗</a>` : ""}</div><section class="profile-formulas" aria-labelledby="profile-formulas-title"><div class="profile-major-heading"><div><p class="modal-kicker">Dữ liệu đã kiểm tra</p><h3 class="modal-section-title" id="profile-formulas-title">Công thức xét tuyển</h3></div><span>${escapeHTML(formulaCoverage)}</span></div>${formulas || `<div class="info-callout formula-unverified">${escapeHTML(formulaData.emptyReason || "Hồ sơ chưa có dòng ngành để áp dụng công thức.")}</div>`}</section><section class="profile-majors" aria-labelledby="profile-majors-title"><div class="profile-major-heading"><div><p class="modal-kicker">Tra cứu nhanh</p><h3 class="modal-section-title" id="profile-majors-title">Ngành và điểm chuẩn 2026</h3></div><span>${programCount} ngành / chương trình</span></div><div class="detail-filters"><input id="detail-major-search" type="search" placeholder="Tìm ngành hoặc mã ngành" aria-label="Tìm ngành" ${summary.majorRowCount ? "" : "disabled"} /><select id="detail-method-filter" aria-label="Lọc phương thức" ${summary.majorRowCount ? "" : "disabled"}><option value="">Tất cả phương thức</option>${methods.map((method) => `<option value="${escapeHTML(method)}">${escapeHTML(method)}</option>`).join("")}</select></div><p class="detail-result-count" id="detail-result-count"></p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Ngành</th><th>Mã ngành</th><th>Tổ hợp</th><th>Phương thức</th><th>Điểm chuẩn 2026</th><th>Công thức tính điểm</th></tr></thead><tbody id="detail-major-rows"></tbody></table></div><nav class="pagination detail-pagination" id="detail-major-pagination" aria-label="Trang ngành trong hồ sơ"></nav></section><details class="profile-overview"><summary>Thông tin trường và đề án tuyển sinh</summary><div class="profile-overview-body"><p class="modal-description">${escapeHTML(university.description)}</p><div class="detail-meta"><div><span>KHU VỰC</span><b>${escapeHTML(this.regionLabel(university.region))}</b></div><div><span>NGÀNH / CHƯƠNG TRÌNH</span><b>${programCount}</b></div><div><span>DÒNG NGÀNH / PHƯƠNG THỨC</span><b>${summary.majorRowCount || 0}</b></div><div><span>ĐIỂM CHUẨN ĐÃ CẬP NHẬT</span><b>${published}</b></div><div><span>KIỂM TRA DỮ LIỆU</span><b>${escapeHTML(checkedAt)}</b></div><div><span>WEBSITE</span>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Trang của trường ↗</a>` : "<b>Đang cập nhật</b>"}</div></div><div class="profile-sections"><details><summary>Phương thức tuyển sinh</summary><div class="profile-section-body"><p>${escapeHTML((evidence.methods || university.methods || []).join(" · ") || classified || "Đang cập nhật")}</p></div></details></div></div></details>`;
+      this.elements.modalBody.innerHTML = `<div class="detail-header">${this.logoMarkup(university)}<div><p class="modal-kicker">Hồ sơ tuyển sinh 2026</p><h2 id="modal-title">${escapeHTML(university.name)}</h2><p>Mã tuyển sinh: ${escapeHTML(admissionsCode)} · ${escapeHTML(this.regionLabel(university.region))}</p></div><button class="button button-text report-school-button" type="button" data-report-school="${escapeHTML(university.id)}">Báo dữ liệu sai</button></div><div class="profile-status profile-status-compact"><p><b>${escapeHTML(status)}</b> · ${verifiedRows} mục đã xác minh · ${referenceRows} mục tham khảo</p><p>${escapeHTML(note)}</p>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Website chính thức ↗</a>` : ""}</div><section class="profile-formulas" aria-labelledby="profile-formulas-title"><div class="profile-major-heading"><div><p class="modal-kicker">Dữ liệu đã kiểm tra</p><h3 class="modal-section-title" id="profile-formulas-title">Công thức xét tuyển</h3></div><span>${escapeHTML(formulaCoverage)}</span></div>${formulas || `<div class="info-callout formula-unverified">${escapeHTML(formulaData.emptyReason || "Chưa có ngành trong hồ sơ để áp dụng công thức.")}</div>`}</section><section class="profile-majors" aria-labelledby="profile-majors-title"><div class="profile-major-heading"><div><p class="modal-kicker">Tra cứu nhanh</p><h3 class="modal-section-title" id="profile-majors-title">Ngành và điểm chuẩn 2026</h3></div><span>${programCount} ngành / chương trình</span></div><div class="detail-filters"><input id="detail-major-search" type="search" placeholder="Tìm ngành hoặc mã ngành" aria-label="Tìm ngành" ${summary.majorRowCount ? "" : "disabled"} /><select id="detail-method-filter" aria-label="Lọc phương thức" ${summary.majorRowCount ? "" : "disabled"}><option value="">Tất cả phương thức</option>${methods.map((method) => `<option value="${escapeHTML(method)}">${escapeHTML(method)}</option>`).join("")}</select></div><p class="detail-result-count" id="detail-result-count"></p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Ngành</th><th>Mã ngành</th><th>Tổ hợp</th><th>Phương thức</th><th>Điểm chuẩn 2026</th><th>Công thức tính điểm</th></tr></thead><tbody id="detail-major-rows"></tbody></table></div><nav class="pagination detail-pagination" id="detail-major-pagination" aria-label="Trang ngành trong hồ sơ"></nav></section><details class="profile-overview"><summary>Thông tin trường và đề án tuyển sinh</summary><div class="profile-overview-body"><p class="modal-description">${escapeHTML(university.description)}</p><div class="detail-meta"><div><span>Khu vực</span><b>${escapeHTML(this.regionLabel(university.region))}</b></div><div><span>Ngành / chương trình</span><b>${programCount}</b></div><div><span>Mục ngành / phương thức</span><b>${summary.majorRowCount || 0}</b></div><div><span>Điểm chuẩn đã cập nhật</span><b>${published}</b></div><div><span>Kiểm tra dữ liệu</span><b>${escapeHTML(checkedAt)}</b></div><div><span>Website</span>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Trang của trường ↗</a>` : "<b>Đang cập nhật</b>"}</div></div><div class="profile-sections"><details><summary>Phương thức tuyển sinh</summary><div class="profile-section-body"><p>${escapeHTML((evidence.methods || university.methods || []).join(" · ") || classified || "Đang cập nhật")}</p></div></details></div></div></details>`;
       const pageSize = 25;
       let detailPage = initialPage.pagination.page;
       let detailRequest = 0;
@@ -968,7 +968,7 @@ class THPTApp {
     const referenceFormula = formulaData ? this.referenceFormulaForMajor(major, formulaData) : null;
     const formula = verifiedFormula || referenceFormula;
     const formulaStatus = verifiedFormula?.status === "official_verified" ? "✓ Theo phương thức · chính thức" : (formula ? "Theo phương thức · cần đối chiếu" : "Đang cập nhật");
-    const formulaText = formula?.expression || major.formulaText || "Chưa có công thức cho dòng ngành này.";
+    const formulaText = formula?.expression || major.formulaText || "Chưa có công thức cho ngành và phương thức này.";
     const source = formula?.sourceLink || formula?.officialLink;
     const sourceUrl = safeWebsite(source?.url);
     const target = major.id === targetMajorId;
@@ -1045,7 +1045,7 @@ class THPTApp {
     const scale = $("#major-score-scale")?.value;
     target.classList.toggle("is-hidden", !raw);
     target.dataset.state = raw ? "manual" : "";
-    target.textContent = raw ? `Đang dùng điểm nhập trực tiếp: ${raw}/${scale || "?"} — ${method || "chưa chọn phương thức"} 2026` : "";
+    target.textContent = raw ? `Đang dùng điểm nhập trực tiếp: ${raw}/${scale || "?"} · ${method || "chưa chọn phương thức"} 2026` : "";
   }
   exitAllCombinationMode(clearFinderContext = false) {
     this.majorSearchMode = "filters";
@@ -1061,12 +1061,12 @@ class THPTApp {
     this.majorPage = 1;
     $("#major-result-grid").innerHTML = "";
     $("#major-pagination").innerHTML = "";
-    $("#major-result-summary").textContent = "Bộ lọc đã thay đổi. Nhấn “Tìm ngành” để cập nhật kết quả.";
+    $("#major-result-summary").textContent = "Bộ lọc đã thay đổi. Nhấn \"Tìm ngành\" để cập nhật kết quả.";
   }
   validateMajorFilterContext() {
     const query = this.majorFilterQuery();
     const scale = Number(query.scale);
-    for (const [label, raw] of [["Điểm của tôi", query.score], ["Điểm chuẩn tối đa", query.maxScore]]) {
+    for (const [label, raw] of [["Điểm của bạn", query.score], ["Điểm chuẩn tối đa", query.maxScore]]) {
       if (raw === "" || raw === null || raw === undefined) continue;
       if (!query.method || !Number.isFinite(scale)) return { valid: false, message: `${label}: hãy chọn phương thức và thang điểm.` };
       const value = Number(raw);
@@ -1099,7 +1099,7 @@ class THPTApp {
   majorResultCard(major) {
     const status = publishableCutoff(major) ? cutoffStatusLabel(major) : cutoffLabel(major);
     let comparison = "Chưa đủ dữ liệu để so sánh.";
-    if (major.comparison?.compatible) comparison = `${major.comparison.direction === "above" ? "Điểm của bạn cao hơn" : "Điểm của bạn thấp hơn"} mốc · Chênh lệch: ${major.comparison.difference >= 0 ? "+" : ""}${formatScore(major.comparison.difference)}`;
+    if (major.comparison?.compatible) comparison = `${major.comparison.direction === "above" ? "Điểm của bạn cao hơn" : "Điểm của bạn thấp hơn"} điểm chuẩn · Chênh lệch: ${major.comparison.difference >= 0 ? "+" : ""}${formatScore(major.comparison.difference)}`;
     else if (major.comparison?.reason) comparison = major.comparison.reason;
     const selected = major.combinationMatch;
     const comparedScore = selected?.userScore ?? major.comparison?.userScore;
@@ -1108,7 +1108,7 @@ class THPTApp {
     const hasComparison = major.comparison !== undefined || this.finderComparisonScore !== null || $("#major-user-score").value.trim();
     const universityCode = major.university?.officialAdmissionsCode || major.university?.code || major.university?.shortName || "ĐH";
     const universityName = major.university?.name || major.university?.shortName || "Trường đang cập nhật";
-    return `<article class="major-result-card"><div class="major-result-school"><span><b>${escapeHTML(universityCode)}</b><span aria-hidden="true"> · </span>${escapeHTML(universityName)}</span><small>${escapeHTML(major.method || "Đang cập nhật")}</small></div><h3>${escapeHTML(major.name)}</h3><p>${escapeHTML(major.code)} · ${escapeHTML(selected?.combination || major.comparison?.combination || major.combination || "Đang cập nhật tổ hợp")}</p>${Number.isFinite(comparedScore) ? `<div class="user-score-line"><span>Điểm của tôi</span><b>${formatScore(comparedScore)} / ${comparedScale}</b></div>` : ""}<div class="major-result-cutoff"><b>${escapeHTML(cutoffLabel(major))}</b><span>${escapeHTML(status)}</span></div>${hasComparison ? `<p class="comparison-text">${escapeHTML(comparison)}</p>` : ""}${alternatives}<div class="major-card-actions"><button class="button button-light" type="button" data-view-major="${escapeHTML(major.id)}" data-university-id="${escapeHTML(major.universityId)}">Chi tiết</button><button class="button button-light" type="button" data-compare-major="${escapeHTML(major.id)}">So sánh</button><button class="button button-secondary" type="button" data-save-major="${escapeHTML(major.id)}" data-major-name="${escapeHTML(major.name)}" data-major-code="${escapeHTML(major.code)}" data-university-id="${escapeHTML(major.universityId)}">♡ Lưu</button></div></article>`;
+    return `<article class="major-result-card"><div class="major-result-school"><span><b>${escapeHTML(universityCode)}</b><span aria-hidden="true"> · </span>${escapeHTML(universityName)}</span><small>${escapeHTML(major.method || "Đang cập nhật")}</small></div><h3>${escapeHTML(major.name)}</h3><p>${escapeHTML(major.code)} · ${escapeHTML(selected?.combination || major.comparison?.combination || major.combination || "Đang cập nhật tổ hợp")}</p>${Number.isFinite(comparedScore) ? `<div class="user-score-line"><span>Điểm của bạn</span><b>${formatScore(comparedScore)} / ${comparedScale}</b></div>` : ""}<div class="major-result-cutoff"><b>${escapeHTML(cutoffLabel(major))}</b><span>${escapeHTML(status)}</span></div>${hasComparison ? `<p class="comparison-text">${escapeHTML(comparison)}</p>` : ""}${alternatives}<div class="major-card-actions"><button class="button button-light" type="button" data-view-major="${escapeHTML(major.id)}" data-university-id="${escapeHTML(major.universityId)}">Chi tiết</button><button class="button button-light" type="button" data-compare-major="${escapeHTML(major.id)}">So sánh</button><button class="button button-secondary" type="button" data-save-major="${escapeHTML(major.id)}" data-major-name="${escapeHTML(major.name)}" data-major-code="${escapeHTML(major.code)}" data-university-id="${escapeHTML(major.universityId)}">♡ Lưu</button></div></article>`;
   }
   findMajorsForCombination(code, score, scale) {
     $("#major-combination-filter").value = code;
@@ -1152,7 +1152,7 @@ class THPTApp {
     if (!checked.valid) { this.showToast(checked.message); $("#major-result-summary").textContent = checked.message; return; }
     this.majorAbort?.abort(); this.majorAbort = new AbortController();
     const requestVersion = ++this.majorRequestVersion;
-    $("#major-result-summary").textContent = "Đang gộp và chọn tổ hợp có lợi nhất...";
+    $("#major-result-summary").textContent = "Đang gộp kết quả và chọn tổ hợp có lợi nhất...";
     const query = checked.query;
     try {
       const data = await this.repository.findBestMajorCombinations({ results: this.allCombinationSearch, year: Number($("#admission-year").value), q: query.q, universityId: query.universityId, region: query.region, maxScore: query.maxScore, cutoffScale: query.cutoffScale, status: query.status, sort: query.sort, page, pageSize: 24 }, { signal: this.majorAbort.signal });
@@ -1205,7 +1205,7 @@ class THPTApp {
     if (!target) return;
     const undo = this.recentWishRemoval ? `<p class="wish-undo" role="status">Đã xóa ${this.recentWishRemoval.items.length} mục. <button class="button button-text" type="button" data-undo-wish>Hoàn tác</button></p>` : "";
     const wishes = this.savedWishes.map((item, index) => `<article class="saved-wish"><span>${index + 1}</span><div><b>${escapeHTML(item.name)}</b><small>${escapeHTML(item.university)} · ${escapeHTML(item.code)}${item.campus ? ` · ${escapeHTML(item.campus)}` : ""}${item.method ? ` · ${escapeHTML(item.method)}` : ""}</small>${this.wishScoreNote(item)}</div><div class="wish-actions"><button type="button" data-move-wish="${escapeHTML(item.wishId)}" data-direction="-1" aria-label="Đưa nguyện vọng lên" ${index === 0 ? "disabled" : ""}>↑</button><button type="button" data-move-wish="${escapeHTML(item.wishId)}" data-direction="1" aria-label="Đưa nguyện vọng xuống" ${index === this.savedWishes.length - 1 ? "disabled" : ""}>↓</button><button type="button" data-compare-wish="${escapeHTML(item.wishId)}" aria-label="Thêm vào so sánh">⇄</button><button type="button" data-remove-wish="${escapeHTML(item.wishId)}" aria-label="Xóa nguyện vọng">×</button></div></article>`).join("");
-    target.innerHTML = undo + (wishes || '<p class="empty-state">Chưa có nguyện vọng nào được lưu.</p>');
+    target.innerHTML = undo + (wishes || '<p class="empty-state">Bạn chưa lưu nguyện vọng nào.</p>');
   }
   removeWish(wishId) { const result = removeWishById(this.savedWishes, wishId); if (!result.removed) return; this.savedWishes = result.items; this.recentWishRemoval = { items: [result.removed], index: result.index }; this.persistWishes(); }
   undoWishRemoval() { if (!this.recentWishRemoval) return; this.savedWishes.splice(this.recentWishRemoval.index, 0, ...this.recentWishRemoval.items); this.recentWishRemoval = null; this.persistWishes(); this.showToast("Đã khôi phục nguyện vọng."); }
@@ -1214,16 +1214,16 @@ class THPTApp {
     const item = fromWish ? this.savedWishes.find((wish) => wish.wishId === id) : this.wishFromMajor(this.repository.getMajor(id));
     if (!item) { this.showToast("Không tìm thấy dữ liệu để so sánh."); return; }
     if (this.comparisonItems.some((saved) => wishIdentity(saved) === wishIdentity(item))) { this.showToast("Mục này đã có trong bảng so sánh."); return; }
-    if (this.comparisonItems.length >= 4) { this.showToast("Bảng so sánh nhận tối đa 4 mục."); return; }
+    if (this.comparisonItems.length >= 4) { this.showToast("Bạn có thể so sánh tối đa 4 mục."); return; }
     this.comparisonItems.push(item); this.persistComparison(); this.showToast("Đã thêm vào bảng so sánh.");
   }
   removeComparison(wishId) { this.comparisonItems = this.comparisonItems.filter((item) => item.wishId !== wishId); this.persistComparison(); }
   persistComparison() { this.comparisonItems = normalizeWishList(this.comparisonItems, 4); storage.set(COMPARE_STORAGE_KEY, this.comparisonItems); this.renderComparison(); }
   renderComparison() {
     const target = $("#comparison-items"); if (!target) return;
-    if (!this.comparisonItems.length) { target.innerHTML = '<p class="empty-state">Thêm 2–4 kết quả để đối chiếu cạnh nhau.</p>'; return; }
+    if (!this.comparisonItems.length) { target.innerHTML = '<p class="empty-state">Thêm 2 đến 4 kết quả để so sánh cạnh nhau.</p>'; return; }
     target.innerHTML = `<div class="comparison-scroll"><table class="comparison-table"><thead><tr><th>Tiêu chí</th>${this.comparisonItems.map((item) => `<th>${escapeHTML(item.university)}</th>`).join("")}</tr></thead><tbody>${[
-      ["Ngành / chương trình", (item) => item.name], ["Mã ngành", (item) => item.code], ["Cơ sở", (item) => item.campus || "Chưa có dữ liệu"], ["Năm", (item) => item.year], ["Tổ hợp", (item) => item.combination || "Chưa có dữ liệu"], ["Phương thức", (item) => item.method || "Chưa có dữ liệu"], ["Thang điểm", (item) => item.scale ?? "Chưa có dữ liệu"], ["Điểm chuẩn", (item) => item.cutoff ?? "Chưa có dữ liệu"], ["Điểm của tôi khi lưu", (item) => item.userScore ?? "Chưa so sánh được"], ["Trạng thái", (item) => item.comparisonStatus === "compatible" ? "Có thể đối chiếu" : item.comparisonReason || "Chưa so sánh được"], ["Học phí", (item) => item.tuitionMin !== null && item.tuitionMin !== undefined ? `${item.tuitionMin}${item.tuitionMax !== null && item.tuitionMax !== undefined ? `–${item.tuitionMax}` : ""} ${item.tuitionUnit || ""}/${item.tuitionPeriod || ""}` : "Chưa có dữ liệu"], ["Điều kiện bổ sung", (item) => item.conditions || "Chưa có dữ liệu"]
+      ["Ngành / chương trình", (item) => item.name], ["Mã ngành", (item) => item.code], ["Cơ sở", (item) => item.campus || "Chưa có dữ liệu"], ["Năm", (item) => item.year], ["Tổ hợp", (item) => item.combination || "Chưa có dữ liệu"], ["Phương thức", (item) => item.method || "Chưa có dữ liệu"], ["Thang điểm", (item) => item.scale ?? "Chưa có dữ liệu"], ["Điểm chuẩn", (item) => item.cutoff ?? "Chưa có dữ liệu"], ["Điểm của bạn khi lưu", (item) => item.userScore ?? "Chưa so sánh được"], ["Trạng thái", (item) => item.comparisonStatus === "compatible" ? "Có thể đối chiếu" : item.comparisonReason || "Chưa so sánh được"], ["Học phí", (item) => item.tuitionMin !== null && item.tuitionMin !== undefined ? `${item.tuitionMin}${item.tuitionMax !== null && item.tuitionMax !== undefined ? ` đến ${item.tuitionMax}` : ""} ${item.tuitionUnit || ""}/${item.tuitionPeriod || ""}` : "Chưa có dữ liệu"], ["Điều kiện bổ sung", (item) => item.conditions || "Chưa có dữ liệu"]
     ].map(([label, value]) => `<tr><th>${label}</th>${this.comparisonItems.map((item) => `<td>${escapeHTML(value(item))}</td>`).join("")}</tr>`).join("")}<tr><th>Bỏ mục</th>${this.comparisonItems.map((item) => `<td><button class="button button-text" type="button" data-remove-compare="${escapeHTML(item.wishId)}">Bỏ</button></td>`).join("")}</tr></tbody></table></div>${this.comparisonItems.length < 2 ? '<p class="saved-wishes-note">Thêm ít nhất một mục nữa để so sánh.</p>' : ""}`;
   }
   async exportWishesPdf(button) {
@@ -1238,7 +1238,7 @@ class THPTApp {
       const filename = wishPdfFilename(exportedAt);
       downloadBlob(pdf, "application/pdf", filename);
       status.textContent = `Đã tải xuống ${filename}.`;
-      this.showToast("Đã xuất và tải file PDF.");
+      this.showToast("Đã tạo và tải file PDF.");
     } catch (error) {
       status.textContent = error.message || "Không thể tạo PDF. Hãy thử lại.";
       this.showToast(status.textContent);
@@ -1251,12 +1251,12 @@ class THPTApp {
     const university = this.repository.getUniversity(major?.universityId || context.universityId);
     this.pendingReportContext = { universityId: university?.id, university: university?.name, majorId: major?.id, major: major?.name, code: major?.code, method: major?.method, year: major?.cutoff?.year || 2026 };
     const reportContext = [university?.shortName || university?.name, major?.name, major?.code].filter(Boolean).join(" · ");
-    this.openModal(`<p class="modal-kicker">Kiểm tra dữ liệu</p><h2 id="modal-title">Báo dữ liệu cần sửa</h2>${reportContext ? `<p class="report-context">${escapeHTML(reportContext)}</p>` : ""}<p class="modal-description">Gửi thông tin đúng và nguồn kiểm chứng để hệ thống quản trị đối chiếu.</p><form id="data-report-form" class="form-card"><div class="form-grid form-grid-two"><div class="field"><label for="report-field">Mục cần chỉnh sửa</label><select id="report-field"><option>Hồ sơ trường</option><option>Tên ngành</option><option>Mã ngành</option><option>Tổ hợp</option><option>Phương thức</option><option>Điểm chuẩn</option><option>Công thức</option><option>Liên kết nguồn</option><option>Khác</option></select></div><div class="field"><label for="report-proposed">Thông tin đúng đề xuất</label><input id="report-proposed" maxlength="500" placeholder="Nhập giá trị đúng nếu có" /></div><div class="field full-field"><label for="report-description">Nội dung báo lỗi</label><textarea id="report-description" minlength="15" maxlength="1000" required placeholder="Nêu rõ dữ liệu nào chưa đúng và lý do (15–1.000 ký tự)"></textarea></div><div class="field full-field"><label for="report-evidence">Nguồn kiểm chứng (không bắt buộc)</label><input id="report-evidence" type="url" maxlength="500" placeholder="https://website-chinh-thuc.edu.vn/..." /></div></div><div class="form-actions"><button class="button button-primary" type="submit" data-submit-report>Gửi báo cáo</button><button class="button button-light" type="button" data-download-report>Tải JSON</button><button class="button button-light" type="button" data-copy-report>Sao chép</button></div><p id="report-status" role="status" aria-live="polite"></p></form>`, trigger);
+    this.openModal(`<p class="modal-kicker">Kiểm tra dữ liệu</p><h2 id="modal-title">Báo dữ liệu cần sửa</h2>${reportContext ? `<p class="report-context">${escapeHTML(reportContext)}</p>` : ""}<p class="modal-description">Gửi thông tin đúng và nguồn để quản trị viên kiểm tra.</p><form id="data-report-form" class="form-card"><div class="form-grid form-grid-two"><div class="field"><label for="report-field">Mục cần sửa</label><select id="report-field"><option>Hồ sơ trường</option><option>Tên ngành</option><option>Mã ngành</option><option>Tổ hợp</option><option>Phương thức</option><option>Điểm chuẩn</option><option>Công thức</option><option>Liên kết nguồn</option><option>Khác</option></select></div><div class="field"><label for="report-proposed">Thông tin đúng</label><input id="report-proposed" maxlength="500" placeholder="Nhập giá trị đúng nếu có" /></div><div class="field full-field"><label for="report-description">Nội dung báo lỗi</label><textarea id="report-description" minlength="15" maxlength="1000" required placeholder="Mô tả thông tin chưa đúng và lý do (15 đến 1.000 ký tự)"></textarea></div><div class="field full-field"><label for="report-evidence">Nguồn kiểm chứng (không bắt buộc)</label><input id="report-evidence" type="url" maxlength="500" placeholder="https://website-chinh-thuc.edu.vn/..." /></div></div><div class="form-actions"><button class="button button-primary" type="submit" data-submit-report>Gửi báo cáo</button><button class="button button-light" type="button" data-download-report>Tải JSON</button><button class="button button-light" type="button" data-copy-report>Sao chép</button></div><p id="report-status" role="status" aria-live="polite"></p></form>`, trigger);
   }
   buildDataReportFromForm() { return createDataReport(this.pendingReportContext, { field: $("#report-field").value, description: $("#report-description").value, proposedValue: $("#report-proposed").value, evidenceUrl: $("#report-evidence").value }); }
-  downloadDataReport() { try { const report = this.buildDataReportFromForm(); downloadBlob(JSON.stringify(report, null, 2), "application/json;charset=utf-8", `bao-du-lieu-${report.context.code || report.context.universityId || "truong"}-${Date.now()}.json`); $("#report-status").textContent = "Đã tạo tệp trên thiết bị; báo cáo chưa được gửi đi."; } catch (error) { this.showToast(error.message); } }
-  async copyDataReport() { try { const report = this.buildDataReportFromForm(); await navigator.clipboard.writeText(JSON.stringify(report, null, 2)); $("#report-status").textContent = "Đã sao chép; báo cáo chưa được gửi đi."; } catch (error) { this.showToast(error.message || "Không thể sao chép báo cáo."); } }
-  async submitDataReport(button) { try { if (!button || button.disabled) return; const report = this.buildDataReportFromForm(); button.disabled = true; button.textContent = "Đang xác minh..."; $("#report-status").textContent = "Đang xác minh yêu cầu..."; const turnstileToken = await turnstileGate.getToken("data_report"); button.textContent = "Đang gửi..."; $("#report-status").textContent = "Đang gửi báo cáo..."; const result = await this.repository.submitDataReport(report, { turnstileToken }); const shortId = String(result.id || "").slice(0, 8); $("#report-status").textContent = result.delivery === "supabase" ? `Đã gửi thành công tới hệ thống quản trị${shortId ? ` · Mã ${shortId}` : ""}.` : `Đã tiếp nhận báo cáo${shortId ? ` · Mã ${shortId}` : ""} và sẽ tự đồng bộ khi kết nối ổn định.`; button.textContent = "Đã gửi"; this.showToast("Đã tiếp nhận báo cáo của bạn."); } catch (error) { $("#report-status").textContent = error.message || "Không thể gửi báo cáo. Bạn có thể tải JSON để giữ lại."; button.disabled = false; button.textContent = "Gửi lại"; this.showToast("Chưa gửi được báo cáo."); } }
+  downloadDataReport() { try { const report = this.buildDataReportFromForm(); downloadBlob(JSON.stringify(report, null, 2), "application/json;charset=utf-8", `bao-du-lieu-${report.context.code || report.context.universityId || "truong"}-${Date.now()}.json`); $("#report-status").textContent = "Đã tạo file trên thiết bị. Báo cáo chưa được gửi."; } catch (error) { this.showToast(error.message); } }
+  async copyDataReport() { try { const report = this.buildDataReportFromForm(); await navigator.clipboard.writeText(JSON.stringify(report, null, 2)); $("#report-status").textContent = "Đã sao chép báo cáo. Báo cáo chưa được gửi."; } catch (error) { this.showToast(error.message || "Không thể sao chép báo cáo."); } }
+  async submitDataReport(button) { try { if (!button || button.disabled) return; const report = this.buildDataReportFromForm(); button.disabled = true; button.textContent = "Đang xác minh..."; $("#report-status").textContent = "Đang xác minh yêu cầu..."; const turnstileToken = await turnstileGate.getToken("data_report"); button.textContent = "Đang gửi..."; $("#report-status").textContent = "Đang gửi báo cáo..."; const result = await this.repository.submitDataReport(report, { turnstileToken }); const shortId = String(result.id || "").slice(0, 8); $("#report-status").textContent = result.delivery === "supabase" ? `Đã gửi báo cáo tới hệ thống quản trị${shortId ? ` · Mã ${shortId}` : ""}.` : `Đã nhận báo cáo${shortId ? ` · Mã ${shortId}` : ""}. Báo cáo sẽ tự đồng bộ khi kết nối ổn định.`; button.textContent = "Đã gửi"; this.showToast("Đã nhận báo cáo của bạn."); } catch (error) { $("#report-status").textContent = error.message || "Không thể gửi báo cáo. Bạn có thể tải JSON để giữ lại."; button.disabled = false; button.textContent = "Gửi lại"; this.showToast("Chưa gửi được báo cáo."); } }
 
   clearFormData() { this.invalidateScoreDerived("Điểm THPT đã bị xóa, cần tính lại."); this.state.autoEntries = undefined; this.state.manualScores = {}; this.renderAutoSubjectRows(); this.renderManualScoreFields(); this.resetThptResult(); this.saveForm(); this.showToast("Đã xóa điểm THPT đã lưu trên thiết bị."); }
   normalizeSearch(value) { return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLocaleLowerCase("vi").trim(); }
@@ -1267,25 +1267,25 @@ class THPTApp {
   openPrivacyPolicy(trigger) {
     this.openModal(`<p class="modal-kicker">Quyền riêng tư</p>
       <h2 id="modal-title">Chính sách quyền riêng tư</h2>
-      <p class="modal-description">Cập nhật ngày 01/10/2026. Chính sách này giải thích cách Tính Điểm THPT xử lý dữ liệu khi bạn sử dụng website.</p>
+      <p class="modal-description">Cập nhật ngày 01/10/2026.</p>
       <div class="privacy-policy">
         <h3>Điểm số và dữ liệu sử dụng</h3>
-        <p>Điểm bạn nhập, nguyện vọng, bảng so sánh, bài thi đang làm và kết quả thi thử được lưu trên thiết bị để bạn tiếp tục sử dụng. Bạn có thể dùng các công cụ mà không cần tạo tài khoản.</p>
-        <p>Với người chưa đăng nhập, dữ liệu phiên cũ được xóa khi bạn quay lại sau ít nhất 15 phút rời website. Tùy chọn giao diện như chế độ sáng hoặc tối vẫn được giữ lại.</p>
+        <p>Website lưu điểm bạn nhập, nguyện vọng, bảng so sánh, bài thi đang làm và kết quả thi thử trên thiết bị để bạn tiếp tục dùng. Bạn có thể dùng các công cụ mà không cần tạo tài khoản.</p>
+        <p>Nếu bạn chưa đăng nhập, website xóa dữ liệu phiên cũ khi bạn quay lại sau ít nhất 15 phút rời website. Các tùy chọn giao diện, như chế độ sáng hoặc tối, vẫn được giữ lại.</p>
         <h3>Tài khoản và bản sao dữ liệu</h3>
-        <p>Khi tạo tài khoản, website lưu tên đăng nhập và mật khẩu đã được mã hóa một chiều, không lưu mật khẩu dạng đọc được. Cookie đăng nhập giúp duy trì phiên sử dụng.</p>
-        <p>Khi đăng nhập, dữ liệu công cụ có thể tự sao lưu vào tài khoản để khôi phục trên thiết bị khác. Bản sao này được giữ để bạn tiếp tục sử dụng và không áp dụng thời hạn 15 phút của phiên khách.</p>
+        <p>Khi bạn tạo tài khoản, website lưu tên đăng nhập và mật khẩu đã mã hóa một chiều, không lưu mật khẩu dạng đọc được. Cookie giúp giữ bạn đăng nhập.</p>
+        <p>Khi bạn đăng nhập, website có thể tự sao lưu dữ liệu công cụ vào tài khoản để bạn khôi phục trên thiết bị khác. Bản sao được giữ để bạn tiếp tục dùng, không áp dụng thời hạn 15 phút của phiên khách.</p>
         <h3>Ảnh học bạ</h3>
-        <p>Ảnh chỉ được gửi để nhận diện điểm sau khi bạn đồng ý và bấm quét. Website xử lý ảnh tạm thời, không lưu ảnh hoặc nội dung nhận diện thô vào kho dữ liệu của website. Bạn cần kiểm tra và xác nhận điểm trước khi sử dụng kết quả.</p>
-        <p>Nếu bạn chọn quét trực tiếp trên thiết bị, ảnh được nhận diện ngay trong trình duyệt. Hãy che họ tên, ngày sinh, số giấy tờ và các thông tin không cần thiết trước khi chọn ảnh.</p>
+        <p>Website chỉ gửi ảnh để nhận diện điểm sau khi bạn đồng ý và bấm quét. Ảnh được xử lý tạm thời; website không lưu ảnh hoặc nội dung nhận diện thô vào kho dữ liệu của website. Bạn cần kiểm tra và xác nhận điểm trước khi dùng kết quả.</p>
+        <p>Nếu bạn chọn quét trên thiết bị, trình duyệt nhận diện ảnh ngay trên thiết bị của bạn. Hãy che họ tên, ngày sinh, số giấy tờ và thông tin không cần thiết trước khi chọn ảnh.</p>
         <h3>Trợ lý và báo thông tin sai</h3>
-        <p>Để trả lời câu hỏi, trợ lý có thể gửi nội dung bạn nhập và một phần cuộc trò chuyện gần nhất tới dịch vụ hỗ trợ xử lý. Website không lưu cuộc trò chuyện vào tài khoản hoặc cơ sở dữ liệu. Bạn không nên gửi mật khẩu, mã xác thực hoặc giấy tờ cá nhân trong trò chuyện.</p>
-        <p>Báo sai chỉ được gửi khi bạn bấm “Gửi báo cáo”. Nội dung và nguồn kiểm chứng được lưu để quản trị viên đối chiếu, sửa dữ liệu; ảnh học bạ không được đính kèm vào báo cáo.</p>
+        <p>Trợ lý có thể gửi nội dung bạn nhập và một phần cuộc trò chuyện gần nhất tới dịch vụ hỗ trợ để trả lời câu hỏi. Website không lưu cuộc trò chuyện vào tài khoản hoặc cơ sở dữ liệu. Bạn không nên gửi mật khẩu, mã xác thực hoặc giấy tờ cá nhân trong trò chuyện.</p>
+        <p>Website chỉ gửi báo cáo khi bạn bấm "Gửi báo cáo". Nội dung và nguồn kiểm chứng được lưu để quản trị viên kiểm tra, sửa dữ liệu. Báo cáo không đính kèm ảnh học bạ.</p>
         <h3>Dịch vụ hỗ trợ và bảo mật</h3>
-        <p>Website sử dụng dịch vụ hỗ trợ để nhận diện ảnh, trả lời câu hỏi, lưu bản sao và xác minh bảo mật. Những dịch vụ này có thể xử lý dữ liệu cần thiết cho chức năng bạn dùng theo chính sách riêng của họ. Thông tin kỹ thuật như địa chỉ IP và thông tin trình duyệt có thể được xử lý để vận hành website và ngăn chặn lạm dụng.</p>
-        <p>Dữ liệu được truyền qua kết nối HTTPS. Hãy sử dụng website tại tinhdiemthpt.id.vn và bảo vệ thông tin đăng nhập của bạn.</p>
+        <p>Website dùng dịch vụ hỗ trợ để nhận diện ảnh, trả lời câu hỏi, lưu bản sao và xác minh bảo mật. Các dịch vụ này có thể xử lý dữ liệu cần thiết cho chức năng bạn dùng theo chính sách riêng của họ. Thông tin kỹ thuật, như địa chỉ IP và thông tin trình duyệt, có thể được xử lý để vận hành website và ngăn chặn lạm dụng.</p>
+        <p>Website truyền dữ liệu qua kết nối HTTPS. Bạn hãy dùng website tại tinhdiemthpt.id.vn và bảo vệ thông tin đăng nhập của mình.</p>
         <h3>Bạn có thể kiểm soát dữ liệu</h3>
-        <p>Bạn có thể xóa điểm, nguyện vọng và bảng so sánh bằng các nút xóa tương ứng; xóa ảnh đã chọn hoặc từ chối gửi ảnh. Khi dùng thiết bị chung, hãy đăng xuất sau khi sử dụng.</p>
+        <p>Bạn có thể xóa điểm, nguyện vọng và bảng so sánh bằng từng nút xóa. Bạn cũng có thể xóa ảnh đã chọn hoặc từ chối gửi ảnh. Nếu dùng thiết bị chung, hãy đăng xuất sau khi dùng.</p>
         <p>Xóa dữ liệu trên thiết bị không tự xóa bản sao trong tài khoản. Đăng xuất cũng không xóa tài khoản hoặc bản sao đã lưu.</p>
       </div>`, trigger);
   }
@@ -1296,7 +1296,7 @@ class THPTApp {
   openScoreSimulation() {
     if (!this.lastThptInput?.automatic) return;
     const options = this.lastThptInput.entries.map((item) => `<option value="${escapeHTML(item.subjectKey)}">${escapeHTML(subjectLabelForKey(item.subjectKey))} · ${formatScore(item.score)}</option>`).join("");
-    this.openModal(`<p class="modal-kicker">Mô phỏng, chưa thay điểm thật</p><h2 id="modal-title">Thử tăng hoặc giảm một môn</h2><p class="modal-description">Kết quả chỉ cho thấy phép tính thay đổi thế nào, không dự báo chắc chắn trúng tuyển.</p><div class="form-grid form-grid-two"><div class="field"><label for="simulation-subject">Môn</label><select id="simulation-subject">${options}</select></div><div class="field"><label for="simulation-delta">Tăng / giảm</label><input id="simulation-delta" type="number" inputmode="decimal" min="-10" max="10" step="0.1" value="0.5" /></div></div><div id="simulation-preview" aria-live="polite"></div><div class="form-actions"><button class="button button-primary" type="button" data-apply-simulation disabled>Áp dụng vào điểm thật</button></div>`, $("#simulate-score"));
+    this.openModal(`<p class="modal-kicker">Mô phỏng, chưa thay điểm thật</p><h2 id="modal-title">Thử tăng hoặc giảm một môn</h2><p class="modal-description">Bạn có thể xem điểm xét tuyển thay đổi thế nào. Kết quả không đảm bảo bạn sẽ trúng tuyển.</p><div class="form-grid form-grid-two"><div class="field"><label for="simulation-subject">Môn</label><select id="simulation-subject">${options}</select></div><div class="field"><label for="simulation-delta">Tăng / giảm</label><input id="simulation-delta" type="number" inputmode="decimal" min="-10" max="10" step="0.1" value="0.5" /></div></div><div id="simulation-preview" aria-live="polite"></div><div class="form-actions"><button class="button button-primary" type="button" data-apply-simulation disabled>Áp dụng vào điểm thật</button></div>`, $("#simulate-score"));
     const update = () => {
       try {
         const calculation = simulateScoreChange({ entries: this.lastThptInput.entries, subjectKey: $("#simulation-subject").value, delta: $("#simulation-delta").value, calculate: (entries) => calculateAutomaticCombinations({ entries, combinations: this.repository.combinations, year: this.lastThptInput.year, priorityContext: this.lastThptInput.priorityContext }).results });
@@ -1305,7 +1305,7 @@ class THPTApp {
         const beforeBest = calculation.before[0], afterBest = calculation.after[0];
         const byCode = new Map(calculation.before.map((item) => [item.combination.code, item]));
         const changes = calculation.after.map((item) => { const previous = byCode.get(item.combination.code); const difference = previous ? Number((item.result.total - previous.result.total).toFixed(2)) : null; return `<li><span>${escapeHTML(item.combination.code)} · ${previous ? formatScore(previous.result.total) : "—"} → ${formatScore(item.result.total)}</span><b>${difference === null ? "Mới" : `${difference >= 0 ? "+" : ""}${formatScore(difference)}`}</b></li>`; }).join("");
-        $("#simulation-preview").innerHTML = `<div class="simulation-grid"><article><span>Tổ hợp tốt nhất trước</span><b>${escapeHTML(beforeBest.combination.code)} · ${formatScore(beforeBest.result.total)} / ${beforeBest.result.maxScore}</b></article><article><span>Tổ hợp tốt nhất sau mô phỏng</span><b>${escapeHTML(afterBest.combination.code)} · ${formatScore(afterBest.result.total)} / ${afterBest.result.maxScore}</b></article></div><p class="comparison-text">${escapeHTML(subjectLabelForKey(calculation.subjectKey))}: ${formatScore(calculation.originalScore)} → ${formatScore(calculation.simulatedScore)} · Ưu tiên ${formatScore(beforeBest.result.priority.adjusted)} → ${formatScore(afterBest.result.priority.adjusted)}</p><ul class="explanation-list">${changes}</ul>`;
+        $("#simulation-preview").innerHTML = `<div class="simulation-grid"><article><span>Tổ hợp có điểm cao nhất trước</span><b>${escapeHTML(beforeBest.combination.code)} · ${formatScore(beforeBest.result.total)} / ${beforeBest.result.maxScore}</b></article><article><span>Tổ hợp có điểm cao nhất sau mô phỏng</span><b>${escapeHTML(afterBest.combination.code)} · ${formatScore(afterBest.result.total)} / ${afterBest.result.maxScore}</b></article></div><p class="comparison-text">${escapeHTML(subjectLabelForKey(calculation.subjectKey))}: ${formatScore(calculation.originalScore)} → ${formatScore(calculation.simulatedScore)} · Ưu tiên ${formatScore(beforeBest.result.priority.adjusted)} → ${formatScore(afterBest.result.priority.adjusted)}</p><ul class="explanation-list">${changes}</ul>`;
         $("[data-apply-simulation]").disabled = false;
       } catch (error) { this.pendingSimulation = null; $("#simulation-preview").innerHTML = `<p class="error-state">${escapeHTML(error.message)}</p>`; $("[data-apply-simulation]").disabled = true; }
     };
@@ -1320,7 +1320,7 @@ class THPTApp {
     this.invalidateScoreDerived("Điểm mô phỏng đã được áp dụng, cần cập nhật kết quả tìm ngành.");
     input.value = String(this.pendingSimulation.simulatedScore); this.pendingSimulation = null; this.closeModal(); this.calculateTHPT(false); this.showToast("Đã áp dụng điểm mô phỏng vào bảng điểm.");
   }
-  openCombinationModal(id, trigger) { const combination = this.repository.getCombination(id); if (!combination) return; const rows = combination.subjects.map((subject, index) => `<li><span>Môn ${index + 1}</span><b>${escapeHTML(subject)}</b></li>`).join(""); const usable = isStandardCombination(combination); this.openModal(`<p class="modal-kicker">Tổ hợp xét tuyển</p><h2 id="modal-title">${escapeHTML(combination.code)}</h2><p class="modal-description">${escapeHTML(combination.subjectText)}</p><ul class="explanation-list">${rows}</ul>${usable ? `<div class="form-actions"><button class="button button-primary" type="button" data-use-combination="${escapeHTML(combination.id)}">Dùng để tính điểm</button></div>` : '<div class="info-callout">Tổ hợp đặc thù được giữ để tra cứu và chưa dùng trong bộ tính THPT tiêu chuẩn.</div>'}`, trigger); $("[data-use-combination]")?.addEventListener("click", (event) => { this.elements.combinationSelect.value = event.currentTarget.dataset.useCombination; this.renderManualScoreFields(); this.setThptMode("manual"); this.closeModal(); this.goTo("#calculator"); }); }
+  openCombinationModal(id, trigger) { const combination = this.repository.getCombination(id); if (!combination) return; const rows = combination.subjects.map((subject, index) => `<li><span>Môn ${index + 1}</span><b>${escapeHTML(subject)}</b></li>`).join(""); const usable = isStandardCombination(combination); this.openModal(`<p class="modal-kicker">Tổ hợp xét tuyển</p><h2 id="modal-title">${escapeHTML(combination.code)}</h2><p class="modal-description">${escapeHTML(combination.subjectText)}</p><ul class="explanation-list">${rows}</ul>${usable ? `<div class="form-actions"><button class="button button-primary" type="button" data-use-combination="${escapeHTML(combination.id)}">Dùng để tính điểm</button></div>` : '<div class="info-callout">Bạn có thể tra cứu tổ hợp đặc thù này, nhưng chưa dùng được để tính điểm THPT tiêu chuẩn.</div>'}`, trigger); $("[data-use-combination]")?.addEventListener("click", (event) => { this.elements.combinationSelect.value = event.currentTarget.dataset.useCombination; this.renderManualScoreFields(); this.setThptMode("manual"); this.closeModal(); this.goTo("#calculator"); }); }
   showToast(message) { this.elements.toast.textContent = message; this.elements.toast.classList.add("show"); clearTimeout(this.toastTimer); this.toastTimer = setTimeout(() => this.elements.toast.classList.remove("show"), 3200); }
 }
 

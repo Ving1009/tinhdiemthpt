@@ -23,27 +23,27 @@ export async function handleOcrRequest(request, scanTranscript) {
     const bytes = await readLimitedBody(request, MAX_MULTIPART_BYTES);
     let form;
     try { form = await new Response(bytes, { headers: { "Content-Type": request.headers.get("Content-Type") || "" } }).formData(); }
-    catch { throw new AppError("Dữ liệu tải ảnh không hợp lệ. Hãy chọn lại ảnh và thử lại.", { statusCode: 400, code: "INVALID_MULTIPART" }); }
+    catch { throw new AppError("Dữ liệu tải ảnh không hợp lệ. Bạn hãy chọn lại ảnh rồi thử lại.", { statusCode: 400, code: "INVALID_MULTIPART" }); }
     const files = form.getAll("images[]").filter((file) => file && typeof file.arrayBuffer === "function");
-    if (!files.length) throw new AppError("Hãy chọn ít nhất một ảnh học bạ.", { statusCode: 400, code: "MISSING_IMAGES" });
+    if (!files.length) throw new AppError("Bạn hãy chọn ít nhất một ảnh học bạ.", { statusCode: 400, code: "MISSING_IMAGES" });
     if ([...form.entries()].some(([key, file]) => key !== "images[]" || !file || typeof file.arrayBuffer !== "function")) {
       throw new AppError("Yêu cầu chỉ được chứa các ảnh học bạ đã chọn.", { statusCode: 400, code: "LIMIT_UNEXPECTED_FILE" });
     }
-    if (files.length > MAX_IMAGES) throw new AppError(`Chỉ được tải tối đa ${MAX_IMAGES} ảnh.`, { statusCode: 400, code: "LIMIT_FILE_COUNT" });
+    if (files.length > MAX_IMAGES) throw new AppError(`Bạn có thể tải tối đa ${MAX_IMAGES} ảnh mỗi lần.`, { statusCode: 400, code: "LIMIT_FILE_COUNT" });
     if (files.some((file) => !ALLOWED_MIME_TYPES.has(file.type))) {
       throw new AppError("Chỉ hỗ trợ ảnh JPG, PNG hoặc WEBP.", { statusCode: 400, code: "UNSUPPORTED_IMAGE" });
     }
     if (files.some((file) => file.size > MAX_IMAGE_BYTES)) {
-      throw new AppError("Mỗi ảnh tối đa 7 MB.", { statusCode: 413, code: "LIMIT_FILE_SIZE" });
+      throw new AppError("Mỗi ảnh có dung lượng tối đa 7 MB. Bạn hãy giảm dung lượng ảnh rồi thử lại.", { statusCode: 413, code: "LIMIT_FILE_SIZE" });
     }
     if (files.reduce((total, file) => total + file.size, 0) > MAX_TOTAL_BYTES) {
-      throw new AppError("Tổng dung lượng ảnh vượt quá giới hạn 10 MB.", { statusCode: 413, code: "IMAGES_TOO_LARGE" });
+      throw new AppError("Tổng dung lượng ảnh vượt giới hạn 10 MB. Bạn hãy chọn ít ảnh hơn hoặc giảm dung lượng ảnh.", { statusCode: 413, code: "IMAGES_TOO_LARGE" });
     }
     const images = [];
     for (const file of files) {
       const buffer = Buffer.from(await file.arrayBuffer());
       if (!hasMagicBytes(buffer, file.type)) {
-        throw new AppError("Có ảnh không hợp lệ. Hãy chọn đúng ảnh JPG, PNG hoặc WEBP.", { statusCode: 400, code: "INVALID_IMAGE" });
+        throw new AppError("Có ảnh không hợp lệ. Bạn hãy chọn lại ảnh JPG, PNG hoặc WEBP.", { statusCode: 400, code: "INVALID_IMAGE" });
       }
       const extension = file.type === "image/png" ? "png" : file.type === "image/webp" ? "webp" : "jpg";
       images.push({ buffer, size: buffer.length, mimetype: file.type, originalname: `hoc-ba-${images.length + 1}.${extension}` });

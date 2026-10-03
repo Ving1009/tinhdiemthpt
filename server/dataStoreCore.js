@@ -228,7 +228,7 @@ export function createDataStore({ universities, majors, combinations, subjects, 
       const calculationRows = method.applicableRows.filter((major) => major.method === label);
       const methodId = (method.repositoryMethods || []).length === 1 ? method.id : `${method.id}-${formulaIdPart(label)}`;
       const calculationNote = calculationRows.length < methodRows.length
-        ? ` Website hiện hỗ trợ nhập điểm tự động cho ${calculationRows.length}/${methodRows.length} dòng đã đủ dữ liệu kỹ thuật.`
+        ? ` Bạn có thể nhập điểm tự động cho ${calculationRows.length}/${methodRows.length} dòng đã đủ dữ liệu để tính.`
         : "";
       return [{
         id: methodId,
@@ -295,7 +295,7 @@ export function createDataStore({ universities, majors, combinations, subjects, 
         conditions: [],
         priority: "Áp dụng điểm cộng và điểm ưu tiên theo quy chế 2026 cùng đề án của trường.",
         conversion: "Nếu phương thức có quy đổi, phải dùng đúng bảng quy đổi 2026 của trường trước khi nộp hồ sơ.",
-        combinationNote: combinations.length ? "Theo tổ hợp ghi tại từng ngành / chương trình." : "Theo thành phần và điều kiện của phương thức.",
+        combinationNote: combinations.length ? "Theo tổ hợp của từng ngành hoặc chương trình." : "Theo thành phần và điều kiện của phương thức.",
         combinations,
         programs,
         rowIds: group.rows.map((major) => major.id),
@@ -303,8 +303,8 @@ export function createDataStore({ universities, majors, combinations, subjects, 
         autoCalculate: false,
         formulaModuleId: "",
         applicabilityNote: variants.length === 1
-          ? `Công thức dùng chung cho phương thức ${group.label} của trường; chưa bật tính tự động.`
-          : `Phương thức ${group.label} có ${variants.length} nhánh điều kiện theo nhóm ngành/chương trình; vẫn được quản lý như một công thức phương thức.`
+          ? `Công thức dùng chung cho phương thức ${group.label} của trường. Website chưa hỗ trợ tính tự động.`
+          : `Phương thức ${group.label} có ${variants.length} trường hợp theo điều kiện của từng nhóm ngành hoặc chương trình. Các trường hợp này thuộc cùng một công thức của phương thức.`
       };
     });
     const profileFormulas = [...methods, ...referenceMethods];
@@ -332,9 +332,9 @@ export function createDataStore({ universities, majors, combinations, subjects, 
       year: allAdmissionFormulas.year,
       verifiedAt: allAdmissionFormulas.verifiedAt,
       message: rows.length
-        ? `Đã có công thức và nguồn cho ${coveredMethodCount}/${methodLabels.length} phương thức; mỗi công thức dùng chung cho các ngành thuộc cùng phương thức.`
-        : (university.admissions?.note || "Hồ sơ này không có dòng ngành tuyển sinh đại học chính quy để áp dụng công thức."),
-      emptyReason: rows.length ? "" : (university.admissions?.note || "Không có dòng ngành tuyển sinh đại học chính quy để áp dụng công thức."),
+        ? `Có công thức và nguồn cho ${coveredMethodCount}/${methodLabels.length} phương thức. Mỗi công thức dùng chung cho các ngành thuộc cùng phương thức.`
+        : (university.admissions?.note || "Hồ sơ này không có dữ liệu ngành tuyển sinh đại học chính quy để áp dụng công thức."),
+      emptyReason: rows.length ? "" : (university.admissions?.note || "Không có dữ liệu ngành tuyển sinh đại học chính quy để áp dụng công thức."),
       stats: {
         totalRows: rows.length,
         coveredRows: coveredRowIds.size,

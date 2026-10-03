@@ -29,6 +29,6 @@ test("ghi chú hồ sơ công khai chỉ dựa trên trạng thái đã làm s�
   assert.match(partial, /Một phần/);
   assert.match(partial, /các mục còn lại/);
   assert.notEqual(partial, "Thông tin tuyển sinh 2026 đã được xác minh.");
-  assert.equal(publicProfileNote({ hasReference: true }), "Thông tin tuyển sinh 2026 đang ở mức tham khảo.");
+  assert.equal(publicProfileNote({ hasReference: true }), "Thông tin tuyển sinh 2026 chỉ để tham khảo.");
   assert.equal(publicProfileNote({ classified: "Tuyển sinh theo quy định đặc thù" }), "Tuyển sinh theo quy định đặc thù");
 });

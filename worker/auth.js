@@ -44,7 +44,7 @@ export function normalizeUsername(value) {
 export function validateUsername(value) {
   const username = normalizeUsername(value);
   if (!/^[a-z0-9][a-z0-9._-]{2,22}[a-z0-9]$/.test(username)) {
-    throw new AppError("Tên đăng nhập cần 4–24 ký tự, chỉ gồm chữ thường không dấu, số, dấu chấm, gạch dưới hoặc gạch ngang.", { statusCode: 400, code: "INVALID_USERNAME" });
+    throw new AppError("Tên đăng nhập cần từ 4 đến 24 ký tự. Bạn chỉ dùng chữ thường không dấu, số, dấu chấm, gạch dưới hoặc gạch ngang.", { statusCode: 400, code: "INVALID_USERNAME" });
   }
   if (/\.{2,}|_{2,}|-{2,}/.test(username)) {
     throw new AppError("Tên đăng nhập không được lặp liên tiếp ký tự đặc biệt.", { statusCode: 400, code: "INVALID_USERNAME" });
@@ -55,7 +55,7 @@ export function validateUsername(value) {
 export function validatePassword(value) {
   const password = String(value || "");
   if (password.length < PASSWORD_MIN_LENGTH || password.length > PASSWORD_MAX_LENGTH || !/[A-Za-z]/.test(password) || !/\d/.test(password)) {
-    throw new AppError("Mật khẩu cần 6–128 ký tự và có ít nhất một chữ cùng một số.", { statusCode: 400, code: "INVALID_PASSWORD" });
+    throw new AppError("Mật khẩu cần từ 6 đến 128 ký tự, có ít nhất một chữ và một số.", { statusCode: 400, code: "INVALID_PASSWORD" });
   }
   return password;
 }
@@ -142,7 +142,7 @@ async function authenticatedUser(request, environment) {
 
 async function requireUser(request, environment) {
   const user = await authenticatedUser(request, environment);
-  if (!user) throw new AppError("Phiên đăng nhập đã hết hạn.", { statusCode: 401, code: "AUTH_REQUIRED" });
+  if (!user) throw new AppError("Phiên đăng nhập đã hết hạn. Bạn hãy đăng nhập lại.", { statusCode: 401, code: "AUTH_REQUIRED" });
   const expectedUserId = request.headers.get("X-Account-User-Id");
   if (expectedUserId && expectedUserId !== user.id) {
     throw new AppError("Tài khoản đã thay đổi. Hãy tải lại trang trước khi tiếp tục.", { statusCode: 409, code: "AUTH_ACCOUNT_CHANGED" });
@@ -163,7 +163,7 @@ async function register(request, environment) {
       .bind(userId, username, passwordRecord.salt, passwordRecord.hash, passwordRecord.iterations, createdAt).run();
   } catch (error) {
     if (/unique|constraint/i.test(String(error?.message || error))) {
-      throw new AppError("Tên đăng nhập này đã được sử dụng.", { statusCode: 409, code: "USERNAME_TAKEN" });
+      throw new AppError("Tên đăng nhập này đã có người dùng. Bạn hãy chọn tên khác.", { statusCode: 409, code: "USERNAME_TAKEN" });
     }
     throw error;
   }

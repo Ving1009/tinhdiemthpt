@@ -19,7 +19,7 @@ export function shouldUseTranscriptFallback(error) {
 export function createTranscriptScanService(providers = [], { onProviderError = () => {} } = {}) {
   const available = providers.filter((provider) => provider && typeof provider.scan === "function");
   if (!available.length) {
-    return async () => { throw new AppError("Máy chủ chưa có bộ máy nhận diện học bạ.", { statusCode: 503, code: "MISSING_SCAN_PROVIDER" }); };
+    return async () => { throw new AppError("Máy chủ chưa có dịch vụ nhận diện học bạ. Bạn có thể nhập điểm bằng tay.", { statusCode: 503, code: "MISSING_SCAN_PROVIDER" }); };
   }
   return async function scanTranscript(images) {
     let previousError = null;
@@ -28,7 +28,7 @@ export function createTranscriptScanService(providers = [], { onProviderError = 
       try {
         const result = await provider.scan(images);
         const warnings = [...(result.warnings || [])];
-        if (index > 0) warnings.unshift("Đã dùng phương án nhận diện dự phòng. Hãy kiểm tra kỹ kết quả trước khi điền.");
+        if (index > 0) warnings.unshift("Đã dùng phương án nhận diện dự phòng. Bạn hãy kiểm tra kỹ kết quả trước khi điền.");
         return { ...result, warnings, engine: provider.name };
       } catch (error) {
         previousError = error;
@@ -36,7 +36,7 @@ export function createTranscriptScanService(providers = [], { onProviderError = 
         onProviderError({ provider: provider.name, code: error?.code || "UNKNOWN", statusCode: error?.statusCode || 500, hasNext });
         if (!hasNext || !shouldUseTranscriptFallback(error)) {
           if (!hasNext && QUOTA_CODES.has(error?.code)) {
-            throw new AppError("Các dịch vụ nhận diện đang hết hạn mức. Bạn có thể tiếp tục nhận diện bằng Tesseract ngay trên thiết bị.", {
+            throw new AppError("Các dịch vụ nhận diện đã hết hạn mức. Bạn có thể dùng Tesseract để tiếp tục nhận diện ngay trên thiết bị.", {
               statusCode: 503,
               code: "SCAN_QUOTA_EXHAUSTED"
             });
@@ -45,6 +45,6 @@ export function createTranscriptScanService(providers = [], { onProviderError = 
         }
       }
     }
-    throw previousError || new AppError("Không thể nhận diện học bạ.", { statusCode: 502, code: "SCAN_FAILED" });
+    throw previousError || new AppError("Chưa nhận diện được học bạ. Bạn hãy thử lại hoặc nhập điểm bằng tay.", { statusCode: 502, code: "SCAN_FAILED" });
   };
 }

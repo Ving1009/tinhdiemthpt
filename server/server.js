@@ -12,6 +12,8 @@ import { createTranscriptScanService } from "./services/transcriptScanService.js
 import { createReportStore } from "./reportStore.js";
 import { createConfiguredAdmissionsAssistant } from "./configuredAssistant.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
+import { readFile } from "node:fs/promises";
+import { adsenseAdsTxt, prepareAdSenseHtml } from "../lib/adsense.js";
 
 const serverRequire = createRequire(import.meta.url);
 const PUBLIC_DIR = fileURLToPath(new URL("../public/", import.meta.url));
@@ -63,6 +65,19 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
   app.disable("x-powered-by");
   app.use(applySecurityHeaders);
   app.use(express.json({ limit: "100kb" }));
+  app.get("/ads.txt", (_request, response) => {
+    const text = adsenseAdsTxt(environment);
+    response.setHeader("Cache-Control", "public, max-age=3600");
+    response.status(text ? 200 : 404).type("text/plain").send(text);
+  });
+  app.get(["/", "/index.html"], async (request, response) => {
+    const prepared = prepareAdSenseHtml(await readFile(join(PUBLIC_DIR, "index.html"), "utf8"), environment);
+    // Local Express has no trusted country metadata. Ads stay off until the CMP is ready.
+    const forwardedProtocol = String(request.headers["x-forwarded-proto"] || "").split(",", 1)[0].trim().toLowerCase();
+    for (const [name, value] of Object.entries(securityHeaders({ isHttps: request.secure || forwardedProtocol === "https", pathname: request.path, adsenseNonce: prepared.nonce }))) response.setHeader(name, value);
+    response.setHeader("Cache-Control", prepared.nonce ? "no-store" : "no-cache");
+    response.type("html").send(prepared.html);
+  });
   app.get("/.well-known/security.txt", (_request, response) => {
     response.setHeader("Cache-Control", "public, max-age=86400");
     response.type("text/plain").sendFile(SECURITY_TXT, { dotfiles: "allow" });

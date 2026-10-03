@@ -4,6 +4,8 @@ import { handleDataApi } from "./dataApi.js";
 import { publicAuthConfig } from "../lib/publicAuthConfig.js";
 import { handleAuthRequest } from "./auth.js";
 import { handleAssistantApi } from "./assistantApi.js";
+import { adsenseAdsTxt, prepareAdSenseHtml } from "../lib/adsense.js";
+import { securityHeaders } from "../lib/securityHeaders.js";
 
 const PRIMARY_HOSTNAME = "tinhdiemthpt.id.vn";
 const LEGACY_HOSTNAME = "tinhdiemthpt.tinh-diem-thpt.workers.dev";
@@ -38,6 +40,13 @@ export default {
     }
     if (url.pathname.startsWith("/_worker-data/")) {
       return withSecurityHeaders(request, new Response("Không tìm thấy trang.", { status: 404 }));
+    }
+    if (["GET", "HEAD"].includes(request.method) && url.pathname === "/ads.txt") {
+      const text = adsenseAdsTxt(environment);
+      return withSecurityHeaders(request, new Response(request.method === "HEAD" ? null : text, {
+        status: text ? 200 : 404,
+        headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=3600" }
+      }));
     }
     if (request.method === "GET" && url.pathname === "/api/security-config") {
       const turnstile = getTurnstileConfigurationForHostname(environment, url.hostname);
@@ -96,6 +105,16 @@ export default {
       }
     }
     if (url.pathname.startsWith("/api/")) return handleDataApi(request, environment);
-    return withSecurityHeaders(request, await environment.ASSETS.fetch(request));
+    const asset = await environment.ASSETS.fetch(request);
+    if (request.method === "GET" && ["/", "/index.html"].includes(url.pathname) && asset.ok && /text\/html/i.test(asset.headers.get("Content-Type") || "")) {
+      const prepared = prepareAdSenseHtml(await asset.text(), environment, request.cf?.country);
+      const headers = new Headers(asset.headers);
+      for (const name of ["Content-Length", "Content-Encoding", "ETag", "Last-Modified"]) headers.delete(name);
+      for (const [name, value] of Object.entries(securityHeaders({ isHttps: true, pathname: url.pathname, adsenseNonce: prepared.nonce }))) headers.set(name, value);
+      // A fresh nonce and country-specific consent decision must not be shared via cache.
+      headers.set("Cache-Control", "no-store");
+      return new Response(prepared.html, { status: asset.status, headers });
+    }
+    return withSecurityHeaders(request, asset);
   }
 };

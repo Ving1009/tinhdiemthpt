@@ -143,6 +143,7 @@ class THPTApp {
     this.account.init().catch(() => { /* Tài khoản không được chặn các công cụ chính. */ });
     this.practiceExam.init();
     this.setView(location.hash);
+    if (location.hash === "#privacy-policy") this.openPrivacyPolicy();
     this.setupTranscriptTools();
     this.renderSavedWishes();
     this.renderComparison();
@@ -352,6 +353,7 @@ class THPTApp {
   }
   async handleLocationChange() {
     this.setView(location.hash);
+    if (location.hash === "#privacy-policy") { this.openPrivacyPolicy(); return; }
     const deepLink = parseDeepLink();
     if (deepLink && this.repository.universities.length) await this.openUniversityModal(deepLink.universityId, null, deepLink.majorId, false);
     else if (this.modalRouteActive && !this.elements.modal.classList.contains("is-hidden")) this.closeModal(false);
@@ -1267,7 +1269,7 @@ class THPTApp {
   openPrivacyPolicy(trigger) {
     this.openModal(`<p class="modal-kicker">Quyền riêng tư</p>
       <h2 id="modal-title">Chính sách quyền riêng tư</h2>
-      <p class="modal-description">Cập nhật ngày 01/10/2026.</p>
+      <p class="modal-description">Cập nhật ngày 03/10/2026.</p>
       <div class="privacy-policy">
         <h3>Điểm số và dữ liệu sử dụng</h3>
         <p>Website lưu điểm bạn nhập, nguyện vọng, bảng so sánh, bài thi đang làm và kết quả thi thử trên thiết bị để bạn tiếp tục dùng. Bạn có thể dùng các công cụ mà không cần tạo tài khoản.</p>
@@ -1284,6 +1286,9 @@ class THPTApp {
         <h3>Dịch vụ hỗ trợ và bảo mật</h3>
         <p>Website dùng dịch vụ hỗ trợ để nhận diện ảnh, trả lời câu hỏi, lưu bản sao và xác minh bảo mật. Các dịch vụ này có thể xử lý dữ liệu cần thiết cho chức năng bạn dùng theo chính sách riêng của họ. Thông tin kỹ thuật, như địa chỉ IP và thông tin trình duyệt, có thể được xử lý để vận hành website và ngăn chặn lạm dụng.</p>
         <p>Website truyền dữ liệu qua kết nối HTTPS. Bạn hãy dùng website tại tinhdiemthpt.id.vn và bảo vệ thông tin đăng nhập của mình.</p>
+        <h3>Quảng cáo</h3>
+        <p>Website có thể hiển thị quảng cáo. Dịch vụ quảng cáo có thể dùng cookie hoặc mã nhận dạng, cùng thông tin như địa chỉ IP, trình duyệt và hoạt động xem trang, để cung cấp, đo lường hoặc cá nhân hóa quảng cáo.</p>
+        <p>Bạn có thể quản lý lựa chọn qua thông báo đồng ý khi được hiển thị hoặc <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">Cài đặt quảng cáo</a>. Xem <a href="https://policies.google.com/technologies/partner-sites?hl=vi" target="_blank" rel="noopener">cách Google sử dụng dữ liệu trên các website đối tác</a>. Thời hạn 15 phút của phiên khách không áp dụng cho cookie quảng cáo; bạn có thể quản lý hoặc xóa chúng trong trình duyệt.</p>
         <h3>Bạn có thể kiểm soát dữ liệu</h3>
         <p>Bạn có thể xóa điểm, nguyện vọng và bảng so sánh bằng từng nút xóa. Bạn cũng có thể xóa ảnh đã chọn hoặc từ chối gửi ảnh. Nếu dùng thiết bị chung, hãy đăng xuất sau khi dùng.</p>
         <p>Xóa dữ liệu trên thiết bị không tự xóa bản sao trong tài khoản. Đăng xuất cũng không xóa tài khoản hoặc bản sao đã lưu.</p>

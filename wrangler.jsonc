@@ -4,6 +4,11 @@
   "main": "worker/index.js",
   "compatibility_date": "2026-09-21",
   "workers_dev": true,
+  "vars": {
+    "ADSENSE_CLIENT": "ca-pub-5701300811077965",
+    "ADSENSE_ENABLED": "true",
+    "ADSENSE_CMP_READY": "false"
+  },
   "routes": [
     {
       "pattern": "tinhdiemthpt.id.vn",
@@ -14,7 +19,7 @@
   "assets": {
     "directory": "./.cloudflare/public",
     "binding": "ASSETS",
-    "run_worker_first": ["/", "/index.html", "/api/*", "/_worker-data/*", "/vendor/tesseract/worker.min.js"]
+    "run_worker_first": ["/", "/index.html", "/ads.txt", "/api/*", "/_worker-data/*", "/vendor/tesseract/worker.min.js"]
   },
   "services": [
     {

@@ -1,19 +1,19 @@
 # Rà soát công thức xét tuyển 2026
 
-Ngày đối chiếu: 2026-10-04. Tổng 326 hồ sơ, 1415 mục phương thức.
+Ngày đối chiếu: 2026-10-04. Tổng 326 hồ sơ, 1419 mục phương thức.
 
 Một công thức theo từng phương thức; các nhóm ngành, tổ hợp hoặc nhóm thí sinh có hệ số khác nhau được giữ thành nhánh trong cùng phương thức. Danh sách ngành áp dụng được lưu riêng trong catalog.
 
-Bổ sung 74 bộ tính ở 41 trường: BKA, BVH, BVS, CCM, DBG, DDM, DDN, DDV, DHE, DMT, DPC, DPT, DPX, DQK, DTK, DTN, DTT, DVB, FPT, GTA, HMV, HPN, HPS, HTC, HTH, HTN, HVA, HVN, INU, KSA, KSV, LPH, MBS, MDA, NHH, QHI, QHL, QHQ, QHX, SKV, VJU. Bộ tính THPT Bách khoa đã có vẫn giới hạn ba chương trình IT1, EE2, ET1; đã đối chiếu lại hệ số Toán và tổ hợp K01. Hai mục nguồn trùng hệt biểu thức, điều kiện và phạm vi được gộp, giữ ID đối chiếu nội bộ.
+Bổ sung 92 bộ tính ở 47 trường: BKA, BVH, BVS, CCM, DBG, DDM, DDN, DDV, DHE, DKY, DMT, DPC, DPT, DPX, DQK, DTK, DTN, DTT, DVB, ETU, FPT, GTA, HHT, HMV, HPN, HPS, HTC, HTH, HTN, HVA, HVN, INU, KSA, KSV, LPH, MBS, MDA, NHH, QHI, QHL, QHQ, QHX, SKV, STS, TQU, VJU, YTC. Bộ tính THPT Bách khoa đã có vẫn giới hạn ba chương trình IT1, EE2, ET1; đã đối chiếu lại hệ số Toán và tổ hợp K01. Hai mục nguồn trùng hệt biểu thức, điều kiện và phạm vi được gộp, giữ ID đối chiếu nội bộ.
 
 **Đây không phải xác nhận rằng mọi phương thức đã có đủ công thức số.** Biểu thức lấy từ nguồn có thể chỉ là một thành phần hoặc còn cần bảng quy đổi. Không tự suy ra tổng ba môn hoặc điểm gốc / điểm tối đa × 30. Chỉ bật tự tính cho quy tắc đã đối chiếu trực tiếp và có đầu vào an toàn.
 
 | Trạng thái | Số phương thức |
 | --- | ---: |
-| Xét điều kiện / hồ sơ, không có phép cộng chung | 269 |
-| Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính | 420 |
-| Đã đối chiếu nguồn chính thức | 188 |
-| Có thông tin phương thức, thiếu biểu thức đầy đủ | 379 |
+| Xét điều kiện / hồ sơ, không có phép cộng chung | 270 |
+| Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính | 412 |
+| Đã đối chiếu nguồn chính thức | 209 |
+| Có thông tin phương thức, thiếu biểu thức đầy đủ | 369 |
 | Chưa có đủ công thức | 133 |
 | Phạm vi ngành chưa đủ | 10 |
 | Chưa có nguồn 2026 | 12 |
@@ -37,7 +37,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-an-ninh-nhan-dan-ANH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-an-ninh-nhan-dan-ANH.html) · 2026-10-04
 
 
 ### Kết hợp CCNN + ĐGNL BCA
@@ -56,7 +56,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-an-ninh-nhan-dan-ANH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-an-ninh-nhan-dan-ANH.html) · 2026-10-04
 
 
 ### Kết hợp Điểm THPT + ĐGNL BCA
@@ -73,7 +73,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-an-ninh-nhan-dan-ANH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-an-ninh-nhan-dan-ANH.html) · 2026-10-04
 
 
 ### Hệ dân sự
@@ -90,7 +90,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-an-ninh-nhan-dan-ANH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-an-ninh-nhan-dan-ANH.html) · 2026-10-04
 
 
 ## ANS — Trường Đại học An ninh Nhân dân
@@ -111,7 +111,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-an-ninh-nhan-dan-ANS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-an-ninh-nhan-dan-ANS.html) · 2026-10-04
 
 
 ### Kết hợp CCNN + ĐGNL BCA
@@ -131,7 +131,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-an-ninh-nhan-dan-ANS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-an-ninh-nhan-dan-ANS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -145,7 +145,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-an-ninh-nhan-dan-ANS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-an-ninh-nhan-dan-ANS.html) · 2026-10-04
 
 
 ## BKA — Đại học Bách khoa Hà Nội
@@ -217,7 +217,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-ha-noi-BKA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-ha-noi-BKA.html) · 2026-10-04
 
 
 ### Hồ sơ năng lực kết hợp phỏng vấn
@@ -257,7 +257,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-buon-ma-thuot-BMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-buon-ma-thuot-BMU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -291,7 +291,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-buon-ma-thuot-BMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-buon-ma-thuot-BMU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -307,7 +307,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-buon-ma-thuot-BMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-buon-ma-thuot-BMU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -324,7 +324,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-buon-ma-thuot-BMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-buon-ma-thuot-BMU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -338,7 +338,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-buon-ma-thuot-BMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-buon-ma-thuot-BMU.html) · 2026-10-04
 
 
 ## BPH — Học viện Biên phòng
@@ -357,7 +357,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bien-phong-BPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bien-phong-BPH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -372,7 +372,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bien-phong-BPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bien-phong-BPH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -387,7 +387,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bien-phong-BPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bien-phong-BPH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -401,7 +401,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bien-phong-BPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bien-phong-BPH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -416,7 +416,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bien-phong-BPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bien-phong-BPH.html) · 2026-10-04
 
 
 ## BUV — Trường Đại học Anh Quốc Việt Nam
@@ -436,7 +436,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-anh-quoc-viet-nam-BUV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-anh-quoc-viet-nam-BUV.html) · 2026-10-04
 
 
 ## BVH — Học viện Công nghệ Bưu chính Viễn thông
@@ -621,7 +621,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-nam-BVS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-cong-nghe-buu-chinh-vien-thong-phia-nam-BVS.html) · 2026-10-04
 
 
 ### Chứng chỉ quốc tế
@@ -794,73 +794,77 @@ Công thức công bố cho ngưỡng trúng tuyển: y = c + (x − a)/(b − a
 
 ### Xét kết quả thi tốt nghiệp THPT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 60. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 60. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = THPT M1 + THPT M2 + THPT M3 + ĐUT + ĐC
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- Đối tượng đầu vào và ngưỡng theo mục II.1 và II.3, trang 2–3. Các ngành sức khỏe có giấy phép hành nghề và pháp luật có điều kiện riêng; không áp dụng một ngưỡng chung cho 60 chương trình.
+- Bản PDF trên website Trường còn để trống số/ngày quyết định ban hành; giữ thông tin tham khảo, chưa mở bộ tính từ văn bản này.
+- Điểm cộng theo Điều 6 tối đa 10% thang điểm; chứng chỉ có thể quy đổi môn ngoại ngữ hoặc điểm cộng theo Phụ lục III, không mặc định làm cả hai.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://bvu.edu.vn/wp-content/uploads/administrator/admin/2022/12/application/pdf/BVU-Thong-tin-tuyen-sinh-2026-Web.pdf) · 2026-09-30
+Quy đổi: Theo Phụ lục III; không thay điểm cả năm bằng học kỳ.
+
+[Nguồn đối chiếu](https://bvu.edu.vn/wp-content/uploads/administrator/admin1/2023/04/application/pdf/2026-Quy-che-tuyen-sinh-BVU-Web.pdf) · 2026-10-04
 
 
 ### Xét kết quả học tập THPT
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 60. Tự tính mới: không.
 
-ĐXT = Đ1 + Đ2 + Đ3 + ĐUT + ĐC
+ĐXT = TBC3năm M1 + TBC3năm M2 + TBC3năm M3 + ĐUT + ĐC
+TBC3năm Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- Đối tượng đầu vào và ngưỡng theo mục II.1 và II.3, trang 2–3. Các ngành sức khỏe có giấy phép hành nghề và pháp luật có điều kiện riêng; không áp dụng một ngưỡng chung cho 60 chương trình.
-- + ĐUT: Điểm ưu tiên (khu vực, đối tượng).
-- + ĐC: Điểm cộng.
+- Bản PDF trên website Trường còn để trống số/ngày quyết định ban hành; giữ thông tin tham khảo, chưa mở bộ tính từ văn bản này.
+- Điểm cộng theo Điều 6 tối đa 10% thang điểm; chứng chỉ có thể quy đổi môn ngoại ngữ hoặc điểm cộng theo Phụ lục III, không mặc định làm cả hai.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
+
+Quy đổi: Theo Phụ lục III; không thay điểm cả năm bằng học kỳ.
 
 [Nguồn đối chiếu](https://bvu.edu.vn/wp-content/uploads/administrator/admin1/2023/04/application/pdf/2026-Quy-che-tuyen-sinh-BVU-Web.pdf) · 2026-10-04
 
-- Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính.
 
 ### Xét kết quả thi đánh giá năng lực
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 60. Tự tính mới: không.
 
-ĐXT = (ĐĐGNL x 30) / MAXĐGNL+ ĐUT + ĐC
+ĐXT = Điểm ĐGNL × 30 / Điểm tối đa bài thi + ĐUT + ĐC
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- Đối tượng đầu vào và ngưỡng theo mục II.1 và II.3, trang 2–3. Các ngành sức khỏe có giấy phép hành nghề và pháp luật có điều kiện riêng; không áp dụng một ngưỡng chung cho 60 chương trình.
-- + ĐUT: Điểm ưu tiên (khu vực, đối tượng).
-- + ĐC: Điểm cộng.
+- Bản PDF trên website Trường còn để trống số/ngày quyết định ban hành; giữ thông tin tham khảo, chưa mở bộ tính từ văn bản này.
+- Điểm cộng theo Điều 6 tối đa 10% thang điểm; chứng chỉ có thể quy đổi môn ngoại ngữ hoặc điểm cộng theo Phụ lục III, không mặc định làm cả hai.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
+
+Quy đổi: Văn bản này nêu tỉ lệ điểm tối đa; vẫn cần xác nhận bản ban hành và các bài thi chấp nhận, không áp dụng tỉ lệ này cho trường khác.
 
 [Nguồn đối chiếu](https://bvu.edu.vn/wp-content/uploads/administrator/admin1/2023/04/application/pdf/2026-Quy-che-tuyen-sinh-BVU-Web.pdf) · 2026-10-04
 
-- Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính.
 
 ### Xét tổng hợp điểm thi THPT và học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 60. Tự tính mới: không.
+Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 60. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Sử dụng kết quả học tập THPT; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Theo nguồn: ĐXT = (ĐTN + ĐHB) / 2 + ĐUT + ĐC
+ĐTN: trung bình cộng các môn thi tốt nghiệp; ĐHB: trung bình cộng kết quả học tập cả năm lớp 12
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- Đối tượng đầu vào và ngưỡng theo mục II.1 và II.3, trang 2–3. Các ngành sức khỏe có giấy phép hành nghề và pháp luật có điều kiện riêng; không áp dụng một ngưỡng chung cho 60 chương trình.
-- Bảng chính thức ghi mã BVU-407 cho cả 60 chương trình. PDF mô tả kết hợp thi THPT và học bạ nhưng chưa nêu tỷ trọng, cần đọc quy chế trước khi tính điểm.
+- Bản PDF trên website Trường còn để trống số/ngày quyết định ban hành; giữ thông tin tham khảo, chưa mở bộ tính từ văn bản này.
+- Điểm cộng theo Điều 6 tối đa 10% thang điểm; chứng chỉ có thể quy đổi môn ngoại ngữ hoặc điểm cộng theo Phụ lục III, không mặc định làm cả hai.
+- Nguồn gọi ĐTN/ĐHB là trung bình cộng (thang 10) nhưng ghi kết quả thang 30, chưa nêu nhân 3. Không tự sửa biểu thức để chuyển thang.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Cần xác nhận thang điểm hai thành phần trước khi áp dụng ưu tiên..
 
-[Nguồn đối chiếu](https://bvu.edu.vn/wp-content/uploads/administrator/admin/2022/12/application/pdf/BVU-Thong-tin-tuyen-sinh-2026-Web.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://bvu.edu.vn/wp-content/uploads/administrator/admin1/2023/04/application/pdf/2026-Quy-che-tuyen-sinh-BVU-Web.pdf) · 2026-10-04
 
+- Biểu thức hai trung bình và thang 30 không nhất quán trong nguồn.
 
 ### Xét thí sinh tốt nghiệp THPT nước ngoài
 
@@ -891,7 +895,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://bvu.edu.vn/wp-content/uploads/administrator/admin/2022/12/application/pdf/BVU-Thong-tin-tuyen-sinh-2026-Web.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://bvu.edu.vn/wp-content/uploads/administrator/admin/2022/12/application/pdf/BVU-Thong-tin-tuyen-sinh-2026-Web.pdf) · 2026-10-04
 
 
 ## CCM — Trường Đại học Công nghiệp Dệt may Hà Nội
@@ -964,7 +968,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-va-thuong-mai-ha-noi-CCM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-va-thuong-mai-ha-noi-CCM.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi hoặc học bạ với điểm năng khiếu
@@ -1004,7 +1008,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -1049,7 +1053,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -1063,7 +1067,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -1077,7 +1081,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -1092,7 +1096,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-an-CEA.html) · 2026-10-04
 
 
 ## CMC — Trường Đại học CMC
@@ -1167,7 +1171,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cmc-CMC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cmc-CMC.html) · 2026-10-04
 
 
 ## CSH — Học viện Cảnh sát Nhân dân
@@ -1184,7 +1188,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-canh-sat-nhan-dan-CSH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-canh-sat-nhan-dan-CSH.html) · 2026-10-04
 
 
 ### Kết hợp CCNN + ĐGNL BCA
@@ -1200,7 +1204,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-canh-sat-nhan-dan-CSH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-canh-sat-nhan-dan-CSH.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + ĐGNL BCA
@@ -1215,7 +1219,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-canh-sat-nhan-dan-CSH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-canh-sat-nhan-dan-CSH.html) · 2026-10-04
 
 
 ## CSS — Trường Đại học Cảnh sát Nhân dân
@@ -1232,7 +1236,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-canh-sat-nhan-dan-CSS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-canh-sat-nhan-dan-CSS.html) · 2026-10-04
 
 
 ### Kết hợp CCNN + ĐGNL BCA
@@ -1251,7 +1255,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-canh-sat-nhan-dan-CSS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-canh-sat-nhan-dan-CSS.html) · 2026-10-04
 
 
 ### Kết hợp Điểm THPT + ĐGNL BCA
@@ -1268,7 +1272,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-canh-sat-nhan-dan-CSS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-canh-sat-nhan-dan-CSS.html) · 2026-10-04
 
 
 ## DAD — Trường Đại học Đông Á
@@ -1357,7 +1361,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-a-DAD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-a-DAD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -1373,7 +1377,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-a-DAD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-a-DAD.html) · 2026-10-04
 
 
 ## DBC — Phân hiệu Trường Đại học Bình Dương tại Cà Mau
@@ -1391,7 +1395,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://camau.bdu.edu.vn/tuyen-sinh/chinh-quy/tuyen-sinh-dai-hoc-chinh-quy-nam-2026-18-nganh-dao-tao-phan-hieu-truong-dai-hoc-binh-duong-tai-ca-mau-62.html) · 2026-09-30
+[Nguồn đối chiếu](https://camau.bdu.edu.vn/tuyen-sinh/chinh-quy/tuyen-sinh-dai-hoc-chinh-quy-nam-2026-18-nganh-dao-tao-phan-hieu-truong-dai-hoc-binh-duong-tai-ca-mau-62.html) · 2026-10-04
 
 
 ### Học bạ THPT
@@ -1405,7 +1409,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://camau.bdu.edu.vn/tuyen-sinh/chinh-quy/tuyen-sinh-dai-hoc-chinh-quy-nam-2026-18-nganh-dao-tao-phan-hieu-truong-dai-hoc-binh-duong-tai-ca-mau-62.html) · 2026-09-30
+[Nguồn đối chiếu](https://camau.bdu.edu.vn/tuyen-sinh/chinh-quy/tuyen-sinh-dai-hoc-chinh-quy-nam-2026-18-nganh-dao-tao-phan-hieu-truong-dai-hoc-binh-duong-tai-ca-mau-62.html) · 2026-10-04
 
 
 ### ĐGNL ĐHQG-HCM
@@ -1419,7 +1423,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://camau.bdu.edu.vn/tuyen-sinh/chinh-quy/tuyen-sinh-dai-hoc-chinh-quy-nam-2026-18-nganh-dao-tao-phan-hieu-truong-dai-hoc-binh-duong-tai-ca-mau-62.html) · 2026-09-30
+[Nguồn đối chiếu](https://camau.bdu.edu.vn/tuyen-sinh/chinh-quy/tuyen-sinh-dai-hoc-chinh-quy-nam-2026-18-nganh-dao-tao-phan-hieu-truong-dai-hoc-binh-duong-tai-ca-mau-62.html) · 2026-10-04
 
 
 ## DBD — Trường Đại học Bình Dương
@@ -1437,7 +1441,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-binh-duong-DBD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-binh-duong-DBD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -1451,7 +1455,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-binh-duong-DBD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-binh-duong-DBD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -1466,7 +1470,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-binh-duong-DBD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-binh-duong-DBD.html) · 2026-10-04
 
 
 ## DBG — Trường Đại học Nông Lâm Bắc Giang
@@ -1483,7 +1487,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-bac-giang-DBG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-bac-giang-DBG.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -1514,7 +1518,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-bac-giang-DBG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-bac-giang-DBG.html) · 2026-10-04
 
 
 ## DBH — Trường Đại học Quốc tế Bắc Hà
@@ -1569,7 +1573,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bac-lieu-DBL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bac-lieu-DBL.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -1593,7 +1597,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bac-lieu-DBL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bac-lieu-DBL.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -1610,7 +1614,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bac-lieu-DBL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bac-lieu-DBL.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -1635,7 +1639,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bac-lieu-DBL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bac-lieu-DBL.html) · 2026-10-04
 
 
 ## DCD — Trường Đại học Công nghệ Đồng Nai
@@ -1654,7 +1658,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-nai-DCD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-nai-DCD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -1670,7 +1674,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-nai-DCD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-nai-DCD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -1684,7 +1688,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-nai-DCD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-nai-DCD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -1698,7 +1702,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-nai-DCD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-nai-DCD.html) · 2026-10-04
 
 
 ## DCH — Trường Sĩ quan Đặc công
@@ -1716,7 +1720,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-dac-cong-DCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-dac-cong-DCH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -1730,7 +1734,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-dac-cong-DCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-dac-cong-DCH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -1744,7 +1748,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-dac-cong-DCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-dac-cong-DCH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -1759,7 +1763,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-dac-cong-DCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-dac-cong-DCH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -1773,7 +1777,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-dac-cong-DCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-dac-cong-DCH.html) · 2026-10-04
 
 
 ## DCL — Trường Đại học Cửu Long
@@ -1790,7 +1794,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cuu-long-DCL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cuu-long-DCL.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -1804,7 +1808,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cuu-long-DCL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cuu-long-DCL.html) · 2026-10-04
 
 
 ### Điểm thi riêng
@@ -1818,7 +1822,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cuu-long-DCL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cuu-long-DCL.html) · 2026-10-04
 
 
 ## DCN — Trường Đại học Công nghiệp Hà Nội
@@ -1836,7 +1840,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-10-04
 
 - Đề án chính thức chỉ liệt kê 5 phương thức, trong đó PT3 dùng điểm thi THPT. Mục điểm xét tốt nghiệp trên nguồn tổng hợp chưa khớp đề án.
 - Có mâu thuẫn giữa các nguồn; chưa xác nhận biểu thức và phạm vi.
@@ -1860,7 +1864,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-10-04
 
 
 ### Kết hợp CCNN/CCQT + Học bạ
@@ -1882,7 +1886,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -1899,7 +1903,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -1915,7 +1919,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -1929,7 +1933,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-ha-noi-DCN.html) · 2026-10-04
 
 
 ## DCQ — Trường Đại học Công nghệ và Quản lý Hữu Nghị
@@ -1947,7 +1951,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-va-quan-ly-huu-nghi-DCQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-va-quan-ly-huu-nghi-DCQ.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -1961,7 +1965,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-va-quan-ly-huu-nghi-DCQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-va-quan-ly-huu-nghi-DCQ.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -1975,7 +1979,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-va-quan-ly-huu-nghi-DCQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-va-quan-ly-huu-nghi-DCQ.html) · 2026-10-04
 
 
 ## DCT — Trường Đại học Công thương TP.HCM
@@ -1993,7 +1997,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-thuong-tphcm-DCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-thuong-tphcm-DCT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -2008,7 +2012,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-thuong-tphcm-DCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-thuong-tphcm-DCT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -2022,7 +2026,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-thuong-tphcm-DCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-thuong-tphcm-DCT.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -2036,7 +2040,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-thuong-tphcm-DCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-thuong-tphcm-DCT.html) · 2026-10-04
 
 
 ### Kết hợp ĐGNL SP HCM + Học bạ
@@ -2051,7 +2055,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-thuong-tphcm-DCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-thuong-tphcm-DCT.html) · 2026-10-04
 
 
 ## DCV — Trường Đại học Công nghiệp Vinh
@@ -2068,7 +2072,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-vinh-DCV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-vinh-DCV.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -2082,7 +2086,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-vinh-DCV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-vinh-DCV.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -2096,7 +2100,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-vinh-DCV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-vinh-DCV.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -2111,7 +2115,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://images.tuyensinh247.com/picture/2026/0323/thong-tin-tuyen-sinh-truong-dai-hoc-cong-nghiep-vinh-2026.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://images.tuyensinh247.com/picture/2026/0323/thong-tin-tuyen-sinh-truong-dai-hoc-cong-nghiep-vinh-2026.pdf) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -2125,7 +2129,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-vinh-DCV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-vinh-DCV.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -2139,7 +2143,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-vinh-DCV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-vinh-DCV.html) · 2026-10-04
 
 
 ## DDA — Trường Đại học Công nghệ Đông Á
@@ -2156,7 +2160,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-a-DDA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-a-DDA.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -2171,7 +2175,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-a-DDA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-a-DDA.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -2185,7 +2189,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-a-DDA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dong-a-DDA.html) · 2026-10-04
 
 
 ## DDB — Trường Đại học Thành Đông
@@ -2204,7 +2208,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-dong-DDB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-dong-DDB.html) · 2026-10-04
 
 
 ### Học bạ trung bình cả năm lớp 10, 11, 12
@@ -2221,7 +2225,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-dong-DDB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-dong-DDB.html) · 2026-10-04
 
 
 ### Điểm thi THPT theo tổ hợp
@@ -2236,7 +2240,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-dong-DDB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-dong-DDB.html) · 2026-10-04
 
 
 ## DDF — Trường Đại học Ngoại ngữ - ĐH Đà Nẵng
@@ -2255,7 +2259,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-da-nang-DDF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-da-nang-DDF.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -2269,7 +2273,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-da-nang-DDF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-da-nang-DDF.html) · 2026-10-04
 
 
 ## DDG — Khoa Giáo dục Thể chất – ĐH Đà Nẵng
@@ -2307,7 +2311,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-da-nang-DDK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-da-nang-DDK.html) · 2026-10-04
 
 
 ### Xét tuyển kết hợp điểm thi THPT + CCNN
@@ -2325,7 +2329,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-da-nang-DDK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-da-nang-DDK.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -2339,7 +2343,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-da-nang-DDK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-da-nang-DDK.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -2353,7 +2357,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-da-nang-DDK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-da-nang-DDK.html) · 2026-10-04
 
 
 ## DDL — Trường Đại học Điện lực
@@ -2375,7 +2379,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dien-luc-DDL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dien-luc-DDL.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN
@@ -2395,7 +2399,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dien-luc-DDL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dien-luc-DDL.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -2412,7 +2416,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dien-luc-DDL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dien-luc-DDL.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -2426,7 +2430,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dien-luc-DDL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dien-luc-DDL.html) · 2026-10-04
 
 
 ## DDM — Trường Đại học Công nghiệp Quảng Ninh
@@ -2564,7 +2568,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dai-nam-DDN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dai-nam-DDN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -2579,7 +2583,7 @@ Thang: Thang 150.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dai-nam-DDN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dai-nam-DDN.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -2594,7 +2598,7 @@ Thang: Thang 100.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dai-nam-DDN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dai-nam-DDN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -2609,7 +2613,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dai-nam-DDN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dai-nam-DDN.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -2624,7 +2628,7 @@ Thang: Thang 450.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dai-nam-DDN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dai-nam-DDN.html) · 2026-10-04
 
 
 ## DDP — Phân hiệu Đại học Đà Nẵng tại Kon Tum
@@ -2641,7 +2645,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-da-nang-tai-kon-tum-DDP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-da-nang-tai-kon-tum-DDP.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -2659,7 +2663,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-da-nang-tai-kon-tum-DDP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-da-nang-tai-kon-tum-DDP.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -2674,7 +2678,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-da-nang-tai-kon-tum-DDP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-da-nang-tai-kon-tum-DDP.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT với điểm thi Năng khiếu
@@ -2689,7 +2693,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-da-nang-tai-kon-tum-DDP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-da-nang-tai-kon-tum-DDP.html) · 2026-10-04
 
 
 ### Kết hợp điểm Học bạ + điểm thi Năng khiếu
@@ -2704,7 +2708,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-da-nang-tai-kon-tum-DDP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-da-nang-tai-kon-tum-DDP.html) · 2026-10-04
 
 
 ## DDQ — Trường Đại học Kinh tế - ĐH Đà Nẵng
@@ -2723,7 +2727,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-da-nang-DDQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-da-nang-DDQ.html) · 2026-10-04
 
 
 ### Thành tích học tập + Năng lực tiếng Anh
@@ -2744,7 +2748,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-da-nang-DDQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-da-nang-DDQ.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -2760,7 +2764,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-da-nang-DDQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-da-nang-DDQ.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -2777,7 +2781,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-da-nang-DDQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-da-nang-DDQ.html) · 2026-10-04
 
 
 ## DDS — Trường Đại học Sư phạm - ĐH Đà Nẵng
@@ -2800,7 +2804,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-dai-hoc-da-nang-DDS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-dai-hoc-da-nang-DDS.html) · 2026-10-04
 
 
 ### Kết hợp Điểm THPT + ĐGNL ĐH SP TPHCM + Học bạ
@@ -2819,7 +2823,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-dai-hoc-da-nang-DDS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-dai-hoc-da-nang-DDS.html) · 2026-10-04
 
 
 ### Kết hợp ĐGNL ĐH SP HN + Điểm THPT + Học bạ
@@ -2838,7 +2842,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-dai-hoc-da-nang-DDS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-dai-hoc-da-nang-DDS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -2852,7 +2856,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-dai-hoc-da-nang-DDS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-dai-hoc-da-nang-DDS.html) · 2026-10-04
 
 
 ## DDT — Trường Đại học Duy Tân
@@ -2869,7 +2873,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -2888,7 +2892,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -2907,7 +2911,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -2926,7 +2930,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -2940,7 +2944,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-10-04
 
 
 ### Điểm THPT + Năng khiếu; Điểm học bạ + Năng khiếu
@@ -2957,7 +2961,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duy-tan-DDT.html) · 2026-10-04
 
 
 ## DDU — Trường Đại học Đông Đô
@@ -2978,7 +2982,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -2993,7 +2997,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -3009,7 +3013,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -3025,7 +3029,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-10-04
 
 
 ### Chứng chỉ quốc tế SAT
@@ -3041,7 +3045,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -3055,7 +3059,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-do-DDU.html) · 2026-10-04
 
 
 ## DDV — Viện Nghiên cứu và Đào tạo Việt - Anh – ĐH Đà Nẵng
@@ -3163,7 +3167,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/vien-nghien-cuu-va-dao-tao-viet-anh-dai-hoc-da-nang-DDV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/vien-nghien-cuu-va-dao-tao-viet-anh-dai-hoc-da-nang-DDV.html) · 2026-10-04
 
 
 ### Điểm phỏng vấn + Điểm V-SAT
@@ -3200,7 +3204,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-y-duoc-da-nang-DDY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-y-duoc-da-nang-DDY.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -3214,7 +3218,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-y-duoc-da-nang-DDY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-y-duoc-da-nang-DDY.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -3228,7 +3232,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-y-duoc-da-nang-DDY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-y-duoc-da-nang-DDY.html) · 2026-10-04
 
 
 ## DFA — Trường Đại học Tài chính - Quản trị kinh doanh
@@ -3245,7 +3249,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://thi.tuyensinh247.com/thong-tin-tuyen-sinh-dai-hoc-tai-chinh-quan-tri-kinh-doanh-2026-c24a88915.html) · 2026-09-30
+[Nguồn đối chiếu](https://thi.tuyensinh247.com/thong-tin-tuyen-sinh-dai-hoc-tai-chinh-quan-tri-kinh-doanh-2026-c24a88915.html) · 2026-10-04
 
 
 ### Xét tuyển kết hợp
@@ -3316,7 +3320,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-dai-hoc-hue-DHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-dai-hoc-hue-DHA.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -3332,7 +3336,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-dai-hoc-hue-DHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-dai-hoc-hue-DHA.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -3346,7 +3350,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-dai-hoc-hue-DHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-dai-hoc-hue-DHA.html) · 2026-10-04
 
 
 ## DHC — Khoa Giáo dục Thể chất - ĐH Huế
@@ -3363,7 +3367,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-giao-duc-the-chat-hue-DHC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-giao-duc-the-chat-hue-DHC.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + Năng khiếu
@@ -3378,7 +3382,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-giao-duc-the-chat-hue-DHC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-giao-duc-the-chat-hue-DHC.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + Năng khiếu
@@ -3393,7 +3397,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-giao-duc-the-chat-hue-DHC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-giao-duc-the-chat-hue-DHC.html) · 2026-10-04
 
 
 ## DHD — Trường Du lịch - ĐH Huế
@@ -3411,7 +3415,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-du-lich-dai-hoc-hue-DHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-du-lich-dai-hoc-hue-DHD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -3426,7 +3430,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-du-lich-dai-hoc-hue-DHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-du-lich-dai-hoc-hue-DHD.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + CCNN
@@ -3442,7 +3446,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-du-lich-dai-hoc-hue-DHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-du-lich-dai-hoc-hue-DHD.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN
@@ -3458,7 +3462,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-du-lich-dai-hoc-hue-DHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-du-lich-dai-hoc-hue-DHD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -3472,7 +3476,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-du-lich-dai-hoc-hue-DHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-du-lich-dai-hoc-hue-DHD.html) · 2026-10-04
 
 
 ## DHE — Khoa Kỹ thuật và công nghệ - ĐH Huế
@@ -3482,87 +3486,114 @@ Thang: Không có thang điểm chung.
 
 Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 8. Tự tính mới: có.
 
-ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT
+ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐC + ĐƯT
 
 Thang: Thang 30.
 
-- Nguồn ghi dự kiến; cần đối chiếu thông báo cuối cùng và tổ hợp của đúng ngành.
+- Theo trang Tuyển sinh đại học 2026 chính của Khoa, thay bài hướng dẫn dự kiến trước đó. Tất cả ngành/chương trình trong bảng Khoa dùng cùng phương thức, tổ hợp được xét tương đương.
+- Điểm cộng gồm điểm thưởng, xét thưởng, khuyến khích theo Đại học Huế, tối đa 3; không bỏ điểm cộng ở hồ sơ có quyền hưởng.
+- Điểm cuối làm tròn 2 chữ số, tối đa 30; nguồn môn ngoại ngữ không sử dụng kết quả miễn thi.
+- Nhánh tự tính đang mở chỉ dành thí sinh KHÔNG CÓ điểm cộng; hồ sơ có điểm cộng cần xác nhận căn cứ giảm ưu tiên và mức cộng chính thức.
 
-Ưu tiên: Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30; giảm từ 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc. Tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://huet.hueuni.edu.vn/index.php/huong-dan-dang-ky-dai-hoc-2026/) · 2026-10-04
+Quy đổi: Không có quy đổi giữa các tổ hợp. Hồ sơ có điểm cộng cần dùng đủ ĐC theo mục 5.2, không dùng nhánh không có điểm cộng.
+
+[Nguồn đối chiếu](https://huet.hueuni.edu.vn/index.php/tuyen-sinh-dai-hoc-2026/) · 2026-10-04
 
 
 ### Điểm học bạ
 
 Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 8. Tự tính mới: không.
 
-ĐXT = TBC M1 + TBC M2 + TBC M3 + ĐƯT
-TBC mỗi môn = (điểm cả năm 10 + 11 + 12) / 3, làm tròn 1 chữ số thập phân trước khi cộng
+H = TBC3năm M1 + TBC3năm M2 + TBC3năm M3
+TBC3năm Mi làm tròn 1 chữ số thập phân
+ĐXT = H quy đổi tương đương theo Đại học Huế + ĐC + ĐƯT
 
 Thang: Thang 30.
 
-- Tổng 3 TBC từ 18,00 chưa gồm ưu tiên. Nguồn ghi dự kiến.
-- Phải làm tròn từng TBC môn trước khi cộng; không dùng công thức trung bình chưa làm tròn.
+- Theo trang Tuyển sinh đại học 2026 chính của Khoa, thay bài hướng dẫn dự kiến trước đó. Tất cả ngành/chương trình trong bảng Khoa dùng cùng phương thức, tổ hợp được xét tương đương.
+- Điểm cộng gồm điểm thưởng, xét thưởng, khuyến khích theo Đại học Huế, tối đa 3; không bỏ điểm cộng ở hồ sơ có quyền hưởng.
+- Điểm cuối làm tròn 2 chữ số, tối đa 30; nguồn môn ngoại ngữ không sử dụng kết quả miễn thi.
+- Nhánh tự tính đang mở chỉ dành thí sinh KHÔNG CÓ điểm cộng; hồ sơ có điểm cộng cần xác nhận căn cứ giảm ưu tiên và mức cộng chính thức.
+- Lấy điểm cả năm ba lớp 10, 11, 12; làm tròn trung bình TỪNG MÔN đến một chữ số trước tổng.
+- Đã đối chiếu Phụ lục 2 Đại học Huế 10/7/2026, 1.501 dòng ngưỡng/điểm trúng tuyển: THPT 15/18/20/22,5/24/26/30 tương ứng học bạ 18/20,25/21,75/23,91/25,26/26,88/30. Đọc đủ bảng tại nguồn kèm theo.
+- Các cột học bạ có giá trị lặp ứng với nhiều mốc THPT; không đảo bảng bằng một lookup đơn hoặc tự chọn một mốc khi chưa có quy ước của Trường.
 
-Ưu tiên: Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30; giảm từ 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc. Tổng cuối tối đa 30..
 
-Quy đổi: Cần đối chiếu thông báo chính thức cuối cùng và bảng tương đương các phương thức.
+Quy đổi: Phụ lục 2 Đại học Huế 2026 là bảng quy đổi NGƯỠNG/ĐIỂM TRÚNG TUYỂN đủ 1.501 dòng. Có nhiều mốc THPT trùng giá trị học bạ; cần hướng dẫn áp dụng và làm tròn của Khoa trước khi tự tính điểm cá nhân. Không bỏ bước làm tròn một chữ số từng môn.
 
-[Nguồn đối chiếu](https://huet.hueuni.edu.vn/index.php/huong-dan-dang-ky-dai-hoc-2026/) · 2026-10-04
+[Nguồn đối chiếu](https://huet.hueuni.edu.vn/index.php/tuyen-sinh-dai-hoc-2026/) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 8. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 8. Tự tính mới: không.
 
-Điểm xét tuyển = (Điểm ĐGNL) Quy đổi tương đương + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có)
+ĐXT = Điểm ĐGNL V-ACT quy đổi tương đương theo Đại học Huế + ĐC + ĐƯT
 
 Thang: Thang 30.
 
-- + ĐƯT: Điểmưu tiên theo khu vực, đối tượng ưu tiên (Theo quy chế Bộ GD&ĐT), giảm dần từ mức 22,50 điểm để đảm bảo không vượt tổng 30 điểm; + Điểm cộng bao gồm Điểm thưởng, Điểm xét thưởng và Điểm khuyến khích theo quy định Đại học Huế và không vượt 10% mức điểm tối đa của thang điểm
+- Theo trang Tuyển sinh đại học 2026 chính của Khoa, thay bài hướng dẫn dự kiến trước đó. Tất cả ngành/chương trình trong bảng Khoa dùng cùng phương thức, tổ hợp được xét tương đương.
+- Điểm cộng gồm điểm thưởng, xét thưởng, khuyến khích theo Đại học Huế, tối đa 3; không bỏ điểm cộng ở hồ sơ có quyền hưởng.
+- Điểm cuối làm tròn 2 chữ số, tối đa 30; nguồn môn ngoại ngữ không sử dụng kết quả miễn thi.
+- Nhánh tự tính đang mở chỉ dành thí sinh KHÔNG CÓ điểm cộng; hồ sơ có điểm cộng cần xác nhận căn cứ giảm ưu tiên và mức cộng chính thức.
+- Phụ lục 2 Đại học Huế 10/7/2026: THPT 15/18/20/22,5/24/26/30 tương ứng V-ACT 501/603/676/779/846/937/≥1139. Đọc đủ 1.501 dòng ở nguồn kèm theo; nhiều mốc THPT dùng cùng điểm V-ACT.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30; giảm từ 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc. Tổng cuối tối đa 30..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Đã đối chiếu bảng NGƯỠNG/ĐIỂM TRÚNG TUYỂN Đại học Huế 2026. Không dùng V-ACT /40, không đảo bảng có giá trị lặp thành điểm cá nhân duy nhất khi chưa có hướng dẫn áp dụng.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-ky-thuat-va-cong-nghe-dai-hoc-hue-DHE.html) · 2026-09-30
+[Nguồn đối chiếu](https://huet.hueuni.edu.vn/index.php/tuyen-sinh-dai-hoc-2026/) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN
 
 Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 8. Tự tính mới: không.
 
-ĐXT = TBC môn 1 + TBC môn 2 + Ngoại ngữ chứng chỉ quy đổi + ĐC + ĐƯT
+H = TBC3năm M1 + TBC3năm M2 + Ngoại ngữ quy đổi từ chứng chỉ
+ĐXT = H quy đổi tương đương theo Đại học Huế + ĐC + ĐƯT
 
 Thang: Thang 30.
 
-- Chứng chỉ quy đổi thay đúng môn ngoại ngữ của tổ hợp, theo bảng trường công bố.
-- Không dùng cùng chứng chỉ vừa thay môn vừa cộng điểm; kiểm tra điều kiện của ngành.
+- Theo trang Tuyển sinh đại học 2026 chính của Khoa, thay bài hướng dẫn dự kiến trước đó. Tất cả ngành/chương trình trong bảng Khoa dùng cùng phương thức, tổ hợp được xét tương đương.
+- Điểm cộng gồm điểm thưởng, xét thưởng, khuyến khích theo Đại học Huế, tối đa 3; không bỏ điểm cộng ở hồ sơ có quyền hưởng.
+- Điểm cuối làm tròn 2 chữ số, tối đa 30; nguồn môn ngoại ngữ không sử dụng kết quả miễn thi.
+- Nhánh tự tính đang mở chỉ dành thí sinh KHÔNG CÓ điểm cộng; hồ sơ có điểm cộng cần xác nhận căn cứ giảm ưu tiên và mức cộng chính thức.
+- IELTS 5/5,5/6/6,5/7+ → 8/8,5/9/9,5/10; TOEFL iBT 35–45/46–59/60–78/79–93/94+ tương ứng; VSTEP và TOEIC bốn kỹ năng theo bảng riêng, không dùng chỉ điểm Nghe–Đọc.
+- Hai TBC3năm môn văn hóa làm tròn đến 1 chữ số; chứng chỉ thay đúng môn ngoại ngữ trong tổ hợp; áp dụng công thức phương thức 200.
+- Chứng chỉ còn thời hạn 2 năm tính đến 12/8/2026; không dùng chứng chỉ chưa được Trường chấp nhận.
+- Đã đối chiếu Phụ lục 2 Đại học Huế 10/7/2026, 1.501 dòng ngưỡng/điểm trúng tuyển: THPT 15/18/20/22,5/24/26/30 tương ứng học bạ 18/20,25/21,75/23,91/25,26/26,88/30. Đọc đủ bảng tại nguồn kèm theo.
+- Các cột học bạ có giá trị lặp ứng với nhiều mốc THPT; không đảo bảng bằng một lookup đơn hoặc tự chọn một mốc khi chưa có quy ước của Trường.
 
-Ưu tiên: Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30; giảm từ 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc. Tổng cuối tối đa 30..
 
-Quy đổi: Dùng bảng chứng chỉ và điểm cộng ở mục 5 của Khoa; không dùng bảng ngoại ngữ của đơn vị khác.
+Quy đổi: Phụ lục 2 Đại học Huế 2026 là bảng quy đổi NGƯỠNG/ĐIỂM TRÚNG TUYỂN đủ 1.501 dòng. Có nhiều mốc THPT trùng giá trị học bạ; cần hướng dẫn áp dụng và làm tròn của Khoa trước khi tự tính điểm cá nhân. Không bỏ bước làm tròn một chữ số từng môn.
 
-[Nguồn đối chiếu](https://huet.hueuni.edu.vn/index.php/huong-dan-dang-ky-dai-hoc-2026/) · 2026-10-04
+[Nguồn đối chiếu](https://huet.hueuni.edu.vn/index.php/tuyen-sinh-dai-hoc-2026/) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT + CCNN
 
 Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 8. Tự tính mới: không.
 
-ĐXT = Điểm thi môn 1 + Điểm thi môn 2 + Ngoại ngữ chứng chỉ quy đổi + ĐC + ĐƯT
+ĐXT = M1 thi THPT + M2 thi THPT + Ngoại ngữ quy đổi từ chứng chỉ + ĐC + ĐƯT
 
 Thang: Thang 30.
 
-- Chứng chỉ quy đổi thay đúng môn ngoại ngữ của tổ hợp, theo bảng trường công bố.
-- Không dùng cùng chứng chỉ vừa thay môn vừa cộng điểm; kiểm tra điều kiện của ngành.
+- Theo trang Tuyển sinh đại học 2026 chính của Khoa, thay bài hướng dẫn dự kiến trước đó. Tất cả ngành/chương trình trong bảng Khoa dùng cùng phương thức, tổ hợp được xét tương đương.
+- Điểm cộng gồm điểm thưởng, xét thưởng, khuyến khích theo Đại học Huế, tối đa 3; không bỏ điểm cộng ở hồ sơ có quyền hưởng.
+- Điểm cuối làm tròn 2 chữ số, tối đa 30; nguồn môn ngoại ngữ không sử dụng kết quả miễn thi.
+- Nhánh tự tính đang mở chỉ dành thí sinh KHÔNG CÓ điểm cộng; hồ sơ có điểm cộng cần xác nhận căn cứ giảm ưu tiên và mức cộng chính thức.
+- IELTS 5/5,5/6/6,5/7+ → 8/8,5/9/9,5/10; TOEFL iBT 35–45/46–59/60–78/79–93/94+ tương ứng; VSTEP và TOEIC bốn kỹ năng theo bảng riêng, không dùng chỉ điểm Nghe–Đọc.
+- Mục 2.4 dẫn chiếu 2.3; chứng chỉ hợp lệ trong 2 năm đến 12/8/2026. Cần xác nhận mức cộng và thứ tự ưu tiên nếu hồ sơ có điểm cộng.
 
-Ưu tiên: Ưu tiên gồm khu vực và đối tượng, quy theo thang của phương thức. Từ 22,50/30, mức thực tế = (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối không vượt thang điểm..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30; giảm từ 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc. Tổng cuối tối đa 30..
 
-Quy đổi: Dùng bảng chứng chỉ và điểm cộng ở mục 5 của Khoa; không dùng bảng ngoại ngữ của đơn vị khác.
+Quy đổi: Dùng đúng bảng 5.1; không chia chứng chỉ theo điểm tối đa và không cộng cùng chứng chỉ hai lần.
 
-[Nguồn đối chiếu](https://huet.hueuni.edu.vn/index.php/huong-dan-dang-ky-dai-hoc-2026/) · 2026-10-04
+[Nguồn đối chiếu](https://huet.hueuni.edu.vn/index.php/tuyen-sinh-dai-hoc-2026/) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -3576,7 +3607,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-ky-thuat-va-cong-nghe-dai-hoc-hue-DHE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-ky-thuat-va-cong-nghe-dai-hoc-hue-DHE.html) · 2026-10-04
 
 
 ## DHF — Trường Đại học Ngoại ngữ - ĐH Huế
@@ -3658,7 +3689,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://tuyensinh.huflis.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026_20251231114356) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.huflis.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026_20251231114356) · 2026-10-04
 
 
 ## DHI — Khoa Quốc tế - ĐH Huế
@@ -3675,7 +3706,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-quoc-te-dai-hoc-hue-DHI.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-quoc-te-dai-hoc-hue-DHI.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -3692,7 +3723,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-quoc-te-dai-hoc-hue-DHI.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-quoc-te-dai-hoc-hue-DHI.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -3707,7 +3738,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-quoc-te-dai-hoc-hue-DHI.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-quoc-te-dai-hoc-hue-DHI.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + CCNN
@@ -3725,7 +3756,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-quoc-te-dai-hoc-hue-DHI.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-quoc-te-dai-hoc-hue-DHI.html) · 2026-10-04
 
 
 ## DHK — Trường Đại học Kinh tế - ĐH Huế
@@ -3743,7 +3774,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-hue-DHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-hue-DHK.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -3757,7 +3788,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-hue-DHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-hue-DHK.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + CCNN
@@ -3775,7 +3806,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-hue-DHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-hue-DHK.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN
@@ -3794,7 +3825,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-hue-DHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-hue-DHK.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -3808,7 +3839,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-hue-DHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-dai-hoc-hue-DHK.html) · 2026-10-04
 
 
 ## DHL — Trường Đại học Nông Lâm - ĐH Huế
@@ -3829,7 +3860,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-hue-DHL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-hue-DHL.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -3844,7 +3875,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-hue-DHL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-hue-DHL.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + CCNN
@@ -3862,7 +3893,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-hue-DHL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-hue-DHL.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN
@@ -3880,7 +3911,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-hue-DHL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-hue-DHL.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -3894,7 +3925,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-hue-DHL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-hue-DHL.html) · 2026-10-04
 
 
 ## DHN — Trường Đại học Nghệ thuật - ĐH Huế
@@ -3912,7 +3943,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-thuat-hue-DHN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-thuat-hue-DHN.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT + Năng khiếu
@@ -3927,7 +3958,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-thuat-hue-DHN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-thuat-hue-DHN.html) · 2026-10-04
 
 
 ### Học bạ kết hợp năng khiếu
@@ -3942,7 +3973,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-thuat-hue-DHN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nghe-thuat-hue-DHN.html) · 2026-10-04
 
 - Nhãn phương thức bị sai trên nguồn tổng hợp; nội dung và bảng ngành chỉ ra năng khiếu.
 
@@ -3996,7 +4027,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quan-ly-va-cong-nghe-hai-phong-HPU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quan-ly-va-cong-nghe-hai-phong-HPU.html) · 2026-10-04
 
 
 ## DHQ — Phân hiệu ĐH Huế tại Quảng Trị
@@ -4013,7 +4044,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-hue-tai-quang-tri-DHQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-hue-tai-quang-tri-DHQ.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -4030,7 +4061,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-hue-tai-quang-tri-DHQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-hue-tai-quang-tri-DHQ.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -4045,7 +4076,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-hue-tai-quang-tri-DHQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-hue-tai-quang-tri-DHQ.html) · 2026-10-04
 
 
 ## DHS — Trường Đại học Sư phạm - ĐH Huế
@@ -4063,7 +4094,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -4078,7 +4109,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -4092,7 +4123,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -4107,7 +4138,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm TPHCM
@@ -4122,7 +4153,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + CCNN
@@ -4139,7 +4170,7 @@ Thang: Thang 30 / Thang 150 / Thang 1200.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN
@@ -4157,7 +4188,7 @@ Thang: Thang 30 / Thang 150 / Thang 1200.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ### Kết hợp ĐGNL SPT + CCNN
@@ -4175,7 +4206,7 @@ Thang: Thang 30 / Thang 150 / Thang 1200.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ### Kết hợp ĐGNL H-SCA + CCNN
@@ -4193,7 +4224,7 @@ Thang: Thang 30 / Thang 150 / Thang 1200.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ### Kết hợp Điểm ĐGNL SPT + Năng khiếu
@@ -4207,7 +4238,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ### Kết hợp Điểm ĐGNL H-SCA + Năng khiếu
@@ -4221,7 +4252,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + Năng khiếu
@@ -4235,7 +4266,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-hue-DHS.html) · 2026-10-04
 
 
 ## DHT — Trường Đại học Khoa học - ĐH Huế
@@ -4284,7 +4315,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-hue-DHT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-hue-DHT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -4298,7 +4329,7 @@ Thang: Thang 150.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-hue-DHT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-hue-DHT.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + CCNN
@@ -4361,7 +4392,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-hue-DHT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-hue-DHT.html) · 2026-10-04
 
 
 ## DHV — Trường Đại học Hùng Vương TPHCM
@@ -4380,7 +4411,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-tphcm-DHV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-tphcm-DHV.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -4394,7 +4425,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-tphcm-DHV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-tphcm-DHV.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -4409,7 +4440,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-tphcm-DHV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-tphcm-DHV.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm TPHCM
@@ -4423,7 +4454,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-tphcm-DHV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-tphcm-DHV.html) · 2026-10-04
 
 
 ## DHY — Trường Đại học Y Dược - ĐH Huế
@@ -4443,7 +4474,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hue-DHY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hue-DHY.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + CCNN
@@ -4460,7 +4491,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hue-DHY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hue-DHY.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -4474,7 +4505,7 @@ Thang: Thang 150.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hue-DHY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hue-DHY.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -4488,7 +4519,7 @@ Thang: Thang 1200.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hue-DHY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hue-DHY.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -4502,7 +4533,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hue-DHY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hue-DHY.html) · 2026-10-04
 
 
 ## DKB — Trường Đại học Kinh tế Kỹ thuật Bình Dương
@@ -4520,7 +4551,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-binh-duong-DKB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-binh-duong-DKB.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -4535,7 +4566,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-binh-duong-DKB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-binh-duong-DKB.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -4550,7 +4581,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-binh-duong-DKB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-binh-duong-DKB.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -4565,7 +4596,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-binh-duong-DKB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-binh-duong-DKB.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -4579,7 +4610,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-binh-duong-DKB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-binh-duong-DKB.html) · 2026-10-04
 
 
 ## DKC — Trường Đại học Công nghệ TP.HCM
@@ -4589,77 +4620,86 @@ Thang: Không có thang điểm chung.
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 78. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Điểm tổ hợp dùng kết quả thi THPT 2026; cộng ưu tiên theo quy chế. Tổ hợp năng khiếu kết hợp bài thi Vẽ/Âm nhạc.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Không dùng điểm bảo lưu thay kỳ thi 2026. Chứng chỉ ngoại ngữ theo Phụ lục 2.
+- Ngành có Vẽ/Âm nhạc dùng kết quả năng khiếu được chấp nhận theo tổ hợp; không có cùng ba điểm văn hóa cho mọi ngành.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-tphcm-DKC.html) · 2026-09-30
+Quy đổi: Phải dùng thông báo tương đương của HUTECH; chưa đủ đầy đủ công thức cho các tổ hợp đặc biệt.
+
+[Nguồn đối chiếu](https://www.hutech.edu.vn/download/tuyensinh/74376) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 78. Tự tính mới: không.
+Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 78. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+Sử dụng kết quả V-ACT ĐHQG-HCM năm 2026; ưu tiên chuyển theo thang bài thi, chưa có biểu thức đầy đủ trong bản cập nhật.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Theo kỳ thi và thông báo tương đương HUTECH.
 
+- Không dùng ngưỡng bài thi như công thức điểm xét tuyển; sức khỏe/pháp luật có ngưỡng riêng.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên chuyển phù hợp thang điểm bài thi theo mục 7; không mặc định cộng 0,75 trực tiếp vào điểm gốc..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-tphcm-DKC.html) · 2026-09-30
+[Nguồn đối chiếu](https://www.hutech.edu.vn/download/tuyensinh/74376) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 78. Tự tính mới: không.
 
-Điểm V-SAT được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Sử dụng kết quả V-SAT năm 2026; ưu tiên chuyển theo thang bài thi, chưa có biểu thức đầy đủ trong bản cập nhật.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Theo kỳ thi và thông báo tương đương HUTECH.
 
+- Không dùng ngưỡng bài thi như công thức điểm xét tuyển; sức khỏe/pháp luật có ngưỡng riêng.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên chuyển phù hợp thang điểm bài thi theo mục 7; không mặc định cộng 0,75 trực tiếp vào điểm gốc..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-tphcm-DKC.html) · 2026-09-30
+[Nguồn đối chiếu](https://www.hutech.edu.vn/download/tuyensinh/74376) · 2026-10-04
 
 
 ### Điểm học bạ
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 78. Tự tính mới: không.
 
-Điểm xét tuyển là tổng điểm trung bình 03 môn theo tổ hợp xét tuyển của 06 học kỳ (lớp 10, lớp 11 và lớp 12).
+H = Tổng điểm trung bình sáu học kỳ của 3 môn trong tổ hợp
+TB6HK Mi = Tổng điểm HK1/HK2 của lớp 10, 11, 12 môn i / 6
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Sáu học kỳ, không dùng ba điểm cả năm.
+- Ngành có Vẽ/Âm nhạc kết hợp điểm năng khiếu theo tổ hợp; không dùng công thức ba môn học bạ văn hóa cho mọi ngành.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://www.hutech.edu.vn/tuyensinh/tin-tuyen-sinh/14630721-hutech-cong-bo-phuong-an-tuyen-sinh-dai-hoc-chinh-quy-du-kien-nam-2026) · 2026-10-04
+Quy đổi: Chưa đủ công thức năng khiếu/quy đổi độ lệch và các thành phần cuối để bật bộ tính chung.
 
-- Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính.
+[Nguồn đối chiếu](https://www.hutech.edu.vn/download/tuyensinh/74376) · 2026-10-04
+
 
 ### Xét tuyển theo chứng chỉ quốc tế (SAT, ACT, A level, IB)
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 78. Tự tính mới: không.
+Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 78. Tự tính mới: không.
 
-Điểm chứng chỉ bài thi quốc tế được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Bản cập nhật 2026 công bố 4 phương thức chính, chưa xác nhận một phương thức chứng chỉ quốc tế độc lập như tên hồ sơ hiện tại.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Không nhầm điều kiện ngoại ngữ chương trình liên kết với một công thức SAT/ACT/IB/A-Level.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Chưa đủ căn cứ cho bộ tính phương thức chứng chỉ quốc tế riêng..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-tphcm-DKC.html) · 2026-09-30
+[Nguồn đối chiếu](https://www.hutech.edu.vn/download/tuyensinh/74376) · 2026-10-04
 
+- Tên phương thức chứng chỉ quốc tế hiện có cần đối chiếu thông báo chính thức riêng.
 
 ## DKH — Trường Đại học Dược Hà Nội
 
@@ -4675,7 +4715,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCQT
@@ -4693,7 +4733,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -4710,7 +4750,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-10-04
 
 
 ### Chứng chỉ quốc tế
@@ -4727,7 +4767,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -4744,7 +4784,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -4760,7 +4800,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-duoc-ha-noi-DKH.html) · 2026-10-04
 
 
 ## DKK — Trường Đại học Kinh tế - Kỹ thuật Công nghiệp
@@ -4777,7 +4817,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-cong-nghiep-DKK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-cong-nghiep-DKK.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -4792,7 +4832,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-cong-nghiep-DKK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-cong-nghiep-DKK.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -4807,7 +4847,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-cong-nghiep-DKK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-cong-nghiep-DKK.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -4821,7 +4861,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-cong-nghiep-DKK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-cong-nghiep-DKK.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -4835,7 +4875,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-cong-nghiep-DKK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-cong-nghiep-DKK.html) · 2026-10-04
 
 
 ## DKS — Trường Đại học Kiểm sát Hà Nội
@@ -4857,7 +4897,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kiem-sat-DKS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kiem-sat-DKS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -4871,7 +4911,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kiem-sat-DKS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kiem-sat-DKS.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -4894,7 +4934,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kiem-sat-DKS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kiem-sat-DKS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -4911,7 +4951,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kiem-sat-DKS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kiem-sat-DKS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -4928,7 +4968,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kiem-sat-DKS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kiem-sat-DKS.html) · 2026-10-04
 
 
 ## DKT — Trường Đại học Hải Dương
@@ -4946,7 +4986,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-duong-DKT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-duong-DKT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -4966,7 +5006,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-duong-DKT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-duong-DKT.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -4982,7 +5022,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-duong-DKT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-duong-DKT.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -4996,7 +5036,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-duong-DKT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-duong-DKT.html) · 2026-10-04
 
 
 ## DKY — Trường Đại học Kỹ thuật Y tế Hải Dương
@@ -5004,78 +5044,115 @@ Thang: Không có thang điểm chung.
 
 ### Điểm thi THPT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 5. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 5. Tự tính mới: có.
 
-- Điểm xét tuyển được tính từ tổng điểm thi 3 môn tốt nghiệp THPT theo tổ hợp các môn xét tuyển cộng điểm ưu tiên, khuyến khích (nếu có).
-Điểm xét tuyển = (2×Điểm A + Điểm B+ Điểm C)×3/4 +UT+KK
+ĐXT = (2 × Toán thi THPT + M2 thi THPT + M3 thi THPT) × 3/4 + KK + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Chỉ 5 ngành đại học chính quy, không dùng mẫu đăng ký cao đẳng làm nguồn công thức.
+- Điểm cộng khuyến khích tổng tối đa 3; thành tích học tập chỉ lấy mức cao nhất, chứng chỉ tiếng Anh chỉ lấy chứng chỉ có mức cộng cao nhất; không nhận home edition.
+- IELTS 5,5/6,0/6,5/7,0/7,5–9,0 được cộng 0,25/0,50/1,00/1,25/1,50 theo bảng; TOEFL iBT, PTE, Cambridge có khoảng tương ứng riêng.
+- Phải đạt ngưỡng và điều kiện sức khỏe theo ngành. Y khoa học bạ còn cần IELTS từ 6,5, kết quả học tập Tốt/Giỏi ba năm, cặp môn theo nguồn từ 8,0 và ngưỡng thi THPT.
+- B00, A00, D07 và B08/D08; Toán luôn có hệ số 2, hai môn còn lại hệ số 1. Không lấy tổng ba môn không trọng số.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-te-hai-duong-DKY.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.hmtu.edu.vn/?p=12709) · 2026-10-04
 
 
 ### Điểm học bạ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 5. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 5. Tự tính mới: không.
 
-Điểm xét tuyển = (2×Điểm A + Điểm B+ Điểm C)×3/4+UT+KK
+H = (2 × TB6HK Toán + TB6HK M2 + TB6HK M3) × 3/4
+y = c + (H − a) / (b − a) × (d − c)
+ĐXT cuối = y tương đương THPT + KK + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Chỉ 5 ngành đại học chính quy, không dùng mẫu đăng ký cao đẳng làm nguồn công thức.
+- Điểm cộng khuyến khích tổng tối đa 3; thành tích học tập chỉ lấy mức cao nhất, chứng chỉ tiếng Anh chỉ lấy chứng chỉ có mức cộng cao nhất; không nhận home edition.
+- IELTS 5,5/6,0/6,5/7,0/7,5–9,0 được cộng 0,25/0,50/1,00/1,25/1,50 theo bảng; TOEFL iBT, PTE, Cambridge có khoảng tương ứng riêng.
+- Phải đạt ngưỡng và điều kiện sức khỏe theo ngành. Y khoa học bạ còn cần IELTS từ 6,5, kết quả học tập Tốt/Giỏi ba năm, cặp môn theo nguồn từ 8,0 và ngưỡng thi THPT.
+- TB6HK: trung bình sáu học kỳ của chính môn; không thay bằng điểm cả năm ba lớp.
+- Bảng H → THPT: [21;24]→[18;22]; [24;26]→[22;24]; [26;27,5]→[24;26]; [27,5;30]→[26;27]. H=25 → y=23 trước cộng.
+- Thông báo 594 yêu cầu quy đổi rồi cộng; không cộng ưu tiên hoặc khuyến khích hai lần.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Bộ tính hiện chưa hỗ trợ nội suy sau tổng có trọng số từ 18 đầu điểm; chỉ hiển thị biểu thức và bốn khoảng, không dùng học bạ gốc làm điểm cuối.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-te-hai-duong-DKY.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.hmtu.edu.vn/?p=14610) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 5. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 5. Tự tính mới: có.
 
-Điểm ĐGNL của ĐHQG TP.HCM được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+y = c + (x − a) / (b − a) × (d − c)
+ĐXT = y tương đương THPT + KK + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Chỉ 5 ngành đại học chính quy, không dùng mẫu đăng ký cao đẳng làm nguồn công thức.
+- Điểm cộng khuyến khích tổng tối đa 3; thành tích học tập chỉ lấy mức cao nhất, chứng chỉ tiếng Anh chỉ lấy chứng chỉ có mức cộng cao nhất; không nhận home edition.
+- IELTS 5,5/6,0/6,5/7,0/7,5–9,0 được cộng 0,25/0,50/1,00/1,25/1,50 theo bảng; TOEFL iBT, PTE, Cambridge có khoảng tương ứng riêng.
+- Phải đạt ngưỡng và điều kiện sức khỏe theo ngành. Y khoa học bạ còn cần IELTS từ 6,5, kết quả học tập Tốt/Giỏi ba năm, cặp môn theo nguồn từ 8,0 và ngưỡng thi THPT.
+- Bảng V-ACT → THPT: [591; 738] → [18; 22]; [738; 840] → [22; 24]; [840; 922] → [24; 26]; [922; 966] → [26; 27]; [966; 1200] → [27; 30].
+- Không có chênh lệch điểm giữa các tổ hợp; dùng B00 làm tổ hợp gốc. Các mốc chung hai khoảng cho cùng giá trị quy đổi.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-te-hai-duong-DKY.html) · 2026-09-30
+Quy đổi: Nội suy theo năm khoảng của thông báo; không ngoại suy. Cộng điểm cộng và ưu tiên sau chuyển sang thang 30.
+
+[Nguồn đối chiếu](https://tuyensinh.hmtu.edu.vn/?p=14610) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 5. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 5. Tự tính mới: có.
 
-Điểm TSA được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+y = c + (x − a) / (b − a) × (d − c)
+ĐXT = y tương đương THPT + KK + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Chỉ 5 ngành đại học chính quy, không dùng mẫu đăng ký cao đẳng làm nguồn công thức.
+- Điểm cộng khuyến khích tổng tối đa 3; thành tích học tập chỉ lấy mức cao nhất, chứng chỉ tiếng Anh chỉ lấy chứng chỉ có mức cộng cao nhất; không nhận home edition.
+- IELTS 5,5/6,0/6,5/7,0/7,5–9,0 được cộng 0,25/0,50/1,00/1,25/1,50 theo bảng; TOEFL iBT, PTE, Cambridge có khoảng tương ứng riêng.
+- Phải đạt ngưỡng và điều kiện sức khỏe theo ngành. Y khoa học bạ còn cần IELTS từ 6,5, kết quả học tập Tốt/Giỏi ba năm, cặp môn theo nguồn từ 8,0 và ngưỡng thi THPT.
+- Bảng TSA → THPT: [43; 51] → [18; 22]; [51; 55] → [22; 24]; [55; 62] → [24; 26]; [62; 66] → [26; 27]; [66; 100] → [27; 30].
+- Không có chênh lệch điểm giữa các tổ hợp; dùng B00 làm tổ hợp gốc. Các mốc chung hai khoảng cho cùng giá trị quy đổi.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-te-hai-duong-DKY.html) · 2026-09-30
+Quy đổi: Nội suy theo năm khoảng của thông báo; không ngoại suy. Cộng điểm cộng và ưu tiên sau chuyển sang thang 30.
+
+[Nguồn đối chiếu](https://tuyensinh.hmtu.edu.vn/?p=14610) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 5. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 5. Tự tính mới: có.
 
-Điểm HSA của ĐHQG Hà Nội được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+y = c + (x − a) / (b − a) × (d − c)
+ĐXT = y tương đương THPT + KK + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Chỉ 5 ngành đại học chính quy, không dùng mẫu đăng ký cao đẳng làm nguồn công thức.
+- Điểm cộng khuyến khích tổng tối đa 3; thành tích học tập chỉ lấy mức cao nhất, chứng chỉ tiếng Anh chỉ lấy chứng chỉ có mức cộng cao nhất; không nhận home edition.
+- IELTS 5,5/6,0/6,5/7,0/7,5–9,0 được cộng 0,25/0,50/1,00/1,25/1,50 theo bảng; TOEFL iBT, PTE, Cambridge có khoảng tương ứng riêng.
+- Phải đạt ngưỡng và điều kiện sức khỏe theo ngành. Y khoa học bạ còn cần IELTS từ 6,5, kết quả học tập Tốt/Giỏi ba năm, cặp môn theo nguồn từ 8,0 và ngưỡng thi THPT.
+- Bảng HSA → THPT: [63; 77] → [18; 22]; [77; 88] → [22; 24]; [88; 100] → [24; 26]; [100; 107] → [26; 27]; [107; 150] → [27; 30].
+- Không có chênh lệch điểm giữa các tổ hợp; dùng B00 làm tổ hợp gốc. Các mốc chung hai khoảng cho cùng giá trị quy đổi.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-te-hai-duong-DKY.html) · 2026-09-30
+Quy đổi: Nội suy theo năm khoảng của thông báo; không ngoại suy. Cộng điểm cộng và ưu tiên sau chuyển sang thang 30.
+
+[Nguồn đối chiếu](https://tuyensinh.hmtu.edu.vn/?p=14610) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -5089,7 +5166,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-te-hai-duong-DKY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-te-hai-duong-DKY.html) · 2026-10-04
 
 
 ## DLA — Trường Đại học Kinh tế Công nghiệp Long An
@@ -5106,7 +5183,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-cong-nghiep-long-an-DLA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-cong-nghiep-long-an-DLA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -5121,7 +5198,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-cong-nghiep-long-an-DLA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-cong-nghiep-long-an-DLA.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -5138,7 +5215,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-cong-nghiep-long-an-DLA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-cong-nghiep-long-an-DLA.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -5152,7 +5229,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-cong-nghiep-long-an-DLA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-cong-nghiep-long-an-DLA.html) · 2026-10-04
 
 
 ## DLH — Trường Đại học Lạc Hồng
@@ -5162,73 +5239,76 @@ Thang: Không có thang điểm chung.
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
 
-Điểm môn 1 + Điểm môn 2 + Điểm môn 3 ≥ 15 điểm
+Tổng xét theo tổ hợp = M1 thi THPT + M2 thi THPT + M3 thi THPT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Thông báo nêu tổng ba môn từ 15; Dược, Luật và Luật kinh tế dùng ngưỡng ngành do Bộ công bố.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lac-hong-DLH.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.lhu.edu.vn/680/52514/Thong-bao-Tuyen-sinh-he-dai-hoc-chinh-quy-nam-2026.html) · 2026-10-04
 
 
 ### Điểm học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
 
-Sử dụng kết quả học tập lớp 10, 11 và 12; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+H = Tổng điểm cả năm của 3 môn ở các lớp 10, 11, 12 / 3
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Dùng 9 điểm cả năm, không phải 18 điểm học kỳ. H từ 18; Dược từ 24.
+- Luật/Luật kinh tế: học tập lớp 12 Tốt/Giỏi và ngưỡng THPT từ 18 hoặc xét tốt nghiệp từ 8,5. Dược có điều kiện tương ứng và ngưỡng THPT từ 20.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lac-hong-DLH.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.lhu.edu.vn/680/52514/Thong-bao-Tuyen-sinh-he-dai-hoc-chinh-quy-nam-2026.html) · 2026-10-04
 
 
 ### Xét kết quả thi thi ĐGNL do Trường ĐH Lạc Hồng tổ chức
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
+Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+Kết quả ĐGNL do Lạc Hồng tổ chức từ 500 điểm; chưa có biểu thức chuyển thang và điểm xét tuyển cuối đầy đủ trong thông báo.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang kỳ thi; điểm cuối theo bảng của Trường.
 
+- Ngoài ngưỡng kỳ thi còn điều kiện tuyển sinh chung và điều kiện ngành; không dùng ngưỡng làm điểm chuẩn.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lac-hong-DLH.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.lhu.edu.vn/680/52514/Thong-bao-Tuyen-sinh-he-dai-hoc-chinh-quy-nam-2026.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
+Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+Kết quả V-ACT ĐHQG-HCM từ 600 điểm; chưa có biểu thức chuyển thang và điểm xét tuyển cuối đầy đủ trong thông báo.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang kỳ thi; điểm cuối theo bảng của Trường.
 
+- Ngoài ngưỡng kỳ thi còn điều kiện tuyển sinh chung và điều kiện ngành; không dùng ngưỡng làm điểm chuẩn.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lac-hong-DLH.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.lhu.edu.vn/680/52514/Thong-bao-Tuyen-sinh-he-dai-hoc-chinh-quy-nam-2026.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
 
-Điểm V-SAT được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Kết quả V-SAT từ 250 điểm; chưa có biểu thức chuyển thang và điểm xét tuyển cuối đầy đủ trong thông báo.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang kỳ thi; điểm cuối theo bảng của Trường.
 
-- V-SAT từ 250 điểm. Thí sinh cần đáp ứng thêm điều kiện đầu vào chung và các ngưỡng riêng của ngành Dược/Luật/Luật kinh tế.
+- Ngoài ngưỡng kỳ thi còn điều kiện tuyển sinh chung và điều kiện ngành; không dùng ngưỡng làm điểm chuẩn.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://tuyensinh.lhu.edu.vn/680/52514/Thong-bao-Tuyen-sinh-he-dai-hoc-chinh-quy-nam-2026.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.lhu.edu.vn/680/52514/Thong-bao-Tuyen-sinh-he-dai-hoc-chinh-quy-nam-2026.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -5242,7 +5322,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lac-hong-DLH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lac-hong-DLH.html) · 2026-10-04
 
 
 ## DLS — Trường Đại học Lao động Xã hội – Cơ sở TP.HCM
@@ -5260,7 +5340,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -5275,7 +5355,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-10-04
 
 
 ### Xét kết hợp Điểm thi + CCNN
@@ -5292,7 +5372,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-10-04
 
 
 ### Xét kết hợp Học bạ + CCNN
@@ -5309,7 +5389,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -5324,7 +5404,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -5339,7 +5419,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -5354,7 +5434,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -5368,7 +5448,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html) · 2026-10-04
 
 
 ## DLT — Trường Đại học Lao động - Xã hội (Cơ sở Sơn Tây)
@@ -5393,7 +5473,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -5408,7 +5488,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-10-04
 
 
 ### Xét kết hợp Điểm thi THPT + CCNN
@@ -5426,7 +5506,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-10-04
 
 
 ### Kết hợp điểm Học bạ + CCNN
@@ -5443,7 +5523,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -5458,7 +5538,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -5473,7 +5553,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -5488,7 +5568,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -5502,7 +5582,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html) · 2026-10-04
 
 
 ## DMS — Trường Đại học Tài chính - Marketing
@@ -5522,7 +5602,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://images.tuyensinh247.com/picture/2026/0318/thongtintuyensinhdh2026-123-compressed_1.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://images.tuyensinh247.com/picture/2026/0318/thongtintuyensinhdh2026-123-compressed_1.pdf) · 2026-10-04
 
 
 ### Xét học bạ lớp 10, 11, 12
@@ -5618,7 +5698,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-nguyen-va-moi-truong-ha-noi-DMT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-nguyen-va-moi-truong-ha-noi-DMT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -5669,7 +5749,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-nguyen-va-moi-truong-ha-noi-DMT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-nguyen-va-moi-truong-ha-noi-DMT.html) · 2026-10-04
 
 
 ### Xét kết hợp điểm thi THPT + CCNN
@@ -5730,7 +5810,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-lu-DNB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-lu-DNB.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -5746,7 +5826,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-lu-DNB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-lu-DNB.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -5760,7 +5840,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-lu-DNB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-lu-DNB.html) · 2026-10-04
 
 
 ## DNC — Trường Đại học Nam Cần Thơ
@@ -5778,7 +5858,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -5793,7 +5873,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -5807,7 +5887,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-10-04
 
 
 ### Điểm thi riêng
@@ -5821,7 +5901,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -5835,7 +5915,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -5849,7 +5929,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -5865,7 +5945,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html) · 2026-10-04
 
 
 ## DNT — Trường Đại học Ngoại ngữ - Tin học TP.HCM
@@ -5883,7 +5963,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-tin-hoc-tphcm-DNT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-tin-hoc-tphcm-DNT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -5898,7 +5978,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-tin-hoc-tphcm-DNT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-tin-hoc-tphcm-DNT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -5913,7 +5993,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-tin-hoc-tphcm-DNT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-tin-hoc-tphcm-DNT.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -5927,7 +6007,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-tin-hoc-tphcm-DNT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-tin-hoc-tphcm-DNT.html) · 2026-10-04
 
 
 ## DNU — Trường Đại học Đồng Nai
@@ -5945,7 +6025,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-nai-DNU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-nai-DNU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -5959,7 +6039,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-nai-DNU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-nai-DNU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -5974,7 +6054,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-nai-DNU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-nai-DNU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -5989,7 +6069,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-nai-DNU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-nai-DNU.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -6003,7 +6083,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-nai-DNU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-nai-DNU.html) · 2026-10-04
 
 
 ## DPC — Trường Đại học Phan Châu Trinh
@@ -6110,7 +6190,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phan-chau-trinh-DPC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phan-chau-trinh-DPC.html) · 2026-10-04
 
 
 ## DPD — Trường Đại học Phương Đông
@@ -6129,7 +6209,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -6144,7 +6224,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -6158,7 +6238,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -6173,7 +6253,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -6188,7 +6268,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -6203,7 +6283,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phuong-dong-DPD.html) · 2026-10-04
 
 
 ## DPQ — Trường Đại học Phạm Văn Đồng
@@ -6213,57 +6293,53 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 13. Tự tính mới: không.
 
-Xét tuyển dựa vào kết quả của Kỳ thi THPT năm 2026 (tổng điểm 3 môn theo tổ hợp môn xét tuyển, sử dụng thang điểm 30);
-Tổng điểm xét tuyển = M1 + M2 + M3 + Tổng điểm ưu tiên.
-Tổng điểm ưu tiên = [(30 - Tổng điểm đạt được)/7,5] x Mức điểm ưu tiên quy định.
+ĐXT đại học = THPT M1 + THPT M2 + THPT M3 + ĐƯT
 
 Thang: Thang 30.
 
-- M1, M2, M3: là điểm bài thi THPT năm 2026 (đối với Phương thức 1)/ điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 của tổ hợp môn xét tuyển (đối với Phương thức 2).
-- M1: là điểm bài thi THPT năm 2026 môn ngữ Văn hoặc môn Toán (đối với Phương thức 1)/ điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 môn Ngữ văn hoặc môn Toán (đối với Phương thức 2).
-- M2: là điểm môn năng khiếu 1.
-- M3: là điểm môn năng khiếu 2.
+- Văn bản công khai còn trống số/ngày quyết định; chưa bật bộ tính từ tài liệu này.
+- Phân biệt bậc đại học với cao đẳng Giáo dục Mầm non; không gộp môn năng khiếu vào mọi ngành đại học.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-pham-van-dong-DPQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.pdu.edu.vn/download/3691/) · 2026-10-04
 
 
 ### Điểm học bạ
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 13. Tự tính mới: không.
 
-Tổng điểm xét tuyển = M1 + M2 + M3 + Tổng điểm ưu tiên.
-Tổng điểm ưu tiên = [(30 - Tổng điểm đạt được)/7,5] x Mức điểm ưu tiên quy định.
+ĐXT đại học = TBC3năm M1 + TBC3năm M2 + TBC3năm M3 + ĐƯT
+TBC3năm Mi: trung bình cả năm lớp 10, 11, 12 môn i
 
 Thang: Thang 30.
 
-- M1, M2, M3: là điểm bài thi THPT năm 2026 (đối với Phương thức 1)/ điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 của tổ hợp môn xét tuyển (đối với Phương thức 2).
-- M1: là điểm bài thi THPT năm 2026 môn ngữ Văn hoặc môn Toán (đối với Phương thức 1)/ điểm trung bình chung kết quả học tập cả năm các lớp 10, 11, 12 môn Ngữ văn hoặc môn Toán (đối với Phương thức 2).
-- M2: là điểm môn năng khiếu 1.
-- M3: là điểm môn năng khiếu 2.
+- Văn bản công khai còn trống số/ngày quyết định; chưa bật bộ tính từ tài liệu này.
+- Phân biệt bậc đại học với cao đẳng Giáo dục Mầm non; không gộp môn năng khiếu vào mọi ngành đại học.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-pham-van-dong-DPQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.pdu.edu.vn/download/3691/) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 13. Tự tính mới: không.
+Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 13. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+Dùng kết quả V-ACT ĐHQG-HCM năm 2026; chưa có biểu thức chuyển thang và điểm xét tuyển cuối đầy đủ trong tài liệu.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Văn bản công khai còn trống số/ngày quyết định; chưa bật bộ tính từ tài liệu này.
+- Phân biệt bậc đại học với cao đẳng Giáo dục Mầm non; không gộp môn năng khiếu vào mọi ngành đại học.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-pham-van-dong-DPQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.pdu.edu.vn/download/3691/) · 2026-10-04
 
 
 ### Dự bị đại học
@@ -6277,23 +6353,24 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-pham-van-dong-DPQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-pham-van-dong-DPQ.html) · 2026-10-04
 
 
 ### Thi tuyển kết hợp xét tuyển
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 1. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 1. Tự tính mới: không.
 
-Có điểm hoặc điều kiện thi năng khiếu; không mặc định tất cả môn có cùng hệ số.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT cao đẳng Mầm non = Văn hoặc Toán (thi THPT 2026 hoặc TBC cả năm 10, 11, 12) + NK1 + NK2 + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- Hai nhánh: Toán hoặc Ngữ văn THPT + NK; trung bình cả năm lớp 10–12 Toán hoặc Ngữ văn + NK.
+- Văn bản công khai còn trống số/ngày quyết định; chưa bật bộ tính từ tài liệu này.
+- Phân biệt bậc đại học với cao đẳng Giáo dục Mầm non; không gộp môn năng khiếu vào mọi ngành đại học.
+- Hai môn năng khiếu riêng, không dùng một môn Vẽ cho cả NK1/NK2. Chỉ ngành Mầm non bậc cao đẳng.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-pham-van-dong-DPQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.pdu.edu.vn/download/3691/) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -6307,7 +6384,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-pham-van-dong-DPQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-pham-van-dong-DPQ.html) · 2026-10-04
 
 
 ## DPT — Trường Đại học Phan Thiết
@@ -6375,7 +6452,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phan-thiet-DPT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phan-thiet-DPT.html) · 2026-10-04
 
 
 ## DPX — Trường Đại học Dân lập Phú Xuân
@@ -6499,7 +6576,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://pxu.edu.vn/api/files/migrated/2026/05/Thong-tin-tuyen-sinh-chinh-quy-nam-2026-4.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://pxu.edu.vn/api/files/migrated/2026/05/Thong-tin-tuyen-sinh-chinh-quy-nam-2026-4.pdf) · 2026-10-04
 
 
 ## DPY — Trường Đại học Phú Yên
@@ -6517,7 +6594,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phu-yen-DPY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phu-yen-DPY.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -6532,7 +6609,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phu-yen-DPY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phu-yen-DPY.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -6547,7 +6624,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phu-yen-DPY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phu-yen-DPY.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -6561,7 +6638,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phu-yen-DPY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phu-yen-DPY.html) · 2026-10-04
 
 
 ## DQB — Trường Đại học Quảng Bình
@@ -6578,7 +6655,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-binh-DQB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-binh-DQB.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -6592,7 +6669,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-binh-DQB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-binh-DQB.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -6606,7 +6683,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-binh-DQB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-binh-DQB.html) · 2026-10-04
 
 
 ## DQK — Trường Đại học Kinh doanh và Công nghệ Hà Nội
@@ -6720,7 +6797,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -6735,7 +6812,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + CCNN
@@ -6752,7 +6829,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN
@@ -6769,7 +6846,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + Năng khiếu
@@ -6785,7 +6862,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -6800,7 +6877,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -6815,7 +6892,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -6829,7 +6906,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html) · 2026-10-04
 
 
 ## DQT — Trường Đại học Quang Trung
@@ -6866,7 +6943,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-trung-DQT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-trung-DQT.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -6880,7 +6957,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-trung-DQT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-trung-DQT.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -6894,7 +6971,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-trung-DQT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-trung-DQT.html) · 2026-10-04
 
 
 ## DQU — Trường Đại học Quảng Nam
@@ -6913,7 +6990,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-nam-DQU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-nam-DQU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -6929,7 +7006,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-nam-DQU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-nam-DQU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -6947,7 +7024,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-nam-DQU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-nam-DQU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -6965,7 +7042,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-nam-DQU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-nam-DQU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -6979,7 +7056,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-nam-DQU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quang-nam-DQU.html) · 2026-10-04
 
 
 ## DSD — Trường Đại học Sân khấu Điện ảnh TP.HCM
@@ -6998,7 +7075,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-san-khau-dien-anh-tphcm-DSD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-san-khau-dien-anh-tphcm-DSD.html) · 2026-10-04
 
 
 ## DSG — Trường Đại học Công nghệ Sài Gòn
@@ -7017,7 +7094,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-sai-gon-DSG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-sai-gon-DSG.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -7034,7 +7111,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-sai-gon-DSG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-sai-gon-DSG.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -7051,7 +7128,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-sai-gon-DSG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-sai-gon-DSG.html) · 2026-10-04
 
 
 ### Xét tuyển Học bạ THPT (hoặc tương đương) kết hợp với kết quả thi tốt nghiệp THPT
@@ -7069,7 +7146,7 @@ Thang: Thang 40 / Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-sai-gon-DSG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-sai-gon-DSG.html) · 2026-10-04
 
 
 ## DSK — Trường Đại học Sư phạm Kỹ thuật – ĐH Đà Nẵng
@@ -7086,7 +7163,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-dai-hoc-da-nang-DSK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-dai-hoc-da-nang-DSK.html) · 2026-10-04
 
 
 ### Điểm thi THPT + Học bạ
@@ -7100,7 +7177,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-dai-hoc-da-nang-DSK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-dai-hoc-da-nang-DSK.html) · 2026-10-04
 
 
 ## DTB — Trường Đại học Thái Bình
@@ -7118,7 +7195,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -7135,7 +7212,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -7150,7 +7227,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -7165,7 +7242,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -7180,7 +7257,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -7194,7 +7271,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html) · 2026-10-04
 
 
 ## DTC — Trường Đại học Công nghệ TT và Truyền thông (ĐH Thái Nguyên)
@@ -7264,7 +7341,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-thong-tin-va-truyen-thong-thai-nguyen-DTC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-thong-tin-va-truyen-thong-thai-nguyen-DTC.html) · 2026-10-04
 
 
 ## DTD — Trường Đại học Tây Đô
@@ -7282,7 +7359,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-do-DTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-do-DTD.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -7297,7 +7374,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-do-DTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-do-DTD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -7312,7 +7389,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-do-DTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-do-DTD.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -7327,7 +7404,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-do-DTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-do-DTD.html) · 2026-10-04
 
 
 ## DTE — Trường Đại học Kinh tế - Quản trị kinh doanh (ĐH Thái Nguyên)
@@ -7344,7 +7421,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen-DTE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen-DTE.html) · 2026-10-04
 
 
 ### Điểm thi THPT năm 2026
@@ -7358,7 +7435,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen-DTE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen-DTE.html) · 2026-10-04
 
 
 ### Học bạ THPT
@@ -7372,7 +7449,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen-DTE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen-DTE.html) · 2026-10-04
 
 
 ### ĐGNL HSA / SPT
@@ -7386,7 +7463,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen-DTE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen-DTE.html) · 2026-10-04
 
 
 ### V-SAT Đại học Thái Nguyên
@@ -7400,7 +7477,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen-DTE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quan-tri-kinh-doanh-thai-nguyen-DTE.html) · 2026-10-04
 
 
 ## DTF — Trường Ngoại ngữ (ĐH Thái Nguyên)
@@ -7417,7 +7494,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-ngoai-ngu-thai-nguyen-DTF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-ngoai-ngu-thai-nguyen-DTF.html) · 2026-10-04
 
 
 ### Xét tuyển kết hợp kết quả thi tốt nghiệp THPT với chứng chỉ ngoại ngữ quốc tế
@@ -7433,7 +7510,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-ngoai-ngu-thai-nguyen-DTF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-ngoai-ngu-thai-nguyen-DTF.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -7449,7 +7526,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-ngoai-ngu-thai-nguyen-DTF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-ngoai-ngu-thai-nguyen-DTF.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -7463,7 +7540,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-ngoai-ngu-thai-nguyen-DTF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-ngoai-ngu-thai-nguyen-DTF.html) · 2026-10-04
 
 
 ## DTHG — Phân hiệu Đại học Thái Nguyên tại tỉnh Hà Giang
@@ -7483,7 +7560,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -7501,7 +7578,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -7518,7 +7595,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -7535,7 +7612,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -7554,7 +7631,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -7571,7 +7648,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -7588,7 +7665,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-10-04
 
 
 ### Học sinh hoàn thành dự bị đại học
@@ -7603,7 +7680,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-ha-giang-DTG.html) · 2026-10-04
 
 
 ## DTK — Trường Đại học Kỹ thuật Công nghiệp (ĐH Thái Nguyên)
@@ -7653,7 +7730,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-cong-nghiep-thai-nguyen-DTK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-cong-nghiep-thai-nguyen-DTK.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -7688,7 +7765,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-cong-nghiep-thai-nguyen-DTK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-cong-nghiep-thai-nguyen-DTK.html) · 2026-10-04
 
 
 ## DTL — Trường Đại học Thăng Long
@@ -7708,7 +7785,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-10-04
 
 
 ### Kết hợp Điểm THPT + CCNN
@@ -7726,7 +7803,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -7742,7 +7819,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -7758,7 +7835,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -7774,7 +7851,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-10-04
 
 
 ### Kết hợp Điểm THPT + Học bạ
@@ -7789,7 +7866,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + Năng khiếu
@@ -7804,7 +7881,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -7818,7 +7895,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thang-long-DTL.html) · 2026-10-04
 
 
 ## DTM — Trường Đại học Tài nguyên và Môi trường TP.HCM
@@ -7838,7 +7915,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-nguyen-va-moi-truong-tphcm-DTM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-nguyen-va-moi-truong-tphcm-DTM.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -7852,7 +7929,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-nguyen-va-moi-truong-tphcm-DTM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-nguyen-va-moi-truong-tphcm-DTM.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -7882,7 +7959,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-nguyen-va-moi-truong-tphcm-DTM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-nguyen-va-moi-truong-tphcm-DTM.html) · 2026-10-04
 
 
 ## DTN — Trường Đại học Nông lâm (ĐH Thái Nguyên)
@@ -7953,7 +8030,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-thai-nguyen-DTN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-thai-nguyen-DTN.html) · 2026-10-04
 
 
 ## DTP — Phân hiệu Đại học Thái Nguyên tại Lào Cai
@@ -7989,7 +8066,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-DTP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-DTP.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -8006,7 +8083,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-DTP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-DTP.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -8020,7 +8097,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-DTP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-DTP.html) · 2026-10-04
 
 
 ### Dự bị đại học
@@ -8036,7 +8113,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-DTP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-thai-nguyen-tai-lao-cai-DTP.html) · 2026-10-04
 
 
 ## DTQ — Khoa Quốc tế (ĐH Thái Nguyên)
@@ -8053,7 +8130,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-quoc-te-dai-hoc-thai-nguyen-DTQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/khoa-quoc-te-dai-hoc-thai-nguyen-DTQ.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -8164,7 +8241,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + CCNN
@@ -8181,7 +8258,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + Năng khiếu
@@ -8197,7 +8274,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -8214,7 +8291,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-10-04
 
 
 ### Kết quả đánh giá đầu vào ĐH trên máy tính (V-SAT)
@@ -8230,7 +8307,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -8244,7 +8321,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-thai-nguyen-DTS.html) · 2026-10-04
 
 
 ## DTT — Trường Đại học Tôn Đức Thắng
@@ -8280,7 +8357,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ton-duc-thang-DTT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ton-duc-thang-DTT.html) · 2026-10-04
 
 
 ### Kết hợp Điểm THPT + Học bạ
@@ -8377,7 +8454,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luong-the-vinh-DTV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luong-the-vinh-DTV.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -8395,7 +8472,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luong-the-vinh-DTV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luong-the-vinh-DTV.html) · 2026-10-04
 
 
 ### Trình độ trung cấp trở lên dự tuyển trình độ đại học
@@ -8411,7 +8488,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luong-the-vinh-DTV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luong-the-vinh-DTV.html) · 2026-10-04
 
 
 ## DTY — Trường Đại học Y Dược (ĐH Thái Nguyên)
@@ -8431,7 +8508,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -8448,7 +8525,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -8467,7 +8544,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -8481,7 +8558,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -8498,7 +8575,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + CCNN
@@ -8516,7 +8593,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-nguyen-DTY.html) · 2026-10-04
 
 
 ## DTZ — Trường Đại học Khoa học (ĐH Thái Nguyên)
@@ -8534,7 +8611,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -8552,7 +8629,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -8568,7 +8645,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -8584,7 +8661,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -8600,7 +8677,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT + CCNN
@@ -8618,7 +8695,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-10-04
 
 - Nguồn tổng hợp tách nhánh chứng chỉ; đề án PDF mô tả 6 phương thức chính, chưa xác nhận bảng ngành áp dụng của nhánh này.
 - Có mâu thuẫn giữa các nguồn; chưa xác nhận biểu thức và phạm vi.
@@ -8638,7 +8715,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-thai-nguyen-DTZ.html) · 2026-10-04
 
 - Nguồn tổng hợp tách nhánh chứng chỉ; đề án PDF mô tả 6 phương thức chính, chưa xác nhận bảng ngành áp dụng của nhánh này.
 - Có mâu thuẫn giữa các nguồn; chưa xác nhận biểu thức và phạm vi.
@@ -8655,7 +8732,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0707/thong-tin-tuyen-sinh-dai-hoc-khoa-hoc-thai-nguyen-nam-2026.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0707/thong-tin-tuyen-sinh-dai-hoc-khoa-hoc-thai-nguyen-nam-2026.pdf) · 2026-10-04
 
 
 ### Cử tuyển và học sinh hoàn thành dự bị đại học
@@ -8670,7 +8747,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0707/thong-tin-tuyen-sinh-dai-hoc-khoa-hoc-thai-nguyen-nam-2026.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0707/thong-tin-tuyen-sinh-dai-hoc-khoa-hoc-thai-nguyen-nam-2026.pdf) · 2026-10-04
 
 
 ## DVB — Trường Đại học Kinh tế - Công nghệ Thái Nguyên
@@ -8689,7 +8766,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-cong-nghe-thai-nguyen-DVB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-cong-nghe-thai-nguyen-DVB.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -8739,7 +8816,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-the-thao-va-du-lich-thanh-hoa-DVD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-the-thao-va-du-lich-thanh-hoa-DVD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -8754,7 +8831,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-the-thao-va-du-lich-thanh-hoa-DVD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-the-thao-va-du-lich-thanh-hoa-DVD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -8768,7 +8845,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-the-thao-va-du-lich-thanh-hoa-DVD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-the-thao-va-du-lich-thanh-hoa-DVD.html) · 2026-10-04
 
 
 ## DVH — Trường Đại học Văn Hiến
@@ -8787,7 +8864,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hien-DVH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hien-DVH.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -8802,7 +8879,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hien-DVH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hien-DVH.html) · 2026-10-04
 
 
 ### ĐGNL ĐHQG TP.HCM
@@ -8816,7 +8893,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://images.tuyensinh247.com/picture/2026/0505/thong-tin-tuyen-sinh-dai-hoc-van-hien-2026.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://images.tuyensinh247.com/picture/2026/0505/thong-tin-tuyen-sinh-dai-hoc-van-hien-2026.pdf) · 2026-10-04
 
 - Nhãn bảng tổng hợp ghi THPT, nhưng phần mô tả và PDF nêu rõ đây là phương thức ĐGNL ĐHQG TP.HCM.
 
@@ -8831,7 +8908,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hien-DVH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hien-DVH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -8846,7 +8923,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://images.tuyensinh247.com/picture/2026/0505/thong-tin-tuyen-sinh-dai-hoc-van-hien-2026.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://images.tuyensinh247.com/picture/2026/0505/thong-tin-tuyen-sinh-dai-hoc-van-hien-2026.pdf) · 2026-10-04
 
 
 ## DVL — Trường Đại học Văn Lang
@@ -8856,35 +8933,34 @@ Thang: Không có thang điểm chung.
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 54. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Dùng tổ hợp thi tốt nghiệp THPT 2026; chưa có biểu thức cuối đầy đủ trong công bố này.
 
 Thang: Thang 30.
 
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
-
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
-
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html) · 2026-09-30
-
-
-### Điểm học bạ
-
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 54. Tự tính mới: không.
-
-- Điểm xét tuyển là tổng điểm trung bình 03 môn theo tổ hợp xét tuyển của 06 học kỳ (lớp 10, lớp 11 và lớp 12).
-
-Thang: Thang 30.
-
-
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
 [Nguồn đối chiếu](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026) · 2026-10-04
 
-- Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính.
+
+### Điểm học bạ
+
+Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 54. Tự tính mới: không.
+
+HB dùng điểm trung bình chung kết quả học tập cả năm lớp 10, 11, 12 của các môn trong tổ hợp
+
+Thang: Thang 30.
+
+- Không chỉ lấy lớp 12. Sức khỏe/pháp luật có điều kiện học lực và điểm thi/xét tốt nghiệp riêng.
+
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
+
+Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+
+[Nguồn đối chiếu](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026) · 2026-10-04
+
 
 ### ƯTXT, XT thẳng
 
@@ -8897,95 +8973,103 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 54. Tự tính mới: không.
+Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 54. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+Xét kết hợp học bạ THPT với V-ACT ĐHQG; chưa có đầy đủ trọng số và biểu thức điểm cuối trong công bố.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Phương thức 3 là kết hợp, không xét độc lập riêng điểm bài thi.
+- Không tự chia điểm tối đa hoặc suy tỷ lệ 50%–50% khi Trường chưa nêu trong nguồn.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html) · 2026-09-30
+[Nguồn đối chiếu](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 54. Tự tính mới: không.
+Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 54. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+Xét kết hợp học bạ THPT với HSA ĐHQG; chưa có đầy đủ trọng số và biểu thức điểm cuối trong công bố.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Phương thức 3 là kết hợp, không xét độc lập riêng điểm bài thi.
+- Không tự chia điểm tối đa hoặc suy tỷ lệ 50%–50% khi Trường chưa nêu trong nguồn.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html) · 2026-09-30
+[Nguồn đối chiếu](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 54. Tự tính mới: không.
 
-Điểm V-SAT được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Xét kết hợp học bạ THPT với V-SAT; chưa có đầy đủ trọng số và biểu thức điểm cuối trong công bố.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Phương thức 3 là kết hợp, không xét độc lập riêng điểm bài thi.
+- Không tự chia điểm tối đa hoặc suy tỷ lệ 50%–50% khi Trường chưa nêu trong nguồn.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html) · 2026-09-30
+[Nguồn đối chiếu](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 54. Tự tính mới: không.
 
-Điểm TSA được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Xét kết hợp học bạ THPT với TSA Bách khoa Hà Nội; chưa có đầy đủ trọng số và biểu thức điểm cuối trong công bố.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Phương thức 3 là kết hợp, không xét độc lập riêng điểm bài thi.
+- Không tự chia điểm tối đa hoặc suy tỷ lệ 50%–50% khi Trường chưa nêu trong nguồn.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html) · 2026-09-30
+[Nguồn đối chiếu](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026) · 2026-10-04
 
 
 ### Chứng chỉ quốc tế
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 54. Tự tính mới: không.
 
-Chứng chỉ ngoại ngữ được sử dụng theo điều kiện và bảng quy đổi hoặc điểm cộng do trường công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Xét kết hợp học bạ THPT với SAT; chưa có đầy đủ trọng số và biểu thức điểm cuối trong công bố.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Phương thức 3 là kết hợp, không xét độc lập riêng điểm bài thi.
+- Không tự chia điểm tối đa hoặc suy tỷ lệ 50%–50% khi Trường chưa nêu trong nguồn.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html) · 2026-09-30
+[Nguồn đối chiếu](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT hoặc điểm học bạ + năng khiếu
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 10. Tự tính mới: không.
 
-Có điểm hoặc điều kiện thi năng khiếu; không mặc định tất cả môn có cùng hệ số.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Xét kết hợp thi THPT hoặc học bạ với điểm thi năng khiếu theo đúng tổ hợp của ngành
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Phương thức 4 dùng môn thi THPT; phương thức 5 dùng học bạ.
+- Không mặc định mọi ngành đều có một môn năng khiếu hoặc cùng hệ số; phải theo thông báo thi và tổ hợp ngành.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html) · 2026-09-30
+[Nguồn đối chiếu](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026) · 2026-10-04
 
 
 ## DVP — Trường Đại học Trưng Vương
@@ -9004,7 +9088,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-trung-vuong-DVP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-trung-vuong-DVP.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -9019,7 +9103,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-trung-vuong-DVP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-trung-vuong-DVP.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -9033,7 +9117,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-trung-vuong-DVP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-trung-vuong-DVP.html) · 2026-10-04
 
 
 ## DVT — Trường Đại học Trà Vinh
@@ -9051,7 +9135,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tra-vinh-DVT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tra-vinh-DVT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -9066,7 +9150,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tra-vinh-DVT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tra-vinh-DVT.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -9081,7 +9165,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tra-vinh-DVT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tra-vinh-DVT.html) · 2026-10-04
 
 
 ## DVX — Trường Đại học Công nghệ Vạn Xuân
@@ -9137,7 +9221,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-yersin-da-lat-DYD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-yersin-da-lat-DYD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -9170,7 +9254,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-yersin-da-lat-DYD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-yersin-da-lat-DYD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -9184,7 +9268,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-yersin-da-lat-DYD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-yersin-da-lat-DYD.html) · 2026-10-04
 
 
 ## EIU — Trường Đại học Quốc tế Miền Đông
@@ -9202,7 +9286,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-mien-dong-EIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-mien-dong-EIU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -9217,7 +9301,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-mien-dong-EIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-mien-dong-EIU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -9231,7 +9315,7 @@ Thang: Thang 1200 / Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-mien-dong-EIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-mien-dong-EIU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -9245,7 +9329,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-mien-dong-EIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-mien-dong-EIU.html) · 2026-10-04
 
 
 ## ETU — Trường Đại học Hòa Bình
@@ -9253,35 +9337,37 @@ Thang: Không có thang điểm chung.
 
 ### Điểm thi THPT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 22. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 20. Tự tính mới: có.
 
-Dựa vào Điểm xét tuyển (ĐXT) được xác định như sau: ĐXT = TĐ1 + ĐUT
+ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- Tổng điểm trung bình cộng 3 môn trong tổ hợp xét tuyển theo Học bạ THPT đạt
-- từ 16,5 điểm trở lên hoặc điểm trung bình cộng của cả 3 năm học cấp THPT đạt từ 5,5
-- - ĐUT là điểm ưu tiên khu vực và đối tượng được quy định trong Quy chế tuyển
+- Bộ tính dành tổ hợp ba môn văn hóa; không áp dụng Thiết kế đồ họa/Thiết kế nội thất có Vẽ.
+- Sức khỏe, Luật kinh tế phải đạt ngưỡng và điều kiện riêng; không kết luận đủ điều kiện chỉ từ tổng điểm.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
 [Nguồn đối chiếu](https://tuyensinh.daihochoabinh.edu.vn/wp-content/uploads/2026/03/Thong-bao-tuyen-sinh-he-chinh-quy-nam-2026-pdf.pdf) · 2026-10-04
 
-- Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính.
 
 ### Điểm học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 22. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 20. Tự tính mới: có.
 
-Sử dụng kết quả học tập THPT; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT học bạ ba môn = TBC3năm M1 + TBC3năm M2 + TBC3năm M3 + ĐƯT
+TBC3năm Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Nhánh tự tính chỉ dùng đủ ba môn học bạ văn hóa. Không dùng cho nhánh hai môn + chứng chỉ hoặc kết quả tốt nghiệp trung cấp/cao đẳng/đại học.
+- Ngưỡng tổng ba môn 16,5; điều kiện học lực/sức khỏe/pháp luật xét riêng.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-binh-ETU.html) · 2026-09-30
+Quy đổi: Các nhánh chứng chỉ/đã có bằng cấp cần tiêu chí hồ sơ và bảng tương ứng; không lấy điểm trung bình toàn khóa làm một môn tổ hợp.
+
+[Nguồn đối chiếu](https://tuyensinh.daihochoabinh.edu.vn/wp-content/uploads/2026/03/Thong-bao-tuyen-sinh-he-chinh-quy-nam-2026-pdf.pdf) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -9295,21 +9381,25 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-binh-ETU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-binh-ETU.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 22. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 2. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+ĐXT = Tổng môn văn hóa trong tổ hợp (học bạ cả năm 10, 11, 12) + Điểm Vẽ theo tổ hợp + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Chỉ Thiết kế đồ họa và Thiết kế nội thất; điểm Vẽ từ 5,5, tổng tổ hợp từ 17.
+- Có thể dùng kết quả Vẽ 2026 từ trường khác được chấp nhận. Không mặc định số môn Vẽ hoặc cộng ba môn học bạ văn hóa.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-binh-ETU.html) · 2026-09-30
+Quy đổi: Chưa bật tự tính khi chưa đủ hướng dẫn cho các tổ hợp và cách chấm các bài Vẽ.
+
+[Nguồn đối chiếu](https://tuyensinh.daihochoabinh.edu.vn/wp-content/uploads/2026/03/Thong-bao-tuyen-sinh-he-chinh-quy-nam-2026-pdf.pdf) · 2026-10-04
 
 
 ## FBU — Trường Đại học Tài chính - Ngân hàng Hà Nội
@@ -9331,7 +9421,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-chinh-ngan-hang-ha-noi-FBU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-chinh-ngan-hang-ha-noi-FBU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -9349,7 +9439,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-chinh-ngan-hang-ha-noi-FBU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tai-chinh-ngan-hang-ha-noi-FBU.html) · 2026-10-04
 
 
 ## FPT — Trường Đại học FPT
@@ -9390,7 +9480,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://daihoc.fpt.edu.vn/quy-che-tuyen-sinh-2026/) · 2026-09-30
+[Nguồn đối chiếu](https://daihoc.fpt.edu.vn/quy-che-tuyen-sinh-2026/) · 2026-10-04
 
 
 ### Ưu tiên xét tuyển theo diện của Trường
@@ -9405,7 +9495,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://daihoc.fpt.edu.vn/quy-che-tuyen-sinh-2026/) · 2026-09-30
+[Nguồn đối chiếu](https://daihoc.fpt.edu.vn/quy-che-tuyen-sinh-2026/) · 2026-10-04
 
 
 ## FUV — Trường Đại học Fulbright Việt Nam
@@ -9425,7 +9515,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://fulbright.edu.vn/vi/apply-to-us/) · 2026-09-30
+[Nguồn đối chiếu](https://fulbright.edu.vn/vi/apply-to-us/) · 2026-10-04
 
 
 ## GASS — Học viện Khoa học Xã hội
@@ -9441,75 +9531,79 @@ Không có phương thức đại học 2026 được xác nhận cho hồ sơ n
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Dùng kết quả tổ hợp thi tốt nghiệp THPT năm 2026; nguồn chưa có biểu thức điểm xét tuyển cuối đầy đủ.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Sức khỏe còn điều kiện/ngưỡng riêng; không dùng thông tin kỳ thi làm phép chuyển thang.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-gia-dinh-GDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-cong-bo-05-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
 
-Điểm HSA của ĐHQG Hà Nội được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Điểm ĐGNL của ĐHQG TP.HCM được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Dùng kết quả V-ACT ĐHQG-HCM năm 2026; nguồn chưa có biểu thức điểm xét tuyển cuối đầy đủ.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Sức khỏe còn điều kiện/ngưỡng riêng; không dùng thông tin kỳ thi làm phép chuyển thang.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-gia-dinh-GDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-cong-bo-05-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
 
-Điểm HSA của ĐHQG Hà Nội được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Điểm ĐGNL của ĐHQG TP.HCM được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Dùng kết quả HSA ĐHQGHN năm 2026; nguồn chưa có biểu thức điểm xét tuyển cuối đầy đủ.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Sức khỏe còn điều kiện/ngưỡng riêng; không dùng thông tin kỳ thi làm phép chuyển thang.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-gia-dinh-GDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-cong-bo-05-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-10-04
 
 
 ### Điểm thi tốt nghiệp THPT của các môn xét tuyển + điểm xét tốt nghiệp THPT năm 2026
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+Điểm theo biểu thức công bố = THPT M1 + THPT M2 + THPT M3 + Điểm xét tốt nghiệp THPT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Tổng trước quy đổi tối đa 40; thang cuối cần xác nhận.
 
+- Phương thức 4 kết hợp ba môn thi với điểm xét tốt nghiệp, không phải điểm trung bình ba môn.
+- Nguồn chưa nêu chuyển về thang cuối; không tự chia 4, nhân 3/4 hoặc coi đây là điểm cuối thang 30.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-gia-dinh-GDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-cong-bo-05-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-10-04
 
 
 ### Điểm học bạ
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 29. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+H = Tổng điểm 18 đầu điểm của 3 môn × 6 học kỳ / 6
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Dùng đủ sáu học kỳ lớp 10, 11, 12; H từ 15.
+- Thí sinh thi tốt nghiệp 2026 còn cần tổng ba môn thi THPT từ 15; sức khỏe có ngưỡng riêng.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-gia-dinh-GDU.html) · 2026-09-30
+Quy đổi: Công thức này xác định tổng học bạ và điều kiện nhận hồ sơ; không suy đã bao gồm mọi điểm cộng/ưu tiên.
+
+[Nguồn đối chiếu](https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-cong-bo-05-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -9523,7 +9617,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-gia-dinh-GDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-gia-dinh-GDU.html) · 2026-10-04
 
 
 ## GHA — Trường Đại học Giao thông vận tải
@@ -9542,7 +9636,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-bac-GHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-bac-GHA.html) · 2026-10-04
 
 
 ### Học bạ + Điểm thi tốt nghiệp THPT
@@ -9559,7 +9653,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-bac-GHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-bac-GHA.html) · 2026-10-04
 
 
 ### Điểm thi ĐGNL HSA
@@ -9573,7 +9667,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-bac-GHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-bac-GHA.html) · 2026-10-04
 
 
 ### Điểm ĐGTD TSA
@@ -9588,7 +9682,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-bac-GHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-bac-GHA.html) · 2026-10-04
 
 
 ## GNT — Trường Đại học Sư phạm Nghệ thuật Trung ương
@@ -9607,7 +9701,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://qltuyensinh.spnttw.edu.vn/Home/Index) · 2026-09-30
+[Nguồn đối chiếu](https://qltuyensinh.spnttw.edu.vn/Home/Index) · 2026-10-04
 
 
 ### Kết quả thi THPT — tổ hợp không có năng khiếu
@@ -9622,7 +9716,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://qltuyensinh.spnttw.edu.vn/Home/Index) · 2026-09-30
+[Nguồn đối chiếu](https://qltuyensinh.spnttw.edu.vn/Home/Index) · 2026-10-04
 
 
 ### Học bạ — tổ hợp không có năng khiếu
@@ -9638,7 +9732,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://qltuyensinh.spnttw.edu.vn/Home/Index) · 2026-09-30
+[Nguồn đối chiếu](https://qltuyensinh.spnttw.edu.vn/Home/Index) · 2026-10-04
 
 
 ### Kết quả THPT kết hợp thi năng khiếu
@@ -9654,7 +9748,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://qltuyensinh.spnttw.edu.vn/Home/Index) · 2026-09-30
+[Nguồn đối chiếu](https://qltuyensinh.spnttw.edu.vn/Home/Index) · 2026-10-04
 
 
 ### Học bạ kết hợp thi năng khiếu
@@ -9671,7 +9765,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://qltuyensinh.spnttw.edu.vn/Home/Index) · 2026-09-30
+[Nguồn đối chiếu](https://qltuyensinh.spnttw.edu.vn/Home/Index) · 2026-10-04
 
 
 ## GSA — Phân hiệu Trường Đại học Giao thông vận tải tại TP.HCM (UTC2)
@@ -9689,7 +9783,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-nam-GSA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-nam-GSA.html) · 2026-10-04
 
 
 ### Học bạ + Điều kiện điểm thi tốt nghiệp
@@ -9706,7 +9800,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-nam-GSA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-nam-GSA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -9720,7 +9814,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-nam-GSA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-nam-GSA.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -9734,7 +9828,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-nam-GSA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-co-so-phia-nam-GSA.html) · 2026-10-04
 
 
 ## GTA — Trường Đại học Công nghệ Giao thông vận tải
@@ -9841,7 +9935,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-giao-thong-van-tai-GTA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-giao-thong-van-tai-GTA.html) · 2026-10-04
 
 
 ## GTS — Trường Đại học Giao thông vận tải TP.HCM (UTH)
@@ -9858,7 +9952,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-tphcm-UTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-tphcm-UTH.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -9876,7 +9970,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-tphcm-UTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-thong-van-tai-tphcm-UTH.html) · 2026-10-04
 
 
 ## GUST — Học viện Khoa học và Công nghệ
@@ -9902,7 +9996,7 @@ Thang: Thang 30 / Thang 40.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bao-chi-va-tuyen-truyen-HBT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bao-chi-va-tuyen-truyen-HBT.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -9916,7 +10010,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bao-chi-va-tuyen-truyen-HBT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bao-chi-va-tuyen-truyen-HBT.html) · 2026-10-04
 
 
 ### Kết hợp CCNN + Học bạ
@@ -9933,7 +10027,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bao-chi-va-tuyen-truyen-HBT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-bao-chi-va-tuyen-truyen-HBT.html) · 2026-10-04
 
 
 ## HCA — Học viện Chính trị Công an Nhân dân
@@ -9950,7 +10044,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-tri-cong-an-nhan-dan-HCA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-tri-cong-an-nhan-dan-HCA.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT với ĐGNL của Bộ Công An
@@ -9967,7 +10061,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-tri-cong-an-nhan-dan-HCA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-tri-cong-an-nhan-dan-HCA.html) · 2026-10-04
 
 
 ### Kết hợp CCNN với ĐGNL của Bộ công an
@@ -9986,7 +10080,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-tri-cong-an-nhan-dan-HCA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-tri-cong-an-nhan-dan-HCA.html) · 2026-10-04
 
 
 ## HCB — Học viện Kỹ thuật và Công nghệ an ninh (phía Bắc)
@@ -10006,7 +10100,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-cong-nghe-an-ninh-phia-bac-HCB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-cong-nghe-an-ninh-phia-bac-HCB.html) · 2026-10-04
 
 
 ### Xét tuyển kết hợp Chứng chỉ ngoại ngữ quốc tế với kết quả Bài thi đánh giá của Bộ Công an
@@ -10025,7 +10119,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-cong-nghe-an-ninh-phia-bac-HCB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-cong-nghe-an-ninh-phia-bac-HCB.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -10039,7 +10133,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-cong-nghe-an-ninh-phia-bac-HCB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-cong-nghe-an-ninh-phia-bac-HCB.html) · 2026-10-04
 
 
 ## HCH — Học viện Hành chính và Quản trị công
@@ -10058,7 +10152,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả học tập THPT và kết hợp với kết quả thi tốt nghiệp THPT
@@ -10076,7 +10170,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả bài thi đánh giá năng lực V-ACT với kết quả thi tốt nghiệp THPT
@@ -10092,7 +10186,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả bài thi đánh giá năng lực HSA với kết quả thi tốt nghiệp THPT
@@ -10108,7 +10202,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -10122,7 +10216,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ## HCMA — Học viện Chính trị Quốc gia Hồ Chí Minh
@@ -10148,7 +10242,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-va-cong-nghe-an-ninh-phia-nam-HCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-va-cong-nghe-an-ninh-phia-nam-HCN.html) · 2026-10-04
 
 
 ### Xét tuyển kết hợp Chứng chỉ ngoại ngữ quốc tế với kết quả Bài thi đánh giá của Bộ Công an
@@ -10167,7 +10261,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-va-cong-nghe-an-ninh-phia-nam-HCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-va-cong-nghe-an-ninh-phia-nam-HCN.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -10181,7 +10275,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-va-cong-nghe-an-ninh-phia-nam-HCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-va-cong-nghe-an-ninh-phia-nam-HCN.html) · 2026-10-04
 
 
 ## HCP — Học viện Chính sách và Phát triển
@@ -10253,7 +10347,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -10301,7 +10395,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -10316,7 +10410,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -10330,7 +10424,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-chinh-sach-va-phat-trien-HCP.html) · 2026-10-04
 
 
 ## HCQ — Phân hiệu Học viện Hành chính và Quản trị công tại TP. Đà Nẵng
@@ -10350,7 +10444,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả học tập THPT và kết hợp với kết quả thi tốt nghiệp THPT
@@ -10368,7 +10462,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả bài thi đánh giá năng lực V-ACT với kết quả thi tốt nghiệp THPT
@@ -10384,7 +10478,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả bài thi đánh giá năng lực HSA với kết quả thi tốt nghiệp THPT
@@ -10400,7 +10494,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -10414,7 +10508,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ## HCS — Phân hiệu Học viện Hành chính và Quản trị công tại TP.HCM
@@ -10435,7 +10529,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả học tập THPT và kết hợp với kết quả thi tốt nghiệp THPT
@@ -10453,7 +10547,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả bài thi đánh giá năng lực V-ACT với kết quả thi tốt nghiệp THPT
@@ -10469,7 +10563,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả bài thi đánh giá năng lực HSA với kết quả thi tốt nghiệp THPT
@@ -10485,7 +10579,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -10499,7 +10593,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ## HCTN — Phân hiệu Học viện Hành chính và Quản trị công tại Đắk Lắk
@@ -10519,7 +10613,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả học tập THPT và kết hợp với kết quả thi tốt nghiệp THPT
@@ -10537,7 +10631,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả bài thi đánh giá năng lực V-ACT với kết quả thi tốt nghiệp THPT
@@ -10553,7 +10647,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### Xét tuyển theo kết quả bài thi đánh giá năng lực HSA với kết quả thi tốt nghiệp THPT
@@ -10569,7 +10663,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -10583,7 +10677,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hanh-chinh-va-quan-tri-cong-HCH.html) · 2026-10-04
 
 
 ## HDT — Trường Đại học Hồng Đức
@@ -10601,7 +10695,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -10616,7 +10710,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -10633,7 +10727,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -10650,7 +10744,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -10667,7 +10761,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -10681,7 +10775,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-10-04
 
 
 ### Dự bị đại học, học sinh Lào
@@ -10695,7 +10789,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html) · 2026-10-04
 
 
 ## HEH — Học viện Hậu cần
@@ -10713,7 +10807,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hau-can-he-quan-su-HEH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hau-can-he-quan-su-HEH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -10728,7 +10822,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hau-can-he-quan-su-HEH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hau-can-he-quan-su-HEH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -10743,7 +10837,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hau-can-he-quan-su-HEH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hau-can-he-quan-su-HEH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -10758,7 +10852,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hau-can-he-quan-su-HEH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hau-can-he-quan-su-HEH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -10772,7 +10866,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hau-can-he-quan-su-HEH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hau-can-he-quan-su-HEH.html) · 2026-10-04
 
 
 ## HFA — Phân hiệu Trường Đại học Tài chính - Kế toán tại Thừa Thiên Huế
@@ -10789,7 +10883,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://hfa.tckt.edu.vn/thong-tin-tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-09-30
+[Nguồn đối chiếu](https://hfa.tckt.edu.vn/thong-tin-tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-10-04
 
 
 ### Học bạ trung bình cả năm lớp 10, 11, 12
@@ -10803,7 +10897,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://hfa.tckt.edu.vn/thong-tin-tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-09-30
+[Nguồn đối chiếu](https://hfa.tckt.edu.vn/thong-tin-tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-10-04
 
 
 ## HGH — Trường Sĩ quan Phòng Hóa
@@ -10820,7 +10914,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phong-hoa-HGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phong-hoa-HGH.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -10835,7 +10929,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phong-hoa-HGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phong-hoa-HGH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -10850,7 +10944,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phong-hoa-HGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phong-hoa-HGH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -10865,7 +10959,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phong-hoa-HGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phong-hoa-HGH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -10879,7 +10973,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phong-hoa-HGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phong-hoa-HGH.html) · 2026-10-04
 
 
 ## HHA — Trường Đại học Hàng hải
@@ -10896,7 +10990,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT + CCNN
@@ -10910,7 +11004,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-10-04
 
 
 ### Xét kết hợp điểm thi THPT + Giải thưởng HSG
@@ -10924,7 +11018,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-10-04
 
 
 ### Xét kết hợp điểm thi THPT + điểm học bạ THPT chuyên
@@ -10938,7 +11032,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -10953,7 +11047,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -10969,7 +11063,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -10985,7 +11079,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -11001,7 +11095,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-10-04
 
 
 ### Kết hợp điểm học bạ + CCNN
@@ -11018,7 +11112,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-10-04
 
 - Nhãn HB + CCNN ứng với biến thể 10.13, nhưng mã cơ sở nguồn là 12. Giữ namespace TuyểnSinh247, không dùng mã 12 như mã Bộ GDĐT.
 
@@ -11033,7 +11127,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hang-hai-HHA.html) · 2026-10-04
 
 
 ## HHK — Học viện Hàng không Việt Nam
@@ -11054,7 +11148,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -11072,7 +11166,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -11090,7 +11184,7 @@ Thang: Thang 150.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -11108,7 +11202,7 @@ Thang: Thang 1200.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-10-04
 
 
 ### Chứng chỉ quốc tế
@@ -11129,7 +11223,7 @@ Thang: Thang 1600.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -11143,7 +11237,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hang-khong-viet-nam-HHK.html) · 2026-10-04
 
 
 ## HHT — Trường Đại học Hà Tĩnh
@@ -11151,37 +11245,48 @@ Thang: Không có thang điểm chung.
 
 ### Điểm thi THPT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 20. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 20. Tự tính mới: có.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = Điểm 3 thành phần đúng tổ hợp + ĐC + ĐƯT
+M00: Toán THPT + Văn THPT + NK3 + ĐC + ĐƯT
+M01/M09: Văn/Toán THPT + NK1 + NK2 + ĐC + ĐƯT
+Tổng trước ưu tiên = Điểm 3 thành phần + ĐC
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- Phương thức tuyển sinh dựa trên kết quả các môn thi tốt nghiệp THPT bắt buộc phải có môn Toán hoặc Ngữ văn với trọng số tính điểm xét của môn Toán hoặc môn Ngữ văn tối thiểu 1/3 và đáp ứng một trong những yêu cầu sau:
+- Điểm cộng được Trường xác nhận theo mục 3.2; không dùng cùng mức ngoại ngữ cho mọi ngành. IELTS từ 6 cộng 1,5 chỉ Ngôn ngữ Anh/Sư phạm Anh; HSK4/TOCFL B1 cộng 1,5 chỉ Ngôn ngữ Trung.
+- Điểm cộng được tính trong tổng trước khi giảm ưu tiên từ 22,5.
+- Bộ tính dùng điểm môn văn hóa gốc; chứng chỉ thay điểm ngoại ngữ cần dùng bảng mục 3.4 (IELTS 5→8; 5,5→8,5; 6→9; 6,5→9,5; 7–9→10).
+- M00 = Toán + Văn + NK3 (Hát – Đọc, kể diễn cảm); M01 = Văn + NK1 (Hát) + NK2 (Đọc, kể diễn cảm); M09 = Toán + NK1 + NK2. Chỉ dùng điểm năng khiếu Hà Tĩnh tổ chức năm 2026.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-tinh-HHT.html) · 2026-09-30
+[Nguồn đối chiếu](https://htu.edu.vn/tin-t%E1%BB%A9c-s%E1%BB%B1-ki%E1%BB%87n/1967-thong-tin-ts-dhcq-2026) · 2026-10-04
 
 
 ### Điểm học bạ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 20. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 20. Tự tính mới: có.
 
-Điểm xét tuyển = Tổng điểm đạt được của thí sinh + Điểm ưu tiên (nếu có)
+ĐXT văn hóa = TBC3năm M1 + TBC3năm M2 + TBC3năm M3 + ĐC + ĐƯT
+M00: TBC3năm Toán + TBC3năm Văn + NK3 + ĐC + ĐƯT
+M01/M09: TBC3năm Văn/Toán + NK1 + NK2 + ĐC + ĐƯT
 
 Thang: Thang 30.
 
-- 4.1. Tổ chức đăng ký xét tuyển thẳng, đăng ký xét tuyển, đăng ký dự thi năng khiếu và đăng ký nộp hồ sơ để cộng điểm thưởng:
+- Điểm cộng được Trường xác nhận theo mục 3.2; không dùng cùng mức ngoại ngữ cho mọi ngành. IELTS từ 6 cộng 1,5 chỉ Ngôn ngữ Anh/Sư phạm Anh; HSK4/TOCFL B1 cộng 1,5 chỉ Ngôn ngữ Trung.
+- Điểm cộng được tính trong tổng trước khi giảm ưu tiên từ 22,5.
+- Bộ tính dùng điểm môn văn hóa gốc; chứng chỉ thay điểm ngoại ngữ cần dùng bảng mục 3.4 (IELTS 5→8; 5,5→8,5; 6→9; 6,5→9,5; 7–9→10).
+- M00 = Toán + Văn + NK3 (Hát – Đọc, kể diễn cảm); M01 = Văn + NK1 (Hát) + NK2 (Đọc, kể diễn cảm); M09 = Toán + NK1 + NK2. Chỉ dùng điểm năng khiếu Hà Tĩnh tổ chức năm 2026.
+- Lấy điểm cả năm đủ ba lớp, không chỉ lớp 12 hoặc trung bình sáu học kỳ.
+- Các trường hợp thay ngoại ngữ bằng chứng chỉ hoặc thay môn chưa học đủ cần được Trường xác nhận riêng; nhánh bộ tính này dùng điểm gốc đủ ba năm.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://htu.edu.vn/tin-t%E1%BB%A9c-s%E1%BB%B1-ki%E1%BB%87n/1967-thong-tin-ts-dhcq-2026?tmpl=component&print=1&layout=default) · 2026-10-04
+[Nguồn đối chiếu](https://htu.edu.vn/tin-t%E1%BB%A9c-s%E1%BB%B1-ki%E1%BB%87n/1967-thong-tin-ts-dhcq-2026) · 2026-10-04
 
-- Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính.
 
 ## HIU — Trường Đại học Quốc tế Hồng Bàng
 
@@ -11198,7 +11303,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -11213,7 +11318,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-10-04
 
 
 ### Xét kết hợp điểm thi tốt nghiệp THPT 2026 và học bạ;
@@ -11229,7 +11334,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -11244,7 +11349,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -11258,7 +11363,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-10-04
 
 
 ### Xét tuyển Trung cấp, Cao đẳng, Đại học cùng nhóm ngành;
@@ -11272,7 +11377,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-10-04
 
 
 ### Chứng chỉ quốc tế
@@ -11286,7 +11391,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html) · 2026-10-04
 
 
 ## HLQ — Học viện Lục quân
@@ -11311,7 +11416,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-long-HLU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-long-HLU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -11326,7 +11431,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-long-HLU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-long-HLU.html) · 2026-10-04
 
 
 ### Kết quả thi tốt nghiệp THPT với chứng chỉ quốc tế
@@ -11344,7 +11449,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-long-HLU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-long-HLU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -11359,7 +11464,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-long-HLU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-long-HLU.html) · 2026-10-04
 
 
 ## HMV — Học viện Múa Việt Nam
@@ -11398,7 +11503,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-do-ha-noi-HNM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-do-ha-noi-HNM.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -11415,7 +11520,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-do-ha-noi-HNM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-do-ha-noi-HNM.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -11429,7 +11534,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-do-ha-noi-HNM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-do-ha-noi-HNM.html) · 2026-10-04
 
 
 ## HPN — Học viện Phụ nữ Việt Nam
@@ -11521,7 +11626,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phu-nu-viet-nam-HPN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phu-nu-viet-nam-HPN.html) · 2026-10-04
 
 
 ## HPS — Phân hiệu Học viện Phụ nữ Việt Nam tại TP.HCM
@@ -11539,7 +11644,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://hvpnvn.edu.vn/cat-cong-tac-sinh-vien/sinh-vien-vwa/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/) · 2026-09-30
+[Nguồn đối chiếu](https://hvpnvn.edu.vn/cat-cong-tac-sinh-vien/sinh-vien-vwa/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/) · 2026-10-04
 
 
 ### Điểm thi THPT năm 2026
@@ -11617,7 +11722,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://hvpnvn.edu.vn/cat-cong-tac-sinh-vien/sinh-vien-vwa/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/) · 2026-09-30
+[Nguồn đối chiếu](https://hvpnvn.edu.vn/cat-cong-tac-sinh-vien/sinh-vien-vwa/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/) · 2026-10-04
 
 
 ## HQH — Học viện Hải quân
@@ -11634,7 +11739,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hai-quan-HQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hai-quan-HQH.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -11654,7 +11759,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hai-quan-HQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hai-quan-HQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -11675,7 +11780,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hai-quan-HQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hai-quan-HQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -11696,7 +11801,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hai-quan-HQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hai-quan-HQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -11717,7 +11822,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hai-quan-HQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-hai-quan-HQH.html) · 2026-10-04
 
 
 ## HQT — Học viện Ngoại giao
@@ -11779,7 +11884,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngoai-giao-HQT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngoai-giao-HQT.html) · 2026-10-04
 
 
 ### Kết hợp CCQT + CCNN
@@ -11819,7 +11924,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -11834,7 +11939,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -11850,7 +11955,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -11866,7 +11971,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -11880,7 +11985,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-10-04
 
 
 ### Xét bằng hình thức phỏng vấn kết hợp
@@ -11895,7 +12000,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html) · 2026-10-04
 
 
 ## HTC — Học viện Tài chính
@@ -11951,7 +12056,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-tai-chinh-HTC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-tai-chinh-HTC.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -12022,7 +12127,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-thanh-thieu-nien-viet-nam-HTN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-thanh-thieu-nien-viet-nam-HTN.html) · 2026-10-04
 
 
 ### Đối tượng hoàn thành dự bị đại học
@@ -12037,7 +12142,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://tuyensinh.vya.edu.vn/thong-bao-tuyen-sinh-2026-vya) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.vya.edu.vn/thong-bao-tuyen-sinh-2026-vya) · 2026-10-04
 
 
 ## HTN — Học viện Thanh Thiếu niên Việt Nam
@@ -12056,7 +12161,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://tuyensinh.vya.edu.vn/thong-bao-tuyen-sinh-2026-vya) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.vya.edu.vn/thong-bao-tuyen-sinh-2026-vya) · 2026-10-04
 
 
 ### Xét học bạ lớp 10, 11, 12
@@ -12104,7 +12209,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://tuyensinh.vya.edu.vn/thong-bao-tuyen-sinh-2026-vya) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.vya.edu.vn/thong-bao-tuyen-sinh-2026-vya) · 2026-10-04
 
 
 ## HueUni — Đại học Huế
@@ -12181,7 +12286,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-am-nhac-hue-HVA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-am-nhac-hue-HVA.html) · 2026-10-04
 
 
 ## HVC — Học viện Cán bộ TP.HCM
@@ -12200,7 +12305,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-can-bo-tphcm-HVC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-can-bo-tphcm-HVC.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -12217,7 +12322,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-can-bo-tphcm-HVC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-can-bo-tphcm-HVC.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -12238,7 +12343,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-can-bo-tphcm-HVC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-can-bo-tphcm-HVC.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -12252,7 +12357,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-can-bo-tphcm-HVC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-can-bo-tphcm-HVC.html) · 2026-10-04
 
 
 ## HVD — Học viện Dân tộc
@@ -12260,38 +12365,41 @@ Thang: Không có thang điểm chung.
 
 ### Điểm thi THPT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 1. Tự tính mới: không.
+Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 1. Tự tính mới: không.
 
-Điểm xét tuyển = [Tổng điểm 3 bài thi/môn thi THPT (3 bài thi/môn thi theo tổ hợp đăng ký xét tuyển)] + Điểm ưu tiên (nếu có).
+ĐXT = Tổng 3 môn thi THPT trong tổ hợp + ĐƯT
 
 Thang: Thang 30.
 
+- Mục thông tin khác nói làm tròn 2 chữ số; nguyên tắc từng phương thức lại ghi 1 chữ số, cần xác nhận trước tự tính.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-dan-toc-HVD.html) · 2026-09-30
+[Nguồn đối chiếu](https://hvdt.edu.vn/Images/files/TH%C3%94NG%20TIN%20TUY%E1%BB%82N%20SINH%20-%202026.pdf) · 2026-10-04
 
+- Quy định làm tròn chưa nhất quán trong cùng nguồn.
 
 ### Điểm học bạ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 1. Tự tính mới: không.
+Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 1. Tự tính mới: không.
 
-Điểm xét tuyển được tính bằng điểm của 3 môn của tổ hợp đăng ký xét tuyển bằng kết quả kỳ THPT, gồm: Lớp 10, Lớp 11, Lớp 12 có điểm trung bình 03 môn (theo tổ hợp đăng ký xét tuyển) đạt từ 15,0 trở lên.
-Công thức tính điểm theo hình thức sau:
-Điểm xét tuyển = Điểm môn 1 (Trung bình môn năm học lớp 10) + Điểm môn 2 (Trung bình môn năm học lớp 11) + Điểm môn 3 (Trung bình môn năm học lớp 12) + điểm ưu tiên (nếu có).
+Theo nguồn: ĐXT = M1 cả năm lớp 10 + M2 cả năm lớp 11 + M3 cả năm lớp 12 + ĐƯT
 
 Thang: Thang 30.
 
-- Điểm xét tuyển = Điểm môn 1 (Trung bình môn năm học lớp 10) + Điểm môn 2 (Trung bình môn năm học lớp 11) + Điểm môn 3 (Trung bình môn năm học lớp 12) + điểm ưu tiên (nếu có).
+- Mục thông tin khác nói làm tròn 2 chữ số; nguyên tắc từng phương thức lại ghi 1 chữ số, cần xác nhận trước tự tính.
+- Biểu thức PDF lấy mỗi môn ở một lớp khác nhau; không tự đổi thành trung bình ba năm từng môn.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-dan-toc-HVD.html) · 2026-09-30
+[Nguồn đối chiếu](https://hvdt.edu.vn/Images/files/TH%C3%94NG%20TIN%20TUY%E1%BB%82N%20SINH%20-%202026.pdf) · 2026-10-04
 
+- Quy định làm tròn chưa nhất quán trong cùng nguồn.
+- Biểu thức học bạ cần Trường xác nhận thời kỳ từng môn.
 
 ### ƯTXT, XT thẳng
 
@@ -12304,7 +12412,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-dan-toc-HVD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-dan-toc-HVD.html) · 2026-10-04
 
 
 ## HVN — Học viện Nông nghiệp Việt Nam
@@ -12377,7 +12485,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-nong-nghiep-viet-nam-HVN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-nong-nghiep-viet-nam-HVN.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN
@@ -12443,7 +12551,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://www.vbu.edu.vn/thong-bao/thong-bao-tuyen-sinh-cu-nhan-phat-hoc-khoa-xxi-nam-2026-4704.html) · 2026-09-30
+[Nguồn đối chiếu](https://www.vbu.edu.vn/thong-bao/thong-bao-tuyen-sinh-cu-nhan-phat-hoc-khoa-xxi-nam-2026-4704.html) · 2026-10-04
 
 
 ## HVPG-HN — Học viện Phật giáo Việt Nam tại Hà Nội
@@ -12464,7 +12572,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://phatsuonline.vn/hoc-vien-phat-giao-viet-nam-tai-ha-noi-thong-bao-tuyen-sinh-he-cu-nhan-phat-hoc-khoa-x-2026-2030-89) · 2026-09-30
+[Nguồn đối chiếu](https://phatsuonline.vn/hoc-vien-phat-giao-viet-nam-tai-ha-noi-thong-bao-tuyen-sinh-he-cu-nhan-phat-hoc-khoa-x-2026-2030-89) · 2026-10-04
 
 
 ### Xét hồ sơ Cao đẳng Phật học khóa XI
@@ -12480,7 +12588,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://phatgiao.org.vn/hoc-vien-phat-giao-viet-nam-tai-ha-noi-tuyen-sinh-he-cao-dang-va-cu-nhan-lien-thong-nam-2026-d102177.html) · 2026-09-30
+[Nguồn đối chiếu](https://phatgiao.org.vn/hoc-vien-phat-giao-viet-nam-tai-ha-noi-tuyen-sinh-he-cao-dang-va-cu-nhan-lien-thong-nam-2026-d102177.html) · 2026-10-04
 
 
 ### Xét hồ sơ Cử nhân Phật học liên thông khóa VII
@@ -12496,7 +12604,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://phatgiao.org.vn/hoc-vien-phat-giao-viet-nam-tai-ha-noi-tuyen-sinh-he-cao-dang-va-cu-nhan-lien-thong-nam-2026-d102177.html) · 2026-09-30
+[Nguồn đối chiếu](https://phatgiao.org.vn/hoc-vien-phat-giao-viet-nam-tai-ha-noi-tuyen-sinh-he-cao-dang-va-cu-nhan-lien-thong-nam-2026-d102177.html) · 2026-10-04
 
 
 ## HVPG-HUE — Học viện Phật giáo Việt Nam tại Huế
@@ -12516,7 +12624,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://giacngo.vn/hoc-vien-phat-giao-vn-tai-hue-thong-bao-tuyen-sinh-cu-nhan-phat-hoc-khoa-xvii-2026-2030-post79577.html) · 2026-09-30
+[Nguồn đối chiếu](https://giacngo.vn/hoc-vien-phat-giao-vn-tai-hue-thong-bao-tuyen-sinh-cu-nhan-phat-hoc-khoa-xvii-2026-2030-post79577.html) · 2026-10-04
 
 
 ## HVQ — Học viện Quản lý Giáo dục
@@ -12536,7 +12644,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -12557,7 +12665,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -12574,7 +12682,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -12591,7 +12699,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -12605,7 +12713,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -12619,7 +12727,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-ly-giao-duc-HVQ.html) · 2026-10-04
 
 
 ## HVQP — Học viện Quốc phòng
@@ -12644,7 +12752,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-y-duoc-hoc-co-truyen-viet-nam-HYD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-y-duoc-hoc-co-truyen-viet-nam-HYD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -12658,7 +12766,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-y-duoc-hoc-co-truyen-viet-nam-HYD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-y-duoc-hoc-co-truyen-viet-nam-HYD.html) · 2026-10-04
 
 
 ## INU — Trường Đại học Intracom
@@ -12701,75 +12809,75 @@ Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm 
 
 ### Điểm ĐGNL HSA
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
+Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
 
-Điểm xét tuyển = Điểm ĐGNL + Điểm cộng + Điểm ưu tiên
+Cổng tuyển sinh 2026 chấp nhận kết quả HSA; chưa có biểu thức quy đổi và điểm xét tuyển cuối đầy đủ trên nguồn đã đối chiếu.
 
 Thang: Thang 30.
 
-- Điểm M1, Điểm M2, Điểm M3: Là kết quả điểm thi tốt nghiệp THPT hoặc Điểm trung bình chung các môn học của năm lớp 10, lớp 11 và lớp 12 trong các tổ hợp môn đăng ký xét tuyển vào các ngành hoặc điểm Trung bình chung tất cả các môn học của 03 năm các lớp 10, 11,12.
-- a) Điểm thưởng: Dành cho thí sinh được xét tuyển thẳng nhưng không sử dụng quyền xét tuyển thẳng theo quy định tại khoản 2, Điều 8 của Quy chế tuyển sinh hiện hành; mức điểm thưởng từ 0 - 3,00 điểm theo thang điểm 30. Cụ thể như sau:
+- Không dùng bài thi gốc chia điểm tối đa ×30 khi chưa có bảng quy đổi chính thức. Phải kiểm tra lại phạm vi ngành và ngưỡng trên thông báo từng phương thức.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Chưa đủ hướng dẫn về thứ tự quy đổi, điểm cộng và ưu tiên để tính điểm cuối. Không tự thêm, bỏ hoặc cộng ưu tiên thang 30 vào điểm bài thi gốc..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-chu-van-an-DCA.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.intracomuni.edu.vn/) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
+Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
 
-Điểm xét tuyển = Điểm ĐGNL + Điểm cộng + Điểm ưu tiên
+Cổng tuyển sinh 2026 chấp nhận kết quả V-ACT; chưa có biểu thức quy đổi và điểm xét tuyển cuối đầy đủ trên nguồn đã đối chiếu.
 
 Thang: Thang 30.
 
-- Điểm M1, Điểm M2, Điểm M3: Là kết quả điểm thi tốt nghiệp THPT hoặc Điểm trung bình chung các môn học của năm lớp 10, lớp 11 và lớp 12 trong các tổ hợp môn đăng ký xét tuyển vào các ngành hoặc điểm Trung bình chung tất cả các môn học của 03 năm các lớp 10, 11,12.
-- a) Điểm thưởng: Dành cho thí sinh được xét tuyển thẳng nhưng không sử dụng quyền xét tuyển thẳng theo quy định tại khoản 2, Điều 8 của Quy chế tuyển sinh hiện hành; mức điểm thưởng từ 0 - 3,00 điểm theo thang điểm 30. Cụ thể như sau:
+- Không dùng bài thi gốc chia điểm tối đa ×30 khi chưa có bảng quy đổi chính thức. Phải kiểm tra lại phạm vi ngành và ngưỡng trên thông báo từng phương thức.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Chưa đủ hướng dẫn về thứ tự quy đổi, điểm cộng và ưu tiên để tính điểm cuối. Không tự thêm, bỏ hoặc cộng ưu tiên thang 30 vào điểm bài thi gốc..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-chu-van-an-DCA.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.intracomuni.edu.vn/) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
+Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
 
-Điểm xét tuyển = Điểm ĐGNL + Điểm cộng + Điểm ưu tiên
+Mục V-SAT có trong hồ sơ tham khảo nhưng chưa được xác nhận bằng công thức và phạm vi ngành trên cổng tuyển sinh 2026 đã đối chiếu.
 
 Thang: Thang 30.
 
-- Điểm M1, Điểm M2, Điểm M3: Là kết quả điểm thi tốt nghiệp THPT hoặc Điểm trung bình chung các môn học của năm lớp 10, lớp 11 và lớp 12 trong các tổ hợp môn đăng ký xét tuyển vào các ngành hoặc điểm Trung bình chung tất cả các môn học của 03 năm các lớp 10, 11,12.
-- a) Điểm thưởng: Dành cho thí sinh được xét tuyển thẳng nhưng không sử dụng quyền xét tuyển thẳng theo quy định tại khoản 2, Điều 8 của Quy chế tuyển sinh hiện hành; mức điểm thưởng từ 0 - 3,00 điểm theo thang điểm 30. Cụ thể như sau:
+- Cổng chính thức nêu HSA/V-ACT/SPT/TSA và các phương thức khác; chưa đủ căn cứ gắn biểu thức riêng cho mục này.
+- Giữ mục để đối chiếu, không kết luận trường đã bỏ phương thức và không mở bộ tính từ nguồn thiếu.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Chưa đủ hướng dẫn về thứ tự quy đổi, điểm cộng và ưu tiên để tính điểm cuối. Không tự thêm, bỏ hoặc cộng ưu tiên thang 30 vào điểm bài thi gốc..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-chu-van-an-DCA.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.intracomuni.edu.vn/) · 2026-10-04
 
+- Cần thông báo chính thức riêng xác nhận phương thức, công thức và ngành áp dụng.
 
 ### Điểm xét tuyển kết hợp
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 1. Tự tính mới: không.
+Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 1. Tự tính mới: không.
 
-Điểm xét tuyển = (Điểm M1 + Điểm M2 + Điểm M3) + Điểm cộng + Điểm ưu tiên
+Mục xét tuyển kết hợp có trong hồ sơ tham khảo nhưng chưa được xác nhận bằng công thức và phạm vi ngành trên cổng tuyển sinh 2026 đã đối chiếu.
 
 Thang: Thang 30.
 
-- - Điểm M1, Điểm M2, Điểm M3: Là kết quả điểm thi tốt nghiệp THPT hoặc Điểm trung bình chung các môn học của năm lớp 10, lớp 11 và lớp 12 trong các tổ hợp môn đăng ký xét tuyển vào các ngành hoặc điểm Trung bình chung tất cả các môn học của 03 năm các lớp 10, 11,12.
-- a) Điểm thưởng: Dành cho thí sinh được xét tuyển thẳng nhưng không sử dụng quyền xét tuyển thẳng theo quy định tại khoản 2, Điều 8 của Quy chế tuyển sinh hiện hành; mức điểm thưởng từ 0 - 3,00 điểm theo thang điểm 30. Cụ thể như sau:
+- Cổng chính thức nêu HSA/V-ACT/SPT/TSA và các phương thức khác; chưa đủ căn cứ gắn biểu thức riêng cho mục này.
+- Giữ mục để đối chiếu, không kết luận trường đã bỏ phương thức và không mở bộ tính từ nguồn thiếu.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Chưa đủ hướng dẫn về thứ tự quy đổi, điểm cộng và ưu tiên để tính điểm cuối. Không tự thêm, bỏ hoặc cộng ưu tiên thang 30 vào điểm bài thi gốc..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-chu-van-an-DCA.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.intracomuni.edu.vn/) · 2026-10-04
 
+- Cần thông báo chính thức riêng xác nhận phương thức, công thức và ngành áp dụng.
 
 ### ƯTXT, XT thẳng
 
@@ -12782,7 +12890,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-chu-van-an-DCA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-chu-van-an-DCA.html) · 2026-10-04
 
 
 ## IUH — Trường Đại học Công nghiệp TP.HCM
@@ -12809,7 +12917,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf) · 2026-10-04
 
 
 ### Kết hợp điểm ĐGNL V-ACT + Học bạ
@@ -12832,7 +12940,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -12847,7 +12955,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf) · 2026-10-04
 
 
 ## IUQ — Phân hiệu Trường Đại học Công nghiệp TP.HCM tại Quảng Ngãi
@@ -12866,7 +12974,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf) · 2026-10-04
 
 
 ### Xét tuyển kết hợp THPT, ĐGNL ĐHQG-HCM và học bạ lớp 12
@@ -12885,7 +12993,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf) · 2026-09-30
+[Nguồn đối chiếu](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf) · 2026-10-04
 
 
 ## KCC — Trường Đại học Kỹ thuật Công nghệ Cần Thơ
@@ -12906,7 +13014,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-cong-nghe-can-tho-KCC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-cong-nghe-can-tho-KCC.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -12920,7 +13028,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-cong-nghe-can-tho-KCC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-cong-nghe-can-tho-KCC.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -12938,7 +13046,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-cong-nghe-can-tho-KCC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-cong-nghe-can-tho-KCC.html) · 2026-10-04
 
 
 ## KCN — Trường Đại học Khoa học và Công nghệ Hà Nội
@@ -12956,7 +13064,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-va-cong-nghe-ha-noi-KCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-va-cong-nghe-ha-noi-KCN.html) · 2026-10-04
 
 
 ### Xét tuyển dựa trên kết quả thi ĐGNL do Trường tổ chức
@@ -12970,7 +13078,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-va-cong-nghe-ha-noi-KCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-va-cong-nghe-ha-noi-KCN.html) · 2026-10-04
 
 
 ### Xét tuyển dựa trên năng lực học tập kết hợp phỏng vấn
@@ -12986,7 +13094,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-va-cong-nghe-ha-noi-KCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-va-cong-nghe-ha-noi-KCN.html) · 2026-10-04
 
 
 ### PT3: Xét tuyển thẳng
@@ -13000,7 +13108,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-va-cong-nghe-ha-noi-KCN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-va-cong-nghe-ha-noi-KCN.html) · 2026-10-04
 
 
 ## KGH — Trường Sĩ quan Không quân
@@ -13017,7 +13125,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-khong-quan-he-dai-hoc-KGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-khong-quan-he-dai-hoc-KGH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -13032,7 +13140,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-khong-quan-he-dai-hoc-KGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-khong-quan-he-dai-hoc-KGH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -13047,7 +13155,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-khong-quan-he-dai-hoc-KGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-khong-quan-he-dai-hoc-KGH.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -13062,7 +13170,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-khong-quan-he-dai-hoc-KGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-khong-quan-he-dai-hoc-KGH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -13076,7 +13184,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-khong-quan-he-dai-hoc-KGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-khong-quan-he-dai-hoc-KGH.html) · 2026-10-04
 
 
 ## KHA — Trường Đại học Kinh tế Quốc dân
@@ -13093,7 +13201,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -13107,7 +13215,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-10-04
 
 
 ### Thí sinh có chứng chỉ SAT, ACT
@@ -13124,7 +13232,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-10-04
 
 
 ### CCTA Quốc tế kết hợp điểm thi tốt nghiệp
@@ -13141,7 +13249,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -13157,7 +13265,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -13173,7 +13281,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -13189,7 +13297,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-10-04
 
 
 ### Kết hợp HSA với CCTAQT
@@ -13206,7 +13314,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-10-04
 
 
 ### Kết hợp V-ACT với CCTAQT
@@ -13223,7 +13331,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-10-04
 
 
 ### Kết hợp TSA với CCTAQT
@@ -13240,7 +13348,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-quoc-dan-KHA.html) · 2026-10-04
 
 
 ## KMA — Học viện Kỹ thuật Mật mã
@@ -13258,7 +13366,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -13272,7 +13380,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -13292,7 +13400,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -13312,7 +13420,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -13332,7 +13440,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -13352,7 +13460,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html) · 2026-10-04
 
 
 ## KQH — Học viện Kỹ thuật Quân sự
@@ -13372,7 +13480,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-quan-su-he-quan-su-KQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-quan-su-he-quan-su-KQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -13389,7 +13497,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-quan-su-he-quan-su-KQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-quan-su-he-quan-su-KQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -13406,7 +13514,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-quan-su-he-quan-su-KQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-quan-su-he-quan-su-KQH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -13420,7 +13528,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-quan-su-he-quan-su-KQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-quan-su-he-quan-su-KQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -13437,7 +13545,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-quan-su-he-quan-su-KQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-quan-su-he-quan-su-KQH.html) · 2026-10-04
 
 
 ## KSA — Trường Đại học Kinh tế TP.HCM
@@ -13454,7 +13562,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tphcm-KSA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tphcm-KSA.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ+ V-ACT
@@ -13532,7 +13640,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tphcm-phan-hieu-vinh-long-KSV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tphcm-phan-hieu-vinh-long-KSV.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ+ V-ACT
@@ -13591,7 +13699,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-ha-noi-KTA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-ha-noi-KTA.html) · 2026-10-04
 
 
 ### Xét kết hợp điểm thi tốt nghiệp THPT với điểm thi năng khiếu
@@ -13607,7 +13715,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-ha-noi-KTA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-ha-noi-KTA.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -13621,7 +13729,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-ha-noi-KTA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-ha-noi-KTA.html) · 2026-10-04
 
 
 ## KTC — Trường Đại học Kiến trúc TP.HCM - Cơ sở Cần Thơ
@@ -13639,7 +13747,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -13658,7 +13766,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -13674,7 +13782,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Xét kết hợp điểm thi THPT + Năng khiếu
@@ -13693,7 +13801,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Xét kết hợp ĐGNL V-ACT + Năng khiếu
@@ -13709,7 +13817,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ## KTD — Trường Đại học Kiến trúc Đà Nẵng
@@ -13727,7 +13835,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-da-nang-KTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-da-nang-KTD.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -13751,7 +13859,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-da-nang-KTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-da-nang-KTD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -13766,7 +13874,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-da-nang-KTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-da-nang-KTD.html) · 2026-10-04
 
 
 ## KTL — Trường Đại học Kiến trúc TP.HCM - Cơ sở Đà Lạt
@@ -13784,7 +13892,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -13803,7 +13911,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -13819,7 +13927,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Xét kết hợp điểm thi THPT + Năng khiếu
@@ -13838,7 +13946,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Xét kết hợp ĐGNL V-ACT + Năng khiếu
@@ -13854,7 +13962,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ## KTS — Trường Đại học Kiến trúc TP.HCM
@@ -13871,7 +13979,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -13890,7 +13998,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -13906,7 +14014,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Xét kết hợp điểm thi THPT + Năng khiếu
@@ -13925,7 +14033,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ### Xét kết hợp ĐGNL V-ACT + Năng khiếu
@@ -13941,7 +14049,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-tphcm-KTS.html) · 2026-10-04
 
 
 ## LAH — Trường Sĩ quan Lục quân 1 (ĐH Trần Quốc Tuấn)
@@ -13958,7 +14066,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan-LAH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan-LAH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -13979,7 +14087,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan-LAH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan-LAH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -14000,7 +14108,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan-LAH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan-LAH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -14015,7 +14123,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan-LAH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan-LAH.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -14030,7 +14138,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan-LAH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-1-dai-hoc-tran-quoc-tuan-LAH.html) · 2026-10-04
 
 
 ## LBH — Trường Sĩ quan Lục quân 2 (ĐH Nguyễn Huệ)
@@ -14050,7 +14158,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue-LBH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue-LBH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -14066,7 +14174,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue-LBH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue-LBH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -14083,7 +14191,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue-LBH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue-LBH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -14099,7 +14207,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue-LBH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue-LBH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -14113,7 +14221,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue-LBH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-luc-quan-2-dai-hoc-nguyen-hue-LBH.html) · 2026-10-04
 
 
 ## LCH — Trường Đại học Chính trị (Trường Sĩ quan Chính trị)
@@ -14138,7 +14246,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-chinh-tri-dai-hoc-chinh-tri-LCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-chinh-tri-dai-hoc-chinh-tri-LCH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -14159,7 +14267,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-chinh-tri-dai-hoc-chinh-tri-LCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-chinh-tri-dai-hoc-chinh-tri-LCH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -14181,7 +14289,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-chinh-tri-dai-hoc-chinh-tri-LCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-chinh-tri-dai-hoc-chinh-tri-LCH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -14195,7 +14303,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-chinh-tri-dai-hoc-chinh-tri-LCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-chinh-tri-dai-hoc-chinh-tri-LCH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -14217,7 +14325,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-chinh-tri-dai-hoc-chinh-tri-LCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-chinh-tri-dai-hoc-chinh-tri-LCH.html) · 2026-10-04
 
 
 ## LDA — Trường Đại học Công đoàn
@@ -14237,7 +14345,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-doan-LDA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-doan-LDA.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -14252,7 +14360,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-doan-LDA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-doan-LDA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -14267,7 +14375,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-doan-LDA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-doan-LDA.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -14281,7 +14389,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-doan-LDA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-doan-LDA.html) · 2026-10-04
 
 
 ## LNA — Phân hiệu Trường Đại học Lâm nghiệp tại Gia Lai
@@ -14303,7 +14411,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tinh-gia-lai-LNA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tinh-gia-lai-LNA.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -14322,7 +14430,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tinh-gia-lai-LNA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tinh-gia-lai-LNA.html) · 2026-10-04
 
 
 ## LNH — Trường Đại học Lâm nghiệp
@@ -14343,7 +14451,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-10-04
 
 
 ### Xét kết hợp Điểm thi THPT + CCNN quy đổi
@@ -14360,7 +14468,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -14379,7 +14487,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -14394,7 +14502,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -14409,7 +14517,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-10-04
 
 
 ### Xét kết hợp Điểm thi THPT + Năng khiếu
@@ -14425,7 +14533,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -14439,7 +14547,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-10-04
 
 
 ### Xét kết hợp Học bạ + Năng khiếu
@@ -14455,7 +14563,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html) · 2026-10-04
 
 
 ## LNS — Trường Đại học Lâm nghiệp – Cơ sở 2
@@ -14475,7 +14583,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tai-dong-nai-LNS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tai-dong-nai-LNS.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -14494,7 +14602,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tai-dong-nai-LNS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tai-dong-nai-LNS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -14511,7 +14619,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tai-dong-nai-LNS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tai-dong-nai-LNS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -14525,7 +14633,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tai-dong-nai-LNS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-lam-nghiep-tai-dong-nai-LNS.html) · 2026-10-04
 
 
 ## LPD — Phân hiệu Trường Đại học Luật Hà Nội tại tỉnh Đắk Lắk
@@ -14543,7 +14651,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-ha-noi-LPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-ha-noi-LPH.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -14562,7 +14670,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-ha-noi-LPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-ha-noi-LPH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -14576,7 +14684,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-ha-noi-LPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-ha-noi-LPH.html) · 2026-10-04
 
 
 ## LPH — Trường Đại học Luật Hà Nội
@@ -14629,7 +14737,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-ha-noi-LPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-ha-noi-LPH.html) · 2026-10-04
 
 
 ## LPS — Trường Đại học Luật TP.HCM
@@ -14648,7 +14756,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-tphcm-LPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-tphcm-LPS.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -14665,7 +14773,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-tphcm-LPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-tphcm-LPS.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN/SAT
@@ -14683,7 +14791,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-tphcm-LPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-tphcm-LPS.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -14700,7 +14808,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-tphcm-LPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-tphcm-LPS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -14716,7 +14824,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-tphcm-LPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-tphcm-LPS.html) · 2026-10-04
 
 
 ## MBS — Trường Đại học Mở TP.HCM
@@ -14844,7 +14952,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-tphcm-MBS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-tphcm-MBS.html) · 2026-10-04
 
 
 ## MDA — Trường Đại học Mỏ - Địa chất
@@ -14989,7 +15097,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://tuyensinh.humg.edu.vn/tuyen-sinh/Pages/Thong-tin-tuyen-sinh.aspx?ItemID=7100) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.humg.edu.vn/tuyen-sinh/Pages/Thong-tin-tuyen-sinh.aspx?ItemID=7100) · 2026-10-04
 
 
 ## MHN — Trường Đại học Mở Hà Nội
@@ -15007,7 +15115,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT + CCNN
@@ -15025,7 +15133,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -15040,7 +15148,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -15056,7 +15164,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -15072,7 +15180,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT + Năng khiếu
@@ -15088,7 +15196,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-10-04
 
 
 ### Kết hợp điểm học bạ + điểm thi Năng khiếu
@@ -15104,7 +15212,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -15118,7 +15226,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html) · 2026-10-04
 
 
 ## MIT — Trường Đại học Công nghệ Miền Đông
@@ -15128,47 +15236,51 @@ Thang: Không có thang điểm chung.
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Sử dụng tổ hợp 3 môn thi tốt nghiệp THPT năm 2026; nguồn chưa nêu đầy đủ biểu thức điểm cuối.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- Lưu ý: Trong tổ hợp 03 môn xét tuyển bắt buộc phải có môn Toán hoặc Ngữ văn và chiếm 1/3 trọng số tổng điểm xét tuyển; Đối với thí sinh thi tốt nghiệp từ năm 2026, điều kiện để áp dụng phương thức này yêu cầu các bạn bắt buộc phải có tổng điểm 03 môn thi tốt nghiệp THPT đạt từ 15 điểm
+- Toán hoặc Ngữ văn có trọng số ít nhất 1/3; tổng ba môn thi từ 15.
+- Tổ hợp có Tiếng Anh có thể dùng chứng chỉ đã quy đổi, cần đúng bảng của MIT.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-mien-dong-MIT.html) · 2026-09-30
+[Nguồn đối chiếu](https://mit.vn/cong-bo-cac-phuong-thuc-xet-tuyen-nam-2026/) · 2026-10-04
 
 
 ### Điểm học bạ
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
 
-Điểm xét tuyển = [(Tổng điểm 03 môn HK1 lớp 10 + Tổng điểm 03 môn HK2 lớp 10) + (Tổng điểm 03 môn HK1 lớp 11 + Tổng điểm 03 môn HK2 lớp 11) + (Tổng điểm 03 môn HK1 lớp 12 + Tổng điểm 03 môn HK2 lớp 12)] / 6 ≥ 15 điểm
+H = Tổng điểm 18 đầu điểm của 3 môn × 6 học kỳ / 6
 
 Thang: Thang 30.
 
+- Sáu học kỳ đủ lớp 10, 11, 12; dùng tổ hợp có Toán hoặc Văn ít nhất 1/3 trọng số.
+- H từ 15 và thí sinh thi tốt nghiệp 2026 còn cần tổng ba môn thi THPT từ 15, không điểm liệt. Dược học có ngưỡng riêng.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://mit.vn/cong-bo-cac-phuong-thuc-xet-tuyen-dai-hoc-nam-2026/) · 2026-10-04
+Quy đổi: Nguồn dùng biểu thức H cho điều kiện nhận hồ sơ, chưa đầy đủ điểm cuối; không thay 18 điểm học kỳ bằng 9 điểm cả năm.
 
-- Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính.
+[Nguồn đối chiếu](https://mit.vn/cong-bo-cac-phuong-thuc-xet-tuyen-nam-2026/) · 2026-10-04
+
 
 ### Điểm ĐGNL V-ACT
 
-Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
+Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 39. Tự tính mới: không.
 
-Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.
+Dùng kết quả V-ACT ĐHQG-HCM năm 2026, ngưỡng được công bố từ 530; chưa có phép quy đổi điểm cuối trong nguồn.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: V-ACT gốc 1200; thang cuối theo hướng dẫn MIT.
 
+- Thí sinh thi tốt nghiệp 2026 cần tổng ba môn THPT từ 15 và không điểm liệt; Dược học có ngưỡng riêng.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-mien-dong-MIT.html) · 2026-09-30
+[Nguồn đối chiếu](https://mit.vn/cong-bo-cac-phuong-thuc-xet-tuyen-nam-2026/) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -15182,7 +15294,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-mien-dong-MIT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-mien-dong-MIT.html) · 2026-10-04
 
 
 ## MTC — Trường Đại học Mỹ thuật Công nghiệp
@@ -15200,7 +15312,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-my-thuat-cong-nghiep-MTC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-my-thuat-cong-nghiep-MTC.html) · 2026-10-04
 
 
 ## MTH — Trường Đại học Mỹ thuật Việt Nam
@@ -15221,7 +15333,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-my-thuat-viet-nam-MTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-my-thuat-viet-nam-MTH.html) · 2026-10-04
 
 
 ## MTS — Trường Đại học Mỹ thuật TP.HCM
@@ -15243,7 +15355,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-my-thuat-tphcm-MTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-my-thuat-tphcm-MTS.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -15263,7 +15375,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-my-thuat-tphcm-MTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-my-thuat-tphcm-MTS.html) · 2026-10-04
 
 
 ## MTU — Trường Đại học Xây dựng Miền Tây
@@ -15273,70 +15385,73 @@ Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm 
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 11. Tự tính mới: không.
 
-Điểm xét tuyển = Điểm thi THPT môn 1 + Điểm thi THPT môn 2 + Điểm thi THPT môn 3 + Điểm ưu tiên (nếu có) + Điểm cộng (nếu có).
+ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT + ĐC
 
 Thang: Thang 30.
 
-- - Xét tuyển dựa vào kết quả kỳ thi tốt nghiệp THPT năm 2026 bắt buộc phải có môn Toán với trọng số tính điểm xét của môn Toán tối thiểu 1/3 và đáp dứng yêu cầu tổ hợp xét tuyển sử dụng kết quả các môn thi tốt nghiệp THPT dùng để xét tuyển có ít nhất 03 môn phù hợp với đặc điểm, yêu cầu đầu vào của chương trình đào tạo.
-- - Thí sinh có một trong các chứng chỉ tiếng Anh được quy định tại Thông tư số 24/2024/TT-BGDĐT của Bộ Giáo dục và Đào tạo quy định Danh mục chứng chỉ ngoại ngữ và được miễn thi môn Ngoại ngữ trong xét công nhận tốt nghiệp THPT năm 2026, sẽ được quy đổi kết quả chứng chỉ ngoại ngữ thành điểm môn ngoại ngữ theo thang điểm 10 để đưa vào tổ hợp môn xét tuyển thay thế môn ngoại ngữ theo nguyên tắc trọng số tính điểm xét môn ngoại ngữ không vượt quá 1/3 của tổng điểm theo thang điểm 30.
+- Ngoại ngữ chứng chỉ theo bảng của MTU: IELTS 4/4,5/5/5,5/6/6,5/7+ → 7/7,5/8/8,5/9/9,5/10.
+- Còn thiếu bảng/điều kiện điểm cộng đầy đủ để tự tính cuối cùng.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-tay-MTU.html) · 2026-09-30
+[Nguồn đối chiếu](https://xttt.mtu.edu.vn/Ph%C6%B0%C6%A1ng%20Th%E1%BB%A9c%20XT/PH%C6%AF%C6%A0NG%20TH%E1%BB%A8C%20TUY%E1%BB%82N%20SINH%20N%C4%82M%202026.pdf) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 11. Tự tính mới: không.
 
-- Điểm xét tuyển = Điểm thi đánh giá năng lực x hệ số quy đổi + Điểm ưu tiên
+ĐXT = Điểm V-ACT × Hệ số quy đổi + ĐƯT + ĐC
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang quy đổi của Trường.
+
+- Nguồn nêu tên hệ số nhưng chưa cho giá trị; không tự đặt 1/40 hay 1/15.
+
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
+
+Quy đổi: Cần thông báo hệ số/bảng tương đương của MTU trước khi bật bộ tính.
+
+[Nguồn đối chiếu](https://xttt.mtu.edu.vn/Ph%C6%B0%C6%A1ng%20Th%E1%BB%A9c%20XT/PH%C6%AF%C6%A0NG%20TH%E1%BB%A8C%20TUY%E1%BB%82N%20SINH%20N%C4%82M%202026.pdf) · 2026-10-04
 
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+### Điểm học bạ
+
+Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 11. Tự tính mới: không.
+
+ĐXT = Tổng TBC môn trong tổ hợp × Hệ số quy đổi + ĐƯT + ĐC
+Nguồn nêu hai nhánh: TBC cả năm lớp 12 hoặc TBC cả năm ba lớp 10, 11, 12
+
+Thang: Thang 30.
+
+- Mô tả ở nguồn HTML yêu cầu đủ ba năm; PDF lại nêu thêm nhánh chỉ lớp 12. Cần xác nhận bản áp dụng cuối cùng năm 2026.
+- Chưa có giá trị hệ số quy đổi, không mặc định hệ số 1.
+
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
 [Nguồn đối chiếu](https://xttt.mtu.edu.vn/Ph%C6%B0%C6%A1ng%20Th%E1%BB%A9c%20XT/PH%C6%AF%C6%A0NG%20TH%E1%BB%A8C%20TUY%E1%BB%82N%20SINH%20N%C4%82M%202026.pdf) · 2026-10-04
 
-- Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính.
-
-### Điểm học bạ
-
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 11. Tự tính mới: không.
-
-Điểm xét tuyển = (Điểm trung bình 03 năm môn 1 + Điểm trung bình 03 năm môn 2 + Điểm trung 03 năm môn 3) x hệ số quy đổi + Điểm ưu tiên (nếu có) + Điểm cộng (nếu có).
-
-Thang: Thang 30.
-
-- - Xét tuyển dựa vào kết quả học tập các môn học cấp THPT bắt buộc phải có môn Toán với trọng số tính điểm xét của môn Toán tối thiểu 1/3 và đáp ứng yêu cầu tổ hợp xét tuyển sử dụng kết quả học tập cả năm lớp 10, 11,12 theo thang điểm 30.
-
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
-
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
-
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-tay-MTU.html) · 2026-09-30
-
+- Nguồn 2026 chưa nhất quán thời kỳ học bạ và thiếu hệ số quy đổi.
 
 ### Điểm Đánh giá đầu vào V-SAT
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 11. Tự tính mới: không.
 
-- Điểm xét tuyển = Tổng điểm thi 3 môn V-SAT x hệ số quy đổi + điểm ưu tiên (nếu có)
+ĐXT = Điểm tổng 3 môn V-SAT × Hệ số quy đổi + ĐƯT + ĐC
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang quy đổi của Trường.
 
+- Nguồn nêu tên hệ số nhưng chưa cho giá trị; không tự đặt 1/40 hay 1/15.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Nguồn đã đối chiếu chưa nêu đầy đủ bước điểm cộng và ưu tiên hoặc bảng quy đổi; chưa bật tính điểm xét tuyển cuối, không mặc định bỏ hay cộng ưu tiên..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Cần thông báo hệ số/bảng tương đương của MTU trước khi bật bộ tính.
 
-[Nguồn đối chiếu](https://xttt.mtu.edu.vn/Thongtintuyensinh.aspx) · 2026-10-04
+[Nguồn đối chiếu](https://xttt.mtu.edu.vn/Ph%C6%B0%C6%A1ng%20Th%E1%BB%A9c%20XT/PH%C6%AF%C6%A0NG%20TH%E1%BB%A8C%20TUY%E1%BB%82N%20SINH%20N%C4%82M%202026.pdf) · 2026-10-04
 
-- Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính.
 
 ## NHB — Phân hiệu Học viện Ngân hàng tại Bắc Ninh
 
@@ -15354,7 +15469,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-10-04
 
 
 ### Điểm học bạ + chứng chỉ quốc tế
@@ -15372,7 +15487,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-10-04
 
 
 ### Điểm học bạ + Điểm thi ĐGNL HSA
@@ -15388,7 +15503,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-10-04
 
 
 ### Điểm học bạ + Điểm đánh giá đầu vào V-SAT
@@ -15404,7 +15519,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -15418,7 +15533,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -15432,7 +15547,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-bac-ninh-NHB.html) · 2026-10-04
 
 
 ## NHF — Trường Đại học Hà Nội
@@ -15453,7 +15568,7 @@ Thang: Thang 40.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-noi-NHF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-noi-NHF.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN
@@ -15486,7 +15601,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-noi-NHF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ha-noi-NHF.html) · 2026-10-04
 
 
 ## NHH — Học viện Ngân hàng
@@ -15603,7 +15718,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-NHH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-NHH.html) · 2026-10-04
 
 
 ## NHP — Phân hiệu Học viện Ngân hàng tại Phú Yên
@@ -15622,7 +15737,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -15639,7 +15754,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-10-04
 
 
 ### Kết hợp giữa học bạ THPT với kết quả bài thi ĐGNL HSA
@@ -15655,7 +15770,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-10-04
 
 
 ### Kết hợp giữa học bạ THPT với kết quả bài thi Đánh giá năng lực đầu vào đại học (V-SAT)
@@ -15671,7 +15786,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-10-04
 
 
 ### Kết hợp giữa học bạ THPT với chứng chỉ quốc tế.
@@ -15689,7 +15804,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -15703,7 +15818,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ngan-hang-phan-vien-phu-yen-NHP.html) · 2026-10-04
 
 
 ## NHS — Trường Đại học Ngân hàng TP.HCM
@@ -15721,7 +15836,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngan-hang-tphcm-NHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngan-hang-tphcm-NHS.html) · 2026-10-04
 
 
 ### Xét tuyển kết quả học tập, thành tích, năng khiếu đặc biệt bậc trung học phổ thông và chứng chỉ tiếng Anh
@@ -15739,7 +15854,7 @@ Thang: Thang 150 / Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngan-hang-tphcm-NHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngan-hang-tphcm-NHS.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -15754,7 +15869,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngan-hang-tphcm-NHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngan-hang-tphcm-NHS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -15768,7 +15883,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngan-hang-tphcm-NHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngan-hang-tphcm-NHS.html) · 2026-10-04
 
 
 ### Xét tuyển học bạ THPT và phỏng vấn (Áp dụng cho chương trình đại học chính quy quốc tế do đối tác cấp bằng)
@@ -15785,7 +15900,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngan-hang-tphcm-NHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngan-hang-tphcm-NHS.html) · 2026-10-04
 
 
 ## NLG — Phân hiệu Trường Đại học Nông Lâm TP.HCM tại Gia Lai
@@ -15804,7 +15919,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-10-04
 
 
 ### Điểm thi THPT + học bạ
@@ -15820,7 +15935,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -15835,7 +15950,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -15849,7 +15964,7 @@ Thang: Thang 1200.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -15863,7 +15978,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-10-04
 
 
 ## NLN — Phân hiệu Trường Đại học Nông Lâm TP.HCM tại Ninh Thuận
@@ -15881,7 +15996,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-nong-lam-tphcm-tai-ninh-thuan-NLN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-nong-lam-tphcm-tai-ninh-thuan-NLN.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -15896,7 +16011,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-nong-lam-tphcm-tai-ninh-thuan-NLN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-nong-lam-tphcm-tai-ninh-thuan-NLN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -15910,7 +16025,7 @@ Thang: Thang 1200.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-nong-lam-tphcm-tai-ninh-thuan-NLN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-nong-lam-tphcm-tai-ninh-thuan-NLN.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -15924,7 +16039,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-nong-lam-tphcm-tai-ninh-thuan-NLN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-nong-lam-tphcm-tai-ninh-thuan-NLN.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -15938,7 +16053,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-nong-lam-tphcm-tai-ninh-thuan-NLN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/phan-hieu-dai-hoc-nong-lam-tphcm-tai-ninh-thuan-NLN.html) · 2026-10-04
 
 
 ## NLS — Trường Đại học Nông Lâm TP.HCM
@@ -15948,60 +16063,75 @@ Thang: Không có thang điểm chung.
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 60. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Dùng điểm tổ hợp thi THPT năm 2026 và ưu tiên theo quy chế; ngành Mầm non kết hợp Toán, Văn, Năng khiếu.
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Không dùng cùng công thức ba môn văn hóa cho tổ hợp M00.
+- Chứng chỉ Tiếng Anh còn hạn có thể bổ sung/thay điểm Anh theo bảng của Trường.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://ts.hcmuaf.edu.vn/ts-44307-1/vn/span-stylecolor-redthong-tin-tuyen-sinh-dai-hoc-chinh-quy-va-cao-dang-nganh-giao-duc-mam-non-nam-2026.html) · 2026-10-04
 
 
 ### Điểm thi THPT + học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 58. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 58. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Sử dụng kết quả học tập lớp 10, 11 và 12; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Điểm tổ hợp kết hợp = THPT M1 + THPT M2 + TB6HK M3
+TB6HK M3 làm tròn 2 chữ số trước bổ sung/thay thế
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Môn học bạ thay thế không được là Toán hoặc Ngữ văn. Không áp dụng Giáo dục Mầm non.
+- Trung bình sáu học kỳ từ HK1 lớp 10 đến HK2 lớp 12, không thay bằng điểm cả năm.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên theo quy chế; nguồn chưa có đầy đủ hướng dẫn điểm cuối/quy đổi cho nhánh kết hợp..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-09-30
+Quy đổi: Giữ đúng hai môn thi và một môn học bạ; không tự tính từ tổng học bạ ba môn.
+
+[Nguồn đối chiếu](https://ts.hcmuaf.edu.vn/ts-44307-1/vn/span-stylecolor-redthong-tin-tuyen-sinh-dai-hoc-chinh-quy-va-cao-dang-nganh-giao-duc-mam-non-nam-2026.html) · 2026-10-04
 
 
 ### Điểm học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 60. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 60. Tự tính mới: không.
 
-Sử dụng kết quả học tập lớp 10, 11 và 12; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+TB6HK Mi = Tổng điểm sáu học kỳ của môn i / 6, làm tròn 2 chữ số
+y = B3 + (x − A3) × (B2 − B3) / (A2 − A3), x là điểm trúng tuyển THPT, y là ngưỡng trúng tuyển của phương thức cần quy đổi
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Tại cơ sở TP.HCM chỉ xét học bạ thí sinh tốt nghiệp THPT 2026.
+- Mầm non dùng TB6HK Toán + TB6HK Văn + Năng khiếu; các ngành khác dùng tổ hợp tương ứng.
+- Khung ngưỡng học bạ ↔ THPT: 30↔30; 28,48↔25; 26,15↔21,25; 22,13↔16,75; 18↔16.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-09-30
+Quy đổi: Thông báo 3204 ngày 30/7 quy đổi điểm trúng tuyển, ví dụ THPT 24 → ngưỡng học bạ 27,86. Không coi y là điểm xét tuyển cá nhân hoặc cộng ưu tiên lần nữa.
+
+[Nguồn đối chiếu](https://ts.hcmuaf.edu.vn/ts-44307-1/vn/span-stylecolor-redthong-tin-tuyen-sinh-dai-hoc-chinh-quy-va-cao-dang-nganh-giao-duc-mam-non-nam-2026.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 58. Tự tính mới: không.
 
-Điểm ưu tiên = [(1200 - tổng điểm đạt được)/300)]. Mức điểm ưu tiên quy định làm tròn đến không số lẻ thập phân
+y = B3 + (x − A3) × (B2 − B3) / (A2 − A3), x là điểm trúng tuyển THPT, y là ngưỡng trúng tuyển của phương thức cần quy đổi
+ĐƯT gốc thang 1200 = (KV + đối tượng thang 30) × 40
+Từ điểm thi ≥ 900: ĐƯT = (1200 − điểm thi) / 300 × ĐƯT gốc, làm tròn 0 chữ số
 
-Thang: Thang 1200.
+Thang: V-ACT thang 1200; quy đổi ngưỡng theo tổ hợp.
 
+- Không áp dụng ngành Giáo dục Mầm non.
+- Thông báo 3204 có bốn bảng khác nhau A00/B00/C01/D01; cùng điểm V-ACT có điểm tương đương khác theo tổ hợp.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên thang 1200 làm tròn số nguyên theo mục 5.b; bộ tính chung làm tròn 2 chữ số nên chưa bật cho phương thức này..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-09-30
+Quy đổi: Ví dụ ngưỡng THPT A00=25 → ngưỡng V-ACT=877. Đây là phép chuyển ngưỡng, không mặc định V-ACT / 40 hoặc cộng ưu tiên hai lần.
+
+[Nguồn đối chiếu](https://ts.hcmuaf.edu.vn/ts-44307-1/vn/span-stylecolor-redthong-tin-tuyen-sinh-dai-hoc-chinh-quy-va-cao-dang-nganh-giao-duc-mam-non-nam-2026.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -16015,7 +16145,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nong-lam-tphcm-NLS.html) · 2026-10-04
 
 
 ## NQH — Học viện Khoa học Quân sự
@@ -16037,7 +16167,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-khoa-hoc-quan-su-he-quan-su-NQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-khoa-hoc-quan-su-he-quan-su-NQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -16055,7 +16185,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-khoa-hoc-quan-su-he-quan-su-NQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-khoa-hoc-quan-su-he-quan-su-NQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -16074,7 +16204,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-khoa-hoc-quan-su-he-quan-su-NQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-khoa-hoc-quan-su-he-quan-su-NQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -16092,7 +16222,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-khoa-hoc-quan-su-he-quan-su-NQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-khoa-hoc-quan-su-he-quan-su-NQH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -16106,7 +16236,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-khoa-hoc-quan-su-he-quan-su-NQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-khoa-hoc-quan-su-he-quan-su-NQH.html) · 2026-10-04
 
 
 ## NTA — Phân hiệu Trường Đại học Ngoại thương tại Quảng Ninh
@@ -16139,7 +16269,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -16176,7 +16306,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -16198,7 +16328,7 @@ Thang: Thang 30 / Thang 40.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -16218,7 +16348,7 @@ Thang: Thang 30 / Thang 40.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -16232,7 +16362,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-10-04
 
 
 ## NTH — Trường Đại học Ngoại thương
@@ -16440,7 +16570,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-bac-NTH.html) · 2026-10-04
 
 
 ## NTS — Trường Đại học Ngoại thương – Cơ sở phía Nam
@@ -16511,7 +16641,7 @@ Thang: Thang 40.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-nam-NTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-nam-NTS.html) · 2026-10-04
 
 - Quy định TSA chỉ cho Khoa học máy tính, Trí tuệ nhân tạo, Khoa học dữ liệu; danh mục của cơ sở phía Nam không có ba chương trình này. Không lấy ngành ở Hà Nội để gán cho NTS.
 - Có mâu thuẫn giữa các nguồn; chưa xác nhận biểu thức và phạm vi.
@@ -16546,7 +16676,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-nam-NTS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-thuong-co-so-phia-nam-NTS.html) · 2026-10-04
 
 
 ### Học bạ / học bạ kết hợp chứng chỉ ngoại ngữ
@@ -16601,7 +16731,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-tat-thanh-NTT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-tat-thanh-NTT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -16691,7 +16821,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-tat-thanh-NTT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-tat-thanh-NTT.html) · 2026-10-04
 
 
 ## NTU — Trường Đại học Nguyễn Trãi
@@ -16709,7 +16839,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-trai-NTU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-trai-NTU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -16724,7 +16854,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-trai-NTU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-trai-NTU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -16738,7 +16868,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-trai-NTU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-trai-NTU.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -16752,7 +16882,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-trai-NTU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nguyen-trai-NTU.html) · 2026-10-04
 
 
 ## NVH — Học viện Âm nhạc Quốc gia Việt Nam
@@ -16769,7 +16899,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-am-nhac-quoc-gia-viet-nam-NVH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-am-nhac-quoc-gia-viet-nam-NVH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -16783,7 +16913,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-am-nhac-quoc-gia-viet-nam-NVH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-am-nhac-quoc-gia-viet-nam-NVH.html) · 2026-10-04
 
 
 ## NVS — Nhạc viện TP.HCM
@@ -16803,7 +16933,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/nhac-vien-tphcm-NVS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/nhac-vien-tphcm-NVS.html) · 2026-10-04
 
 
 ### Thi chuyên môn và kiến thức âm nhạc kết hợp xét Ngữ văn
@@ -16820,7 +16950,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/nhac-vien-tphcm-NVS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/nhac-vien-tphcm-NVS.html) · 2026-10-04
 
 
 ## PBH — Trường Sĩ quan Pháo binh
@@ -16838,7 +16968,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phao-binh-PBH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phao-binh-PBH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -16853,7 +16983,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phao-binh-PBH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phao-binh-PBH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -16868,7 +16998,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phao-binh-PBH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phao-binh-PBH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -16883,7 +17013,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phao-binh-PBH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phao-binh-PBH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -16897,7 +17027,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phao-binh-PBH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-phao-binh-PBH.html) · 2026-10-04
 
 
 ## PCH — Học viện Phòng cháy chữa cháy và Cứu nạn cứu hộ (phía Bắc)
@@ -16914,7 +17044,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi tốt nghiệp THPT với kết quả ĐGNL Bộ Công an.
@@ -16932,7 +17062,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-10-04
 
 
 ### Kết hợp CCQT với Bài thi ĐGNL BCA
@@ -16952,7 +17082,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-10-04
 
 
 ## PCS — Học viện Phòng cháy chữa cháy và Cứu nạn cứu hộ (phía Nam)
@@ -16970,7 +17100,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi tốt nghiệp THPT với kết quả ĐGNL Bộ Công an.
@@ -16988,7 +17118,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-10-04
 
 
 ### Kết hợp CCQT với Bài thi ĐGNL BCA
@@ -17008,7 +17138,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phong-chay-chua-chay-phia-bac-PCH.html) · 2026-10-04
 
 
 ## PKA — Trường Đại học Phenikaa
@@ -17029,7 +17159,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -17045,7 +17175,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -17064,7 +17194,7 @@ Thang: Thang 150.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -17083,7 +17213,7 @@ Thang: Thang 100.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -17102,7 +17232,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -17121,7 +17251,7 @@ Thang: Thang 450.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -17138,7 +17268,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-phenikaa-PKA.html) · 2026-10-04
 
 
 ## PKH — Học viện Phòng không - Không quân
@@ -17155,7 +17285,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phong-khong-khong-quan-PKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phong-khong-khong-quan-PKH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -17173,7 +17303,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phong-khong-khong-quan-PKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phong-khong-khong-quan-PKH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -17191,7 +17321,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phong-khong-khong-quan-PKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phong-khong-khong-quan-PKH.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -17208,7 +17338,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phong-khong-khong-quan-PKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phong-khong-khong-quan-PKH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -17226,7 +17356,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phong-khong-khong-quan-PKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-phong-khong-khong-quan-PKH.html) · 2026-10-04
 
 
 ## PVU — Trường Đại học Dầu khí Việt Nam
@@ -17244,7 +17374,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dau-khi-viet-nam-PVU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dau-khi-viet-nam-PVU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -17334,7 +17464,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dau-khi-viet-nam-PVU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dau-khi-viet-nam-PVU.html) · 2026-10-04
 
 
 ## QHD — Trường Quản trị và Kinh doanh - Đại học Quốc gia Hà Nội
@@ -17352,7 +17482,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-10-04
 
 
 ### Xét điểm thi THPT và quy đổi môn tiếng Anh
@@ -17369,7 +17499,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -17386,7 +17516,7 @@ Thang: Thang 150 / Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-10-04
 
 
 ### Xét kết hợp bằng tốt nghiệp THPT và CCNN
@@ -17401,7 +17531,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-10-04
 
 
 ### Xét chứng chỉ quốc tế A-Level
@@ -17415,7 +17545,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -17429,7 +17559,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html) · 2026-10-04
 
 
 ## QHE — Trường Đại học Kinh tế - Đại học Quốc gia Hà Nội
@@ -17449,7 +17579,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -17466,7 +17596,7 @@ Thang: Thang 150 / Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -17480,7 +17610,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-10-04
 
 
 ### Điểm THPT + Chứng chỉ tiếng Anh quốc tế
@@ -17498,7 +17628,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-10-04
 
 
 ### Xét tuyển chứng chỉ quốc tế SAT, ACT, A-LEVEL
@@ -17513,7 +17643,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-10-04
 
 
 ### Xét tuyển kết hợp học bạ và chứng chỉ Tiếng Anh quốc tế
@@ -17529,7 +17659,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html) · 2026-10-04
 
 
 ## QHF — Trường Đại học Ngoại ngữ - Đại học Quốc gia Hà Nội
@@ -17546,7 +17676,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-ha-noi-QHF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-ha-noi-QHF.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -17578,7 +17708,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-ha-noi-QHF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-ha-noi-QHF.html) · 2026-10-04
 
 
 ### Kết hợp kết quả thi tốt nghiệp THPT với CCNN
@@ -17596,7 +17726,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-ha-noi-QHF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-ha-noi-QHF.html) · 2026-10-04
 
 
 ## QHI — Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội
@@ -17666,7 +17796,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dai-hoc-quoc-gia-ha-noi-QHI.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-dai-hoc-quoc-gia-ha-noi-QHI.html) · 2026-10-04
 
 
 ## QHK — Trường Khoa học liên ngành và Nghệ thuật - Đại học Quốc gia Hà Nội
@@ -17685,7 +17815,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-10-04
 
 
 ### Điểm thi THPT kết hợp chứng chỉ ngoại ngữ
@@ -17701,7 +17831,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-10-04
 
 
 ### Điểm thi THPT + Năng khiếu
@@ -17716,7 +17846,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -17732,7 +17862,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-10-04
 
 
 ### Xét kết hợp ĐGNL HSA + Năng khiếu
@@ -17749,7 +17879,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -17763,7 +17893,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-khoa-hoc-lien-nganh-va-nghe-thuat-ha-noi-QHK.html) · 2026-10-04
 
 
 ## QHL — Trường Đại học Luật - Đại học Quốc gia Hà Nội
@@ -17831,7 +17961,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-dai-hoc-quoc-gia-ha-noi-QHL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-luat-dai-hoc-quoc-gia-ha-noi-QHL.html) · 2026-10-04
 
 
 ## QHQ — Khoa Quốc tế - Đại học Quốc gia Hà Nội
@@ -17900,7 +18030,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quoc-te-dai-hoc-quoc-gia-ha-noi-QHQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quoc-te-dai-hoc-quoc-gia-ha-noi-QHQ.html) · 2026-10-04
 
 
 ### Chứng chỉ quốc tế
@@ -17914,7 +18044,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quoc-te-dai-hoc-quoc-gia-ha-noi-QHQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quoc-te-dai-hoc-quoc-gia-ha-noi-QHQ.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -17929,7 +18059,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quoc-te-dai-hoc-quoc-gia-ha-noi-QHQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quoc-te-dai-hoc-quoc-gia-ha-noi-QHQ.html) · 2026-10-04
 
 
 ## QHS — Trường Đại học Giáo dục - Đại học Quốc gia Hà Nội
@@ -17950,7 +18080,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-duc-ha-noi-QHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-duc-ha-noi-QHS.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -17969,7 +18099,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-duc-ha-noi-QHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-duc-ha-noi-QHS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -17983,7 +18113,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-duc-ha-noi-QHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-giao-duc-ha-noi-QHS.html) · 2026-10-04
 
 
 ## QHT — Trường Đại học Khoa học Tự nhiên - Đại học Quốc gia Hà Nội
@@ -18000,7 +18130,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-dai-hoc-quoc-gia-ha-noi-QHT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-dai-hoc-quoc-gia-ha-noi-QHT.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -18016,7 +18146,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-dai-hoc-quoc-gia-ha-noi-QHT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-dai-hoc-quoc-gia-ha-noi-QHT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -18033,7 +18163,7 @@ Thang: Thang 150 / Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-dai-hoc-quoc-gia-ha-noi-QHT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-dai-hoc-quoc-gia-ha-noi-QHT.html) · 2026-10-04
 
 
 ### Xét tuyển chứng chỉ quốc tế SAT
@@ -18066,7 +18196,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-dai-hoc-quoc-gia-ha-noi-QHT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-dai-hoc-quoc-gia-ha-noi-QHT.html) · 2026-10-04
 
 
 ## QHX — Trường Đại học Khoa học Xã hội và Nhân văn - Đại học Quốc gia Hà Nội
@@ -18120,7 +18250,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-ha-noi-QHX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-ha-noi-QHX.html) · 2026-10-04
 
 
 ## QHY — Trường Đại học Y Dược - Đại học Quốc gia Hà Nội
@@ -18137,7 +18267,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-dai-hoc-quoc-gia-ha-noi-QHY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-dai-hoc-quoc-gia-ha-noi-QHY.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -18152,7 +18282,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-dai-hoc-quoc-gia-ha-noi-QHY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-dai-hoc-quoc-gia-ha-noi-QHY.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -18168,7 +18298,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-dai-hoc-quoc-gia-ha-noi-QHY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-dai-hoc-quoc-gia-ha-noi-QHY.html) · 2026-10-04
 
 
 ### Xét kết hợp điểm thi + CCNN
@@ -18185,7 +18315,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-dai-hoc-quoc-gia-ha-noi-QHY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-dai-hoc-quoc-gia-ha-noi-QHY.html) · 2026-10-04
 
 
 ## QSB — Trường Đại học Bách Khoa - ĐHQG TP.HCM
@@ -18224,7 +18354,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-hcm-QSB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-hcm-QSB.html) · 2026-10-04
 
 
 ## QSC — Trường Đại học Công nghệ Thông tin - ĐH Quốc gia TP.HCM
@@ -18241,7 +18371,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-thong-tin-dhqg-tphcm-QSC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-thong-tin-dhqg-tphcm-QSC.html) · 2026-10-04
 
 
 ### Xét tuyển tổng hợp
@@ -18331,7 +18461,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-dhqg-tphcm-QSQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-dhqg-tphcm-QSQ.html) · 2026-10-04
 
 
 ### Xét tuyển tổng hợp
@@ -18353,7 +18483,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-dhqg-tphcm-QSQ.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-dhqg-tphcm-QSQ.html) · 2026-10-04
 
 
 ## QST — Trường Đại học Khoa học Tự nhiên - ĐHQG TPHCM
@@ -18372,7 +18502,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-tphcm-QST.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-tphcm-QST.html) · 2026-10-04
 
 
 ### Điểm tốt nghiệp THPT + học bạ
@@ -18392,7 +18522,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-tphcm-QST.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-tphcm-QST.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT + học bạ
@@ -18416,7 +18546,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-tphcm-QST.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-tu-nhien-tphcm-QST.html) · 2026-10-04
 
 
 ## QSX — Trường Đại học Khoa học Xã hội và Nhân văn - ĐHQG TP.HCM
@@ -18433,7 +18563,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-tphcm-QSX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-tphcm-QSX.html) · 2026-10-04
 
 
 ### Xét tuyển tổng hợp (Điểm THPT + V-ACT + học bạ)
@@ -18452,7 +18582,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-tphcm-QSX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-tphcm-QSX.html) · 2026-10-04
 
 
 ### Xét tuyển tổng hợp (Điểm THPT + học bạ)
@@ -18471,7 +18601,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-tphcm-QSX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-tphcm-QSX.html) · 2026-10-04
 
 
 ### Xét tuyển tổng hợp (Điểm ĐGNL V-ACT + học bạ)
@@ -18490,7 +18620,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-tphcm-QSX.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-xa-hoi-va-nhan-van-tphcm-QSX.html) · 2026-10-04
 
 
 ## QSY — Khoa Y - ĐH Quốc gia TP.HCM
@@ -18510,7 +18640,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-suc-khoe-tphcm-QSY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-suc-khoe-tphcm-QSY.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -18524,7 +18654,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-suc-khoe-tphcm-QSY.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khoa-hoc-suc-khoe-tphcm-QSY.html) · 2026-10-04
 
 
 ## RMIT — Đại học RMIT Việt Nam
@@ -18543,7 +18673,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://www.rmit.edu.vn/vi/hoc-tap-tai-rmit/chuong-trinh-cu-nhan) · 2026-09-30
+[Nguồn đối chiếu](https://www.rmit.edu.vn/vi/hoc-tap-tai-rmit/chuong-trinh-cu-nhan) · 2026-10-04
 
 
 ### Lộ trình chuyển tiếp UniSTART
@@ -18559,7 +18689,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://www.rmit.edu.vn/vi/hoc-tap-tai-rmit/chuong-trinh-cu-nhan) · 2026-09-30
+[Nguồn đối chiếu](https://www.rmit.edu.vn/vi/hoc-tap-tai-rmit/chuong-trinh-cu-nhan) · 2026-10-04
 
 
 ## SDU — Trường Đại học Sao Đỏ
@@ -18576,7 +18706,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -18590,7 +18720,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -18605,7 +18735,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -18621,7 +18751,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -18637,7 +18767,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-10-04
 
 
 ### Kết hợp Điểm THPT + Học bạ
@@ -18654,7 +18784,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sao-do-SDU.html) · 2026-10-04
 
 
 ## SGD — Trường Đại học Sài Gòn
@@ -18673,7 +18803,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sai-gon-SGD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sai-gon-SGD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -18687,7 +18817,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sai-gon-SGD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sai-gon-SGD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -18701,7 +18831,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sai-gon-SGD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sai-gon-SGD.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -18719,7 +18849,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sai-gon-SGD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-sai-gon-SGD.html) · 2026-10-04
 
 
 ## SIU — Trường Đại học Quốc tế Sài Gòn
@@ -18737,7 +18867,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-sai-gon-SIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-sai-gon-SIU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -18752,7 +18882,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-sai-gon-SIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-sai-gon-SIU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -18766,7 +18896,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-sai-gon-SIU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-sai-gon-SIU.html) · 2026-10-04
 
 
 ## SKD — Trường Đại học Sân khấu - Điện ảnh Hà Nội
@@ -18783,7 +18913,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-san-khau-dien-anh-ha-noi-SKD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-san-khau-dien-anh-ha-noi-SKD.html) · 2026-10-04
 
 
 ## SKH — Trường Đại học Sư phạm Kỹ thuật Hưng Yên
@@ -18801,7 +18931,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -18816,7 +18946,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -18831,7 +18961,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -18846,7 +18976,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -18861,7 +18991,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -18875,7 +19005,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html) · 2026-10-04
 
 
 ## SKN — Trường Đại học Sư phạm Kỹ thuật Nam Định
@@ -18893,7 +19023,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -18908,7 +19038,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -18922,7 +19052,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -18936,7 +19066,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -18951,7 +19081,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -18965,7 +19095,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-nam-dinh-SKN.html) · 2026-10-04
 
 
 ## SKV — Trường Đại học Công nghệ Kỹ thuật Vinh
@@ -19049,7 +19179,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-SKV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-SKV.html) · 2026-10-04
 
 
 ## SNH — Trường Sĩ quan Công binh
@@ -19068,7 +19198,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen-SNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen-SNH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -19084,7 +19214,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen-SNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen-SNH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -19100,7 +19230,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen-SNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen-SNH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -19116,7 +19246,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen-SNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen-SNH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -19130,7 +19260,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen-SNH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-cong-binh-he-quan-su-dai-hoc-ngo-quyen-SNH.html) · 2026-10-04
 
 
 ## SP2 — Trường Đại học Sư phạm Hà Nội 2
@@ -19150,7 +19280,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -19166,7 +19296,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư Phạm Hà Nội 2
@@ -19181,7 +19311,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm TPHCM
@@ -19196,7 +19326,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -19210,7 +19340,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-10-04
 
 
 ### Điểm xét tuyển kết hợp
@@ -19227,7 +19357,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-2-SP2.html) · 2026-10-04
 
 
 ## SPD — Trường Đại học Đồng Tháp
@@ -19245,7 +19375,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + Năng khiếu
@@ -19260,7 +19390,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -19275,7 +19405,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + Năng khiếu
@@ -19290,7 +19420,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -19305,7 +19435,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-10-04
 
 
 ### Kết hợp điểm V-SAT + Năng khiếu
@@ -19321,7 +19451,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -19336,7 +19466,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -19350,7 +19480,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html) · 2026-10-04
 
 
 ## SPH — Trường Đại học Sư phạm Hà Nội
@@ -19370,7 +19500,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-SPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-SPH.html) · 2026-10-04
 
 
 ### Xét tuyển thí sinh có năng lực, thành tích vượt trội
@@ -19388,7 +19518,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-SPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-SPH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -19405,7 +19535,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-SPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ha-noi-SPH.html) · 2026-10-04
 
 
 ## SPK — Trường Đại học Sư phạm Kỹ thuật TP.HCM
@@ -19422,7 +19552,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-ky-thuat-tphcm-SPK.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-ky-thuat-tphcm-SPK.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -19508,7 +19638,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-10-04
 
 
 ### Kết hợp học bạ + ĐGNL SPHN2
@@ -19527,7 +19657,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-10-04
 
 
 ### Kết hợp học bạ + ĐGNL SPHN
@@ -19546,7 +19676,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-10-04
 
 
 ### Kết hợp học bạ + ĐGNL SPHCM
@@ -19565,7 +19695,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT + Năng khiếu
@@ -19581,7 +19711,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-10-04
 
 
 ### Kết hợp ĐGNL SPHCM + Năng khiếu
@@ -19600,7 +19730,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -19614,7 +19744,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-tphcm-SPS.html) · 2026-10-04
 
 
 ## STS — Trường Đại học Sư phạm TDTT TP. HCM
@@ -19622,50 +19752,79 @@ Thang: Không có thang điểm chung.
 
 ### Kết hợp kết quả thi tốt nghiệp THPT với điểm thi năng khiếu để xét tuyển
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 3. Tự tính mới: có.
 
-Điểm xét tuyển = Điểm tổ hợp + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có)
-Điểm tổ hợp = Điểm môn 1 + Điểm môn 2 + Điểm môn Năng khiếu TDTT
-Điểm ưu tiên = Điểm ưu tiên đối tượng + Điểm ưu tiên khu vực
+ĐXT = M1 thi THPT + M2 thi THPT + Năng khiếu TDTT + ĐC + ĐƯT
+Điểm tổ hợp = M1 + M2 + Năng khiếu TDTT (không hệ số)
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Áp dụng Giáo dục thể chất, Quản lý TDTT và Huấn luyện thể thao; T00, T01, T02, T05, T08, T09, T10 theo bảng Trường, cả ba thành phần không nhân hệ số.
+- Môn văn hóa theo đúng tổ hợp. T05 = Văn + Giáo dục kinh tế và pháp luật + NK; T08 = Toán + Giáo dục kinh tế và pháp luật + NK, không suy từ bảng tổ hợp chung khác.
+- Nhập điểm năng khiếu TDTT 2026 được Trường chấp nhận. Ưu tiên cho điểm năng khiếu và điểm cộng thành tích không được dùng trùng; nếu điểm thi thực tế cao hơn mức được ưu tiên thì dùng điểm thi và điểm cộng theo mục 6.b.
+- Điểm cộng thành tích tối đa 3; chỉ nhập mức đã được Trường xác nhận. Có các mức 3/1,5/1,25/1/0,5 theo loại giải, thành tích và thời hạn quy định.
+- Vẫn phải đạt ngưỡng ngành, học lực, sức khỏe và điều kiện năng khiếu; tổng điểm chưa xác nhận đủ điều kiện trúng tuyển.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Giảm ưu tiên từ ĐIỂM TỔ HỢP (hai môn văn hóa + năng khiếu), chưa gồm điểm cộng, theo trang 3: (30 − Điểm tổ hợp) / 7,5 × (ưu tiên khu vực + đối tượng) khi tổ hợp ≥22,5. Không dùng tổ hợp + điểm cộng làm căn cứ giảm..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-tphcm-STS.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.upes.edu.vn/2026/04/14/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/) · 2026-10-04
 
 
 ### Kết hợp kết quả học tập THPT với điểm thi năng khiếu để xét tuyển
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 3. Tự tính mới: có.
 
-Điểm xét tuyển = Điểm tổ hợp + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có)
-Điểm tổ hợp = Điểm môn 1 + Điểm môn 2 + Điểm môn Năng khiếu TDTT
-Điểm ưu tiên = Điểm ưu tiên đối tượng + Điểm ưu tiên khu vực
+ĐXT = TBC3năm M1 + TBC3năm M2 + Năng khiếu TDTT + ĐC + ĐƯT
+TBC3năm Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Áp dụng Giáo dục thể chất, Quản lý TDTT và Huấn luyện thể thao; T00, T01, T02, T05, T08, T09, T10 theo bảng Trường, cả ba thành phần không nhân hệ số.
+- Môn văn hóa theo đúng tổ hợp. T05 = Văn + Giáo dục kinh tế và pháp luật + NK; T08 = Toán + Giáo dục kinh tế và pháp luật + NK, không suy từ bảng tổ hợp chung khác.
+- Nhập điểm năng khiếu TDTT 2026 được Trường chấp nhận. Ưu tiên cho điểm năng khiếu và điểm cộng thành tích không được dùng trùng; nếu điểm thi thực tế cao hơn mức được ưu tiên thì dùng điểm thi và điểm cộng theo mục 6.b.
+- Điểm cộng thành tích tối đa 3; chỉ nhập mức đã được Trường xác nhận. Có các mức 3/1,5/1,25/1/0,5 theo loại giải, thành tích và thời hạn quy định.
+- Vẫn phải đạt ngưỡng ngành, học lực, sức khỏe và điều kiện năng khiếu; tổng điểm chưa xác nhận đủ điều kiện trúng tuyển.
+- Học bạ lấy cả năm đủ ba lớp 10, 11, 12, không chỉ lớp 12 hoặc trung bình sáu học kỳ.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Giảm ưu tiên từ ĐIỂM TỔ HỢP (hai môn văn hóa + năng khiếu), chưa gồm điểm cộng, theo trang 3: (30 − Điểm tổ hợp) / 7,5 × (ưu tiên khu vực + đối tượng) khi tổ hợp ≥22,5. Không dùng tổ hợp + điểm cộng làm căn cứ giảm..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-tphcm-STS.html) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.upes.edu.vn/2026/04/14/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/) · 2026-10-04
 
 
 ### Phương thức tuyển sinh kết hợp giữa thi tuyển và xét tuyển: Thi môn Năng khiếu Thể dục thể thao kết hợp xét điểm 2 môn văn hóa
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 3. Tự tính mới: có.
 
-Điểm xét tuyển = Điểm tổ hợp + Điểm cộng (nếu có) + Điểm ưu tiên (nếu có)
-Điểm tổ hợp = Điểm môn 1 + Điểm môn 2 + Điểm môn Năng khiếu TDTT
-Điểm ưu tiên = Điểm ưu tiên đối tượng + Điểm ưu tiên khu vực
+PT405: ĐXT = M1 thi THPT + M2 thi THPT + NK TDTT + ĐC + ĐƯT
+PT406: ĐXT = TBC3năm M1 + TBC3năm M2 + NK TDTT + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
+
+- Áp dụng Giáo dục thể chất, Quản lý TDTT và Huấn luyện thể thao; T00, T01, T02, T05, T08, T09, T10 theo bảng Trường, cả ba thành phần không nhân hệ số.
+- Môn văn hóa theo đúng tổ hợp. T05 = Văn + Giáo dục kinh tế và pháp luật + NK; T08 = Toán + Giáo dục kinh tế và pháp luật + NK, không suy từ bảng tổ hợp chung khác.
+- Nhập điểm năng khiếu TDTT 2026 được Trường chấp nhận. Ưu tiên cho điểm năng khiếu và điểm cộng thành tích không được dùng trùng; nếu điểm thi thực tế cao hơn mức được ưu tiên thì dùng điểm thi và điểm cộng theo mục 6.b.
+- Điểm cộng thành tích tối đa 3; chỉ nhập mức đã được Trường xác nhận. Có các mức 3/1,5/1,25/1/0,5 theo loại giải, thành tích và thời hạn quy định.
+- Vẫn phải đạt ngưỡng ngành, học lực, sức khỏe và điều kiện năng khiếu; tổng điểm chưa xác nhận đủ điều kiện trúng tuyển.
+
+Ưu tiên: Giảm ưu tiên từ ĐIỂM TỔ HỢP (hai môn văn hóa + năng khiếu), chưa gồm điểm cộng, theo trang 3: (30 − Điểm tổ hợp) / 7,5 × (ưu tiên khu vực + đối tượng) khi tổ hợp ≥22,5. Không dùng tổ hợp + điểm cộng làm căn cứ giảm..
+
+[Nguồn đối chiếu](https://tuyensinh.upes.edu.vn/2026/04/14/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/) · 2026-10-04
 
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+### Xét tuyển thẳng theo quy chế của Trường
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-tphcm-STS.html) · 2026-09-30
+Xét điều kiện / hồ sơ, không có phép cộng chung. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
+
+Xét điều kiện thành tích thể thao, đối tượng và ngành theo quy chế của Trường; không có một công thức cộng điểm chung.
+
+Thang: Xét điều kiện hồ sơ.
+
+- Ngành Giáo dục thể chất, Quản lý TDTT và Huấn luyện thể thao; thành tích, thời hạn và tiêu chuẩn cụ thể trong đề án.
+- Không dùng tổng ba môn thông thường để khẳng định đủ điều kiện xét thẳng.
+
+Ưu tiên: Theo mục 6 của đề án; phân biệt xét thẳng, ưu tiên điểm năng khiếu và điểm cộng..
+
+[Nguồn đối chiếu](https://tuyensinh.upes.edu.vn/2026/04/14/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/) · 2026-10-04
 
 
 ## TAG — Trường Đại học An Giang (ĐHQG HCM)
@@ -19682,7 +19841,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-an-giang-QSA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-an-giang-QSA.html) · 2026-10-04
 
 
 ### Xét tuyển tổng hợp
@@ -19703,7 +19862,7 @@ Thang: Thang 100.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-an-giang-QSA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-an-giang-QSA.html) · 2026-10-04
 
 
 ## TBD — Trường Đại học Thái Bình Dương
@@ -19721,7 +19880,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -19736,7 +19895,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -19751,7 +19910,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-10-04
 
 
 ### Điểm xét tốt nghiệp THPT
@@ -19765,7 +19924,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-10-04
 
 
 ### Điểm THPT kết hợp chứng chỉ quốc tế
@@ -19780,7 +19939,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-10-04
 
 
 ### Điểm THPT + hồ sơ năng lực
@@ -19794,7 +19953,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html) · 2026-10-04
 
 
 ## TCT — Trường Đại học Cần Thơ
@@ -19812,7 +19971,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -19848,7 +20007,7 @@ Thang: Thang 150 / Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -19862,7 +20021,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-10-04
 
 
 ## TCT-HG — Phân hiệu Đại học Cần Thơ tại tỉnh Hậu Giang
@@ -19881,7 +20040,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -19900,7 +20059,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -19917,7 +20076,7 @@ Thang: Thang 150 / Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -19931,7 +20090,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-10-04
 
 
 ## TCT-ST — Phân hiệu Đại học Cần Thơ tại tỉnh Sóc Trăng
@@ -19950,7 +20109,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -19969,7 +20128,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -19986,7 +20145,7 @@ Thang: Thang 150 / Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -20000,7 +20159,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-can-tho-TCT.html) · 2026-10-04
 
 
 ## TDB — Trường Đại học Thể dục Thể thao Bắc Ninh
@@ -20018,7 +20177,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html) · 2026-10-04
 
 
 ### Kết hợp Điểm THPT + Năng khiếu
@@ -20032,7 +20191,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -20046,7 +20205,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-bac-ninh-TDB.html) · 2026-10-04
 
 
 ## TDD — Trường Đại học Thành Đô
@@ -20064,7 +20223,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-do-TDD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-do-TDD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -20079,7 +20238,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-do-TDD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-do-TDD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -20094,7 +20253,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-do-TDD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-do-TDD.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -20109,7 +20268,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-do-TDD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-do-TDD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -20123,7 +20282,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-do-TDD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thanh-do-TDD.html) · 2026-10-04
 
 
 ## TDH — Trường Đại học Sư phạm Thể dục Thể thao Hà Nội
@@ -20142,7 +20301,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-10-04
 
 
 ### Kết hợp Điểm THPT + Năng khiếu
@@ -20161,7 +20320,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + Năng khiếu
@@ -20182,7 +20341,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-10-04
 
 
 ### Điểm thi riêng
@@ -20196,7 +20355,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -20215,7 +20374,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -20229,7 +20388,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-ha-noi-TDH.html) · 2026-10-04
 
 
 ## TDL — Trường Đại học Đà Lạt
@@ -20247,7 +20406,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-da-lat-TDL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-da-lat-TDL.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -20262,7 +20421,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-da-lat-TDL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-da-lat-TDL.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -20276,7 +20435,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-da-lat-TDL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-da-lat-TDL.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -20290,7 +20449,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-da-lat-TDL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-da-lat-TDL.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -20304,7 +20463,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-da-lat-TDL.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-da-lat-TDL.html) · 2026-10-04
 
 
 ## TDM — Trường Đại học Thủ Dầu Một
@@ -20322,7 +20481,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-dau-mot-TDM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-dau-mot-TDM.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -20338,7 +20497,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-dau-mot-TDM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-dau-mot-TDM.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -20353,7 +20512,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-dau-mot-TDM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-dau-mot-TDM.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -20367,7 +20526,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-dau-mot-TDM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-dau-mot-TDM.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -20381,7 +20540,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-dau-mot-TDM.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thu-dau-mot-TDM.html) · 2026-10-04
 
 
 ## TDS — Trường Đại học Thể dục Thể thao TP.HCM
@@ -20398,7 +20557,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-tphcm-TDS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-tphcm-TDS.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -20413,7 +20572,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-tphcm-TDS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-tphcm-TDS.html) · 2026-10-04
 
 
 ## TDV — Trường Đại học Vinh
@@ -20430,60 +20589,65 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vinh-TDV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vinh-TDV.html) · 2026-10-04
 
 
 ### Điểm thi THPT
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 66. Tự tính mới: không.
 
-Điểm xét tuyển = [Điểm thi + Điểm thưởng (nếu có)] + Điểm ưu tiên (nếu có).
+ĐXT = Tổng 3 môn thi THPT đúng tổ hợp + Điểm thưởng + ĐƯT; làm tròn 2 chữ số
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- Điểm sàn được xác định trên cơ sở điểm các môn thi/bài thi không nhân hệ số, không sử dụng điểm miễn môn ngoại ngữ và không sử dụng điểm bảo lưu của các năm trước. Điểm xét tuyển được làm tròn đến hai chữ số thập phân.
-- Điểm xét tuyển = [Điểm thi + Điểm thưởng (nếu có)] + Điểm ưu tiên (nếu có).
+- Thông báo chính đợt 1 ngày 9/7 và bảng tổ hợp 116/TB-ĐHV ngày 20/7/2026; không dùng biểu thức đợt bổ sung tháng 8 cho mọi hồ sơ.
+- Bảng độ lệch là CHÊNH LỆCH ĐIỂM CHUẨN giữa tổ hợp, không phải điểm thưởng thí sinh: CNTT A00 chuẩn 22 thì A01 chuẩn 21 (−1); học bạ A00 chuẩn 25 thì A01 chuẩn 24.
+- Mầm non M00 chuẩn 25 thì M01 chuẩn 25,5 (+0,5); Sư phạm Địa C00 chuẩn 25 thì D15 chuẩn 24 (−1). Phải đối chiếu đúng ngành, tổ hợp và phương thức.
+- Nguồn hiện đối chiếu chưa có đủ bảng điểm thưởng để tự tính cuối; không mặc định điểm thưởng bằng 0 cho mọi thí sinh.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Chưa đủ hướng dẫn về thứ tự quy đổi, điểm cộng và ưu tiên để tính điểm cuối. Không tự thêm, bỏ hoặc cộng ưu tiên thang 30 vào điểm bài thi gốc..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: So sánh với ngưỡng/điểm chuẩn đúng tổ hợp theo bảng tháng 7; không cộng độ lệch điểm chuẩn vào điểm thí sinh.
 
 [Nguồn đối chiếu](https://vinhuni.edu.vn/nguong-bao-dam-chat-luong-dau-vao-va-quy-tac-quy-doi-tuong-duong-de-xet-tuyen-dai-hoc-chinh-quy-truong-dai-hoc-vinh-nam-2026-c06.01l0v0p0a161940.html) · 2026-10-04
 
-- Biểu thức nằm trong mục phương thức của tài liệu chính thức; hệ số, quy đổi và phạm vi ngành vẫn cần đối chiếu đầy đủ trước khi tự tính.
 
 ### Điểm học bạ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 48. Tự tính mới: không.
+Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 48. Tự tính mới: không.
 
-Phương thức này chỉ áp dụng để xét tuyển cho các chương trình, ngành đào tạo theo Phụ lục 1, dùng kết quả học tập cả năm lớp 12 theo tổ hợp môn để xét tuyển
-Điểm xét tuyển = [Điểm thi quy đổi + Điểm thưởng (nếu có)] + Điểm ưu tiên (nếu có).
+Học bạ sử dụng điểm trung bình cả năm lớp 10, 11, 12 của ba môn đúng tổ hợp
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
-- Điểm xét tuyển = [Điểm thi quy đổi + Điểm thưởng (nếu có)] + Điểm ưu tiên (nếu có).
+- Thông báo chính đợt 1 ngày 9/7 và bảng tổ hợp 116/TB-ĐHV ngày 20/7/2026; không dùng biểu thức đợt bổ sung tháng 8 cho mọi hồ sơ.
+- Bảng độ lệch là CHÊNH LỆCH ĐIỂM CHUẨN giữa tổ hợp, không phải điểm thưởng thí sinh: CNTT A00 chuẩn 22 thì A01 chuẩn 21 (−1); học bạ A00 chuẩn 25 thì A01 chuẩn 24.
+- Mầm non M00 chuẩn 25 thì M01 chuẩn 25,5 (+0,5); Sư phạm Địa C00 chuẩn 25 thì D15 chuẩn 24 (−1). Phải đối chiếu đúng ngành, tổ hợp và phương thức.
+- Phương thức học bạ áp dụng ngành ngoài sư phạm. Ngưỡng học bạ bằng ngưỡng THPT +3 ở thông báo tháng 7 là ngưỡng nhận hồ sơ, không phải tự trừ 3 từ học bạ của thí sinh.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Chưa đủ hướng dẫn về thứ tự quy đổi, điểm cộng và ưu tiên để tính điểm cuối. Không tự thêm, bỏ hoặc cộng ưu tiên thang 30 vào điểm bài thi gốc..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Chưa đủ biểu thức điểm cuối đợt 1 và bảng điểm thưởng trong nguồn; không lấy biểu thức đợt bổ sung để mở tự tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vinh-TDV.html) · 2026-09-30
+[Nguồn đối chiếu](https://vinhuni.edu.vn/nguong-bao-dam-chat-luong-dau-vao-va-quy-tac-quy-doi-tuong-duong-de-xet-tuyen-dai-hoc-chinh-quy-truong-dai-hoc-vinh-nam-2026-c06.01l0v0p0a161940.html) · 2026-10-04
 
 
 ### Xét kết hợp Điểm thi THPT + Năng khiếu
 
 Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 3. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Có điểm hoặc điều kiện thi năng khiếu; không mặc định tất cả môn có cùng hệ số.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Kết hợp điểm thi THPT và năng khiếu theo tổ hợp riêng của Mầm non, Giáo dục thể chất và Kiến trúc
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Thông báo chính đợt 1 ngày 9/7 và bảng tổ hợp 116/TB-ĐHV ngày 20/7/2026; không dùng biểu thức đợt bổ sung tháng 8 cho mọi hồ sơ.
+- Bảng độ lệch là CHÊNH LỆCH ĐIỂM CHUẨN giữa tổ hợp, không phải điểm thưởng thí sinh: CNTT A00 chuẩn 22 thì A01 chuẩn 21 (−1); học bạ A00 chuẩn 25 thì A01 chuẩn 24.
+- Mầm non M00 chuẩn 25 thì M01 chuẩn 25,5 (+0,5); Sư phạm Địa C00 chuẩn 25 thì D15 chuẩn 24 (−1). Phải đối chiếu đúng ngành, tổ hợp và phương thức.
+- Ngành có năng khiếu không dùng tổng ba môn văn hóa. Cần hướng dẫn thành phần M00/M01, tổ hợp TDTT và Vẽ tương ứng trước tự tính.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Chưa đủ hướng dẫn về thứ tự quy đổi, điểm cộng và ưu tiên để tính điểm cuối. Không tự thêm, bỏ hoặc cộng ưu tiên thang 30 vào điểm bài thi gốc..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vinh-TDV.html) · 2026-09-30
+[Nguồn đối chiếu](https://vinhuni.edu.vn/nguong-bao-dam-chat-luong-dau-vao-va-quy-tac-quy-doi-tuong-duong-de-xet-tuyen-dai-hoc-chinh-quy-truong-dai-hoc-vinh-nam-2026-c06.01l0v0p0a161940.html) · 2026-10-04
 
 
 ## TGH — Trường Sĩ quan Tăng - Thiết giáp
@@ -20508,7 +20672,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-siquan-tang-thiet-giap-TGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-siquan-tang-thiet-giap-TGH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -20522,7 +20686,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-siquan-tang-thiet-giap-TGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-siquan-tang-thiet-giap-TGH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -20544,7 +20708,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-siquan-tang-thiet-giap-TGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-siquan-tang-thiet-giap-TGH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -20566,7 +20730,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-siquan-tang-thiet-giap-TGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-siquan-tang-thiet-giap-TGH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -20588,7 +20752,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-siquan-tang-thiet-giap-TGH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-siquan-tang-thiet-giap-TGH.html) · 2026-10-04
 
 
 ## THP — Trường Đại học Hải Phòng
@@ -20606,7 +20770,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -20621,7 +20785,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi với điểm CCNN
@@ -20638,7 +20802,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-10-04
 
 
 ### Kết hợp điểm học bạ với điểm CCNN
@@ -20656,7 +20820,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -20671,7 +20835,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -20686,7 +20850,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -20700,7 +20864,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -20714,7 +20878,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html) · 2026-10-04
 
 
 ## THU — Trường Đại học Y khoa Tokyo Việt Nam
@@ -20731,80 +20895,116 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-tokyo-viet-nam-THU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-tokyo-viet-nam-THU.html) · 2026-10-04
 
 
 ### Điểm thi THPT
 
 Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 4. Tự tính mới: không.
 
-ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ƯT + KK
+ĐXT = Đ1 thi THPT + Đ2 thi THPT + Đ3 thi THPT + ƯT + KK
 
 Thang: Thang 30.
 
-- Ngành sức khỏe phải đủ ngưỡng của Bộ GDĐT và của Trường.
-- JLPT: N5 cộng 0,50; N4 cộng 1,00; N3/N2/N1 cộng 1,50. Chỉ dùng minh chứng được Trường chấp nhận.
+- Chỉ Điều dưỡng, Kỹ thuật xét nghiệm y học, Kỹ thuật hình ảnh y học, Kỹ thuật phục hồi chức năng, theo đúng tổ hợp từng ngành.
+- JLPT N5/N4/N3–N1 được cộng khuyến khích 0,50/1,00/1,50 theo mục 5.b. Điểm cuối tối đa 30.
+- Điều kiện nhận hồ sơ và điểm quy đổi không thay thế kết luận trúng tuyển. Không dùng riêng thông báo bổ sung tháng 8 làm công thức đợt 1.
+- Nguồn định nghĩa ƯT trong biểu thức là ưu tiên khu vực, trong khi quy chế còn ưu tiên đối tượng. Chưa đủ hướng dẫn thứ tự giảm ưu tiên nên chưa mở tự tính cuối.
 
-Ưu tiên: Nguồn định nghĩa ƯT ở PT2 là ưu tiên khu vực, chưa thể hiện đủ cách cộng đối tượng và bước điều chỉnh trên tổng có khuyến khích. Chưa bật tự tính để tránh áp dụng khác thông báo của Trường..
+Ưu tiên: Chưa đủ hướng dẫn về thứ tự quy đổi, điểm cộng và ưu tiên để tính điểm cuối. Không tự thêm, bỏ hoặc cộng ưu tiên thang 30 vào điểm bài thi gốc..
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://tokyo-human.edu.vn/tuyen-sinh/thong-tin-tuyen-sinh/) · 2026-10-04
+[Nguồn đối chiếu](https://tokyo-human.edu.vn/wp-content/uploads/2026/03/THU-Thong-tin-tuyen-sinh-2026-QD.pdf) · 2026-10-04
 
 
 ### Điểm học bạ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 4. Tự tính mới: không.
+Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 4. Tự tính mới: không.
 
-ĐXT = (A10 + A11 + A12) / 3 + (B10 + B11 + B12) / 3 + (C10 + C11 + C12) / 3 + KK
+Theo đề án: H = TBC3năm A + TBC3năm B + TBC3năm C + KK
+TBC3năm Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3
+H làm tròn đến 1 chữ số thập phân; đối chiếu bảng học bạ → điểm thi THPT
 
 Thang: Thang 30.
 
-- A/B/C là ba môn trong tổ hợp; mỗi môn dùng điểm cả năm lớp 10, 11, 12.
-- Học lực lớp 12 từ Khá; thi tốt nghiệp 2026: tổng ba môn có Toán hoặc Văn từ 16,50 hoặc điểm xét tốt nghiệp từ 6,50.
-- JLPT: N5 cộng 0,50; N4 cộng 1,00; N3/N2/N1 cộng 1,50. Chỉ dùng minh chứng được Trường chấp nhận.
-- Tổng vượt 30 quy về 30 theo thông báo.
+- Chỉ Điều dưỡng, Kỹ thuật xét nghiệm y học, Kỹ thuật hình ảnh y học, Kỹ thuật phục hồi chức năng, theo đúng tổ hợp từng ngành.
+- JLPT N5/N4/N3–N1 được cộng khuyến khích 0,50/1,00/1,50 theo mục 5.b. Điểm cuối tối đa 30.
+- Điều kiện nhận hồ sơ và điểm quy đổi không thay thế kết luận trúng tuyển. Không dùng riêng thông báo bổ sung tháng 8 làm công thức đợt 1.
+- Nguồn ghi điểm học bạ đã có ưu tiên ở phần chung, nhưng biểu thức mục 2.3 chỉ có KK; cần xác nhận vị trí ưu tiên trong điểm cuối.
+- Bảng học bạ → THPT: [19.50;19.99] → [15;15.9]; [20.00;20.49] → [15.91;16.4]; [20.50;20.99] → [16.41;16.8]; [21.00;21.49] → [16.81;17.3]; [21.50;21.99] → [17.31;17.8]; [22.00;22.49] → [17.81;18.3]; [22.50;22.99] → [18.31;18.8]; [23.00;23.49] → [18.81;19.3]; [23.50;23.99] → [19.31;19.9]; [24.00;24.49] → [19.91;20.5]; [24.50;24.99] → [20.51;21.1]; [25.00;25.49] → [21.11;21.8]; [25.50;25.99] → [21.81;22.5]; [26.00;26.49] → [22.51;23.2]; [26.50;26.99] → [23.21;24]; [27.00;27.49] → [24.01;24.8]; [27.50;27.99] → [24.81;25.6]; [28.00;28.49] → [25.61;26.4]; [28.50;28.99] → [26.41;27.3]; [29.00;29.49] → [27.31;28.25]; [29.50;30.00] → [28.26;30].
+- Nguồn công bố khoảng tương ứng nhưng không nêu rõ phép nội suy và thứ tự cộng/giảm ưu tiên ở bước quy đổi; không tự chọn một điểm trong khoảng.
 
-Ưu tiên: Ảnh công thức học bạ chỉ có KK, không có ƯT; mục 5 nói tổng bao gồm ưu tiên và điểm cộng. Cần Trường xác nhận bước ưu tiên, không tự thêm hoặc bỏ ưu tiên trong bộ tính..
+Ưu tiên: Chưa đủ hướng dẫn về thứ tự quy đổi, điểm cộng và ưu tiên để tính điểm cuối. Không tự thêm, bỏ hoặc cộng ưu tiên thang 30 vào điểm bài thi gốc..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Bảng 1 gồm 21 khoảng của Thông báo 260716/001 ngày 16/7/2026; không dùng học bạ gốc làm điểm THPT hoặc bỏ bước làm tròn một chữ số.
 
-[Nguồn đối chiếu](https://tokyo-human.edu.vn/tuyen-sinh/thong-tin-tuyen-sinh/) · 2026-10-04
+[Nguồn đối chiếu](https://tokyo-human.edu.vn/wp-content/uploads/2026/03/THU-Thong-tin-tuyen-sinh-2026-QD.pdf) · 2026-10-04
 
-- Cách thể hiện ưu tiên giữa ảnh công thức PT3 và mục 5 chưa nhất quán; chưa bật tự tính.
+- Biểu thức học bạ và phần chung về ưu tiên chưa thống nhất.
 
 ### Điểm ĐGNL HSA
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 4. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 4. Tự tính mới: không.
 
-Điểm HSA của ĐHQG Hà Nội được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Y = điểm THPT tương đương tra đúng Bảng 2 theo kết quả HSA
+HSA từ 130 trở lên → Y = 30; HSA 75–129 → tra từng điểm trong bảng
 
 Thang: Thang 30.
 
+- Chỉ Điều dưỡng, Kỹ thuật xét nghiệm y học, Kỹ thuật hình ảnh y học, Kỹ thuật phục hồi chức năng, theo đúng tổ hợp từng ngành.
+- JLPT N5/N4/N3–N1 được cộng khuyến khích 0,50/1,00/1,50 theo mục 5.b. Điểm cuối tối đa 30.
+- Điều kiện nhận hồ sơ và điểm quy đổi không thay thế kết luận trúng tuyển. Không dùng riêng thông báo bổ sung tháng 8 làm công thức đợt 1.
+- HSA còn hiệu lực trong 24 tháng, từ 75/150; Sinh học thi THPT 2026 hoặc cả năm lớp 12 từ 6,5.
+- Bảng HSA → THPT: 75→20.73; 76→21.98; 77→22.11; 78→22.33; 79→22.51; 80→22.75; 81→22.98; 82→22.98; 83→23.27; 84→23.50; 85→23.62; 86→23.77; 87→23.99; 88→24.11; 89→24.26; 90→24.49; 91→24.62; 92→24.76; 93→24.99; 94→25.02; 95→25.25; 96→25.35; 97→25.50; 98→25.73; 99→25.77; 100→26.00; 101→26.02; 102→26.26; 103→26.49; 104→26.52; 105→26.75; 106→26.98; 107→27.01; 108→27.24; 109→27.48; 110→27.51; 111→27.74; 112→27.77; 113→28.00; 114→28.23; 115→28.26; 116→28.48; 117→28.51; 118→28.75; 119→28.98; 120→29.01; 121→29.23; 122→29.25; 123→29.27; 124→29.49; 125→29.51; 126→29.73; 127→29.75; 128→29.77; 129→29.98; 130–150→30.
+- Bảng gốc ghi HSA 81 và 82 cùng 22,98; giữ nguyên, không tự sửa để làm bảng tăng đều.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Chưa đủ hướng dẫn về thứ tự quy đổi, điểm cộng và ưu tiên để tính điểm cuối. Không tự thêm, bỏ hoặc cộng ưu tiên thang 30 vào điểm bài thi gốc..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Đã nạp toàn bộ 55 điểm 75–129 và nhóm ≥130. Bảng chưa làm rõ thứ tự điểm cộng/ưu tiên trong điểm cuối, nên chỉ tra cứu, không suy thành bộ tính hoàn chỉnh.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-tokyo-viet-nam-THU.html) · 2026-09-30
+[Nguồn đối chiếu](https://tokyo-human.edu.vn/wp-content/uploads/2026/07/TB-quy-tac-quy-doi-diem-xet-tuyen-giua-cac-phuong-thuc-xt-trinh-do-DH-chinh-quy-nam-2026.pdf) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 4. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 4. Tự tính mới: không.
 
-Điểm ĐGNL của ĐH Sư phạm Hà Nội được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+Y = Điểm THPT tương đương tra Bảng 3 theo điểm tổ hợp SPT và cột tổ hợp tương ứng
 
 Thang: Thang 30.
 
+- Chỉ Điều dưỡng, Kỹ thuật xét nghiệm y học, Kỹ thuật hình ảnh y học, Kỹ thuật phục hồi chức năng, theo đúng tổ hợp từng ngành.
+- JLPT N5/N4/N3–N1 được cộng khuyến khích 0,50/1,00/1,50 theo mục 5.b. Điểm cuối tối đa 30.
+- Điều kiện nhận hồ sơ và điểm quy đổi không thay thế kết luận trúng tuyển. Không dùng riêng thông báo bổ sung tháng 8 làm công thức đợt 1.
+- Tổng ba môn SPT từ 16; phải chọn tổ hợp và đáp ứng điều kiện của ngành.
+- Thứ tự cột: A00; A01; A02; B00; B08; D07; X26. Dấu — là ô không công bố, không tự điền.
+- 30; 30; 30; 30; 30; 30; 30 → THPT 30.
+- 25.75; 27.25; 28.5; 24.38; 29.07; 27.13; 29.05 → THPT 29.5.
+- 25.25; 26.98; 27; 23.75; 28.13; 24.25; 28.11 → THPT 29.
+- 24.5; 26.1; 25.5; 23; 27.2; 24.23; 27.16 → THPT 28.5.
+- 24; 25.2; 24.38; 22.5; 26.27; 24.2; 26.21 → THPT 28.
+- 23; 24.78; 23.75; 21.5; 25.33; 23.67; 25.26 → THPT 27.5.
+- 22.25; 24.03; 22.88; 20.88; 24.4; 23.13; 24.32 → THPT 27.
+- 21.5; 23.45; 22.38; 20.25; 23.47; 22.6; 23.37 → THPT 26.5.
+- 20.75; 22.9; 21.75; 19.5; 22.35; 21.73; 22.42 → THPT 26.
+- 20; 22.25; 21.13; 18.75; 20.75; 21.15; 21.6 → THPT 25.5.
+- 19.25; 21.6; 20; 18; 20.42; 20.88; 20.55 → THPT 25.
+- 18.5; 21.05; 19.5; 17.34; 20.05; 20.5; 20.15 → THPT 24.5.
+- 17.75; 20.4; 19; 16.5; 19.5; 19.8; 19.8 → THPT 24.
+- 17.1; 19.9; 18.5; 16; 19.05; 18.95; 18.75 → THPT 23.5.
+- 16; 19.05; 17.97; —; 18.47; 18.28; 18.23 → THPT 22.75.
+- —; 18.2; 17.25; —; 17.2; 17.2; 17.2 → THPT 22.
+- —; 17.6; 16.75; —; 16.85; 16.75; 16 → THPT 21.3.
+- —; 16.85; 16; —; 16; 16; — → THPT 20.75.
+- —; 16; —; —; —; —; — → THPT 19.9.
+- Tổ hợp không có cột riêng dùng B00 theo ghi chú của Trường; không dùng chung một đường quy đổi cho bảy cột.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Chưa đủ hướng dẫn về thứ tự quy đổi, điểm cộng và ưu tiên để tính điểm cuối. Không tự thêm, bỏ hoặc cộng ưu tiên thang 30 vào điểm bài thi gốc..
 
-Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
+Quy đổi: Nạp đủ Bảng 3. Nguồn chưa đủ hướng dẫn nội suy giữa mốc và bước cộng/giảm ưu tiên sau quy đổi; chưa mở tự tính cuối.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-tokyo-viet-nam-THU.html) · 2026-09-30
+[Nguồn đối chiếu](https://tokyo-human.edu.vn/wp-content/uploads/2026/07/TB-quy-tac-quy-doi-diem-xet-tuyen-giua-cac-phuong-thuc-xt-trinh-do-DH-chinh-quy-nam-2026.pdf) · 2026-10-04
 
 
 ## THV — Trường Đại học Hùng Vương
@@ -20822,7 +21022,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -20837,7 +21037,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-10-04
 
 
 ### Kết hợp kết quả học tập cấp THPT với CCNN
@@ -20855,7 +21055,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-10-04
 
 
 ### Xét kết hợp điểm thi THPT với điểm thi Năng khiếu
@@ -20870,7 +21070,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-10-04
 
 
 ### Xét tuyển kết quả học tập cấp THPT kết hợp với điểm thi năng khiếu
@@ -20886,7 +21086,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -20900,7 +21100,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html) · 2026-10-04
 
 
 ## TKG — Trường Đại học Kiên Giang
@@ -20917,7 +21117,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-giang-TKG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-giang-TKG.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -20932,7 +21132,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-giang-TKG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-giang-TKG.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -20946,7 +21146,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-giang-TKG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-giang-TKG.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -20960,7 +21160,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-giang-TKG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-giang-TKG.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -20975,7 +21175,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-giang-TKG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-giang-TKG.html) · 2026-10-04
 
 
 ## TLA — Trường Đại học Thủy lợi
@@ -20999,7 +21199,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-1-TLA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-1-TLA.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -21023,7 +21223,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-1-TLA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-1-TLA.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -21038,7 +21238,7 @@ Thang: Thang 100.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-1-TLA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-1-TLA.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -21052,7 +21252,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-1-TLA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-1-TLA.html) · 2026-10-04
 
 
 ## TLS — Trường Đại học Thủy lợi – Cơ sở 2
@@ -21071,7 +21271,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-2-TLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-2-TLS.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -21094,7 +21294,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-2-TLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-2-TLS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -21108,7 +21308,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-2-TLS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuy-loi-co-so-2-TLS.html) · 2026-10-04
 
 
 ## TMU — Trường Đại học Thương mại
@@ -21128,7 +21328,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -21142,7 +21342,7 @@ Thang: Thang 150.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -21156,7 +21356,7 @@ Thang: Thang 100.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-10-04
 
 
 ### Chứng chỉ SAT/ACT
@@ -21172,7 +21372,7 @@ Thang: Thang 1600.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://tuyensinh.tmu.edu.vn/chuong-trinh-dao-tao/phuong-thuc-xet-tuyen-364) · 2026-09-30
+[Nguồn đối chiếu](https://tuyensinh.tmu.edu.vn/chuong-trinh-dao-tao/phuong-thuc-xet-tuyen-364) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + CCNN
@@ -21189,7 +21389,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN
@@ -21206,7 +21406,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-10-04
 
 
 ### Kết hợp Điểm thi THPT + Giải HSG cấp tỉnh/TP
@@ -21224,7 +21424,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -21238,7 +21438,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thuong-mai-TMU.html) · 2026-10-04
 
 
 ## TNU — Đại học Thái Nguyên
@@ -21252,62 +21452,125 @@ Không có phương thức đại học 2026 được xác nhận cho hồ sơ n
 
 ### ƯTXT, XT thẳng
 
-Xét điều kiện / hồ sơ, không có phép cộng chung. Ngành / chương trình trong phạm vi: 22. Tự tính mới: không.
+Xét điều kiện / hồ sơ, không có phép cộng chung. Ngành / chương trình trong phạm vi: 19. Tự tính mới: không.
 
-Xét điều kiện đối tượng, thành tích và ngành phù hợp; không dùng một phép cộng điểm chung cho mọi thí sinh.
+Xét tuyển thẳng/ưu tiên xét tuyển theo đúng đối tượng, thành tích và ngành trong mục 7; không có một phép cộng chung cho mọi hồ sơ.
 
-Thang: Không có thang điểm chung.
+Thang: Xét điều kiện hồ sơ.
 
+- Mục 7.2 có mức giải 4/3/2/1, trong khi mục 5.b ghi không có điểm cộng xét thông thường; không dùng các mức này như cộng chung cho PT100/200/500.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Diện ưu tiên xét tuyển có tiêu chí và mức cộng riêng; cần Trường xác nhận, không áp dụng như ưu tiên khu vực/đối tượng cho mọi thí sinh..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-trao-TQU.html) · 2026-09-30
+[Nguồn đối chiếu](https://daihoctantrao.edu.vn/media/files/2026/Th%C3%B4ng-tin-tuy%E1%BB%83n-sinh-h%E1%BB%87-ch%C3%ADnh-quy-2026.pdf) · 2026-10-04
 
 
 ### Điểm thi THPT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 22. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: có.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT PT100 = Tổng 3 môn thi THPT 2026 + Độ lệch tổ hợp (0) + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Bản thông tin chính quy có ký tên ngày 28/5/2026 thay bản tháng 1; bảng 18 ngành văn hóa và Huấn luyện thể thao riêng.
+- Trang 12 quy định độ lệch giữa tổ hợp với tổ hợp gốc bằng 0. Mục 5.b không có điểm cộng cho xét thông thường; diện ưu tiên xét tuyển bằng giải theo mục 7.2 cần Trường xác nhận riêng.
+- Không dùng công thức ba môn văn hóa cho Huấn luyện thể thao; ngành này dùng PT405/406 kết hợp năng khiếu.
+- Nhóm giáo viên/sức khỏe còn điều kiện học lực và ngưỡng riêng. Thí sinh thi tốt nghiệp 2026 cần tổng ba môn từ 15; đủ điểm không xác nhận trúng tuyển.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30; giảm từ 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc. Tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-trao-TQU.html) · 2026-09-30
+Quy đổi: Theo mục 2 và ghi chú trang 12: độ lệch bằng 0; không thêm 3 hay chia điểm xét tốt nghiệp trung bình để chuyển thang.
 
-
-### Điểm xét tốt nghiệp THPT
-
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 22. Tự tính mới: không.
-
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
-
-Thang: Theo quy định và bảng quy đổi của trường.
+[Nguồn đối chiếu](https://daihoctantrao.edu.vn/media/files/2026/Th%C3%B4ng-tin-tuy%E1%BB%83n-sinh-h%E1%BB%87-ch%C3%ADnh-quy-2026.pdf) · 2026-10-04
 
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+### Điểm thi THPT/THPTQG trước năm 2026 (PT500)
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-trao-TQU.html) · 2026-09-30
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: có.
+
+ĐXT PT500 = Tổng 3 môn thi THPT/THPTQG trước năm 2026 + Độ lệch tổ hợp (0) + ĐƯT
+
+Thang: Thang 30.
+
+- Bản thông tin chính quy có ký tên ngày 28/5/2026 thay bản tháng 1; bảng 18 ngành văn hóa và Huấn luyện thể thao riêng.
+- Trang 12 quy định độ lệch giữa tổ hợp với tổ hợp gốc bằng 0. Mục 5.b không có điểm cộng cho xét thông thường; diện ưu tiên xét tuyển bằng giải theo mục 7.2 cần Trường xác nhận riêng.
+- Không dùng công thức ba môn văn hóa cho Huấn luyện thể thao; ngành này dùng PT405/406 kết hợp năng khiếu.
+- Nhóm giáo viên/sức khỏe còn điều kiện học lực và ngưỡng riêng. Thí sinh thi tốt nghiệp 2026 cần tổng ba môn từ 15; đủ điểm không xác nhận trúng tuyển.
+- PT500 là điểm THI ba môn các năm trước, không phải điểm xét tốt nghiệp trung bình thang 10.
+
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30; giảm từ 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc. Tổng cuối tối đa 30..
+
+Quy đổi: Theo mục 2 và ghi chú trang 12: độ lệch bằng 0; không thêm 3 hay chia điểm xét tốt nghiệp trung bình để chuyển thang.
+
+[Nguồn đối chiếu](https://daihoctantrao.edu.vn/media/files/2026/Th%C3%B4ng-tin-tuy%E1%BB%83n-sinh-h%E1%BB%87-ch%C3%ADnh-quy-2026.pdf) · 2026-10-04
 
 
 ### Điểm học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 22. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 18. Tự tính mới: có.
 
-Sử dụng kết quả học tập lớp 12; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT PT200 = TBC3năm M1 + TBC3năm M2 + TBC3năm M3 + Độ lệch tổ hợp (0) + ĐƯT
+TBC3năm Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
+
+- Bản thông tin chính quy có ký tên ngày 28/5/2026 thay bản tháng 1; bảng 18 ngành văn hóa và Huấn luyện thể thao riêng.
+- Trang 12 quy định độ lệch giữa tổ hợp với tổ hợp gốc bằng 0. Mục 5.b không có điểm cộng cho xét thông thường; diện ưu tiên xét tuyển bằng giải theo mục 7.2 cần Trường xác nhận riêng.
+- Không dùng công thức ba môn văn hóa cho Huấn luyện thể thao; ngành này dùng PT405/406 kết hợp năng khiếu.
+- Nhóm giáo viên/sức khỏe còn điều kiện học lực và ngưỡng riêng. Thí sinh thi tốt nghiệp 2026 cần tổng ba môn từ 15; đủ điểm không xác nhận trúng tuyển.
+- Học bạ dùng cả năm đủ ba lớp, không dùng công thức chỉ lớp 12 từ thông báo tháng 1.
+
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30; giảm từ 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc. Tổng cuối tối đa 30..
+
+Quy đổi: Theo mục 2 và ghi chú trang 12: độ lệch bằng 0; không thêm 3 hay chia điểm xét tốt nghiệp trung bình để chuyển thang.
+
+[Nguồn đối chiếu](https://daihoctantrao.edu.vn/media/files/2026/Th%C3%B4ng-tin-tuy%E1%BB%83n-sinh-h%E1%BB%87-ch%C3%ADnh-quy-2026.pdf) · 2026-10-04
 
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+### Kết hợp THPT và năng khiếu (PT405)
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-trao-TQU.html) · 2026-09-30
+Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 1. Tự tính mới: không.
 
+ĐXT = Hai môn văn hóa theo đúng phương thức + Năng khiếu + Độ lệch tổ hợp + ĐƯT
+
+Thang: Thang 30.
+
+- Chỉ Huấn luyện thể thao, không dùng nhánh năng khiếu cho Giáo dục Mầm non trong đề án này.
+- Tên PT405 ghi thi THPT + năng khiếu nhưng đoạn mô tả ngay dưới lại ghi học bạ ba năm.
+- Không tự đảo mã 405/406 để sửa tài liệu; chờ hướng dẫn chính thức xác nhận.
+- Bảng trang 9: T00 Toán–Sinh–NK; T01 Toán–Văn–NK; T02 Văn–Sinh–NK; T05 Toán–GDKTPL–NK; T08 Văn–GDKTPL–NK; T09 Toán–Sử–NK; T10 Văn–Sử–NK. Nguồn điểm văn hóa của hai phương thức còn mâu thuẫn như trên.
+
+Ưu tiên: Ưu tiên theo quy chế Trường; cần xác nhận nguồn môn văn hóa trước khi tính..
+
+Quy đổi: Đề án nói độ lệch tổ hợp bằng 0; cần thông báo riêng về tổ hợp năng khiếu và phép lấy điểm văn hóa để giải quyết mâu thuẫn PT405/PT406.
+
+[Nguồn đối chiếu](https://daihoctantrao.edu.vn/media/files/2026/Th%C3%B4ng-tin-tuy%E1%BB%83n-sinh-h%E1%BB%87-ch%C3%ADnh-quy-2026.pdf) · 2026-10-04
+
+- Tên và định nghĩa nguồn điểm văn hóa của PT405/PT406 bị đảo trong đề án.
+- Tên và định nghĩa nguồn điểm văn hóa của PT405/PT406 bị đảo trong đề án.
+
+### Kết hợp học bạ và năng khiếu (PT406)
+
+Chưa có đủ công thức. Ngành / chương trình trong phạm vi: 1. Tự tính mới: không.
+
+ĐXT = Hai môn văn hóa theo đúng phương thức + Năng khiếu + Độ lệch tổ hợp + ĐƯT
+
+Thang: Thang 30.
+
+- Chỉ Huấn luyện thể thao, không dùng nhánh năng khiếu cho Giáo dục Mầm non trong đề án này.
+- Tên PT406 ghi học bạ + năng khiếu nhưng đoạn mô tả ngay dưới lại ghi hai môn thi THPT.
+- Không tự đảo mã 405/406 để sửa tài liệu; chờ hướng dẫn chính thức xác nhận.
+- Bảng trang 9: T00 Toán–Sinh–NK; T01 Toán–Văn–NK; T02 Văn–Sinh–NK; T05 Toán–GDKTPL–NK; T08 Văn–GDKTPL–NK; T09 Toán–Sử–NK; T10 Văn–Sử–NK. Nguồn điểm văn hóa của hai phương thức còn mâu thuẫn như trên.
+
+Ưu tiên: Ưu tiên theo quy chế Trường; cần xác nhận nguồn môn văn hóa trước khi tính..
+
+Quy đổi: Đề án nói độ lệch tổ hợp bằng 0; cần thông báo riêng về tổ hợp năng khiếu và phép lấy điểm văn hóa để giải quyết mâu thuẫn PT405/PT406.
+
+[Nguồn đối chiếu](https://daihoctantrao.edu.vn/media/files/2026/Th%C3%B4ng-tin-tuy%E1%BB%83n-sinh-h%E1%BB%87-ch%C3%ADnh-quy-2026.pdf) · 2026-10-04
+
+- Tên và định nghĩa nguồn điểm văn hóa của PT405/PT406 bị đảo trong đề án.
+- Tên và định nghĩa nguồn điểm văn hóa của PT405/PT406 bị đảo trong đề án.
 
 ## TSN — Trường Đại học Nha Trang
 
@@ -21323,7 +21586,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nha-trang-TSN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nha-trang-TSN.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -21338,7 +21601,7 @@ Thang: Thang 40.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nha-trang-TSN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nha-trang-TSN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -21352,7 +21615,7 @@ Thang: Thang 150.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nha-trang-TSN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nha-trang-TSN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -21366,7 +21629,7 @@ Thang: Thang 1200.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nha-trang-TSN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nha-trang-TSN.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT + CCNN
@@ -21384,7 +21647,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nha-trang-TSN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nha-trang-TSN.html) · 2026-10-04
 
 
 ## TTB — Trường Đại học Tây Bắc
@@ -21403,7 +21666,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-10-04
 
 
 ### Học bạ lớp 12
@@ -21421,7 +21684,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-10-04
 
 
 ### ĐGNL Đại học Sư phạm Hà Nội
@@ -21438,7 +21701,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-10-04
 
 
 ### THPT kết hợp năng khiếu
@@ -21452,7 +21715,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-10-04
 
 
 ### Học bạ kết hợp năng khiếu
@@ -21466,7 +21729,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-10-04
 
 
 ### Tuyển thẳng
@@ -21480,7 +21743,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-10-04
 
 
 ### Dự bị đại học
@@ -21494,7 +21757,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-10-04
 
 
 ### Cử tuyển
@@ -21508,7 +21771,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-bac-TTB.html) · 2026-10-04
 
 
 ## TTD — Trường Đại học Thể dục Thể thao Đà Nẵng
@@ -21525,7 +21788,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-da-nang-TTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-da-nang-TTD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -21539,7 +21802,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-da-nang-TTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-da-nang-TTD.html) · 2026-10-04
 
 
 ### Điểm thi THPT với năng khiếu
@@ -21555,7 +21818,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-da-nang-TTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-da-nang-TTD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -21569,7 +21832,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-da-nang-TTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-da-nang-TTD.html) · 2026-10-04
 
 
 ### Điểm học bạ + Năng khiếu
@@ -21585,7 +21848,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-da-nang-TTD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-da-nang-TTD.html) · 2026-10-04
 
 
 ## TTG — Trường Đại học Tiền Giang
@@ -21602,7 +21865,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -21618,7 +21881,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -21633,7 +21896,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -21649,7 +21912,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -21663,7 +21926,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -21679,7 +21942,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tien-giang-TTG.html) · 2026-10-04
 
 
 ## TTH — Trường Sĩ quan Thông tin
@@ -21697,7 +21960,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac-TTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac-TTH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -21711,7 +21974,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac-TTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac-TTH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -21725,7 +21988,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac-TTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac-TTH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -21739,7 +22002,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac-TTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac-TTH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -21753,7 +22016,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac-TTH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-thong-tin-he-quan-su-dai-hoc-thong-tin-lien-lac-TTH.html) · 2026-10-04
 
 
 ## TTN — Trường Đại học Tây Nguyên
@@ -21770,7 +22033,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -21786,7 +22049,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT + CCNN
@@ -21804,7 +22067,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + CCNN
@@ -21822,7 +22085,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi THPT + Năng khiếu
@@ -21837,7 +22100,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -21852,7 +22115,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -21866,7 +22129,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tay-nguyen-TTN.html) · 2026-10-04
 
 
 ## TTU — Trường Đại học Tân Tạo
@@ -21885,7 +22148,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-tao-TTU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-tao-TTU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -21901,7 +22164,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-tao-TTU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-tao-TTU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -21917,7 +22180,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-tao-TTU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-tao-TTU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -21931,7 +22194,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-tao-TTU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-tao-TTU.html) · 2026-10-04
 
 
 ## TYS — Trường Đại học Y khoa Phạm Ngọc Thạch
@@ -21948,7 +22211,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-pham-ngoc-thach-TYS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-pham-ngoc-thach-TYS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -21962,7 +22225,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-pham-ngoc-thach-TYS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-pham-ngoc-thach-TYS.html) · 2026-10-04
 
 
 ## UDN — Đại học Đà Nẵng
@@ -21985,7 +22248,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tai-chinh-tphcm-UEF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tai-chinh-tphcm-UEF.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -22001,7 +22264,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tai-chinh-tphcm-UEF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tai-chinh-tphcm-UEF.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -22015,7 +22278,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tai-chinh-tphcm-UEF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tai-chinh-tphcm-UEF.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -22030,7 +22293,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tai-chinh-tphcm-UEF.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-tai-chinh-tphcm-UEF.html) · 2026-10-04
 
 
 ## UFA — Phân hiệu Trường Đại học Tài chính - Marketing tại Quảng Ngãi
@@ -22051,7 +22314,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/-UFA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/-UFA.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -22068,7 +22331,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/-UFA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/-UFA.html) · 2026-10-04
 
 
 ## UKB — Trường Đại học Kinh Bắc
@@ -22172,7 +22435,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khanh-hoa-UKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khanh-hoa-UKH.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -22189,7 +22452,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khanh-hoa-UKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khanh-hoa-UKH.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -22204,7 +22467,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khanh-hoa-UKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khanh-hoa-UKH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -22219,7 +22482,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khanh-hoa-UKH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khanh-hoa-UKH.html) · 2026-10-04
 
 
 ## UMT — Trường Đại học Quản lý và Công nghệ TPHCM
@@ -22227,62 +22490,81 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 ### Điểm thi THPT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 10. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 10. Tự tính mới: không.
 
-Sử dụng kết quả thi tốt nghiệp THPT theo tổ hợp và điều kiện đã công bố.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+ĐXT = Tổng điểm tổ hợp thi THPT (không nhân hệ số) + ĐC + ĐƯT
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Áp dụng 10 ngành trong Thông báo 57/2026; thí sinh thi tốt nghiệp từ 2026 phải đạt ngưỡng tổng ba môn THPT 15.
+- Không dùng điểm sàn hoặc kết quả quy đổi thành kết luận trúng tuyển; còn điểm cộng, ưu tiên và điều kiện của Trường.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30, giảm từ tổng trước ưu tiên 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc; tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quan-ly-va-cong-nghe-tphcm-UMT.html) · 2026-09-30
+Quy đổi: Chưa có đầy đủ bảng điểm cộng trong hai thông báo đã đối chiếu; chưa mở tự tính cuối cùng.
+
+[Nguồn đối chiếu](https://www.umt.edu.vn/tin-tuc/truong-dai-hoc-quan-ly-va-cong-nghe-tp-hcm-umt-cong-bo-diem-trung-tuyen-dot-chinh-thuc-nam-2026) · 2026-10-04
 
 
 ### Điểm học bạ
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 10. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 10. Tự tính mới: không.
 
-Sử dụng kết quả học tập THPT; cần tuân thủ cách chọn môn, học kỳ và ngưỡng từng ngành.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+y = c + (x − a) / (b − a) × (d − c), với a < x ≤ b
+Điểm tương đương THPT y được dùng cùng ĐC và ĐƯT theo quy định của Trường
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Áp dụng 10 ngành trong Thông báo 57/2026; thí sinh thi tốt nghiệp từ 2026 phải đạt ngưỡng tổng ba môn THPT 15.
+- Không dùng điểm sàn hoặc kết quả quy đổi thành kết luận trúng tuyển; còn điểm cộng, ưu tiên và điều kiện của Trường.
+- Bảng học bạ → THPT: (18; 20.25] → (15; 17.5]; (20.25; 23.25] → (17.5; 19.75]; (23.25; 26.45] → (19.75; 21.1]; (26.45; 30] → (21.1; 30].
+- Nguồn dùng chung cột PT2/PT5 cho học bạ và nhánh xét kết quả THPT; chưa đủ định nghĩa đầu vào cho mọi nhánh học bạ.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Quy đổi về thang 30 trước khi đối chiếu ưu tiên; không cộng trực tiếp ưu tiên thang 30 vào điểm gốc V-ACT/V-SAT..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quan-ly-va-cong-nghe-tphcm-UMT.html) · 2026-09-30
+Quy đổi: Không chia điểm gốc cho điểm tối đa. Không ngoại suy ở ngoài bảng; nguồn chưa làm rõ các điểm đúng ngưỡng thấp nhất và đầy đủ điểm cộng nên chưa bật bộ tính.
+
+[Nguồn đối chiếu](https://sdn.umt.edu.vn/TB_57_2026_Nguong_diem_DBCL_dau_vao_va_quy_doi_diem_TS_HDCQ_2026_d33eed919f.pdf) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 10. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 10. Tự tính mới: không.
 
-Điểm ĐGNL của ĐHQG TP.HCM được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+y = c + (x − a) / (b − a) × (d − c), với a < x ≤ b
+Điểm tương đương THPT y được dùng cùng ĐC và ĐƯT theo quy định của Trường
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Áp dụng 10 ngành trong Thông báo 57/2026; thí sinh thi tốt nghiệp từ 2026 phải đạt ngưỡng tổng ba môn THPT 15.
+- Không dùng điểm sàn hoặc kết quả quy đổi thành kết luận trúng tuyển; còn điểm cộng, ưu tiên và điều kiện của Trường.
+- Bảng V-ACT → THPT: (600; 713] → (15; 17.5]; (713; 792] → (17.5; 19.75]; (792; 877] → (19.75; 21.1]; (877; 1200] → (21.1; 30].
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Quy đổi về thang 30 trước khi đối chiếu ưu tiên; không cộng trực tiếp ưu tiên thang 30 vào điểm gốc V-ACT/V-SAT..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quan-ly-va-cong-nghe-tphcm-UMT.html) · 2026-09-30
+Quy đổi: Không chia điểm gốc cho điểm tối đa. Không ngoại suy ở ngoài bảng; nguồn chưa làm rõ các điểm đúng ngưỡng thấp nhất và đầy đủ điểm cộng nên chưa bật bộ tính.
+
+[Nguồn đối chiếu](https://sdn.umt.edu.vn/TB_57_2026_Nguong_diem_DBCL_dau_vao_va_quy_doi_diem_TS_HDCQ_2026_d33eed919f.pdf) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
 
-Có thông tin phương thức, thiếu biểu thức đầy đủ. Ngành / chương trình trong phạm vi: 10. Tự tính mới: không.
+Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 10. Tự tính mới: không.
 
-Điểm V-SAT được dùng theo ngưỡng, thành phần và quy đổi riêng trong phương thức này.
-Nguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.
+y = c + (x − a) / (b − a) × (d − c), với a < x ≤ b
+Điểm tương đương THPT y được dùng cùng ĐC và ĐƯT theo quy định của Trường
 
-Thang: Theo quy định và bảng quy đổi của trường.
+Thang: Thang 30.
 
+- Áp dụng 10 ngành trong Thông báo 57/2026; thí sinh thi tốt nghiệp từ 2026 phải đạt ngưỡng tổng ba môn THPT 15.
+- Không dùng điểm sàn hoặc kết quả quy đổi thành kết luận trúng tuyển; còn điểm cộng, ưu tiên và điều kiện của Trường.
+- Bảng V-SAT → THPT: (225; 275] → (15; 17.5]; (275; 350] → (17.5; 19.75]; (350; 400] → (19.75; 21.1]; (400; 450] → (21.1; 30].
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Quy đổi về thang 30 trước khi đối chiếu ưu tiên; không cộng trực tiếp ưu tiên thang 30 vào điểm gốc V-ACT/V-SAT..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quan-ly-va-cong-nghe-tphcm-UMT.html) · 2026-09-30
+Quy đổi: Không chia điểm gốc cho điểm tối đa. Không ngoại suy ở ngoài bảng; nguồn chưa làm rõ các điểm đúng ngưỡng thấp nhất và đầy đủ điểm cộng nên chưa bật bộ tính.
+
+[Nguồn đối chiếu](https://sdn.umt.edu.vn/TB_57_2026_Nguong_diem_DBCL_dau_vao_va_quy_doi_diem_TS_HDCQ_2026_d33eed919f.pdf) · 2026-10-04
 
 
 ## VCA — Học viện Tòa án
@@ -22303,7 +22585,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-toa-an-HTA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-toa-an-HTA.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -22321,7 +22603,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-toa-an-HTA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-toa-an-HTA.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -22335,7 +22617,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-toa-an-HTA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-toa-an-HTA.html) · 2026-10-04
 
 
 ## VGU — Trường Đại học Việt - Đức
@@ -22354,7 +22636,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-duc-VGU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-duc-VGU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -22377,7 +22659,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-duc-VGU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-duc-VGU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -22391,7 +22673,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-duc-VGU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-duc-VGU.html) · 2026-10-04
 
 
 ### Chứng chỉ quốc tế
@@ -22405,7 +22687,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-duc-VGU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-duc-VGU.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -22422,7 +22704,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-duc-VGU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-duc-VGU.html) · 2026-10-04
 
 
 ## VHD — Trường Đại học Công nghiệp Việt Hung
@@ -22440,7 +22722,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-10-04
 
 
 ### Điểm thi THPT + Điểm xét học bạ
@@ -22456,7 +22738,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -22471,7 +22753,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -22485,7 +22767,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -22500,7 +22782,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -22515,7 +22797,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -22530,7 +22812,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-hung-VHD.html) · 2026-10-04
 
 
 ## VHH — Trường Đại học Văn hóa Hà Nội
@@ -22547,7 +22829,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-ha-noi-VHH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-ha-noi-VHH.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -22563,7 +22845,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-ha-noi-VHH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-ha-noi-VHH.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -22580,7 +22862,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-ha-noi-VHH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-ha-noi-VHH.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + Năng khiếu
@@ -22594,7 +22876,7 @@ Thang: Thang 30.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-ha-noi-VHH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-ha-noi-VHH.html) · 2026-10-04
 
 
 ## VHS — Trường Đại học Văn hóa TP.HCM
@@ -22611,7 +22893,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-tphcm-VHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-tphcm-VHS.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -22626,7 +22908,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-tphcm-VHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-tphcm-VHS.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -22640,7 +22922,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-tphcm-VHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-tphcm-VHS.html) · 2026-10-04
 
 
 ### Kết hợp Điểm THPT + Năng khiếu
@@ -22656,7 +22938,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-tphcm-VHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-tphcm-VHS.html) · 2026-10-04
 
 
 ### Kết hợp Học bạ + Năng khiếu
@@ -22672,7 +22954,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-tphcm-VHS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-hoa-tphcm-VHS.html) · 2026-10-04
 
 
 ## VINUNI — Trường Đại học VinUni
@@ -22692,7 +22974,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://admissions.vinuni.edu.vn/undergraduate/faqs/general-admissions/) · 2026-09-30
+[Nguồn đối chiếu](https://admissions.vinuni.edu.vn/undergraduate/faqs/general-admissions/) · 2026-10-04
 
 
 ## VJU — Trường Đại học Việt Nhật - Đại học Quốc gia Hà Nội
@@ -22724,7 +23006,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-nhat-ha-noi-VJU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-nhat-ha-noi-VJU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -22816,7 +23098,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-thong-tin-va-truyen-thong-viet-han-dai-hoc-da-nang-VKU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-thong-tin-va-truyen-thong-viet-han-dai-hoc-da-nang-VKU.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -22832,7 +23114,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-thong-tin-va-truyen-thong-viet-han-dai-hoc-da-nang-VKU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-thong-tin-va-truyen-thong-viet-han-dai-hoc-da-nang-VKU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -22846,7 +23128,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-thong-tin-va-truyen-thong-viet-han-dai-hoc-da-nang-VKU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-thong-tin-va-truyen-thong-viet-han-dai-hoc-da-nang-VKU.html) · 2026-10-04
 
 
 ## VLU — Trường Đại học Sư phạm Kỹ thuật Vĩnh Long
@@ -22866,7 +23148,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-long-VLU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-long-VLU.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -22882,7 +23164,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-long-VLU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-long-VLU.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -22896,7 +23178,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-long-VLU.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-vinh-long-VLU.html) · 2026-10-04
 
 
 ## VNU — Đại học Quốc gia Hà Nội
@@ -22929,7 +23211,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-ki-thuat-quan-su-he-quan-su-dai-hoc-tran-dai-nghia-VPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-ki-thuat-quan-su-he-quan-su-dai-hoc-tran-dai-nghia-VPH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -22947,7 +23229,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-ki-thuat-quan-su-he-quan-su-dai-hoc-tran-dai-nghia-VPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-ki-thuat-quan-su-he-quan-su-dai-hoc-tran-dai-nghia-VPH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -22965,7 +23247,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-ki-thuat-quan-su-he-quan-su-dai-hoc-tran-dai-nghia-VPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-ki-thuat-quan-su-he-quan-su-dai-hoc-tran-dai-nghia-VPH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -22979,7 +23261,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-ki-thuat-quan-su-he-quan-su-dai-hoc-tran-dai-nghia-VPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-ki-thuat-quan-su-he-quan-su-dai-hoc-tran-dai-nghia-VPH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -22997,7 +23279,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-ki-thuat-quan-su-he-quan-su-dai-hoc-tran-dai-nghia-VPH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-si-quan-ki-thuat-quan-su-he-quan-su-dai-hoc-tran-dai-nghia-VPH.html) · 2026-10-04
 
 
 ## VTT — Trường Đại học Võ Trường Toản
@@ -23017,7 +23299,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -23034,7 +23316,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-10-04
 
 
 ### Điểm thi THPT + Học bạ
@@ -23050,7 +23332,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-10-04
 
 
 ### Điểm Đánh giá Tư duy
@@ -23064,7 +23346,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -23078,7 +23360,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -23092,7 +23374,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html) · 2026-10-04
 
 
 ## VUI — Trường Đại học Công nghiệp Việt Trì
@@ -23109,7 +23391,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-tri-VUI.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-tri-VUI.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -23124,7 +23406,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-tri-VUI.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-tri-VUI.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -23139,7 +23421,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-tri-VUI.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-tri-VUI.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -23153,7 +23435,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-tri-VUI.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-viet-tri-VUI.html) · 2026-10-04
 
 
 ## XDA — Trường Đại học Xây dựng Hà Nội
@@ -23209,7 +23491,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-ha-noi-XDA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-ha-noi-XDA.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -23224,7 +23506,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-ha-noi-XDA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-ha-noi-XDA.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -23239,7 +23521,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-ha-noi-XDA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-ha-noi-XDA.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -23255,7 +23537,7 @@ Thang: Không có thang điểm chung.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-ha-noi-XDA.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-ha-noi-XDA.html) · 2026-10-04
 
 
 ## XDN — Phân hiệu Trường Đại học Xây dựng Miền Trung tại Đà Nẵng
@@ -23277,7 +23559,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -23299,7 +23581,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -23316,7 +23598,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi môn Vẽ mỹ thuật các trường đại học khác để xét tuyển
@@ -23336,7 +23618,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-10-04
 
 
 ## XDT — Trường Đại học Xây dựng Miền Trung
@@ -23357,7 +23639,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -23379,7 +23661,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -23396,7 +23678,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-10-04
 
 
 ### Kết hợp điểm thi môn Vẽ mỹ thuật các trường đại học khác để xét tuyển
@@ -23416,7 +23698,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-trung-XDT.html) · 2026-10-04
 
 
 ## YCT — Trường Đại học Y Dược Cần Thơ
@@ -23434,7 +23716,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-can-tho-YCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-can-tho-YCT.html) · 2026-10-04
 
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -23451,7 +23733,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-can-tho-YCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-can-tho-YCT.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -23465,7 +23747,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-can-tho-YCT.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-can-tho-YCT.html) · 2026-10-04
 
 
 ## YDD — Trường Đại học Điều dưỡng Nam Định
@@ -23483,7 +23765,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dieu-duong-nam-dinh-YDD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dieu-duong-nam-dinh-YDD.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -23498,7 +23780,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dieu-duong-nam-dinh-YDD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dieu-duong-nam-dinh-YDD.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -23512,7 +23794,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dieu-duong-nam-dinh-YDD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dieu-duong-nam-dinh-YDD.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -23526,7 +23808,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dieu-duong-nam-dinh-YDD.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dieu-duong-nam-dinh-YDD.html) · 2026-10-04
 
 
 ## YDN — Trường Đại học Kỹ thuật Y Dược Đà Nẵng
@@ -23543,7 +23825,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-10-04
 
 
 ### Xét tuyển dựa trên kết quả thi tốt nghiệp THPT kết hợp với chứng chỉ tiếng Anh quốc tế
@@ -23561,7 +23843,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -23577,7 +23859,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -23593,7 +23875,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -23609,7 +23891,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -23623,7 +23905,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ky-thuat-y-duoc-da-nang-YDN.html) · 2026-10-04
 
 
 ## YDS — Trường Đại học Y Dược TP.HCM
@@ -23661,7 +23943,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-tphcm-YDS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-tphcm-YDS.html) · 2026-10-04
 
 
 ### Học sinh dự bị đại học
@@ -23675,7 +23957,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-tphcm-YDS.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-tphcm-YDS.html) · 2026-10-04
 
 
 ## YHB — Trường Đại học Y Hà Nội
@@ -23693,7 +23975,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -23708,7 +23990,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -23722,7 +24004,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-10-04
 
 
 ## YHT — Phân hiệu Trường Đại học Y Hà Nội tại Thanh Hóa
@@ -23741,7 +24023,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -23756,7 +24038,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -23770,7 +24052,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-ha-noi-YHB.html) · 2026-10-04
 
 
 ## YKV — Trường Đại học Y khoa Vinh
@@ -23787,7 +24069,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-vinh-YKV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-vinh-YKV.html) · 2026-10-04
 
 
 ### Điểm thi THPT
@@ -23801,7 +24083,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-vinh-YKV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-vinh-YKV.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -23817,7 +24099,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-vinh-YKV.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-vinh-YKV.html) · 2026-10-04
 
 
 ## YPB — Trường Đại học Y Dược Hải Phòng
@@ -23837,7 +24119,7 @@ Thang: Thang 30.
 
 Quy đổi: Phương thức có quy đổi; phải dùng đúng bảng và năm trong đề án, không mặc định quy đổi tuyến tính.
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hai-phong-YPB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hai-phong-YPB.html) · 2026-10-04
 
 
 ### Điểm học bạ
@@ -23852,7 +24134,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hai-phong-YPB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hai-phong-YPB.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -23866,7 +24148,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hai-phong-YPB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-hai-phong-YPB.html) · 2026-10-04
 
 
 ## YQH — Học viện Quân y
@@ -23884,7 +24166,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-y-he-quan-su-YQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-y-he-quan-su-YQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL V-ACT
@@ -23898,7 +24180,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-y-he-quan-su-YQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-y-he-quan-su-YQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
@@ -23912,7 +24194,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-y-he-quan-su-YQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-y-he-quan-su-YQH.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -23926,7 +24208,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-y-he-quan-su-YQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-y-he-quan-su-YQH.html) · 2026-10-04
 
 
 ### Điểm ĐGNL Bộ Quốc Phòng
@@ -23940,7 +24222,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-y-he-quan-su-YQH.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-quan-y-he-quan-su-YQH.html) · 2026-10-04
 
 
 ## YTB — Trường Đại học Y Dược Thái Bình
@@ -23958,7 +24240,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-binh-YTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-binh-YTB.html) · 2026-10-04
 
 
 ### Điểm ĐGNL ĐH Sư phạm HN
@@ -23973,7 +24255,7 @@ Thang: Theo quy định và bảng quy đổi của trường.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-binh-YTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-binh-YTB.html) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -23987,7 +24269,7 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-binh-YTB.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-duoc-thai-binh-YTB.html) · 2026-10-04
 
 
 ## YTC — Trường Đại học Y tế Công cộng
@@ -23995,30 +24277,47 @@ Thang: Không có thang điểm chung.
 
 ### Điểm thi THPT
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 6. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 6. Tự tính mới: có.
 
-Điểm xét tuyển = [Điểm Môn 1 + Điểm Môn 2 + Điểm Môn 3 + Điểm khuyến khích (nếu có)]+ Điểm ưu tiên (nếu có)
+ĐXT = M1 thi THPT + M2 thi THPT + M3 thi THPT + ĐƯT
 
-Thang: Thang 30 / Thang 150.
+Thang: Thang 30.
 
+- Thông tin chính quy theo Quyết định 314 ngày 28/5, đính chính 591 ngày 25/6 và quy đổi 641 ngày 10/7/2026. Không lấy quy định vừa làm vừa học.
+- Không có chênh lệch giữa các tổ hợp trong cùng ngành. Thí sinh thi tốt nghiệp 2026 còn cần tổng ba môn thi THPT từ 15; sức khỏe có ngưỡng và học lực riêng.
+- Điểm xét tuyển làm tròn 2 chữ số. Bảng tương đương giữa các phương thức xác định ngưỡng/điểm trúng tuyển; so sánh đúng điểm chuẩn cùng phương thức, không coi điểm sàn là điểm chuẩn.
+- Đính chính bỏ điểm khuyến khích chứng chỉ khỏi phương thức THPT; không cộng thêm 0,3–1,5 vào tổng.
+- IELTS/TOEFL iBT hợp lệ có thể thay điểm Tiếng Anh: IELTS 5/5,5/6/6,5/7–9 → 8/8,5/9/9,5/10; TOEFL iBT 30–45/46–61/62–77/78–93/94–120 tương ứng. Chỉ nhập điểm môn đã quy đổi được Trường chấp nhận.
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Ưu tiên khu vực + đối tượng theo thang 30; giảm từ 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc. Tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-te-cong-cong-YTC.html) · 2026-09-30
+Quy đổi: Chứng chỉ theo bảng 2 bản đính chính; không chấp nhận TOEFL iBT Home Edition và không cộng khuyến khích thêm.
+
+[Nguồn đối chiếu](https://tuyensinh.huph.edu.vn/upload/2026/07/06/TB%20dinh%20chinh%20thong%20tin%20tuyen%20sinh%20dai%20hoc%20chinh%20quy%20nam%202026_1783322597.pdf) · 2026-10-04
 
 
 ### Điểm học bạ
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 4. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 4. Tự tính mới: có.
 
-Điểm xét tuyển = [Điểm Môn 1 + Điểm Môn 2 + Điểm Môn 3 + Điểm khuyến khích (nếu có)]+ Điểm ưu tiên (nếu có)
+H = TBC3năm M1 + TBC3năm M2 + TBC3năm M3
+ĐXT học bạ = min(30, H + KK) + ĐƯT điều chỉnh, tối đa 30
+TBC3năm Mi = (Mi cả năm lớp 10 + Mi cả năm lớp 11 + Mi cả năm lớp 12) / 3
 
-Thang: Thang 30 / Thang 150.
+Thang: Thang 30.
 
+- Thông tin chính quy theo Quyết định 314 ngày 28/5, đính chính 591 ngày 25/6 và quy đổi 641 ngày 10/7/2026. Không lấy quy định vừa làm vừa học.
+- Không có chênh lệch giữa các tổ hợp trong cùng ngành. Thí sinh thi tốt nghiệp 2026 còn cần tổng ba môn thi THPT từ 15; sức khỏe có ngưỡng và học lực riêng.
+- Điểm xét tuyển làm tròn 2 chữ số. Bảng tương đương giữa các phương thức xác định ngưỡng/điểm trúng tuyển; so sánh đúng điểm chuẩn cùng phương thức, không coi điểm sàn là điểm chuẩn.
+- IELTS Academic 5/5,5/6/6,5/7–9 → KK thang 30: 0,3/0,6/0,9/1,2/1,5; KK thang 150: 1,5/3/4,5/6/7,5. TOEFL iBT 30–45/46–61/62–77/78–93/94–120 tương ứng; không Home Edition.
+- Không áp dụng học bạ cho Kỹ thuật xét nghiệm y học hoặc Kỹ thuật phục hồi chức năng.
+- Bảng ngưỡng/điểm trúng tuyển học bạ → THPT: [21.5;22.82]→[16;18]; [22.82;23.43]→[18;19]; [23.43;24.15]→[19;20]; [24.15;24.33]→[20;20.75]; [24.33;24.66]→[20.75;21.5]; [24.66;25.48]→[21.5;23.5]; [25.48;30]→[23.5;30].
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+Ưu tiên: Giảm ưu tiên theo tổng H + KK từ 22,50; chặn tổng trước ưu tiên ở 30. Ưu tiên khu vực + đối tượng theo thang 30; giảm từ 22,50 theo (30 − tổng trước ưu tiên) / 7,50 × mức gốc. Tổng cuối tối đa 30..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-te-cong-cong-YTC.html) · 2026-09-30
+Quy đổi: Quy đổi ngưỡng/điểm trúng tuyển: y = c + (x − a) / (b − a) × (d − c). Bộ tính trả điểm học bạ thang 30 theo mục 5.3.4, không quy đổi từng môn hay cộng ưu tiên lần nữa.
+
+[Nguồn đối chiếu](https://tuyensinh.huph.edu.vn/post/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-10-04
 
 
 ### ƯTXT, XT thẳng
@@ -24032,21 +24331,49 @@ Thang: Không có thang điểm chung.
 
 Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-te-cong-cong-YTC.html) · 2026-09-30
+[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-te-cong-cong-YTC.html) · 2026-10-04
 
 
 ### Điểm ĐGNL HSA
 
-Có biểu thức / mô tả phép tính theo nguồn; chưa xác minh đủ để tự tính. Ngành / chương trình trong phạm vi: 1. Tự tính mới: không.
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 1. Tự tính mới: có.
 
-Điểm xét tuyển = [Tổng điểm thi đánh giá năng lực + Điểm khuyến khích (nếu có)] + Điểm ưu tiên (nếu có)
+ĐXT HSA = min(150, HSA + KK150) + ĐƯT150 điều chỉnh, tối đa 150
+ĐƯT150 gốc = (ƯT khu vực + ƯT đối tượng thang 30) × 5
+Nếu tổng HSA + KK150 ≥112,50: ĐƯT150 = (150 − tổng trước ưu tiên) / 37,50 × ĐƯT150 gốc
 
-Thang: Thang 150 / Thang 30.
+Thang: Thang 150 (HSA); bảng ngưỡng tương đương THPT thang 30.
+
+- Thông tin chính quy theo Quyết định 314 ngày 28/5, đính chính 591 ngày 25/6 và quy đổi 641 ngày 10/7/2026. Không lấy quy định vừa làm vừa học.
+- Không có chênh lệch giữa các tổ hợp trong cùng ngành. Thí sinh thi tốt nghiệp 2026 còn cần tổng ba môn thi THPT từ 15; sức khỏe có ngưỡng và học lực riêng.
+- Điểm xét tuyển làm tròn 2 chữ số. Bảng tương đương giữa các phương thức xác định ngưỡng/điểm trúng tuyển; so sánh đúng điểm chuẩn cùng phương thức, không coi điểm sàn là điểm chuẩn.
+- IELTS Academic 5/5,5/6/6,5/7–9 → KK thang 30: 0,3/0,6/0,9/1,2/1,5; KK thang 150: 1,5/3/4,5/6/7,5. TOEFL iBT 30–45/46–61/62–77/78–93/94–120 tương ứng; không Home Edition.
+- Chỉ Khoa học dữ liệu; ngưỡng HSA từ 70. Không dùng ưu tiên thang 30 trực tiếp hoặc chia HSA / 5 để lấy điểm xét tuyển THPT.
+- Bảng ngưỡng/điểm trúng tuyển HSA [70;150] → THPT [16;30]: y = 16 + (x − 70) / 80 × 14.
+
+Ưu tiên: Ưu tiên gốc thang 150 bằng 5 lần thang 30. Giảm theo tổng HSA + KK150 từ 112,50; tổng trước ưu tiên chặn ở 150..
+
+Quy đổi: Bộ tính trả điểm cùng thang 150 của mục 5.3.3; phép nội suy tháng 7 dành ngưỡng/điểm trúng tuyển. Không biến HSA / 150 × 30 thành quy tắc của Trường.
+
+[Nguồn đối chiếu](https://tuyensinh.huph.edu.vn/post/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-10-04
 
 
-Ưu tiên: Ưu tiên, điểm cộng và việc giảm mức cộng phải theo đúng thang điểm, quy chế và đề án của trường; không tự cộng mức đầy đủ..
+### Xét chuyển từ dự bị đại học
 
-[Nguồn đối chiếu](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-te-cong-cong-YTC.html) · 2026-09-30
+Đã đối chiếu nguồn chính thức. Ngành / chương trình trong phạm vi: 6. Tự tính mới: có.
+
+ĐXT = min(30, M1 thi cuối khóa dự bị + M2 thi cuối khóa dự bị + M3 thi cuối khóa dự bị + KK) + ĐƯT điều chỉnh, tối đa 30
+
+Thang: Thang 30.
+
+- Chỉ thí sinh đã hoàn thành dự bị đại học và đủ điều kiện xét chuyển; ba môn thi cuối khóa đúng tổ hợp ngành. Không áp dụng cho hồ sơ THPT thông thường.
+- KK chứng chỉ hợp lệ theo bảng 2, tối đa 1,5; mức IELTS 5/5,5/6/6,5/7–9 tương ứng 0,3/0,6/0,9/1,2/1,5. Đính chính 591 không thay đổi mục 5.3.2.
+
+Ưu tiên: Giảm ưu tiên theo tổng ba môn thi cuối khóa dự bị + KK từ 22,50, chặn tổng trước ưu tiên ở 30..
+
+Quy đổi: Không dùng điểm THPT hoặc học bạ thay điểm thi cuối khóa các môn bồi dưỡng dự bị.
+
+[Nguồn đối chiếu](https://tuyensinh.huph.edu.vn/post/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026) · 2026-10-04
 
 
 ## ZCH — Học viện Chính trị (Bộ Quốc phòng)

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "year": 2026,
-  "checkedAt": "2026-09-30",
+  "checkedAt": "2026-10-04",
   "sourcePagesCollectedAt": "2026-09-30T11:27:23.531Z",
   "purpose": "research_only",
   "summary": {
     "schools": 326,
     "sourcePages": 293,
-    "methods": 1405,
-    "programMethodRows": 31482,
+    "methods": 1409,
+    "programMethodRows": 31493,
     "statusCounts": {
       "source_program_mapping_collected": 294,
       "current_policy_collected": 3,
@@ -292325,7 +292325,7 @@
     {
       "code": "STS",
       "name": "Trường Đại học Sư phạm TDTT TP. HCM",
-      "checkedAt": "2026-09-30",
+      "checkedAt": "2026-10-04",
       "status": "source_program_mapping_collected",
       "sourceSchoolCode": "STS",
       "sourceSchoolName": "Trường Đại Học Sư Phạm Thể Dục Thể Thao TPHCM",
@@ -292337,6 +292337,11 @@
           "availableYears": [
             2026
           ]
+        },
+        {
+          "url": "https://tuyensinh.upes.edu.vn/2026/04/14/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/",
+          "type": "official",
+          "year": 2026
         }
       ],
       "documents": [
@@ -292494,6 +292499,62 @@
           ],
           "sourceUrl": "https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-the-duc-the-thao-tphcm-STS.html",
           "sourceSectionId": "xet-tuyen-ket-hop-9044",
+          "issues": []
+        },
+        {
+          "id": "official2026-301",
+          "label": "Xét tuyển thẳng theo quy chế của Trường",
+          "year": 2026,
+          "sourceLabel": "Xét tuyển thẳng theo quy chế của Trường",
+          "methodCode": "301",
+          "codeNamespace": "official_method_code",
+          "scopeStatus": "explicit_program_table",
+          "disputed": false,
+          "yearEvidence": "explicit_2026",
+          "programs": [
+            {
+              "code": "7140206",
+              "displayCode": "7140206",
+              "name": "Ngành Giáo dục thể chất",
+              "group": "",
+              "combinations": "T00; T01; T02; T05; T08; T09; T10",
+              "quota": 300,
+              "note": "",
+              "methodVariant": "1"
+            },
+            {
+              "code": "7810301",
+              "displayCode": "7810301",
+              "name": "Ngành Quản lý thể dục thể thao",
+              "group": "",
+              "combinations": "T00; T01; T02; T05; T08; T09; T10",
+              "quota": 100,
+              "note": "",
+              "methodVariant": "1"
+            },
+            {
+              "code": "7810302",
+              "displayCode": "7810302",
+              "name": "Ngành Huấn luyện thể thao",
+              "group": "",
+              "combinations": "T00; T01; T02; T05; T08; T09; T10",
+              "quota": 100,
+              "note": "",
+              "methodVariant": "1"
+            }
+          ],
+          "requirements": [
+            "Ngành Giáo dục thể chất, Quản lý TDTT và Huấn luyện thể thao; thành tích, thời hạn và tiêu chuẩn cụ thể trong đề án.",
+            "Không dùng tổng ba môn thông thường để khẳng định đủ điều kiện xét thẳng."
+          ],
+          "examsAndCertificatesMentioned": [],
+          "availableSourceSections": [
+            "Phương thức",
+            "Cách tính điểm",
+            "Ngành áp dụng"
+          ],
+          "sourceUrl": "https://tuyensinh.upes.edu.vn/2026/04/14/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/",
+          "sourceSectionId": "official2026-301",
           "issues": []
         }
       ],
@@ -321538,7 +321599,7 @@
     {
       "code": "TQU",
       "name": "Trường Đại học Tân Trào",
-      "checkedAt": "2026-09-30",
+      "checkedAt": "2026-10-04",
       "status": "source_program_mapping_collected",
       "sourceSchoolCode": "TQU",
       "sourceSchoolName": "Trường Đại học Tân Trào",
@@ -321550,6 +321611,11 @@
           "availableYears": [
             2026
           ]
+        },
+        {
+          "url": "https://daihoctantrao.edu.vn/media/files/2026/Th%C3%B4ng-tin-tuy%E1%BB%83n-sinh-h%E1%BB%87-ch%C3%ADnh-quy-2026.pdf",
+          "type": "official",
+          "year": 2026
         }
       ],
       "documents": [
@@ -322519,6 +322585,84 @@
           "sourceUrl": "https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tan-trao-TQU.html",
           "sourceSectionId": "diem-hoc-ba-7970",
           "issues": []
+        },
+        {
+          "id": "official2026-405",
+          "label": "Kết hợp THPT và năng khiếu (PT405)",
+          "year": 2026,
+          "sourceLabel": "Kết hợp THPT và năng khiếu (PT405)",
+          "methodCode": "405",
+          "codeNamespace": "official_method_code",
+          "scopeStatus": "explicit_program_table",
+          "disputed": false,
+          "yearEvidence": "explicit_2026",
+          "programs": [
+            {
+              "code": "7810302",
+              "displayCode": "7810302",
+              "name": "Huấn luyện thể thao",
+              "group": "",
+              "combinations": "T00; T01; T02; T05; T08; T09; T10",
+              "quota": 60,
+              "note": "Chỉ tiêu chung PT301/405/406; không phải 60 cho từng phương thức.",
+              "methodVariant": "405"
+            }
+          ],
+          "requirements": [
+            "Chỉ Huấn luyện thể thao, không dùng nhánh năng khiếu cho Giáo dục Mầm non trong đề án này.",
+            "Tên PT405 ghi thi THPT + năng khiếu nhưng đoạn mô tả ngay dưới lại ghi học bạ ba năm.",
+            "Không tự đảo mã 405/406 để sửa tài liệu; chờ hướng dẫn chính thức xác nhận."
+          ],
+          "examsAndCertificatesMentioned": [],
+          "availableSourceSections": [
+            "Phương thức",
+            "Cách tính điểm",
+            "Ngành áp dụng"
+          ],
+          "sourceUrl": "https://daihoctantrao.edu.vn/media/files/2026/Th%C3%B4ng-tin-tuy%E1%BB%83n-sinh-h%E1%BB%87-ch%C3%ADnh-quy-2026.pdf",
+          "sourceSectionId": "official2026-405",
+          "issues": [
+            "Tên và định nghĩa nguồn điểm văn hóa của PT405/PT406 bị đảo trong đề án."
+          ]
+        },
+        {
+          "id": "official2026-406",
+          "label": "Kết hợp học bạ và năng khiếu (PT406)",
+          "year": 2026,
+          "sourceLabel": "Kết hợp học bạ và năng khiếu (PT406)",
+          "methodCode": "406",
+          "codeNamespace": "official_method_code",
+          "scopeStatus": "explicit_program_table",
+          "disputed": false,
+          "yearEvidence": "explicit_2026",
+          "programs": [
+            {
+              "code": "7810302",
+              "displayCode": "7810302",
+              "name": "Huấn luyện thể thao",
+              "group": "",
+              "combinations": "T00; T01; T02; T05; T08; T09; T10",
+              "quota": 60,
+              "note": "Chỉ tiêu chung PT301/405/406; không phải 60 cho từng phương thức.",
+              "methodVariant": "406"
+            }
+          ],
+          "requirements": [
+            "Chỉ Huấn luyện thể thao, không dùng nhánh năng khiếu cho Giáo dục Mầm non trong đề án này.",
+            "Tên PT406 ghi học bạ + năng khiếu nhưng đoạn mô tả ngay dưới lại ghi hai môn thi THPT.",
+            "Không tự đảo mã 405/406 để sửa tài liệu; chờ hướng dẫn chính thức xác nhận."
+          ],
+          "examsAndCertificatesMentioned": [],
+          "availableSourceSections": [
+            "Phương thức",
+            "Cách tính điểm",
+            "Ngành áp dụng"
+          ],
+          "sourceUrl": "https://daihoctantrao.edu.vn/media/files/2026/Th%C3%B4ng-tin-tuy%E1%BB%83n-sinh-h%E1%BB%87-ch%C3%ADnh-quy-2026.pdf",
+          "sourceSectionId": "official2026-406",
+          "issues": [
+            "Tên và định nghĩa nguồn điểm văn hóa của PT405/PT406 bị đảo trong đề án."
+          ]
         }
       ],
       "unresolved": false,
@@ -353356,7 +353500,7 @@
     {
       "code": "YTC",
       "name": "Trường Đại học Y tế Công cộng",
-      "checkedAt": "2026-09-30",
+      "checkedAt": "2026-10-04",
       "status": "source_program_mapping_collected",
       "sourceSchoolCode": "YTC",
       "sourceSchoolName": "Trường Đại Học Y Tế Công Cộng",
@@ -353368,6 +353512,11 @@
           "availableYears": [
             2026
           ]
+        },
+        {
+          "url": "https://tuyensinh.huph.edu.vn/post/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+          "type": "official",
+          "year": 2026
         }
       ],
       "documents": [
@@ -353643,6 +353792,92 @@
           ],
           "sourceUrl": "https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-te-cong-cong-YTC.html",
           "sourceSectionId": "diem-thi-dgnl-hn-8879",
+          "issues": []
+        },
+        {
+          "id": "official2026-preparatory",
+          "label": "Xét chuyển từ dự bị đại học",
+          "year": 2026,
+          "sourceLabel": "Xét chuyển từ dự bị đại học",
+          "methodCode": "YTC-PREPARATORY",
+          "codeNamespace": "official_method_label",
+          "scopeStatus": "explicit_program_table",
+          "disputed": false,
+          "yearEvidence": "explicit_2026",
+          "programs": [
+            {
+              "code": "7460108",
+              "displayCode": "7460108",
+              "name": "Khoa học dữ liệu",
+              "group": "",
+              "combinations": "",
+              "quota": 60,
+              "note": "",
+              "methodVariant": "11"
+            },
+            {
+              "code": "7720401",
+              "displayCode": "7720401",
+              "name": "Dinh dưỡng",
+              "group": "",
+              "combinations": "",
+              "quota": 130,
+              "note": "",
+              "methodVariant": "11"
+            },
+            {
+              "code": "7720601",
+              "displayCode": "7720601",
+              "name": "Kỹ thuật xét nghiệm y học",
+              "group": "",
+              "combinations": "",
+              "quota": 230,
+              "note": "",
+              "methodVariant": "11"
+            },
+            {
+              "code": "7720603",
+              "displayCode": "7720603",
+              "name": "Kỹ thuật phục hồi chức năng",
+              "group": "",
+              "combinations": "",
+              "quota": 145,
+              "note": "",
+              "methodVariant": "11"
+            },
+            {
+              "code": "7720701",
+              "displayCode": "7720701",
+              "name": "Y tế công cộng",
+              "group": "",
+              "combinations": "",
+              "quota": 220,
+              "note": "",
+              "methodVariant": "11"
+            },
+            {
+              "code": "7760101",
+              "displayCode": "7760101",
+              "name": "Công tác xã hội",
+              "group": "",
+              "combinations": "",
+              "quota": 105,
+              "note": "",
+              "methodVariant": "11"
+            }
+          ],
+          "requirements": [
+            "Chỉ thí sinh đã hoàn thành dự bị đại học và đủ điều kiện xét chuyển; ba môn thi cuối khóa đúng tổ hợp ngành. Không áp dụng cho hồ sơ THPT thông thường.",
+            "KK chứng chỉ hợp lệ theo bảng 2, tối đa 1,5; mức IELTS 5/5,5/6/6,5/7–9 tương ứng 0,3/0,6/0,9/1,2/1,5. Đính chính 591 không thay đổi mục 5.3.2."
+          ],
+          "examsAndCertificatesMentioned": [],
+          "availableSourceSections": [
+            "Phương thức",
+            "Cách tính điểm",
+            "Ngành áp dụng"
+          ],
+          "sourceUrl": "https://tuyensinh.huph.edu.vn/post/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+          "sourceSectionId": "official2026-preparatory",
           "issues": []
         }
       ],

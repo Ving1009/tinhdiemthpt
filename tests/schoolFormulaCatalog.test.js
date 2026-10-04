@@ -14,6 +14,200 @@ const [catalog, universities, majors] = await Promise.all([load('school-formula-
 const school = (code) => catalog.schools.find((s) => s.schoolCode === code);
 const method = (code, id) => school(code).methods.find((m) => m.id === `school-${code.toLowerCase()}-${id}`);
 
+test('Y tế Công cộng áp dụng đính chính THPT, giữ khuyến khích riêng cho học bạ và dự bị', () => {
+  const thpt = method('YTC', '8874');
+  assert.equal(thpt.autoCalculate, true);
+  assert.equal(thpt.calculationRule.bonus, undefined);
+  assert.match(thpt.evidence.url, /dinh%20chinh/);
+  assert.equal(calculateSchoolFormula(thpt.calculationRule, { m1: 9, m2: 9, m3: 8, bonus: 1.5 }, { area: 'KV1' }).total, 26.4);
+  const hb = method('YTC', '8877');
+  assert.deepEqual(hb.programIndexes.map(i => school('YTC').programs[i].code), ['7460108', '7720401', '7720701', '7760101']);
+  const values = Object.fromEntries([1, 2, 3].flatMap(i => [[`m${i}_10`, 6], [`m${i}_11`, 8], [`m${i}_12`, 10]]));
+  assert.equal(calculateSchoolFormula(hb.calculationRule, { ...values, bonus: 1.5 }, { area: 'KV1' }).total, 25.95);
+  const preparatory = method('YTC', 'official2026-preparatory');
+  assert.equal(preparatory.programIndexes.length, 6);
+  assert.ok(preparatory.calculationRule.inputs.every(f => /thi cuối khóa dự bị/.test(f.label)));
+  assert.equal(calculateSchoolFormula(preparatory.calculationRule, { m1: 8, m2: 8, m3: 8, bonus: 1.5 }, { area: 'KV1' }).total, 25.95);
+});
+
+test('Y tế Công cộng tính HSA trên thang 150, giảm ưu tiên sau khuyến khích và chặn đầu vào', () => {
+  const formula = method('YTC', '8879');
+  assert.deepEqual(formula.programIndexes.map(i => school('YTC').programs[i].code), ['7460108']);
+  const rule = formula.calculationRule;
+  const result = calculateSchoolFormula(rule, { hsa: 120, bonus: 7.5 }, { area: 'KV1' });
+  assert.equal(result.maxScore, 150);
+  assert.equal(result.priority.adjusted, 2.25);
+  assert.equal(result.total, 129.75);
+  assert.equal(calculateSchoolFormula(rule, { hsa: 112, bonus: 0.5 }, { area: 'KV1' }).total, 116.25);
+  assert.equal(calculateSchoolFormula(rule, { hsa: 112 }, { area: 'KV1', priorityGroup: 'UT1' }).total, 125.75);
+  assert.equal(calculateSchoolFormula(rule, { hsa: 150, bonus: 7.5 }, { area: 'KV1', priorityGroup: 'UT1' }).total, 150);
+  assert.equal(calculateSchoolFormula(rule, { hsa: 150 }, { area: 'KV1' }).priority.adjusted, 0);
+  assert.throws(() => calculateSchoolFormula(rule, { hsa: 69 }), /70 đến 150/);
+  assert.throws(() => calculateSchoolFormula(rule, { hsa: 120.5 }), /số nguyên/);
+  assert.throws(() => calculateSchoolFormula(rule, { hsa: 120, bonus: 7.51 }), /0 đến 7.5/);
+});
+
+test('Sư phạm TDTT TP.HCM giảm ưu tiên trên điểm tổ hợp, không gộp điểm cộng vào căn cứ', () => {
+  const thpt = method('STS', '9046');
+  assert.deepEqual(thpt.programIndexes.map(i => school('STS').programs[i].code), ['7140206', '7810301', '7810302']);
+  const values = { m1: 8, m2: 8.5, aptitude: 9, bonus: 1.5 };
+  const result = calculateSchoolFormula(thpt.calculationRule, values, { area: 'KV1' });
+  assert.equal(result.base, 25.5);
+  assert.equal(result.priority.adjusted, 0.45);
+  assert.equal(result.total, 27.45);
+  const hbValues = { ...Object.fromEntries([1, 2].flatMap(i => [10, 11, 12].map(y => [`m${i}_${y}`, i === 1 ? 8 : 8.5]))), aptitude: 9, bonus: 1.5 };
+  assert.equal(calculateSchoolFormula(method('STS', '9047').calculationRule, hbValues, { area: 'KV1' }).total, 27.45);
+  const combined = method('STS', '9044');
+  assert.throws(() => selectSchoolFormulaRule(combined), /chọn đúng/);
+  assert.equal(calculateSchoolFormula(selectSchoolFormulaRule(combined, 'thpt-aptitude'), values, { area: 'KV1' }).total, 27.45);
+  assert.equal(calculateSchoolFormula(selectSchoolFormulaRule(combined, 'hb-aptitude'), hbValues, { area: 'KV1' }).total, 27.45);
+  assert.equal(method('STS', 'official2026-301').status, 'non_numeric');
+});
+
+test('Tân Trào dùng đề án tháng 5 và không tự đảo định nghĩa PT405/PT406', () => {
+  for (const id of ['7968', '7969', '7970']) {
+    const formula = method('TQU', id);
+    assert.equal(formula.autoCalculate, true);
+    assert.equal(formula.programIndexes.length, 18);
+    const codes = formula.programIndexes.map(i => school('TQU').programs[i].code);
+    assert.ok(codes.includes('7140201'));
+    assert.ok(codes.every(code => !['51140201', '7140213', '7140247', '7810302'].includes(code)));
+    for (const code of ['7340301', '7310101', '7310104', '7620115']) {
+      const program = formula.programIndexes.map(i => school('TQU').programs[i]).find(p => p.code === code);
+      assert.deepEqual(program.combination.split('; '), ['A00', 'A01', 'C01', 'C02', 'C03', 'D01', 'D09', 'X01', 'X02', 'X25', 'X26'], 'không mất tổ hợp khi bảng nguồn sang trang kế tiếp');
+    }
+  }
+  assert.match(method('TQU', '7969').label, /trước năm 2026/);
+  assert.doesNotMatch(method('TQU', '7969').expression, /điểm xét tốt nghiệp/i);
+  const values = Object.fromEntries([1, 2, 3].flatMap(i => [[`m${i}_10`, 6], [`m${i}_11`, 8], [`m${i}_12`, 10]]));
+  assert.equal(calculateSchoolFormula(method('TQU', '7970').calculationRule, values, { area: 'KV1' }).total, 24.6);
+  for (const id of ['official2026-405', 'official2026-406']) {
+    const formula = method('TQU', id);
+    assert.equal(formula.status, 'requires_review');
+    assert.equal(formula.autoCalculate, false);
+    assert.deepEqual(formula.programIndexes.map(i => school('TQU').programs[i].code), ['7810302']);
+    assert.match(formula.conditions.join(' '), /mô tả ngay dưới/);
+  }
+});
+
+test('Kỹ thuật Công nghệ Huế giữ bước quy đổi và Tokyo giữ bảng riêng thay vì phép chia suy đoán', () => {
+  const thpt = method('DHE', '8379');
+  assert.match(thpt.expression, /ĐC/);
+  assert.throws(() => selectSchoolFormulaRule(thpt), /chọn đúng/);
+  assert.equal(calculateSchoolFormula(selectSchoolFormulaRule(thpt, 'thpt-no-bonus'), { m1: 9, m2: 9, m3: 8 }, { area: 'KV1' }).total, 26.4);
+  for (const id of ['8380', '8381', '8382']) {
+    const formula = method('DHE', id);
+    assert.equal(formula.autoCalculate, false);
+    assert.match(formula.expression, /quy đổi tương đương/);
+    assert.match(formula.conversion, /NGƯỠNG\/ĐIỂM TRÚNG TUYỂN/);
+    assert.ok(formula.evidence.additionalUrls.some(url => /PHU_LUC_2/.test(url)));
+  }
+  assert.match(method('DHE', '8380').expression, /làm tròn 1 chữ số/);
+  assert.equal(method('THU', '8929').status, 'requires_review');
+  for (const id of ['8928', '8929', '8930', '8931']) assert.equal(method('THU', id).autoCalculate, false);
+  assert.match(method('THU', '8930').expression, /Bảng 2/);
+  assert.match(method('THU', '8931').expression, /cột tổ hợp tương ứng/);
+});
+
+test('Kỹ thuật Y tế Hải Dương nhân đôi Toán trước quy thang 30 và giảm ưu tiên', () => {
+  const formula = method('DKY', '8306');
+  assert.equal(formula.autoCalculate, true);
+  assert.equal(formula.programIndexes.length, 5);
+  const result = calculateSchoolFormula(formula.calculationRule, { math: 9, m2: 8, m3: 8 }, { area: 'KV1' });
+  assert.equal(result.base, 25.5);
+  assert.equal(result.priority.adjusted, 0.45);
+  assert.equal(result.total, 25.95);
+  assert.equal(calculateSchoolFormula(formula.calculationRule, { math: 10, m2: 0, m3: 0 }).base, 15);
+  assert.equal(method('DKY', '8307').autoCalculate, false, 'học bạ cần quy đổi sau tổng có trọng số');
+  assert.match(method('DKY', '8307').conditions.join(' '), /sáu học kỳ/);
+});
+
+test('Hải Dương quy đổi ba kỳ thi theo đúng mốc, rồi mới cộng điểm và ưu tiên', () => {
+  for (const [id, xs, ys] of [
+    ['8308', [591, 738, 840, 922, 966, 1200], [18, 22, 24, 26, 27, 30]],
+    ['8309', [43, 51, 55, 62, 66, 100], [18, 22, 24, 26, 27, 30]],
+    ['8310', [63, 77, 88, 100, 107, 150], [18, 22, 24, 26, 27, 30]],
+  ]) {
+    const formula = method('DKY', id);
+    assert.equal(formula.autoCalculate, true);
+    const rule = formula.calculationRule;
+    xs.forEach((exam, i) => assert.equal(calculateSchoolFormula(rule, { exam }).base, ys[i]));
+    assert.equal(calculateSchoolFormula(rule, { exam: xs[2] }, { area: 'KV1' }).total, 24.6);
+    const withBonus = calculateSchoolFormula(rule, { exam: xs[2], bonus: 1.5 }, { area: 'KV1' });
+    assert.equal(withBonus.total, 25.95, 'ưu tiên sau chuyển thang và sau điểm cộng');
+    assert.equal(calculateSchoolFormula(rule, { exam: xs.at(-1) }, { area: 'KV1', priorityGroup: 'UT1' }).priority.adjusted, 0);
+    assert.throws(() => calculateSchoolFormula(rule, { exam: xs[0] - 1 }), /ngoài các khoảng/);
+  }
+  assert.throws(() => calculateSchoolFormula(method('DKY', '8308').calculationRule, { exam: 600.5 }), /số nguyên/);
+  assert.equal(calculateSchoolFormula(method('DKY', '8309').calculationRule, { exam: 43.5 }).base, 18.25);
+});
+
+test('Hà Tĩnh tách M00 với M01/M09, không cho ngành văn hóa dùng điểm năng khiếu', () => {
+  const preschool = school('HHT').programs.find(p => p.code === '7140201');
+  const it = school('HHT').programs.find(p => p.code === '7480201');
+  const formula = method('HHT', '8829');
+  assert.deepEqual(schoolFormulaBranches(formula, it).map(b => b.id), ['hb-cultural']);
+  assert.deepEqual(schoolFormulaBranches(formula, preschool).map(b => b.id), ['hb-preschool', 'hb-preschool-two-aptitudes']);
+  assert.throws(() => selectSchoolFormulaRule(formula, 'hb-preschool', it), /chọn đúng/);
+  assert.throws(() => selectSchoolFormulaRule(formula, 'hb-cultural', preschool), /chọn đúng/);
+  const m00 = selectSchoolFormulaRule(formula, 'hb-preschool', preschool);
+  assert.equal(m00.inputs.length, 7);
+  const values = { m1_10: 6, m1_11: 8, m1_12: 10, m2_10: 6, m2_11: 8, m2_12: 10, aptitude: 8, bonus: 1.5 };
+  assert.equal(calculateSchoolFormula(m00, values, { area: 'KV1' }).total, 25.95);
+  const m01 = selectSchoolFormulaRule(formula, 'hb-preschool-two-aptitudes', preschool);
+  assert.equal(m01.inputs.length, 5);
+  assert.equal(calculateSchoolFormula(m01, { m1_10: 6, m1_11: 8, m1_12: 10, aptitude1: 7, aptitude2: 9 }, { area: 'KV1' }).total, 24.6);
+  const thpt = selectSchoolFormulaRule(method('HHT', '8828'), 'thpt-preschool-two-aptitudes', preschool);
+  assert.equal(calculateSchoolFormula(thpt, { m1: 8, aptitude1: 7, aptitude2: 9 }, { area: 'KV1' }).total, 24.6);
+});
+
+test('Hòa Bình giới hạn bộ tính văn hóa, yêu cầu chọn nhánh học bạ đủ ba năm', () => {
+  for (const id of ['8546', '8547']) {
+    const formula = method('ETU', id);
+    assert.equal(formula.autoCalculate, true);
+    assert.equal(formula.programIndexes.length, 20);
+    assert.ok(formula.programIndexes.every(i => !['7210403', '7580108'].includes(school('ETU').programs[i].code)));
+  }
+  const hb = method('ETU', '8547');
+  assert.throws(() => selectSchoolFormulaRule(hb), /chọn đúng/);
+  const rule = selectSchoolFormulaRule(hb, 'hb-three-subjects');
+  const values = Object.fromEntries([1, 2, 3].flatMap(i => [[`m${i}_10`, 6], [`m${i}_11`, 8], [`m${i}_12`, 10]]));
+  assert.equal(calculateSchoolFormula(rule, values, { area: 'KV1' }).total, 24.6);
+  assert.equal(method('ETU', '8549').autoCalculate, false);
+  assert.deepEqual(method('ETU', '8549').programIndexes.map(i => school('ETU').programs[i].code), ['7210403', '7580108']);
+});
+
+test('Không suy phép chia điểm hoặc xét độc lập từ mô tả phương thức kết hợp', () => {
+  for (const [code, id] of [['MIT', '9168'], ['GDU', '8554'], ['DKC', '7906']]) {
+    const formula = method(code, id);
+    assert.equal(formula.autoCalculate, false);
+    assert.match(formula.expression, /6 học kỳ|sáu học kỳ/);
+  }
+  assert.match(method('GDU', '8553').scale, /40/);
+  assert.equal(method('GDU', '8553').autoCalculate, false);
+  for (const id of ['9151', '9152', '9153', '9154', '9155']) {
+    assert.match(method('DVL', id).expression, /kết hợp học bạ/);
+    assert.equal(method('DVL', id).autoCalculate, false);
+  }
+  assert.equal(method('NLS', '9221').autoCalculate, false);
+  assert.match(method('NLS', '9221').expression, /x là điểm trúng tuyển THPT/);
+  assert.match(method('NLS', '9221').priority, /làm tròn số nguyên/);
+  assert.equal(method('UMT', '9361').autoCalculate, false);
+  assert.match(method('UMT', '9361').conversion, /ngưỡng thấp nhất/);
+});
+
+test('Văn bản còn mâu thuẫn hoặc chưa ban hành không được mở bộ tính cuối', () => {
+  for (const [code, id] of [['BVU', '9373'], ['HVD', '8183'], ['HVD', '8184'], ['MTU', '8639'], ['DKC', '7908']]) {
+    assert.equal(method(code, id).status, 'requires_review');
+    assert.equal(method(code, id).autoCalculate, false);
+  }
+  assert.match(method('HVD', '8184').expression, /M1 cả năm lớp 10 \+ M2 cả năm lớp 11 \+ M3 cả năm lớp 12/);
+  assert.equal(method('DPQ', '9095').autoCalculate, false);
+  assert.deepEqual(method('DPQ', '9095').programIndexes.map(i => school('DPQ').programs[i].code), ['51140201']);
+  assert.equal(method('BVU', '9372').autoCalculate, false);
+  assert.match(method('BVU', '9372').conditions.join(' '), /trống số\/ngày/);
+});
+
 test('Mở TP.HCM dùng đúng bảng V-ACT đóng hai đầu, không ngoại suy hoặc gộp Đồng Nai', () => {
   const formula = method('MBS', '8982');
   assert.equal(formula.autoCalculate, true);

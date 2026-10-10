@@ -4,7 +4,7 @@ import { errorResponse, failure, optionsResponse, success } from "./http.js";
 import { readJsonObject } from "../lib/requestBody.js";
 
 const DATA_FILES = ["universities", "majors", "combinations", "subjects", "admission-formulas-2026", "school-formula-catalog-2026"];
-let dataStorePromise;
+let dataStore;
 
 async function loadAssetJson(assets, name) {
   const response = await assets.fetch(new Request(`https://assets.invalid/_worker-data/${name}.json`));
@@ -12,17 +12,13 @@ async function loadAssetJson(assets, name) {
   return response.json();
 }
 
-export function loadCloudflareDataStore(environment) {
-  if (!dataStorePromise) {
-    dataStorePromise = Promise.all(DATA_FILES.map((name) => loadAssetJson(environment.ASSETS, name)))
-      .then(([universities, majors, combinations, subjects, admissionFormulas, schoolFormulaCatalog]) =>
-        createDataStore({ universities, majors, combinations, subjects, admissionFormulas, schoolFormulaCatalog }))
-      .catch((error) => {
-        dataStorePromise = undefined;
-        throw error;
-      });
-  }
-  return dataStorePromise;
+export async function loadCloudflareDataStore(environment) {
+  if (dataStore) return dataStore;
+  // Chỉ giữ dữ liệu đã hoàn tất; I/O đang chờ thuộc về từng request của Worker.
+  const [universities, majors, combinations, subjects, admissionFormulas, schoolFormulaCatalog] =
+    await Promise.all(DATA_FILES.map((name) => loadAssetJson(environment.ASSETS, name)));
+  dataStore ||= createDataStore({ universities, majors, combinations, subjects, admissionFormulas, schoolFormulaCatalog });
+  return dataStore;
 }
 
 function query(url) {

@@ -1,5 +1,5 @@
 import { ADMISSIONS_2027_NOTICE, canCalculateMajor, cutoffLabel, cutoffStatusLabel, paginate, publicProfileNote, publishableCutoff, verifiedCutoff } from "./admissions.js?v=20261010-1";
-import { UniversityRepository } from "./university.js?v=20260914-2";
+import { UniversityRepository } from "./university.js?v=20261010-4";
 import { $, $$, debounce, escapeHTML, formatScore, resolveAppView, sanitizeScoreInput, storage, validateScore } from "./utils.js";
 import { ACADEMIC_METHODS } from "../formulas/hocba.js";
 import { calculateAcademicCombinations } from "./core/academicCalculator.js";
@@ -1108,6 +1108,7 @@ class THPTApp {
   }
   invalidateMajorResults() {
     this.majorAbort?.abort();
+    this.majorRequestVersion++;
     this.majorPage = 1;
     $("#major-result-grid").innerHTML = "";
     $("#major-pagination").innerHTML = "";
@@ -1135,7 +1136,13 @@ class THPTApp {
       const data = await this.repository.listMajors(checked.query, { signal: this.majorAbort.signal });
       if (requestVersion !== this.majorRequestVersion) return;
       this.majorPage = data.pagination.page; this.renderMajorResults(data.items, data.pagination);
-    } catch (error) { if (error.name !== "AbortError") { $("#major-result-summary").textContent = "Không thể tải dữ liệu."; $("#major-result-grid").innerHTML = '<p class="empty-state error-state">Không thể tải dữ liệu. Hãy thử lại.</p>'; } }
+    } catch (error) {
+      if (error.name !== "AbortError" && requestVersion === this.majorRequestVersion) {
+        const message = error.message || "Không thể tải dữ liệu. Hãy thử lại.";
+        $("#major-result-summary").textContent = message;
+        $("#major-result-grid").innerHTML = `<p class="empty-state error-state">${escapeHTML(message)}</p>`;
+      }
+    }
   }
   renderMajorResults(items, pagination = { page: 1, pages: 1, total: items.length }) {
     $("#major-result-grid").classList.remove("is-stale-results");
@@ -1210,12 +1217,13 @@ class THPTApp {
       this.renderMajorResults(data.items, data.pagination);
     } catch (error) {
       if (error.name !== "AbortError" && requestVersion === this.majorRequestVersion) {
-        $("#major-result-summary").textContent = "Không thể tải dữ liệu.";
-        $("#major-result-grid").innerHTML = '<p class="empty-state error-state">Không thể tải dữ liệu. Hãy thử lại.</p>';
+        const message = error.message || "Không thể tải dữ liệu. Hãy thử lại.";
+        $("#major-result-summary").textContent = message;
+        $("#major-result-grid").innerHTML = `<p class="empty-state error-state">${escapeHTML(message)}</p>`;
       }
     }
   }
-  clearMajorFilters() { $("#major-filter-form").reset(); $("#major-sort").value = "school"; this.activeFinderContext = null; this.syncMajorScoreContext(); this.finderComparisonScore = null; this.finderComparisonScale = null; this.finderComparisonRule = null; this.majorSearchMode = "filters"; this.allCombinationSearch = null; this.majorPage = 1; $("#major-result-grid").innerHTML = ""; $("#major-result-summary").textContent = "Đã xóa bộ lọc."; $("#major-pagination").innerHTML = ""; this.renderMajorScoreContext(); }
+  clearMajorFilters() { this.invalidateMajorResults(); $("#major-filter-form").reset(); $("#major-sort").value = "school"; this.activeFinderContext = null; this.syncMajorScoreContext(); this.finderComparisonScore = null; this.finderComparisonScale = null; this.finderComparisonRule = null; this.majorSearchMode = "filters"; this.allCombinationSearch = null; this.majorPage = 1; $("#major-result-grid").innerHTML = ""; $("#major-result-summary").textContent = "Đã xóa bộ lọc."; $("#major-pagination").innerHTML = ""; this.renderMajorScoreContext(); }
   saveWishFromButton(button) {
     const id = button.dataset.saveMajor;
     const major = this.repository.getMajor(id);

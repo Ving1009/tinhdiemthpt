@@ -31,21 +31,38 @@ async function requestJson(path, { signal, method = "GET", body, headers = {} } 
     && ["127.0.0.1", "localhost"].includes(browserLocation.hostname)
     && /^55\d\d$/.test(browserLocation.port);
   const url = isVsCodeLiveServer ? `http://127.0.0.1:3000${path}` : path;
-  let response;
+  const controller = new AbortController();
+  const cancel = () => controller.abort(signal?.reason);
+  if (signal?.aborted) cancel();
+  else signal?.addEventListener("abort", cancel, { once: true });
+  let timedOut = false;
+  const timer = setTimeout(() => { timedOut = true; controller.abort(); }, 12000);
   try {
-    response = await fetch(url, {
-      method,
-      signal,
-      headers: body ? { "Content-Type": "application/json", ...headers } : Object.keys(headers).length ? headers : undefined,
-      body: body ? JSON.stringify(body) : undefined
+    let response;
+    try {
+      response = await fetch(url, {
+        method,
+        signal: controller.signal,
+        headers: body ? { "Content-Type": "application/json", ...headers } : Object.keys(headers).length ? headers : undefined,
+        body: body ? JSON.stringify(body) : undefined
+      });
+    } catch (error) {
+      if (isVsCodeLiveServer && !controller.signal.aborted) throw new Error("Máy chủ dữ liệu chưa chạy. Chạy npm.cmd run dev rồi thử lại.");
+      throw error;
+    }
+    const payload = await response.json().catch((error) => {
+      if (controller.signal.aborted) throw error;
+      return null;
     });
+    if (!response.ok || !payload?.success) throw new Error(payload?.error?.message || "Không thể tải dữ liệu tuyển sinh.");
+    return payload.data;
   } catch (error) {
-    if (isVsCodeLiveServer) throw new Error("Máy chủ dữ liệu chưa chạy. Chạy npm.cmd run dev rồi thử lại.");
+    if (timedOut) throw new Error("Kết nối dữ liệu mất quá nhiều thời gian. Bạn hãy thử lại.");
     throw error;
+  } finally {
+    clearTimeout(timer);
+    signal?.removeEventListener("abort", cancel);
   }
-  const payload = await response.json().catch(() => null);
-  if (!response.ok || !payload?.success) throw new Error(payload?.error?.message || "Không thể tải dữ liệu tuyển sinh.");
-  return payload.data;
 }
 
 export class UniversityRepository {

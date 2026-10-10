@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { sanitizeMajor, sanitizePublicValue, sanitizeUniversity, validateCutoff } from "../lib/dataValidation.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
 import { buildAssistantKnowledge } from "./build-assistant-knowledge.mjs";
+import { createMajorSearchIndex } from "../server/dataStoreCore.js";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const output = join(root, ".cloudflare", "public");
@@ -49,13 +50,15 @@ const [universities, majors, combinations, subjects, formulas, transcriptSubject
   readJson("transcript-subjects.json"),
   readJson("school-formula-catalog-2026.json")
 ]);
+const workerMajors = majors.map((major) => ({
+  ...sanitizeMajor(major),
+  cutoffEvidenceAvailable: validateCutoff(major.cutoff).publishable,
+  formulaEvidenceAvailable: Boolean(major.formulaText?.trim() && /^https?:\/\//.test(major.formulaSourceUrl || ""))
+}));
 await Promise.all([
   writeJson("universities.json", universities.map(sanitizeUniversity)),
-  writeJson("majors.json", majors.map((major) => ({
-    ...sanitizeMajor(major),
-    cutoffEvidenceAvailable: validateCutoff(major.cutoff).publishable,
-    formulaEvidenceAvailable: Boolean(major.formulaText?.trim() && /^https?:\/\//.test(major.formulaSourceUrl || ""))
-  }))),
+  writeJson("majors.json", workerMajors),
+  writeJson("major-search-index.json", createMajorSearchIndex(workerMajors, combinations)),
   writeJson("combinations.json", combinations.map(sanitizePublicValue)),
   writeJson("subjects.json", subjects.map(sanitizePublicValue)),
   writeJson("admission-formulas-2026.json", formulas),

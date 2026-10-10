@@ -3,8 +3,9 @@ import { createCloudflareReportStore } from "../server/cloudflareReportStore.js"
 import { errorResponse, failure, optionsResponse, success } from "./http.js";
 import { readJsonObject } from "../lib/requestBody.js";
 
-const DATA_FILES = ["universities", "majors", "combinations", "subjects", "admission-formulas-2026", "school-formula-catalog-2026"];
+const DATA_FILES = ["universities", "majors", "combinations", "subjects", "admission-formulas-2026", "major-search-index"];
 let dataStore;
+let formulaCatalogLoaded = false;
 
 async function loadAssetJson(assets, name) {
   const response = await assets.fetch(new Request(`https://assets.invalid/_worker-data/${name}.json`));
@@ -15,10 +16,19 @@ async function loadAssetJson(assets, name) {
 export async function loadCloudflareDataStore(environment) {
   if (dataStore) return dataStore;
   // Chỉ giữ dữ liệu đã hoàn tất; I/O đang chờ thuộc về từng request của Worker.
-  const [universities, majors, combinations, subjects, admissionFormulas, schoolFormulaCatalog] =
+  const [universities, majors, combinations, subjects, admissionFormulas, majorSearchIndex] =
     await Promise.all(DATA_FILES.map((name) => loadAssetJson(environment.ASSETS, name)));
-  dataStore ||= createDataStore({ universities, majors, combinations, subjects, admissionFormulas, schoolFormulaCatalog });
+  dataStore ||= createDataStore({ universities, majors, combinations, subjects, admissionFormulas, majorSearchIndex });
   return dataStore;
+}
+
+async function loadFormulaCatalog(store, environment) {
+  if (formulaCatalogLoaded) return;
+  const dataset = await loadAssetJson(environment.ASSETS, "school-formula-catalog-2026");
+  if (!formulaCatalogLoaded) {
+    store.setSchoolFormulaCatalog(dataset);
+    formulaCatalogLoaded = true;
+  }
 }
 
 function query(url) {
@@ -60,7 +70,10 @@ export async function handleDataApi(request, environment) {
       let result;
       if (schoolRoute.child === "majors") result = store.listUniversityMajors(schoolRoute.id, query(url));
       else if (schoolRoute.child === "major-options") result = store.listUniversityMajorOptions(schoolRoute.id);
-      else if (schoolRoute.child === "admission-formulas") result = store.listAdmissionFormulas(schoolRoute.id);
+      else if (schoolRoute.child === "admission-formulas") {
+        await loadFormulaCatalog(store, environment);
+        result = store.listAdmissionFormulas(schoolRoute.id);
+      }
       else result = store.getUniversity(schoolRoute.id);
       return result
         ? success(request, result)

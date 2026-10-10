@@ -8,6 +8,7 @@ import { describeScoring, formulaKind, scoreEquations } from '../scripts/lib/sch
 import { officialFormulaDocument, officialFormulaSections } from '../scripts/research-school-formulas-2026.mjs';
 import { defaultDataStore } from '../server/dataStore.js';
 import { handleDataApi } from '../worker/dataApi.js';
+import { createMajorSearchIndex } from '../server/dataStoreCore.js';
 
 const load = async (name) => JSON.parse(await fs.readFile(new URL(`../data/${name}.json`, import.meta.url), 'utf8'));
 const [catalog, universities, majors] = await Promise.all([load('school-formula-catalog-2026'), load('universities'), load('majors')]);
@@ -626,6 +627,7 @@ test('Worker và Express trả cùng catalog theo trường, không đưa catalo
   const assets = { async fetch(request) {
     const name = new URL(request.url).pathname.split('/').pop().replace('.json', '');
     requested.push(name);
+    if (name === 'major-search-index') return Response.json(createMajorSearchIndex(majors, await load('combinations')));
     return Response.json(await load(name));
   } };
   const id = school('FPT').universityId;

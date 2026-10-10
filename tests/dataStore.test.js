@@ -3,6 +3,7 @@ import test from "node:test";
 import { createDataStore, normalizeSearch } from "../server/dataStore.js";
 import { sanitizeMajor } from "../lib/dataValidation.js";
 import { sortComparedMajors } from "../lib/majorComparison.js";
+import { createMajorSearchIndex } from "../server/dataStoreCore.js";
 
 const universities = [
   { id: "u1", code: "UTH", officialAdmissionsCode: "GHA", name: "Trường Đại học Giao thông vận tải", shortName: "UTH", region: "south", website: "https://uth.example.edu.vn", admissions: { status: "official_verified", note: "Đã cập nhật" } },
@@ -21,6 +22,29 @@ const combinations = [
   { id: "q00", code: "Q00", subjects: ["ĐGNL"], subjectIds: ["dgnl"], subjectText: "Đánh giá năng lực" }
 ];
 const store = createDataStore({ universities, majors, combinations, subjects: [] });
+
+test("chỉ mục tìm ngành dựng khi build trả cùng kết quả với chỉ mục dựng lúc chạy", () => {
+  const majorSearchIndex = JSON.parse(JSON.stringify(createMajorSearchIndex(majors, combinations)));
+  const compiled = createDataStore({ universities, majors, combinations, majorSearchIndex });
+  for (const query of [{}, { q: "công nghệ" }, { q: "tu dong hoa" }, { combination: "A01" },
+    { method: "THPT", score: 26.4, scale: 30, year: 2026, combination: "A00", ruleId: "three-subject-sum-priority-2026" }]) {
+    for (const sort of ["school", "cutoff-desc", "cutoff-asc", "major-desc", "difference-nearest"]) {
+      assert.deepEqual(compiled.listMajors({ ...query, sort, pageSize: 1, page: 2 }), store.listMajors({ ...query, sort, pageSize: 1, page: 2 }));
+    }
+  }
+  assert.deepEqual(compiled.search("7480201"), store.search("7480201"));
+  assert.deepEqual(compiled.findBestMajorCombinations({ results: [{ combination: "A00", score: 26.4, scale: 30, year: 2026, method: "THPT", ruleId: "three-subject-sum-priority-2026" }] }),
+    store.findBestMajorCombinations({ results: [{ combination: "A00", score: 26.4, scale: 30, year: 2026, method: "THPT", ruleId: "three-subject-sum-priority-2026" }] }));
+  assert.doesNotMatch(JSON.stringify(majorSearchIndex), /sourceUrl|hidden\.example|comparisonRules/);
+});
+
+test("chỉ mục dựng sẵn phải khớp dòng ngành và tổ hợp, không nhận dữ liệu sai liên kết", () => {
+  for (const alter of [index => index.rows.pop(), index => index.rows.reverse(), index => { index.rows[0].name = null; }, index => { index.rows[0].combinationCodes = ["BAD"]; }]) {
+    const index = createMajorSearchIndex(majors, combinations);
+    alter(index);
+    assert.throws(() => createDataStore({ universities, majors, combinations, majorSearchIndex: index }), /không khớp dữ liệu/);
+  }
+});
 
 test("tìm tên ngành rồi sắp điểm trước khi phân trang mà không phải nhập điểm cá nhân", () => {
   const rows = Array.from({ length: 40 }, (_, index) => ({

@@ -58,7 +58,20 @@ function formulaScale(rows) {
   return scales.length === 1 ? `Thang ${scales[0]}` : "Theo thang điểm và bảng quy đổi của trường";
 }
 
-export function createDataStore({ universities, majors, combinations, subjects, admissionFormulas, schoolFormulaCatalog, dataRoot = null } = {}) {
+export function createMajorSearchIndex(majors, combinations) {
+  const codes = new Set(combinations.map((item) => item.code.toLocaleUpperCase("vi")));
+  return { schemaVersion: 1, rows: majors.map((major) => ({
+    id: major.id,
+    code: normalizeSearch(major.code),
+    methodCode: normalizeAdmissionMethodCode(major.method),
+    name: normalizeSearch(major.name),
+    accentedName: accentedName(major.name),
+    text: normalizeSearch(`${major.name} ${major.code} ${major.method} ${major.combination}`),
+    combinationCodes: parseCombinationCodes(major.combination, codes)
+  })) };
+}
+
+export function createDataStore({ universities, majors, combinations, subjects, admissionFormulas, schoolFormulaCatalog, majorSearchIndex, dataRoot = null } = {}) {
   const allUniversities = universities || [];
   const allMajors = majors || [];
   const allCombinations = combinations || [];
@@ -67,20 +80,26 @@ export function createDataStore({ universities, majors, combinations, subjects, 
   const universitiesById = new Map(allUniversities.map((item) => [item.id, item]));
   const majorsById = new Map(allMajors.map((item) => [item.id, item]));
   const admissionFormulaIndex = createAdmissionFormulaIndex(allAdmissionFormulas, { universities: allUniversities, majors: allMajors });
-  const schoolFormulaCatalogIndex = createSchoolFormulaCatalogIndex(schoolFormulaCatalog, { universities: allUniversities, majors: allMajors });
+  let schoolFormulaCatalogIndex = createSchoolFormulaCatalogIndex(schoolFormulaCatalog, { universities: allUniversities, majors: allMajors });
+  function setSchoolFormulaCatalog(dataset) {
+    const index = createSchoolFormulaCatalogIndex(dataset, { universities: allUniversities, majors: allMajors });
+    schoolFormulaCatalog = dataset;
+    schoolFormulaCatalogIndex = index;
+  }
   const majorsByUniversity = new Map();
   const validCombinationCodes = new Set(allCombinations.map((item) => item.code.toLocaleUpperCase("vi")));
-  const indexedMajors = allMajors.map((major) => {
-    const methodCode = normalizeAdmissionMethodCode(major.method);
+  const searchIndex = majorSearchIndex || createMajorSearchIndex(allMajors, allCombinations);
+  if (searchIndex.schemaVersion !== 1 || !Array.isArray(searchIndex.rows) || searchIndex.rows.length !== allMajors.length || searchIndex.rows.some((row, index) =>
+    !row || row.id !== allMajors[index].id || ["code", "methodCode", "name", "accentedName", "text"].some((key) => typeof row[key] !== "string") ||
+    !Array.isArray(row.combinationCodes) || row.combinationCodes.some((code) => !validCombinationCodes.has(code)))) throw new Error("Chỉ mục tìm ngành không khớp dữ liệu.");
+  const indexedMajors = allMajors.map((major, index) => {
+    const indexed = searchIndex.rows[index];
+    const methodCode = indexed.methodCode;
     if (!Object.hasOwn(major, "methodCode")) Object.defineProperty(major, "methodCode", { value: methodCode, enumerable: false });
     return {
-      major, methodCode,
-      name: normalizeSearch(major.name),
-      accentedName: accentedName(major.name),
+      major, ...indexed,
       cutoff: validateCutoff(major.cutoff, { sourceEvidenceAvailable: major.cutoffEvidenceAvailable === true }).publishable
-        ? major.cutoff : major.cutoff && { ...major.cutoff, score: null },
-      text: normalizeSearch(`${major.name} ${major.code} ${major.method} ${major.combination}`),
-      combinationCodes: parseCombinationCodes(major.combination, validCombinationCodes)
+        ? major.cutoff : major.cutoff && { ...major.cutoff, score: null }
     };
   });
   for (const indexed of indexedMajors) {
@@ -146,10 +165,10 @@ export function createDataStore({ universities, majors, combinations, subjects, 
     text: normalizeSearch(`${item.name} ${item.shortName} ${item.officialAdmissionsCode || ""} ${item.code}`),
     item
   }));
-  const majorSearch = indexedMajors.map(({ major, text }) => ({
+  const majorSearch = indexedMajors.map(({ major, text, code }) => ({
     type: "major",
     id: major.id,
-    code: normalizeSearch(major.code),
+    code,
     text,
     item: major
   }));
@@ -534,6 +553,7 @@ export function createDataStore({ universities, majors, combinations, subjects, 
     listUniversityMajors,
     listUniversityMajorOptions,
     listAdmissionFormulas,
+    setSchoolFormulaCatalog,
     listMajors,
     findBestMajorCombinations,
     search,

@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { createDataStore, normalizeSearch } from "../server/dataStore.js";
+import { sanitizeMajor } from "../lib/dataValidation.js";
+import { sortComparedMajors } from "../lib/majorComparison.js";
 
 const universities = [
   { id: "u1", code: "UTH", officialAdmissionsCode: "GHA", name: "Trường Đại học Giao thông vận tải", shortName: "UTH", region: "south", website: "https://uth.example.edu.vn", admissions: { status: "official_verified", note: "Đã cập nhật" } },
@@ -41,6 +43,29 @@ test("phân trang dùng số nguyên và đầu vào tổ hợp không hợp l�
   assert.equal(result.items.length, 2);
   assert.equal(store.findBestMajorCombinations({ results: [null, false, [], "invalid"] }).pagination.total, 0);
   assert.ok(store.findBestMajorCombinations({ results: [null, { combination: "A00", score: 26.4, scale: 30, year: 2026, method: "THPT", ruleId: "three-subject-sum-priority-2026" }] }).pagination.total > 0);
+});
+
+test("tìm ngành phân trang trước khi xuất dữ liệu vẫn che điểm thiếu căn cứ và dữ liệu nội bộ", () => {
+  const rows = Array.from({ length: 40 }, (_, index) => ({
+    ...majors[0], id: `private-${index}`, name: `Toán ${String(index).padStart(2, "0")}`,
+    raw: { studentName: "private-student" },
+    cutoff: { ...majors[0].cutoff, score: index % 30, ...(index % 3 === 0 ? { sourceUrl: "" } : {}) }
+  }));
+  const paginatedStore = createDataStore({ universities, majors: rows, combinations });
+  for (const sort of ["school", "cutoff-asc", "cutoff-desc", "major-asc", "major-desc"]) {
+    const expected = sortComparedMajors(rows.map((row) => ({ ...sanitizeMajor(row), university: universities[0] })), sort);
+    for (const page of [1, 2]) {
+      const result = paginatedStore.listMajors({ q: "toán", sort, page, pageSize: 24 });
+      const expectedPage = expected.slice((page - 1) * 24, page * 24);
+      assert.equal(result.pagination.total, 40);
+      assert.deepEqual(result.items.map((item) => [item.id, item.cutoff.score]), expectedPage.map((item) => [item.id, item.cutoff.score]));
+      assert.doesNotMatch(JSON.stringify(result), /sourceUrl|hidden\.example|private-student|accentedName|"major":/);
+    }
+  }
+  const first = paginatedStore.listMajors({ sort: "cutoff-desc" }).items[0];
+  const score = first.cutoff.score;
+  first.cutoff.score = -100;
+  assert.equal(paginatedStore.listMajors({ ids: first.id }).items[0].cutoff.score, score);
 });
 
 test("normalize search hỗ trợ tiếng Việt có và không dấu", () => {

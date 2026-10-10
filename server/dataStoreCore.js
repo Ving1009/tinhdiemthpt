@@ -1,6 +1,6 @@
 import { chooseBestCombination, comparisonCompatibility, comparisonContextKey, sortComparedMajors } from "../lib/majorComparison.js";
 import { majorHasCombination, parseCombinationCodes } from "../lib/majorCombination.js";
-import { sanitizeMajor, sanitizeUniversity } from "../lib/dataValidation.js";
+import { sanitizeMajor, sanitizeUniversity, validateCutoff } from "../lib/dataValidation.js";
 import { normalizeAdmissionMethodCode } from "../lib/admissionMethod.js";
 import { createAdmissionFormulaIndex } from "../lib/admissionFormulaData.js";
 import { createSchoolFormulaCatalogIndex, publicSchoolFormulas } from "../lib/schoolFormulaCatalog.js";
@@ -17,18 +17,16 @@ export function normalizeSearch(value) {
     .trim();
 }
 
-function majorNameMatcher(query) {
-  const accentedTerm = String(query ?? "").normalize("NFC").toLocaleLowerCase("vi")
+function accentedName(value) {
+  return String(value ?? "").normalize("NFC").toLocaleLowerCase("vi")
     .replace(/[^\p{L}\p{N}]+/gu, " ").replace(/\s+/g, " ").trim();
+}
+
+function majorNameMatcher(query) {
+  const accentedTerm = accentedName(query);
   const term = normalizeSearch(accentedTerm);
   const preserveAccents = accentedTerm !== term;
-  return (major) => {
-    const name = preserveAccents
-      ? String(major.name ?? "").normalize("NFC").toLocaleLowerCase("vi")
-        .replace(/[^\p{L}\p{N}]+/gu, " ").replace(/\s+/g, " ").trim()
-      : normalizeSearch(major.name);
-    return !term || name.includes(preserveAccents ? accentedTerm : term);
-  };
+  return (indexed) => !term || (preserveAccents ? indexed.accentedName : indexed.name).includes(preserveAccents ? accentedTerm : term);
 }
 
 function page(items, requestedPage, requestedSize, { defaultSize = 24, maxSize = 200 } = {}) {
@@ -77,6 +75,10 @@ export function createDataStore({ universities, majors, combinations, subjects, 
     if (!Object.hasOwn(major, "methodCode")) Object.defineProperty(major, "methodCode", { value: methodCode, enumerable: false });
     return {
       major, methodCode,
+      name: normalizeSearch(major.name),
+      accentedName: accentedName(major.name),
+      cutoff: validateCutoff(major.cutoff, { sourceEvidenceAvailable: major.cutoffEvidenceAvailable === true }).publishable
+        ? major.cutoff : major.cutoff && { ...major.cutoff, score: null },
       text: normalizeSearch(`${major.name} ${major.code} ${major.method} ${major.combination}`),
       combinationCodes: parseCombinationCodes(major.combination, validCombinationCodes)
     };
@@ -382,11 +384,12 @@ export function createDataStore({ universities, majors, combinations, subjects, 
     const combination = String(query.combination || "").toLocaleUpperCase("vi");
     const universityId = String(query.universityId || "");
     const region = String(query.region || "");
-    const filtered = indexedMajors.filter(({ major, combinationCodes, methodCode }) => {
+    const filtered = indexedMajors.filter((indexed) => {
+      const { major, combinationCodes, methodCode } = indexed;
       const university = universitiesById.get(major.universityId);
       const score = major.cutoff?.score;
       return (!ids.size || ids.has(major.id)) &&
-        matchesName(major) &&
+        matchesName(indexed) &&
         (!universityId || major.universityId === universityId) &&
         (!region || region === "all" || university?.region === region) &&
         (!requestedMethodCode || methodCode === requestedMethodCode) &&
@@ -397,8 +400,8 @@ export function createDataStore({ universities, majors, combinations, subjects, 
         (minScore === null || (Number.isFinite(score) && score >= minScore)) &&
         (maxScore === null || (Number.isFinite(score) && score <= maxScore));
     });
-    const compared = filtered.map(({ major }) => {
-      const clean = toPublicMajor(major);
+    const compared = filtered.map(({ major, methodCode, cutoff, combinationCodes }) => {
+      const clean = { major, id: major.id, name: major.name, method: major.method, methodCode, cutoff };
       const check = comparisonScore === null ? null : comparisonCompatibility(major, {
           score: comparisonScore,
           scale: comparisonScale,
@@ -407,7 +410,7 @@ export function createDataStore({ universities, majors, combinations, subjects, 
           methodCode: requestedMethodCode,
           combination,
           ruleId: query.ruleId
-      }, validCombinationCodes);
+      }, validCombinationCodes, combinationCodes);
       if (check?.compatible) {
         const difference = Number((comparisonScore - major.cutoff.score).toFixed(2));
         clean.comparison = {
@@ -420,10 +423,16 @@ export function createDataStore({ universities, majors, combinations, subjects, 
           userScore: comparisonScore, scale: comparisonScale, combination, year: year || 2026, method, ruleId: String(query.ruleId || "")
         };
       }
-      clean.university = sanitizeUniversity(summaryById.get(major.universityId));
+      clean.university = summaryById.get(major.universityId);
       return clean;
     });
-    return page(sortComparedMajors(compared, query.sort || "school"), query.page, query.pageSize, { defaultSize: 24, maxSize: 100 });
+    const result = page(sortComparedMajors(compared, query.sort || "school"), query.page, query.pageSize, { defaultSize: 24, maxSize: 100 });
+    result.items = result.items.map((item) => ({
+      ...toPublicMajor(item.major),
+      ...(item.comparison ? { comparison: item.comparison } : {}),
+      university: sanitizeUniversity(item.university)
+    }));
+    return result;
   }
 
   function findBestMajorCombinations(input = {}) {
@@ -444,10 +453,11 @@ export function createDataStore({ universities, majors, combinations, subjects, 
     const maxScore = input.maxScore === "" || input.maxScore === undefined ? null : Number(input.maxScore);
     const cutoffScale = input.cutoffScale === "" || input.cutoffScale === undefined ? null : Number(input.cutoffScale);
     const groups = new Map();
-    for (const { major, combinationCodes, methodCode } of indexedMajors) {
+    for (const indexed of indexedMajors) {
+      const { major, combinationCodes, methodCode } = indexed;
       const university = universitiesById.get(major.universityId);
       if (!combinationCodes.some((code) => wantedCodes.has(code))) continue;
-      if (!matchesName(major)) continue;
+      if (!matchesName(indexed)) continue;
       if (input.universityId && major.universityId !== input.universityId) continue;
       if (input.region && input.region !== "all" && university?.region !== input.region) continue;
       if (methodCode !== "thpt" || Number(major.cutoff?.year) !== Number(input.year || 2026)) continue;

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/refinement.css?v=20261004-1" />
     <link rel="stylesheet" href="css/practice-exam.css?v=20260928-1" />
     <link rel="stylesheet" href="css/assistant.css?v=20260929-2" />
-    <link rel="stylesheet" href="css/redesign.css?v=20261004-1" />
+    <link rel="stylesheet" href="css/redesign.css?v=20261010-2" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
@@ -338,14 +338,17 @@
                     <div class="field"><label for="major-user-score">Điểm của bạn</label><input id="major-user-score" type="text" inputmode="decimal" placeholder="Điểm cùng phương thức" disabled /><small>Điểm thi gốc hoặc điểm xét tuyển đúng thang đã chọn.</small></div>
                     <div class="field"><label for="major-score-filter">Điểm chuẩn tối đa</label><input id="major-score-filter" type="text" inputmode="decimal" placeholder="Ví dụ 25,5" disabled /></div>
                     <div class="field"><label for="major-status-filter">Trạng thái dữ liệu</label><select id="major-status-filter"><option value="verified,reference">Đã xác minh + Tham khảo</option><option value="verified">Đã xác minh</option><option value="reference">Tham khảo</option><option value="unverified">Chưa xác minh</option></select></div>
-                    <div class="field"><label for="major-sort">Sắp xếp</label><select id="major-sort"><option value="school">Tên trường</option><option value="difference-desc">Chênh lệch cao nhất</option><option value="difference-asc">Chênh lệch thấp nhất</option><option value="cutoff-asc">Điểm chuẩn tăng dần</option><option value="cutoff-desc">Điểm chuẩn giảm dần</option></select></div>
                   </div></details>
                   <div class="form-actions major-filter-actions"><button class="button button-primary" type="submit">Tìm ngành</button><button class="button button-text" id="major-filter-clear" type="button">Xóa bộ lọc</button></div>
                 </form>
                 <p class="form-note">Chưa thể lọc theo tỉnh/thành, cơ sở hay học phí: dữ liệu còn khác nhau về năm, đơn vị và chương trình đào tạo.</p>
               </details>
               <div class="finder-score-context is-hidden" id="major-score-context" role="status"></div>
-              <p class="directory-summary" id="major-result-summary" role="status">Chọn bộ lọc hoặc dùng nút “Tìm ngành” trong kết quả tính điểm.</p>
+              <div class="major-results-toolbar">
+                <p class="directory-summary" id="major-result-summary" role="status">Chọn bộ lọc hoặc dùng nút “Tìm ngành” trong kết quả tính điểm.</p>
+                <div class="field is-hidden" id="major-sort-field"><label for="major-sort">Sắp xếp kết quả</label><select id="major-sort" aria-controls="major-result-grid" aria-describedby="major-sort-note"><option value="school">Tên trường A → Z</option><option value="cutoff-desc">Điểm chuẩn cao → thấp</option><option value="cutoff-asc">Điểm chuẩn thấp → cao</option><option value="major-asc">Tên ngành A → Z</option><option value="major-desc">Tên ngành Z → A</option><option value="difference-nearest" disabled>Gần điểm của tôi nhất</option><option value="difference-desc" disabled>Chênh lệch điểm cao nhất</option><option value="difference-asc" disabled>Chênh lệch điểm thấp nhất</option></select></div>
+              </div>
+              <p class="form-note is-hidden" id="major-sort-note">Điểm chuẩn được xếp riêng theo phương thức và thang điểm; ngành chưa có điểm ở cuối. Nhập điểm của bạn để sắp theo chênh lệch, chỉ áp dụng cho ngành đủ căn cứ đối chiếu cùng cách tính.</p>
               <p class="reference-warning finder-reference-warning"><strong>Lưu ý:</strong> Kết quả phục vụ tham khảo tuyển sinh 2027, hiện mô phỏng theo quy tắc và dữ liệu 2026. Quy định năm 2027 đang cập nhật. Hãy kiểm tra đề án tuyển sinh chính thức của trường trước khi đăng ký nguyện vọng.</p>
               <div class="major-result-grid" id="major-result-grid" aria-live="polite"></div>
               <nav class="pagination" id="major-pagination" aria-label="Trang kết quả ngành"></nav>
@@ -480,6 +483,6 @@
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="js/main.js?v=20261010-1"></script>
+  <script type="module" src="js/main.js?v=20261010-2"></script>
   </body>
 </html>

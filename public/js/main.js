@@ -285,7 +285,7 @@ class THPTApp {
       if (!event.target.matches("#major-sort")) invalidateMajorResults();
     });
     $("#major-method-filter").addEventListener("change", () => this.syncMajorScoreContext());
-    $("#major-sort").addEventListener("change", () => { invalidateMajorResults.cancel(); if ($("#major-result-grid").children.length) this.majorSearchMode === "combinations" ? this.loadBestCombinationResults() : this.loadMajorResults(); });
+    $("#major-sort").addEventListener("change", () => { invalidateMajorResults.cancel(); this.majorPage = 1; if ($("#major-result-grid").children.length) this.majorSearchMode === "combinations" ? this.loadBestCombinationResults() : this.loadMajorResults(); });
     $("#major-filter-clear").addEventListener("click", () => { invalidateMajorResults.cancel(); this.clearMajorFilters(); });
     $("#clear-saved-wishes").addEventListener("click", () => { if (!this.savedWishes.length) return; this.recentWishRemoval = { items: [...this.savedWishes], index: 0 }; this.savedWishes = []; this.persistWishes(); });
     $("#clear-comparison").addEventListener("click", () => { this.comparisonItems = []; this.persistComparison(); });
@@ -1075,6 +1075,9 @@ class THPTApp {
   renderMajorScoreContext() {
     const target = $("#major-score-context");
     if (!target) return;
+    const hasScore = !this.activeFinderContext?.stale && Boolean(this.activeFinderContext?.results?.length || ($("#major-user-score")?.value.trim() && $("#major-method-filter")?.value));
+    $$('#major-sort option[value^="difference-"]').forEach((option) => { option.disabled = !hasScore; });
+    if ($("#major-sort").selectedOptions[0]?.disabled) $("#major-sort").value = "school";
     if (this.activeFinderContext?.stale || (this.activeFinderContext && !finderContextIsFresh(this.activeFinderContext, this.scoreProfile))) {
       target.classList.remove("is-hidden");
       target.dataset.state = "stale";
@@ -1106,6 +1109,8 @@ class THPTApp {
   invalidateMajorResults() {
     this.majorAbort?.abort();
     this.majorPage = 1;
+    $("#major-sort-field").classList.add("is-hidden");
+    $("#major-sort-note").classList.add("is-hidden");
     $("#major-result-grid").innerHTML = "";
     $("#major-pagination").innerHTML = "";
     $("#major-result-summary").textContent = "Bộ lọc đã thay đổi. Nhấn \"Tìm ngành\" để cập nhật kết quả.";
@@ -1118,9 +1123,6 @@ class THPTApp {
       if (!query.method || !Number.isFinite(scale)) return { valid: false, message: `${label}: hãy chọn phương thức và thang điểm.` };
       const value = Number(raw);
       if (!Number.isFinite(value) || value < 0 || value > scale) return { valid: false, message: `${label} phải từ 0 đến ${scale}.` };
-    }
-    if (["cutoff-asc", "cutoff-desc"].includes(query.sort) && (!query.method || !Number.isFinite(scale))) {
-      return { valid: false, message: "Để sắp xếp theo điểm chuẩn, hãy chọn phương thức và thang điểm tương ứng." };
     }
     return { valid: true, query };
   }
@@ -1138,6 +1140,8 @@ class THPTApp {
     } catch (error) { if (error.name !== "AbortError") { $("#major-result-summary").textContent = "Không thể tải dữ liệu."; $("#major-result-grid").innerHTML = '<p class="empty-state error-state">Không thể tải dữ liệu. Hãy thử lại.</p>'; } }
   }
   renderMajorResults(items, pagination = { page: 1, pages: 1, total: items.length }) {
+    $("#major-sort-field").classList.toggle("is-hidden", !items.length);
+    $("#major-sort-note").classList.toggle("is-hidden", !items.length);
     $("#major-result-grid").classList.remove("is-stale-results");
     $("#major-result-summary").textContent = items.length ? `${pagination.total} kết quả phù hợp` : "Không tìm thấy ngành phù hợp.";
     $("#major-result-grid").innerHTML = items.length ? items.map((major) => this.majorResultCard(major)).join("") : '<p class="empty-state">Không tìm thấy ngành phù hợp.</p>';
@@ -1215,7 +1219,7 @@ class THPTApp {
       }
     }
   }
-  clearMajorFilters() { $("#major-filter-form").reset(); this.activeFinderContext = null; this.syncMajorScoreContext(); this.finderComparisonScore = null; this.finderComparisonScale = null; this.finderComparisonRule = null; this.majorSearchMode = "filters"; this.allCombinationSearch = null; this.majorPage = 1; $("#major-result-grid").innerHTML = ""; $("#major-result-summary").textContent = "Đã xóa bộ lọc."; $("#major-pagination").innerHTML = ""; this.renderMajorScoreContext(); }
+  clearMajorFilters() { $("#major-filter-form").reset(); $("#major-sort").value = "school"; $("#major-sort-field").classList.add("is-hidden"); $("#major-sort-note").classList.add("is-hidden"); this.activeFinderContext = null; this.syncMajorScoreContext(); this.finderComparisonScore = null; this.finderComparisonScale = null; this.finderComparisonRule = null; this.majorSearchMode = "filters"; this.allCombinationSearch = null; this.majorPage = 1; $("#major-result-grid").innerHTML = ""; $("#major-result-summary").textContent = "Đã xóa bộ lọc."; $("#major-pagination").innerHTML = ""; this.renderMajorScoreContext(); }
   saveWishFromButton(button) {
     const id = button.dataset.saveMajor;
     const major = this.repository.getMajor(id);

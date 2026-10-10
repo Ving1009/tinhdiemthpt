@@ -412,6 +412,14 @@ body.dark .site-header { background:var(--surface); }
   .tool-link { font-size:12px; }
   #score-form .candidate-card .form-grid { grid-template-columns:1fr; }
 }
+.major-results-toolbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px; }
+.major-results-toolbar .directory-summary { margin:0; }
+.major-results-toolbar .field { min-width:0; width:260px; max-width:100%; }
+#major-sort-note { margin-bottom:14px; }
+@media(max-width:600px) {
+  .major-results-toolbar { align-items:stretch; flex-direction:column; }
+  .major-results-toolbar .field { width:100%; }
+}
 @media(prefers-reduced-motion:reduce) {
   .home-tool-card:hover { transform:none; }
 }

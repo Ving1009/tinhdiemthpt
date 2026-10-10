@@ -20,6 +20,20 @@ const combinations = [
 ];
 const store = createDataStore({ universities, majors, combinations, subjects: [] });
 
+test("tìm tên ngành rồi sắp điểm trước khi phân trang mà không phải nhập điểm cá nhân", () => {
+  const rows = Array.from({ length: 40 }, (_, index) => ({
+    ...majors[0], id: `sort-${index}`, name: `Toán ${String(index).padStart(2, "0")}`, code: `7${index}`,
+    cutoff: { ...majors[0].cutoff, score: 10 + index / 2 }
+  }));
+  const sortedStore = createDataStore({ universities, majors: rows, combinations });
+  for (const [sort, highest] of [["cutoff-desc", true], ["cutoff-asc", false], ["major-desc", true], ["major-asc", false]]) {
+    const result = sortedStore.listMajors({ q: "toán", sort, page: 1, pageSize: 24 });
+    assert.equal(result.pagination.total, 40);
+    assert.equal(result.items.length, 24);
+    assert.equal(result.items[0].id, highest ? "sort-39" : "sort-0");
+  }
+});
+
 test("phân trang dùng số nguyên và đầu vào tổ hợp không hợp lệ không gây crash", () => {
   const result = store.listMajors({ page: 1.5, pageSize: 2.5 });
   assert.equal(result.pagination.page, 1);

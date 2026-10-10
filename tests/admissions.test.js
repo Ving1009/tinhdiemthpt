@@ -1,6 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { cutoffLabel, cutoffStatusLabel, paginate, publicProfileNote, publishableCutoff, verifiedCutoff } from "../public/js/admissions.js";
+import { ADMISSIONS_2027_NOTICE, cutoffLabel, cutoffStatusLabel, paginate, publicProfileNote, publishableCutoff, verifiedCutoff } from "../public/js/admissions.js";
+
+test("cảnh báo 2027 nói rõ dữ liệu và công thức 2026 không áp dụng mặc định cho năm mới", () => {
+  assert.match(ADMISSIONS_2027_NOTICE, /thí sinh năm 2027/);
+  assert.match(ADMISSIONS_2027_NOTICE, /2027 đang cập nhật/);
+  assert.match(ADMISSIONS_2027_NOTICE, /năm 2026 chỉ để tham khảo/);
+  assert.match(ADMISSIONS_2027_NOTICE, /không áp dụng mặc định cho năm 2027/);
+});
 
 test("client chỉ công bố điểm đã được API làm sạch và đủ năm, điểm, thang điểm", () => {
   const verified = { cutoff: { year: 2026, score: 26.35, scale: 30, status: "verified" } };

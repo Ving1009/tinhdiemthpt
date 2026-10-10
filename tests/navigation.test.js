@@ -3,6 +3,16 @@ import test from "node:test";
 import { readFile } from "node:fs/promises";
 import { resolveAppView } from "../public/js/utils.js";
 
+test("thứ tự và số mục 01–08 khớp điều hướng chính", async () => {
+  const html = await readFile(new URL("../public/index.html", import.meta.url), "utf8");
+  const sections = [...html.matchAll(/<section class="section [^"]+" id="([^"]+)"[^>]*>([\s\S]*?)<\/section>/g)];
+  const expected = ["calculator", "academic", "admission", "combinations", "universities", "major-finder", "practice-exams", "guide"];
+  assert.deepEqual(sections.map((match) => match[1]), expected);
+  assert.deepEqual(sections.map((match) => match[2].match(/class="eyebrow">(\d{2}) ·/)?.[1]), ["01", "02", "03", "04", "05", "06", "07", "08"]);
+  const nav = html.split('id="site-nav"')[1].split('</nav>')[0];
+  assert.deepEqual([...nav.matchAll(/href="#([^"]+)"/g)].map((match) => match[1]).filter((id) => id !== "home"), expected);
+});
+
 test("account and tools share the same storage module and its account write guard", async () => {
   const urls = await Promise.all(["main.js", "account.js", "practiceExam.js"].map(async (name) => {
     const file = new URL(`../public/js/${name}`, import.meta.url);

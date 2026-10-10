@@ -25,10 +25,15 @@ test("public source không chứa wording hay website thu thập dữ liệu", a
   ]) assert.equal(content.toLocaleLowerCase("vi").includes(forbidden.toLocaleLowerCase("vi")), false, `không được public: ${forbidden}`);
 });
 
-test("HTML có tìm kiếm mobile, khóa năm 2027 và đã dọn UI cũ", async () => {
+test("HTML có tìm kiếm mobile, chọn năm 2027 và giữ nhãn dữ liệu tham khảo 2026", async () => {
   const html = await readFile(new URL("index.html", publicRoot), "utf8");
   assert.match(html, /id="mobile-search"/);
-  assert.match(html, /value="2027" disabled/);
+  assert.match(html, /value="2027" selected>2027/);
+  assert.doesNotMatch(html, /value="2027" disabled/);
+  assert.match(html, /Dữ liệu tuyển sinh 2027 đang cập nhật/);
+  assert.match(html, /điểm chuẩn năm 2026 để tham khảo cho tuyển sinh 2027/);
+  assert.match(html, /Luyện thi THPT 2027/);
+  assert.match(html, /17 đề thi tốt nghiệp THPT 2026/);
   assert.match(html, /<h3>Quét học bạ \(không bắt buộc\)<\/h3>/);
   assert.doesNotMatch(html, /AI \+ OCR|Độ tin cậy|id="certificate"|Quy đổi chứng chỉ theo trường|id="formulas"|Mục 8/i);
   assert.equal((html.match(/id="export-wishes-pdf"/g) || []).length, 1);
@@ -36,9 +41,9 @@ test("HTML có tìm kiếm mobile, khóa năm 2027 và đã dọn UI cũ", async
   assert.match(html, /id="transcript-fallback-dialog"/);
   assert.match(html, /Chính sách quyền riêng tư/);
   assert.equal((html.match(/class="reference-warning/g) || []).length, 3);
-  assert.match(html, /<title>Tính Điểm THPT \| Tra cứu tuyển sinh 2026<\/title>/);
-  assert.match(html, /<meta property="og:title" content="Tính Điểm THPT \| Tra cứu tuyển sinh 2026"/);
-  assert.match(html, /<meta name="twitter:title" content="Tính Điểm THPT \| Tra cứu tuyển sinh 2026"/);
+  assert.match(html, /<title>Tính Điểm THPT \| Tra cứu tuyển sinh 2027<\/title>/);
+  assert.match(html, /<meta property="og:title" content="Tính Điểm THPT \| Tra cứu tuyển sinh 2027"/);
+  assert.match(html, /<meta name="twitter:title" content="Tính Điểm THPT \| Tra cứu tuyển sinh 2027"/);
   assert.doesNotMatch(html, /transcript-api-base|26\.75|● Đã tính/);
   assert.match(html, /Ví dụ minh họa/);
   assert.match(html, /<strong>26\.40<\/strong>/);

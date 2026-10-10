@@ -264,7 +264,7 @@ export class PracticeExamApp {
     this.root.innerHTML = `
       <div class="practice-exam-shell">
         <header class="practice-exam-header">
-          <div><p class="eyebrow">Thi thử 2026 · ${selectedExam.sourceKind === "official-paper" ? "Đề chính thức" : "Đề luyện"}</p><h3>${escapeHTML(selectedExam.subject)}</h3><p>${escapeHTML(selectedExam.title)} · ${questions.length} câu cần làm · thang 10</p></div>
+          <div><p class="eyebrow">Luyện thi THPT 2027 · ${selectedExam.sourceKind === "official-paper" ? "Đề chính thức 2026" : "Đề luyện tham khảo"}</p><h3>${escapeHTML(selectedExam.subject)}</h3><p>${escapeHTML(selectedExam.title)} · ${questions.length} câu cần làm · thang 10</p></div>
           <div class="practice-timer-wrap"><span>Thời gian còn lại</span><strong id="practice-timer" aria-live="polite">${formatExamTime(remainingExamSeconds(this.active))}</strong></div>
         </header>
         <div class="practice-progress"><span id="practice-progress-label">Đã làm 0/${questions.length}</span><div><i id="practice-progress-bar"></i></div></div>

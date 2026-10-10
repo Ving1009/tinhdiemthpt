@@ -34,6 +34,26 @@ test("normalize search hỗ trợ tiếng Việt có và không dấu", () => {
   assert.equal(normalizeSearch("ĐẠI HỌC"), "dai hoc");
 });
 
+test("từ khóa Tìm ngành chỉ khớp tên ngành và phân biệt toán với toàn khi có dấu", () => {
+  const names = ["Toán học", "Sư phạm Toán học", "Kế toán", "An toàn thông tin", "Ngôn ngữ Hàn Quốc", "Công nghệ thông tin"];
+  const keywordStore = createDataStore({ universities, combinations, majors: names.map((name, index) => ({
+    ...majors[0], id: `keyword-${index}`, code: `748020${index}`, name,
+    combination: "A00 (Toán, Vật lí, Hóa học); A01"
+  })) });
+  for (const q of ["toán", "TOÁN", "toán".normalize("NFD")]) {
+    assert.deepEqual(keywordStore.listMajors({ q }).items.map((item) => item.name).sort(), names.slice(0, 3).sort());
+    assert.deepEqual(keywordStore.findBestMajorCombinations({ q, year: 2026, results: [
+      { combination: "A01", score: 26.4, scale: 30, method: "THPT", ruleId: "three-subject-sum-priority-2026" }
+    ] }).items.map((item) => item.name).sort(), names.slice(0, 3).sort());
+  }
+  assert.deepEqual(keywordStore.listMajors({ q: "toàn" }).items.map((item) => item.name), ["An toàn thông tin"]);
+  assert.deepEqual(keywordStore.listMajors({ q: "ngon ngu han quoc" }).items.map((item) => item.name), ["Ngôn ngữ Hàn Quốc"]);
+  for (const q of ["A00", "Vật lí", "THPT", "748020", "Giao thông vận tải"]) {
+    assert.equal(keywordStore.listMajors({ q }).pagination.total, 0, q);
+  }
+  assert.equal(keywordStore.listMajors({ q: "", method: "THPT", combination: "A01" }).pagination.total, names.length);
+});
+
 test("tìm ngành điện điện tử không cần nhập đúng dấu phẩy hoặc gạch ngang của tên ngành", () => {
   const names = ["Công nghệ kỹ thuật điện, điện tử", "Kỹ thuật điện – điện tử", "Kỹ thuật điện-điện tử"];
   const electricalStore = createDataStore({ universities, combinations, majors: names.map((name, index) => ({ ...majors[0], id: `electrical-${index}`, name })) });

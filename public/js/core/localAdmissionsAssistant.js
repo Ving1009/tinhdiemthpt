@@ -280,7 +280,7 @@ export function answerAdmissionsQuestion(knowledge, input) {
   }
   if (/^(xin chao|chao|hello|hi|alo)\b/.test(normalized)) {
     return {
-      text: `Chào bạn. Bạn có thể hỏi về dữ liệu tuyển sinh ${knowledge.year}, cách dùng website hoặc gửi thông tin cần sửa. Phần tra cứu nội bộ của Tính Điểm THPT chạy ngay trên thiết bị của bạn.`,
+      text: `Chào bạn. Website dành cho thí sinh thi THPT 2027; dữ liệu tuyển sinh ${knowledge.year} hiện dùng để tham khảo, thông tin 2027 đang cập nhật. Bạn có thể hỏi về trường, ngành, cách dùng website hoặc gửi thông tin cần sửa. Phần tra cứu nội bộ chạy ngay trên thiết bị của bạn.`,
       cards: [], suggestions: ["Tìm ngành Công nghệ thông tin", "25 điểm THPT nên xem ngành nào?", "Báo thông tin sai"]
     };
   }

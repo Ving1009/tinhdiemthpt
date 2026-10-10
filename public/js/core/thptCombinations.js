@@ -22,7 +22,8 @@ export function findMatchingCombinations(entries, combinations) {
 }
 
 export function calculateCombination(combination, entries, { year = 2026, priorityContext = {} } = {}) {
-  const formula = getThptFormulaForYear(year);
+  // Năm 2027 đang cập nhật; mô phỏng bằng quy tắc tham khảo 2026, không xác minh thành quy chế 2027.
+  const formula = getThptFormulaForYear(Number(year) === 2027 ? 2026 : year);
   if (!formula) throw new Error(`Công thức THPT ${year} đang được cập nhật.`);
   const scoreMap = new Map(entries.map((item) => [item.subjectKey, Number(item.score)]));
   const keys = combinationSubjectKeys(combination);

@@ -29,6 +29,8 @@ test("Groq nhận câu hỏi cùng dữ liệu website qua backend", async () =>
   const body = JSON.parse(request.options.body);
   assert.equal(body.model, "test-model");
   assert.match(body.messages[0].content, /DỮ LIỆU WEBSITE/);
+  assert.match(body.messages[0].content, /thi THPT năm 2027/);
+  assert.match(body.messages[0].content, /năm 2026 chỉ để tham khảo/);
   assert.match(body.messages[0].content, /7480201/);
   assert.equal(body.messages.at(-1).content, "BKA có ngành CNTT không?");
   assert.equal(result.answer, "BKA có ngành Công nghệ thông tin trong dữ liệu website.");

@@ -3,9 +3,25 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { calculateAutomaticCombinations, findMatchingCombinations, validateSubjectEntries } from "../public/js/core/thptCombinations.js";
 import { isStandardCombination } from "../public/js/core/subjectMatching.js";
+import { getThptFormulaForYear } from "../public/formulas/index.js";
 
 const combinations = JSON.parse(await readFile(new URL("../data/combinations.json", import.meta.url), "utf8"));
 const entry = (subjectKey, score = 8) => ({ subjectKey, score });
+
+test("THPT 2027 mô phỏng được 26.40 theo quy tắc 2026, không gắn nhãn đã xác minh 2027", () => {
+  const input = {
+    entries: [entry("math", 9), entry("physics", 9), entry("chemistry", 8), entry("foreignLanguage:english", 8)],
+    combinations, priorityContext: { area: "KV1", priorityGroup: "none" }
+  };
+  const calculated = calculateAutomaticCombinations({ ...input, year: 2027 });
+  assert.equal(calculated.valid, true);
+  assert.equal(calculated.results[0].result.total, 26.4);
+  assert.equal(calculated.results[0].result.priority.adjusted, 0.4);
+  assert.deepEqual(calculated.results, calculateAutomaticCombinations({ ...input, year: 2026 }).results);
+  assert.equal(getThptFormulaForYear(2027), undefined);
+  assert.equal(getThptFormulaForYear(2026).year, 2026);
+  assert.throws(() => calculateAutomaticCombinations({ ...input, year: 2028 }), /đang được cập nhật/);
+});
 
 test("bốn môn Toán, Lí, Hóa, Anh chỉ tạo các tổ hợp thật và xếp điểm giảm dần", () => {
   const result = calculateAutomaticCombinations({

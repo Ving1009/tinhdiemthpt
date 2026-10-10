@@ -1,10 +1,10 @@
-import { ADMISSIONS_2026_NOTICE, canCalculateMajor, cutoffLabel, cutoffStatusLabel, paginate, publicProfileNote, publishableCutoff, verifiedCutoff } from "./admissions.js?v=20261003-1";
+import { ADMISSIONS_2027_NOTICE, canCalculateMajor, cutoffLabel, cutoffStatusLabel, paginate, publicProfileNote, publishableCutoff, verifiedCutoff } from "./admissions.js?v=20261010-1";
 import { UniversityRepository } from "./university.js?v=20260914-2";
 import { $, $$, debounce, escapeHTML, formatScore, resolveAppView, sanitizeScoreInput, storage, validateScore } from "./utils.js";
 import { ACADEMIC_METHODS } from "../formulas/hocba.js";
 import { calculateAcademicCombinations } from "./core/academicCalculator.js";
 import { STANDARD_SUBJECTS, combinationSubjectKeys, isStandardCombination, subjectLabelForKey } from "./core/subjectMatching.js";
-import { calculateAutomaticCombinations, calculateCombination, validateSubjectEntries } from "./core/thptCombinations.js";
+import { calculateAutomaticCombinations, calculateCombination, validateSubjectEntries } from "./core/thptCombinations.js?v=20261010-1";
 import { createDataReport } from "./core/dataReport.js";
 import { markGuestSessionLeft, refreshPersonalDataRetention } from "./core/personalDataRetention.js";
 import { simulateScoreChange } from "./core/scoreSimulation.js";
@@ -14,9 +14,9 @@ import { autoFillTranscript } from "./autoFillTranscript.js";
 import { TranscriptPreview } from "./transcriptPreview.js";
 import { TranscriptScanner } from "./transcriptScanner.js?v=20261001-2";
 import { turnstileGate } from "./turnstile.js";
-import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261001-1";
+import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261010-1";
 import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-2";
-import { AdmissionsAssistant } from "./assistant.js?v=20261001-1";
+import { AdmissionsAssistant } from "./assistant.js?v=20261010-1";
 import { calculateSchoolFormula, schoolFormulaBranches, selectSchoolFormulaRule, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20261004-3";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
@@ -363,7 +363,7 @@ class THPTApp {
       link.classList.toggle("is-active", active);
       active ? link.setAttribute("aria-current", link.dataset.views && link.hash !== `#${view}` ? "true" : "page") : link.removeAttribute("aria-current");
     });
-    document.title = "Tính Điểm THPT | Tra cứu tuyển sinh 2026";
+    document.title = "Tính Điểm THPT | Tra cứu tuyển sinh 2027";
   }
   async handleLocationChange() {
     this.setView(location.hash);
@@ -977,7 +977,7 @@ class THPTApp {
         : "Chưa có ngành áp dụng";
       const website = university.websiteStatus === 'needs_review' ? '' : safeWebsite(university.website);
       const admissionsCode = university.officialAdmissionsCode || university.code;
-      this.elements.modalBody.innerHTML = `<div class="detail-header">${this.logoMarkup(university)}<div><p class="modal-kicker">Hồ sơ tuyển sinh 2026</p><h2 id="modal-title">${escapeHTML(university.name)}</h2><p>Mã tuyển sinh: ${escapeHTML(admissionsCode)} · ${escapeHTML(this.regionLabel(university.region))}</p></div><button class="button button-text report-school-button" type="button" data-report-school="${escapeHTML(university.id)}">Báo dữ liệu sai</button></div><div class="profile-status profile-status-compact"><p><b>${escapeHTML(status)}</b> · ${verifiedRows} mục đã xác minh · ${referenceRows} mục tham khảo</p><p>${escapeHTML(note)}</p><p class="reference-warning">${escapeHTML(ADMISSIONS_2026_NOTICE)}</p>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Website chính thức ↗</a>` : ""}</div><section class="profile-formulas" aria-labelledby="profile-formulas-title"><div class="profile-major-heading"><div><p class="modal-kicker">Dữ liệu đã kiểm tra</p><h3 class="modal-section-title" id="profile-formulas-title">Công thức xét tuyển</h3></div><span>${escapeHTML(formulaCoverage)}</span></div>${formulas || `<div class="info-callout formula-unverified">${escapeHTML(formulaData.emptyReason || "Chưa có ngành trong hồ sơ để áp dụng công thức.")}</div>`}</section><section class="profile-majors" aria-labelledby="profile-majors-title"><div class="profile-major-heading"><div><p class="modal-kicker">Tra cứu nhanh</p><h3 class="modal-section-title" id="profile-majors-title">Ngành và điểm chuẩn 2026</h3></div><span>${programCount} ngành / chương trình</span></div><div class="detail-filters"><input id="detail-major-search" type="search" placeholder="Tìm ngành hoặc mã ngành" aria-label="Tìm ngành" ${summary.majorRowCount ? "" : "disabled"} /><select id="detail-method-filter" aria-label="Lọc phương thức" ${summary.majorRowCount ? "" : "disabled"}><option value="">Tất cả phương thức</option>${methods.map((method) => `<option value="${escapeHTML(method)}">${escapeHTML(method)}</option>`).join("")}</select></div><p class="detail-result-count" id="detail-result-count"></p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Ngành</th><th>Mã ngành</th><th>Tổ hợp</th><th>Phương thức</th><th>Điểm chuẩn 2026</th><th>Công thức tính điểm</th></tr></thead><tbody id="detail-major-rows"></tbody></table></div><nav class="pagination detail-pagination" id="detail-major-pagination" aria-label="Trang ngành trong hồ sơ"></nav></section><details class="profile-overview"><summary>Thông tin trường và đề án tuyển sinh</summary><div class="profile-overview-body"><p class="modal-description">${escapeHTML(university.description)}</p><div class="detail-meta"><div><span>Khu vực</span><b>${escapeHTML(this.regionLabel(university.region))}</b></div><div><span>Ngành / chương trình</span><b>${programCount}</b></div><div><span>Mục ngành / phương thức</span><b>${summary.majorRowCount || 0}</b></div><div><span>Điểm chuẩn đã cập nhật</span><b>${published}</b></div><div><span>Kiểm tra dữ liệu</span><b>${escapeHTML(checkedAt)}</b></div><div><span>Website</span>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Trang của trường ↗</a>` : "<b>Đang cập nhật</b>"}</div></div><div class="profile-sections"><details><summary>Phương thức tuyển sinh</summary><div class="profile-section-body"><p>${escapeHTML((evidence.methods || university.methods || []).join(" · ") || classified || "Đang cập nhật")}</p></div></details></div></div></details>${this.admissionsInformationMarkup(evidence.information2026)}`;
+      this.elements.modalBody.innerHTML = `<div class="detail-header">${this.logoMarkup(university)}<div><p class="modal-kicker">Hồ sơ tuyển sinh 2026</p><h2 id="modal-title">${escapeHTML(university.name)}</h2><p>Mã tuyển sinh: ${escapeHTML(admissionsCode)} · ${escapeHTML(this.regionLabel(university.region))}</p></div><button class="button button-text report-school-button" type="button" data-report-school="${escapeHTML(university.id)}">Báo dữ liệu sai</button></div><div class="profile-status profile-status-compact"><p><b>${escapeHTML(status)}</b> · ${verifiedRows} mục đã xác minh · ${referenceRows} mục tham khảo</p><p>${escapeHTML(note)}</p><p class="reference-warning">${escapeHTML(ADMISSIONS_2027_NOTICE)}</p>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Website chính thức ↗</a>` : ""}</div><section class="profile-formulas" aria-labelledby="profile-formulas-title"><div class="profile-major-heading"><div><p class="modal-kicker">Dữ liệu đã kiểm tra</p><h3 class="modal-section-title" id="profile-formulas-title">Công thức xét tuyển</h3></div><span>${escapeHTML(formulaCoverage)}</span></div>${formulas || `<div class="info-callout formula-unverified">${escapeHTML(formulaData.emptyReason || "Chưa có ngành trong hồ sơ để áp dụng công thức.")}</div>`}</section><section class="profile-majors" aria-labelledby="profile-majors-title"><div class="profile-major-heading"><div><p class="modal-kicker">Tra cứu nhanh</p><h3 class="modal-section-title" id="profile-majors-title">Ngành và điểm chuẩn 2026</h3></div><span>${programCount} ngành / chương trình</span></div><div class="detail-filters"><input id="detail-major-search" type="search" placeholder="Tìm ngành hoặc mã ngành" aria-label="Tìm ngành" ${summary.majorRowCount ? "" : "disabled"} /><select id="detail-method-filter" aria-label="Lọc phương thức" ${summary.majorRowCount ? "" : "disabled"}><option value="">Tất cả phương thức</option>${methods.map((method) => `<option value="${escapeHTML(method)}">${escapeHTML(method)}</option>`).join("")}</select></div><p class="detail-result-count" id="detail-result-count"></p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Ngành</th><th>Mã ngành</th><th>Tổ hợp</th><th>Phương thức</th><th>Điểm chuẩn 2026</th><th>Công thức tính điểm</th></tr></thead><tbody id="detail-major-rows"></tbody></table></div><nav class="pagination detail-pagination" id="detail-major-pagination" aria-label="Trang ngành trong hồ sơ"></nav></section><details class="profile-overview"><summary>Thông tin trường và đề án tuyển sinh</summary><div class="profile-overview-body"><p class="modal-description">${escapeHTML(university.description)}</p><div class="detail-meta"><div><span>Khu vực</span><b>${escapeHTML(this.regionLabel(university.region))}</b></div><div><span>Ngành / chương trình</span><b>${programCount}</b></div><div><span>Mục ngành / phương thức</span><b>${summary.majorRowCount || 0}</b></div><div><span>Điểm chuẩn đã cập nhật</span><b>${published}</b></div><div><span>Kiểm tra dữ liệu</span><b>${escapeHTML(checkedAt)}</b></div><div><span>Website</span>${website ? `<a href="${escapeHTML(website)}" target="_blank" rel="noopener">Trang của trường ↗</a>` : "<b>Đang cập nhật</b>"}</div></div><div class="profile-sections"><details><summary>Phương thức tuyển sinh</summary><div class="profile-section-body"><p>${escapeHTML((evidence.methods || university.methods || []).join(" · ") || classified || "Đang cập nhật")}</p></div></details></div></div></details>${this.admissionsInformationMarkup(evidence.information2026)}`;
       const pageSize = 25;
       let detailPage = initialPage.pagination.page;
       let detailRequest = 0;
@@ -1057,7 +1057,7 @@ class THPTApp {
     const ruleId = this.finderComparisonRule || (["ĐGNL V-ACT", "ĐGNL HSA", "ĐGTD TSA", "ĐGNL SPT", "V-SAT"].includes(method) ? "raw-exam-score" : (method === "THPT" ? "three-subject-sum-priority-2026" : ""));
     const sort = $("#major-sort").value;
     const needsCutoffScale = Boolean($("#major-score-filter").value.trim()) || ["cutoff-asc", "cutoff-desc"].includes(sort);
-    return { q: $("#major-query").value, universityId: $("#major-university-filter").value, region: $("#major-region-filter").value, combination: $("#major-combination-filter").value, method, maxScore: $("#major-score-filter").value.trim().replace(",", "."), cutoffScale: needsCutoffScale ? scale : "", year: 2026, status: $("#major-status-filter").value, score, scale, ruleId, sort, page, pageSize: 24 };
+    return { q: $("#major-query").value, universityId: $("#major-university-filter").value, region: $("#major-region-filter").value, combination: $("#major-combination-filter").value, method, maxScore: $("#major-score-filter").value.trim().replace(",", "."), cutoffScale: needsCutoffScale ? scale : "", year: this.repository.metadata?.admissionsYear || 2026, status: $("#major-status-filter").value, score, scale, ruleId, sort, page, pageSize: 24 };
   }
   syncMajorScoreContext() {
     const method = $("#major-method-filter").value;
@@ -1084,7 +1084,7 @@ class THPTApp {
     if (this.activeFinderContext?.results?.length) {
       target.classList.remove("is-hidden");
       target.dataset.state = "active";
-      target.textContent = `Đang dùng: ${formatFinderScoreContext(this.activeFinderContext, formatScore)}`;
+      target.textContent = `Đang dùng: ${formatFinderScoreContext(this.activeFinderContext, formatScore)}. Đối chiếu dữ liệu ${this.repository.metadata?.admissionsYear || 2026} chỉ để tham khảo.`;
       return;
     }
     const raw = $("#major-user-score")?.value.trim().replace(",", ".");
@@ -1092,7 +1092,7 @@ class THPTApp {
     const scale = $("#major-score-scale")?.value;
     target.classList.toggle("is-hidden", !raw);
     target.dataset.state = raw ? "manual" : "";
-    target.textContent = raw ? `Đang dùng điểm nhập trực tiếp: ${raw}/${scale || "?"} · ${method || "chưa chọn phương thức"} 2026` : "";
+    target.textContent = raw ? `Đang dùng điểm nhập trực tiếp: ${raw}/${scale || "?"} · ${method || "chưa chọn phương thức"} ${$("#admission-year").value}. Đối chiếu dữ liệu ${this.repository.metadata?.admissionsYear || 2026} chỉ để tham khảo.` : "";
   }
   exitAllCombinationMode(clearFinderContext = false) {
     this.majorSearchMode = "filters";
@@ -1146,7 +1146,7 @@ class THPTApp {
   majorResultCard(major) {
     const status = publishableCutoff(major) ? cutoffStatusLabel(major) : cutoffLabel(major);
     let comparison = "Chưa đủ dữ liệu để so sánh.";
-    if (major.comparison?.compatible) comparison = `${major.comparison.direction === "above" ? "Điểm của bạn cao hơn" : "Điểm của bạn thấp hơn"} điểm chuẩn · Chênh lệch: ${major.comparison.difference >= 0 ? "+" : ""}${formatScore(major.comparison.difference)}`;
+    if (major.comparison?.compatible) comparison = `${major.comparison.direction === "above" ? "Điểm của bạn cao hơn" : "Điểm của bạn thấp hơn"} mốc tham khảo ${major.cutoff?.year || 2026} · Chênh lệch: ${major.comparison.difference >= 0 ? "+" : ""}${formatScore(major.comparison.difference)}`;
     else if (major.comparison?.reason) comparison = major.comparison.reason;
     const selected = major.combinationMatch;
     const comparedScore = selected?.userScore ?? major.comparison?.userScore;
@@ -1155,7 +1155,7 @@ class THPTApp {
     const hasComparison = major.comparison !== undefined || this.finderComparisonScore !== null || $("#major-user-score").value.trim();
     const universityCode = major.university?.officialAdmissionsCode || major.university?.code || major.university?.shortName || "ĐH";
     const universityName = major.university?.name || major.university?.shortName || "Trường đang cập nhật";
-    return `<article class="major-result-card"><div class="major-result-school"><span><b>${escapeHTML(universityCode)}</b><span aria-hidden="true"> · </span>${escapeHTML(universityName)}</span><small>${escapeHTML(major.method || "Đang cập nhật")}</small></div><h3>${escapeHTML(major.name)}</h3><p>${escapeHTML(major.code)} · ${escapeHTML(selected?.combination || major.comparison?.combination || major.combination || "Đang cập nhật tổ hợp")}</p>${Number.isFinite(comparedScore) ? `<div class="user-score-line"><span>Điểm của bạn</span><b>${formatScore(comparedScore)} / ${comparedScale}</b></div>` : ""}<div class="major-result-cutoff"><b>${escapeHTML(cutoffLabel(major))}</b><span>${escapeHTML(status)}</span></div>${hasComparison ? `<p class="comparison-text">${escapeHTML(comparison)}</p>` : ""}${alternatives}<div class="major-card-actions"><button class="button button-light" type="button" data-view-major="${escapeHTML(major.id)}" data-university-id="${escapeHTML(major.universityId)}">Chi tiết</button><button class="button button-light" type="button" data-compare-major="${escapeHTML(major.id)}">So sánh</button><button class="button button-secondary" type="button" data-save-major="${escapeHTML(major.id)}" data-major-name="${escapeHTML(major.name)}" data-major-code="${escapeHTML(major.code)}" data-university-id="${escapeHTML(major.universityId)}">♡ Lưu</button></div></article>`;
+    return `<article class="major-result-card"><div class="major-result-school"><span><b>${escapeHTML(universityCode)}</b><span aria-hidden="true"> · </span>${escapeHTML(universityName)}</span><small>${escapeHTML(major.method || "Đang cập nhật")}</small></div><h3>${escapeHTML(major.name)}</h3><p>${escapeHTML(major.code)} · ${escapeHTML(selected?.combination || major.comparison?.combination || major.combination || "Đang cập nhật tổ hợp")}</p>${Number.isFinite(comparedScore) ? `<div class="user-score-line"><span>Điểm của bạn</span><b>${formatScore(comparedScore)} / ${comparedScale}</b></div>` : ""}<div class="major-result-cutoff"><b>${escapeHTML(cutoffLabel(major))}</b><span>${major.cutoff?.year || 2026} · ${escapeHTML(status)}</span></div>${hasComparison ? `<p class="comparison-text">${escapeHTML(comparison)}</p>` : ""}${alternatives}<div class="major-card-actions"><button class="button button-light" type="button" data-view-major="${escapeHTML(major.id)}" data-university-id="${escapeHTML(major.universityId)}">Chi tiết</button><button class="button button-light" type="button" data-compare-major="${escapeHTML(major.id)}">So sánh</button><button class="button button-secondary" type="button" data-save-major="${escapeHTML(major.id)}" data-major-name="${escapeHTML(major.name)}" data-major-code="${escapeHTML(major.code)}" data-university-id="${escapeHTML(major.universityId)}">♡ Lưu</button></div></article>`;
   }
   findMajorsForCombination(code, score, scale) {
     $("#major-combination-filter").value = code;
@@ -1168,7 +1168,7 @@ class THPTApp {
     this.finderComparisonScore = score;
     this.finderComparisonScale = scale;
     this.finderComparisonRule = "three-subject-sum-priority-2026";
-    const profileResult = this.scoreProfile?.results?.find((item) => item.combination === code) || { combination: code, score, scale, year: 2026, method: "THPT", ruleId: this.finderComparisonRule };
+    const profileResult = this.scoreProfile?.results?.find((item) => item.combination === code) || { combination: code, score, scale, year: Number($("#admission-year").value), method: "THPT", ruleId: this.finderComparisonRule };
     this.activeFinderContext = this.scoreProfile ? createFinderScoreContext(this.scoreProfile, [profileResult]) : null;
     this.renderMajorScoreContext();
     this.majorPage = 1;
@@ -1202,7 +1202,8 @@ class THPTApp {
     $("#major-result-summary").textContent = "Đang gộp kết quả và chọn tổ hợp có lợi nhất...";
     const query = checked.query;
     try {
-      const data = await this.repository.findBestMajorCombinations({ results: this.allCombinationSearch, year: Number($("#admission-year").value), q: query.q, universityId: query.universityId, region: query.region, maxScore: query.maxScore, cutoffScale: query.cutoffScale, status: query.status, sort: query.sort, page, pageSize: 24 }, { signal: this.majorAbort.signal });
+      // Đối chiếu mô phỏng với dữ liệu tham khảo; ngữ cảnh điểm của thí sinh vẫn giữ năm xét tuyển thật.
+      const data = await this.repository.findBestMajorCombinations({ results: this.allCombinationSearch.map((item) => ({ ...item, year: query.year })), year: query.year, q: query.q, universityId: query.universityId, region: query.region, maxScore: query.maxScore, cutoffScale: query.cutoffScale, status: query.status, sort: query.sort, page, pageSize: 24 }, { signal: this.majorAbort.signal });
       if (requestVersion !== this.majorRequestVersion) return;
       this.majorPage = data.pagination.page;
       this.finderComparisonScore = undefined;

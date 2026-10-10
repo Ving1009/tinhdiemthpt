@@ -1,4 +1,5 @@
 export const ADMISSIONS_2026_NOTICE = 'Thông tin tuyển sinh năm 2026 chỉ mang tính tham khảo. Hãy đối chiếu thông báo chính thức của trường trước khi đăng ký; không áp dụng mặc định cho năm khác.';
+export const ADMISSIONS_2027_NOTICE = 'Website dành cho thí sinh năm 2027. Dữ liệu tuyển sinh 2027 đang cập nhật; hồ sơ, điểm chuẩn và công thức năm 2026 chỉ để tham khảo, không áp dụng mặc định cho năm 2027. Hãy đối chiếu thông báo chính thức của trường trước khi đăng ký.';
 
 export function verifiedCutoff(major, year = 2026) {
   const cutoff = major?.cutoff;

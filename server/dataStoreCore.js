@@ -17,6 +17,20 @@ export function normalizeSearch(value) {
     .trim();
 }
 
+function majorNameMatcher(query) {
+  const accentedTerm = String(query ?? "").normalize("NFC").toLocaleLowerCase("vi")
+    .replace(/[^\p{L}\p{N}]+/gu, " ").replace(/\s+/g, " ").trim();
+  const term = normalizeSearch(accentedTerm);
+  const preserveAccents = accentedTerm !== term;
+  return (major) => {
+    const name = preserveAccents
+      ? String(major.name ?? "").normalize("NFC").toLocaleLowerCase("vi")
+        .replace(/[^\p{L}\p{N}]+/gu, " ").replace(/\s+/g, " ").trim()
+      : normalizeSearch(major.name);
+    return !term || name.includes(preserveAccents ? accentedTerm : term);
+  };
+}
+
 function page(items, requestedPage, requestedSize, { defaultSize = 24, maxSize = 200 } = {}) {
   const pageSize = Math.max(1, Math.min(maxSize, Math.floor(Number(requestedSize)) || defaultSize));
   const pages = Math.max(1, Math.ceil(items.length / pageSize));
@@ -354,7 +368,7 @@ export function createDataStore({ universities, majors, combinations, subjects, 
   }
 
   function listMajors(query = {}) {
-    const term = normalizeSearch(query.q);
+    const matchesName = majorNameMatcher(query.q);
     const statuses = new Set(String(query.status || "").split(",").filter(Boolean));
     const ids = new Set(String(query.ids || "").split(",").filter(Boolean));
     const year = query.year ? Number(query.year) : null;
@@ -368,11 +382,11 @@ export function createDataStore({ universities, majors, combinations, subjects, 
     const combination = String(query.combination || "").toLocaleUpperCase("vi");
     const universityId = String(query.universityId || "");
     const region = String(query.region || "");
-    const filtered = indexedMajors.filter(({ major, text, combinationCodes, methodCode }) => {
+    const filtered = indexedMajors.filter(({ major, combinationCodes, methodCode }) => {
       const university = universitiesById.get(major.universityId);
       const score = major.cutoff?.score;
       return (!ids.size || ids.has(major.id)) &&
-        (!term || text.includes(term)) &&
+        matchesName(major) &&
         (!universityId || major.universityId === universityId) &&
         (!region || region === "all" || university?.region === region) &&
         (!requestedMethodCode || methodCode === requestedMethodCode) &&
@@ -426,14 +440,14 @@ export function createDataStore({ universities, majors, combinations, subjects, 
     if (!contexts.length) return { items: [], pagination: { page: 1, pageSize: 24, pages: 1, total: 0 } };
     const wantedCodes = new Set(contexts.map((item) => item.combination));
     const statuses = new Set(String(input.status || "verified,reference").split(",").filter(Boolean));
-    const term = normalizeSearch(input.q);
+    const matchesName = majorNameMatcher(input.q);
     const maxScore = input.maxScore === "" || input.maxScore === undefined ? null : Number(input.maxScore);
     const cutoffScale = input.cutoffScale === "" || input.cutoffScale === undefined ? null : Number(input.cutoffScale);
     const groups = new Map();
-    for (const { major, text, combinationCodes, methodCode } of indexedMajors) {
+    for (const { major, combinationCodes, methodCode } of indexedMajors) {
       const university = universitiesById.get(major.universityId);
       if (!combinationCodes.some((code) => wantedCodes.has(code))) continue;
-      if (term && !text.includes(term)) continue;
+      if (!matchesName(major)) continue;
       if (input.universityId && major.universityId !== input.universityId) continue;
       if (input.region && input.region !== "all" && university?.region !== input.region) continue;
       if (methodCode !== "thpt" || Number(major.cutoff?.year) !== Number(input.year || 2026)) continue;

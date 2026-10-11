@@ -101,6 +101,8 @@ body.dark .button-light { color:#3539be; }
 .site-footer { padding:24px 0 0; background:var(--surface); color:var(--muted); border-top:1px solid var(--line); }
 .footer-grid { grid-template-columns:1fr 1fr; gap:24px; align-items:center; }
 .footer-brand { color:var(--text); }
+.footer-brand-lockup { display:block; width:min(100%,240px); overflow:hidden; border:1px solid var(--line); border-radius:10px; background:#fff; line-height:0; }
+.footer-brand-lockup img { display:block; width:100%; height:auto; }
 .footer-links { display:none; }
 .footer-grid p { font-size:14px; }
 .footer-warning { max-width:none; }

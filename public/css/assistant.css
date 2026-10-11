@@ -64,7 +64,7 @@
   background: linear-gradient(135deg, #3730a3, #4f46e5 58%, #2563eb);
 }
 
-.assistant-avatar { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; background: rgb(255 255 255 / 16%); font-size: 20px; font-weight: 900; }
+.assistant-avatar { width: 42px; height: 42px; display: block; flex: 0 0 42px; overflow: hidden; border-radius: 13px; background: #fff; object-fit: cover; }
 .assistant-header h2 { margin: 0; font-size: 15px; letter-spacing: -.15px; }
 .assistant-header p { display: flex; align-items: center; gap: 6px; margin: 4px 0 0; color: rgb(255 255 255 / 76%); font-size: 10px; }
 .assistant-header p > span { width: 7px; height: 7px; border-radius: 50%; background: #5ee6b4; box-shadow: 0 0 0 3px rgb(94 230 180 / 14%); }

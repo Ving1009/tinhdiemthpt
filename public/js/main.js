@@ -1325,9 +1325,19 @@ class THPTApp {
       <h2 id="modal-title">Chính sách quyền riêng tư</h2>
       <p class="modal-description">Cập nhật ngày 11/10/2026.</p>
       <div class="privacy-policy">
-        <p>Chính sách này giải thích cách Tính Điểm THPT xử lý dữ liệu khi bạn tính điểm, tra cứu tuyển sinh, làm đề, dùng trợ lý hoặc tạo tài khoản. Bạn có thể sử dụng các công cụ mà không cần đăng nhập.</p>
-        <h3>1. Thông tin liên hệ</h3>
-        <p>Nếu có câu hỏi về quyền riêng tư hoặc muốn yêu cầu kiểm tra, chỉnh sửa, cung cấp bản sao hay xóa dữ liệu, hãy gửi email tới <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hotro.tinhdiemthpt%40gmail.com" target="_blank" rel="noopener noreferrer" title="Soạn thư trong Gmail">hotro.tinhdiemthpt@gmail.com</a>.</p>
+        <p>Chính sách này giải thích cách Tính Điểm THPT xử lý dữ liệu khi bạn tính điểm, tra cứu tuyển sinh, làm đề, dùng trợ lý hoặc tạo tài khoản.</p>
+        <h3>Những điều bạn cần biết</h3>
+        <ul>
+          <li>Bạn có thể dùng các công cụ mà không cần tài khoản. Dữ liệu phiên khách được xóa ở lần quay lại sau ít nhất 15 phút rời website.</li>
+          <li>Tài khoản và bản sao điểm được giữ đến khi yêu cầu xóa được xử lý; đăng xuất chỉ xóa dữ liệu cá nhân đang dùng trên thiết bị.</li>
+          <li>Ảnh học bạ chỉ được gửi khi bạn đồng ý và bấm quét. Hãy che thông tin cá nhân và kiểm tra lại điểm trước khi xác nhận.</li>
+          <li>Quảng cáo được yêu cầu không cá nhân hóa cho mọi người dùng, kể cả người dưới 18 tuổi.</li>
+          <li>Bạn có thể liên hệ hotro.tinhdiemthpt@gmail.com để thực hiện quyền về dữ liệu; cách gửi và thời hạn pháp luật quy định nằm ở mục 8.</li>
+        </ul>
+        <h3>1. Đầu mối liên hệ và mục đích xử lý</h3>
+        <p>Bên vận hành website Tính Điểm THPT tiếp nhận câu hỏi và yêu cầu về dữ liệu qua <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hotro.tinhdiemthpt%40gmail.com" target="_blank" rel="noopener noreferrer" title="Soạn thư trong Gmail">hotro.tinhdiemthpt@gmail.com</a>. Đây là đầu mối liên hệ về quyền riêng tư của website.</p>
+        <p>Dữ liệu được dùng để tính và lưu điểm, khôi phục nguyện vọng hoặc bài thi, quản lý tài khoản, nhận diện học bạ, trả lời câu hỏi và xử lý báo cáo sai. Thông tin kỹ thuật phục vụ vận hành, phát hiện lạm dụng và kiểm tra sự cố. Nếu có quảng cáo, dữ liệu liên quan được xử lý theo mục 7.</p>
+        <p>Tính Điểm THPT không bán dữ liệu tài khoản, điểm số hoặc ảnh học bạ. Dữ liệu có thể được gửi tới các dịch vụ ở mục 6 để thực hiện chức năng bạn chọn.</p>
         <h3>2. Dữ liệu lưu trên thiết bị</h3>
         <p>Website lưu điểm bạn nhập, môn và phương thức đã chọn, khu vực và đối tượng ưu tiên, nguyện vọng, bảng so sánh, bài thi đang làm và lịch sử thi thử trong trình duyệt để bạn tiếp tục sử dụng.</p>
         <p>Nếu chưa đăng nhập, dữ liệu phiên khách được xóa khi bạn quay lại sau ít nhất 15 phút rời website. Việc xóa diễn ra ở lần truy cập tiếp theo, không phải ngay khi bạn đóng trang. Các tùy chọn giao diện, như chế độ sáng hoặc tối, vẫn được giữ lại.</p>
@@ -1336,30 +1346,58 @@ class THPTApp {
         <h3>3. Tài khoản và bản sao lưu</h3>
         <p>Khi tạo tài khoản, bạn cung cấp tên đăng nhập và mật khẩu. Website lưu tên đăng nhập, mã tài khoản, thời điểm tạo và bản băm mật khẩu kèm dữ liệu bảo vệ, không lưu mật khẩu dạng đọc được. Form đăng ký không yêu cầu email, số điện thoại hoặc giấy tờ tùy thân.</p>
         <p>Cookie đăng nhập giúp hệ thống nhận biết tài khoản của bạn, có thời hạn tối đa 30 ngày và được xóa khi đăng xuất thành công. Cookie này chỉ được gửi qua kết nối bảo mật và không cho mã JavaScript trên trang đọc trực tiếp.</p>
-        <p>Khi đăng nhập, dữ liệu công cụ có thể được tự động sao lưu vào tài khoản để khôi phục trên thiết bị khác. Bản sao mới thay thế bản trước đó. Tài khoản và bản sao lưu không được tự động xóa sau 15 phút không truy cập.</p>
+        <p>Khi đăng nhập, dữ liệu công cụ có thể được tự động sao lưu vào tài khoản để khôi phục trên thiết bị khác. Bản sao mới thay thế bản trước đó. Hiện tài khoản và bản sao được giữ đến khi yêu cầu xóa của bạn được xử lý, không tự xóa sau 15 phút hoặc khi bạn ngừng truy cập.</p>
+        <p>Website chưa có lịch tự xóa tài khoản không hoạt động. Cách yêu cầu xóa nằm ở mục 8; nếu pháp luật yêu cầu giữ lại một phần dữ liệu, bên vận hành sẽ giải thích lý do và phạm vi lưu giữ khi xử lý yêu cầu.</p>
         <h3>4. Ảnh học bạ</h3>
         <p>Bạn có thể nhập điểm bằng tay. Nếu dùng nhận diện ảnh, website chỉ gửi ảnh sau khi bạn chọn ô đồng ý và bấm quét. Mỗi lượt nhận tối đa 6 ảnh JPG, PNG hoặc WEBP, tối đa 7 MB mỗi ảnh; ảnh được xử lý để giảm dung lượng trước khi gửi.</p>
-        <p>Ảnh được gửi tới dịch vụ nhận diện để đọc bảng điểm trong lượt quét đó. Website không lưu ảnh hoặc nội dung nhận diện thô vào cơ sở dữ liệu hay bản sao tài khoản. Dịch vụ xử lý có chính sách lưu giữ riêng, nên bạn hãy che họ tên, ngày sinh, số CCCD và thông tin không cần thiết trước khi chọn ảnh.</p>
-        <p>Khi dịch vụ nhận diện gặp sự cố, bạn có thể đồng ý tải công cụ để quét tiếp trong trình duyệt. Ở bước quét trên thiết bị này, ảnh được xử lý tại thiết bị; ảnh có thể đã được gửi trong lần thử nhận diện trước đó.</p>
-        <p>Bạn cần đối chiếu kết quả với ảnh gốc rồi xác nhận trước khi điền điểm vào công cụ. Phần điểm đã xác nhận có thể được lưu trên thiết bị và sao lưu vào tài khoản như điểm bạn nhập tay.</p>
+        <p>Ảnh có thể được chuyển tới Google Gemini, Groq hoặc OCR.space để đọc bảng điểm; dịch vụ dự phòng có thể được thử khi dịch vụ trước đó không trả kết quả. Website không lưu ảnh hoặc nội dung nhận diện thô vào cơ sở dữ liệu hay bản sao tài khoản. Hãy che họ tên, ngày sinh, số CCCD và thông tin không cần thiết trước khi chọn ảnh.</p>
+        <p>Khi dịch vụ nhận diện gặp sự cố, bạn có thể đồng ý tải Tesseract.js để quét tiếp trong trình duyệt. Ở bước này, ảnh được xử lý tại thiết bị; ảnh có thể đã được gửi trong lần thử nhận diện trước đó.</p>
+        <p>Bạn cần đối chiếu kết quả với ảnh gốc rồi xác nhận trước khi điền điểm vào công cụ. Phần điểm đã xác nhận có thể được lưu trên thiết bị và sao lưu vào tài khoản như điểm bạn nhập tay. Thời hạn lưu ảnh tại dịch vụ bên ngoài phụ thuộc chính sách của dịch vụ đó, không áp dụng mốc 15 phút của website.</p>
         <h3>5. Trợ lý và báo thông tin sai</h3>
-        <p>Khi cần dịch vụ AI trả lời, trợ lý gửi câu hỏi và tối đa 6 tin nhắn gần nhất của cuộc trò chuyện để giữ ngữ cảnh. Website không lưu cuộc trò chuyện vào tài khoản hoặc cơ sở dữ liệu. Bạn không nên gửi mật khẩu, mã xác thực, giấy tờ hay thông tin riêng của người khác. Câu trả lời chỉ để tham khảo và cần được đối chiếu với nguồn chính thức.</p>
+        <p>Khi cần dịch vụ AI trả lời, trợ lý gửi câu hỏi, tối đa 6 tin nhắn gần nhất và ngữ cảnh tra cứu cần thiết, như điểm hoặc trường/ngành đang được tư vấn. Website không lưu cuộc trò chuyện vào tài khoản hoặc cơ sở dữ liệu. Bạn không nên gửi mật khẩu, mã xác thực, giấy tờ hay thông tin riêng của người khác. Câu trả lời chỉ để tham khảo và cần được đối chiếu với nguồn chính thức.</p>
         <p>Báo cáo chỉ được gửi sau khi bạn bấm “Gửi báo cáo”. Hệ thống lưu trường hoặc ngành liên quan, thông tin cần kiểm tra, nội dung bạn mô tả, giá trị đề xuất, liên kết nguồn và thời điểm gửi để xử lý, đối chiếu và sửa dữ liệu. Báo cáo không tự đính kèm ảnh học bạ hay thông tin tài khoản.</p>
         <p>Hiện báo cáo chưa có thời hạn xóa tự động cố định. Nếu cần kiểm tra hoặc yêu cầu xóa báo cáo đã gửi, hãy liên hệ email hỗ trợ, kèm mã báo cáo nếu có hoặc thời điểm và nội dung giúp nhận diện báo cáo. Tránh đưa thông tin cá nhân vào phần mô tả hoặc liên kết nguồn.</p>
         <h3>6. Dịch vụ hỗ trợ và thông tin kỹ thuật</h3>
-        <p>Website dùng dịch vụ hỗ trợ để vận hành, lưu dữ liệu, nhận diện ảnh, trả lời câu hỏi và xác minh chống lạm dụng. Dữ liệu cần cho chức năng bạn sử dụng có thể được xử lý bởi các dịch vụ này theo chính sách của họ, trên hệ thống trong hoặc ngoài Việt Nam.</p>
+        <p>Các dịch vụ dưới đây đang được tích hợp. Dữ liệu được chuyển theo chức năng bạn dùng và dịch vụ khả dụng trong lượt xử lý; một yêu cầu có thể qua dịch vụ dự phòng khi dịch vụ trước đó gặp lỗi.</p>
+        <ul>
+          <li><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare</a>: vận hành website, lưu tài khoản và bản sao trên D1, xác minh chống lạm dụng qua Turnstile và xử lý thông tin kỹ thuật của truy cập. Cloudflare Workers AI cũng có thể trả lời câu hỏi của trợ lý.</li>
+          <li><a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Supabase</a>: lưu báo cáo sai dữ liệu và nội dung bạn gửi kèm báo cáo.</li>
+          <li><a href="https://policies.google.com/privacy?hl=vi" target="_blank" rel="noopener noreferrer">Google</a>: Gemini nhận ảnh học bạ hoặc câu hỏi để xử lý; AdSense phục vụ quảng cáo. Google Fonts cung cấp phông chữ và có thể nhận thông tin kỹ thuật khi trình duyệt tải phông.</li>
+          <li><a href="https://groq.com/privacy-policy" target="_blank" rel="noopener noreferrer">Groq</a>: nhận diện ảnh học bạ và trả lời câu hỏi. <a href="https://ocr.space/privacypolicy" target="_blank" rel="noopener noreferrer">OCR.space</a>: nhận diện ảnh học bạ.</li>
+          <li><a href="https://legal.mistral.ai/terms/privacy-policy/" target="_blank" rel="noopener noreferrer">Mistral AI</a>, <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener noreferrer">OpenRouter</a>, <a href="https://huggingface.co/privacy" target="_blank" rel="noopener noreferrer">Hugging Face</a> và <a href="https://www.requesty.ai/privacy" target="_blank" rel="noopener noreferrer">Requesty</a>: nhận câu hỏi và ngữ cảnh để trả lời qua trợ lý. Các dịch vụ định tuyến có thể chuyển tiếp nội dung tới nhà cung cấp mô hình mà chúng sử dụng.</li>
+        </ul>
+        <p>Dữ liệu có thể được xử lý trên hệ thống ngoài Việt Nam. Chính sách lưu giữ và sử dụng nội dung, kể cả để cải thiện hoặc huấn luyện mô hình, khác nhau theo dịch vụ và mô hình; website không bảo đảm mọi bên đều xóa ngay dữ liệu hoặc không dùng dữ liệu cho những mục đích này. Bạn có thể đọc chính sách qua các liên kết trên và dùng cách nhập điểm bằng tay nếu không muốn gửi ảnh.</p>
         <p>Địa chỉ IP, thông tin trình duyệt và dữ liệu kỹ thuật của yêu cầu có thể được xử lý để giữ website hoạt động, giới hạn yêu cầu bất thường và kiểm tra sự cố. Các dịch vụ hỗ trợ có thể giữ nhật ký kỹ thuật theo chính sách riêng; thời hạn phiên khách không áp dụng cho những nhật ký này.</p>
         <h3>7. Cookie và quảng cáo</h3>
         <p>Cookie đăng nhập phục vụ tài khoản; bộ nhớ trình duyệt lưu dữ liệu công cụ và tùy chọn giao diện. Chặn hoặc xóa các dữ liệu này có thể khiến bạn phải đăng nhập lại hoặc mất dữ liệu đang lưu trên thiết bị. Cơ chế xác minh bảo mật cũng có thể xử lý thông tin kỹ thuật để phân biệt truy cập hợp lệ với yêu cầu tự động.</p>
-        <p>Website có thể hiển thị quảng cáo từ Google và các đối tác quảng cáo. Các bên này có thể dùng cookie hoặc mã nhận dạng, địa chỉ IP, thông tin trình duyệt và lượt truy cập website này hoặc website khác để phân phối, đo lường và cá nhân hóa quảng cáo.</p>
-        <p>Bạn có thể quản lý lựa chọn qua thông báo đồng ý khi được hiển thị, tắt cá nhân hóa tại <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">Cài đặt quảng cáo</a> và xem <a href="https://policies.google.com/technologies/partner-sites?hl=vi" target="_blank" rel="noopener">cách Google sử dụng dữ liệu trên các website đối tác</a>. Cookie quảng cáo có thời hạn riêng, không tự xóa theo mốc 15 phút của phiên khách; bạn có thể quản lý hoặc xóa chúng trong trình duyệt.</p>
-        <h3>8. Cách kiểm soát và yêu cầu xóa dữ liệu</h3>
-        <p>Bạn có thể dùng các nút xóa điểm, nguyện vọng và bảng so sánh; xóa ảnh đã chọn; hoặc bỏ chọn đồng ý để không gửi ảnh trong lượt quét tiếp theo. Bạn cũng có thể xóa dữ liệu website trong cài đặt trình duyệt. Việc dừng sử dụng một chức năng không thu hồi dữ liệu đã gửi trước đó.</p>
-        <p>Xóa dữ liệu trên thiết bị không tự xóa bản sao trong tài khoản. Đăng xuất không xóa tài khoản hoặc bản sao đã lưu. Website hiện chưa có nút tự xóa tài khoản; để yêu cầu xóa tài khoản hoặc bản sao trên hệ thống, hãy liên hệ email hỗ trợ.</p>
+        <p>Website yêu cầu Google AdSense tắt cá nhân hóa quảng cáo cho mọi người dùng, kể cả người dưới 18 tuổi, theo <a href="https://support.google.com/adsense/answer/7670312?hl=vi" target="_blank" rel="noopener noreferrer">cấu hình quyền riêng tư của Google</a>. Website không thu thập ngày sinh để áp dụng lựa chọn này. Quảng cáo không cá nhân hóa vẫn có thể dùng cookie, địa chỉ IP hoặc thông tin trình duyệt để giới hạn tần suất, đo lường và chống gian lận.</p>
+        <p>Bạn có thể quản lý lựa chọn qua thông báo đồng ý khi được hiển thị, kiểm tra <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">Cài đặt quảng cáo</a> và xem <a href="https://policies.google.com/technologies/partner-sites?hl=vi" target="_blank" rel="noopener">cách Google sử dụng dữ liệu trên các website đối tác</a>. Cookie quảng cáo có thời hạn riêng, không tự xóa theo mốc 15 phút của phiên khách; bạn có thể quản lý hoặc xóa chúng trong trình duyệt.</p>
+        <h3>8. Quyền của bạn và cách gửi yêu cầu</h3>
+        <p>Theo <a href="https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/91qh.signed.pdf" target="_blank" rel="noopener noreferrer">Điều 4 Luật Bảo vệ dữ liệu cá nhân</a>, bạn có các quyền theo điều kiện và phạm vi pháp luật quy định:</p>
+        <ul>
+          <li>Được biết việc xử lý dữ liệu; đồng ý, không đồng ý hoặc rút lại sự đồng ý.</li>
+          <li>Xem, chỉnh sửa, yêu cầu cung cấp hoặc xóa dữ liệu của mình.</li>
+          <li>Yêu cầu hạn chế hoặc phản đối việc xử lý dữ liệu.</li>
+          <li>Khiếu nại, tố cáo, khởi kiện và yêu cầu bồi thường theo quy định.</li>
+          <li>Yêu cầu biện pháp bảo vệ dữ liệu cá nhân.</li>
+        </ul>
+        <p>Bạn có thể dùng các nút xóa điểm, nguyện vọng và bảng so sánh; xóa ảnh đã chọn; hoặc bỏ chọn đồng ý để không gửi ảnh trong lượt quét tiếp theo. Bạn cũng có thể xóa dữ liệu website trong cài đặt trình duyệt. Việc rút lại đồng ý không tự thu hồi dữ liệu đã gửi trước đó hoặc làm thay đổi tính hợp pháp của việc xử lý trước khi rút lại.</p>
+        <p>Xóa dữ liệu trên thiết bị không tự xóa bản sao trong tài khoản. Đăng xuất không xóa tài khoản hoặc bản sao đã lưu. Website hiện chưa có nút tự xóa tài khoản; để yêu cầu xóa tài khoản, bản sao, rút lại đồng ý hoặc thực hiện quyền khác, hãy liên hệ email hỗ trợ. Bạn cũng có thể khiếu nại tới cơ quan có thẩm quyền.</p>
         <p>Khi gửi yêu cầu liên quan tới tài khoản, hãy nêu tên đăng nhập và nội dung cần xử lý, không gửi mật khẩu hoặc mã xác thực. Việc xử lý có thể cần xác minh bạn là chủ tài khoản để tránh cung cấp hoặc xóa nhầm dữ liệu. Thư bạn gửi tới email hỗ trợ được dùng để trao đổi và xử lý yêu cầu đó.</p>
-        <h3>9. Học sinh và an toàn khi sử dụng</h3>
-        <p>Nếu chưa đủ 18 tuổi, bạn nên trao đổi với cha mẹ hoặc người giám hộ trước khi tạo tài khoản hoặc gửi ảnh học bạ có thông tin cá nhân. Phụ huynh có thể liên hệ email hỗ trợ để hỏi về cách xử lý dữ liệu của con; yêu cầu liên quan tới dữ liệu vẫn cần được xác minh.</p>
+        <h4>Thời hạn theo pháp luật</h4>
+        <p><a href="https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/356-nd.signed.pdf" target="_blank" rel="noopener noreferrer">Điều 5 Nghị định 356/2025/NĐ-CP</a> quy định phản hồi các yêu cầu dưới đây trong 2 ngày làm việc từ khi nhận yêu cầu đúng thủ tục. Thời hạn thực hiện:</p>
+        <ul>
+          <li>Xem, chỉnh sửa, cung cấp dữ liệu: 10 ngày; 15 ngày nếu cần bên xử lý hoặc bên thứ ba chỉnh sửa.</li>
+          <li>Rút lại đồng ý, hạn chế hoặc phản đối xử lý: 15 ngày; 20 ngày nếu cần bên xử lý hoặc bên thứ ba ngừng xử lý.</li>
+          <li>Xóa dữ liệu: 20 ngày; 30 ngày khi cần phối hợp với bên xử lý hoặc bên thứ ba.</li>
+          <li>Yêu cầu biện pháp bảo vệ: 15 ngày.</li>
+        </ul>
+        <p>Có thể gia hạn một lần, tối đa tương ứng 10, 15, 20 hoặc 15 ngày, khi có lý do theo quy định và thông báo cho bạn. Các mốc thực hiện tính bằng ngày; chỉ mốc phản hồi tính bằng ngày làm việc. Ngoại lệ pháp luật vẫn áp dụng.</p>
+        <p>Hiện website chưa bảo đảm phản hồi email trong 2 ngày làm việc. Việc này không làm thay đổi thời hạn pháp luật áp dụng.</p>
+        <h3>9. Học sinh, bảo mật và thông báo sự cố</h3>
+        <p>Nếu chưa đủ 18 tuổi, bạn nên trao đổi với cha mẹ hoặc người giám hộ trước khi tạo tài khoản hoặc gửi ảnh học bạ có thông tin cá nhân. Phụ huynh có thể liên hệ email hỗ trợ để hỏi về cách xử lý dữ liệu của con; yêu cầu liên quan tới dữ liệu vẫn cần được xác minh. Cấu hình quảng cáo không cá nhân hóa ở mục 7 áp dụng cho cả nhóm này.</p>
         <p>Website truyền dữ liệu qua HTTPS và áp dụng biện pháp bảo vệ tài khoản, nhưng không thể bảo đảm loại bỏ mọi rủi ro. Hãy truy cập đúng địa chỉ <a href="https://tinhdiemthpt.id.vn/">tinhdiemthpt.id.vn</a>, dùng mật khẩu riêng và đăng xuất sau khi dùng thiết bị chung.</p>
+        <p>Khi phát hiện sự cố ảnh hưởng tới dữ liệu cá nhân, bên vận hành sẽ xử lý để hạn chế thiệt hại và thông báo cho cơ quan có thẩm quyền, người bị ảnh hưởng theo quy định áp dụng. Thông tin về phạm vi ảnh hưởng và hướng dẫn bảo vệ tài khoản sẽ được đăng trên website hoặc gửi qua kênh liên hệ sẵn có; tài khoản hiện không yêu cầu email nên có thể cần thông báo trên website.</p>
         <h3>10. Cập nhật chính sách</h3>
         <p>Chính sách có thể được cập nhật khi chức năng hoặc cách xử lý dữ liệu thay đổi. Ngày cập nhật ở đầu trang giúp bạn nhận biết phiên bản đang áp dụng.</p>
       </div>`, trigger);

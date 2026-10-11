@@ -56,6 +56,17 @@ test('quảng cáo dùng nonce mới cho từng HTML, khớp mọi script và st
   assert.equal(securityHeaders({ pathname: '/vendor/tesseract/worker.min.js', adsenseNonce: first.nonce })['Content-Security-Policy'].includes('strict-dynamic'), false);
 });
 
+test('AdSense yêu cầu không cá nhân hóa ở mọi vùng được phép, không cần thu thập tuổi', () => {
+  for (const country of ['VN', 'US', 'GB', 'FR', '']) {
+    const prepared = prepareAdSenseHtml(html, { ...enabled, ADSENSE_CMP_READY: 'true' }, country);
+    const loader = prepared.html.match(/<script\b[^>]*src="https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js[^>]*>/)?.[0];
+    assert.equal(prepared.adsEnabled, true, country);
+    assert.ok(loader, country);
+    assert.match(loader, /data-privacy-treatments="disablePersonalization"/);
+    assert.ok(loader.includes(`nonce="${prepared.nonce}"`));
+  }
+});
+
 test('Worker phục vụ ads.txt đúng publisher cho GET/HEAD, không trả HTML thay cho cấu hình thiếu', async () => {
   for (const method of ['GET', 'HEAD']) {
     const response = await mainWorker.fetch(new Request('https://tinhdiemthpt.id.vn/ads.txt', { method }), {
@@ -79,6 +90,7 @@ test('Worker dùng geography tin cậy, nonce/header nhất quán và không chi
     Object.defineProperty(request, 'cf', { value: { country: 'VN' } });
     const response = await mainWorker.fetch(request, environment);
     const body = await response.text();
+    assert.match(body, /data-privacy-treatments="disablePersonalization"/);
     const nonce = body.match(/nonce="([a-f0-9]{32})"/)[1];
     assert.ok(response.headers.get('content-security-policy').includes(`'nonce-${nonce}'`));
     assert.equal(response.headers.get('cache-control'), 'no-store');
@@ -116,7 +128,9 @@ test('trang chính sách riêng không tải quảng cáo hoặc CMP dù quảng
   await new Promise(resolve => server.once('listening', resolve));
   const base = `http://127.0.0.1:${server.address().port}`;
   const home = await fetch(base + '/');
-  assert.match(await home.text(), /adsbygoogle\.js/);
+  const homeHtml = await home.text();
+  assert.match(homeHtml, /adsbygoogle\.js/);
+  assert.match(homeHtml, /data-privacy-treatments="disablePersonalization"/);
   assert.equal(home.headers.get('referrer-policy'), 'strict-origin');
   assert.equal(home.headers.get('cache-control'), 'no-store');
   const privacy = await fetch(base + '/privacy.html');

@@ -244,12 +244,18 @@ body.dark .site-header { background:var(--surface); }
 .assistant-report-form input,.assistant-report-form select,.assistant-report-form textarea { font-size:14px; }
 .assistant-report-submit { min-height:44px; font-size:14px; }
 .assistant-report-status { font-size:12px; }
-.site-footer { padding:24px 0 0; }
+.site-footer { padding:24px 0 0; background:var(--surface); color:var(--muted); border-top:1px solid var(--line); }
 .footer-grid { grid-template-columns:1fr 1fr; gap:16px 32px; }
 .footer-links { display:flex; flex-wrap:wrap; gap:6px 18px; justify-content:flex-end; }
 .footer-links a { display:inline-flex; align-items:center; min-height:36px; font-size:12px; }
 .footer-warning { grid-column:1/-1; margin:0; font-size:12px!important; }
 .footer-bottom { margin-top:18px; padding:16px 0; gap:16px; font-size:11px; }
+.footer-contact { display:grid; gap:12px; margin-top:20px; padding-block:20px; border-top:1px solid var(--line); }
+.footer-contact h2 { margin:0; color:var(--text); font-size:14px; }
+.footer-contact-links { display:flex; flex-wrap:wrap; gap:10px; }
+.site-footer .footer-contact-links a { display:inline-flex; align-items:center; gap:8px; min-height:44px; max-width:100%; padding:10px 14px; border:1px solid var(--line); border-radius:10px; background:var(--surface); color:var(--text); font-size:13px; line-height:1.5; overflow-wrap:anywhere; text-decoration:none; }
+.site-footer .footer-contact-links a:hover { border-color:var(--primary); color:var(--primary); }
+.footer-contact-links a:focus-visible { outline:2px solid var(--primary); outline-offset:3px; }
 .toast { bottom:24px; max-width:calc(100vw - 32px); padding:12px 18px; font-size:13px; }
 .policy-page { padding-bottom:0; }
 .policy-page article { max-width:800px; padding:32px; border:1px solid var(--line); border-radius:20px; background:var(--surface); }

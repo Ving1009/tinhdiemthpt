@@ -72,7 +72,7 @@ test("mọi response có security headers và HTTPS proxy nhận HSTS", async ()
 });
 
 test("chỉ OCR worker được chạy WebAssembly, trang và các script khác vẫn giữ CSP chặt", async () => {
-  for (const path of ["/", "/js/main.js", "/vendor/tesseract/worker.min.js", "/favicon.svg"]) {
+  for (const path of ["/", "/js/main.js", "/vendor/tesseract/worker.min.js", "/assets/brand/logo-icon.png"]) {
     const response = await fetch(`${baseUrl}${path}`);
     assert.equal(response.status, 200);
     const csp = response.headers.get("content-security-policy");

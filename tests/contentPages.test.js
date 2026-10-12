@@ -13,6 +13,10 @@ const adsEnabled = { ADSENSE_CLIENT: "ca-pub-5701300811077965", ADSENSE_ENABLED:
 let server;
 let base;
 
+function normalizeLineEndings(text) {
+  return text.replace(/\r\n/g, "\n");
+}
+
 function attribute(tag, name) {
   return tag.match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1] || "";
 }
@@ -55,7 +59,7 @@ test("generated content is independently readable HTML with unique metadata and 
   const titles = new Set();
   const descriptions = new Set();
   for (const [path, html] of pages) {
-    assert.equal(await readFile(new URL(`../public${path}index.html`, import.meta.url), "utf8"), html, `${path} generated file is stale`);
+    assert.equal(normalizeLineEndings(await readFile(new URL(`../public${path}index.html`, import.meta.url), "utf8")), html, `${path} generated file is stale`);
     assert.match(html, /<!doctype html>/i, path);
     assert.match(html, /<html\b[^>]*lang="vi"/i, path);
     assert.equal([...html.matchAll(/<h1\b/gi)].length, 1, path);
@@ -127,8 +131,8 @@ test("sitemap and robots expose canonical public documents without app fragments
   assert.match(robots, /^Allow:\s*\/\s*$/m);
   assert.ok(robots.includes(`Sitemap: ${SITE_URL}/sitemap.xml`));
   assert.doesNotMatch(robots, /^Disallow:\s*\/(?:\s*$|cam-nang)/m);
-  assert.equal(await readFile(new URL("../public/sitemap.xml", import.meta.url), "utf8"), sitemap);
-  assert.equal(await readFile(new URL("../public/robots.txt", import.meta.url), "utf8"), robots);
+  assert.equal(normalizeLineEndings(await readFile(new URL("../public/sitemap.xml", import.meta.url), "utf8")), sitemap);
+  assert.equal(normalizeLineEndings(await readFile(new URL("../public/robots.txt", import.meta.url), "utf8")), robots);
 });
 
 test("Express serves content and crawler files, keeps aliases and security, and returns genuine missing-page 404s", async () => {
@@ -138,13 +142,13 @@ test("Express serves content and crawler files, keeps aliases and security, and 
     assert.match(response.headers.get("content-type"), /^text\/html/);
     assert.equal(response.headers.get("content-security-policy"), CONTENT_SECURITY_POLICY);
     assert.equal(response.headers.get("cache-control"), "no-cache");
-    assert.equal(await response.text(), html, path);
+    assert.equal(normalizeLineEndings(await response.text()), html, path);
   }
   for (const [path, expected, type] of [["/sitemap.xml", renderSitemap(), /xml/], ["/robots.txt", renderRobots(), /text\/plain/]]) {
     const response = await fetch(`${base}${path}`);
     assert.equal(response.status, 200, path);
     assert.match(response.headers.get("content-type"), type);
-    assert.equal(await response.text(), expected);
+    assert.equal(normalizeLineEndings(await response.text()), expected);
   }
   const articlePath = articlePaths[0];
   const directory = await fetch(`${base}${articlePath.slice(0, -1)}`, { redirect: "manual" });

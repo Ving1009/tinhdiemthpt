@@ -153,11 +153,13 @@ Khi biên tập, sửa module `content/` rồi chạy `npm run build:content`; k
 
 Test lần đầu phát hiện cụm từ trong trang nguồn không khớp quy ước public hiện có; đã sửa câu chữ và chạy lại **toàn bộ test đạt**, không xóa/né test. Một lần build gặp Windows `EBUSY` vì Wrangler local đang giữ thư mục assets; đã dừng đúng dev process và chạy lại build/dry-run đạt, không thay cấu hình để né lỗi.
 
+Test đối chiếu file sinh chuẩn hóa riêng LF/CRLF để không báo “file cũ” sai khi Git checkout trên Windows; mọi nội dung và điều kiện kiểm tra khác vẫn được giữ nguyên.
+
 Các kiểm thử UI chặn host bên ngoài; lỗi mạng do chặn font/quảng cáo không được coi là lỗi JavaScript ứng dụng. Không có `pageerror` trong lượt kiểm tra nội dung/công cụ. OCR từ xa và AI dùng mock để không gửi ảnh thật, không tiêu hạn mức hoặc tạo dữ liệu production; một mẫu Tesseract đúng không chứng minh nhận diện đúng mọi học bạ. UI tài khoản/phòng thi được mở trên browser, còn session/đổi tài khoản/chấm bài/PDF do bộ regression hiện có kiểm tra. Không tuyên bố đã dùng tài khoản học sinh thật hay tải lên tất cả dịch vụ.
 
 Wrangler local có meta tài khoản AdSense, nhưng ad script đang được chặn bởi cấu hình môi trường phát triển; cơ chế chèn quảng cáo được test bằng cấu hình explicit trong regression. Cần kiểm tra HTML production riêng, không sửa gating để ép tải quảng cáo ở local.
 
-Đã deploy bằng `npm run cf:deploy` theo quyền tự cập nhật GitHub/Cloudflare đã được người vận hành cho phép trong cuộc trò chuyện. Main Worker version cuối: **d95b822a-2706-446f-b934-4580c8113342**. HTML root production có script AdSense đúng publisher, `disablePersonalization` và nonce CSP; các trang bài/pháp lý không có AdSense. Không gửi yêu cầu xét duyệt Google. Log production: `.local/adsense-production-probe.log` và `.local/adsense-browser-production.log`.
+Đã deploy bằng `npm run cf:deploy` theo quyền tự cập nhật GitHub/Cloudflare đã được người vận hành cho phép trong cuộc trò chuyện. Main Worker version đã đối chiếu nội dung: **d95b822a-2706-446f-b934-4580c8113342**. HTML root production có script AdSense đúng publisher, `disablePersonalization` và nonce CSP; các trang bài/pháp lý không có AdSense. Không gửi yêu cầu xét duyệt Google. Log production: `.local/adsense-production-probe.log` và `.local/adsense-browser-production.log`.
 
 Log/ảnh đối chiếu được giữ trong `.local/` bị Git ignore: `adsense-full-tests.log`, `adsense-browser-content.log`, `adsense-dark-keyboard.log`, `adsense-browser-core.log`, `adsense-browser-local-ocr.log`, `adsense-wrangler-probe.log`, ảnh trước/sau phần hướng dẫn và ảnh bài ưu tiên sáng/tối. Không chứa secrets trong báo cáo công khai.
 

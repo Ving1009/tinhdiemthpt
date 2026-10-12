@@ -1,11 +1,13 @@
 import { getTurnstileConfigurationForHostname, turnstileTokenFromHeaders, verifyTurnstile } from "../server/services/turnstile.js";
 import { applyRateLimit, errorResponse, failure, success, withSecurityHeaders } from "./http.js";
-import { handleDataApi } from "./dataApi.js";
+import { handleDataApi, loadCloudflareDataStore } from "./dataApi.js";
 import { publicAuthConfig } from "../lib/publicAuthConfig.js";
 import { handleAuthRequest } from "./auth.js";
 import { handleAssistantApi } from "./assistantApi.js";
 import { adsenseAdsTxt, isAdSenseContentPage, nonceHtmlScripts, prepareAdSenseHtml } from "../lib/adsense.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
+import { parseAppRoute } from "../public/js/core/appRoutes.js";
+import { appRouteProfile, renderAppPage } from "../lib/appPages.js";
 
 const PRIMARY_HOSTNAME = "tinhdiemthpt.id.vn";
 const LEGACY_HOSTNAME = "tinhdiemthpt.tinh-diem-thpt.workers.dev";
@@ -105,11 +107,25 @@ export default {
       }
     }
     if (url.pathname.startsWith("/api/")) return handleDataApi(request, environment);
+    const route = ["GET", "HEAD"].includes(request.method) ? parseAppRoute(url.pathname) : null;
+    let profile = {};
+    if (route?.universityId) {
+      try { profile = appRouteProfile(await loadCloudflareDataStore(environment), route); }
+      catch { return withSecurityHeaders(request, new Response("Hồ sơ tạm thời chưa tải được. Hãy thử lại sau.", { status: 503 })); }
+      if (!profile) return withSecurityHeaders(request, new Response(request.method === "HEAD" ? null : "Không tìm thấy hồ sơ trường hoặc ngành.", { status: 404 }));
+    }
+    if (route && url.pathname !== route.path && url.pathname !== "/index.html") {
+      url.pathname = route.path;
+      return withSecurityHeaders(request, Response.redirect(url, 308));
+    }
     const preparesHtml = isAdSenseContentPage(url.pathname);
-    const asset = await environment.ASSETS.fetch(request.method === "HEAD" && preparesHtml ? new Request(request, { method: "GET" }) : request);
+    const assetUrl = new URL(url); if (route) assetUrl.pathname = "/";
+    const assetRequest = new Request(assetUrl, request);
+    const asset = await environment.ASSETS.fetch(request.method === "HEAD" && preparesHtml ? new Request(assetRequest, { method: "GET" }) : assetRequest);
     if (["GET", "HEAD"].includes(request.method) && preparesHtml && asset.status === 200 && /text\/html/i.test(asset.headers.get("Content-Type") || "")) {
-      const prepared = prepareAdSenseHtml(await asset.text(), environment, request.cf?.country, url.pathname);
-      const page = !prepared.adsEnabled && ["/", "/index.html"].includes(url.pathname) ? nonceHtmlScripts(prepared.html) : prepared;
+      const html = await asset.text();
+      const prepared = prepareAdSenseHtml(route ? renderAppPage(html, route, profile) : html, environment, request.cf?.country, url.pathname);
+      const page = !prepared.adsEnabled && route ? nonceHtmlScripts(prepared.html) : prepared;
       const headers = new Headers(asset.headers);
       for (const name of ["Content-Length", "Content-Encoding", "ETag", "Last-Modified"]) headers.delete(name);
       for (const [name, value] of Object.entries(securityHeaders({ isHttps: true, pathname: url.pathname, adsenseNonce: prepared.nonce, scriptNonce: page.nonce }))) headers.set(name, value);

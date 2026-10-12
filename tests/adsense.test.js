@@ -3,6 +3,7 @@ import test from 'node:test';
 import { ADSENSE_PAGE_PATHS, adsenseAdsTxt, adsenseClient, isAdSenseContentPage, nonceHtmlScripts, prepareAdSenseHtml } from '../lib/adsense.js';
 import { admissionsGuides } from '../content/admissionsGuides.js';
 import { buildContentPages } from '../lib/contentPages.js';
+import { APP_ROUTES, parseAppRoute } from '../public/js/core/appRoutes.js';
 import { CONTENT_SECURITY_POLICY, securityHeaders } from '../lib/securityHeaders.js';
 import mainWorker from '../worker/index.js';
 import { createApp } from '../server/server.js';
@@ -105,7 +106,7 @@ test('Worker phục vụ ads.txt đúng publisher cho GET/HEAD, không trả HTM
 });
 
 test('mọi trang HTML công khai và alias có thể tải AdSense; API, tài sản và đường dẫn lạ không tải', () => {
-  const paths = ['/', '/index.html', '/privacy', '/privacy.html', ...[...buildContentPages().keys()].flatMap(path => [path, `${path}index.html`])];
+  const paths = ['/', '/index.html', '/privacy', '/privacy.html', ...[...Object.values(APP_ROUTES).map(route => route.path).filter(path => path !== '/'), ...buildContentPages().keys()].flatMap(path => [path, `${path}index.html`])];
   assert.deepEqual([...ADSENSE_PAGE_PATHS].sort(), paths.sort());
   for (const path of paths) {
     assert.equal(isAdSenseContentPage(path), true, path);
@@ -154,7 +155,13 @@ test('Worker tải đúng một mã quảng cáo cho toàn bộ trang và công 
   } } };
   for (const path of [...ADSENSE_PAGE_PATHS, '/#calculator', '/#academic', '/#practice-exams', '/#major-finder', '/#universities', '/?from=test#guide']) {
     for (const method of ['GET', 'HEAD']) {
-      const response = await mainWorker.fetch(new Request(`https://tinhdiemthpt.id.vn${path}`, { method }), environment);
+      let response = await mainWorker.fetch(new Request(`https://tinhdiemthpt.id.vn${path}`, { method }), environment);
+      const route = parseAppRoute(new URL(path, 'https://tinhdiemthpt.id.vn').pathname);
+      if (route && new URL(path, 'https://tinhdiemthpt.id.vn').pathname !== route.path && path !== '/index.html') {
+        assert.equal(response.status, 308);
+        assert.doesNotMatch(await response.text(), /adsbygoogle\.js/);
+        response = await mainWorker.fetch(new Request(response.headers.get('location'), { method }), environment);
+      }
       assert.equal(response.status, 200, path);
       const body = await response.text();
       const csp = response.headers.get('content-security-policy');

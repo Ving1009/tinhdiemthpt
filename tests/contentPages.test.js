@@ -4,6 +4,7 @@ import { after, before, test } from "node:test";
 import { buildContentPages, renderContentPage, renderGuideIndex, renderRobots, renderSitemap, SITE_URL } from "../lib/contentPages.js";
 import { CONTENT_SECURITY_POLICY } from "../lib/securityHeaders.js";
 import { resolveAppView } from "../public/js/utils.js";
+import { APP_ROUTES, parseAppRoute } from "../public/js/core/appRoutes.js";
 import { createApp } from "../server/server.js";
 import mainWorker from "../worker/index.js";
 
@@ -86,7 +87,7 @@ test("generated content is independently readable HTML with unique metadata and 
     for (const [, target] of html.matchAll(/\b(?:href|src)="([^"#]+)"/g)) {
       if (!target.startsWith("/")) continue;
       const url = new URL(target.replace(/&amp;/g, "&"), SITE_URL);
-      if (url.pathname === "/" || url.pathname === "/privacy" || url.pathname === "/privacy.html" || pages.has(url.pathname)) continue;
+      if (parseAppRoute(url.pathname) || url.pathname === "/privacy" || url.pathname === "/privacy.html" || pages.has(url.pathname)) continue;
       await access(new URL(`../public${url.pathname}`, import.meta.url));
     }
   }
@@ -124,9 +125,9 @@ test("sitemap and robots expose canonical public documents without app fragments
   const sitemap = renderSitemap();
   const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
   assert.match(sitemap, /<urlset\b[^>]*xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9"/);
-  assert.equal(urls.length, 15);
+  assert.equal(urls.length, 23);
   assert.equal(new Set(urls).size, urls.length);
-  assert.deepEqual(urls.sort(), [`${SITE_URL}/`, `${SITE_URL}/privacy`, ...[...pages.keys()].map(path => `${SITE_URL}${path}`)].sort());
+  assert.deepEqual(urls.sort(), [...Object.values(APP_ROUTES).map(({ path }) => `${SITE_URL}${path}`), `${SITE_URL}/privacy`, ...[...pages.keys()].map(path => `${SITE_URL}${path}`)].sort());
   for (const value of urls) {
     const url = new URL(value);
     assert.equal(url.origin, SITE_URL);

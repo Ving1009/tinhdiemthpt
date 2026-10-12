@@ -15,11 +15,11 @@ export const projectPages = [
         id: 'cong-cu',
         title: 'Chọn công cụ theo việc cần làm',
         html: `<ul>
-<li><a href="/#calculator">Tính điểm THPT</a>: nhập điểm và thông tin ưu tiên, xem các tổ hợp phù hợp rồi mở “Xem cách tính” để kiểm tra từng phần.</li>
-<li><a href="/#academic">Tính học bạ</a>: nhập điểm theo phương thức đã chọn hoặc dùng ảnh để hỗ trợ nhập. Sau khi quét, bạn cần kiểm tra bảng điểm trước khi xác nhận.</li>
-<li><a href="/#admission">Công thức theo trường</a>: xem phương thức, phạm vi áp dụng và trạng thái xác minh của công thức. Mục chưa đủ căn cứ có thể chỉ hiển thị để tham khảo.</li>
-<li><a href="/#universities">Hồ sơ trường</a> và <a href="/#major-finder">tìm ngành</a>: đối chiếu mã ngành, tổ hợp, phương thức và thang điểm, lưu lựa chọn hoặc so sánh các phương án.</li>
-<li><a href="/#practice-exams">Phòng thi thử</a>: làm bài có đếm giờ, xem điểm và lời giải ở những câu có dữ liệu. Điểm luyện tập dùng để xem lại bài làm của bạn.</li>
+<li><a href="/tinh-diem-thpt/">Tính điểm THPT</a>: nhập điểm và thông tin ưu tiên, xem các tổ hợp phù hợp rồi mở “Xem cách tính” để kiểm tra từng phần.</li>
+<li><a href="/tinh-diem-hoc-ba/">Tính học bạ</a>: nhập điểm theo phương thức đã chọn hoặc dùng ảnh để hỗ trợ nhập. Sau khi quét, bạn cần kiểm tra bảng điểm trước khi xác nhận.</li>
+<li><a href="/cong-thuc-xet-tuyen/">Công thức theo trường</a>: xem phương thức, phạm vi áp dụng và trạng thái xác minh của công thức. Mục chưa đủ căn cứ có thể chỉ hiển thị để tham khảo.</li>
+<li><a href="/ho-so-truong/">Hồ sơ trường</a> và <a href="/tim-nganh/">tìm ngành</a>: đối chiếu mã ngành, tổ hợp, phương thức và thang điểm, lưu lựa chọn hoặc so sánh các phương án.</li>
+<li><a href="/phong-thi/">Phòng thi thử</a>: làm bài có đếm giờ, xem điểm và lời giải ở những câu có dữ liệu. Điểm luyện tập dùng để xem lại bài làm của bạn.</li>
 </ul>`
       },
       {
@@ -69,7 +69,7 @@ export const projectPages = [
       {
         id: 'bao-sai-du-lieu',
         title: 'Báo thông tin trường hoặc ngành cần sửa',
-        html: `<p>Trong <a href="/#universities">hồ sơ trường</a>, bấm “Báo dữ liệu sai”; trong dòng ngành, bấm “Báo sai”. Form này giữ ngữ cảnh trường hoặc ngành giúp xác định đúng dữ liệu bạn đang xem. Bạn chọn mục cần sửa, mô tả vấn đề và có thể thêm giá trị đề xuất cùng liên kết kiểm chứng.</p>
+        html: `<p>Trong <a href="/ho-so-truong/">hồ sơ trường</a>, bấm “Báo dữ liệu sai”; trong dòng ngành, bấm “Báo sai”. Form này giữ ngữ cảnh trường hoặc ngành giúp xác định đúng dữ liệu bạn đang xem. Bạn chọn mục cần sửa, mô tả vấn đề và có thể thêm giá trị đề xuất cùng liên kết kiểm chứng.</p>
 <p>Chỉ thao tác “Gửi báo cáo” mới gửi nội dung tới hệ thống tiếp nhận. “Tải JSON” và “Sao chép” tạo bản để bạn giữ hoặc gửi kèm email; chúng chưa gửi báo cáo. Nếu gửi trên website không thành công, bạn có thể dùng bản này để tránh phải nhập lại.</p>
 <p>Xem <a href="/nguon-du-lieu-va-bao-sai/#gui-bao-sai">hướng dẫn báo sai</a> để chuẩn bị nguồn và kiểm tra thông báo sau khi gửi.</p>`
       },
@@ -140,7 +140,7 @@ export const projectPages = [
         id: 'cap-nhat',
         title: 'Thay đổi và phản hồi',
         html: `<p>Chức năng và nội dung có thể thay đổi khi dữ liệu được sửa hoặc bổ sung. Ngày cập nhật ở đầu trang cho biết phiên bản điều khoản đang được công bố. Bạn có thể gửi câu hỏi về một phần chưa rõ tới email hỗ trợ.</p>
-<p>Để tìm hiểu nguồn, trạng thái xác minh và cách gửi báo cáo, xem <a href="/nguon-du-lieu-va-bao-sai/">nguồn dữ liệu và báo sai</a>. Hướng dẫn thao tác với công cụ nằm ở <a href="/#guide">mục hướng dẫn sử dụng</a>.</p>`
+<p>Để tìm hiểu nguồn, trạng thái xác minh và cách gửi báo cáo, xem <a href="/nguon-du-lieu-va-bao-sai/">nguồn dữ liệu và báo sai</a>. Hướng dẫn thao tác với công cụ nằm ở <a href="/huong-dan/">mục hướng dẫn sử dụng</a>.</p>`
       }
     ]
   },
@@ -165,7 +165,7 @@ export const projectPages = [
 <dt>Tham khảo</dt><dd>Thông tin được giữ để hỗ trợ tra cứu nhưng cần đối chiếu thêm với thông báo chính thức. Điểm tham khảo phải được đọc cùng năm, phương thức và thang điểm.</dd>
 <dt>Đang cập nhật, chưa xác minh hoặc chưa công bố</dt><dd>Mục chưa có đủ dữ liệu để công bố kết quả theo trạng thái tương ứng. Ô chưa có điểm không được hiểu là điểm bằng 0.</dd>
 </dl>
-<p>Trong <a href="/#admission">công thức theo trường</a>, một phương thức có thể chỉ được mô tả để tham khảo nếu chưa đủ căn cứ tính tự động. Bạn nên đọc cả điều kiện và ngành áp dụng của công thức.</p>`
+<p>Trong <a href="/cong-thuc-xet-tuyen/">công thức theo trường</a>, một phương thức có thể chỉ được mô tả để tham khảo nếu chưa đủ căn cứ tính tự động. Bạn nên đọc cả điều kiện và ngành áp dụng của công thức.</p>`
       },
       {
         id: 'doi-chieu-diem',
@@ -177,7 +177,7 @@ export const projectPages = [
         id: 'gui-bao-sai',
         title: 'Gửi báo sai ngay tại dữ liệu đang xem',
         html: `<ol>
-<li>Mở <a href="/#universities">hồ sơ trường</a> rồi bấm “Báo dữ liệu sai”, hoặc bấm “Báo sai” cạnh dòng ngành cần kiểm tra.</li>
+<li>Mở <a href="/ho-so-truong/">hồ sơ trường</a> rồi bấm “Báo dữ liệu sai”, hoặc bấm “Báo sai” cạnh dòng ngành cần kiểm tra.</li>
 <li>Chọn mục cần sửa, chẳng hạn mã ngành, tổ hợp, phương thức, điểm chuẩn hoặc công thức. Mô tả phải dài từ 15 đến 1.000 ký tự và nêu rõ điểm chưa đúng.</li>
 <li>Thêm giá trị đề xuất và liên kết kiểm chứng nếu có. Liên kết cần bắt đầu bằng http:// hoặc https://; nên dẫn thẳng tới thông báo hoặc tài liệu liên quan.</li>
 <li>Bấm “Gửi báo cáo”, hoàn tất bước xác minh khi được yêu cầu rồi đọc thông báo kết quả. Giữ mã báo cáo được hiển thị để dùng khi cần liên hệ lại.</li>

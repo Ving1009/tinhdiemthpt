@@ -1,8 +1,9 @@
 import { answerAdmissionsQuestion, createAssistantKnowledge } from "./core/localAdmissionsAssistant.js?v=20261010-1";
 import { createDataReport } from "./core/dataReport.js";
 import { turnstileGate } from "./turnstile.js";
+import { profilePath } from "./core/appRoutes.js";
 
-const KNOWLEDGE_PATH = "data/assistant-knowledge.json";
+const KNOWLEDGE_PATH = "/data/assistant-knowledge.json";
 const REPORT_FIELDS = ["Hồ sơ trường", "Tên ngành", "Mã ngành", "Tổ hợp", "Phương thức", "Điểm chuẩn", "Công thức", "Liên kết nguồn", "Khác"];
 
 function apiUrl(path) {
@@ -172,9 +173,7 @@ export class AdmissionsAssistant {
     }
     const actions = element("div", "assistant-result-actions");
     const link = element("a", "assistant-card-link", "Mở hồ sơ");
-    link.href = card.type === "program"
-      ? `#nganh/${encodeURIComponent(card.universityId)}/${encodeURIComponent(card.majorId)}`
-      : `#truong/${encodeURIComponent(card.universityId)}`;
+    link.href = profilePath(card.universityId, card.type === "program" ? card.majorId : "");
     const report = element("button", "assistant-card-report", "Báo thông tin sai");
     report.type = "button";
     const contextId = `context-${++this.contextSequence}`;

@@ -14,10 +14,11 @@ import { autoFillTranscript } from "./autoFillTranscript.js";
 import { TranscriptPreview } from "./transcriptPreview.js";
 import { TranscriptScanner } from "./transcriptScanner.js?v=20261012-1";
 import { turnstileGate } from "./turnstile.js";
-import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261012-2";
+import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261012-4";
 import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-2";
-import { AdmissionsAssistant } from "./assistant.js?v=20261010-1";
+import { AdmissionsAssistant } from "./assistant.js?v=20261012-4";
 import { initAdConsent } from "./adConsent.js";
+import { APP_ROUTES, parseAppRoute, profilePath, routeFromLocation, updateAppMetadata } from "./core/appRoutes.js";
 import { calculateSchoolFormula, schoolFormulaBranches, selectSchoolFormulaRule, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20261004-3";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
@@ -80,14 +81,7 @@ function downloadBlob(content, type, filename) {
   window.setTimeout(() => URL.revokeObjectURL(url), 60000);
 }
 
-function parseDeepLink(hash = location.hash) {
-  try {
-    const parts = String(hash || "").replace(/^#/, "").split("/").map((item) => decodeURIComponent(item));
-    if (parts[0] === "truong" && parts[1]) return { universityId: parts[1], majorId: "" };
-    if (parts[0] === "nganh" && parts[1] && parts[2]) return { universityId: parts[1], majorId: parts[2] };
-  } catch { return null; }
-  return null;
-}
+function parseDeepLink() { const route = routeFromLocation(location); return route.universityId ? route : null; }
 
 function loadPersonalList(currentKey, legacyKeys, maxItems, backupKey = WISH_MIGRATION_BACKUP_KEY) {
   const current = storage.get(currentKey, null);
@@ -144,7 +138,8 @@ class THPTApp {
     initAdConsent();
     this.account.init().catch(() => { /* Tài khoản không được chặn các công cụ chính. */ });
     this.practiceExam.init();
-    this.setView(location.hash);
+    this.normalizeAppLocation();
+    this.setView(location.pathname);
     if (location.hash === "#privacy-policy") this.openPrivacyPolicy();
     this.setupTranscriptTools();
     this.renderSavedWishes();
@@ -163,7 +158,7 @@ class THPTApp {
       this.renderCombinations();
       this.renderUniversities();
       await this.restoreAdmissionSelections();
-      await this.openDeepLinkFromHash();
+      await this.openDeepLinkFromLocation();
       if (this.personalDataRetention.expired) this.showToast("Đã xóa dữ liệu phiên khách cũ sau 15 phút rời website.");
     } catch (error) {
       this.elements.universityGrid.innerHTML = '<p class="empty-state error-state">Không thể tải dữ liệu. <button class="button button-text" type="button" data-retry-load>Thử lại</button></p>';
@@ -320,6 +315,12 @@ class THPTApp {
     if (event.target.closest("[data-close-modal]")) this.closeModal();
     const privacyPolicy = event.target.closest("[data-privacy-policy]");
     if (privacyPolicy) { event.preventDefault(); this.openPrivacyPolicy(privacyPolicy); }
+    const link = event.target.closest("a[href]");
+    if (link && !event.defaultPrevented && event.button === 0 && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey && !link.download && (!link.target || link.target === "_self")) {
+      const url = new URL(link.href, location.href);
+      const route = parseAppRoute(url.hash || url.pathname);
+      if (url.origin === location.origin && route) { event.preventDefault(); this.goTo(route.path + url.search); return; }
+    }
     const retry = event.target.closest("[data-retry-load]"); if (retry) location.reload();
     const page = event.target.closest("[data-page-kind]");
     if (page) this.changePage(page.dataset.pageKind, Number(page.dataset.page));
@@ -350,21 +351,33 @@ class THPTApp {
     document.body.dataset.view = view;
     document.querySelectorAll("main > .section").forEach((section) => { section.hidden = section.id !== view; });
     document.querySelectorAll(".site-nav a, .mobile-bottom-nav a, .tool-switch a").forEach((link) => {
-      const active = link.dataset.views ? link.dataset.views.split(" ").includes(view) : link.hash === `#${view}`;
+      const linkView = resolveAppView(link.pathname);
+      const active = link.dataset.views ? link.dataset.views.split(" ").includes(view) : linkView === view;
       link.classList.toggle("is-active", active);
-      active ? link.setAttribute("aria-current", link.dataset.views && link.hash !== `#${view}` ? "true" : "page") : link.removeAttribute("aria-current");
+      active ? link.setAttribute("aria-current", link.dataset.views && linkView !== view ? "true" : "page") : link.removeAttribute("aria-current");
     });
-    document.title = "Tính Điểm THPT | Tra cứu tuyển sinh 2027";
+    updateAppMetadata(document, parseAppRoute(hash) || parseAppRoute("/"));
+  }
+  normalizeAppLocation() {
+    const legacy = parseAppRoute(location.hash), route = legacy || parseAppRoute(location.pathname);
+    if (route && (legacy || location.pathname !== route.path)) history.replaceState(history.state, "", route.path + location.search + (legacy ? "" : location.hash));
   }
   async handleLocationChange() {
-    this.setView(location.hash);
+    this.normalizeAppLocation();
+    this.setView(location.pathname);
     if (location.hash === "#privacy-policy") { this.openPrivacyPolicy(); return; }
     const deepLink = parseDeepLink();
     if (deepLink && this.repository.universities.length) await this.openUniversityModal(deepLink.universityId, null, deepLink.majorId, false);
     else if (this.modalRouteActive && !this.elements.modal.classList.contains("is-hidden")) this.closeModal(false);
   }
-  async openDeepLinkFromHash() { const deepLink = parseDeepLink(); if (deepLink) await this.openUniversityModal(deepLink.universityId, null, deepLink.majorId, false); }
-  goTo(hash) { this.setView(hash); if (location.hash !== hash) history.pushState(null, "", hash); document.querySelector(hash)?.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  async openDeepLinkFromLocation() { const deepLink = parseDeepLink(); if (deepLink) await this.openUniversityModal(deepLink.universityId, null, deepLink.majorId, false); }
+  goTo(target) {
+    const route = parseAppRoute(target); if (!route) return;
+    const path = route.path + (target.startsWith("/") ? new URL(target, location.href).search : "");
+    if (location.pathname + location.search + location.hash !== path) history.pushState(null, "", path);
+    this.handleLocationChange();
+    document.getElementById(route.view)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
   applyTheme(theme) { const dark = theme === "dark"; document.body.classList.toggle("dark", dark); $("#theme-toggle span").textContent = dark ? "☀" : "☾"; $("#theme-toggle").setAttribute("aria-label", dark ? "Bật giao diện sáng" : "Bật giao diện tối"); }
   toggleTheme() { const next = document.body.classList.contains("dark") ? "light" : "dark"; this.applyTheme(next); storage.set(THEME_STORAGE_KEY, next); }
   toggleMenu() { const nav = $("#site-nav"), open = !nav.classList.contains("open"); nav.classList.toggle("open", open); $$("#menu-toggle, #mobile-more-toggle").forEach((button) => button.setAttribute("aria-expanded", String(open))); }
@@ -915,7 +928,8 @@ class THPTApp {
       : university.logoFit === "mark-center"
         ? " logo-mark-crop logo-mark-center"
         : university.logoFit === "mark" ? " logo-mark-crop" : "";
-    return `<img class="school-logo${fitClass}" src="${escapeHTML(university.logo)}" alt="Logo ${escapeHTML(university.name)}" data-code="${escapeHTML(university.shortName || university.code || "ĐH")}" width="56" height="56" loading="lazy" />`;
+    const src = String(university.logo || "").replace(/^(?:\.\/)?assets\//, "/assets/");
+    return `<img class="school-logo${fitClass}" src="${escapeHTML(src)}" alt="Logo ${escapeHTML(university.name)}" data-code="${escapeHTML(university.shortName || university.code || "ĐH")}" width="56" height="56" loading="lazy" />`;
   }
   universityCard(university) { const label = university.programCount ? `${university.programCount} ngành / chương trình` : UNIVERSITY_PROFILE_STATUS[university.admissionsStatus]?.compact || "Đang cập nhật ngành"; const code = university.officialAdmissionsCode || university.code; return `<article class="university-card"><div class="university-card-identity">${this.logoMarkup(university)}<div><h3>${escapeHTML(university.name)}</h3><span class="school-code">${escapeHTML(code)} · ${escapeHTML(university.shortName)}</span></div></div><div class="university-actions"><span class="school-count">${escapeHTML(label)}</span><button class="card-link" data-school-id="${escapeHTML(university.id)}" type="button" aria-label="Hồ sơ ${escapeHTML(university.name)}">Hồ sơ ↗</button></div></article>`; }
 
@@ -931,12 +945,13 @@ class THPTApp {
   }
 
   async openUniversityModal(universityId, trigger, targetMajorId = "", updateRoute = true) {
-    const summary = this.repository.getUniversity(universityId); if (!summary) return;
+    const summary = this.repository.getUniversity(universityId); if (!summary) { this.showToast("Không tìm thấy hồ sơ trường."); return; }
     if (updateRoute) {
-      this.modalSourceHash = /^(?:#truong|#nganh)\//.test(location.hash) ? "#universities" : location.hash || "#universities";
-      const route = targetMajorId ? `#nganh/${encodeURIComponent(universityId)}/${encodeURIComponent(targetMajorId)}` : `#truong/${encodeURIComponent(universityId)}`;
-      if (location.hash !== route) history.pushState({ modal: true }, "", route);
+      this.modalSourceRoute = parseDeepLink() ? this.modalSourceRoute || APP_ROUTES.universities.path : location.pathname + location.search;
+      const route = profilePath(universityId, targetMajorId);
+      if (location.pathname !== route) history.pushState({ modal: true }, "", route);
     }
+    updateAppMetadata(document, parseAppRoute(profilePath(universityId, targetMajorId)), { university: summary });
     this.modalRouteActive = true;
     this.openModal(`<div class="modal-loading" role="status"><span class="loading-spinner" aria-hidden="true"></span><p>Đang tải hồ sơ ${escapeHTML(summary.shortName)}...</p></div>`, trigger);
     const token = Symbol("modal"); this.modalToken = token;
@@ -947,6 +962,7 @@ class THPTApp {
         this.repository.getAdmissionFormulas(universityId)
       ]);
       if (this.modalToken !== token || this.elements.modal.classList.contains("is-hidden")) return;
+      updateAppMetadata(document, parseAppRoute(profilePath(universityId, targetMajorId)), { university, major: initialPage.items.find(item => item.id === targetMajorId) });
       const evidence = university.admissions || {};
       const methods = initialPage.facets?.methods || [];
       const verifiedRows = Number(summary.verifiedRowCount) || 0;
@@ -1394,7 +1410,7 @@ class THPTApp {
       </div>`, trigger);
   }
   openModal(content, trigger) { this.simulationUpdate?.cancel(); this.simulationUpdate = null; this.pendingSimulation = null; this.modalReturnFocus = trigger || document.activeElement; this.elements.modalBody.innerHTML = content; this.elements.modal.classList.remove("is-hidden"); document.body.classList.add("modal-open"); this.elements.modal.querySelector(".modal-close").focus(); }
-  closeModal(restoreRoute = true) { this.simulationUpdate?.cancel(); this.simulationUpdate = null; this.pendingSimulation = null; this.modalToken = null; this.elements.modal.classList.add("is-hidden"); document.body.classList.remove("modal-open"); this.elements.modalBody.innerHTML = ""; if (restoreRoute && this.modalRouteActive && parseDeepLink()) { const target = this.modalSourceHash || "#universities"; history.replaceState(null, "", target); this.setView(target); } this.modalRouteActive = false; this.modalReturnFocus?.focus?.(); }
+  closeModal(restoreRoute = true) { this.simulationUpdate?.cancel(); this.simulationUpdate = null; this.pendingSimulation = null; this.modalToken = null; this.elements.modal.classList.add("is-hidden"); document.body.classList.remove("modal-open"); this.elements.modalBody.innerHTML = ""; if (restoreRoute && this.modalRouteActive && parseDeepLink()) { const target = this.modalSourceRoute || APP_ROUTES.universities.path; history.replaceState(null, "", target); this.setView(target); } this.modalRouteActive = false; this.modalReturnFocus?.focus?.(); }
   openCalculationModal() { const result = this.lastResult; if (!result) return; const rows = result.breakdown.map((item) => `<li><span>${escapeHTML(item.label)}</span><b>${formatScore(item.value)}</b></li>`).join(""); this.openModal(`<p class="modal-kicker">Giải thích kết quả</p><h2 id="modal-title">${escapeHTML(this.lastTrigger?.context || "Điểm xét tuyển")}</h2><ul class="explanation-list">${rows}<li><span>Điểm tổ hợp</span><b>${formatScore(result.examScore)}</b></li><li><span>Điểm ưu tiên</span><b>+ ${formatScore(result.priority.adjusted)}</b></li><li><span>Tổng điểm xét tuyển</span><b>${formatScore(result.total)} / ${result.maxScore}</b></li></ul>`, $("#show-calculation")); }
   openAcademicCalculationModal() { const result = this.lastAcademicResult; if (!result) return; const rows = result.breakdown.map((item) => `<li><span>${escapeHTML(item.label)}</span><b>${formatScore(item.value)}${item.weight === 2 ? " × 2" : ""}</b></li>`).join(""); const conversion = result.maxScore === 30 ? "" : `<li><span>Điểm quy về thang 30</span><b>${formatScore(result.priority.normalizedScore)} / 30</b></li>`; const priority = `<li><span>Điểm ưu tiên quy đổi</span><b>+ ${formatScore(result.priority.adjusted)}</b></li>`; this.openModal(`<p class="modal-kicker">Giải thích học bạ</p><h2 id="modal-title">Điểm học bạ</h2><ul class="explanation-list">${rows}<li><span>Điểm có trọng số</span><b>${formatScore(result.examScore)} / ${result.maxScore}</b></li>${conversion}${priority}</ul>`, $("#show-academic-calculation")); }
   openScoreSimulation() {

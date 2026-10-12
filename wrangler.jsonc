@@ -19,7 +19,7 @@
   "assets": {
     "directory": "./.cloudflare/public",
     "binding": "ASSETS",
-    "run_worker_first": ["/", "/index.html", "/cam-nang/*", "/privacy", "/privacy.html", "/gioi-thieu/*", "/lien-he/*", "/dieu-khoan-su-dung/*", "/nguon-du-lieu-va-bao-sai/*", "/ads.txt", "/api/*", "/_worker-data/*", "/vendor/tesseract/worker.min.js"]
+    "run_worker_first": ["/","/index.html","/cam-nang/*","/privacy","/privacy.html","/gioi-thieu/*","/lien-he/*","/dieu-khoan-su-dung/*","/nguon-du-lieu-va-bao-sai/*","/ads.txt","/api/*","/_worker-data/*","/vendor/tesseract/worker.min.js","/tinh-diem-thpt","/tinh-diem-thpt/*","/tinh-diem-hoc-ba","/tinh-diem-hoc-ba/*","/cong-thuc-xet-tuyen","/cong-thuc-xet-tuyen/*","/to-hop-mon","/to-hop-mon/*","/ho-so-truong","/ho-so-truong/*","/tim-nganh","/tim-nganh/*","/phong-thi","/phong-thi/*","/huong-dan","/huong-dan/*","/truong/*","/nganh/*"]
   },
   "services": [
     {

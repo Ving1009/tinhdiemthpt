@@ -36,7 +36,7 @@ function sourceLabel(exam) {
 
 function renderPageGallery(images, label, className) {
   if (!Array.isArray(images) || !images.length) return "";
-  return `<div class="${className}">${images.map((src, index) => `<a href="${escapeHTML(src)}" target="_blank" rel="noopener" aria-label="Mở ${escapeHTML(label.toLocaleLowerCase("vi"))} trang ${index + 1}"><img src="${escapeHTML(src)}" alt="${escapeHTML(label)} trang ${index + 1}" ${index ? 'loading="lazy"' : 'fetchpriority="high"'}></a>`).join("")}</div>`;
+  return `<div class="${className}">${images.map((src, index) => `<a href="${escapeHTML(src.startsWith("assets/") ? `/${src}` : src)}" target="_blank" rel="noopener" aria-label="Mở ${escapeHTML(label.toLocaleLowerCase("vi"))} trang ${index + 1}"><img src="${escapeHTML(src.startsWith("assets/") ? `/${src}` : src)}" alt="${escapeHTML(label)} trang ${index + 1}" ${index ? 'loading="lazy"' : 'fetchpriority="high"'}></a>`).join("")}</div>`;
 }
 
 export class PracticeExamApp {

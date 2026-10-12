@@ -43,7 +43,7 @@ export const admissionsGuides = [
       {
         id: 'hai-loai-diem',
         title: 'Bạn đang cần kiểm tra tốt nghiệp hay xét tuyển?',
-        html: `<p>Điểm xét tốt nghiệp trả lời câu hỏi bạn có đáp ứng điều kiện công nhận tốt nghiệp THPT hay không. Điểm xét tuyển được trường đại học dùng để xét vào một chương trình cụ thể. Một bạn có thể đạt điểm xét tốt nghiệp khá cao nhưng tổng điểm tổ hợp muốn dùng để vào đại học lại thấp hơn dự kiến.</p><p>Phần <a href="/#calculator">Điểm thi THPT của bạn</a> trên website cộng các môn của tổ hợp và tính ưu tiên tuyển sinh, thường hiển thị thang 30. Bạn không dùng con số ấy làm điểm xét tốt nghiệp. Phần học bạ trên website cũng phục vụ mô phỏng xét tuyển; điểm trung bình ba môn ở đó khác với điểm trung bình tất cả môn có điểm số dùng trong xét tốt nghiệp.</p>`
+        html: `<p>Điểm xét tốt nghiệp trả lời câu hỏi bạn có đáp ứng điều kiện công nhận tốt nghiệp THPT hay không. Điểm xét tuyển được trường đại học dùng để xét vào một chương trình cụ thể. Một bạn có thể đạt điểm xét tốt nghiệp khá cao nhưng tổng điểm tổ hợp muốn dùng để vào đại học lại thấp hơn dự kiến.</p><p>Phần <a href="/tinh-diem-thpt/">Điểm thi THPT của bạn</a> trên website cộng các môn của tổ hợp và tính ưu tiên tuyển sinh, thường hiển thị thang 30. Bạn không dùng con số ấy làm điểm xét tốt nghiệp. Phần học bạ trên website cũng phục vụ mô phỏng xét tuyển; điểm trung bình ba môn ở đó khác với điểm trung bình tất cả môn có điểm số dùng trong xét tốt nghiệp.</p>`
       },
       {
         id: 'cong-thuc-tot-nghiep',
@@ -61,7 +61,7 @@ export const admissionsGuides = [
         html: `<p>Điều 45 quy định trường hợp thông thường phải đủ điều kiện dự thi, không bị hủy kết quả, từng môn thi đều trên 1,0 và điểm xét tốt nghiệp từ 5,0. Vì vậy, một môn đúng 1,0 vẫn là vấn đề dù phép tính trung bình cho kết quả trên 5,0. Các diện miễn thi toàn bộ hoặc đặc cách có quy định riêng.</p><p>Hãy đối chiếu với điểm và kết quả công nhận do cơ quan có thẩm quyền công bố. Khi đã xác định được tình trạng tốt nghiệp, bạn mới chuyển sang tính từng tổ hợp xét tuyển và đọc điều kiện vào ngành. Công thức trong bài dùng làm tài liệu tham chiếu năm 2026; khi chuẩn bị cho năm 2027, hãy kiểm tra văn bản của kỳ thi đó.</p>`
       }
     ],
-    tool: { label: 'Mở công cụ điểm xét tuyển THPT', href: '/#calculator' },
+    tool: { label: 'Mở công cụ điểm xét tuyển THPT', href: '/tinh-diem-thpt/' },
     related: ['diem-xet-tuyen-va-uu-tien', 'xet-tuyen-hoc-ba']
   },
   {
@@ -91,7 +91,7 @@ export const admissionsGuides = [
       {
         id: 'thang-diem-khac',
         title: 'Môn nhân hệ số và điểm cộng cần công thức của trường',
-        html: `<p>Một tổng thang 40 không thể thay trực tiếp vào công thức có số 30. Quy chế yêu cầu quy đổi tương đương khi dùng thang điểm khác; cách lập điểm xét của từng phương thức phải đọc trong tài liệu trường. Chẳng hạn, 32/40 tương ứng 24/30 nếu trường áp dụng quy đổi tuyến tính, nhưng bạn cần kiểm tra trường có dùng cách đó hay không.</p><p>Công cụ học bạ có lựa chọn nhân hệ số 2 để xem tổng môn thang 40. Khi chưa có quy tắc ưu tiên đã xác minh, kết quả này cần được đối chiếu riêng. Với chứng chỉ hoặc thành tích được cộng điểm, hãy mở <a href="/#admission">công thức theo trường</a> để kiểm tra thứ tự quy đổi, cộng điểm và tính ưu tiên. Không thêm cùng một khoản lần thứ hai vào kết quả đã bao gồm khoản đó.</p>`
+        html: `<p>Một tổng thang 40 không thể thay trực tiếp vào công thức có số 30. Quy chế yêu cầu quy đổi tương đương khi dùng thang điểm khác; cách lập điểm xét của từng phương thức phải đọc trong tài liệu trường. Chẳng hạn, 32/40 tương ứng 24/30 nếu trường áp dụng quy đổi tuyến tính, nhưng bạn cần kiểm tra trường có dùng cách đó hay không.</p><p>Công cụ học bạ có lựa chọn nhân hệ số 2 để xem tổng môn thang 40. Khi chưa có quy tắc ưu tiên đã xác minh, kết quả này cần được đối chiếu riêng. Với chứng chỉ hoặc thành tích được cộng điểm, hãy mở <a href="/cong-thuc-xet-tuyen/">công thức theo trường</a> để kiểm tra thứ tự quy đổi, cộng điểm và tính ưu tiên. Không thêm cùng một khoản lần thứ hai vào kết quả đã bao gồm khoản đó.</p>`
       },
       {
         id: 'doi-chieu-ho-so',
@@ -99,7 +99,7 @@ export const admissionsGuides = [
         html: `<ol><li>Kiểm tra đúng ba môn và đúng điểm gốc.</li><li>Kiểm tra khu vực, nhóm đối tượng và năm tốt nghiệp.</li><li>Đọc mức ưu tiên thực nhận sau điều chỉnh.</li><li>Kiểm tra thang điểm và những khoản đã được cộng.</li></ol><p>Khi địa giới hoặc mã trường THPT thay đổi, Bộ GDĐT hướng dẫn điền mã theo từng giai đoạn học tập đã được địa phương xác nhận trong <a href="https://chinhsachonline.chinhphu.vn/tuyen-sinh-2026-xac-dinh-khu-vuc-uu-tien-khi-thay-doi-dia-gioi-hanh-chinh-88858.htm">giải đáp về khu vực ưu tiên</a>. Bạn nên hỏi đơn vị đăng ký nếu dữ liệu trên hệ thống khác giấy tờ, thay vì tự suy ra khu vực từ địa chỉ hiện tại.</p>`
       }
     ],
-    tool: { label: 'Tính điểm tổ hợp và ưu tiên', href: '/#calculator' },
+    tool: { label: 'Tính điểm tổ hợp và ưu tiên', href: '/tinh-diem-thpt/' },
     related: ['tinh-diem-tot-nghiep-thpt', 'doc-diem-chuan-dai-hoc', 'loi-thuong-gap-khi-xet-tuyen']
   },
   {
@@ -126,7 +126,7 @@ export const admissionsGuides = [
       {
         id: 'gioi-han-mo-phong',
         title: 'Các lựa chọn trên công cụ có phạm vi khác nhau',
-        html: `<p><a href="/#academic">Công cụ học bạ</a> hiện có các lựa chọn ba năm, sáu học kỳ, cả năm lớp 12 và một số bộ học kỳ. Những lựa chọn chỉ lấy lớp 12, ba hoặc năm học kỳ, hoặc dừng ở học kỳ một lớp 12 là phép mô phỏng; không đáp ứng yêu cầu dữ liệu cả ba năm của cách xét thuần học bạ năm 2026 nêu trên.</p><p>Ngay cả khi chọn sáu học kỳ, tổng trung bình cộng sáu cột vẫn cần đối chiếu công thức lấy điểm cả năm của trường. Nếu hồ sơ yêu cầu ba điểm cả năm, bạn nên dùng lựa chọn ba năm và nhập đúng điểm đã ghi. Chưa có học kỳ hoặc năm học cuối thì có thể tính thử để lập kế hoạch, nhưng chưa coi đó là điểm nộp xét tuyển hoàn chỉnh.</p>`
+        html: `<p><a href="/tinh-diem-hoc-ba/">Công cụ học bạ</a> hiện có các lựa chọn ba năm, sáu học kỳ, cả năm lớp 12 và một số bộ học kỳ. Những lựa chọn chỉ lấy lớp 12, ba hoặc năm học kỳ, hoặc dừng ở học kỳ một lớp 12 là phép mô phỏng; không đáp ứng yêu cầu dữ liệu cả ba năm của cách xét thuần học bạ năm 2026 nêu trên.</p><p>Ngay cả khi chọn sáu học kỳ, tổng trung bình cộng sáu cột vẫn cần đối chiếu công thức lấy điểm cả năm của trường. Nếu hồ sơ yêu cầu ba điểm cả năm, bạn nên dùng lựa chọn ba năm và nhập đúng điểm đã ghi. Chưa có học kỳ hoặc năm học cuối thì có thể tính thử để lập kế hoạch, nhưng chưa coi đó là điểm nộp xét tuyển hoàn chỉnh.</p>`
       },
       {
         id: 'kiem-tra-anh-va-dieu-kien',
@@ -134,7 +134,7 @@ export const admissionsGuides = [
         html: `<p>Sau khi quét ảnh, hãy kiểm tra từng ô với bản gốc: tên môn, năm học, dấu phẩy thập phân và điểm cả năm. Một điểm 8,1 bị đọc thành 8,7 có thể làm đổi thứ tự tổ hợp. Ô chưa đọc được phải bổ sung; đừng điền 0 thay cho dữ liệu còn thiếu.</p><p>Điều 6 của <a href="https://vanban.chinhphu.vn/?docid=217071&amp;pageid=27160">quy chế 2026</a> đặt mốc nguồn tuyển 15,00/30 từ ba môn thi tốt nghiệp theo tổ hợp, hoặc Toán, Ngữ văn và một môn khác, cho người thi tốt nghiệp từ năm 2026; có các ngoại lệ được nêu trong điều khoản. Học bạ cao chưa đủ để kết luận đủ điều kiện đăng ký. Hãy kiểm tra thêm ngưỡng đầu vào của ngành, yêu cầu môn, cách dùng chứng chỉ và giấy tờ của trường, rồi lưu công thức cùng đường dẫn đã dùng.</p>`
       }
     ],
-    tool: { label: 'Nhập và tính bảng điểm học bạ', href: '/#academic' },
+    tool: { label: 'Nhập và tính bảng điểm học bạ', href: '/tinh-diem-hoc-ba/' },
     related: ['diem-xet-tuyen-va-uu-tien', 'cac-phuong-thuc-xet-tuyen', 'loi-thuong-gap-khi-xet-tuyen']
   },
   {
@@ -166,10 +166,10 @@ export const admissionsGuides = [
       {
         id: 'dung-du-lieu-cu',
         title: 'Dùng dữ liệu 2026 để lập danh sách cho năm 2027',
-        html: `<p>Trong <a href="/#universities">hồ sơ trường</a> và phần tìm ngành, điểm chuẩn 2026 là mốc tham khảo cho người chuẩn bị tuyển sinh 2027. Ghi khoảng chênh giữa điểm dự kiến của bạn và mốc ấy, kèm những yếu tố còn chờ cập nhật: tổ hợp, phương thức, công thức và chỉ tiêu. Số chênh này giúp bạn chọn nơi cần tìm hiểu thêm; nó không phải xác suất trúng tuyển.</p><p>Bạn nên giữ vài phương án ở các mức điểm khác nhau và kiểm tra chương trình học, chi phí, địa điểm trước khi đưa vào nguyện vọng. Khi trường công bố thông tin 2027, thay dữ liệu tham chiếu bằng thông báo mới. Nếu website và trường có số khác nhau, ưu tiên kiểm tra thông báo chính thức cùng năm, cùng mã và cùng đợt.</p>`
+        html: `<p>Trong <a href="/ho-so-truong/">hồ sơ trường</a> và phần tìm ngành, điểm chuẩn 2026 là mốc tham khảo cho người chuẩn bị tuyển sinh 2027. Ghi khoảng chênh giữa điểm dự kiến của bạn và mốc ấy, kèm những yếu tố còn chờ cập nhật: tổ hợp, phương thức, công thức và chỉ tiêu. Số chênh này giúp bạn chọn nơi cần tìm hiểu thêm; nó không phải xác suất trúng tuyển.</p><p>Bạn nên giữ vài phương án ở các mức điểm khác nhau và kiểm tra chương trình học, chi phí, địa điểm trước khi đưa vào nguyện vọng. Khi trường công bố thông tin 2027, thay dữ liệu tham chiếu bằng thông báo mới. Nếu website và trường có số khác nhau, ưu tiên kiểm tra thông báo chính thức cùng năm, cùng mã và cùng đợt.</p>`
       }
     ],
-    tool: { label: 'Tra cứu hồ sơ và điểm chuẩn 2026', href: '/#universities' },
+    tool: { label: 'Tra cứu hồ sơ và điểm chuẩn 2026', href: '/ho-so-truong/' },
     related: ['chon-to-hop-xet-tuyen', 'sap-xep-nguyen-vong', 'diem-xet-tuyen-va-uu-tien']
   },
   {
@@ -183,7 +183,7 @@ export const admissionsGuides = [
       {
         id: 'ma-va-mon',
         title: 'Mã tổ hợp giúp bạn xác định đúng các môn',
-        html: `<p>A00 gồm Toán, Vật lí, Hóa học; A01 gồm Toán, Vật lí, Tiếng Anh; D01 gồm Toán, Ngữ văn, Tiếng Anh; B00 gồm Toán, Hóa học, Sinh học. Các mã này được thể hiện trong <a href="https://tuyensinh.ctu.edu.vn/chuong-trinh-dai-tra/841-danh-muc-nganh-va-chi-tieu-tuyen-sinh-dhcq.html">danh mục tuyển sinh năm 2026 của Đại học Cần Thơ</a>. Với một mã ít gặp, hãy mở bảng tổ hợp để đọc đủ tên môn.</p><p>Bạn nên phân biệt ngoại ngữ cụ thể, môn giáo dục kinh tế và pháp luật, Tin học và các môn Công nghệ. Một nhãn viết tắt giống nhau ở bảng cũ có thể khiến bạn nhập nhầm môn. Phần <a href="/#combinations">tra cứu tổ hợp</a> giúp tìm theo mã hoặc tên môn; sau đó vẫn cần đối chiếu danh mục ngành của trường.</p>`
+        html: `<p>A00 gồm Toán, Vật lí, Hóa học; A01 gồm Toán, Vật lí, Tiếng Anh; D01 gồm Toán, Ngữ văn, Tiếng Anh; B00 gồm Toán, Hóa học, Sinh học. Các mã này được thể hiện trong <a href="https://tuyensinh.ctu.edu.vn/chuong-trinh-dai-tra/841-danh-muc-nganh-va-chi-tieu-tuyen-sinh-dhcq.html">danh mục tuyển sinh năm 2026 của Đại học Cần Thơ</a>. Với một mã ít gặp, hãy mở bảng tổ hợp để đọc đủ tên môn.</p><p>Bạn nên phân biệt ngoại ngữ cụ thể, môn giáo dục kinh tế và pháp luật, Tin học và các môn Công nghệ. Một nhãn viết tắt giống nhau ở bảng cũ có thể khiến bạn nhập nhầm môn. Phần <a href="/to-hop-mon/">tra cứu tổ hợp</a> giúp tìm theo mã hoặc tên môn; sau đó vẫn cần đối chiếu danh mục ngành của trường.</p>`
       },
       {
         id: 'vi-du-so-sanh-to-hop',
@@ -198,10 +198,10 @@ export const admissionsGuides = [
       {
         id: 'chon-mon-va-lap-ke-hoach',
         title: 'Giữ các lựa chọn phù hợp khi lên kế hoạch học',
-        html: `<p>Bạn có thể lập một bảng ngắn: ngành muốn học, trường, tổ hợp được nhận, môn đang học, môn sẽ thi và dữ liệu còn thiếu. Nếu một tổ hợp đòi hai môn bạn không học hoặc chưa định thi, ghi rõ để tìm phương án khác hoặc hỏi trường về điều kiện thay thế. Việc này nên làm trước khi quyết định kế hoạch ôn.</p><p>Danh mục 2026 trên website giúp khảo sát ban đầu cho năm 2027. Bạn cần kiểm tra danh mục mới khi trường công bố, nhất là tổ hợp có môn mới hoặc năng khiếu. Sau khi chốt tổ hợp phù hợp, dùng <a href="/#major-finder">tìm ngành theo điểm</a> để tạo danh sách tham khảo, rồi đọc chương trình học và điều kiện dự tuyển của từng lựa chọn.</p>`
+        html: `<p>Bạn có thể lập một bảng ngắn: ngành muốn học, trường, tổ hợp được nhận, môn đang học, môn sẽ thi và dữ liệu còn thiếu. Nếu một tổ hợp đòi hai môn bạn không học hoặc chưa định thi, ghi rõ để tìm phương án khác hoặc hỏi trường về điều kiện thay thế. Việc này nên làm trước khi quyết định kế hoạch ôn.</p><p>Danh mục 2026 trên website giúp khảo sát ban đầu cho năm 2027. Bạn cần kiểm tra danh mục mới khi trường công bố, nhất là tổ hợp có môn mới hoặc năng khiếu. Sau khi chốt tổ hợp phù hợp, dùng <a href="/tim-nganh/">tìm ngành theo điểm</a> để tạo danh sách tham khảo, rồi đọc chương trình học và điều kiện dự tuyển của từng lựa chọn.</p>`
       }
     ],
-    tool: { label: 'Tra mã tổ hợp và các môn', href: '/#combinations' },
+    tool: { label: 'Tra mã tổ hợp và các môn', href: '/to-hop-mon/' },
     related: ['doc-diem-chuan-dai-hoc', 'sap-xep-nguyen-vong', 'cac-phuong-thuc-xet-tuyen']
   },
   {
@@ -239,7 +239,7 @@ export const admissionsGuides = [
         html: `<ol><li>Ghi đúng mã trường, mã xét tuyển và tên chương trình.</li><li>Kiểm tra điều kiện của từng dòng, kể cả năng khiếu hoặc sơ tuyển.</li><li>Sắp xếp theo mức muốn học; giữ các phương án phù hợp ở những mức điểm khác nhau.</li><li>Đối chiếu danh sách trên cổng chính thức sau khi lưu và hoàn thành lệ phí theo hướng dẫn.</li></ol><p>Danh sách lưu trên website này là tài liệu để bạn chuẩn bị. Hãy đăng nhập hệ thống tuyển sinh chính thức để đăng ký, rồi kiểm tra trạng thái và thứ tự đã lưu. Sau kết quả, việc xác nhận nhập học và thủ tục tại trường còn cần thực hiện theo thông báo; lưu danh sách nguyện vọng không hoàn thành những bước đó.</p>`
       }
     ],
-    tool: { label: 'Tìm ngành và chuẩn bị danh sách nguyện vọng', href: '/#major-finder' },
+    tool: { label: 'Tìm ngành và chuẩn bị danh sách nguyện vọng', href: '/tim-nganh/' },
     related: ['doc-diem-chuan-dai-hoc', 'chon-to-hop-xet-tuyen', 'loi-thuong-gap-khi-xet-tuyen']
   },
   {
@@ -266,7 +266,7 @@ export const admissionsGuides = [
       {
         id: 'diem-goc-va-quy-doi',
         title: 'Giữ riêng điểm gốc và điểm dùng để xét',
-        html: `<p>Công cụ có thể hiển thị điểm gốc của kỳ thi theo thang 100, 150 hoặc 1200. Muốn so với một mức điểm chuẩn thang 30, bạn phải có quy tắc quy đổi của trường và năm tương ứng. Không lấy tỷ lệ điểm đạt trên điểm tối đa rồi nhân 30 để thay cho bảng quy đổi theo phân vị.</p><p>Trong <a href="/#admission">công thức theo trường</a>, hãy xem phương thức, ngành áp dụng và tài liệu kiểm chứng trước khi nhập điểm. Nếu công thức đang thiếu dữ liệu hoặc chưa hỗ trợ tự tính, mở nguồn trường để tính hoặc hỏi bộ phận tuyển sinh. Một tổng tự tính theo công thức chung chưa thể đại diện cho phương thức kết hợp có trọng số riêng.</p>`
+        html: `<p>Công cụ có thể hiển thị điểm gốc của kỳ thi theo thang 100, 150 hoặc 1200. Muốn so với một mức điểm chuẩn thang 30, bạn phải có quy tắc quy đổi của trường và năm tương ứng. Không lấy tỷ lệ điểm đạt trên điểm tối đa rồi nhân 30 để thay cho bảng quy đổi theo phân vị.</p><p>Trong <a href="/cong-thuc-xet-tuyen/">công thức theo trường</a>, hãy xem phương thức, ngành áp dụng và tài liệu kiểm chứng trước khi nhập điểm. Nếu công thức đang thiếu dữ liệu hoặc chưa hỗ trợ tự tính, mở nguồn trường để tính hoặc hỏi bộ phận tuyển sinh. Một tổng tự tính theo công thức chung chưa thể đại diện cho phương thức kết hợp có trọng số riêng.</p>`
       },
       {
         id: 'chon-va-hoan-thanh',
@@ -274,7 +274,7 @@ export const admissionsGuides = [
         html: `<p>Ưu tiên kiểm tra những phương thức bạn đã có kết quả hợp lệ, sau đó cân nhắc kỳ thi hoặc chứng chỉ bổ sung theo ngành muốn học. Trước khi dành thời gian ôn một kỳ thi, xác nhận trường có nhận kết quả, ngành có áp dụng và bạn đáp ứng các điều kiện còn lại.</p><p>Nếu dùng nhiều kết quả, ghi riêng điểm xét đã tính theo từng phương thức. Thông báo đủ điều kiện ở một phương thức còn cần được xử lý trong quy trình tuyển sinh chung. Bạn phải hoàn thành khai dữ liệu, minh chứng và đăng ký nguyện vọng theo hướng dẫn năm đó. Các nguồn trong bài là năm 2026; danh mục và công thức cho tuyển sinh 2027 cần được kiểm tra lại khi trường công bố.</p>`
       }
     ],
-    tool: { label: 'Xem phương thức và công thức theo trường', href: '/#admission' },
+    tool: { label: 'Xem phương thức và công thức theo trường', href: '/cong-thuc-xet-tuyen/' },
     related: ['xet-tuyen-hoc-ba', 'doc-diem-chuan-dai-hoc', 'sap-xep-nguyen-vong']
   },
   {
@@ -314,7 +314,7 @@ export const admissionsGuides = [
         html: `<p>Nếu phát hiện thông tin sai trên website, bạn có thể gửi đến hotro.tinhdiemthpt@gmail.com: đường dẫn trang, tên trường hoặc công cụ, năm dữ liệu, giá trị đang hiển thị và nguồn chính thức cần đối chiếu. Với lỗi tính, nêu bộ điểm mẫu và phương thức đã chọn để có thể tính lại. Tránh gửi căn cước hoặc cả hồ sơ cá nhân khi chỉ cần giải thích một phép tính.</p>`
       }
     ],
-    tool: { label: 'Xem hướng dẫn đọc kết quả công cụ', href: '/#guide' },
+    tool: { label: 'Xem hướng dẫn đọc kết quả công cụ', href: '/huong-dan/' },
     related: ['diem-xet-tuyen-va-uu-tien', 'xet-tuyen-hoc-ba', 'sap-xep-nguyen-vong']
   }
 ];

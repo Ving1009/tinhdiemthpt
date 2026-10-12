@@ -13,7 +13,9 @@ import { createReportStore } from "./reportStore.js";
 import { createConfiguredAdmissionsAssistant } from "./configuredAssistant.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
 import { readFile } from "node:fs/promises";
-import { ADSENSE_PAGE_PATHS, adsenseAdsTxt, isAdSenseContentPage, nonceHtmlScripts, prepareAdSenseHtml } from "../lib/adsense.js";
+import { adsenseAdsTxt, isAdSenseContentPage, nonceHtmlScripts, prepareAdSenseHtml } from "../lib/adsense.js";
+import { parseAppRoute } from "../public/js/core/appRoutes.js";
+import { appRouteProfile, renderAppPage } from "../lib/appPages.js";
 
 const serverRequire = createRequire(import.meta.url);
 const PUBLIC_DIR = fileURLToPath(new URL("../public/", import.meta.url));
@@ -70,15 +72,20 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
     response.setHeader("Cache-Control", "public, max-age=3600");
     response.status(text ? 200 : 404).type("text/plain").send(text);
   });
-  app.get([...ADSENSE_PAGE_PATHS], async (request, response, next) => {
-    if (!isAdSenseContentPage(request.path)) return next();
+  app.use(async (request, response, next) => {
+    const route = parseAppRoute(request.path);
+    if (!["GET", "HEAD"].includes(request.method) || (!route && !isAdSenseContentPage(request.path))) return next();
+    const profile = route ? appRouteProfile(dataStore, route) : null;
+    if (route && !profile) return response.status(404).type("text").send("Không tìm thấy hồ sơ trường hoặc ngành.");
+    if (route && request.path !== route.path && request.path !== "/index.html") return response.redirect(308, route.path + request.url.slice(request.path.length));
     // Every path comes from the shared public-page allowlist, never arbitrary input.
-    const file = ["/", "/index.html"].includes(request.path) ? join(PUBLIC_DIR, "index.html")
+    const file = route ? join(PUBLIC_DIR, "index.html")
       : ["/privacy", "/privacy.html"].includes(request.path) ? join(PUBLIC_DIR, "privacy.html")
       : request.path.endsWith(".html") ? join(PUBLIC_DIR, request.path.slice(1))
       : join(PUBLIC_DIR, request.path.slice(1), "index.html");
-    const prepared = prepareAdSenseHtml(await readFile(file, "utf8"), environment, "", request.path);
-    const page = !prepared.adsEnabled && ["/", "/index.html"].includes(request.path) ? nonceHtmlScripts(prepared.html) : prepared;
+    const html = await readFile(file, "utf8");
+    const prepared = prepareAdSenseHtml(route ? renderAppPage(html, route, profile) : html, environment, "", request.path);
+    const page = !prepared.adsEnabled && route ? nonceHtmlScripts(prepared.html) : prepared;
     // Local Express has no trusted country metadata. Ads stay off until the CMP is ready.
     const forwardedProtocol = String(request.headers["x-forwarded-proto"] || "").split(",", 1)[0].trim().toLowerCase();
     for (const [name, value] of Object.entries(securityHeaders({ isHttps: request.secure || forwardedProtocol === "https", pathname: request.path, adsenseNonce: prepared.nonce, scriptNonce: page.nonce }))) response.setHeader(name, value);

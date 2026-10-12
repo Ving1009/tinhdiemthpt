@@ -6,6 +6,7 @@ import { sanitizeMajor, sanitizePublicValue, sanitizeUniversity, validateCutoff 
 import { securityHeaders } from "../lib/securityHeaders.js";
 import { buildAssistantKnowledge } from "./build-assistant-knowledge.mjs";
 import { createMajorSearchIndex } from "../server/dataStoreCore.js";
+import { buildEditorialContent } from "./build-content.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const output = join(root, ".cloudflare", "public");
@@ -36,6 +37,7 @@ async function listFiles(directory) {
   return nested.flat();
 }
 
+await buildEditorialContent();
 await buildAssistantKnowledge();
 await rm(join(root, ".cloudflare"), { recursive: true, force: true });
 await mkdir(workerData, { recursive: true });

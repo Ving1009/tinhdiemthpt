@@ -82,6 +82,11 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
     response.setHeader("Cache-Control", "public, max-age=86400");
     response.type("text/plain").sendFile(SECURITY_TXT, { dotfiles: "allow" });
   });
+  // Cloudflare normalizes flat privacy.html to /privacy; keep the same canonical URL locally.
+  app.get("/privacy", (_request, response) => {
+    response.setHeader("Cache-Control", "no-cache");
+    response.sendFile(join(PUBLIC_DIR, "privacy.html"));
+  });
   app.use("/api", localDevelopmentCors);
   app.use("/api", createPublicApiRouter({ store: dataStore, reportStore, assistant, environment, turnstileFetch }));
   app.use("/api", createScanTranscriptRouter({ scanTranscript: scanner, environment, turnstileFetch }));

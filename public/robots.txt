@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_worker-data/
+Sitemap: https://tinhdiemthpt.id.vn/sitemap.xml

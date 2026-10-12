@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="css/practice-exam.css?v=20260928-1" />
     <link rel="stylesheet" href="css/assistant.css?v=20260929-2" />
     <link rel="stylesheet" href="css/redesign.css?v=20261011-4" />
+    <link rel="stylesheet" href="/css/content.css?v=20261012-2" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
@@ -52,7 +53,7 @@
           <a href="#universities">Hồ sơ trường</a>
           <a href="#major-finder">Tìm ngành</a>
           <a href="#practice-exams">Phòng thi thử</a>
-          <a href="#guide">Hướng dẫn</a>
+          <a href="#guide">Cẩm nang</a>
         </nav>
 
         <div class="header-actions">
@@ -114,6 +115,7 @@
           </div>
           <div class="home-shortcuts" aria-label="Công cụ tra cứu khác"><a href="#major-finder">Tìm ngành theo điểm <span aria-hidden="true">↗</span></a><a href="#admission">Công thức theo trường <span aria-hidden="true">↗</span></a><a href="#combinations">Tra cứu tổ hợp <span aria-hidden="true">↗</span></a><a href="#guide">Hướng dẫn sử dụng <span aria-hidden="true">↗</span></a></div>
           <p class="home-notice">Website dành cho thí sinh năm 2027. Dữ liệu tuyển sinh 2027 đang cập nhật; hồ sơ, điểm chuẩn, công thức và đề thi năm 2026 chỉ để tham khảo. Hãy đối chiếu thông báo chính thức của trường trước khi đăng ký nguyện vọng.</p>
+          <p class="home-notice"><a href="/cam-nang/">Đọc cẩm nang tuyển sinh</a>: cách tính điểm, đọc điểm chuẩn và chuẩn bị nguyện vọng, kèm ví dụ và nguồn đối chiếu.</p>
         </div>
       </section>
 
@@ -125,6 +127,7 @@
             <p>Điền điểm theo thang 10. Bạn có thể dùng dấu phẩy hoặc dấu chấm cho phần thập phân.</p>
             <nav class="tool-switch" aria-label="Công cụ tính điểm"><a href="#calculator">Điểm thi THPT</a><a href="#academic">Điểm học bạ</a></nav>
           </div>
+          <details class="tool-reading-note"><summary>Công cụ này tính gì? Xem ví dụ và phạm vi áp dụng</summary><p>Công cụ tính các tổ hợp ba môn từ bốn môn thi bạn nhập, xếp kết quả từ cao xuống thấp và điều chỉnh ưu tiên theo khu vực, đối tượng. Đây là điểm tham khảo xét tuyển đại học, không phải điểm xét tốt nghiệp THPT.</p><p>Ví dụ minh họa: một tổ hợp có 9 + 9 + 8 = 26 điểm, KV1 và không có ưu tiên đối tượng. Theo quy tắc 2026, ưu tiên thực tế là (30 − 26) / 7,5 × 0,75 = 0,40; tổng bằng 26,40/30. Ngành có hệ số, điểm cộng hoặc điều kiện riêng cần đối chiếu công thức của trường.</p><p><a href="/cam-nang/diem-xet-tuyen-va-uu-tien/">Đọc cách tính điểm xét tuyển và ưu tiên</a> · <a href="/cam-nang/tinh-diem-tot-nghiep-thpt/">Phân biệt với điểm xét tốt nghiệp</a></p></details>
           <div class="calculator-layout">
             <form id="score-form" novalidate>
               <div class="form-card candidate-card">
@@ -186,6 +189,8 @@
             <p>Chọn phương thức và nhập điểm các môn để tìm tổ hợp đủ dữ liệu. Nếu có môn nhân hệ số 2, điểm chưa quy đổi được giữ trên thang 40.</p>
             <nav class="tool-switch" aria-label="Công cụ tính điểm"><a href="#calculator">Điểm thi THPT</a><a href="#academic">Điểm học bạ</a></nav>
           </div>
+          <p class="tool-reading-note">Theo quy chế tuyển sinh 2026, phương thức xét học bạ sử dụng điểm trung bình cả năm lớp 10, 11 và 12. Các chế độ kỳ học khác trong công cụ giúp mô phỏng và so sánh, không xác nhận đủ điều kiện xét tuyển. Quy định 2027 đang cập nhật. <a href="/cam-nang/xet-tuyen-hoc-ba/">Xem hướng dẫn và căn cứ áp dụng</a>.</p>
+          <details class="tool-reading-note"><summary>Nhập tay hoặc quét ảnh học bạ như thế nào?</summary><p>Chọn đúng lớp và cột điểm trung bình trong bảng gốc. Nếu quét ảnh, hãy che họ tên, ngày sinh, CCCD và thông tin không cần thiết. Ảnh chỉ được gửi sau khi bạn đồng ý và bấm quét; dịch vụ dự phòng có thể được thử nếu lần trước lỗi. Quét local xử lý tại thiết bị khi bạn chọn, nhưng ảnh có thể đã được gửi trong lần thử từ xa trước đó.</p><p>Nhận diện có thể thiếu môn hoặc nhầm chữ số. Đối chiếu từng ô trong bản xem trước, nhập tay ô còn thiếu rồi mới xác nhận điền điểm. Không dùng điểm kiểm tra thành phần thay cho trung bình môn. <a href="/privacy">Xem cách xử lý ảnh và dữ liệu</a>.</p></details>
           <div class="calculator-layout academic-layout">
             <form id="academic-form" novalidate>
               <div class="form-card">
@@ -255,7 +260,7 @@
                   <label class="check-field" for="academic-multiplier-enabled"><input id="academic-multiplier-enabled" type="checkbox" /> <span>Có môn nhân hệ số 2</span></label>
                   <div class="field is-hidden" id="academic-multiplier-field"><label for="academic-multiplier-subject">Môn nhân hệ số</label><select id="academic-multiplier-subject"><option value="">Chọn môn</option></select></div>
                 </div>
-                <p class="score-note is-hidden" id="academic-multiplier-note">Điểm có môn nhân hệ số dùng thang 40. Chỉ cộng điểm ưu tiên khi trường có quy tắc quy đổi đã được xác minh.</p>
+                <p class="score-note is-hidden" id="academic-multiplier-note">Điểm có môn nhân hệ số dùng thang 40. Công cụ mô phỏng ưu tiên theo thang điểm này; hãy đối chiếu quy tắc và cách quy đổi chính thức của trường trước khi sử dụng.</p>
               </div>
               <div class="form-card" id="academic-score-entry">
                 <div class="card-title"><span class="card-number">3</span><div><h3>Bảng điểm học bạ</h3><p>Nhập điểm cho ít nhất 3 môn. Các môn còn ô trống sẽ được bỏ qua khi tìm tổ hợp.</p></div></div>
@@ -323,6 +328,7 @@
       <section class="section universities-section" id="universities" aria-labelledby="universities-title">
         <div class="container">
           <div class="section-heading split-heading"><div><p class="eyebrow">05 · Hồ sơ trường · Dữ liệu 2026</p><h2 id="universities-title">Hồ sơ các trường</h2><p>Tra cứu ngành, mã ngành, tổ hợp, phương thức và điểm chuẩn năm 2026 để tham khảo cho tuyển sinh 2027. Thông tin 2027 đang cập nhật; hãy đối chiếu tài liệu tuyển sinh của trường trong từng hồ sơ.</p></div><div class="university-tools"><div class="university-region-filters" id="university-region-filters" aria-label="Lọc trường theo miền"><button class="region-filter is-active" type="button" data-university-region="all" aria-pressed="true">Tất cả</button><button class="region-filter" type="button" data-university-region="north" aria-pressed="false">Miền Bắc</button><button class="region-filter" type="button" data-university-region="central" aria-pressed="false">Miền Trung</button><button class="region-filter" type="button" data-university-region="south" aria-pressed="false">Miền Nam</button></div><div class="section-search"><label class="sr-only" for="university-query">Lọc danh sách trường</label><span aria-hidden="true">⌕</span><input id="university-query" type="search" placeholder="Tìm tên hoặc mã trường" /></div></div></div>
+          <details class="tool-reading-note"><summary>Cách đọc hồ sơ trường và năm dữ liệu</summary><p>Kiểm tra mã trường, tên ngành, mã ngành, phương thức, tổ hợp và năm điểm chuẩn cùng nhau. Điểm THPT, học bạ và các kỳ đánh giá năng lực dùng thang khác nhau, nên không đối chiếu chỉ bằng con số.</p><p>Hồ sơ đang dùng dữ liệu 2026 để tham khảo cho tuyển sinh 2027. Trạng thái xác minh phản ánh nguồn và lần kiểm tra của dữ liệu, không bảo đảm quy định sẽ giữ nguyên. Mở hồ sơ để xem nguồn tuyển sinh; mục thiếu căn cứ cần được đối chiếu trên website chính thức của trường. <a href="/cam-nang/doc-diem-chuan-dai-hoc/">Hướng dẫn đọc điểm chuẩn</a> · <a href="/nguon-du-lieu-va-bao-sai/">Nguồn dữ liệu và cách báo sai</a></p></details>
           <div class="directory-summary" id="university-summary" role="status"></div>
           <div class="university-grid" id="university-grid" aria-live="polite"></div>
           <nav class="pagination" id="university-pagination" aria-label="Trang danh sách trường"></nav>
@@ -382,24 +388,26 @@
             <span aria-hidden="true">i</span>
               <p><strong>Có 17 đề thi tốt nghiệp THPT 2026 đầy đủ nguyên trang do người dùng cung cấp và 1 đề luyện Ngữ văn.</strong> Bài được chấm theo đáp án đã số hóa. Với môn có lời giải, bạn có thể chọn từng câu để xem. <a href="https://vqa.moet.gov.vn/vi/news/thong-bao/cau-truc-dinh-dang-de-thi-tot-nghiep-thpt-tu-nam-2025-74.html" target="_blank" rel="noopener">Xem cấu trúc đề thi ↗</a></p>
           </div>
+          <p class="tool-reading-note">Nguồn và quyền đăng lại các tài liệu do người dùng cung cấp đang được rà soát. Đáp án và lời giải là tài liệu tham khảo, có thể cần hiệu đính. Nếu bạn là chủ sở hữu hoặc phát hiện tài liệu gắn nhãn sai, <a href="/lien-he/">hãy liên hệ để yêu cầu kiểm tra hoặc gỡ tài liệu</a>.</p>
           <div id="practice-exam-app" aria-live="polite"></div>
         </div>
       </section>
 
       <section class="section guide-section" id="guide" aria-labelledby="guide-title">
         <div class="container guide-layout">
-          <div><p class="eyebrow">08 · Hướng dẫn</p><h2 id="guide-title">Hiểu kết quả tính điểm</h2><p class="guide-intro">Dùng kết quả để tham khảo. Trước khi đăng ký nguyện vọng, hãy kiểm tra đề án tuyển sinh chính thức của từng trường.</p><a class="button button-secondary" href="#calculator">Tính điểm ngay</a></div>
+          <div><p class="eyebrow">08 · Hướng dẫn</p><h2 id="guide-title">Cẩm nang tuyển sinh</h2><p class="guide-intro">Đọc cách tính điểm, chọn tổ hợp và sắp xếp nguyện vọng. Các bài có ví dụ minh họa và nguồn chính thức để bạn đối chiếu trước khi đăng ký.</p><a class="button button-secondary" href="/cam-nang/">Mở cẩm nang đầy đủ</a></div>
           <div class="accordion" id="guide-accordion">
             <details open><summary>Điểm ưu tiên được tính như thế nào?<span aria-hidden="true">+</span></summary><p>Công cụ đang tham khảo quy tắc ưu tiên năm 2026 cho thí sinh 2027, gồm mức cộng theo khu vực và đối tượng. Khi điểm tổ hợp từ 22.5 trở lên, mức cộng giảm. Quy định 2027 đang cập nhật; hãy kiểm tra thông báo chính thức trước khi đăng ký. Mở “Xem cách tính” để kiểm tra điểm ưu tiên thực tế của bạn.</p></details>
             <details><summary>Tôi có thể nhập 8,5 không?<span aria-hidden="true">+</span></summary><p>Có. Hệ thống tự đổi dấu phẩy thành dấu chấm và chỉ nhận điểm từ 0 đến 10 với tối đa 2 chữ số thập phân.</p></details>
             <details><summary>Trạng thái “Đã xác minh” và “Tham khảo” khác nhau thế nào?<span aria-hidden="true">+</span></summary><p>“Đã xác minh” là dữ liệu đã qua kiểm tra chặt hơn. “Tham khảo” là dữ liệu đủ năm, điểm và thang điểm nhưng vẫn cần đối chiếu đề án tuyển sinh của trường trước khi đăng ký.</p></details>
           </div>
+          <!-- guide-preview:start --><div class="guide-preview"><h3>Đọc tiếp trong cẩm nang</h3><div class="guide-preview-links"><a href="/cam-nang/tinh-diem-tot-nghiep-thpt/">Cách tính điểm xét tốt nghiệp THPT và phân biệt với điểm vào đại học <span aria-hidden="true">↗</span></a><a href="/cam-nang/diem-xet-tuyen-va-uu-tien/">Điểm xét tuyển và cách tính ưu tiên khi tổng điểm từ 22,5 <span aria-hidden="true">↗</span></a><a href="/cam-nang/xet-tuyen-hoc-ba/">Xét tuyển học bạ: chọn đúng dữ liệu và kiểm tra công thức của trường <span aria-hidden="true">↗</span></a><a href="/cam-nang/doc-diem-chuan-dai-hoc/">Cách đọc điểm chuẩn đại học để so sánh đúng ngành và thang điểm <span aria-hidden="true">↗</span></a><a href="/cam-nang/chon-to-hop-xet-tuyen/">Chọn tổ hợp xét tuyển từ điểm mạnh và yêu cầu của ngành <span aria-hidden="true">↗</span></a><a href="/cam-nang/sap-xep-nguyen-vong/">Sắp xếp nguyện vọng theo thứ tự bạn muốn học <span aria-hidden="true">↗</span></a><a href="/cam-nang/cac-phuong-thuc-xet-tuyen/">Các phương thức xét tuyển: chọn kết quả nào và kiểm tra điều kiện gì? <span aria-hidden="true">↗</span></a><a href="/cam-nang/loi-thuong-gap-khi-xet-tuyen/">Những lỗi thường gặp khi tính điểm và chuẩn bị hồ sơ xét tuyển <span aria-hidden="true">↗</span></a></div></div><!-- guide-preview:end -->
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-grid"><div><a class="footer-brand-lockup" href="#home" aria-label="Tính Điểm THPT - Trang chủ"><img src="/assets/brand/logo-full.png?v=20261011-2" alt="Logo Tính Điểm THPT với biểu tượng mũ tốt nghiệp và sách mở" width="1254" height="1254" loading="lazy" /></a><p>Tính điểm và tra cứu tuyển sinh để tham khảo.</p></div><div class="footer-links"><a href="#calculator">Tính điểm</a><a href="#major-finder">Tìm ngành</a><a href="#universities">Hồ sơ trường</a><a href="#practice-exams">Luyện thi 2027</a><a href="/privacy.html">Chính sách quyền riêng tư</a><a href="#privacy-policy" data-ad-consent hidden>Lựa chọn quảng cáo</a></div><p class="footer-warning">Thông tin và kết quả chỉ để tham khảo. Hãy kiểm tra thông báo tuyển sinh chính thức của trường trước khi sử dụng.</p></div>
+      <div class="container footer-grid"><div><a class="footer-brand-lockup" href="#home" aria-label="Tính Điểm THPT - Trang chủ"><img src="/assets/brand/logo-full.png?v=20261011-2" alt="Logo Tính Điểm THPT với biểu tượng mũ tốt nghiệp và sách mở" width="1254" height="1254" loading="lazy" /></a><p>Tính điểm và tra cứu tuyển sinh để tham khảo.</p></div><div class="footer-links"><a href="/cam-nang/">Cẩm nang</a><a href="#calculator">Tính điểm</a><a href="#major-finder">Tìm ngành</a><a href="#universities">Hồ sơ trường</a><a href="/gioi-thieu/">Giới thiệu</a><a href="/lien-he/">Liên hệ</a><a href="/dieu-khoan-su-dung/">Điều khoản</a><a href="/nguon-du-lieu-va-bao-sai/">Nguồn dữ liệu và báo sai</a><a href="/privacy">Chính sách quyền riêng tư</a><a href="#privacy-policy" data-ad-consent hidden>Lựa chọn quảng cáo</a></div><p class="footer-warning">Website hỗ trợ tính điểm và tra cứu, không phải cổng thông tin chính thức của Bộ GD&amp;ĐT. Thông tin và kết quả chỉ để tham khảo; hãy kiểm tra thông báo tuyển sinh chính thức của trường trước khi sử dụng.</p></div>
       <div class="container footer-contact">
         <h2>Kết nối &amp; hỗ trợ</h2>
         <nav class="footer-contact-links" aria-label="Mạng xã hội và email liên hệ">
@@ -445,7 +453,7 @@
               </div>
             </article>
           </div>
-          <div class="assistant-privacy"><span aria-hidden="true">✓</span><span>Câu hỏi được gửi tới dịch vụ AI. Báo thông tin sai chỉ được gửi sau khi bạn xác nhận.</span></div>
+          <div class="assistant-privacy"><span aria-hidden="true">✓</span><span>Câu hỏi được gửi tới dịch vụ AI. Câu trả lời chỉ để tham khảo; hãy đối chiếu thông báo chính thức của trường. Báo thông tin sai chỉ được gửi sau khi bạn xác nhận.</span></div>
           <form class="assistant-form" id="assistant-form">
             <label class="sr-only" for="assistant-input">Hỏi trợ lý tuyển sinh</label>
             <textarea id="assistant-input" rows="1" minlength="2" maxlength="500" placeholder="Hỏi về ngành, trường, điểm…" required></textarea>

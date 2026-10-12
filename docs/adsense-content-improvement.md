@@ -1,5 +1,7 @@
 # Cải thiện nội dung và khả năng truy cập trước khi xét duyệt AdSense
 
+Kết quả dưới đây thuộc đợt bổ sung nội dung trước. Phạm vi quảng cáo đã thay đổi: từ 12/10/2026 chỉ 8 bài cẩm nang được tải AdSense; trang công cụ không tải mã quảng cáo. Nội dung và kiểm thử mới nhất được ghi trong [google-policy-review.md](google-policy-review.md), gồm sửa nguồn đề, 6 câu Sinh học và nonce riêng cho root. Không dùng mô tả quảng cáo ở báo cáo cũ để suy ra hành vi hiện tại.
+
 Ngày rà soát: **12/10/2026**. Website: https://tinhdiemthpt.id.vn/. Phạm vi: nội dung công khai, điều hướng, metadata, build Cloudflare, các điểm tiếp giáp API/OCR/AI/tài khoản và bộ kiểm thử hiện có.
 
 Tác vụ bổ sung 8 bài hướng dẫn gốc, trang cẩm nang, 4 trang thông tin dự án, sitemap và robots.txt. Các công cụ, dataset tuyển sinh, bộ máy tính điểm, API, database, secrets và cấu hình bảo mật được giữ nguyên. Không thêm dependency hay framework. Việc cải thiện này **không bảo đảm Google phê duyệt** và không xác định được nguyên nhân duy nhất của thông báo “Low value content” nếu chưa xem bằng chứng trong tài khoản AdSense.

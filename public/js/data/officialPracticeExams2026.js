@@ -140,11 +140,14 @@ export const OFFICIAL_PRACTICE_EXAMS_2026 = [
     mc: "AAADDCDDCAACCDADCA", tf: ["FFTT", "TTFF", "TFTT", "FFFT"], short: ["3412", "42,9", "1256", "17,2", "0,64", "4,95"],
     note: "Tài liệu có lời giải chi tiết."
   }),
-  officialExam({
+  { ...officialExam({
     id: "biology-official-2026-0430", subject: "Sinh học", category: "Tự chọn", icon: "DNA", code: "0430", minutes: 50, slug: "biology", solutionCount: 18,
     mc: "CADADDBABABDDCCCDC", tf: ["FFTF", "FTTF", "TFTF", "FTTT"], short: ["0,12", "25,00%", "2603", "3142", "0,35", "1480"],
     note: "Tài liệu có lời giải chi tiết."
   }),
+    pageImages: [...assetPages("biology", "pages", 4), ...assetPages("biology", "solutions", 2)],
+    solutionImages: assetPages("biology", "solutions", 18).slice(2)
+  },
   officialExam({
     id: "history-official-2026-0828", subject: "Lịch sử", category: "Tự chọn", icon: "⌛", code: "0828", minutes: 50, slug: "history", solutionCount: 7,
     mc: "DBDABCBCBBDADDADACAAADAA", tf: ["FFFT", "FTTT", "FTTT", "FTTT"],

@@ -14,9 +14,10 @@ import { autoFillTranscript } from "./autoFillTranscript.js";
 import { TranscriptPreview } from "./transcriptPreview.js";
 import { TranscriptScanner } from "./transcriptScanner.js?v=20261012-1";
 import { turnstileGate } from "./turnstile.js";
-import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261010-1";
+import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261012-2";
 import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-2";
 import { AdmissionsAssistant } from "./assistant.js?v=20261010-1";
+import { initAdConsent } from "./adConsent.js";
 import { calculateSchoolFormula, schoolFormulaBranches, selectSchoolFormulaRule, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20261004-3";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
@@ -140,15 +141,7 @@ class THPTApp {
   async init() {
     this.applyTheme(storage.get(THEME_STORAGE_KEY, "light"));
     this.bindGlobalEvents();
-    window.googlefc = window.googlefc || {};
-    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
-    window.googlefc.callbackQueue.push({ CONSENT_API_READY: () => {
-      if (typeof window.__tcfapi !== "function") return;
-      window.__tcfapi("addEventListener", 0, (data, success) => {
-        const link = document.querySelector("[data-ad-consent]");
-        if (link) link.hidden = !(success && data?.gdprApplies);
-      });
-    } });
+    initAdConsent();
     this.account.init().catch(() => { /* Tài khoản không được chặn các công cụ chính. */ });
     this.practiceExam.init();
     this.setView(location.hash);
@@ -326,8 +319,6 @@ class THPTApp {
     if (!event.target.closest(".global-search, .mobile-search-panel, #mobile-search-toggle")) this.hideSearch();
     if (event.target.closest("[data-close-modal]")) this.closeModal();
     const privacyPolicy = event.target.closest("[data-privacy-policy]");
-    const adConsent = event.target.closest("[data-ad-consent]");
-    if (adConsent) { event.preventDefault(); window.googlefc?.showRevocationMessage?.(); return; }
     if (privacyPolicy) { event.preventDefault(); this.openPrivacyPolicy(privacyPolicy); }
     const retry = event.target.closest("[data-retry-load]"); if (retry) location.reload();
     const page = event.target.closest("[data-page-kind]");

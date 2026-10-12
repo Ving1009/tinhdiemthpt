@@ -194,7 +194,8 @@ export const projectPages = [
       {
         id: 'nguon-de-thi',
         title: 'Nguồn đề, đáp án và lời giải luyện tập',
-        html: `<p>Phòng thi thử có tài liệu được ghi là do người dùng cung cấp, câu hỏi đã số hóa và phần đáp án hoặc lời giải đi kèm tùy bộ đề. Lời giải tham khảo cần được đọc cùng đề gốc; nếu thiếu bước, khác đáp án hoặc có lỗi hiển thị, hãy ghi rõ môn, mã đề, phần và số câu khi <a href="/lien-he/">liên hệ hỗ trợ</a>.</p>
+        html: `<p>Phòng thi thử ghi nguồn do người dùng cung cấp ngay ở từng bộ đề. Tên và mã đề được giữ theo tài liệu; nhãn “Tài liệu 2026” chưa phải xác nhận nguồn chính thức. Câu hỏi và đáp án đã được số hóa để làm bài; một số bộ đề có lời giải tham khảo theo câu hoặc ảnh tài liệu đối chiếu.</p>
+<p>Đáp án dùng để chấm và lời giải cần được đối chiếu với nguồn chính thức khi có. Liên kết tới một trang đáp án tham khảo không tự xác nhận đó là đáp án chính thức. Nếu thiếu bước, khác đáp án hoặc có lỗi hiển thị, hãy ghi rõ môn, mã đề, phần và số câu khi <a href="/lien-he/">liên hệ hỗ trợ</a>.</p>
 <p>Nguồn về định dạng đề và nguồn của một bộ đề là hai thông tin khác nhau. Một liên kết giải thích cấu trúc bài thi không tự xác nhận toàn bộ câu hỏi hoặc đáp án của bộ đề đang xem. Tài liệu được đăng công khai hay được người dùng cung cấp cũng chưa đủ để xác nhận quyền đăng lại.</p>
 <p>Nếu cần kiểm tra quyền sử dụng một tài liệu, gửi đường dẫn và thông tin nhận diện tới Nhóm vận hành Tính Điểm THPT qua email hỗ trợ. Nội dung bạn gửi giúp xác định đúng phần cần rà soát.</p>`
       }

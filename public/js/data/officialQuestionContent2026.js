@@ -1042,32 +1042,32 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       {
         "number": 1,
         "context": "",
-        "prompt": "Giả sử một loài thực vật có bộ NST 2n = 24. Trong quá trình giảm phân tạo mầm hạt pollen (hạt phấn), nếu có 10% số tế bào xảy ra hiện tượng không phân li của một cặp NST thường ở kì sau I, các sự kiện khác diễn ra bình thường. Tỉ lệ loại hạt phấn mang 13 NST chiếm bao nhiêu %?"
+        "prompt": "Ở trạng thái nghỉ, nhịp tim của một người bình thường và một vận động viên điền kinh lần lượt là 70 và 55 nhịp/phút. Biết rằng, tỉ lệ khoảng thời gian diễn ra các pha nhĩ co, thất co, dãn chung của mỗi chu kì tim ở hai người là như nhau và tương ứng là 1 : 3 : 4. Ở trạng thái nghỉ, thời gian pha dãn chung của mỗi chu kì tim ở vận động viên điền kinh dài hơn so với ở người bình thường bao nhiêu giây (không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng phần trăm)?"
       },
       {
         "number": 2,
         "context": "",
-        "prompt": "Một loài thực vật, xét 3 gene phân li độc lập, mỗi gene quy định một tính trạng và mỗi gene đều có 2 allele, allele trội là trội hoàn toàn. Cho cây dị hợp về 3 cặp gene tự thụ phấn thu được đời con có tối đa bao nhiêu loại kiểu gene mang 3 allele trội?"
+        "prompt": "Tính trạng màu sắc hạt đậu do gene Y (gồm allele Y, y) và gene G (gồm allele G, g) phân li độc lập quy định. Theo sơ đồ: kiểu gene YY hoặc Yy tạo enzyme Y chuyển sắc tố màu xanh thành sắc tố màu vàng; kiểu gene GG hoặc Gg tạo enzyme G chuyển sắc tố màu xanh thành sắc tố màu xám; kết hợp hai loại sắc tố vàng và xám tạo sắc tố màu nâu. Kiểu gene yy không tạo enzyme Y, kiểu gene gg không tạo enzyme G. Biết rằng, sắc tố quyết định màu sắc của hạt. Phép lai giữa hai cây có kiểu gene khác nhau thu được thế hệ F₁ có tỉ lệ kiểu hình như sau: 3 hạt màu nâu : 3 hạt màu vàng : 1 hạt màu xám : 1 hạt màu xanh. Ở thế hệ F₁, tỉ lệ hạt màu nâu có kiểu gene dị hợp ở cả hai gene là bao nhiêu (không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng phần trăm)?"
       },
       {
         "number": 3,
         "context": "",
-        "prompt": "Ở một loài động vật, xét hai cơ thể có kiểu gene AB/ab và Ab/aB cùng nằm trên một loại NST thường, tần số hoán vị gene là 20%. Trong quá trình giảm phân hình thành giao tử đực của hai cơ thể trên, tỉ lệ loại giao tử ab được tạo ra từ hai cơ thể này là bao nhiêu %?"
+        "prompt": "Hình bên thể hiện sự thay đổi diện tích che phủ của mỗi quần xã thực vật: cây gỗ lớn, cỏ một lá mầm ưa sáng, cây bụi lá mầm, cỏ ưa bóng, cây gỗ nhỏ ưa sáng (kí hiệu ngẫu nhiên là 2601, 2602, 2603, 2604 hoặc 2605) trong quá trình diễn thế trên vùng đất trống. Hãy viết kí hiệu của quần xã tương ứng với quần xã cỏ một lá mầm ưa sáng. Đối chiếu đồ thị ở trang 5 trong mục “Đối chiếu đề gốc”."
       },
       {
         "number": 4,
         "context": "",
-        "prompt": "Một loài thực vật lưỡng bội, xét tính trạng màu hoa do một gene có 3 allele là A1, A2, A3 quy định, trong đó allele A1 quy định hoa đỏ trội hoàn toàn so với allele A2 quy định hoa vàng và allele A3 quy định hoa trắng; allele A2 trội hoàn toàn so với allele A3. Cho các cây hoa đỏ giao phấn với các cây hoa vàng, thu được F1 có tỉ lệ kiểu hình là 2 cây hoa đỏ : 1 cây hoa vàng : 1 cây hoa trắng. Theo lý thuyết, lấy ngẫu nhiên 1 cây hoa đỏ ở thế hệ xuất phát, xác suất thu được cây thuần chủng là bao nhiêu?"
+        "prompt": "Một học sinh thực hiện thí nghiệm về hiện tượng co nguyên sinh ở tế bào thịt quả cà chua chỉ gồm bốn bước (không theo thứ tự đúng) như sau:\n1. Dùng kim mũi mác lấy một ít thịt quả cà chua chín đặt vào giọt nước cất đã được chuẩn bị trên lam kính.\n2. Giữ nguyên tiêu bản trên kính hiển vi, nhỏ dung dịch NaCl 2% vào mép lamen, dùng giấy thấm đặt ở mép lamen phía đối diện và quan sát.\n3. Đầu tiên, nhỏ một giọt nước cất lên lam kính.\n4. Đậy lamen lên mẫu vật, ấn nhẹ, đặt tiêu bản lên kính hiển vi và quan sát bằng kính hiển vi phù hợp.\nHãy viết các số tương ứng với bốn bước thí nghiệm theo thứ tự đúng từ khi bắt đầu thí nghiệm."
       },
       {
         "number": 5,
         "context": "",
-        "prompt": "Ở một loài thực vật, xét 2 cặp gene nằm trên một cặp NST thường quy định tính trạng màu hoa, mỗi gene có 2 allele (A, a và B, b); kiểu gene có cả allele trội A và B quy định hoa đỏ, các kiểu gene còn lại quy định hoa trắng. Cho cây dị hợp về 2 cặp gene (P) tự thụ phấn, thu được F1 có 51% số cây hoa đỏ và 49% số cây hoa trắng. Biết rằng quá trình giảm phân ở hạt pollen (hạt phấn) và noãn diễn ra hoàn toàn giống nhau. Tần số hoán vị gene ở quá trình tạo hạt pollen là bao nhiêu %?"
+        "prompt": "Ở ếch, gene mã hóa malate dehydrogenase nằm trên NST thường và có ba allele: M₁, M₂, M₃. Một quần thể ếch có 500 cá thể, số lượng cá thể có kiểu gene tương ứng như sau: M₁M₁: 59; M₁M₂: 105; M₁M₃: 119; M₂M₂: 48; M₂M₃: 108; M₃M₃: 61. Tần số allele M₃ của quần thể này là bao nhiêu (không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến hàng phần trăm)?"
       },
       {
         "number": 6,
         "context": "",
-        "prompt": "Một phân tử DNA mạch kép dài 0,51 µm có tỉ lệ (A + T)/(G + X) = 1,5. Số liên kết hydrogen của phân tử DNA này bằng bao nhiêu?"
+        "prompt": "Để tính kích thước quần thể cây ngải dại trong một khu vườn (100 m × 100 m), người ta đã lập 5 ô nghiên cứu. Biết rằng, kích thước mỗi ô là 10 m × 10 m; số cây ngải dại đếm được trong 5 ô lần lượt là 16, 14, 17, 15 và 12 cây. Kích thước của quần thể này là bao nhiêu cá thể (không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng đến số nguyên)?"
       }
     ]
   },

@@ -17,6 +17,14 @@ function normalizeLineEndings(text) {
   return text.replace(/\r\n/g, "\n");
 }
 
+function editorialContent(html) {
+  // Remove only the publisher integration; article text and markup must survive unchanged.
+  return normalizeLineEndings(html)
+    .replace(/<script nonce="[a-f0-9]{32}" async src="https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=ca-pub-5701300811077965" crossorigin="anonymous" data-privacy-treatments="disablePersonalization"><\/script>\n/, "")
+    .replace(/<meta name="google-adsense-account" content="ca-pub-5701300811077965" \/>\n/, "")
+    .replace(/ nonce="[a-f0-9]{32}"/g, "");
+}
+
 function attribute(tag, name) {
   return tag.match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1] || "";
 }
@@ -140,9 +148,19 @@ test("Express serves content and crawler files, keeps aliases and security, and 
     const response = await fetch(`${base}${path}`);
     assert.equal(response.status, 200, path);
     assert.match(response.headers.get("content-type"), /^text\/html/);
-    assert.equal(response.headers.get("content-security-policy"), CONTENT_SECURITY_POLICY);
-    assert.equal(response.headers.get("cache-control"), "no-cache");
-    assert.equal(normalizeLineEndings(await response.text()), html, path);
+    const body = await response.text();
+    if (articlePaths.includes(path)) {
+      assert.match(body, /adsbygoogle\.js/);
+      const nonce = body.match(/nonce="([a-f0-9]{32})"/)?.[1];
+      assert.ok(nonce && response.headers.get("content-security-policy").includes(`'nonce-${nonce}'`), path);
+      assert.equal(response.headers.get("cache-control"), "no-store");
+      assert.match(body, /data-ad-consent hidden/, path);
+    } else {
+      assert.equal(response.headers.get("content-security-policy"), CONTENT_SECURITY_POLICY);
+      assert.equal(response.headers.get("cache-control"), "no-cache");
+      assert.doesNotMatch(body, /adsbygoogle\.js/);
+    }
+    assert.equal(editorialContent(body), html, `${path} publisher integration must not alter content`);
   }
   for (const [path, expected, type] of [["/sitemap.xml", renderSitemap(), /xml/], ["/robots.txt", renderRobots(), /text\/plain/]]) {
     const response = await fetch(`${base}${path}`);
@@ -192,9 +210,17 @@ test("Worker delegates static responses with their status intact and preserves A
   for (const path of ["/cam-nang/", articlePaths[0], "/sitemap.xml", "/robots.txt", "/cam-nang/khong-ton-tai/"]) {
     const response = await mainWorker.fetch(new Request(`${SITE_URL}${path}`), environment);
     assert.equal(response.status, fixtures.has(path) ? 200 : 404, path);
-    assert.equal(response.headers.get("content-security-policy"), CONTENT_SECURITY_POLICY);
+    const body = await response.text();
+    if (articlePaths.includes(path)) {
+      assert.match(body, /adsbygoogle\.js/);
+      const nonce = body.match(/nonce="([a-f0-9]{32})"/)?.[1];
+      assert.ok(nonce && response.headers.get("content-security-policy").includes(`'nonce-${nonce}'`), path);
+      assert.equal(editorialContent(body), fixtures.get(path), path);
+    } else {
+      assert.equal(response.headers.get("content-security-policy"), CONTENT_SECURITY_POLICY);
+      assert.doesNotMatch(body, /adsbygoogle\.js|fundingchoicesmessages/);
+    }
     assert.equal(response.headers.get("x-content-type-options"), "nosniff");
-    assert.doesNotMatch(await response.text(), /adsbygoogle\.js|fundingchoicesmessages/);
   }
   const queryResponse = await mainWorker.fetch(new Request(`${SITE_URL}${articlePaths[0]}?from=test`, { method: "HEAD" }), environment);
   assert.equal(queryResponse.status, 200);

@@ -1,4 +1,7 @@
+import { initAdConsent } from "./adConsent.js";
+
 (() => {
+  initAdConsent();
   const toggle = document.getElementById("content-theme-toggle");
   function applyTheme(dark) {
     document.body.classList.toggle("dark", dark);

@@ -149,17 +149,11 @@ test("Express serves content and crawler files, keeps aliases and security, and 
     assert.equal(response.status, 200, path);
     assert.match(response.headers.get("content-type"), /^text\/html/);
     const body = await response.text();
-    if (articlePaths.includes(path)) {
-      assert.match(body, /adsbygoogle\.js/);
-      const nonce = body.match(/nonce="([a-f0-9]{32})"/)?.[1];
-      assert.ok(nonce && response.headers.get("content-security-policy").includes(`'nonce-${nonce}'`), path);
-      assert.equal(response.headers.get("cache-control"), "no-store");
-      assert.match(body, /data-ad-consent hidden/, path);
-    } else {
-      assert.equal(response.headers.get("content-security-policy"), CONTENT_SECURITY_POLICY);
-      assert.equal(response.headers.get("cache-control"), "no-cache");
-      assert.doesNotMatch(body, /adsbygoogle\.js/);
-    }
+    assert.equal((body.match(/adsbygoogle\.js/g) || []).length, 1, path);
+    const nonce = body.match(/nonce="([a-f0-9]{32})"/)?.[1];
+    assert.ok(nonce && response.headers.get("content-security-policy").includes(`'nonce-${nonce}'`), path);
+    assert.equal(response.headers.get("cache-control"), "no-store");
+    assert.match(body, /data-ad-consent hidden/, path);
     assert.equal(editorialContent(body), html, `${path} publisher integration must not alter content`);
   }
   for (const [path, expected, type] of [["/sitemap.xml", renderSitemap(), /xml/], ["/robots.txt", renderRobots(), /text\/plain/]]) {
@@ -211,7 +205,7 @@ test("Worker delegates static responses with their status intact and preserves A
     const response = await mainWorker.fetch(new Request(`${SITE_URL}${path}`), environment);
     assert.equal(response.status, fixtures.has(path) ? 200 : 404, path);
     const body = await response.text();
-    if (articlePaths.includes(path)) {
+    if (pages.has(path)) {
       assert.match(body, /adsbygoogle\.js/);
       const nonce = body.match(/nonce="([a-f0-9]{32})"/)?.[1];
       assert.ok(nonce && response.headers.get("content-security-policy").includes(`'nonce-${nonce}'`), path);

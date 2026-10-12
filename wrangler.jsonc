@@ -19,7 +19,7 @@
   "assets": {
     "directory": "./.cloudflare/public",
     "binding": "ASSETS",
-    "run_worker_first": ["/", "/index.html", "/cam-nang/*", "/ads.txt", "/api/*", "/_worker-data/*", "/vendor/tesseract/worker.min.js"]
+    "run_worker_first": ["/", "/index.html", "/cam-nang/*", "/privacy", "/privacy.html", "/gioi-thieu/*", "/lien-he/*", "/dieu-khoan-su-dung/*", "/nguon-du-lieu-va-bao-sai/*", "/ads.txt", "/api/*", "/_worker-data/*", "/vendor/tesseract/worker.min.js"]
   },
   "services": [
     {

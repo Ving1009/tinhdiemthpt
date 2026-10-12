@@ -105,7 +105,7 @@ export default {
       }
     }
     if (url.pathname.startsWith("/api/")) return handleDataApi(request, environment);
-    const preparesHtml = ["/", "/index.html"].includes(url.pathname) || isAdSenseContentPage(url.pathname);
+    const preparesHtml = isAdSenseContentPage(url.pathname);
     const asset = await environment.ASSETS.fetch(request.method === "HEAD" && preparesHtml ? new Request(request, { method: "GET" }) : request);
     if (["GET", "HEAD"].includes(request.method) && preparesHtml && asset.status === 200 && /text\/html/i.test(asset.headers.get("Content-Type") || "")) {
       const prepared = prepareAdSenseHtml(await asset.text(), environment, request.cf?.country, url.pathname);

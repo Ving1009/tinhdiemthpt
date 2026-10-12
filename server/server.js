@@ -13,8 +13,7 @@ import { createReportStore } from "./reportStore.js";
 import { createConfiguredAdmissionsAssistant } from "./configuredAssistant.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
 import { readFile } from "node:fs/promises";
-import { adsenseAdsTxt, isAdSenseContentPage, nonceHtmlScripts, prepareAdSenseHtml } from "../lib/adsense.js";
-import { admissionsGuides } from "../content/admissionsGuides.js";
+import { ADSENSE_PAGE_PATHS, adsenseAdsTxt, isAdSenseContentPage, nonceHtmlScripts, prepareAdSenseHtml } from "../lib/adsense.js";
 
 const serverRequire = createRequire(import.meta.url);
 const PUBLIC_DIR = fileURLToPath(new URL("../public/", import.meta.url));
@@ -71,9 +70,13 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
     response.setHeader("Cache-Control", "public, max-age=3600");
     response.status(text ? 200 : 404).type("text/plain").send(text);
   });
-  app.get(["/", "/index.html", ...admissionsGuides.map(guide => `/cam-nang/${guide.slug}/`)], async (request, response, next) => {
-    if (!["/", "/index.html"].includes(request.path) && !isAdSenseContentPage(request.path)) return next();
-    const file = isAdSenseContentPage(request.path) ? join(PUBLIC_DIR, request.path.slice(1), "index.html") : join(PUBLIC_DIR, "index.html");
+  app.get([...ADSENSE_PAGE_PATHS], async (request, response, next) => {
+    if (!isAdSenseContentPage(request.path)) return next();
+    // Every path comes from the shared public-page allowlist, never arbitrary input.
+    const file = ["/", "/index.html"].includes(request.path) ? join(PUBLIC_DIR, "index.html")
+      : ["/privacy", "/privacy.html"].includes(request.path) ? join(PUBLIC_DIR, "privacy.html")
+      : request.path.endsWith(".html") ? join(PUBLIC_DIR, request.path.slice(1))
+      : join(PUBLIC_DIR, request.path.slice(1), "index.html");
     const prepared = prepareAdSenseHtml(await readFile(file, "utf8"), environment, "", request.path);
     const page = !prepared.adsEnabled && ["/", "/index.html"].includes(request.path) ? nonceHtmlScripts(prepared.html) : prepared;
     // Local Express has no trusted country metadata. Ads stay off until the CMP is ready.
@@ -85,11 +88,6 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
   app.get("/.well-known/security.txt", (_request, response) => {
     response.setHeader("Cache-Control", "public, max-age=86400");
     response.type("text/plain").sendFile(SECURITY_TXT, { dotfiles: "allow" });
-  });
-  // Cloudflare normalizes flat privacy.html to /privacy; keep the same canonical URL locally.
-  app.get("/privacy", (_request, response) => {
-    response.setHeader("Cache-Control", "no-cache");
-    response.sendFile(join(PUBLIC_DIR, "privacy.html"));
   });
   app.use("/api", localDevelopmentCors);
   app.use("/api", createPublicApiRouter({ store: dataStore, reportStore, assistant, environment, turnstileFetch }));

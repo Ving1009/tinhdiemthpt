@@ -39,6 +39,15 @@ function renderPageGallery(images, label, className) {
   return `<div class="${className}">${images.map((src, index) => `<a href="${escapeHTML(src.startsWith("assets/") ? `/${src}` : src)}" target="_blank" rel="noopener" aria-label="Mở ${escapeHTML(label.toLocaleLowerCase("vi"))} trang ${index + 1}"><img src="${escapeHTML(src.startsWith("assets/") ? `/${src}` : src)}" alt="${escapeHTML(label)} trang ${index + 1}" ${index ? 'loading="lazy"' : 'fetchpriority="high"'}></a>`).join("")}</div>`;
 }
 
+function renderQuestionFigures(question) {
+  return (question.figures || []).filter((figure) => /^assets\/practice-2026\/[a-z-]+\/figures\/[a-z0-9-]+\.webp$/.test(figure.src)).map((figure) => {
+    const src = escapeHTML(`/${figure.src}`);
+    const dimensions = Number.isInteger(figure.width) && Number.isInteger(figure.height) && figure.width > 0 && figure.height > 0
+      ? ` width="${figure.width}" height="${figure.height}"` : "";
+    return `<figure class="practice-question-figure"><a href="${src}" target="_blank" rel="noopener" aria-label="Mở ảnh lớn: ${escapeHTML(figure.alt)}"><img src="${src}" alt="${escapeHTML(figure.alt)}"${dimensions} loading="lazy" decoding="async"></a><figcaption>Hình từ đề gốc · Bấm vào hình để xem lớn</figcaption></figure>`;
+  }).join("");
+}
+
 export class PracticeExamApp {
   constructor(root = document.getElementById("practice-exam-app")) {
     this.root = root;
@@ -254,6 +263,7 @@ export class PracticeExamApp {
     return `<fieldset class="practice-question type-${escapeHTML(question.type || "single")}" id="practice-question-${index + 1}">
       <legend><span>${escapeHTML(question.section || "")}</span> ${escapeHTML(numberLabel)}. ${escapeHTML(question.prompt)}</legend>
       ${context ? `<div class="practice-question-context">${escapeHTML(context)}</div>` : ""}
+      ${renderQuestionFigures(question)}
       ${fields}
       <button class="practice-flag ${flagged.has(question.id) ? "is-active" : ""}" type="button" data-flag-question="${escapeHTML(question.id)}" aria-pressed="${flagged.has(question.id)}">⚑ ${flagged.has(question.id) ? "Đã đánh dấu" : "Xem lại sau"}</button>
     </fieldset>`;
@@ -352,7 +362,7 @@ export class PracticeExamApp {
   }
 
   renderReview(question, index, detail) {
-    const reviewText = `${question.context ? `<div class="practice-review-context">${escapeHTML(question.context)}</div>` : ""}<p class="practice-review-prompt">${escapeHTML(question.prompt)}</p>`;
+    const reviewText = `${question.context ? `<div class="practice-review-context">${escapeHTML(question.context)}</div>` : ""}<p class="practice-review-prompt">${escapeHTML(question.prompt)}</p>${renderQuestionFigures(question)}`;
     const solution = question.explanation ? `<details class="practice-question-solution" id="practice-solution-${index + 1}"><summary>Xem lời giải câu này</summary><div>${escapeHTML(question.explanation)}</div></details>` : "";
     if (question.type === "true-false") {
       return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section)} · Câu ${question.number}</span>${detail.correctItems}/4 ý đúng · ${Number(detail.points).toFixed(2)}/${Number(detail.maximumPoints).toFixed(2)} điểm</h4>${reviewText}<div class="practice-review-options">${question.statements.map((statement, statementIndex) => {

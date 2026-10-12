@@ -1,4 +1,5 @@
 import { OFFICIAL_QUESTION_CONTENT_2026 } from "./officialQuestionContent2026.js";
+import { OFFICIAL_QUESTION_FIGURES_2026 } from "./officialQuestionFigures2026.js";
 import { OFFICIAL_SOLUTIONS_2026 } from "./officialSolutions2026.js";
 import { formatOfficialExamText } from "../core/unicodeMath.js";
 
@@ -86,6 +87,8 @@ function officialExam({
     question.number = sourceQuestion.number;
     question.context = formatOfficialExamText(slug, sourceQuestion.context || "");
     question.prompt = formatOfficialExamText(slug, sourceQuestion.prompt);
+    const figureKey = `${question.type}:${question.number}${question.branch ? `:${question.branch}` : ""}`;
+    question.figures = OFFICIAL_QUESTION_FIGURES_2026[slug]?.[figureKey] || [];
     if (question.type === "single") question.options = sourceQuestion.options.map((option) => formatOfficialExamText(slug, option));
     if (question.type === "true-false") question.statements = sourceQuestion.statements.map((statement) => formatOfficialExamText(slug, statement));
     question.explanation = formatOfficialExamText(slug, OFFICIAL_SOLUTIONS_2026[slug]?.[`${question.type}:${question.number}`] || "");
@@ -135,11 +138,14 @@ export const OFFICIAL_PRACTICE_EXAMS_2026 = [
     mc: "DCCDAADBBCADCCDABA", tf: ["TTFT", "TTFF", "FFFT", "TFFT"], short: ["2,52 mA", "0,16 mW", "11,6%", "10,4%", "0,11 kJ", "6,19"],
     note: "Tài liệu có lời giải chi tiết."
   }),
-  officialExam({
+  { ...officialExam({
     id: "chemistry-official-2026-0344", subject: "Hóa học", category: "Tự chọn", icon: "⚗", code: "0344", minutes: 50, slug: "chemistry", solutionCount: 8,
     mc: "AAADDCDDCAACCDADCA", tf: ["FFTT", "TTFF", "TFTT", "FFFT"], short: ["3412", "42,9", "1256", "17,2", "0,64", "4,95"],
     note: "Tài liệu có lời giải chi tiết."
   }),
+    pageImages: [...assetPages("chemistry", "pages", 4), ...assetPages("chemistry", "solutions", 1)],
+    solutionImages: assetPages("chemistry", "solutions", 8).slice(1)
+  },
   { ...officialExam({
     id: "biology-official-2026-0430", subject: "Sinh học", category: "Tự chọn", icon: "DNA", code: "0430", minutes: 50, slug: "biology", solutionCount: 18,
     mc: "CADADDBABABDDCCCDC", tf: ["FFTF", "FTTF", "TFTF", "FTTT"], short: ["0,12", "25,00%", "2603", "3142", "0,35", "1480"],

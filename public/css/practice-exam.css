@@ -232,6 +232,34 @@
   font-weight: 700;
 }
 
+.practice-question-figure {
+  margin: 16px 0;
+  max-width: 100%;
+}
+
+.practice-question-figure a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.practice-question-figure img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 720px);
+  height: auto;
+}
+
+.practice-question-figure figcaption {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .practice-solution-picker select {
   width: 100%;
   min-height: 44px;

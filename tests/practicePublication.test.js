@@ -68,7 +68,8 @@ test("sáu câu trả lời ngắn Sinh học khớp trang 5–6 của tài li�
   const result = gradePracticeExam(exam, answers);
   assert.equal(result.correctCount, 6);
   assert.equal(result.score, 1.5);
-  assert.match(questions[2].prompt, /trang 5.*Đối chiếu đề gốc/);
+  assert.equal(questions[2].figures[0].sourcePage, "assets/practice-2026/biology/solutions/1.webp");
+  assert.match(questions[2].figures[0].src, /biology\/figures\/short-3\.webp$/);
   assert.match(questions[4].prompt, /M₁M₃: 119; M₂M₂: 48; M₂M₃: 108; M₃M₃: 61/);
   assert.match(questions[5].prompt, /16, 14, 17, 15 và 12/);
 });

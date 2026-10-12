@@ -194,7 +194,7 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       },
       {
         "number": 2,
-        "context": "Trong một trò chơi bạn Bình cần vượt qua một thử thách. Theo yêu cầu của thử thách, Bình cần điền tất cả 15 số thuộc tập hợp \\{0; 1; 2; 3; 4; 5; 6; 7; 8; 10; 11; 12; 15; 16; 20\\} vào 15 ô vuông trong hình dưới thỏa mãn đồng thời ba điều kiện sau:\n- Mỗi ô điền đúng một số và mỗi số chỉ được sử dụng một lần;\n- Hiệu hai số ở hai ô bất kì khác nhau trên cùng một hàng không chia hết cho 5;\n- Hiệu hai số ở hai ô bất kì khác nhau trên cùng một cột không chia hết cho 5.\nHai cách điền gọi là giống nhau nếu số điền ở mỗi ô tương ứng trong 15 ô là giống nhau (không tính đến thứ tự điền các số vào 15 ô vuông). Gọi $H$ là số cách điền khác nhau để bạn Bình vượt qua được thử thách.\n(Bảng gồm Hàng 1 đến Hàng 5 và Cột 1 đến Cột 5, tạo thành hình thang hoặc tam giác như hình trong đề).\nHình có dạng:\nHàng 5: 1 ô (Cột 3)\nHàng 4: 2 ô (Cột 2, 3)\nHàng 3: 3 ô (Cột 2, 3, 4)\nHàng 2: 4 ô (Cột 2, 3, 4, 5)\nHàng 1: 5 ô (Cột 1, 2, 3, 4, 5)",
+        "context": "Trong một trò chơi bạn Bình cần vượt qua một thử thách. Theo yêu cầu của thử thách, Bình cần điền tất cả 15 số thuộc tập hợp \\{0; 1; 2; 3; 4; 5; 6; 7; 8; 10; 11; 12; 15; 16; 20\\} vào 15 ô vuông trong hình dưới thỏa mãn đồng thời ba điều kiện sau:\n- Mỗi ô điền đúng một số và mỗi số chỉ được sử dụng một lần;\n- Hiệu hai số ở hai ô bất kì khác nhau trên cùng một hàng không chia hết cho 5;\n- Hiệu hai số ở hai ô bất kì khác nhau trên cùng một cột không chia hết cho 5.\nHai cách điền gọi là giống nhau nếu số điền ở mỗi ô tương ứng trong 15 ô là giống nhau (không tính đến thứ tự điền các số vào 15 ô vuông). Gọi $H$ là số cách điền khác nhau để bạn Bình vượt qua được thử thách.\nSơ đồ các hàng và cột được giữ trong hình đề gốc bên dưới.",
         "prompt": "Giá trị của $\\frac{H}{30}$ bằng bao nhiêu?"
       },
       {
@@ -478,7 +478,7 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       },
       {
         "number": 2,
-        "context": "",
+        "context": "Một thanh kim loại có chiều dài l = 35,0 cm chuyển động đều với tốc độ v = 45,0 cm/s dọc theo hai thanh ray kim loại song song, được nối với nhau bằng dây dẫn ở một đầu. Hệ thống trong một từ trường đều có cảm ứng từ vuông góc, hướng ra khỏi mặt phẳng hình vẽ và có độ lớn B = 0,400 T. Khi đó, suất điện động cảm ứng xuất hiện trong thanh kim loại có độ lớn là |e_c| = Blv. Thanh kim loại có điện trở là 25,0 Ω, các thanh ray và dây nối có điện trở không đáng kể.",
         "prompt": "Công suất tỏa nhiệt ở thanh kim loại là bao nhiêu milioát (mW) (làm tròn kết quả đến chữ số hàng phần trăm)?"
       },
       {
@@ -617,7 +617,7 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       },
       {
         "number": 11,
-        "context": "Hình bên minh hoạ một số dụng cụ thí nghiệm với kí hiệu tương ứng (I: Cốc thủy tinh/Bình cầu đáy tròn ngắn cổ, II: Phễu chiết, III: Bình tam giác/Erlenmeyer, IV: Cốc đong/Cốc thủy tinh hình trụ).",
+        "context": "Hình bên minh hoạ một số dụng cụ thí nghiệm với kí hiệu tương ứng I, II, III và IV.",
         "prompt": "Kí hiệu nào ứng với dụng cụ bình cầu?",
         "options": [
           "(I).",
@@ -762,28 +762,28 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       },
       {
         "number": 2,
-        "context": "Một nhà máy sản xuất ammonia theo phương pháp Haber - Bosch. Để thu được nitrogen (N2) và hydrogen (H2) từ methane, không khí và nước, các giai đoạn chính được thực hiện như sau:\n- Giai đoạn 1: Cho hỗn hợp gồm khí methane và hơi nước với tỉ lệ mol tương ứng là 1 : 3 qua tháp phản ứng chứa xúc tác ở 900 °C, xảy ra phản ứng sau:\nCH4(g) + H2O(g) -> CO(g) + 3H2(g)\nGiả thiết hiệu suất của phản ứng ở giai đoạn 1 là 80%, tính thể tích khí hydrogen (đktc) thu được khi cho 24,79 m^3 khí methane (đkc) phản ứng hoàn toàn theo điều kiện trên.",
-        "prompt": "Thể tích khí hydrogen (ở đkc, theo đơn vị m^3) thu được là bao nhiêu?"
+        "context": "Một nhà máy sản xuất ammonia theo phương pháp Haber – Bosch. Để thu được nitrogen (N₂) và hydrogen (H₂) từ methane, không khí và nước, các giai đoạn chính được thực hiện như sau:\n- Giai đoạn 1: Cho hỗn hợp gồm khí methane và hơi nước với tỉ lệ mol tương ứng là 1 : 3 qua tháp phản ứng chứa xúc tác ở 900 °C, xảy ra phản ứng: CH₄(g) + H₂O(g) → CO(g) + 3H₂(g). Hiệu suất chuyển hoá CH₄ ở giai đoạn này là h %.\n- Giai đoạn 2: Hỗn hợp thu được sau giai đoạn 1 được trộn với không khí (chứa 80% N₂ và 20% O₂ theo thể tích) để oxi hoá hết methane theo phản ứng: 2CH₄(g) + O₂(g) → 2CO(g) + 4H₂(g) (xúc tác, nhiệt độ).\n- Giai đoạn 3: Trộn hỗn hợp thu được sau giai đoạn 2 với hơi nước dư để oxi hoá hết CO thành CO₂ theo phản ứng: CO(g) + H₂O(g) → CO₂(g) + H₂(g) (nhiệt độ).\n- Giai đoạn 4: Dẫn hỗn hợp thu được sau giai đoạn 3 vào tháp hấp thụ để tách CO₂ và hơi nước. Hỗn hợp khí còn lại chỉ gồm N₂ và H₂ với tỉ lệ mol tương ứng là 1 : 3 được sử dụng để tổng hợp ammonia.",
+        "prompt": "Coi các phản ứng khác trong các giai đoạn từ 1 đến 4 xảy ra không đáng kể. Xác định giá trị của h (không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng tới hàng phần mười)."
       },
       {
         "number": 3,
         "context": "",
-        "prompt": "Cho biết độ tan của hợp chất M trong nước ở 20 °C là 36 gam trong 100 gam nước và ở 80 °C là 50 gam trong 100 gam nước. Khi làm lạnh 300 gam dung dịch bão hoà M ở 80 °C xuống 20 °C, có bao nhiêu gam tinh thể M·5H2O tách ra khỏi dung dịch? (Biết nguyên tử khối của M bằng 120, H bằng 1, O bằng 16; kết quả làm tròn đến hàng phần mười)."
+        "prompt": "Cho các chất được đánh số như sau:\n(1) methyl acetate\n(2) propyl acetate\n(3) sodium formate\n(4) sodium palmitate\n(5) methyl methacrylate\n(6) methyl formate\nLiệt kê theo trình tự từ nhỏ đến lớn các số ứng với tất cả các chất là ester (ví dụ: 56, 124, 3456, …)."
       },
       {
         "number": 4,
         "context": "",
-        "prompt": "Hoà tan hoàn toàn 11,2 gam hỗn hợp gồm Fe và một kim loại M (hoá trị không đổi) vào dung dịch HCl dư, thu được 6,196 L khí H2 (đkc). Mặt khác, nếu cho 11,2 gam hỗn hợp trên tác dụng với dung dịch chứa hỗn hợp HNO3 và H2SO4 đặc, nóng (dư) thì thu được 17,3532 L khí hỗn hợp gồm NO2 và SO2 (đkc, là hai sản phẩm khử duy nhất). Tổng số mol của NO2 và SO2 là bao nhiêu?"
+        "prompt": "Xi măng Portland có thành phần được biểu diễn như sau: 3CaO·Al₂O₃ (kí hiệu là C₃A), 2CaO·SiO₂ (kí hiệu là C₂S), 3CaO·SiO₂ (kí hiệu là C₃S), 4CaO·Al₂O₃·Fe₂O₃ (kí hiệu là C₄AF), CaSO₄ (hay CaO·SO₃), còn lại là phụ gia. Thành phần của một loại xi măng Portland quy đổi về % khối lượng các chất được cho trong bảng bên dưới. Phần trăm theo khối lượng của 2CaO·SiO₂ (C₂S) trong loại xi măng Portland trên là x %. Xác định giá trị của x (không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng tới hàng phần mười)."
       },
       {
         "number": 5,
         "context": "",
-        "prompt": "Cho biết phản ứng tổng hợp ammonia: N2(g) + 3H2(g) <=> 2NH3(g) có biến thiên enthalpy chuẩn Delta r H°298 = -91,8 kJ. Để tăng hiệu suất của phản ứng tổng hợp ammonia, cần áp dụng các điều kiện nhiệt độ và áp suất như thế nào? (Trả lời bằng cụm từ: \"tăng áp suất, giảm nhiệt độ\" hoặc \"giảm áp suất, tăng nhiệt độ\")"
+        "prompt": "Thế điện cực chuẩn của các cặp oxi hoá – khử Zn²⁺/Zn và Pb²⁺/Pb lần lượt là −0,763 V và −0,126 V. Tính sức điện động chuẩn (theo V) của pin Galvani tạo bởi hai cặp oxi hoá – khử trên (làm tròn kết quả tới hàng phần trăm)."
       },
       {
         "number": 6,
         "context": "",
-        "prompt": "Một loại xăng chứa hỗn hợp các alkane gồm heptane, octane, nonane và decane với tỉ lệ mol tương ứng là 1 : 2 : 2 : 1. Giả thiết nhiệt phóng thích khi đốt cháy 1 mol các alkane trên lần lượt là 4817 kJ, 5471 kJ, 6125 kJ và 6778 kJ. Khi đốt cháy hoàn toàn 1 kg loại xăng trên, tổng năng lượng nhiệt toả ra là bao nhiêu kJ? (Kết quả làm tròn đến hàng đơn vị)."
+        "prompt": "Trong một nhà máy sản xuất đường saccharose, sau một số giai đoạn xử lí thu được đường ẩm (chỉ gồm saccharose và 0,90% nước theo khối lượng). Đường ẩm được đưa vào thiết bị sấy cho tiếp xúc với dòng không khí nóng (chứa 1,00% nước theo khối lượng). Tỉ lệ khối lượng không khí nóng : đường ẩm là 3 : 1. Trong quá trình sấy, chỉ xảy ra sự bay hơi của nước từ đường ẩm vào dòng không khí nóng. Sau khi sấy, dòng không khí nóng thoát ra khỏi thiết bị chứa 1,28% nước theo khối lượng và thu được đường chứa a × 10⁻² % nước theo khối lượng. Xác định giá trị của a (không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả cuối cùng tới hàng phần trăm)."
       }
     ]
   },
@@ -912,7 +912,7 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       },
       {
         "number": 12,
-        "context": "Hình bên mô phỏng cơ chế điều hòa cân bằng nội môi ở người khi áp suất thẩm thấu máu thay đổi (Sơ đồ: Vùng dưới đồi tổng hợp ADH -> Tuyến yên dự trữ và tiết ADH -> Thân -> Áp suất thẩm thấu máu cân bằng; Vùng dưới đồi -> Cảm giác khát nước -> Uống nước; Áp suất thẩm thấu máu tăng).",
+        "context": "Hình bên mô phỏng cơ chế điều hòa cân bằng nội môi ở người khi áp suất thẩm thấu máu thay đổi.",
         "prompt": "Nhận định nào sau đây là sai?",
         "options": [
           "Hormone ADH được tổng hợp ở vùng dưới đồi và dự trữ ở tuyến yên.",
@@ -1027,13 +1027,13 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       },
       {
         "number": 4,
-        "context": "Nghiên cứu sự di truyền hai tính trạng gồm bệnh mù màu và dạng dái tai (dạng chúc, dạng phẳng) ở hai gia đình thu được kết quả như bảng bên. Mỗi tính trạng do một gene quy định, mỗi gene có hai allele, allele trội là trội hoàn toàn; một trong hai gene nằm trên NST X, không có allele tương ứng trên NST Y. Gia đình 1: Bố (không, chúc), Mẹ (bệnh, chúc), Con gái (không, chúc), Con trai (bệnh, phẳng). Gia đình 2: Bố (không, chúc), Mẹ (không, chúc).",
+        "context": "Nghiên cứu sự di truyền hai tính trạng gồm bệnh mù màu và dạng dái tai (dạng chúc, dạng phẳng) ở hai gia đình thu được kết quả như bảng bên dưới. Mỗi tính trạng do một gene quy định, mỗi gene có hai allele, allele trội là trội hoàn toàn; một trong hai gene nằm trên NST X, không có allele tương ứng trên NST Y. Bảng gồm cả phần tiếp theo ở trang 5 của đề gốc.",
         "prompt": "Nhận định về sự di truyền tính trạng:",
         "statements": [
-          "Bệnh mù màu do gene nằm trên nhiễm sắc thể thường quy định.",
-          "Allele quy định dạng dái tai chúc trội hoàn toàn so với allele quy định dạng dái tai phẳng.",
-          "Cả hai bố mẹ ở gia đình 1 đều có kiểu gene dị hợp về tính trạng dạng dái tai.",
-          "Xác suất sinh con thứ hai là con gái bị bệnh mù màu và có dái tai chúc của gia đình 1 là 25%."
+          "Kiểu hình dái tai chúc được quy định bởi allele lặn.",
+          "Xác suất sinh con gái mắc bệnh mù màu của bố mẹ ở gia đình 1 là 0%.",
+          "Chỉ dựa vào thông tin đã cho, có thể xác định được kiểu gene quy định hai tính trạng của tối đa 6 thành viên trong hai gia đình này.",
+          "Nếu con gái của gia đình 1 kết hôn với con trai của gia đình 2 thì xác suất sinh một người con trai mắc bệnh mù màu và dái tai phẳng của cặp vợ chồng này là 1/12."
         ],
         "branch": ""
       }
@@ -1052,7 +1052,7 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       {
         "number": 3,
         "context": "",
-        "prompt": "Hình bên thể hiện sự thay đổi diện tích che phủ của mỗi quần xã thực vật: cây gỗ lớn, cỏ một lá mầm ưa sáng, cây bụi lá mầm, cỏ ưa bóng, cây gỗ nhỏ ưa sáng (kí hiệu ngẫu nhiên là 2601, 2602, 2603, 2604 hoặc 2605) trong quá trình diễn thế trên vùng đất trống. Hãy viết kí hiệu của quần xã tương ứng với quần xã cỏ một lá mầm ưa sáng. Đối chiếu đồ thị ở trang 5 trong mục “Đối chiếu đề gốc”."
+        "prompt": "Hình bên thể hiện sự thay đổi diện tích che phủ của mỗi quần xã thực vật: cây gỗ lớn, cỏ một lá mầm ưa sáng, cây bụi lá mầm, cỏ ưa bóng, cây gỗ nhỏ ưa sáng (kí hiệu ngẫu nhiên là 2601, 2602, 2603, 2604 hoặc 2605) trong quá trình diễn thế trên vùng đất trống. Hãy viết kí hiệu của quần xã tương ứng với quần xã cỏ một lá mầm ưa sáng."
       },
       {
         "number": 4,
@@ -2373,7 +2373,7 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       },
       {
         "number": 4,
-        "context": "Một mạch logic tổ hợp có sơ đồ như hình dưới đây.\n(Mô tả sơ đồ: Hai đầu vào X1 và X2. X1 đi thẳng vào cổng OR (hoặc cổng NOR/AND tùy hình). Hình vẽ gồm một cổng NOT ở nhánh X2 tạo ra X2 đảo, sau đó X1 và X2 đảo đi qua một cổng logic có hình dạng cổng AND có đảo đầu ra (NAND) hoặc cổng NOR để tạo ra ngõ ra Y).\nSơ đồ: X₁ đi thẳng vào một cổng OR có đảo ở đầu ra; X₂ đi qua cổng NOT rồi vào đầu vào còn lại của cổng OR.",
+        "context": "Một mạch logic tổ hợp có sơ đồ như hình dưới đây.",
         "prompt": "Hàm logic ở lối ra Y theo hai lối vào X1 và X2 là",
         "options": [
           "Y = ¬(X₁ + ¬X₂).",
@@ -2417,7 +2417,7 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       },
       {
         "number": 8,
-        "context": "Trong bốn kí hiệu của linh kiện điện tử dưới đây, kí hiệu nào là của cuộn cảm?\n(1) Kí hiệu điện trở\n(2) Kí hiệu tụ điện\n(3) Kí hiệu cuộn cảm\n(4) Kí hiệu điốt",
+        "context": "Bốn kí hiệu linh kiện điện tử được đánh số (1), (2), (3), (4) trong hình dưới đây.",
         "prompt": "Trong bốn kí hiệu của linh kiện điện tử dưới đây, kí hiệu nào là của cuộn cảm?",
         "options": [
           "(2).",
@@ -2483,7 +2483,7 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       },
       {
         "number": 14,
-        "context": "Theo cách bố trí xi lanh, hình dưới đây mô tả động cơ đốt trong nào?\n(Mô tả hình: Hình khối động cơ với các xi lanh đặt xếp thành một hàng thẳng hàng dọc theo thân máy).",
+        "context": "Hình minh họa cách bố trí xi lanh được trích từ đề gốc bên dưới.",
         "prompt": "Theo cách bố trí xi lanh, hình dưới đây mô tả động cơ đốt trong nào?",
         "options": [
           "Động cơ hình sao.",
@@ -2538,7 +2538,7 @@ export const OFFICIAL_QUESTION_CONTENT_2026 = {
       },
       {
         "number": 19,
-        "context": "Từ một phôi kim loại hình trụ, để chế tạo chi tiết trục bậc như hình bên, người ta thường sử dụng phương pháp gia công nào dưới đây?\n(Mô tả hình: Chi tiết trục bậc gồm các đoạn hình trụ có đường kính khác nhau được tiện từ phôi trụ).",
+        "context": "Hình minh họa chi tiết trục bậc được trích từ đề gốc bên dưới.",
         "prompt": "Từ một phôi kim loại hình trụ, để chế tạo chi tiết trục bậc như hình bên, người ta thường sử dụng phương pháp gia công nào dưới đây?",
         "options": [
           "Gia công khoan.",

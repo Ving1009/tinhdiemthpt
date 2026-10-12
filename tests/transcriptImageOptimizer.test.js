@@ -9,6 +9,7 @@ import {
 test("ảnh chỉ thu nhỏ theo cạnh dài và không phóng lớn", () => {
   assert.deepEqual(fitImageDimensions(4032, 3024), { width: 1600, height: 1200 });
   assert.deepEqual(fitImageDimensions(900, 1200), { width: 900, height: 1200 });
+  assert.deepEqual(fitImageDimensions(700, 933, 2400, true), { width: 1801, height: 2400 });
 });
 
 test("optimizer đóng bitmap và thu hồi canvas sau khi tạo JPEG", async () => {
@@ -59,4 +60,16 @@ test("nhiều ảnh luôn được tối ưu tuần tự", async () => {
   assert.deepEqual(result, ["A", "B", "C"]);
   assert.equal(peak, 1);
   assert.deepEqual(order, ["start-a", "end-a", "start-b", "end-b", "start-c", "end-c"]);
+});
+
+test("tăng tương phản chỉ khi được chọn, vẫn đóng bitmap và canvas", async () => {
+  const pixels = { data: new Uint8ClampedArray([180, 180, 180, 255, 239, 239, 239, 255]) };
+  let written, closed = 0;
+  const canvas = { getContext: () => ({ fillRect() {}, drawImage() {}, getImageData: () => pixels,
+    putImageData: value => { written = value; } }), toBlob: callback => callback(new Blob(["image"])) };
+  await optimizeTranscriptImage({ name: "screenshot.png" }, { threshold: 210,
+    decoder: async () => ({ source: {}, width: 2, height: 1, close: () => { closed++; } }), canvasFactory: () => canvas });
+  assert.deepEqual([...written.data], [0, 0, 0, 255, 255, 255, 255, 255]);
+  assert.equal(closed, 1);
+  assert.equal(canvas.width, 1);
 });

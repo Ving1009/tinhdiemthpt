@@ -1,9 +1,85 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
-import { recognizeTranscriptInBrowser, transcriptTextFromBlocks } from "../public/js/clientTranscriptOcr.js";
+import { recognizeTranscriptInBrowser, transcriptTextFromBlocks, localOcrScore, agreeLocalOcrReadings } from "../public/js/clientTranscriptOcr.js";
 
 const catalog = JSON.parse(await readFile(new URL("../data/transcript-subjects.json", import.meta.url), "utf8"));
+
+test("local OCR không chọn giữa các điểm đọc mâu thuẫn; giữ confidence của đúng từ số", () => {
+  const result = (text, confidence) => ({ data: { text, confidence } });
+  assert.equal(agreeLocalOcrReadings([result("1.9", 81), result("7.9", 96)]), null);
+  assert.equal(agreeLocalOcrReadings([result("7.9", 81)]), null);
+  assert.deepEqual(agreeLocalOcrReadings([result("7.9", 81), result("7.9", 96)]), { value: 7.9, confidence: 96 });
+  assert.deepEqual(agreeLocalOcrReadings([result("6.3", 96), result("63", 95)]), { value: 6.3, confidence: 96 });
+  assert.equal(agreeLocalOcrReadings([result("7.9", 96)], { value: 1.9, confidence: 80 }), null);
+  const blocks = [{ paragraphs: [{ lines: [{ words: [{ text: "8.9", confidence: 95 }, { text: ".", confidence: 0 }] }] }] }];
+  assert.deepEqual(agreeLocalOcrReadings([{ data: { text: "8.9 .", confidence: 44, blocks } }]), { value: 8.9, confidence: 95 });
+});
+
+test("local OCR đọc lại ô điểm không đoán dấu thập phân hay dùng số có độ tin cậy thấp", () => {
+  const result = (text, confidence = 96) => ({ data: { text, confidence } });
+  assert.equal(localOcrScore(result("8,5\n")), 8.5);
+  assert.equal(localOcrScore(result("10.00")), 10);
+  for (const text of ["62", "75", "-1", "11", "8.555", "7 8", "8.5 điểm", ""]) assert.equal(localOcrScore(result(text)), null);
+  assert.equal(localOcrScore(result("7.5", 40)), null);
+  assert.equal(localOcrScore(result("7.5", NaN)), null);
+  const blocks = words => [{ paragraphs: [{ lines: [{ words }] }] }];
+  assert.equal(localOcrScore({ data: { text: "8.9 .", confidence: 44, blocks: blocks([{ text: "8.9", confidence: 95 }, { text: ".", confidence: 0 }]) } }), 8.9);
+  assert.equal(localOcrScore({ data: { text: "8 9", confidence: 95, blocks: blocks([{ text: "8", confidence: 95 }, { text: "9", confidence: 95 }]) } }), null);
+});
+
+test("local OCR dùng geometry và không trả tên học sinh, ảnh hoặc dữ liệu thô", async () => {
+  const word = (text, x, y) => ({ text, confidence: 95, bbox: { x0: x, y0: y, x1: x + 25, y1: y + 16 } });
+  const blocks = [{ paragraphs: [{ lines: [{ words: [word("Lớp 12", 10, 10), word("HK1", 140, 60), word("HK2", 240, 60), word("CN", 340, 60),
+    word("Toán", 10, 110), word("8.5", 140, 110), word("9.0", 240, 110), word("8.8", 340, 110)] }] }] }];
+  let terminated = 0;
+  const images = [{ blob: "photo", originalName: "private.png" }];
+  const result = await recognizeTranscriptInBrowser(images, { assetBaseUrl: "/vendor/", catalog, browserEnvironment: {},
+    tesseractModule: { createWorker: async () => ({ setParameters: async () => {},
+      recognize: async () => ({ data: { blocks, text: "Họ và tên: Thông tin riêng tư", confidence: 95 } }),
+      terminate: async () => { terminated++; } }) } });
+  assert.equal(result.data.student.name, null);
+  assert.deepEqual(result.data.scores.map(({ subject, grade, semester1, semester2, year }) => ({ subject, grade, semester1, semester2, year })),
+    [{ subject: "Toán", grade: 12, semester1: 8.5, semester2: 9, year: 8.8 }]);
+  assert.equal(JSON.stringify(result).includes("Thông tin riêng tư"), false);
+  assert.equal(images[0].blob, null);
+  assert.equal(terminated, 1);
+});
+
+test("local OCR chuyển PSM qua setParameters trước khi đọc lại ô, giải phóng ảnh gốc đã xử lý", async (t) => {
+  const oldDocument = globalThis.document, oldBitmap = globalThis.createImageBitmap;
+  t.after(() => { globalThis.document = oldDocument; globalThis.createImageBitmap = oldBitmap; });
+  let closed = 0, terminated = 0, mode;
+  const retryModes = [], pageDpis = [];
+  globalThis.createImageBitmap = async () => ({ width: 2000, height: 2666, close: () => { closed++; } });
+  globalThis.document = { baseURI: "http://127.0.0.1/", createElement: () => ({
+    getContext: () => ({ fillRect() {}, drawImage() {} }), toBlob: callback => callback(new Blob(["image"]))
+  }) };
+  const word = (text, x, y, confidence = 95) => ({ text, confidence, bbox: { x0: x, y0: y, x1: x + 25, y1: y + 16 } });
+  const blocks = [{ paragraphs: [{ lines: [{ words: [word("Lớp 12", 10, 10), word("HK1", 140, 60), word("HK2", 240, 60), word("CN", 340, 60),
+    word("Toán", 10, 110), word("8.5", 140, 110, 40), word("9.0", 240, 110), word("8.8", 340, 110)] }] }] }];
+  const images = [1, 2].map(() => ({ blob: new Blob(["image"]), width: 1600, height: 2133 }));
+  const result = await recognizeTranscriptInBrowser(images, { assetBaseUrl: "/vendor/", catalog, browserEnvironment: {}, sourceFiles: [{ name: "source.jpg" }, { name: "source2.jpg" }],
+    tesseractModule: { createWorker: async () => ({
+      setParameters: async parameters => {
+        if (parameters.tessedit_pageseg_mode) mode = parameters.tessedit_pageseg_mode;
+        if (parameters.tessedit_pageseg_mode === "11" && parameters.user_defined_dpi !== undefined) pageDpis.push(parameters.user_defined_dpi);
+      },
+      recognize: async (_blob, options) => {
+        if (!options?.rectangle) return { data: { blocks, text: "Lớp 12", confidence: 95 } };
+        assert.equal(options.tessedit_pageseg_mode, undefined);
+        retryModes.push(mode);
+        return { data: { text: "8.5", confidence: 95 } };
+      }, terminate: async () => { terminated++; }
+    }) } });
+  assert.deepEqual(retryModes, ["13", "7", "13", "7"]);
+  assert.deepEqual(pageDpis, ["0", "0"]);
+  assert.equal(result.data.scores[0].semester1, 8.5);
+  assert.equal(result.data.scores[0].confidence, 0.95);
+  assert.equal(closed, 4);
+  assert.equal(terminated, 1);
+  assert.ok(images.every(image => image.blob === null));
+});
 
 test("OCR ghép chữ ở các ô cùng hàng theo tọa độ, không trộn hai hàng", () => {
   const word = (text, x0, y0) => ({ text, bbox: { x0, y0, y1: y0 + 16 } });

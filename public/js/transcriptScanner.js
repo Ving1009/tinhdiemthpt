@@ -257,9 +257,12 @@ export class TranscriptScanner {
           this.scrollToManualEntry();
           return;
         }
-        const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js?v=20261001-2");
+        const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js?v=20261012-1");
         payload = await recognizeTranscriptInBrowser(optimizedImages, {
           assetBaseUrl: resolveTranscriptAssetBaseUrl(),
+          sourceFiles,
+          gradeHint: document.getElementById("transcript-local-grade")?.value || null,
+          periodHint: document.getElementById("transcript-local-period")?.value || null,
           onStatus: (message) => this.setStatus(message, "working")
         });
       }
@@ -274,6 +277,7 @@ export class TranscriptScanner {
       if (MANUAL_ENTRY_CODES.has(error?.code)) this.scrollToManualEntry();
     } finally {
       optimizedImages.length = 0;
+      sourceFiles.length = 0;
       this.isScanning = false;
       this.render();
     }

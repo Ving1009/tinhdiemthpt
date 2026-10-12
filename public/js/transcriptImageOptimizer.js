@@ -1,10 +1,10 @@
 export const TRANSCRIPT_IMAGE_MAX_DIMENSION = 1600;
 export const TRANSCRIPT_IMAGE_QUALITY = 0.8;
 
-export function fitImageDimensions(width, height, maxDimension = TRANSCRIPT_IMAGE_MAX_DIMENSION) {
+export function fitImageDimensions(width, height, maxDimension = TRANSCRIPT_IMAGE_MAX_DIMENSION, allowUpscale = false) {
   const safeWidth = Math.max(1, Number(width) || 1);
   const safeHeight = Math.max(1, Number(height) || 1);
-  const scale = Math.min(1, maxDimension / Math.max(safeWidth, safeHeight));
+  const scale = allowUpscale ? maxDimension / Math.max(safeWidth, safeHeight) : Math.min(1, maxDimension / Math.max(safeWidth, safeHeight));
   return {
     width: Math.max(1, Math.round(safeWidth * scale)),
     height: Math.max(1, Math.round(safeHeight * scale))
@@ -75,6 +75,8 @@ function optimizedName(name) {
 export async function optimizeTranscriptImage(file, {
   maxDimension = TRANSCRIPT_IMAGE_MAX_DIMENSION,
   quality = TRANSCRIPT_IMAGE_QUALITY,
+  allowUpscale = false,
+  threshold = null,
   decoder = decodeImage,
   canvasFactory = () => document.createElement("canvas")
 } = {}) {
@@ -82,7 +84,7 @@ export async function optimizeTranscriptImage(file, {
   let canvas;
   try {
     decoded = await decoder(file);
-    const dimensions = fitImageDimensions(decoded.width, decoded.height, maxDimension);
+    const dimensions = fitImageDimensions(decoded.width, decoded.height, maxDimension, allowUpscale);
     canvas = canvasFactory(dimensions.width, dimensions.height);
     canvas.width = dimensions.width;
     canvas.height = dimensions.height;
@@ -91,6 +93,14 @@ export async function optimizeTranscriptImage(file, {
     context.fillStyle = "#ffffff";
     context.fillRect(0, 0, dimensions.width, dimensions.height);
     context.drawImage(decoded.source, 0, 0, dimensions.width, dimensions.height);
+    if (Number.isFinite(threshold)) {
+      const pixels = context.getImageData(0, 0, dimensions.width, dimensions.height);
+      for (let index = 0; index < pixels.data.length; index += 4) {
+        const lightness = pixels.data[index] * 0.299 + pixels.data[index + 1] * 0.587 + pixels.data[index + 2] * 0.114;
+        pixels.data[index] = pixels.data[index + 1] = pixels.data[index + 2] = lightness >= threshold ? 255 : 0;
+      }
+      context.putImageData(pixels, 0, 0);
+    }
     const blob = await canvasBlob(canvas, "image/jpeg", quality);
     return {
       blob,

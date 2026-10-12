@@ -18,7 +18,7 @@ Không đối xử khác với Googlebot để che nội dung. Không dùng bài
 - Các trang giới thiệu, liên hệ, điều khoản, nguồn dữ liệu và quyền riêng tư có URL riêng, canonical và liên kết hỗ trợ. Không công khai tên cá nhân theo lựa chọn của bên vận hành.
 - 2027 là năm thí sinh chuẩn bị; dữ liệu, quy tắc và đề 2026 được ghi rõ là tham khảo. Không biến điểm chuẩn năm trước thành điểm chuẩn tương lai, không khẳng định kết quả là trúng tuyển.
 - Công cụ tính điểm, học bạ/OCR, công thức trường, tổ hợp, tìm ngành, hồ sơ, nguyện vọng/PDF, thi thử, tài khoản và trợ lý giữ chức năng hiện có. Không dùng nút công cụ để dẫn tới quảng cáo.
-- Sitemap chỉ chứa 15 URL công khai chính tắc; API và dữ liệu nội bộ không thành trang kết quả tìm kiếm. URL thiếu trả 404; không trả trang chủ giả thay cho mọi đường dẫn.
+- Sitemap chỉ chứa 15 URL công khai chính tắc, không đưa API hoặc dữ liệu nội bộ vào danh sách. robots.txt chặn thu thập `/api/` và `/_worker-data/`; dữ liệu nội bộ bị chặn truy cập công khai. URL thiếu trả 404; không trả trang chủ giả thay cho mọi đường dẫn. robots.txt không bảo đảm một URL không được lập chỉ mục.
 - Không thấy mẫu trang ngõ, nhồi từ khóa hay redirect theo User-Agent trong các trang được kiểm tra. Kiểm tra này không thay cho toàn bộ báo cáo Search Console.
 
 ## Vấn đề được sửa
@@ -66,17 +66,23 @@ File: `public/js/data/officialQuestionContent2026.js`, `public/js/data/officialP
 | Công cụ trên Brave | 9/9/8/8 + KV1 = 26,40 và giải thích đúng. 5 từ khóa ngành cho 24 thẻ/lượt, tên phù hợp, đổi sắp xếp không mất kết quả. UI tài khoản, phòng thi và liên kết cẩm nang hoạt động; root không yêu cầu quảng cáo |
 | Sinh học trên Brave | 6 prompt Phần III và 6 ảnh đề đúng, ảnh trang 5–6 tải được. Chọn đáp án fixture qua UI 28 câu, nộp đạt 10/10, có 28 mục xem lại; không tràn ngang ở 390 px. Đây là kiểm tra khớp fixture, không chứng nhận đáp án chính thức |
 | HTTP với desktop/mobile/Googlebot | 15 trang × 3 User-Agent = 45 GET có nội dung chính như nhau; 23 đường dẫn liên kết công khai HEAD 200, đường dẫn thiếu 404 |
+| HTTP trên tên miền sau deploy | 13 trang GET/HEAD đúng bản sinh; quảng cáo chỉ tải trên 8 bài cẩm nang. Root GET/HEAD có nonce mới, `no-store`, CSP không mở quyền quảng cáo; mã xác minh và beacon Cloudflare nhận đúng nonce. Sitemap 15 URL, ads.txt, 404, redirect và dữ liệu Sinh học đã cập nhật |
+| Nội dung production trên Brave và crawler | 14 trang × 1366/390 px không tràn ngang, mỗi trang một H1; 22 liên kết nguồn trong 8 bài. Nội dung chính 15 trang giống nhau qua desktop/mobile/Googlebot; 23 liên kết nội bộ trả 200, URL thiếu trả 404. Đọc không JavaScript, theme, tìm bài và consent mock đạt; không có `pageerror` |
+| Công cụ production trên Brave | 9/9/8/8 + KV1 = 26,40, có giải thích; 5 truy vấn ngành trả đúng 24 thẻ/lượt và giữ kết quả khi sắp xếp. 18 thẻ đề có nguồn, đồng hồ làm bài và UI tài khoản hoạt động. Root không tải quảng cáo, không có lỗi CSP hoặc `pageerror`; mã Cloudflare precursor và yêu cầu xác minh tiếp theo trả 200 |
+| Sinh học production trên Brave | 6 câu Phần III khớp nội dung đã phục hồi, ký hiệu Unicode đầy đủ; 6 ảnh đề đều tải được. Làm bài qua UI với đáp án fixture công khai đạt 10,00/10, có 28 câu xem lại và 6 trang nguồn; không tràn ngang ở 390 px hoặc có `pageerror`. Kết quả này kiểm tra luồng chấm, không chứng nhận đáp án của tài liệu |
 | Soát khóa trong build | So 15 giá trị credential với 94 tài sản văn bản: không khớp tệp nào; không xuất giá trị khóa trong log/báo cáo |
 
 Lần chạy đầu có một assertion ghim câu mô tả đề cũ; đã đổi kiểm tra sang nội dung mới và bổ sung điều kiện nguồn người dùng/giới hạn xác minh, rồi chạy lại toàn bộ 434 test. Ca cache cũ được cập nhật để kiểm tra root/index `no-store` khi có nonce; CSS/JS/HTML tĩnh vẫn bắt buộc `no-cache`. Không xóa hoặc skip test.
 
 Mock CMP chỉ chứng minh nút giao diện/luồng API của website, không xác nhận cấu hình Google CMP thực tế. Lượt browser chặn host ngoài để không gửi ảnh học bạ hoặc dữ liệu tài khoản tới dịch vụ quảng cáo, OCR hay AI. Log, ảnh kiểm tra và script riêng trong `.local/google-policy-*` bị Git ignore.
 
+Bản mã nguồn `3a8a1fd` đã push lên `origin/main`. Đã deploy main Worker `f5c95e3c-b65c-457d-a9fb-cc59d5e97a70` và OCR Worker `be273b39-49d8-42c0-bebe-5075418c4a14` ngày 12/10/2026. So sánh HTML production chỉ bỏ đúng các đoạn mã xác minh/beacon do Cloudflare chèn, nonce và tích hợp AdSense; phần nội dung còn lại phải khớp bản sinh. Việc này không xác nhận vị trí hay nội dung của quảng cáo thực tế.
+
 ## Những việc không thể kết luận chỉ từ mã nguồn
 
 1. Trạng thái phê duyệt AdSense, Policy Center, hình phạt thủ công và canonical Google chọn cần xem trong tài khoản Google. Không tự gửi yêu cầu xét duyệt/xem xét lại trong tác vụ này.
 2. Quyền đăng lại từng đề, ảnh và lời giải vẫn cần bằng chứng từ chủ thể có quyền. Nguồn công khai, tài liệu người dùng đưa, lời nhắc tham khảo hoặc việc không đặt quảng cáo đều không thay cho quyền sử dụng. Không tự đánh dấu đã có giấy phép.
 3. Đã sửa các lỗi nội dung có bằng chứng tìm được; không tuyên bố đã thẩm định độc lập từng câu của mọi đề hay toàn bộ 17.617 dòng tuyển sinh. Trạng thái công thức thiếu căn cứ được giữ và không nâng nhãn xác minh.
-4. Lượt browser có thể chặn tài nguyên bên ngoài để kiểm tra riêng ứng dụng. Cần kiểm tra thêm CMP thật ở vùng áp dụng, vị trí quảng cáo thực tế và Cloudflare JavaScript Detections/CSP bằng phiên sạch.
+4. Lượt browser có thể chặn tài nguyên bên ngoài để kiểm tra riêng ứng dụng. Cần kiểm tra thêm CMP thật ở vùng áp dụng và vị trí quảng cáo thực tế. Root và 8 bài đã nhận nonce đúng cho mã Cloudflare trên production; thư viện, 4 trang thông tin và quyền riêng tư còn cảnh báo CSP chặn JavaScript Detections/beacon tự chèn. Nội dung và điều hướng vẫn hoạt động, nhưng không thể kết luận xác minh hoặc đo lường Cloudflare chạy trên 6 route tĩnh ấy. CSP giữ phạm vi hiện có; cảnh báo được ghi riêng trong log production.
 
 Tài liệu này ghi bằng chứng và phạm vi sửa, không phải chứng nhận website đã được Google chấp thuận.

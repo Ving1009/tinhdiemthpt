@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { readFile } from "node:fs/promises";
 import { resolveAppView } from "../public/js/utils.js";
-import { APP_ROUTES, parseAppRoute, routeFromLocation, updateAppMetadata } from "../public/js/core/appRoutes.js";
+import { APP_ROUTES, parseAppRoute, routeFromLocation, updateAppMetadata, updateAppHeading } from "../public/js/core/appRoutes.js";
 
 test("thứ tự và số mục 01–08 khớp điều hướng chính", async () => {
   const html = await readFile(new URL("../public/index.html", import.meta.url), "utf8");
@@ -50,14 +50,14 @@ test("routing shows one section and selects the correct mobile navigation group"
     { hash: "#practice-exams", dataset: {} }
   ].map((link) => ({ ...link, pathname: parseAppRoute(link.hash).path, classList: { toggle(_, active) { link.active = active; } }, setAttribute(_, value) { link.current = value; }, removeAttribute() { delete link.current; }, state: link }));
   const document = { body: { dataset: {} }, querySelector() { return null; }, querySelectorAll(selector) { return selector === "main > .section" ? sections : links; } };
-  const setView = new Function("document", "resolveAppView", "parseAppRoute", "updateAppMetadata", "hash", body);
+  const setView = new Function("document", "resolveAppView", "parseAppRoute", "updateAppMetadata", "updateAppHeading", "hash", body);
   for (const [hash, section, activeIndex] of [["", "home", 0], ["#academic", "academic", 1], ["#admission", "admission", 1], ["#major-finder", "major-finder", 2], ["#truong/BKA", "universities", 2], ["#practice-exams", "practice-exams", 3], ["#guide", "guide", -1]]) {
-    setView(document, resolveAppView, parseAppRoute, updateAppMetadata, hash);
+    setView(document, resolveAppView, parseAppRoute, updateAppMetadata, updateAppHeading, hash);
     assert.deepEqual(sections.filter((item) => !item.hidden).map((item) => item.id), [section]);
     assert.equal(document.body.dataset.view, section);
     assert.deepEqual(links.map((item) => item.state.active), links.map((_, index) => index === activeIndex));
     const path = parseAppRoute(hash || "/").path;
-    setView(document, resolveAppView, parseAppRoute, updateAppMetadata, path);
+    setView(document, resolveAppView, parseAppRoute, updateAppMetadata, updateAppHeading, path);
     assert.deepEqual(sections.filter((item) => !item.hidden).map((item) => item.id), [section]);
   }
 });

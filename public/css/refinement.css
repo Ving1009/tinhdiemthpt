@@ -30,7 +30,7 @@ body.dark .button-light { color:#3539be; }
 .eyebrow { color:var(--primary); font-size:12px; letter-spacing:.09em; }
 .hero-actions,.hero-checks,.hero-visual { display:none; }
 .section-heading { margin-bottom:24px; }
-.section-heading h2 { font-size:clamp(25px,2.8vw,34px); line-height:1.4; letter-spacing:-.8px; }
+.section-heading :is(h1,h2) { font-size:clamp(25px,2.8vw,34px); line-height:1.4; letter-spacing:-.8px; }
 .section-heading p:not(.eyebrow) { margin-top:8px; max-width:780px; font-size:16px; }
 .section-heading.centered { text-align:left; }
 .calculator-section { padding-top:26px; }
@@ -193,7 +193,7 @@ body.dark .button-light { color:#3539be; }
  .hero h1 { font-size:27px; letter-spacing:-.6px; }
  .hero-description { font-size:15px; }
  .hero .eyebrow { font-size:12px; }
- .section-heading h2 { font-size:26px; }
+ .section-heading :is(h1,h2) { font-size:26px; }
  .section-heading p:not(.eyebrow) { font-size:15px; }
  .form-card { padding:18px; }
  .university-region-list { grid-template-columns:1fr; }

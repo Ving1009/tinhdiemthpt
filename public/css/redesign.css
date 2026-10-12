@@ -20,9 +20,11 @@ body { font-size:15px; line-height:1.65; }
 main { min-height:calc(100dvh - var(--header-height) - 180px); }
 .section { padding:32px 0 48px; scroll-margin-top:calc(var(--header-height) + 16px); }
 .section-heading { max-width:none; margin:0 0 26px; }
-.section-heading h2,.guide-layout h2 { font-size:clamp(26px,3vw,34px); letter-spacing:-1px; line-height:1.35; }
+.section-heading :is(h1,h2),.guide-layout :is(h1,h2) { font-size:clamp(26px,3vw,34px); letter-spacing:-1px; line-height:1.35; }
 .section-heading p:not(.eyebrow) { max-width:760px; font-size:15px; line-height:1.7; }
 .section-heading.centered { margin-inline:0; }
+/* Reserve the first screen of async results so loading doesn't move the footer. */
+#combination-grid[aria-busy="true"],#university-grid[aria-busy="true"],#practice-exam-app:empty { min-height:420px; }
 .centered .eyebrow { justify-content:flex-start; }
 .eyebrow { margin-bottom:8px; font-size:11px; letter-spacing:.07em; }
 :where(button,a,input,select,textarea,summary):focus-visible { outline:3px solid var(--primary); outline-offset:3px; }
@@ -351,7 +353,7 @@ body.dark .site-header { background:var(--surface); }
   .home-shortcuts { gap:8px; margin-top:16px; }
   .home-shortcuts a { font-size:11px; padding:10px; }
   .section-heading { margin-bottom:20px; }
-  .section-heading h2,.guide-layout h2 { font-size:26px; }
+  .section-heading :is(h1,h2),.guide-layout :is(h1,h2) { font-size:26px; }
   .section-heading p:not(.eyebrow) { font-size:14px; }
   .tool-switch { display:flex; }
   .tool-switch a { flex:1; min-width:0; padding-inline:10px; }

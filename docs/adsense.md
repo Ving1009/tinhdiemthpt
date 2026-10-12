@@ -1,55 +1,64 @@
 # Google AdSense
 
-Publisher: `ca-pub-5701300811077965`. Đây là mã công khai của tài khoản, không phải API key.
+Publisher công khai: `ca-pub-5701300811077965`.
 
-## Phạm vi quảng cáo từ 12/10/2026
+## Phạm vi trong bản sửa final audit ngày 12/10/2026
 
-Mã AdSense có thể tải trên 23 URL chính: trang chủ, 8 mục công cụ/hướng dẫn, thư viện và 8 bài cẩm nang, 4 trang thông tin, cùng trang quyền riêng tư. Hồ sơ trường/ngành hợp lệ dùng URL riêng và cùng cấu hình. Các alias HTML hiện có cũng dùng cùng cấu hình. Bài mới cần được kiểm tra nội dung, ví dụ, nguồn và liên kết trước khi thêm vào danh mục.
+Mã quảng cáo chỉ tải trên **8 bài cẩm nang** khi đủ điều kiện cấu hình và đồng ý. `ADSENSE_PAGE_PATHS` gồm 16 đường dẫn: 8 URL canonical và 8 alias `index.html` của cùng các bài đó. Trang thư viện cẩm nang không thuộc phạm vi này.
 
-Các công cụ có URL riêng, được liệt kê trong [public-routes.md](public-routes.md). Mỗi lần mở trực tiếp tải một HTML và một mã quảng cáo; chuyển công cụ bằng History API giữ cùng tài liệu nên không chèn lại mã. Mở tài khoản vẫn dùng hộp thoại. API, tài sản như ảnh/PDF/JavaScript, redirect và lỗi HTTP giữ kiểu phản hồi hiện có. Meta xác minh và ads.txt tiếp tục dùng publisher ở trên.
+| Loại trang | Tải mã quảng cáo |
+| --- | --- |
+| 8 bài hướng dẫn trong `/cam-nang/<slug>/` | Có điều kiện |
+| Trang chủ, công cụ tính điểm, tra cứu tổ hợp/trường/ngành | Không |
+| Phòng thi, hộp thoại tài khoản, trợ lý | Không |
+| Thư viện cẩm nang, Giới thiệu, Liên hệ, nguồn dữ liệu, điều khoản, quyền riêng tư | Không |
+| API, lỗi, redirect, ảnh, PDF, JavaScript và tài nguyên khác | Không |
 
-`ADSENSE_PAGE_PATHS` trong `lib/adsense.js` áp dụng cùng danh sách cho Express và Worker. Các URL HTML công khai đi qua Worker bằng `run_worker_first` để tích hợp có hiệu lực trên Static Assets. Chỉ phản hồi HTML 200 cho GET/HEAD được xử lý. HEAD trả body rỗng; redirect và 404 giữ đúng. Trang có quảng cáo dùng nonce mới và `no-store`; API và worker OCR giữ CSP riêng.
+Danh sách HTML công khai được tách riêng thành `PUBLIC_HTML_PATHS`: 46 đường dẫn/alias tương ứng **23 URL canonical**. Hồ sơ trường/ngành hợp lệ có URL động và HTML tóm tắt từ dataset hiện có, nhưng không tải quảng cáo. Không lấy số trang HTML hay số URL trong sitemap làm số trang quảng cáo hoặc số trang đã được Google index.
 
-Khi quảng cáo tắt hoặc chưa đủ điều kiện CMP/geography, các trang công cụ vẫn có nonce HTML riêng cho Cloudflare, CSP mặc định và `no-store`. Thay đổi phạm vi không bỏ kiểm tra publisher, vùng truy cập hoặc yêu cầu đồng ý.
+Đây là phạm vi của **bản sửa local**, thay thế lần mở rộng quảng cáo trước đó. Production chưa được deploy trong tác vụ final audit. Kiểm tra HEAD ngày 12/10 vẫn thấy CSP của bản quảng cáo toàn HTML trên production; xem [báo cáo cuối](final-adsense-readiness-audit.md).
 
-Nút “Lựa chọn quảng cáo” có ở chân ứng dụng, bài viết và trang quyền riêng tư, dùng chung `public/js/adConsent.js`. Chỉ hiện khi CMP có API mở lại và xác nhận GDPR áp dụng. CMP bị chặn hoặc lỗi không làm chặn nội dung. Mock của test không xác nhận cấu hình CMP thực tế.
+## Cách phục vụ HTML
 
-Lần rà soát trước đó giới hạn quảng cáo vào 8 bài cẩm nang được ghi trong [google-policy-review.md](google-policy-review.md); yêu cầu mới này thay đổi phạm vi tải mã. Việc tải mã không xác nhận mọi vị trí được Google cho phép hoặc chắc chắn có quảng cáo. Script deploy không tự gửi yêu cầu xét duyệt Google.
+Express và Worker dùng `isPublicHtmlPage()` để nhận diện HTML; `isAdSenseContentPage()` chỉ quyết định trang đủ điều kiện quảng cáo. `run_worker_first` bảo đảm HTML từ Static Assets được xử lý bởi Worker. HTML thành công được gắn mã xác minh khi publisher hợp lệ; HEAD không gửi body. API, 301/404 và tài nguyên giữ đúng loại phản hồi.
 
-Kiểm chứng lần mở rộng phạm vi: `npm run check`, **434/434 test** và `npm run cf:dry-run` đạt. Wrangler với Static Assets thật phục vụ 15 trang GET/HEAD và 15 alias đúng trạng thái, nonce mới, một loader mỗi HTML; API/vendor/lỗi giữ chính sách riêng. Brave kiểm tra 15 trang ở 1366/390 px, nút consent bằng mock và các công cụ chính; chuyển qua 9 mục hash vẫn giữ đúng một loader/một yêu cầu quảng cáo. Request quảng cáo được chặn trong QA để tránh tạo lượt hiển thị hoặc click thử.
+Mỗi HTML có nonce mới cho script và dùng `Cache-Control: no-store`, kể cả khi không có quảng cáo. CSS/JS giữ cơ chế revalidation hiện có; ảnh thương hiệu có cache riêng. Trang quảng cáo có đúng một loader, không tự chèn lại khi lọc, sửa điểm hoặc chuyển view bằng History API. Bản sửa không thêm slot hay cơ chế refresh quảng cáo.
 
-## Lịch sử cấu hình tài khoản
-
-Những thông tin ngày 03/10 bên dưới ghi lại lần cấu hình trước, không chứng minh trạng thái phê duyệt, CMP hay vị trí quảng cáo hiện tại. Cần kiểm tra lại trong tài khoản.
-
-Ngày 03/10/2026: Google đã xác minh quyền sở hữu website qua ads.txt và nhận yêu cầu xét duyệt. Thông báo Google CMP đã xuất bản cho tên miền này, có ba lựa chọn đồng ý, không đồng ý và quản lý lựa chọn; URL chính sách là `/privacy.html`. `ADSENSE_CMP_READY=true` tương ứng với cấu hình đã xuất bản trong tài khoản.
-
-Auto ads đã bật cho banner trong trang. Đã tắt cả ba định dạng lớp phủ, định dạng dựa trên ý định, Multiplex, tự tối ưu và tự tìm thêm vị trí trong bài viết. Giới hạn banner đặt ở mức thấp nhất giao diện cho phép (tối đa 6), khoảng cách ở mức cao nhất (60 trên thang của AdSense). Tiền tố `/privacy` đã được loại trừ. Bản xem trước AdSense hiện chưa tải được website, nên chưa xác minh được từng vị trí banner hoặc cấu hình loại trừ vùng nhập điểm/bài thi; kiểm tra lại khi Google duyệt và bản xem trước hoạt động.
-
-Website tự gắn meta xác minh tài khoản; toàn bộ HTML công khai đủ điều kiện CMP/geography được gắn mã AdSense trong `<head>`. Website tiếp tục phục vụ [ads.txt](https://tinhdiemthpt.id.vn/ads.txt):
+`/ads.txt` trả 200 với cấu hình publisher hợp lệ:
 
 ```text
 google.com, pub-5701300811077965, DIRECT, f08c47fec0942fa0
 ```
 
-Cloudflare dùng ba biến công khai trong `wrangler.jsonc`: `ADSENSE_CLIENT`, `ADSENSE_ENABLED`, `ADSENSE_CMP_READY`. Chạy Express dùng các biến tương ứng trong `.env`. Đặt `ADSENSE_ENABLED=false` để ngừng tải mã quảng cáo.
+Các biến hiện có `ADSENSE_CLIENT`, `ADSENSE_ENABLED`, `ADSENSE_CMP_READY` không bị thay đổi trong audit. Publisher không hợp lệ không bật quảng cáo. Đặt `ADSENSE_ENABLED=false` ngừng tải mã. Không chạy `cf:secrets` hay gửi lại yêu cầu xét duyệt trong tác vụ này.
 
-## Hoàn tất trong tài khoản AdSense
+## CSP và Cloudflare
 
-1. Trong **Sites**, thêm `tinhdiemthpt.id.vn`, xác minh bằng meta tài khoản hoặc ads.txt và gửi Google xét duyệt. Chỉ Google quyết định việc phê duyệt và phân phối quảng cáo.
-2. Trong **Privacy & messaging**, tạo và xuất bản thông báo đồng ý theo yêu cầu của Google, dùng CMP được Google chứng nhận. Liên kết chính sách quyền riêng tư là `https://tinhdiemthpt.id.vn/privacy`. Sau khi CMP đã xuất bản và kiểm tra, đổi `ADSENSE_CMP_READY` thành `true` rồi deploy.
-3. Trong **Ads → By site**, xem trước cả công cụ và các trang nội dung trên PC/điện thoại. Kiểm tra quảng cáo không che ô nhập điểm, câu hỏi, đồng hồ, nút gửi, mục lục hoặc điều hướng. Rà lại page/area exclusions trong tài khoản: lần cấu hình ngày 03/10 đã loại trừ `/privacy`, nên thay đổi mã không tự xóa loại trừ đó.
+Trang có quảng cáo giữ CSP nonce/`strict-dynamic` theo [hướng dẫn tích hợp của Google](https://support.google.com/adsense/answer/16283098?hl=vi). Quyền `unsafe-eval` và tài nguyên quảng cáo HTTPS chỉ áp dụng cho HTML đang bật quảng cáo. Không thêm quyền script `unsafe-inline` hoặc nguồn HTTP. Chính sách này không được dùng cho API, công cụ hoặc worker OCR.
 
-Website tải mã AdSense một lần cho mỗi HTML. Sửa điểm, chuyển công cụ bằng History API, mở tài khoản hoặc trò chuyện không tự chèn lại mã hay yêu cầu làm mới quảng cáo. Google quyết định vị trí Auto ads theo trạng thái phê duyệt, lựa chọn đồng ý và cấu hình tài khoản; cần kiểm tra bằng bản xem trước.
+HTML không quảng cáo giữ CSP nguồn cụ thể, bổ sung nonce cho JavaScript Detections, `https://static.cloudflareinsights.com` cho beacon script và `https://cloudflareinsights.com` cho request đo lường. Script inline không có nonce vẫn bị chặn. Tesseract chỉ có quyền WebAssembly trong worker của nó. HSTS, chặn iframe ngoài và các header bảo vệ hiện có được giữ nguyên.
 
-## CSP và quyền riêng tư
+Các nguồn Cloudflare cần thiết được đối chiếu với [hướng dẫn JavaScript Detections](https://developers.cloudflare.com/cloudflare-challenges/challenge-types/javascript-detections/) và [CSP cho Web Analytics](https://developers.cloudflare.com/fundamentals/reference/policies-compliances/content-security-policies/). Kiểm thử bằng script/beacon giả lập kiểm tra quyền CSP; không xác nhận cấu hình WAF hay script đang được Cloudflare chèn thực tế trên production.
 
-HTML có quảng cáo dùng nonce ngẫu nhiên mới cho mỗi phản hồi và CSP theo cơ chế strict-dynamic của Google. Chỉ chính sách này cho phép `unsafe-eval` mà AdSense hỗ trợ, CSS nội tuyến và tài nguyên quảng cáo HTTPS; các script nội tuyến không có nonce vẫn bị chặn. Trang có quảng cáo dùng Referrer-Policy `strict-origin` để Google CMP nhận tên miền, không gửi đường dẫn hay query. API và worker Tesseract giữ CSP và `no-referrer` hiện có. Trang `privacy.html` dùng module nội dung nhẹ để mở lại lựa chọn quảng cáo; nội dung chính sách vẫn đồng bộ với hộp thoại trong `main.js`.
+## Đồng ý và quyền riêng tư
 
-Khi `ADSENSE_CMP_READY=false`, mã quảng cáo không tải ở EEA, Anh, Thụy Sĩ hoặc khi chưa xác định được quốc gia. Các lượt truy cập đó vẫn có meta xác minh và dùng đầy đủ công cụ. Cloudflare lấy quốc gia từ `request.cf.country`, không tin header do khách tự gửi. Express không có nguồn geography tin cậy nên chỉ tải quảng cáo sau khi CMP đã sẵn sàng.
+Khi `ADSENSE_CMP_READY=false`, không tải quảng cáo ở EEA, Anh, Thụy Sĩ hoặc khi chưa xác định được quốc gia. Cloudflare dùng `request.cf.country`, không tin header quốc gia khách tự gửi. Express không có nguồn địa lý tin cậy nên chỉ bật quảng cáo sau khi CMP được đánh dấu sẵn sàng.
 
-Chính sách quyền riêng tư đã bổ sung việc sử dụng cookie quảng cáo và cách quản lý lựa chọn. Thời hạn 15 phút của dữ liệu khách không áp dụng cho cookie bên quảng cáo.
+Loader giữ `data-privacy-treatments="disablePersonalization"` cho mọi người dùng, kể cả người dưới 18 tuổi. Không cá nhân hóa vẫn có thể dùng cookie; không thay thế yêu cầu đồng ý. Cờ `ADSENSE_CMP_READY=true` chỉ là cấu hình, không chứng minh CMP được Google chứng nhận đã xuất bản và hoạt động đúng.
 
-Nút “Lựa chọn quảng cáo” ở chân bài viết chỉ hiện khi Google CMP đã sẵn sàng, có API mở lại và xác nhận GDPR áp dụng cho khách. Nút gọi API chính thức để mở lại thông báo và cho phép đổi hoặc rút lại lựa chọn. Nút không hiện khi quảng cáo/CMP chưa tải hoặc đã bị trình duyệt chặn. Yêu cầu không cá nhân hóa không có nghĩa được bỏ qua đồng ý hoặc quảng cáo không dùng cookie.
+Nút “Lựa chọn quảng cáo” dùng API mở lại của Google CMP, chỉ hiện khi có API và xác nhận GDPR áp dụng. Nội dung/công cụ vẫn dùng được nếu CMP hoặc quảng cáo bị chặn. Thời hạn dữ liệu khách 15 phút không áp dụng cho cookie quảng cáo hay tài khoản.
 
-Tài liệu Google: [tích hợp CSP](https://support.google.com/adsense/answer/16283098?hl=en), [ads.txt](https://support.google.com/adsense/answer/12171612?hl=vi), [Auto ads](https://support.google.com/adsense/answer/9261307?hl=vi), [yêu cầu CMP](https://support.google.com/adsense/answer/13554116?hl=vi), [vị trí quảng cáo](https://support.google.com/adsense/answer/1346295?hl=vi).
+## Việc cần kiểm tra trong tài khoản trước xét duyệt
+
+1. Sau khi cho phép phát hành, xác minh phạm vi loader thực tế: 1 trên bài đủ điều kiện, 0 trên công cụ, hồ sơ, phòng thi và chính sách. Mở lại ở cửa sổ mới và kiểm tra response/canonical để tránh nhầm bản cache cũ.
+2. Kiểm tra CMP trong **Privacy & messaging**: domain đúng, thông báo xuất bản, đồng ý/từ chối/mở lại có hiệu lực ở vùng áp dụng. Không dùng cờ trong repo để kết luận mục này đã đạt.
+3. Trong **Ads → By site**, xem trước desktop/mobile, kiểm tra vị trí và page/area exclusions. Đường dẫn chính sách là `https://tinhdiemthpt.id.vn/privacy`. Không đặt quảng cáo che mục lục, điều hướng, liên kết hoặc nội dung bài.
+4. Kiểm tra **Sites**, ads.txt và các vấn đề được Google ghi trong tài khoản. Chủ website quyết định thời điểm gửi lại sau khi xử lý checklist trong báo cáo cuối.
+
+Không dùng trình duyệt QA để nhấp quảng cáo hoặc tạo traffic thử. Audit chặn request quảng cáo thực, không xác nhận tỷ lệ lấp đầy, hiệu năng có quảng cáo hay quyết định phê duyệt.
+
+## Lịch sử
+
+Các báo cáo [google-policy-review.md](google-policy-review.md) và [adsense-content-improvement.md](adsense-content-improvement.md) ghi các đợt trước. Lần mở rộng quảng cáo ra 23 URL từng có 434/434 test; final audit thu hẹp về 8 bài và bổ sung kiểm thử. Các ghi nhận cấu hình tài khoản ngày 03/10 không thay thế việc kiểm tra lại CMP, Auto ads và trạng thái xét duyệt hiện tại.
+
+Tài liệu thêm: [ads.txt](https://support.google.com/adsense/answer/12171612?hl=vi), [Auto ads](https://support.google.com/adsense/answer/9261307?hl=vi), [CMP](https://support.google.com/adsense/answer/13554116?hl=vi), [vị trí quảng cáo](https://support.google.com/adsense/answer/1346295?hl=vi).

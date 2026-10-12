@@ -49,7 +49,7 @@ test("chỉ public directory được phục vụ", async () => {
 });
 
 test("HTML, CSS và JavaScript luôn tái xác thực sau khi cập nhật", async () => {
-  for (const [path, expected] of [["/", "no-store"], ["/index.html", "no-store"], ["/privacy.html", "no-cache"], ["/css/refinement.css", "no-cache"], ["/js/main.js", "no-cache"]]) {
+  for (const [path, expected] of [["/", "no-store"], ["/index.html", "no-store"], ["/privacy.html", "no-store"], ["/css/refinement.css", "no-cache"], ["/js/main.js", "no-cache"]]) {
     const response = await fetch(`${baseUrl}${path}`);
     assert.equal(response.headers.get("cache-control"), expected, `${path} không được giữ bản cũ; HTML có nonce mới không được lưu cache`);
   }

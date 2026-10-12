@@ -18,7 +18,7 @@ import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./pr
 import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-2";
 import { AdmissionsAssistant } from "./assistant.js?v=20261012-4";
 import { initAdConsent } from "./adConsent.js";
-import { APP_ROUTES, parseAppRoute, profilePath, routeFromLocation, updateAppMetadata } from "./core/appRoutes.js";
+import { APP_ROUTES, parseAppRoute, profilePath, routeFromLocation, updateAppMetadata, updateAppHeading } from "./core/appRoutes.js";
 import { calculateSchoolFormula, schoolFormulaBranches, selectSchoolFormulaRule, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20261004-3";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
@@ -162,6 +162,8 @@ class THPTApp {
       if (this.personalDataRetention.expired) this.showToast("Đã xóa dữ liệu phiên khách cũ sau 15 phút rời website.");
     } catch (error) {
       this.elements.universityGrid.innerHTML = '<p class="empty-state error-state">Không thể tải dữ liệu. <button class="button button-text" type="button" data-retry-load>Thử lại</button></p>';
+      this.elements.universityGrid.setAttribute("aria-busy", "false");
+      this.elements.combinationGrid.setAttribute("aria-busy", "false");
       this.showToast(error.message);
     }
   }
@@ -348,6 +350,8 @@ class THPTApp {
 
   setView(hash) {
     const view = resolveAppView(hash);
+    updateAppHeading(document, view);
+    document.querySelector("[data-server-profile]")?.remove();
     document.body.dataset.view = view;
     document.querySelectorAll("main > .section").forEach((section) => { section.hidden = section.id !== view; });
     document.querySelectorAll(".site-nav a, .mobile-bottom-nav a, .tool-switch a").forEach((link) => {
@@ -908,6 +912,7 @@ class THPTApp {
   }
 
   renderUniversities(filter = "", keepPage = false) {
+    this.elements.universityGrid.setAttribute("aria-busy", "false");
     if (!keepPage) this.universityPage = 1;
     const term = this.normalizeSearch(filter);
     const items = this.repository.universities.filter((item) => (this.activeUniversityRegion === "all" || item.region === this.activeUniversityRegion) && (!term || this.normalizeSearch(`${item.name} ${item.shortName} ${item.officialAdmissionsCode || ""} ${item.code}`).includes(term)));
@@ -1030,6 +1035,7 @@ class THPTApp {
   }
 
   renderCombinations(filter = "", keepPage = false) {
+    this.elements.combinationGrid.setAttribute("aria-busy", "false");
     if (!keepPage) this.combinationPage = 1;
     const term = this.normalizeSearch(filter);
     const items = this.repository.combinations.filter((item) => !term || this.normalizeSearch(`${item.code} ${item.subjectText}`).includes(term));
@@ -1330,7 +1336,7 @@ class THPTApp {
   openPrivacyPolicy(trigger) {
     this.openModal(`<p class="modal-kicker">Quyền riêng tư</p>
       <h2 id="modal-title">Chính sách quyền riêng tư</h2>
-      <p class="modal-description">Cập nhật ngày 11/10/2026.</p>
+      <p class="modal-description">Cập nhật ngày 12/10/2026.</p>
       <div class="privacy-policy">
         <p>Chính sách này giải thích cách Tính Điểm THPT xử lý dữ liệu khi bạn tính điểm, tra cứu tuyển sinh, làm đề, dùng trợ lý hoặc tạo tài khoản.</p>
         <h3>Những điều bạn cần biết</h3>
@@ -1357,7 +1363,7 @@ class THPTApp {
         <p>Website chưa có lịch tự xóa tài khoản không hoạt động. Cách yêu cầu xóa nằm ở mục 8; nếu pháp luật yêu cầu giữ lại một phần dữ liệu, bên vận hành sẽ giải thích lý do và phạm vi lưu giữ khi xử lý yêu cầu.</p>
         <h3>4. Ảnh học bạ</h3>
         <p>Bạn có thể nhập điểm bằng tay. Nếu dùng nhận diện ảnh, website chỉ gửi ảnh sau khi bạn chọn ô đồng ý và bấm quét. Mỗi lượt nhận tối đa 6 ảnh JPG, PNG hoặc WEBP, tối đa 7 MB mỗi ảnh; ảnh được xử lý để giảm dung lượng trước khi gửi.</p>
-        <p>Ảnh có thể được chuyển tới Google Gemini, Groq hoặc OCR.space để đọc bảng điểm; dịch vụ dự phòng có thể được thử khi dịch vụ trước đó không trả kết quả. Website không lưu ảnh hoặc nội dung nhận diện thô vào cơ sở dữ liệu hay bản sao tài khoản. Hãy che họ tên, ngày sinh, số CCCD và thông tin không cần thiết trước khi chọn ảnh.</p>
+        <p>Ảnh có thể được chuyển tới Google Gemini, Groq hoặc OCR.space để đọc bảng điểm. Hugging Face và Requesty cũng có thể nhận ảnh khi bên vận hành bật mô hình nhận diện tương ứng; các dịch vụ định tuyến này có thể chuyển ảnh tới nhà cung cấp mô hình. Dịch vụ dự phòng có thể được thử khi dịch vụ trước đó không trả kết quả. Website không lưu ảnh hoặc nội dung nhận diện thô vào cơ sở dữ liệu hay bản sao tài khoản. Hãy che họ tên, ngày sinh, số CCCD và thông tin không cần thiết trước khi chọn ảnh.</p>
         <p>Khi dịch vụ nhận diện gặp sự cố, bạn có thể đồng ý tải Tesseract.js để quét tiếp trong trình duyệt. Ở bước này, ảnh được xử lý tại thiết bị; ảnh có thể đã được gửi trong lần thử nhận diện trước đó.</p>
         <p>Bạn cần đối chiếu kết quả với ảnh gốc rồi xác nhận trước khi điền điểm vào công cụ. Phần điểm đã xác nhận có thể được lưu trên thiết bị và sao lưu vào tài khoản như điểm bạn nhập tay. Thời hạn lưu ảnh tại dịch vụ bên ngoài phụ thuộc chính sách của dịch vụ đó, không áp dụng mốc 15 phút của website.</p>
         <h3>5. Trợ lý và báo thông tin sai</h3>
@@ -1371,7 +1377,7 @@ class THPTApp {
           <li><a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Supabase</a>: lưu báo cáo sai dữ liệu và nội dung bạn gửi kèm báo cáo.</li>
           <li><a href="https://policies.google.com/privacy?hl=vi" target="_blank" rel="noopener noreferrer">Google</a>: Gemini nhận ảnh học bạ hoặc câu hỏi để xử lý; AdSense phục vụ quảng cáo. Google Fonts cung cấp phông chữ và có thể nhận thông tin kỹ thuật khi trình duyệt tải phông.</li>
           <li><a href="https://groq.com/privacy-policy" target="_blank" rel="noopener noreferrer">Groq</a>: nhận diện ảnh học bạ và trả lời câu hỏi. <a href="https://ocr.space/privacypolicy" target="_blank" rel="noopener noreferrer">OCR.space</a>: nhận diện ảnh học bạ.</li>
-          <li><a href="https://legal.mistral.ai/terms/privacy-policy/" target="_blank" rel="noopener noreferrer">Mistral AI</a>, <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener noreferrer">OpenRouter</a>, <a href="https://huggingface.co/privacy" target="_blank" rel="noopener noreferrer">Hugging Face</a> và <a href="https://www.requesty.ai/privacy" target="_blank" rel="noopener noreferrer">Requesty</a>: nhận câu hỏi và ngữ cảnh để trả lời qua trợ lý. Các dịch vụ định tuyến có thể chuyển tiếp nội dung tới nhà cung cấp mô hình mà chúng sử dụng.</li>
+          <li><a href="https://legal.mistral.ai/terms/privacy-policy/" target="_blank" rel="noopener noreferrer">Mistral AI</a>, <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener noreferrer">OpenRouter</a>, <a href="https://huggingface.co/privacy" target="_blank" rel="noopener noreferrer">Hugging Face</a> và <a href="https://www.requesty.ai/privacy" target="_blank" rel="noopener noreferrer">Requesty</a>: nhận câu hỏi và ngữ cảnh để trả lời qua trợ lý. Hugging Face và Requesty còn có thể nhận ảnh học bạ theo cấu hình ở mục 4. Các dịch vụ định tuyến có thể chuyển tiếp nội dung tới nhà cung cấp mô hình mà chúng sử dụng.</li>
         </ul>
         <p>Dữ liệu có thể được xử lý trên hệ thống ngoài Việt Nam. Chính sách lưu giữ và sử dụng nội dung, kể cả để cải thiện hoặc huấn luyện mô hình, khác nhau theo dịch vụ và mô hình; website không bảo đảm mọi bên đều xóa ngay dữ liệu hoặc không dùng dữ liệu cho những mục đích này. Bạn có thể đọc chính sách qua các liên kết trên và dùng cách nhập điểm bằng tay nếu không muốn gửi ảnh.</p>
         <p>Địa chỉ IP, thông tin trình duyệt và dữ liệu kỹ thuật của yêu cầu có thể được xử lý để giữ website hoạt động, giới hạn yêu cầu bất thường và kiểm tra sự cố. Các dịch vụ hỗ trợ có thể giữ nhật ký kỹ thuật theo chính sách riêng; thời hạn phiên khách không áp dụng cho những nhật ký này.</p>

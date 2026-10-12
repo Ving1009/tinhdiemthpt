@@ -2,7 +2,7 @@
 
 Website: https://tinhdiemthpt.id.vn/. Phạm vi: mã nguồn, các mục công cụ, 15 trang HTML công khai, nội dung luyện tập, cách tải quảng cáo và đường dẫn phục vụ người đọc/crawler.
 
-**Lưu ý phiên bản:** báo cáo này ghi lần rà soát tại commit `3a8a1fd`. Sau đó, người vận hành yêu cầu mở lại khả năng tải AdSense trên toàn website; cấu hình hiện hành nằm trong [adsense.md](adsense.md). Các kết quả “chỉ 8 bài” và root không quảng cáo bên dưới là bằng chứng của phiên bản trước, không mô tả phạm vi tải mã hiện tại.
+**Lưu ý phiên bản:** báo cáo này ghi lần rà soát tại commit `3a8a1fd`, trước lần mở rộng quảng cáo toàn HTML. Bản final audit ngày 12/10 tiếp tục giới hạn quảng cáo vào 8 bài, chặn cả URL ảnh/JavaScript của đề chưa xác minh và cải thiện HTML/CSP. Cấu hình mới nằm trong [adsense.md](adsense.md), bằng chứng mới trong [final-adsense-readiness-audit.md](final-adsense-readiness-audit.md). Production chưa được deploy trong final audit; không dùng kết quả cũ bên dưới để suy ra trạng thái production hiện tại.
 
 ## Chính sách được đọc
 

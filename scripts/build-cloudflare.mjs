@@ -4,6 +4,7 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { sanitizeMajor, sanitizePublicValue, sanitizeUniversity, validateCutoff } from "../lib/dataValidation.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
+import { isRestrictedExamPath } from "../lib/examPublication.js";
 import { buildAssistantKnowledge } from "./build-assistant-knowledge.mjs";
 import { createMajorSearchIndex } from "../server/dataStoreCore.js";
 import { buildEditorialContent } from "./build-content.mjs";
@@ -41,7 +42,8 @@ await buildEditorialContent();
 await buildAssistantKnowledge();
 await rm(join(root, ".cloudflare"), { recursive: true, force: true });
 await mkdir(workerData, { recursive: true });
-await cp(join(root, "public"), output, { recursive: true });
+const publicDir = join(root, "public");
+await cp(publicDir, output, { recursive: true, filter: source => !isRestrictedExamPath(`/${relative(publicDir, source).replaceAll('\\', '/')}`) });
 
 const [universities, majors, combinations, subjects, formulas, transcriptSubjects, schoolFormulaCatalog] = await Promise.all([
   readJson("universities.json"),

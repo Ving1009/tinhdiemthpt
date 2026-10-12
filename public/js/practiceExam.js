@@ -60,8 +60,9 @@ export class PracticeExamApp {
       if (remainingExamSeconds(this.active) <= 0) this.finishAttempt(true);
       else this.renderExam();
     } else {
-      this.active = null;
-      storage.remove(PRACTICE_ACTIVE_KEY);
+      // Keep a suspended paper's draft for recovery if publication is later authorized.
+      const suspended = Boolean(this.active);
+      if (!suspended) storage.remove(PRACTICE_ACTIVE_KEY);
       this.renderDashboard();
     }
   }
@@ -107,15 +108,15 @@ export class PracticeExamApp {
     }).join("");
     const resume = this.active ? (() => {
       const item = this.examById(this.active.examId);
-      return item ? `<aside class="practice-resume"><div><span>Bài đang làm</span><strong>${escapeHTML(item.subject)} · còn ${formatExamTime(remainingExamSeconds(this.active))}</strong></div><button class="button button-primary" type="button" data-resume-exam>Tiếp tục</button></aside>` : "";
+      return item ? `<aside class="practice-resume"><div><span>Bài đang làm</span><strong>${escapeHTML(item.subject)} · còn ${formatExamTime(remainingExamSeconds(this.active))}</strong></div><button class="button button-primary" type="button" data-resume-exam>Tiếp tục</button></aside>` : '<aside class="practice-resume"><p>Bài đang làm thuộc đề tạm ngừng công bố. Bản nháp được giữ; nếu chọn đề khác, bạn cần xác nhận trước khi thay thế bài này.</p></aside>';
     })() : "";
     const replace = this.pendingStartExamId ? (() => {
       const pendingExam = this.examById(this.pendingStartExamId);
       const activeExam = this.examById(this.active?.examId);
-      return pendingExam && activeExam ? `<aside class="practice-replace" role="alert"><div><strong>Bắt đầu ${escapeHTML(pendingExam.subject)}?</strong><span>Nếu bắt đầu môn mới, bài ${escapeHTML(activeExam.subject)} chưa nộp sẽ được thay thế.</span></div><div><button class="button button-primary" type="button" data-confirm-start="${escapeHTML(pendingExam.id)}">Bắt đầu môn mới</button><button class="button button-light" type="button" data-cancel-start>Giữ bài đang làm</button></div></aside>` : "";
+      return pendingExam && this.active ? `<aside class="practice-replace" role="alert"><div><strong>Bắt đầu ${escapeHTML(pendingExam.subject)}?</strong><span>Nếu bắt đầu môn mới, bài ${escapeHTML(activeExam?.subject || 'thuộc đề tạm ngừng công bố')} chưa nộp sẽ được thay thế.</span></div><div><button class="button button-primary" type="button" data-confirm-start="${escapeHTML(pendingExam.id)}">Bắt đầu môn mới</button><button class="button button-light" type="button" data-cancel-start>Giữ bài đang làm</button></div></aside>` : "";
     })() : "";
     const history = this.history.slice(0, 8).map((item) => {
-      const subject = this.examById(item.examId)?.subject || "Đề luyện tập";
+      const subject = this.examById(item.examId)?.subject || "Đề tạm ngừng công bố";
       return `<button class="practice-history-row" type="button" data-view-attempt="${escapeHTML(item.id)}"><span><b>${escapeHTML(subject)}</b><small>${escapeHTML(formatDate(item.submittedAt))}</small></span><strong>${Number(item.result?.score || 0).toFixed(2)}</strong></button>`;
     }).join("");
     this.root.innerHTML = `
@@ -372,7 +373,11 @@ export class PracticeExamApp {
   renderResult(attempt) {
     this.stopTimer();
     const selectedExam = this.examById(attempt?.examId);
-    if (!selectedExam || !attempt?.result) return this.renderDashboard();
+    if (!attempt?.result) return this.renderDashboard();
+    if (!selectedExam) {
+      this.root.innerHTML = `<div class="practice-result"><h3>Kết quả đã lưu: ${Number(attempt.result.score || 0).toFixed(2)}/10</h3><p>${escapeHTML(formatDate(attempt.submittedAt))}</p><p>Đề này tạm ngừng công bố để xác minh quyền sử dụng. Kết quả cũ được giữ; câu hỏi và lời giải không hiển thị trong thời gian rà soát.</p><button class="button button-secondary" type="button" data-back-practice>Chọn đề luyện khác</button></div>`;
+      return;
+    }
     const result = attempt.result;
     const questions = this.questionsForAttempt(selectedExam, attempt);
     const detailById = new Map(result.details.map((item) => [item.questionId, item]));

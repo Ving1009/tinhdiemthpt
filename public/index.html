@@ -302,6 +302,7 @@
             <h2 id="admission-title">Công thức xét tuyển theo trường</h2>
             <p>Chọn trường và phương thức để xem cách tính điểm, ngành áp dụng và tài liệu đã kiểm tra. Thông tin tuyển sinh năm 2026 chỉ mang tính tham khảo; cần đối chiếu thông báo của trường.</p>
           </div>
+          <details class="tool-reading-note"><summary>Cách dùng công thức và đọc kết quả</summary><p>Chọn trường, phương thức rồi ngành áp dụng nếu công thức có nhiều phạm vi. Chỉ nhập điểm khi có công thức đủ căn cứ; phần còn thiếu sẽ hiện trạng thái cập nhật thay vì tự đoán cách tính.</p><p>Ví dụ minh họa cho phép cộng ba môn không hệ số: 8 + 7 + 9 = 24, trước ưu tiên và điểm cộng. Nếu trường nhân hệ số, quy đổi ĐGNL hoặc có điều kiện phụ, phải dùng đúng nhánh công thức và thang điểm. Nguồn nằm cạnh từng công thức; kết quả không xác nhận trúng tuyển. <a href="/cam-nang/cac-phuong-thuc-xet-tuyen/">Hiểu các phương thức xét tuyển</a>.</p></details>
           <div class="admission-flow">
             <div class="selection-field"><span class="step-badge">1</span><label for="university-select">Chọn trường</label><select id="university-select"><option value="">Đang tải danh sách trường...</option></select></div>
             <span class="flow-arrow" aria-hidden="true">→</span>
@@ -318,8 +319,9 @@
       <section class="section combinations-section" id="combinations" aria-labelledby="combinations-title">
         <div class="container">
           <div class="section-heading split-heading"><div><p class="eyebrow">04 · Tổ hợp môn</p><h2 id="combinations-title">Tra cứu tổ hợp xét tuyển</h2><p>Tìm theo mã A00, D01, X25 hoặc tên môn để xem các môn trong tổ hợp.</p></div><div class="section-search"><label class="sr-only" for="combination-query">Tìm tổ hợp môn</label><span aria-hidden="true">⌕</span><input id="combination-query" type="search" placeholder="Tìm mã hoặc môn" /></div></div>
+          <p class="tool-reading-note">Ví dụ: A00 gồm Toán, Vật lí, Hóa học; D01 gồm Toán, Ngữ văn, Tiếng Anh. Gõ mã hoặc tên môn rồi mở thẻ để xem đủ môn. Một tổ hợp có trong danh mục không có nghĩa mọi trường đều dùng tổ hợp đó; đối chiếu ngành và năm tuyển sinh trong <a href="/ho-so-truong/">hồ sơ trường</a>. <a href="/cam-nang/chon-to-hop-xet-tuyen/">Đọc cách chọn tổ hợp</a>.</p>
           <div class="combination-summary" id="combination-count">Đang tải tổ hợp...</div>
-          <div class="combination-grid" id="combination-grid" aria-live="polite"></div>
+          <div class="combination-grid" id="combination-grid" aria-live="polite" aria-busy="true"></div>
           <nav class="pagination" id="combination-pagination" aria-label="Trang danh sách tổ hợp"></nav>
           <p class="empty-state is-hidden" id="combination-empty">Không tìm thấy tổ hợp phù hợp. Hãy thử mã hoặc tên môn khác.</p>
         </div>
@@ -330,7 +332,8 @@
           <div class="section-heading split-heading"><div><p class="eyebrow">05 · Hồ sơ trường · Dữ liệu 2026</p><h2 id="universities-title">Hồ sơ các trường</h2><p>Tra cứu ngành, mã ngành, tổ hợp, phương thức và điểm chuẩn năm 2026 để tham khảo cho tuyển sinh 2027. Thông tin 2027 đang cập nhật; hãy đối chiếu tài liệu tuyển sinh của trường trong từng hồ sơ.</p></div><div class="university-tools"><div class="university-region-filters" id="university-region-filters" aria-label="Lọc trường theo miền"><button class="region-filter is-active" type="button" data-university-region="all" aria-pressed="true">Tất cả</button><button class="region-filter" type="button" data-university-region="north" aria-pressed="false">Miền Bắc</button><button class="region-filter" type="button" data-university-region="central" aria-pressed="false">Miền Trung</button><button class="region-filter" type="button" data-university-region="south" aria-pressed="false">Miền Nam</button></div><div class="section-search"><label class="sr-only" for="university-query">Lọc danh sách trường</label><span aria-hidden="true">⌕</span><input id="university-query" type="search" placeholder="Tìm tên hoặc mã trường" /></div></div></div>
           <details class="tool-reading-note"><summary>Cách đọc hồ sơ trường và năm dữ liệu</summary><p>Kiểm tra mã trường, tên ngành, mã ngành, phương thức, tổ hợp và năm điểm chuẩn cùng nhau. Điểm THPT, học bạ và các kỳ đánh giá năng lực dùng thang khác nhau, nên không đối chiếu chỉ bằng con số.</p><p>Hồ sơ đang dùng dữ liệu 2026 để tham khảo cho tuyển sinh 2027. Trạng thái xác minh phản ánh nguồn và lần kiểm tra của dữ liệu, không bảo đảm quy định sẽ giữ nguyên. Mở hồ sơ để xem nguồn tuyển sinh; mục thiếu căn cứ cần được đối chiếu trên website chính thức của trường. <a href="/cam-nang/doc-diem-chuan-dai-hoc/">Hướng dẫn đọc điểm chuẩn</a> · <a href="/nguon-du-lieu-va-bao-sai/">Nguồn dữ liệu và cách báo sai</a></p></details>
           <div class="directory-summary" id="university-summary" role="status"></div>
-          <div class="university-grid" id="university-grid" aria-live="polite"></div>
+          <p class="tool-reading-note">Tìm tên hoặc mã trường, chọn miền rồi mở hồ sơ. Kiểm tra ngành, cơ sở đào tạo, phương thức, thang điểm và nguồn cùng năm. Ví dụ: hai dòng cùng tên ngành nhưng khác cơ sở hoặc phương thức có thể có điểm chuẩn khác nhau. “Đang cập nhật” là dữ liệu chưa đủ, không phải điểm bằng 0 hoặc trường không tuyển. <a href="/nguon-du-lieu-va-bao-sai/">Xem cách đối chiếu nguồn và báo sai</a>.</p>
+          <div class="university-grid" id="university-grid" aria-live="polite" aria-busy="true"></div>
           <nav class="pagination" id="university-pagination" aria-label="Trang danh sách trường"></nav>
           <p class="empty-state is-hidden" id="university-empty">Không tìm thấy trường phù hợp. Hãy thử từ khóa khác.</p>
         </div>
@@ -370,6 +373,7 @@
             </div>
             <aside class="saved-wishes-panel" id="saved-wishes-panel"><div class="saved-wishes-heading"><div><p class="eyebrow">DANH SÁCH ĐÃ CHỌN</p><h3>Nguyện vọng đã lưu</h3></div><button class="button button-text" id="clear-saved-wishes" type="button">Xóa tất cả</button></div><div id="saved-wishes" aria-live="polite"></div><div class="wish-export-actions"><button class="button button-primary" id="export-wishes-pdf" type="button">Xuất file PDF</button></div><p class="saved-wishes-note" id="wish-export-status" role="status" aria-live="polite">PDF ngang chứa tối đa 15 nguyện vọng mỗi trang, gồm điểm, phương thức và thông tin ngành.</p><section class="comparison-panel" aria-labelledby="comparison-title"><div class="saved-wishes-heading"><div><p class="eyebrow">SO SÁNH 2–4 MỤC</p><h3 id="comparison-title">Bảng so sánh</h3></div><button class="button button-text" id="clear-comparison" type="button">Xóa bảng</button></div><div id="comparison-items" aria-live="polite"></div></section></aside>
           </div>
+          <details class="tool-reading-note"><summary>Đọc chênh lệch điểm và lưu nguyện vọng</summary><p>Tìm theo tên ngành; thêm miền, phương thức và tổ hợp phù hợp với kết quả của bạn. Điểm chuẩn chỉ được so khi cùng thang và có đủ căn cứ về cách tính. Ví dụ minh họa: điểm của bạn 24, điểm chuẩn tham khảo 23 thì chênh lệch là +1; điều đó không bảo đảm đỗ năm 2027.</p><p>Lưu các ngành muốn tìm hiểu, so sánh 2–4 mục và xuất PDF để trao đổi với gia đình. Danh sách trên website chưa phải nguyện vọng đăng ký chính thức. <a href="/cam-nang/doc-diem-chuan-dai-hoc/">Đọc điểm chuẩn đúng cách</a> · <a href="/cam-nang/sap-xep-nguyen-vong/">Sắp xếp nguyện vọng</a>.</p></details>
           <p class="finder-disclaimer">Kết quả tra cứu chỉ để tham khảo. Việc trúng tuyển còn phụ thuộc phương thức, điều kiện và quy định của từng trường.</p>
         </div>
       </section>
@@ -380,15 +384,15 @@
             <div>
               <p class="eyebrow">07 · Luyện thi tốt nghiệp</p>
               <h2 id="practice-exams-title">Luyện thi THPT 2027</h2>
-              <p>Luyện tập cho kỳ thi THPT 2027 bằng đề tham khảo năm 2026. Chọn môn để làm đề đầy đủ với đồng hồ đếm ngược. Sau khi nộp, bạn có thể xem đáp án và lời giải nếu có. Bài đang làm và kết quả được lưu trên thiết bị.</p>
+              <p>Luyện tập cho kỳ thi THPT 2027 với các đề luyện ngắn do website tự biên soạn. Chọn môn, làm bài có đồng hồ đếm ngược rồi xem điểm và lời giải từng câu. Đây là bài ôn kiến thức, không mô phỏng đầy đủ cấu trúc hay độ khó của đề chính thức.</p>
             </div>
             <div class="practice-heading-badge"><strong>18</strong><span>môn và ngoại ngữ</span></div>
           </div>
           <div class="practice-notice">
             <span aria-hidden="true">i</span>
-              <p><strong>Có 17 bộ đề mang tên và mã đề năm 2026 do người dùng cung cấp, cùng 1 đề luyện Ngữ văn.</strong> Tên đề được giữ theo tài liệu, chưa phải xác nhận nguồn chính thức. Bài được chấm theo đáp án đã số hóa; đáp án và lời giải chỉ để tham khảo. Với môn có lời giải, bạn có thể chọn từng câu để xem. <a href="https://vqa.moet.gov.vn/vi/news/thong-bao/cau-truc-dinh-dang-de-thi-tot-nghiep-thpt-tu-nam-2025-74.html" target="_blank" rel="noopener">Xem cấu trúc đề thi ↗</a></p>
+              <p><strong>18 môn và ngoại ngữ, mỗi môn một đề luyện ngắn.</strong> Điểm dùng để tự kiểm tra kiến thức, không dự báo kết quả thi. Định dạng năm 2026 chỉ là tham chiếu trong lúc chờ hướng dẫn 2027. <a href="https://vqa.moet.gov.vn/vi/news/thong-bao/cau-truc-dinh-dang-de-thi-tot-nghiep-thpt-tu-nam-2025-74.html" target="_blank" rel="noopener">Đối chiếu cấu trúc đề thi ↗</a></p>
           </div>
-          <p class="tool-reading-note">Nguồn và quyền đăng lại các tài liệu do người dùng cung cấp đang được rà soát. Đáp án và lời giải là tài liệu tham khảo, có thể cần hiệu đính. Nếu bạn là chủ sở hữu hoặc phát hiện tài liệu gắn nhãn sai, <a href="/lien-he/">hãy liên hệ để yêu cầu kiểm tra hoặc gỡ tài liệu</a>.</p>
+          <p class="tool-reading-note">Các bộ đề do người dùng cung cấp tạm ngừng công bố để xác minh quyền sử dụng; bản gốc và kết quả cũ được giữ. Ví dụ: làm đúng 4/8 câu trong đề luyện Toán được 5/10. Nếu có câu cần kiểm tra, <a href="/lien-he/">gửi góp ý kèm môn và số câu</a>.</p>
           <div id="practice-exam-app" aria-live="polite"></div>
         </div>
       </section>

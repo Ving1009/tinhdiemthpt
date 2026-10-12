@@ -2,7 +2,10 @@ import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import test from "node:test";
-import { PRACTICE_EXAMS_2026 } from "../public/js/data/practiceExams2026.js";
+import { PRACTICE_EXAMS_2026 as PUBLIC_EXAMS } from "../public/js/data/practiceExams2026.js";
+import { OFFICIAL_PRACTICE_EXAMS_2026 } from "../public/js/data/officialPracticeExams2026.js";
+// Keep validating the preserved archive: hiding it must not corrupt its data/scoring.
+const PRACTICE_EXAMS_2026 = [...OFFICIAL_PRACTICE_EXAMS_2026, PUBLIC_EXAMS.find(exam => exam.subject === "Ngữ văn")];
 import { PracticeExamApp } from "../public/js/practiceExam.js";
 import {
   createPracticeAttempt,
@@ -26,6 +29,7 @@ test("đánh dấu câu ở định hướng Tin học dùng số thứ tự c�
   try {
     const app = new PracticeExamApp({});
     const exam = PRACTICE_EXAMS_2026.find((item) => item.answerBranches?.length);
+    app.examById = id => PRACTICE_EXAMS_2026.find(item => item.id === id);
     app.active = createPracticeAttempt(exam);
     app.active.branch = exam.answerBranches.at(-1);
     app.persistActive = () => {};
@@ -39,7 +43,7 @@ test("đánh dấu câu ở định hướng Tin học dùng số thứ tự c�
   }
 });
 
-test("phòng thi 2026 có đủ 18 môn và 17 đề nguồn", () => {
+test("kho đối chiếu giữ 17 đề nguồn và đề Ngữ văn, không làm mất dữ liệu khi ngừng công bố", () => {
   assert.equal(PRACTICE_EXAMS_2026.length, 18);
   const subjects = new Set(PRACTICE_EXAMS_2026.map((item) => item.subject));
   for (const subject of [
@@ -48,7 +52,7 @@ test("phòng thi 2026 có đủ 18 môn và 17 đề nguồn", () => {
     "Tiếng Anh", "Tiếng Nga", "Tiếng Pháp", "Tiếng Trung Quốc", "Tiếng Đức", "Tiếng Nhật", "Tiếng Hàn"
   ]) assert.equal(subjects.has(subject), true, subject);
   assert.equal(PRACTICE_EXAMS_2026.filter((item) => item.sourceKind === "official-paper").length, 17);
-  assert.equal(PRACTICE_EXAMS_2026.find((item) => item.subject === "Ngữ văn").sourceKind, undefined);
+  assert.equal(PRACTICE_EXAMS_2026.find((item) => item.subject === "Ngữ văn").sourceKind, "original-practice");
 });
 
 test("mã đề, dạng câu và thang điểm đều hợp lệ", () => {

@@ -13,7 +13,8 @@ import { createReportStore } from "./reportStore.js";
 import { createConfiguredAdmissionsAssistant } from "./configuredAssistant.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
 import { readFile } from "node:fs/promises";
-import { adsenseAdsTxt, isAdSenseContentPage, nonceHtmlScripts, prepareAdSenseHtml } from "../lib/adsense.js";
+import { adsenseAdsTxt, isPublicHtmlPage, nonceHtmlScripts, prepareAdSenseHtml } from "../lib/adsense.js";
+import { isRestrictedExamPath } from "../lib/examPublication.js";
 import { parseAppRoute } from "../public/js/core/appRoutes.js";
 import { appRouteProfile, renderAppPage } from "../lib/appPages.js";
 
@@ -66,6 +67,8 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
   const assistant = admissionsAssistant || createConfiguredAdmissionsAssistant(environment);
   app.disable("x-powered-by");
   app.use(applySecurityHeaders);
+  app.use((request, response, next) => isRestrictedExamPath(request.path)
+    ? response.status(404).type("text").send("Tài liệu chưa được công bố.") : next());
   app.use(express.json({ limit: "100kb" }));
   app.get("/ads.txt", (_request, response) => {
     const text = adsenseAdsTxt(environment);
@@ -74,7 +77,7 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
   });
   app.use(async (request, response, next) => {
     const route = parseAppRoute(request.path);
-    if (!["GET", "HEAD"].includes(request.method) || (!route && !isAdSenseContentPage(request.path))) return next();
+    if (!["GET", "HEAD"].includes(request.method) || (!route && !isPublicHtmlPage(request.path))) return next();
     const profile = route ? appRouteProfile(dataStore, route) : null;
     if (route && !profile) return response.status(404).type("text").send("Không tìm thấy hồ sơ trường hoặc ngành.");
     if (route && request.path !== route.path && request.path !== "/index.html") return response.redirect(308, route.path + request.url.slice(request.path.length));
@@ -85,7 +88,7 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
       : join(PUBLIC_DIR, request.path.slice(1), "index.html");
     const html = await readFile(file, "utf8");
     const prepared = prepareAdSenseHtml(route ? renderAppPage(html, route, profile) : html, environment, "", request.path);
-    const page = !prepared.adsEnabled && route ? nonceHtmlScripts(prepared.html) : prepared;
+    const page = !prepared.adsEnabled ? nonceHtmlScripts(prepared.html) : prepared;
     // Local Express has no trusted country metadata. Ads stay off until the CMP is ready.
     const forwardedProtocol = String(request.headers["x-forwarded-proto"] || "").split(",", 1)[0].trim().toLowerCase();
     for (const [name, value] of Object.entries(securityHeaders({ isHttps: request.secure || forwardedProtocol === "https", pathname: request.path, adsenseNonce: prepared.nonce, scriptNonce: page.nonce }))) response.setHeader(name, value);

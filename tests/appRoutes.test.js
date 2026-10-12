@@ -56,7 +56,7 @@ test("every tool is directly readable at a real canonical URL in Express and Wor
         if (method === "HEAD") assert.equal(body, "");
         else {
           checkPage(body, route);
-          assert.equal((body.match(/adsbygoogle\.js/g) || []).length, 1);
+          assert.equal((body.match(/adsbygoogle\.js/g) || []).length, 0);
         }
         assert.equal(response.headers.get("cache-control"), "no-store");
       }

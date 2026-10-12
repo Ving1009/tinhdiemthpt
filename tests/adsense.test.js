@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { ADSENSE_PAGE_PATHS, adsenseAdsTxt, adsenseClient, isAdSenseContentPage, nonceHtmlScripts, prepareAdSenseHtml } from '../lib/adsense.js';
+import { ADSENSE_PAGE_PATHS, PUBLIC_HTML_PATHS, isPublicHtmlPage, adsenseAdsTxt, adsenseClient, isAdSenseContentPage, nonceHtmlScripts, prepareAdSenseHtml } from '../lib/adsense.js';
 import { admissionsGuides } from '../content/admissionsGuides.js';
 import { buildContentPages } from '../lib/contentPages.js';
 import { APP_ROUTES, parseAppRoute } from '../public/js/core/appRoutes.js';
@@ -71,7 +71,7 @@ test('nonce HTML riêng hỗ trợ Cloudflare mà không mở quyền CSP dành 
     assert.ok(script.includes(`nonce="${first.nonce}"`));
   }
   const headers = securityHeaders({ isHttps: true, scriptNonce: first.nonce });
-  assert.equal(headers['Content-Security-Policy'], CONTENT_SECURITY_POLICY.replace("script-src 'self'", `script-src 'self' 'nonce-${first.nonce}'`));
+  assert.equal(headers['Content-Security-Policy'], CONTENT_SECURITY_POLICY.replace("script-src 'self'", `script-src 'self' 'nonce-${first.nonce}' https://static.cloudflareinsights.com`).replace("connect-src 'self'", "connect-src 'self' https://cloudflareinsights.com"));
   assert.doesNotMatch(headers['Content-Security-Policy'], /strict-dynamic|unsafe-eval|unsafe-inline/);
   assert.equal(headers['Referrer-Policy'], 'no-referrer');
   for (const invalid of ['', "'unsafe-inline'", 'f'.repeat(31), 'f'.repeat(33)]) {
@@ -105,14 +105,17 @@ test('Worker phục vụ ads.txt đúng publisher cho GET/HEAD, không trả HTM
   assert.equal(await missing.text(), '');
 });
 
-test('mọi trang HTML công khai và alias có thể tải AdSense; API, tài sản và đường dẫn lạ không tải', () => {
+test('chỉ 8 bài viết và alias tải AdSense; mọi trang công khai vẫn có meta xác minh', () => {
   const paths = ['/', '/index.html', '/privacy', '/privacy.html', ...[...Object.values(APP_ROUTES).map(route => route.path).filter(path => path !== '/'), ...buildContentPages().keys()].flatMap(path => [path, `${path}index.html`])];
-  assert.deepEqual([...ADSENSE_PAGE_PATHS].sort(), paths.sort());
+  assert.deepEqual([...PUBLIC_HTML_PATHS].sort(), paths.sort());
+  assert.equal(ADSENSE_PAGE_PATHS.size, 16);
   for (const path of paths) {
-    assert.equal(isAdSenseContentPage(path), true, path);
+    assert.equal(isPublicHtmlPage(path), true, path);
+    const eligible = admissionsGuides.some(guide => path === `/cam-nang/${guide.slug}/` || path === `/cam-nang/${guide.slug}/index.html`);
+    assert.equal(isAdSenseContentPage(path), eligible, path);
     const prepared = prepareAdSenseHtml(html, { ...enabled, ADSENSE_CMP_READY: 'true' }, 'VN', path);
-    assert.equal(prepared.adsEnabled, true, path);
-    assert.equal((prepared.html.match(/adsbygoogle\.js/g) || []).length, 1, path);
+    assert.equal(prepared.adsEnabled, eligible, path);
+    assert.equal((prepared.html.match(/adsbygoogle\.js/g) || []).length, Number(isAdSenseContentPage(new URL(path, "https://tinhdiemthpt.id.vn").pathname)), path);
     assert.equal((prepared.html.match(/name="google-adsense-account"/g) || []).length, 1, path);
   }
   for (const path of ['', '/cam-nang/khong-ton-tai/', articlePath.slice(0, -1), '/api/auth/me', '/assets/practice-2026/math/pages/1.webp', '/js/content.js', '/vendor/tesseract/worker.min.js', '/_worker-data/majors.json', '/robots.txt', '/sitemap.xml', '/.env', '/gioi-thieu/../../.env']) {
@@ -144,16 +147,19 @@ test('Worker dùng geography tin cậy cho bài gốc, nonce/header nhất quán
   }
   const unknown = await mainWorker.fetch(new Request(`https://tinhdiemthpt.id.vn${articlePath}`, { headers: { 'CF-IPCountry': 'VN' } }), environment);
   assert.doesNotMatch(await unknown.text(), /adsbygoogle\.js/);
-  assert.equal(unknown.headers.get('content-security-policy'), CONTENT_SECURITY_POLICY);
+  const unknownNonce = unknown.headers.get('content-security-policy').match(/'nonce-([a-f0-9]{32})'/)?.[1];
+  assert.ok(unknownNonce);
+  assert.equal(unknown.headers.get('content-security-policy'), securityHeaders({ scriptNonce: unknownNonce })['Content-Security-Policy']);
+  assert.doesNotMatch(unknown.headers.get('content-security-policy'), /unsafe-inline|unsafe-eval|strict-dynamic/);
   const api = await mainWorker.fetch(new Request('https://tinhdiemthpt.id.vn/api/auth-config'), environment);
   assert.equal(api.headers.get('content-security-policy'), CONTENT_SECURITY_POLICY);
 });
 
-test('Worker tải đúng một mã quảng cáo cho toàn bộ trang và công cụ hash, giữ nguyên lỗi/redirect/tài sản', async () => {
+test('Worker chỉ tải quảng cáo trên bài viết; giữ nonce trên mọi HTML và nguyên lỗi/redirect/tài sản', async () => {
   const environment = { ...enabled, ADSENSE_CMP_READY: 'true', ASSETS: { fetch: async request => {
     return new Response(request.method === 'HEAD' ? null : html, { headers: { 'Content-Type': 'text/html' } });
   } } };
-  for (const path of [...ADSENSE_PAGE_PATHS, '/#calculator', '/#academic', '/#practice-exams', '/#major-finder', '/#universities', '/?from=test#guide']) {
+  for (const path of [...PUBLIC_HTML_PATHS, '/#calculator', '/#academic', '/#practice-exams', '/#major-finder', '/#universities', '/?from=test#guide']) {
     for (const method of ['GET', 'HEAD']) {
       let response = await mainWorker.fetch(new Request(`https://tinhdiemthpt.id.vn${path}`, { method }), environment);
       const route = parseAppRoute(new URL(path, 'https://tinhdiemthpt.id.vn').pathname);
@@ -167,18 +173,18 @@ test('Worker tải đúng một mã quảng cáo cho toàn bộ trang và công 
       const csp = response.headers.get('content-security-policy');
       const nonce = csp.match(/'nonce-([a-f0-9]{32})'/)?.[1];
       assert.ok(nonce, path);
-      assert.match(csp, /strict-dynamic/, path);
+      assert.equal(csp.includes('strict-dynamic'), isAdSenseContentPage(new URL(path, 'https://tinhdiemthpt.id.vn').pathname), path);
       assert.equal(response.headers.get('cache-control'), 'no-store', path);
-      assert.equal(response.headers.get('referrer-policy'), 'strict-origin', path);
+      assert.equal(response.headers.get('referrer-policy'), isAdSenseContentPage(new URL(path, 'https://tinhdiemthpt.id.vn').pathname) ? 'strict-origin' : 'no-referrer', path);
       if (method === 'HEAD') assert.equal(body, '', path);
       else {
-        assert.equal((body.match(/adsbygoogle\.js/g) || []).length, 1, path);
-        assert.match(body, /data-privacy-treatments="disablePersonalization"/, path);
+        assert.equal((body.match(/adsbygoogle\.js/g) || []).length, Number(isAdSenseContentPage(new URL(path, 'https://tinhdiemthpt.id.vn').pathname)), path);
+        assert.equal(body.includes('data-privacy-treatments="disablePersonalization"'), isAdSenseContentPage(new URL(path, "https://tinhdiemthpt.id.vn").pathname), path);
         for (const script of body.match(/<script\b[^>]*>/g)) assert.ok(script.includes(`nonce="${nonce}"`), path);
       }
     }
   }
-  for (const path of ['/assets/practice-2026/math/pages/1.webp', '/cam-nang/khong-ton-tai/']) {
+  for (const path of ['/assets/brand/logo-icon.png', '/cam-nang/khong-ton-tai/']) {
     const response = await mainWorker.fetch(new Request(`https://tinhdiemthpt.id.vn${path}`), environment);
     assert.equal(await response.text(), html, 'non-page assets must not be transformed even if their content-type is wrong');
     assert.equal(response.headers.get('content-security-policy'), CONTENT_SECURITY_POLICY);
@@ -236,14 +242,14 @@ test('Express phục vụ cùng ads.txt và HTML; API giữ CSP cũ và cấu h�
   const nonce = page.headers.get('content-security-policy').match(/'nonce-([a-f0-9]{32})'/)?.[1];
   assert.ok(nonce);
   assert.ok(body.includes(`nonce="${nonce}"`));
-  assert.equal(page.headers.get('content-security-policy'), CONTENT_SECURITY_POLICY.replace("script-src 'self'", `script-src 'self' 'nonce-${nonce}'`));
+  assert.equal(page.headers.get('content-security-policy'), CONTENT_SECURITY_POLICY.replace("script-src 'self'", `script-src 'self' 'nonce-${nonce}' https://static.cloudflareinsights.com`).replace("connect-src 'self'", "connect-src 'self' https://cloudflareinsights.com"));
   assert.equal(page.headers.get('cache-control'), 'no-store');
   const api = await fetch(base + '/api/bootstrap');
   assert.equal(api.headers.get('content-security-policy'), CONTENT_SECURITY_POLICY);
   assert.equal((await api.json()).success, true);
 });
 
-test('Express tải AdSense ở mọi HTML và alias; giữ đồng ý, nonce mới, HEAD và redirect đúng', async t => {
+test('Express tải AdSense theo phạm vi bài viết; mọi HTML giữ nonce, HEAD và redirect đúng', async t => {
   const server = createApp({ environment: { ...enabled, ADSENSE_CMP_READY: 'true' } }).listen(0, '127.0.0.1');
   t.after(() => new Promise(resolve => server.close(resolve)));
   await new Promise(resolve => server.once('listening', resolve));
@@ -251,12 +257,12 @@ test('Express tải AdSense ở mọi HTML và alias; giữ đồng ý, nonce m�
   const home = await fetch(base + '/');
   const homeHtml = await home.text();
   assert.match(homeHtml, /google-adsense-account/);
-  assert.equal((homeHtml.match(/adsbygoogle\.js/g) || []).length, 1);
-  assert.equal(home.headers.get('referrer-policy'), 'strict-origin');
+  assert.equal((homeHtml.match(/adsbygoogle\.js/g) || []).length, 0);
+  assert.equal(home.headers.get('referrer-policy'), 'no-referrer');
   assert.equal(home.headers.get('cache-control'), 'no-store');
   const rootNonce = home.headers.get('content-security-policy').match(/'nonce-([a-f0-9]{32})'/)?.[1];
   assert.ok(rootNonce);
-  assert.match(home.headers.get('content-security-policy'), /strict-dynamic/);
+  assert.doesNotMatch(home.headers.get('content-security-policy'), /strict-dynamic|unsafe-eval|unsafe-inline/);
   for (const script of homeHtml.match(/<script\b[^>]*>/g)) assert.ok(script.includes(`nonce="${rootNonce}"`));
   const rootHead = await fetch(base + '/index.html', { method: 'HEAD' });
   assert.equal(rootHead.status, 200);
@@ -264,7 +270,7 @@ test('Express tải AdSense ở mọi HTML và alias; giữ đồng ý, nonce m�
   const nextRootNonce = rootHead.headers.get('content-security-policy').match(/'nonce-([a-f0-9]{32})'/)?.[1];
   assert.ok(nextRootNonce);
   assert.notEqual(nextRootNonce, rootNonce);
-  assert.equal(rootHead.headers.get('referrer-policy'), 'strict-origin');
+  assert.equal(rootHead.headers.get('referrer-policy'), 'no-referrer');
   assert.equal(rootHead.headers.get('cache-control'), 'no-store');
   const article = await fetch(base + articlePath);
   const articleHtml = await article.text();
@@ -280,11 +286,11 @@ test('Express tải AdSense ở mọi HTML và alias; giữ đồng ý, nonce m�
   const alias = await fetch(base + articlePath.slice(0, -1), { redirect: 'manual' });
   assert.equal(alias.status, 301);
   assert.doesNotMatch(await alias.text(), /adsbygoogle\.js/);
-  for (const path of ADSENSE_PAGE_PATHS) {
+  for (const path of PUBLIC_HTML_PATHS) {
     const page = await fetch(base + path);
     assert.equal(page.status, 200, path);
     const body = await page.text();
-    assert.equal((body.match(/adsbygoogle\.js/g) || []).length, 1, path);
+    assert.equal((body.match(/adsbygoogle\.js/g) || []).length, Number(isAdSenseContentPage(path)), path);
     assert.match(body, /data-ad-consent hidden/, path);
     const nonce = page.headers.get('content-security-policy').match(/'nonce-([a-f0-9]{32})'/)?.[1];
     assert.ok(nonce, path);

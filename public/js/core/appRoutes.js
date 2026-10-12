@@ -58,3 +58,15 @@ export function updateAppMetadata(document, route, profile) {
     ['meta[property="og:description"]', metadata.description]
   ]) document.querySelector(selector)?.setAttribute("content", value);
 }
+
+export function updateAppHeading(document, view) {
+  for (const id of Object.keys(APP_ROUTES)) {
+    const current = document.getElementById?.(`${id}-title`);
+    const tag = id === view ? 'H1' : 'H2';
+    if (!current || current.tagName === tag) continue;
+    const heading = document.createElement(tag.toLowerCase());
+    for (const attr of current.attributes) heading.setAttribute(attr.name, attr.value);
+    heading.innerHTML = current.innerHTML;
+    current.replaceWith(heading);
+  }
+}

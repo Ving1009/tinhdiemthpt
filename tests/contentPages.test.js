@@ -150,7 +150,7 @@ test("Express serves content and crawler files, keeps aliases and security, and 
     assert.equal(response.status, 200, path);
     assert.match(response.headers.get("content-type"), /^text\/html/);
     const body = await response.text();
-    assert.equal((body.match(/adsbygoogle\.js/g) || []).length, 1, path);
+    assert.equal((body.match(/adsbygoogle\.js/g) || []).length, articlePaths.includes(path) ? 1 : 0, path);
     const nonce = body.match(/nonce="([a-f0-9]{32})"/)?.[1];
     assert.ok(nonce && response.headers.get("content-security-policy").includes(`'nonce-${nonce}'`), path);
     assert.equal(response.headers.get("cache-control"), "no-store");
@@ -207,7 +207,7 @@ test("Worker delegates static responses with their status intact and preserves A
     assert.equal(response.status, fixtures.has(path) ? 200 : 404, path);
     const body = await response.text();
     if (pages.has(path)) {
-      assert.match(body, /adsbygoogle\.js/);
+      assert.equal((body.match(/adsbygoogle\.js/g) || []).length, articlePaths.includes(path) ? 1 : 0);
       const nonce = body.match(/nonce="([a-f0-9]{32})"/)?.[1];
       assert.ok(nonce && response.headers.get("content-security-policy").includes(`'nonce-${nonce}'`), path);
       assert.equal(editorialContent(body), fixtures.get(path), path);

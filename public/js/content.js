@@ -16,7 +16,7 @@ import { initAdConsent } from "./adConsent.js";
   });
   const form = document.getElementById("guide-filter");
   if (!form) return;
-  form.hidden = false;
+  form.querySelectorAll("input, select, button").forEach(control => { control.disabled = false; });
   const cards = [...document.querySelectorAll("[data-guide-card]")];
   const normalize = value => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[đĐ]/g, "d").toLowerCase();
   function filter() {

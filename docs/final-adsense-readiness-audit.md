@@ -1,5 +1,7 @@
 # Final audit — Tính Điểm THPT
 
+> Cập nhật sau audit: theo yêu cầu khôi phục của chủ website, 17 bộ đề đầy đủ cùng ảnh đề, đáp án và lời giải được đưa trở lại phòng thi. Các mục chặn đề và thay bằng 18 đề luyện ngắn bên dưới là ghi nhận của bản audit trước khôi phục, không còn mô tả bản hiện tại. Việc khôi phục không thay đổi kết luận chưa xác minh quyền trong báo cáo kiểm kê. Bản audit `aad3068` đã được push và deploy thành công theo yêu cầu tiếp theo; phạm vi quảng cáo vẫn chỉ ở 8 bài cẩm nang.
+
 Ngày thực hiện: **12/10/2026**. Repository: `G:/Codex/tinhdiemthpt`, nhánh `main`, bắt đầu từ `8c403c8` (`origin/main`). Website: https://tinhdiemthpt.id.vn/.
 
 **Kết luận cho website đang public: Chưa sẵn sàng yêu cầu xét duyệt lại.** Các lỗi kỹ thuật đã được sửa và kiểm thử ở local/build Cloudflare, nhưng production vẫn là bản cũ, tài liệu chưa xác minh vẫn có URL trả 200, và CMP/quyền tài liệu/Search Console còn cần kiểm tra thủ công. Không deploy, thay secrets, push hay gửi yêu cầu Google trong audit này. Kết quả nội bộ không bảo đảm AdSense chấp thuận.

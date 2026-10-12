@@ -33,9 +33,9 @@ test("HTML có tìm kiếm mobile, chọn năm 2027 và giữ nhãn dữ liệu 
   assert.match(html, /Dữ liệu tuyển sinh 2027 đang cập nhật/);
   assert.match(html, /điểm chuẩn năm 2026 để tham khảo cho tuyển sinh 2027/);
   assert.match(html, /Luyện thi THPT 2027/);
-  assert.match(html, /18 môn và ngoại ngữ, mỗi môn một đề luyện ngắn/);
-  assert.match(html, /Các bộ đề do người dùng cung cấp tạm ngừng công bố để xác minh quyền sử dụng/);
-  assert.match(html, /không mô phỏng đầy đủ cấu trúc hay độ khó của đề chính thức/);
+  assert.match(html, /Có 17 bộ đề mang tên và mã đề năm 2026 do người dùng cung cấp, cùng 1 đề luyện Ngữ văn/);
+  assert.match(html, /Nguồn và quyền đăng lại các tài liệu do người dùng cung cấp đang được rà soát/);
+  assert.match(html, /chưa phải xác nhận nguồn chính thức/);
   assert.match(html, /<h3>Quét học bạ \(không bắt buộc\)<\/h3>/);
   assert.doesNotMatch(html, /AI \+ OCR|Độ tin cậy|id="certificate"|Quy đổi chứng chỉ theo trường|id="formulas"|Mục 8/i);
   assert.equal((html.match(/id="export-wishes-pdf"/g) || []).length, 1);

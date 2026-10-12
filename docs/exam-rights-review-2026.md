@@ -1,5 +1,7 @@
 # Tài liệu đề thi cần xác minh quyền sử dụng
 
+> Cập nhật sau kiểm kê: chủ website yêu cầu khôi phục toàn bộ bộ đề. Phòng thi, build và luồng phục vụ đã được mở lại cho 17 bộ đề cùng đề luyện Ngữ văn. Những ghi nhận “tạm ngừng công bố” và chặn tài nguyên bên dưới là trạng thái của bản audit trước khôi phục; nguồn và quyền sử dụng vẫn giữ trạng thái chưa xác minh, không tự đổi thành đã có giấy phép.
+
 Ngày kiểm kê: 12/10/2026. Danh sách lấy từ `public/js/data/officialPracticeExams2026.js`, không suy ra giấy phép từ nhãn `official-paper` hoặc việc người dùng cung cấp file.
 
 **Cả 17 bộ đều chưa có đủ căn cứ quyền đăng lại trong repository.** Metadata ghi “Đề thi do người dùng cung cấp”; chưa có văn bản cho phép, giấy phép công khai hay hồ sơ xác minh quyền riêng cho phần lời giải. Tên “chính thức” và mã đề dưới đây là nhãn đã có trong dữ liệu, không phải kết luận xác thực nguồn/bản quyền của audit.

@@ -3,33 +3,44 @@ import { readFile } from 'node:fs/promises';
 import { test } from 'node:test';
 import { createApp } from '../server/server.js';
 import worker from '../worker/index.js';
-import { isRestrictedExamPath } from '../lib/examPublication.js';
 import { ADSENSE_PAGE_PATHS, PUBLIC_HTML_PATHS, isAdSenseContentPage } from '../lib/adsense.js';
 import { PRACTICE_EXAMS_2026 } from '../public/js/data/practiceExams2026.js';
 import { OFFICIAL_PRACTICE_EXAMS_2026 } from '../public/js/data/officialPracticeExams2026.js';
-import { gradePracticeExam } from '../public/js/core/practiceExam.js';
+import { createPracticeAttempt, gradePracticeExam } from '../public/js/core/practiceExam.js';
 import { PracticeExamApp } from '../public/js/practiceExam.js';
-import { storage } from '../public/js/utils.js';
+import { escapeHTML, storage } from '../public/js/utils.js';
 import { APP_ROUTES, parseAppRoute } from '../public/js/core/appRoutes.js';
 import { renderAppPage } from '../lib/appPages.js';
 import { securityHeaders } from '../lib/securityHeaders.js';
 
-test('original practice remains available for all 18 subjects, with complete answers and explicit scope', async () => {
+test('all 17 full papers are restored alongside literature practice, with complete scoring', async () => {
   assert.equal(PRACTICE_EXAMS_2026.length, 18);
   assert.equal(new Set(PRACTICE_EXAMS_2026.map(exam => exam.id)).size, 18);
   for (const exam of PRACTICE_EXAMS_2026) {
-    assert.equal(exam.sourceKind, 'original-practice');
-    assert.match(exam.sourceLabel, /tự biên soạn.*không phải đề chính thức/);
-    assert.ok(!exam.pageImages && !exam.solutionImages && !exam.answerImages);
     assert.ok(exam.questions.length >= 5 && exam.durationMinutes > 0);
-    assert.equal(gradePracticeExam(exam, Object.fromEntries(exam.questions.map(question => [question.id, question.answer]))).score, 10);
-    for (const question of exam.questions) assert.ok(question.prompt && question.explanation);
+    const branches = exam.answerBranches?.length ? exam.answerBranches : [''];
+    for (const branch of branches) {
+      const questions = exam.questions.filter(question => !question.branch || question.branch === branch);
+      const answers = Object.fromEntries(questions.map(question => [question.id, question.type === 'short' ? question.answerText : question.answer]));
+      assert.equal(gradePracticeExam({ ...exam, questions }, answers).score, 10, exam.subject);
+    }
+    for (const question of exam.questions) assert.ok(question.prompt);
+    if (exam.sourceKind === 'official-paper') {
+      assert.ok(OFFICIAL_PRACTICE_EXAMS_2026.includes(exam), exam.subject);
+      assert.equal(exam.hasFullText, true);
+      assert.equal(exam.durationMinutes, exam.officialMinutes);
+      assert.ok(exam.pageImages.length);
+    } else {
+      assert.equal(exam.subject, 'Ngữ văn');
+      assert.match(exam.sourceLabel, /tự biên soạn.*không phải đề chính thức/);
+    }
   }
   const source = await readFile(new URL('../public/js/data/practiceExams2026.js', import.meta.url), 'utf8');
-  assert.doesNotMatch(source, /import.*official/);
+  assert.match(source, /import.*OFFICIAL_PRACTICE_EXAMS_2026/);
+  assert.equal(PRACTICE_EXAMS_2026.filter(exam => exam.sourceKind === 'official-paper').length, 17);
 });
 
-test('all 17 unverified papers, images, answers and OCR transcripts are denied before static bindings', async t => {
+test('all restored papers, images, answers and transcripts are served while private data stays blocked', async t => {
   const app = createApp({ environment: {} }).listen(0, '127.0.0.1');
   t.after(() => new Promise(resolve => app.close(resolve)));
   await new Promise(resolve => app.once('listening', resolve));
@@ -40,22 +51,28 @@ test('all 17 unverified papers, images, answers and OCR transcripts are denied b
   paths.add('/assets/practice-2026/math/pages/%31.webp');
   paths.add('/js/data/%6FfficialQuestionContent2026.js');
   for (const path of paths) {
-    assert.ok(isRestrictedExamPath(path), path);
     for (const method of ['GET', 'HEAD']) {
       const local = await fetch(base + path, { method });
-      const edge = await worker.fetch(new Request(`https://tinhdiemthpt.id.vn${path}`, { method }), { ASSETS: { fetch: () => assert.fail('private paper must never reach Static Assets') } });
-      assert.equal(local.status, 404, path);
-      assert.equal(edge.status, 404, path);
-      for (const response of [local, edge]) assert.doesNotMatch(await response.text(), /adsbygoogle|export const|<html/i);
+      let assetCalled = false;
+      const edge = await worker.fetch(new Request(`https://tinhdiemthpt.id.vn${path}`, { method }), { ASSETS: { fetch: request => {
+        assetCalled = true;
+        assert.equal(new URL(request.url).pathname, path);
+        return new Response(method === 'HEAD' ? null : 'paper asset', { headers: { 'Content-Type': 'application/octet-stream' } });
+      } } });
+      assert.equal(local.status, 200, path);
+      assert.equal(edge.status, 200, path);
+      assert.equal(assetCalled, true, path);
+      if (method === 'HEAD') for (const response of [local, edge]) assert.equal(await response.text(), '');
     }
   }
-  assert.equal(isRestrictedExamPath('/assets/brand/logo-icon.png'), false);
+  const privateResponse = await worker.fetch(new Request('https://tinhdiemthpt.id.vn/_worker-data/majors.json'), { ASSETS: { fetch: () => assert.fail('private data must not reach Static Assets') } });
+  assert.equal(privateResponse.status, 404);
   const script = await readFile(new URL('../scripts/build-cloudflare.mjs', import.meta.url), 'utf8');
-  assert.match(script, /filter: source => !isRestrictedExamPath/);
+  assert.match(script, /await cp\(join\(root, "public"\), output, \{ recursive: true \}\)/);
 });
 
-test('withdrawn exam drafts remain until the user explicitly confirms replacement', () => {
-  const old = { examId: 'math-official-2026-01', answers: { old: 2 } };
+test('drafts for unlisted exams remain until the user explicitly confirms replacement', () => {
+  const old = { examId: 'unlisted-paper', answers: { old: 2 } };
   let saved = structuredClone(old);
   const originalGet = storage.get, originalRemove = storage.remove;
   storage.get = (key, fallback) => key === 'thpt-practice-active-v1' ? saved : fallback;
@@ -68,28 +85,53 @@ test('withdrawn exam drafts remain until the user explicitly confirms replacemen
     assert.match(root.innerHTML, /Bản nháp được giữ/);
     app.renderExam = () => {};
     app.persistActive = () => { saved = structuredClone(app.active); };
-    app.startExam('math-01');
+    app.startExam('math-official-2026-01');
     assert.deepEqual(saved, old);
-    assert.match(root.innerHTML, /data-confirm-start="math-01"/);
+    assert.match(root.innerHTML, /data-confirm-start="math-official-2026-01"/);
     app.pendingStartExamId = null;
     app.renderDashboard();
     assert.deepEqual(saved, old);
-    app.startExam('math-01', true);
-    assert.equal(saved.examId, 'math-01');
+    app.startExam('math-official-2026-01', true);
+    assert.equal(saved.examId, 'math-official-2026-01');
     assert.deepEqual(old.answers, { old: 2 });
   } finally { storage.get = originalGet; storage.remove = originalRemove; }
 });
 
-test('old exam results remain visible without redistributing withdrawn questions', () => {
+test('old results for unlisted exams remain visible without losing their score', () => {
   const root = { innerHTML: '' };
   const app = new PracticeExamApp(root);
-  const old = { examId: 'math-official-2026-01', result: { score: 8.5 }, submittedAt: 1 };
+  const old = { examId: 'unlisted-paper', result: { score: 8.5 }, submittedAt: 1 };
   app.renderResult(old);
   assert.match(root.innerHTML, /8\.50\/10/);
-  assert.match(root.innerHTML, /tạm ngừng công bố/);
+  assert.match(root.innerHTML, /không còn trong danh sách/);
   assert.match(root.innerHTML, /data-back-practice/);
   assert.doesNotMatch(root.innerHTML, /practice-2026|Câu 1|<img/);
   assert.equal(old.result.score, 8.5);
+});
+
+test('existing full-paper attempts resume with their original answers and result details', () => {
+  const exam = PRACTICE_EXAMS_2026.find(item => item.id === 'math-official-2026-01');
+  const draft = createPracticeAttempt(exam);
+  draft.answers[exam.questions[0].id] = exam.questions[0].answer;
+  const originalGet = storage.get, originalRemove = storage.remove;
+  storage.get = (key, fallback) => key === 'thpt-practice-active-v1' ? draft : fallback;
+  storage.remove = () => assert.fail('restored full-paper attempts must not be cleared');
+  try {
+    const root = { innerHTML: '', addEventListener() {}, scrollIntoView() {} };
+    const app = new PracticeExamApp(root);
+    let resumed = false;
+    app.renderExam = () => { resumed = true; };
+    app.init();
+    assert.equal(resumed, true);
+    assert.equal(app.active, draft);
+    assert.equal(app.active.answers[exam.questions[0].id], exam.questions[0].answer);
+    const old = { ...draft, result: gradePracticeExam(exam, draft.answers), submittedAt: Date.now() };
+    app.renderResult(old);
+    assert.match(root.innerHTML, /Kết quả · Toán/);
+    assert.match(root.innerHTML, /0\.25<span>\/10/);
+    assert.match(root.innerHTML, /practice-review-list/);
+    assert.ok(root.innerHTML.includes(escapeHTML(exam.questions[0].prompt)));
+  } finally { storage.get = originalGet; storage.remove = originalRemove; }
 });
 
 test('every app response has exactly one H1 for its selected tool and no-JS instructions', async () => {

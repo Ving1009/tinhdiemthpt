@@ -5,7 +5,6 @@ import { publicAuthConfig } from "../lib/publicAuthConfig.js";
 import { handleAuthRequest } from "./auth.js";
 import { handleAssistantApi } from "./assistantApi.js";
 import { adsenseAdsTxt, isPublicHtmlPage, nonceHtmlScripts, prepareAdSenseHtml } from "../lib/adsense.js";
-import { isRestrictedExamPath } from "../lib/examPublication.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
 import { parseAppRoute } from "../public/js/core/appRoutes.js";
 import { appRouteProfile, renderAppPage } from "../lib/appPages.js";
@@ -41,7 +40,7 @@ export default {
       url.protocol = "https:";
       return withSecurityHeaders(request, Response.redirect(url, 308));
     }
-    if (url.pathname.startsWith("/_worker-data/") || isRestrictedExamPath(url.pathname)) {
+    if (url.pathname.startsWith("/_worker-data/")) {
       return withSecurityHeaders(request, new Response("Không tìm thấy trang.", { status: 404 }));
     }
     if (["GET", "HEAD"].includes(request.method) && url.pathname === "/ads.txt") {

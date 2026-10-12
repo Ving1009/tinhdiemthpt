@@ -1,3 +1,5 @@
+import { OFFICIAL_PRACTICE_EXAMS_2026 } from "./officialPracticeExams2026.js";
+
 const q = (id, prompt, options, answer, explanation) => ({ id, prompt, options, answer, explanation });
 const exam = (id, subject, category, icon, officialMinutes, questions, note = "") => ({
   id,
@@ -170,7 +172,11 @@ const ORIGINAL_PRACTICE_EXAMS_2026 = [
   ])
 ];
 
-// User-supplied papers remain in the repository for rights review, never imported publicly.
-export const PRACTICE_EXAMS_2026 = ORIGINAL_PRACTICE_EXAMS_2026;
+const officialExamBySubject = new Map(OFFICIAL_PRACTICE_EXAMS_2026.map((item) => [item.subject, item]));
+
+// Khôi phục 17 bộ đề người dùng cung cấp; Ngữ văn giữ đề luyện khi chưa có tệp nguồn.
+export const PRACTICE_EXAMS_2026 = ORIGINAL_PRACTICE_EXAMS_2026.map(
+  (item) => officialExamBySubject.get(item.subject) || item
+);
 
 export const PRACTICE_CATEGORIES = ["Tất cả", "Bắt buộc", "Tự chọn", "Ngoại ngữ"];

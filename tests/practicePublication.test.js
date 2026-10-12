@@ -1,8 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { PRACTICE_EXAMS_2026 as PUBLIC_EXAMS } from "../public/js/data/practiceExams2026.js";
-import { OFFICIAL_PRACTICE_EXAMS_2026 } from "../public/js/data/officialPracticeExams2026.js";
-const PRACTICE_EXAMS_2026 = [...OFFICIAL_PRACTICE_EXAMS_2026, PUBLIC_EXAMS.find(exam => exam.subject === "Ngữ văn")];
+import { PRACTICE_EXAMS_2026 } from "../public/js/data/practiceExams2026.js";
 import { PracticeExamApp } from "../public/js/practiceExam.js";
 import { createPracticeAttempt, gradePracticeExam } from "../public/js/core/practiceExam.js";
 
@@ -12,8 +10,6 @@ function practiceApp() {
   app.history = [];
   app.active = null;
   app.startTimer = () => {};
-  // Private fixtures still validate archived content, never exposed by the serving layer.
-  app.examById = id => PRACTICE_EXAMS_2026.find(exam => exam.id === id);
   return app;
 }
 
@@ -21,8 +17,9 @@ test("danh sách đề ghi nguồn cung cấp, không suy ra xác minh chính th
   const app = practiceApp();
   app.renderDashboard();
   assert.equal((app.root.innerHTML.match(/class="practice-subject-card"/g) || []).length, 18);
-  assert.equal((app.root.innerHTML.match(/class="practice-category">Tài liệu 2026/g) || []).length, 0);
-  assert.equal((app.root.innerHTML.match(/Nguồn: Tính Điểm THPT tự biên soạn/g) || []).length, 18);
+  assert.equal((app.root.innerHTML.match(/class="practice-category">Tài liệu 2026/g) || []).length, 17);
+  assert.equal((app.root.innerHTML.match(/Nguồn: Đề thi do người dùng cung cấp/g) || []).length, 17);
+  assert.equal((app.root.innerHTML.match(/Nguồn: Tính Điểm THPT tự biên soạn/g) || []).length, 1);
   assert.match(app.root.innerHTML, /đề luyện ngắn, không phải đề chính thức/);
   assert.doesNotMatch(app.root.innerHTML, /class="practice-category[^>]*>Đề chính thức/);
 });

@@ -14,7 +14,6 @@ import { createConfiguredAdmissionsAssistant } from "./configuredAssistant.js";
 import { securityHeaders } from "../lib/securityHeaders.js";
 import { readFile } from "node:fs/promises";
 import { adsenseAdsTxt, isPublicHtmlPage, nonceHtmlScripts, prepareAdSenseHtml } from "../lib/adsense.js";
-import { isRestrictedExamPath } from "../lib/examPublication.js";
 import { parseAppRoute } from "../public/js/core/appRoutes.js";
 import { appRouteProfile, renderAppPage } from "../lib/appPages.js";
 
@@ -67,8 +66,6 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
   const assistant = admissionsAssistant || createConfiguredAdmissionsAssistant(environment);
   app.disable("x-powered-by");
   app.use(applySecurityHeaders);
-  app.use((request, response, next) => isRestrictedExamPath(request.path)
-    ? response.status(404).type("text").send("Tài liệu chưa được công bố.") : next());
   app.use(express.json({ limit: "100kb" }));
   app.get("/ads.txt", (_request, response) => {
     const text = adsenseAdsTxt(environment);

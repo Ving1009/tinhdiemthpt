@@ -16,7 +16,7 @@ Mã quảng cáo chỉ tải trên **8 bài cẩm nang** khi đủ điều kiệ
 
 Danh sách HTML công khai được tách riêng thành `PUBLIC_HTML_PATHS`: 46 đường dẫn/alias tương ứng **23 URL canonical**. Hồ sơ trường/ngành hợp lệ có URL động và HTML tóm tắt từ dataset hiện có, nhưng không tải quảng cáo. Không lấy số trang HTML hay số URL trong sitemap làm số trang quảng cáo hoặc số trang đã được Google index.
 
-Đây là phạm vi của **bản sửa local**, thay thế lần mở rộng quảng cáo trước đó. Production chưa được deploy trong tác vụ final audit. Kiểm tra HEAD ngày 12/10 vẫn thấy CSP của bản quảng cáo toàn HTML trên production; xem [báo cáo cuối](final-adsense-readiness-audit.md).
+Bản sửa `aad3068` đã được push và deploy theo yêu cầu tiếp theo. Kiểm tra production xác nhận loader chỉ có ở 8 bài cẩm nang. Sau đó chủ website yêu cầu khôi phục 17 bộ đề đầy đủ cùng đề luyện Ngữ văn; phạm vi quảng cáo ở phòng thi vẫn tắt. [Báo cáo cuối](final-adsense-readiness-audit.md) lưu ghi nhận trước khôi phục và chú thích cập nhật.
 
 ## Cách phục vụ HTML
 

@@ -222,6 +222,9 @@ body.dark .site-header { background:var(--surface); }
 .practice-subject-card dt,.practice-category,.practice-history-row small { font-size:11px; }
 .practice-exam-header { top:calc(var(--header-height) + 8px); border-radius:14px; }
 .practice-question-nav { top:calc(var(--header-height) + 125px); }
+@media(min-width:901px) {
+  .practice-question-nav { max-height:calc(100dvh - var(--header-height) - 141px); overflow-y:auto; }
+}
 .practice-result-hero { background:#4338ca; }
 .practice-options label,.practice-tf-list label { min-height:44px; }
 .assistant-shell { --assistant-primary:#4f46e5; font-family:var(--font); }

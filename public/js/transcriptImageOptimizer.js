@@ -39,7 +39,7 @@ async function decodeWithImageElement(file, { ImageCtor, urlApi }) {
   }
 }
 
-async function decodeImage(file, {
+export async function decodeTranscriptImage(file, {
   createImageBitmapImpl = globalThis.createImageBitmap,
   ImageCtor = globalThis.Image,
   urlApi = globalThis.URL
@@ -77,7 +77,7 @@ export async function optimizeTranscriptImage(file, {
   quality = TRANSCRIPT_IMAGE_QUALITY,
   allowUpscale = false,
   threshold = null,
-  decoder = decodeImage,
+  decoder = decodeTranscriptImage,
   canvasFactory = () => document.createElement("canvas")
 } = {}) {
   let decoded;
@@ -115,6 +115,68 @@ export async function optimizeTranscriptImage(file, {
       canvas.width = 1;
       canvas.height = 1;
     }
+  }
+}
+
+export async function prepareTranscriptCell(decoded, rectangle, referenceWidth, {
+  zoom = 1,
+  binarize = true,
+  canvasFactory = () => document.createElement("canvas")
+} = {}) {
+  if (![decoded?.width, decoded?.height, referenceWidth, rectangle?.left, rectangle?.top, rectangle?.width, rectangle?.height].every(Number.isFinite)
+    || referenceWidth <= 0 || rectangle.width <= 0 || rectangle.height <= 0) return null;
+  const sourceScale = decoded.width / referenceWidth;
+  const left = Math.max(0, rectangle.left * sourceScale), top = Math.max(0, rectangle.top * sourceScale);
+  const width = Math.min(rectangle.width * sourceScale, decoded.width - left);
+  const height = Math.min(rectangle.height * sourceScale, decoded.height - top);
+  if (width <= 0 || height <= 0) return null;
+  const scale = Number.isFinite(zoom) ? Math.min(2, Math.max(1, zoom)) : 1;
+  // Preserve label strokes with one resize; numbers are enlarged after binarization to retain decimal dots.
+  const drawScale = binarize ? 1 : scale;
+  const cellWidth = Math.ceil(Math.min(512, rectangle.width * 2) * drawScale), cellHeight = Math.ceil(Math.min(256, rectangle.height * 2) * drawScale);
+  const padding = Math.ceil(16 * drawScale);
+  let canvas, enlarged;
+  try {
+    canvas = canvasFactory();
+    canvas.width = cellWidth + padding * 2; canvas.height = cellHeight + padding * 2;
+    const context = canvas.getContext("2d", { alpha: false });
+    if (!context) return null;
+    context.fillStyle = "#ffffff"; context.fillRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(decoded.source, left, top, width, height, padding, padding, cellWidth, cellHeight);
+    if (binarize) {
+      const pixels = context.getImageData(padding, padding, cellWidth, cellHeight);
+      const histogram = new Uint32Array(256);
+      for (let index = 0; index < pixels.data.length; index += 4) {
+        const gray = Math.round(pixels.data[index] * 0.299 + pixels.data[index + 1] * 0.587 + pixels.data[index + 2] * 0.114);
+        pixels.data[index] = gray; histogram[gray] += 1;
+      }
+      const percentile = (fraction) => {
+        const target = pixels.data.length / 4 * fraction;
+        let count = 0;
+        for (let value = 0; value < histogram.length; value += 1) {
+          count += histogram[value];
+          if (count >= target) return value;
+        }
+        return 255;
+      };
+      const low = percentile(0.02), high = percentile(0.7);
+      // A uniform blank cell must stay blank rather than become a black OCR image.
+      if (high - low < 20) return null;
+      for (let index = 0; index < pixels.data.length; index += 4) {
+        const value = (pixels.data[index] - low) * 255 / (high - low) > 150 ? 255 : 0;
+        pixels.data[index] = pixels.data[index + 1] = pixels.data[index + 2] = value;
+      }
+      context.putImageData(pixels, padding, padding);
+    }
+    if (!binarize || scale === 1) return await canvasBlob(canvas, "image/png");
+    enlarged = canvasFactory();
+    enlarged.width = Math.ceil(canvas.width * scale); enlarged.height = Math.ceil(canvas.height * scale);
+    const enlargedContext = enlarged.getContext("2d", { alpha: false });
+    if (!enlargedContext) return null;
+    enlargedContext.drawImage(canvas, 0, 0, enlarged.width, enlarged.height);
+    return await canvasBlob(enlarged, "image/png");
+  } finally {
+    for (const image of [canvas, enlarged]) if (image) { image.width = 1; image.height = 1; }
   }
 }
 

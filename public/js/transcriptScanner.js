@@ -1,5 +1,5 @@
 import { escapeHTML } from "./utils.js";
-import { optimizeTranscriptImagesSequentially } from "./transcriptImageOptimizer.js";
+import { optimizeTranscriptImagesSequentially } from "./transcriptImageOptimizer.js?v=20261013-2";
 import { turnstileGate } from "./turnstile.js";
 
 export const MAX_IMAGES = 6;
@@ -257,7 +257,7 @@ export class TranscriptScanner {
           this.scrollToManualEntry();
           return;
         }
-        const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js?v=20261012-1");
+        const { recognizeTranscriptInBrowser } = await import("./clientTranscriptOcr.js?v=20261013-2");
         payload = await recognizeTranscriptInBrowser(optimizedImages, {
           assetBaseUrl: resolveTranscriptAssetBaseUrl(),
           sourceFiles,

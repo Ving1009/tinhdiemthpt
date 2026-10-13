@@ -254,7 +254,20 @@ export function analyzeLocalTranscriptTable(page, catalog) {
   const headerRight = headers.length ? Math.max(...headers.map((header) => header.rectangle.left + header.rectangle.width)) + height * 0.5 : columns.at(-1)?.x1 || headerLeft;
   const headerTop = headers.length ? Math.min(...headers.map((header) => header.rectangle.top)) - height * 0.5 : firstTop - height * 4;
   const headerBottom = headers.length ? Math.max(...headers.map((header) => header.rectangle.top + header.rectangle.height)) + height * 0.5 : firstTop - height;
+  // Retry a damaged subject label only when its row contains a number in a mapped score column.
+  const labelRegions = grade ? rows.filter(row => row.y >= firstTop - spacing / 2 && row.y <= lastBottom + spacing / 2
+    && !subjects.some(subject => Math.abs(subject.y - row.y) <= height * 1.5)
+    && row.words.some(word => numericWord(word) && columns.some(column => column.field && word.x >= column.x0 && word.x <= column.x1)))
+    .flatMap(row => {
+      const labels = row.words.filter(word => word.bbox.x1 < subjectBoundary && /[a-z]/.test(normalized(word.text)));
+      if (!labels.length) return [];
+      const left = Math.max(0, Math.min(...labels.map(word => word.bbox.x0)) - height * 0.5);
+      const right = Math.min(subjectBoundary, Math.max(...labels.map(word => word.bbox.x1)) + height * 0.5);
+      return [{ left: Math.floor(left), top: Math.max(0, Math.floor(row.y - height * 1.4)),
+        width: Math.max(1, Math.ceil(right - left)), height: Math.ceil(height * 2.8) }];
+    }).slice(0, 16) : [];
   return { grade, rows: detectedRows, columns, warnings,
+    labelRegions,
     cells: detectedRows.flatMap((row) => Object.entries(row.cells).map(([field, cell]) => ({ subject: row.subject, grade, field, ...cell }))),
     headerRegion: { left: Math.max(0, Math.floor(headerLeft)), top: Math.max(0, Math.floor(headerTop)),
       width: Math.max(1, Math.ceil(headerRight - headerLeft)), height: Math.max(1, Math.ceil(headerBottom - headerTop)) } };

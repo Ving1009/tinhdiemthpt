@@ -46,6 +46,44 @@ test("local OCR dùng geometry và không trả tên học sinh, ảnh hoặc d�
   assert.equal(terminated, 1);
 });
 
+test("local OCR chỉ khôi phục tên môn khi đọc lại đúng nhãn, giữ nguyên các cột điểm", async (t) => {
+  const oldDocument = globalThis.document, oldBitmap = globalThis.createImageBitmap;
+  t.after(() => { globalThis.document = oldDocument; globalThis.createImageBitmap = oldBitmap; });
+  globalThis.createImageBitmap = async () => ({ width: 1600, height: 2133, close() {} });
+  globalThis.document = { baseURI: "http://127.0.0.1/", createElement: () => ({
+    getContext: () => ({ fillRect() {}, drawImage() {} }), toBlob: (callback, type) => callback(new Blob(["image"], { type }))
+  }) };
+  const word = (text, x, y) => ({ text, confidence: 95, bbox: { x0: x, y0: y, x1: x + 40, y1: y + 16 } });
+  const blocks = words => [{ paragraphs: [{ lines: [{ words }] }] }];
+  const original = blocks([word("Lớp 12", 10, 10), word("HK1", 140, 60), word("HK2", 240, 60), word("CN", 340, 60),
+    word("Toán", 10, 110), word("8.5", 140, 110), word("9.0", 240, 110), word("8.8", 340, 110),
+    word("Ngir van", 10, 160), word("7.6", 140, 160), word("6.1", 240, 160), word("6.6", 340, 160),
+    word("Lịch sử", 10, 210), word("7.5", 140, 210), word("8.0", 240, 210), word("7.8", 340, 210)]);
+  for (const { recoveredLabel, native } of [{ recoveredLabel: "Ngữ văn" }, { recoveredLabel: "Chữ không rõ" }, { recoveredLabel: "Dia lí", native: true }]) {
+    let mode, retries = 0;
+    const initial = structuredClone(original);
+    if (native) initial[0].paragraphs[0].lines[0].words.find(word => word.text === "Ngir van").text = "Bia lí";
+    const result = await recognizeTranscriptInBrowser([{ blob: new Blob(["image"]), width: 1600, height: 2133 }], {
+      assetBaseUrl: "/vendor/", catalog, browserEnvironment: {}, sourceFiles: [{ name: "source.jpg" }],
+      tesseractModule: { createWorker: async () => ({ setParameters: async parameters => { mode = parameters.tessedit_pageseg_mode; },
+        recognize: async (blob, options) => {
+          if (blob.type === "image/png") { retries++; return { data: { text: native ? recoveredLabel : "Không rõ", confidence: 79 } }; }
+          if (!options?.rectangle) return { data: { blocks: initial, text: "Lớp 12", confidence: 95 } };
+          assert.ok(["7", "13"].includes(mode));
+          retries++;
+          const recovered = word(native ? "Bia lí" : recoveredLabel, 15, 240);
+          recovered.bbox = Object.fromEntries(Object.entries(recovered.bbox).map(([key, value]) => [key, key.startsWith("x") ? value * 1.5 : value]));
+          return { data: { blocks: blocks([recovered]), confidence: 95 } };
+        }, terminate: async () => {} }) }
+    });
+    const row = result.data.scores.find(row => row.subject === (native ? "Địa lí" : "Ngữ văn"));
+    assert.equal(retries, recoveredLabel === "Ngữ văn" ? 1 : 3);
+    if (row) assert.deepEqual([row.semester1, row.semester2, row.year], [7.6, 6.1, 6.6]);
+    assert.equal(Boolean(row), recoveredLabel === "Ngữ văn" || Boolean(native));
+    assert.equal(result.data.scores.find(row => row.subject === "Toán").semester1, 8.5);
+  }
+});
+
 test("local OCR chuyển PSM qua setParameters trước khi đọc lại ô, giải phóng ảnh gốc đã xử lý", async (t) => {
   const oldDocument = globalThis.document, oldBitmap = globalThis.createImageBitmap;
   t.after(() => { globalThis.document = oldDocument; globalThis.createImageBitmap = oldBitmap; });
@@ -79,6 +117,33 @@ test("local OCR chuyển PSM qua setParameters trước khi đọc lại ô, gi�
   assert.equal(closed, 4);
   assert.equal(terminated, 1);
   assert.ok(images.every(image => image.blob === null));
+});
+
+test("local OCR đọc lại ô từ ảnh gốc nhưng không sửa dấu thập phân hoặc bỏ qua điểm mâu thuẫn", async (t) => {
+  const oldDocument = globalThis.document, oldBitmap = globalThis.createImageBitmap;
+  t.after(() => { globalThis.document = oldDocument; globalThis.createImageBitmap = oldBitmap; });
+  for (const conflicting of [false, true]) {
+    let closed = 0, terminated = 0, isolatedReads = 0;
+    globalThis.createImageBitmap = async () => ({ width: 2000, height: 2666, close: () => { closed++; } });
+    globalThis.document = { baseURI: "http://127.0.0.1/", createElement: () => ({ getContext: () => ({ fillRect() {}, drawImage() {}, putImageData() {},
+      getImageData: () => ({ data: new Uint8ClampedArray(Array.from({ length: 100 }, (_, index) => index < 20 ? [60, 60, 60, 255] : [220, 220, 220, 255]).flat()) }) }),
+      toBlob: (callback, type) => callback(new Blob(["image"], { type })) }) };
+    const word = (text, x, y, confidence = 95) => ({ text, confidence, bbox: { x0: x, y0: y, x1: x + 25, y1: y + 16 } });
+    const blocks = [{ paragraphs: [{ lines: [{ words: [word("Lớp 12", 10, 10), word("HK1", 140, 60), word("HK2", 240, 60), word("CN", 340, 60),
+      word("Hóa học", 10, 110), word(conflicting ? "6.4" : "54", 140, 110, conflicting ? 80 : 95), word("9.0", 240, 110), word("8.8", 340, 110)] }] }] }];
+    const result = await recognizeTranscriptInBrowser([{ blob: new Blob(["image"]), width: 1600, height: 2133 }], {
+      assetBaseUrl: "/vendor/", catalog, browserEnvironment: {}, sourceFiles: [{ name: "source.jpg" }],
+      tesseractModule: { createWorker: async () => ({ setParameters: async () => {}, recognize: async (blob, options) => {
+        if (blob.type === "image/png") { isolatedReads++; return { data: { text: "5.4", confidence: 96 } }; }
+        return options?.rectangle ? { data: { text: "54", confidence: 96 } } : { data: { blocks, text: "Lớp 12", confidence: 95 } };
+      }, terminate: async () => { terminated++; } }) }
+    });
+    assert.equal(result.data.scores[0].semester1, conflicting ? null : 5.4);
+    assert.equal(result.data.scores[0].year, 8.8);
+    assert.equal(isolatedReads, conflicting ? 4 : 2);
+    assert.equal(closed, 3);
+    assert.equal(terminated, 1);
+  }
 });
 
 test("OCR ghép chữ ở các ô cùng hàng theo tọa độ, không trộn hai hàng", () => {

@@ -1,7 +1,7 @@
 import { parseOcrTranscriptPages } from "./core/ocrTranscriptParser.js?v=20261001-2";
 import { validateTranscriptPayload } from "./core/transcriptValidator.js";
-import { analyzeLocalTranscriptTable, localTranscriptTablePayload } from "./core/localTranscriptTable.js?v=20261012-1";
-import { optimizeTranscriptImage } from "./transcriptImageOptimizer.js?v=20261012-1";
+import { analyzeLocalTranscriptTable, localTranscriptTablePayload } from "./core/localTranscriptTable.js?v=20261013-1";
+import { decodeTranscriptImage, optimizeTranscriptImage, prepareTranscriptCell } from "./transcriptImageOptimizer.js?v=20261013-2";
 
 const GENERIC_OCR_ERROR = "Chưa đọc được ảnh. Bạn hãy dùng ảnh thẳng, rõ chữ hoặc nhập điểm thủ công.";
 
@@ -25,6 +25,9 @@ function localOcrReading(result) {
   return value >= 0 && value <= 10 ? { value, confidence } : null;
 }
 
+const mapBlocks = (blocks, mapWord) => (blocks || []).map(block => ({ ...block, paragraphs: (block.paragraphs || []).map(paragraph => ({ ...paragraph,
+  lines: (paragraph.lines || []).map(line => ({ ...line, words: (line.words || []).flatMap(mapWord) })) })) }));
+
 export function localOcrScore(result) {
   return localOcrReading(result)?.value ?? null;
 }
@@ -41,6 +44,7 @@ async function readLocalTable(page, image, sourceFile, catalog, configure, recog
   let table = analyzeLocalTranscriptTable(page, catalog);
   const header = boundedRectangle(table.headerRegion, image.width, image.height);
   let detailedImage;
+  let originalImage;
   try {
     if (table.rows.length && sourceFile && Number.isFinite(image.width)) {
       detailedImage = await optimizeTranscriptImage(sourceFile, { maxDimension: 2400, quality: 0.95, allowUpscale: true,
@@ -48,8 +52,6 @@ async function readLocalTable(page, image, sourceFile, catalog, configure, recog
     }
     const scale = detailedImage ? detailedImage.width / image.width : 1;
     if (table.rows.length && header && table.columns.some((column) => !column.field)) {
-      const mapBlocks = (blocks, mapWord) => (blocks || []).map(block => ({ ...block, paragraphs: (block.paragraphs || []).map(paragraph => ({ ...paragraph,
-        lines: (paragraph.lines || []).map(line => ({ ...line, words: (line.words || []).flatMap(mapWord) })) })) }));
       const columns = table.columns.filter(column => column.x >= header.left && column.x <= header.left + header.width);
       // Retry the whole ambiguous header group together; an isolated II misread as I must not move HK2 scores into HK1.
       for (const psm of columns.length <= 3 ? ["7", "13"] : []) {
@@ -80,11 +82,49 @@ async function readLocalTable(page, image, sourceFile, catalog, configure, recog
       }
     }
     if (!table.grade) return { payload: { student: { name: null }, scores: [] }, warnings: table.warnings };
+    for (const region of detailedImage ? table.labelRegions || [] : []) {
+      const rectangle = boundedRectangle(region, detailedImage.width, detailedImage.height, scale);
+      if (!rectangle) continue;
+      for (const mode of ["7", "13", "native"]) {
+        let nativeCell;
+        if (mode === "native") {
+          try {
+            originalImage ||= await decodeTranscriptImage(sourceFile);
+            nativeCell = await prepareTranscriptCell(originalImage, region, image.width, { zoom: 1.5, binarize: false });
+          } catch { /* Không suy đoán tên môn nếu không đọc được vùng ảnh gốc. */ }
+          if (!nativeCell) continue;
+        }
+        await configure({ tessedit_pageseg_mode: mode === "native" ? "7" : mode, tessedit_char_whitelist: "", user_defined_dpi: "0",
+          preserve_interword_spaces: mode === "native" ? "0" : "1" });
+        const result = await recognize(nativeCell || detailedImage.blob, nativeCell ? {} : { rectangle }, { blocks: true });
+        const originalBlocks = mapBlocks(page.blocks, word => {
+          const x = (word.bbox.x0 + word.bbox.x1) / 2, y = (word.bbox.y0 + word.bbox.y1) / 2;
+          return x >= region.left && x <= region.left + region.width && y >= region.top && y <= region.top + region.height ? [] : [word];
+        });
+        let labelBlocks = [];
+        if (nativeCell) {
+          if (Number(result?.data?.confidence) >= 70) labelBlocks = [{ paragraphs: [{ lines: [{ words: [{
+            text: String(result.data.text || "").trim(), confidence: result.data.confidence,
+            bbox: { x0: region.left, x1: region.left + region.width, y0: region.top + region.height * 0.2, y1: region.top + region.height * 0.8 }
+          }] }] }] }];
+        } else {
+          labelBlocks = mapBlocks(result?.data?.blocks, word => Number(word.confidence) >= 70 ? [{ ...word,
+            bbox: Object.fromEntries(Object.entries(word.bbox).map(([key, value]) => [key, value / scale])) }] : []);
+        }
+        const blocks = [...originalBlocks, ...labelBlocks];
+        const candidateTable = analyzeLocalTranscriptTable({ ...page, blocks }, catalog);
+        if (candidateTable.grade === table.grade && candidateTable.rows.length > table.rows.length
+          && table.rows.every(row => candidateTable.rows.some(next => next.subject === row.subject))
+          && table.columns.filter(column => column.field).every(column => candidateTable.columns.some(next => next.field === column.field && Math.abs(next.x - column.x) < 10))) {
+          page.blocks = blocks; table = candidateTable; break;
+        }
+      }
+    }
     const retryCells = table.rows.flatMap((row) => Object.entries(row.cells).filter(([, cell]) => cell.value === null || cell.confidence < 85)
       .map(([field, cell]) => ({ row, field, cell }))).slice(0, 60);
     if (retryCells.length && detailedImage) {
       onStatus("Đang đọc lại các ô điểm chưa rõ trên thiết bị...");
-      await configure({ tessedit_pageseg_mode: "13", tessedit_char_whitelist: "0123456789.,", user_defined_dpi: "300" });
+      await configure({ tessedit_pageseg_mode: "13", tessedit_char_whitelist: "0123456789.,", user_defined_dpi: "300", preserve_interword_spaces: "1" });
       for (const { row, field, cell } of retryCells) {
         const rectangle = boundedRectangle(cell.rectangle, detailedImage.width, detailedImage.height, scale);
         if (!rectangle) continue;
@@ -103,12 +143,29 @@ async function readLocalTable(page, image, sourceFile, catalog, configure, recog
           }
           reading = agreeLocalOcrReadings(readings, cell);
         }
+        if (!reading && sourceFile) {
+          for (const zoom of [1, 1.5]) {
+            let preparedCell;
+            try {
+              originalImage ||= await decodeTranscriptImage(sourceFile);
+              preparedCell = await prepareTranscriptCell(originalImage, cell.rectangle, image.width, { zoom });
+            } catch { /* Giữ ô trống nếu trình duyệt không xử lý được vùng ảnh gốc. */ }
+            if (!preparedCell) break;
+            for (const psm of ["13", "7"]) {
+              await configure({ tessedit_pageseg_mode: psm });
+              readings.push(await recognize(preparedCell, {}, { blocks: true }));
+            }
+            reading = agreeLocalOcrReadings(readings, cell);
+            if (reading) break;
+          }
+        }
         row.cells[field].value = reading?.value ?? null;
         row.cells[field].confidence = reading?.confidence ?? 0;
       }
     }
     return { payload: localTranscriptTablePayload(table), warnings: table.warnings };
   } finally {
+    originalImage?.close?.();
     if (detailedImage) detailedImage.blob = null;
   }
 }

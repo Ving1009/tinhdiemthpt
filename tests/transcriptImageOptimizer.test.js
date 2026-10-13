@@ -3,7 +3,8 @@ import test from "node:test";
 import {
   fitImageDimensions,
   optimizeTranscriptImage,
-  optimizeTranscriptImagesSequentially
+  optimizeTranscriptImagesSequentially,
+  prepareTranscriptCell
 } from "../public/js/transcriptImageOptimizer.js";
 
 test("ảnh chỉ thu nhỏ theo cạnh dài và không phóng lớn", () => {
@@ -72,4 +73,51 @@ test("tăng tương phản chỉ khi được chọn, vẫn đóng bitmap và ca
   assert.deepEqual([...written.data], [0, 0, 0, 255, 255, 255, 255, 255]);
   assert.equal(closed, 1);
   assert.equal(canvas.width, 1);
+});
+
+test("ô điểm dùng tọa độ ảnh gốc, tăng tương phản và xuất PNG có viền trắng", async () => {
+  const calls = [], canvases = [];
+  const pixels = { data: new Uint8ClampedArray(Array.from({ length: 100 }, (_, index) => index < 20 ? [60, 60, 60, 255] : [220, 220, 220, 255]).flat()) };
+  const blob = await prepareTranscriptCell({ source: "original", width: 400, height: 600 }, { left: 10, top: 20, width: 30, height: 40 }, 100, {
+    canvasFactory: () => {
+      const canvas = { getContext: () => ({ fillRect: (...args) => calls.push(["padding", ...args]),
+        drawImage: (...args) => calls.push(["draw", ...args]), getImageData: () => pixels,
+        putImageData: value => calls.push(["contrast", value]) }),
+        toBlob: (callback, type) => { calls.push(["format", type]); callback(new Blob(["cell"], { type })); } };
+      canvases.push(canvas); return canvas;
+    }
+  });
+  assert.deepEqual(calls.find(call => call[0] === "draw").slice(1), ["original", 40, 80, 120, 160, 16, 16, 60, 80]);
+  assert.equal(blob.type, "image/png");
+  assert.equal(pixels.data[0], 0);
+  assert.equal(pixels.data[80], 255);
+  assert.ok(calls.some(call => call[0] === "padding"));
+  assert.ok(canvases.every(canvas => canvas.width === 1 && canvas.height === 1));
+});
+
+test("ô trắng hoặc vùng nằm ngoài ảnh không được biến thành ảnh điểm giả", async () => {
+  let canvas;
+  const decoded = { source: {}, width: 400, height: 600 };
+  assert.equal(await prepareTranscriptCell(decoded, { left: 500, top: 0, width: 20, height: 20 }, 400), null);
+  assert.equal(await prepareTranscriptCell(decoded, { left: 0, top: 0, width: NaN, height: 20 }, 400), null);
+  const result = await prepareTranscriptCell(decoded, { left: 10, top: 20, width: 30, height: 40 }, 400, {
+    canvasFactory: () => (canvas = { getContext: () => ({ fillRect() {}, drawImage() {},
+      getImageData: () => ({ data: new Uint8ClampedArray(400).fill(255) }), putImageData() { assert.fail("Không xử lý ô trắng thành chữ"); } }) })
+  });
+  assert.equal(result, null);
+  assert.equal(canvas.width, 1);
+  assert.equal(canvas.height, 1);
+});
+
+test("vùng tên môn giữ màu ảnh gốc khi không chọn nhị phân hóa", async () => {
+  const canvases = [];
+  const blob = await prepareTranscriptCell({ source: "original", width: 400, height: 600 }, { left: 10, top: 20, width: 30, height: 40 }, 100, {
+    zoom: 1.5, binarize: false, canvasFactory: () => {
+      const canvas = { getContext: () => ({ fillRect() {}, drawImage() {} }), toBlob: (callback, type) => callback(new Blob(["crop"], { type })) };
+      canvases.push(canvas); return canvas;
+    }
+  });
+  assert.equal(blob.type, "image/png");
+  assert.equal(canvases.length, 1);
+  assert.ok(canvases.every(canvas => canvas.width === 1 && canvas.height === 1));
 });

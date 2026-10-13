@@ -22,6 +22,24 @@ test("local OCR gán điểm theo vị trí header, kể cả cột bị đảo"
   ]);
 });
 
+test("local OCR khoanh tên môn hỏng để đọc lại, không nhận nó bằng suy đoán", () => {
+  const image = page([
+    word("HK1", 220, 80), word("HK2", 320, 80), word("CN", 420, 80),
+    word("Toán", 70, 130), word("8.1", 220, 130),
+    word("Ngir van", 70, 190), word("7.6", 220, 190), word("6.1", 320, 190), word("6.6", 420, 190),
+    word("Thể chất", 70, 250), word("Đ", 220, 250),
+    word("Lịch sử", 70, 310), word("7.5", 220, 310),
+    word("Nhận xét", 70, 370), word("Tốt", 220, 370)
+  ]);
+  const table = analyzeLocalTranscriptTable(image, catalog);
+  assert.deepEqual(table.rows.map(row => row.subject), ["Toán", "Lịch sử"]);
+  assert.equal(table.labelRegions.length, 1);
+  assert.ok(table.labelRegions[0].top < 190);
+  assert.ok(table.labelRegions[0].top + table.labelRegions[0].height > 190);
+  image.text = "Lớp 7";
+  assert.deepEqual(analyzeLocalTranscriptTable(image, catalog).labelRegions, []);
+});
+
 test("local OCR giữ ô mất, ngoài khoảng hoặc độ tin cậy thấp, không dồn số sang cột khác", () => {
   const image = simpleTable();
   const words = image.blocks[0].paragraphs[0].lines[0].words;

@@ -58,9 +58,12 @@ export function createProviderPool({
         return result;
       } catch (error) {
         lastError = error;
+        const cooldownMs = Math.max(0, Number(cooldownMsByCode[error?.code]) || 0);
+        if (retryCodes.has(error?.code) || cooldownMs) {
+          entry.lastError = error;
+          entry.cooldownUntil = now() + cooldownMs;
+        }
         if (!retryCodes.has(error?.code)) throw error;
-        entry.lastError = error;
-        entry.cooldownUntil = now() + Math.max(0, Number(cooldownMsByCode[error.code]) || 0);
       }
     }
     throw lastError || unavailableError();

@@ -85,6 +85,29 @@ test("Gemini OCR thiếu khóa không gọi mạng", async () => {
   });
 });
 
+test("Gemini OCR hết 45 giây hủy request SDK thay vì để yêu cầu tiếp tục chạy", async (context) => {
+  context.mock.timers.enable({ apis: ["setTimeout"] });
+  let signal, aborted = 0, ready;
+  const started = new Promise((resolve) => { ready = resolve; });
+  await withMockFetch((_url, options) => {
+    signal = options.signal;
+    ready();
+    return new Promise((_resolve, reject) => {
+      signal.addEventListener("abort", () => { aborted++; reject(new DOMException("Aborted", "AbortError")); }, { once: true });
+    });
+  }, async () => {
+    const scan = createGeminiVisionService({ apiKey: "test" });
+    const rejected = assert.rejects(scan([image()]), (error) => error.code === "AI_TIMEOUT" && error.statusCode === 504);
+    await started;
+    context.mock.timers.tick(44_999);
+    assert.equal(signal.aborted, false);
+    context.mock.timers.tick(1);
+    await rejected;
+    assert.equal(signal.aborted, true);
+    assert.equal(aborted, 1);
+  });
+});
+
 test("Gemini OCR phân loại lỗi SDK HTTP và chỉ ghi chẩn đoán đã lọc", async () => {
   for (const [status, code, statusCode] of [[429, "AI_QUOTA", 503], [401, "AI_AUTH", 503], [403, "AI_AUTH", 503], [500, "AI_REQUEST_FAILED", 502]]) {
     const diagnostics = [];

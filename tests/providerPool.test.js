@@ -59,6 +59,27 @@ test("không thử khóa tiếp theo với lỗi nội dung không thể khắc 
   assert.deepEqual(calls, ["key-a"]);
 });
 
+test("lỗi timeout không thử tất cả khóa và vẫn tạm bỏ khóa vừa bị lỗi", async () => {
+  let clock = 1_000;
+  const calls = [];
+  const scan = createProviderPool({
+    keys: ["key-a", "key-b"],
+    createService: (key) => async () => { calls.push(key); throw new AppError("timeout", { code: "AI_TIMEOUT", statusCode: 504 }); },
+    retryCodes: new Set(["AI_QUOTA", "AI_AUTH"]),
+    cooldownMsByCode: { AI_TIMEOUT: 30_000 },
+    now: () => clock
+  });
+  await assert.rejects(scan([]), { code: "AI_TIMEOUT" });
+  assert.deepEqual(calls, ["key-a"]);
+  await assert.rejects(scan([]), { code: "AI_TIMEOUT" });
+  assert.deepEqual(calls, ["key-a", "key-b"]);
+  await assert.rejects(scan([]), { code: "AI_TIMEOUT" });
+  assert.deepEqual(calls, ["key-a", "key-b"]);
+  clock += 30_001;
+  await assert.rejects(scan([]), { code: "AI_TIMEOUT" });
+  assert.deepEqual(calls, ["key-a", "key-b", "key-b"]);
+});
+
 test("backend chỉ cấu hình Gemini và OCR.space; biến Tesseract cũ bị bỏ qua", () => {
   const providers = createConfiguredScanProviders({
     GEMINI_API_KEY: "gemini-one",
@@ -70,11 +91,11 @@ test("backend chỉ cấu hình Gemini và OCR.space; biến Tesseract cũ bị 
   assert.deepEqual(providers.map((provider) => provider.name), ["gemini", "ocr-space"]);
 });
 
-test("Groq nhận ảnh dùng model riêng và các key hiện có sau Gemini trước OCR.space", () => {
+test("Groq nhận ảnh được ưu tiên trước Gemini và OCR.space, vẫn dùng model riêng", () => {
   const providers = createConfiguredScanProviders({
     GEMINI_API_KEY: "gemini-key", GROQ_API_KEY_1: "groq-key", OCR_SPACE_API_KEY_1: "ocr-key",
     GROQ_MODEL: "text-only-chat-model", GROQ_VISION_MODEL: "vision-model"
   });
-  assert.deepEqual(providers.map((provider) => provider.name), ["gemini", "groq", "ocr-space"]);
+  assert.deepEqual(providers.map((provider) => provider.name), ["groq", "gemini", "ocr-space"]);
   assert.deepEqual(createConfiguredScanProviders({ GROQ_API_KEYS: "groq-one,groq-two" }).map((provider) => provider.name), ["groq"]);
 });

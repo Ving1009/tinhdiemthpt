@@ -98,3 +98,20 @@ test("dùng Tesseract khi provider hết quota, timeout hoặc trả lỗi 5xx",
   assert.equal(shouldUseBrowserFallback({ code: "AI_REQUEST_FAILED" }), true);
   assert.equal(shouldUseBrowserFallback({ code: "TURNSTILE_MISCONFIGURED", statusCode: 503 }), true);
 });
+
+test("hiện trạng thái xác minh riêng và chỉ gọi API nhận diện sau khi có token", async () => {
+  const statuses = [];
+  let verified, requests = 0;
+  const verification = new Promise((resolve) => { verified = resolve; });
+  const response = requestProtectedTranscriptScan([], {
+    gate: { getToken: () => verification },
+    requestImpl: async (_images, options) => { requests++; assert.equal(options.turnstileToken, "verified-token"); return { success: true }; },
+    onStatus: (message) => statuses.push(message)
+  });
+  assert.equal(requests, 0);
+  assert.match(statuses[0], /xác minh bảo mật/);
+  verified("verified-token");
+  assert.equal((await response).success, true);
+  assert.equal(requests, 1);
+  assert.match(statuses[1], /dịch vụ trực tuyến/);
+});

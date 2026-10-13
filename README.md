@@ -7,7 +7,7 @@ Website Vanilla JavaScript với Cloudflare Workers để tính điểm THPT, h�
 Production dùng hai Worker:
 
 - `tinhdiemthpt`: giao diện, Static Assets, API trường/ngành và tiếp nhận báo sai qua Supabase.
-- `tinhdiemthpt-ocr`: Gemini và OCR.space. Worker này không có URL public; Worker chính gọi qua Service Binding.
+- `tinhdiemthpt-ocr`: Groq, Gemini và OCR.space. Worker này không có URL public; Worker chính gọi qua Service Binding.
 
 Việc tách OCR khỏi API tra cứu giúp mỗi tiến trình giữ bộ nhớ riêng. Dữ liệu nguồn trong `data/` không được public trực tiếp: lệnh build chỉ tạo bản đã loại metadata thu thập vào `.cloudflare/public/_worker-data/`, và Worker chặn mọi request bên ngoài đến đường dẫn này.
 
@@ -142,7 +142,7 @@ Danh sách này là bản chuẩn bị cá nhân, không phải hồ sơ nguyệ
 
 Trình duyệt kiểm tra tệp, rồi giải mã và tối ưu lần lượt từng ảnh thành JPEG với cạnh dài tối đa 1.600 px và chất lượng 0,8. Hướng EXIF được áp dụng trước khi vẽ lại ảnh; bitmap và canvas được giải phóng ngay sau mỗi lượt. Mỗi lượt nhận tối đa 6 ảnh, 7 MB cho tệp gốc; tổng payload sau tối ưu tối đa 10 MB và toàn bộ multipart tối đa 11 MB.
 
-Ảnh đã tối ưu được gửi đến backend để thử Gemini rồi OCR.space. Trong từng nhóm dịch vụ từ xa, bộ điều phối xoay vòng khóa khỏe và tạm ngừng khóa gặp quota, lỗi xác thực, timeout hoặc lỗi máy chủ. Khóa Gemini và OCR.space chỉ tồn tại ở backend, không xuất hiện trong HTML hay JavaScript phía trình duyệt.
+Ảnh đã tối ưu được gửi đến backend để thử Groq, Gemini rồi OCR.space. Khi hết quota hoặc lỗi xác thực, bộ điều phối thử khóa khác của cùng dịch vụ; khi timeout hoặc lỗi kết nối/máy chủ, chuyển sang dịch vụ tiếp theo thay vì chờ tất cả khóa lần lượt hết thời gian. Khóa gặp lỗi được tạm bỏ theo thời gian cooldown. Gemini hủy request SDK ở phía ứng dụng khi hết 45 giây. Các khóa chỉ tồn tại ở backend, không xuất hiện trong HTML hay JavaScript phía trình duyệt. Trạng thái quét phân biệt bước xác minh Turnstile với bước nhận diện từ xa.
 
 Nếu các dịch vụ từ xa không dùng được, frontend hỏi người dùng trước khi tải động Tesseract.js, core WASM và dữ liệu ngôn ngữ Việt–Anh khoảng 15 MB. Người dùng có thể tiếp tục quét trên thiết bị hoặc chuyển thẳng tới bảng nhập điểm thủ công. Chỉ sau khi đồng ý, một worker mới chạy tuần tự toàn bộ ảnh và luôn được `terminate()` khi hoàn tất hoặc gặp lỗi. Backend chỉ phục vụ các tệp tĩnh này; backend không import, khởi tạo hay chạy worker Tesseract. Khi toàn bộ nhà cung cấp báo hết quota, giao diện hướng dẫn nhập điểm thủ công thay vì tiếp tục retry.
 

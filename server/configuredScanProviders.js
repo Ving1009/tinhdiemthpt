@@ -6,6 +6,16 @@ import { collectApiKeys, createProviderPool } from "./services/providerPool.js";
 
 export function createConfiguredScanProviders(environment = process.env, { onGeminiError = () => {} } = {}) {
   const configuredProviders = [];
+  const groqKeys = collectApiKeys(environment, {
+    primaryName: "GROQ_API_KEY", listName: "GROQ_API_KEYS", numberedStart: 1, numberedEnd: 5
+  });
+  if (groqKeys.length) configuredProviders.push({
+    name: "groq",
+    label: "Groq",
+    scan: createGroqVisionService({
+      apiKeys: groqKeys, model: environment.GROQ_VISION_MODEL, timeoutMs: environment.GROQ_VISION_TIMEOUT_MS
+    })
+  });
   const geminiKeys = collectApiKeys(environment, {
     primaryName: "GEMINI_API_KEY", listName: "GEMINI_API_KEYS", numberedStart: 1, numberedEnd: 5
   });
@@ -15,18 +25,8 @@ export function createConfiguredScanProviders(environment = process.env, { onGem
     scan: createProviderPool({
       keys: geminiKeys,
       createService: (apiKey) => createGeminiVisionService({ apiKey, model: environment.GEMINI_MODEL, onError: onGeminiError }),
-      retryCodes: new Set(["AI_QUOTA", "AI_TIMEOUT", "AI_AUTH", "AI_REQUEST_FAILED"]),
+      retryCodes: new Set(["AI_QUOTA", "AI_AUTH"]),
       cooldownMsByCode: { AI_QUOTA: 5 * 60_000, AI_TIMEOUT: 30_000, AI_AUTH: 60 * 60_000, AI_REQUEST_FAILED: 30_000 }
-    })
-  });
-  const groqKeys = collectApiKeys(environment, {
-    primaryName: "GROQ_API_KEY", listName: "GROQ_API_KEYS", numberedStart: 1, numberedEnd: 5
-  });
-  if (groqKeys.length) configuredProviders.push({
-    name: "groq",
-    label: "Groq",
-    scan: createGroqVisionService({
-      apiKeys: groqKeys, model: environment.GROQ_VISION_MODEL, timeoutMs: environment.GROQ_VISION_TIMEOUT_MS
     })
   });
   const ocrSpaceKeys = collectApiKeys(environment, {
@@ -44,7 +44,7 @@ export function createConfiguredScanProviders(environment = process.env, { onGem
         maxImageBytes: environment.OCR_SPACE_MAX_IMAGE_BYTES,
         totalTimeoutMs: environment.OCR_SPACE_TIMEOUT_MS
       }),
-      retryCodes: new Set(["OCR_SPACE_QUOTA", "OCR_SPACE_TIMEOUT", "OCR_SPACE_AUTH", "OCR_SPACE_REQUEST_FAILED"]),
+      retryCodes: new Set(["OCR_SPACE_QUOTA", "OCR_SPACE_AUTH"]),
       cooldownMsByCode: { OCR_SPACE_QUOTA: 5 * 60_000, OCR_SPACE_TIMEOUT: 30_000, OCR_SPACE_AUTH: 60 * 60_000, OCR_SPACE_REQUEST_FAILED: 30_000 }
     })
   });

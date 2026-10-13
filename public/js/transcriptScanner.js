@@ -97,15 +97,20 @@ export async function requestRemoteTranscriptScan(images, {
 
 export async function requestProtectedTranscriptScan(images, {
   gate = turnstileGate,
-  requestImpl = requestRemoteTranscriptScan
+  requestImpl = requestRemoteTranscriptScan,
+  onStatus = () => {}
 } = {}) {
   const action = "scan_transcript";
+  onStatus("Đang xác minh bảo mật trước khi gửi ảnh...");
   const firstToken = await gate.getToken(action);
+  onStatus("Đang nhận diện điểm bằng dịch vụ trực tuyến...");
   try {
     return await requestImpl(images, { turnstileToken: firstToken });
   } catch (error) {
     if (!RETRYABLE_TURNSTILE_CODES.has(error?.code)) throw error;
+    onStatus("Đang xác minh lại bảo mật trước khi gửi ảnh...");
     const refreshedToken = await gate.getToken(action, { forceConfiguration: true });
+    onStatus("Đang nhận diện điểm bằng dịch vụ trực tuyến...");
     return requestImpl(images, { turnstileToken: refreshedToken });
   }
 }
@@ -248,7 +253,9 @@ export class TranscriptScanner {
       this.setStatus("Đang nhận diện điểm...", "working");
       let payload;
       try {
-        payload = await requestProtectedTranscriptScan(optimizedImages);
+        payload = await requestProtectedTranscriptScan(optimizedImages, {
+          onStatus: (message) => this.setStatus(message, "working")
+        });
       } catch (error) {
         if (!shouldUseBrowserFallback(error)) throw error;
         const continueOnDevice = await this.requestBrowserFallbackConsent();

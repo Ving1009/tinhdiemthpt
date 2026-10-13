@@ -7,12 +7,16 @@ const DEFAULT_MODEL = "gemini-3.5-flash-lite";
 const BATCH_SIZE = 4;
 const REQUEST_TIMEOUT_MS = 45_000;
 
-function withTimeout(promise) {
+function withTimeout(request) {
+  const controller = new AbortController();
   let timeoutId;
   const timeout = new Promise((_, reject) => {
-    timeoutId = setTimeout(() => reject(new AppError("Dịch vụ AI phản hồi quá lâu. Hãy thử lại sau.", { statusCode: 504, code: "AI_TIMEOUT" })), REQUEST_TIMEOUT_MS);
+    timeoutId = setTimeout(() => {
+      controller.abort();
+      reject(new AppError("Dịch vụ AI phản hồi quá lâu. Hãy thử lại sau.", { statusCode: 504, code: "AI_TIMEOUT" }));
+    }, REQUEST_TIMEOUT_MS);
   });
-  return Promise.race([promise, timeout]).finally(() => clearTimeout(timeoutId));
+  return Promise.race([request(controller.signal), timeout]).finally(() => clearTimeout(timeoutId));
 }
 
 function parseModelJson(text) {
@@ -60,13 +64,14 @@ export function createGeminiVisionService({ apiKey, model = DEFAULT_MODEL, onErr
     try {
       for (let index = 0; index < images.length; index += BATCH_SIZE) {
         const batch = images.slice(index, index + BATCH_SIZE);
-        const response = await withTimeout(ai.models.generateContent({
+        const response = await withTimeout((signal) => ai.models.generateContent({
           model,
           contents: [
             { text: prompt },
             ...batch.map((image) => ({ inlineData: { mimeType: image.mimetype, data: image.buffer.toString("base64") } }))
           ],
           config: {
+            abortSignal: signal,
             responseMimeType: "application/json",
             responseSchema: transcriptResponseSchema
           }

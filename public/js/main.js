@@ -12,7 +12,7 @@ import { createFinderScoreContext, createScoreProfile, finderContextIsFresh, for
 import { moveWishById, normalizeWish, normalizeWishList, removeWishById, wishIdentity } from "./core/wishList.js";
 import { autoFillTranscript } from "./autoFillTranscript.js";
 import { TranscriptPreview } from "./transcriptPreview.js";
-import { TranscriptScanner } from "./transcriptScanner.js?v=20261013-2";
+import { TranscriptScanner } from "./transcriptScanner.js?v=20261013-3";
 import { turnstileGate } from "./turnstile.js";
 import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261012-4";
 import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-2";

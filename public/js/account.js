@@ -95,12 +95,17 @@ export class AccountApp {
   }
 
   async request(path, options = {}) {
-    const { response, payload } = await this.fetchWithTimeout(path, {
+    const requestOptions = {
       credentials: "same-origin",
       cache: "no-store",
       ...options,
-      headers: { Accept: "application/json", ...(path === "/api/auth/data" && this.user?.id ? { "X-Account-User-Id": this.user.id } : {}), ...(options.headers || {}) }
-    });
+      headers: { Accept: "application/json", ...(["/api/auth/data", "/api/auth/logout"].includes(path) && this.user?.id ? { "X-Account-User-Id": this.user.id } : {}), ...(options.headers || {}) }
+    };
+    const changesSession = options.method === "POST" && ["/api/auth/login", "/api/auth/register", "/api/auth/logout"].includes(path);
+    const run = () => this.fetchWithTimeout(path, requestOptions);
+    const { response, payload } = changesSession && globalThis.navigator?.locks?.request
+      ? await globalThis.navigator.locks.request("thpt-auth-session-change", run)
+      : await run();
     if (!response.ok || !payload?.success) {
       const error = new Error(messageFromPayload(payload, "Chưa xử lý được yêu cầu tài khoản. Bạn hãy thử lại."));
       error.code = payload?.error?.code || "AUTH_REQUEST_FAILED";
@@ -110,9 +115,11 @@ export class AccountApp {
   }
 
   async refreshUser() {
+    const ownerId = this.dataIsolation.marker().userId;
     try {
       const data = await this.request("/api/auth/me");
       const marker = this.dataIsolation.marker();
+      if (marker.userId !== ownerId) return { reload: true };
       const identityChanged = marker.userId !== String(data.user.id);
       const needsHydration = identityChanged || !marker.hydrated;
       this.user = data.user;
@@ -125,6 +132,7 @@ export class AccountApp {
       const restored = await this.activateUser(data.user);
       return { reload: identityChanged || restored };
     } catch (error) {
+      if (this.dataIsolation.marker().userId !== ownerId) return { reload: true };
       this.user = null;
       if (error?.code === "AUTH_REQUIRED") {
         const hadSession = this.dataIsolation.marker().authenticated;
@@ -227,6 +235,7 @@ export class AccountApp {
   }
 
   async logout() {
+    const userId = String(this.user?.id || "");
     this.cancelPendingSync();
     try { await this.request("/api/auth/logout", { method: "POST" }); }
     catch (error) {
@@ -235,6 +244,11 @@ export class AccountApp {
         return;
       }
     }
+    if (this.dataIsolation.marker().userId !== userId || String(this.user?.id || "") !== userId) {
+      this.handleStorageChange({ key: AUTH_SESSION_KEY });
+      return;
+    }
+    this.cancelPendingSync();
     this.isChangingAccount = true;
     try {
       this.changeLocalAccountData(() => this.dataIsolation.clearSession());

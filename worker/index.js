@@ -8,6 +8,7 @@ import { adsenseAdsTxt, isPublicHtmlPage, nonceHtmlScripts, prepareAdSenseHtml }
 import { securityHeaders } from "../lib/securityHeaders.js";
 import { parseAppRoute } from "../public/js/core/appRoutes.js";
 import { appRouteProfile, renderAppPage } from "../lib/appPages.js";
+import { isAllowedApiOrigin } from "../lib/requestOrigin.js";
 
 const PRIMARY_HOSTNAME = "tinhdiemthpt.id.vn";
 const LEGACY_HOSTNAME = "tinhdiemthpt.tinh-diem-thpt.workers.dev";
@@ -42,6 +43,10 @@ export default {
     }
     if (url.pathname.startsWith("/_worker-data/")) {
       return withSecurityHeaders(request, new Response("Không tìm thấy trang.", { status: 404 }));
+    }
+    if (url.pathname.startsWith("/api/") && !["GET", "HEAD", "OPTIONS"].includes(request.method)
+      && !isAllowedApiOrigin(request.url, request.headers.get("Origin"), request.headers.get("Sec-Fetch-Site"))) {
+      return failure(request, "INVALID_ORIGIN", "Yêu cầu không đến từ trang web được phép.", 403);
     }
     if (["GET", "HEAD"].includes(request.method) && url.pathname === "/ads.txt") {
       const text = adsenseAdsTxt(environment);

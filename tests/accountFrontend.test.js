@@ -42,6 +42,46 @@ function accountFixture() {
   } };
 }
 
+test("đăng nhập và đăng xuất chờ cùng khóa để cookie từ phản hồi cũ không đè phiên mới", async () => {
+  const fixture = accountFixture();
+  const navigatorDescriptor = Object.getOwnPropertyDescriptor(globalThis, "navigator");
+  const calls = [], locks = [];
+  let unlock;
+  let queued = Promise.resolve();
+  const logoutGate = new Promise(resolve => { unlock = resolve; });
+  Object.defineProperty(globalThis, "navigator", { configurable: true, value: { locks: {
+    request(name, run) {
+      locks.push(name);
+      const pending = queued.then(run);
+      queued = pending.catch(() => {});
+      return pending;
+    }
+  } } });
+  try {
+    fixture.account.fetchImpl = async (path) => {
+      calls.push(path);
+      if (path === "/api/auth/logout") await logoutGate;
+      return new Response(JSON.stringify({ success: true, data: {} }));
+    };
+    const logout = fixture.account.request("/api/auth/logout", { method: "POST" });
+    await new Promise(resolve => setImmediate(resolve));
+    const login = fixture.account.request("/api/auth/login", { method: "POST" });
+    await new Promise(resolve => setImmediate(resolve));
+    assert.deepEqual(calls, ["/api/auth/logout"]);
+    unlock();
+    await Promise.all([logout, login]);
+    await fixture.account.request("/api/auth/register", { method: "POST" });
+    assert.deepEqual(calls, ["/api/auth/logout", "/api/auth/login", "/api/auth/register"]);
+    assert.deepEqual(locks, Array(3).fill("thpt-auth-session-change"));
+  } finally {
+    unlock();
+    await queued;
+    fixture.cleanup();
+    if (navigatorDescriptor) Object.defineProperty(globalThis, "navigator", navigatorDescriptor);
+    else delete globalThis.navigator;
+  }
+});
+
 test("đổi tài khoản ở tab khác chặn ghi local của tab cũ và hủy auto-sync", async () => {
   const fixture = accountFixture();
   const { account, values } = fixture;
@@ -69,7 +109,7 @@ test("đổi tài khoản ở tab khác chặn ghi local của tab cũ và hủy
   } finally { fixture.cleanup(); }
 });
 
-test("request bản sao luôn kèm định danh tài khoản để backend kiểm tra cookie", async () => {
+test("request bản sao và đăng xuất luôn kèm định danh tài khoản để backend kiểm tra cookie", async () => {
   const fixture = accountFixture();
   try {
     const headers = [];
@@ -80,9 +120,63 @@ test("request bản sao luôn kèm định danh tài khoản để backend kiể
     };
     await fixture.account.request("/api/auth/data");
     await fixture.account.request("/api/auth/data", { method: "PUT", body: JSON.stringify({ data: {} }) });
+    await fixture.account.request("/api/auth/logout", { method: "POST" });
     assert.equal(headers[0]["X-Account-User-Id"], "A");
     assert.equal(headers[1]["X-Account-User-Id"], "A");
+    assert.equal(headers[2]["X-Account-User-Id"], "A");
   } finally { fixture.cleanup(); }
+});
+
+test("logout đang chờ của A không xóa dữ liệu B được đăng nhập từ tab khác", async () => {
+  const fixture = accountFixture();
+  const { account, values } = fixture;
+  try {
+    account.user = { id: "A" };
+    account.dataIsolation.beginUser("A");
+    account.dataIsolation.completeUser("A", { scores: [9] });
+    let finishLogout;
+    account.request = () => new Promise((resolve) => { finishLogout = resolve; });
+    const pendingLogout = account.logout();
+    account.dataIsolation.beginUser("B");
+    account.dataIsolation.completeUser("B", { scores: [7], wishes: ["B"] });
+    finishLogout({});
+    await pendingLogout;
+    assert.equal(values.get(AUTH_SESSION_KEY).userId, "B");
+    assert.deepEqual(values.get("scores"), [7]);
+    assert.deepEqual(values.get("wishes"), ["B"]);
+    assert.equal(values.get("theme"), "dark");
+    assert.equal(account.syncTimer, null);
+  } finally { fixture.cleanup(); }
+});
+
+test("phản hồi auth cũ không khôi phục A hoặc xóa dữ liệu B sau khi đổi tài khoản", async () => {
+  for (const expired of [false, true]) {
+    const fixture = accountFixture();
+    const { account, values } = fixture;
+    try {
+      account.user = { id: "A" };
+      account.dataIsolation.beginUser("A");
+      account.dataIsolation.completeUser("A", { scores: [9] });
+      let finishProfile;
+      let failProfile;
+      const requests = [];
+      account.request = (path) => {
+        requests.push(path);
+        if (path === "/api/auth/data") return Promise.resolve({ data: { scores: [9] } });
+        return new Promise((resolve, reject) => { finishProfile = resolve; failProfile = reject; });
+      };
+      const refreshing = account.refreshUser();
+      account.dataIsolation.beginUser("B");
+      account.dataIsolation.completeUser("B", { scores: [7] });
+      if (expired) failProfile(Object.assign(new Error("Expired"), { code: "AUTH_REQUIRED" }));
+      else finishProfile({ user: { id: "A" } });
+      assert.deepEqual(await refreshing, { reload: true });
+      assert.deepEqual(requests, ["/api/auth/me"]);
+      assert.equal(values.get(AUTH_SESSION_KEY).userId, "B");
+      assert.deepEqual(values.get("scores"), [7]);
+      assert.equal(values.get("theme"), "dark");
+    } finally { fixture.cleanup(); }
+  }
 });
 
 test("không ghi điểm từ UI cũ trong khi đang restore tài khoản mới", async () => {

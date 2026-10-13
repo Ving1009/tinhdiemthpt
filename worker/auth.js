@@ -198,6 +198,7 @@ async function login(request, environment) {
 async function logout(request, environment) {
   const database = requireDatabase(environment);
   const token = cookieValue(request.headers.get("Cookie"));
+  if (token && request.headers.get("X-Account-User-Id")) await requireUser(request, environment);
   if (token) await database.prepare("DELETE FROM sessions WHERE token_hash = ?").bind(await sha256(token)).run();
   return success(request, { loggedOut: true }, {
     headers: { "Cache-Control": "no-store", "Set-Cookie": sessionCookie("", 0) }

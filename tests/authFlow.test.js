@@ -139,6 +139,19 @@ test("request đang chờ của A không được restore hoặc backup sang B k
   assert.deepEqual((await response.json()).data.data, ownData);
 });
 
+test("tab cũ của A không được đăng xuất phiên mới của B", async () => {
+  const environment = { AUTH_DB: createFakeAuthDatabase() };
+  const a = await register(environment, "logout-user-a");
+  const b = await register(environment, "logout-user-b");
+  const request = authRequest("/api/auth/logout", { cookie: b.cookie, method: "POST" });
+  request.headers.set("X-Account-User-Id", a.payload.data.user.id);
+  await assert.rejects(() => handleAuthRequest(request, environment), { code: "AUTH_ACCOUNT_CHANGED", statusCode: 409 });
+  assert.equal((await handleAuthRequest(authRequest("/api/auth/me", { cookie: b.cookie }), environment)).status, 200);
+  request.headers.set("X-Account-User-Id", b.payload.data.user.id);
+  assert.equal((await handleAuthRequest(request, environment)).status, 200);
+  assert.equal((await handleAuthRequest(authRequest("/api/auth/me", { cookie: b.cookie }), environment)).status, 401);
+});
+
 test("auth flow cô lập dữ liệu theo user và không cho đọc ghi chéo", async () => {
   const environment = { AUTH_DB: createFakeAuthDatabase() };
   const accountA = await register(environment, "user-a");
@@ -157,11 +170,13 @@ test("auth flow cô lập dữ liệu theo user và không cho đọc ghi chéo"
   assert.deepEqual((await json(readBEmpty)).data.data, null);
 
   const dataB = { "thpt-calculator-form-v2": { score: 19 }, "thpt-practice-history-v1": [{ exam: "Toán" }] };
-  const writeB = await handleAuthRequest(authRequest("/api/auth/data", { method: "PUT", cookie: accountB.cookie, body: { data: dataB } }), environment);
+  const writeB = await handleAuthRequest(authRequest(`/api/auth/data?user_id=${accountA.payload.data.user.id}`, {
+    method: "PUT", cookie: accountB.cookie, body: { userId: accountA.payload.data.user.id, user_id: accountA.payload.data.user.id, data: dataB }
+  }), environment);
   assert.equal(writeB.status, 200);
 
   const readA = await handleAuthRequest(authRequest("/api/auth/data", { cookie: accountA.cookie }), environment);
-  const readBAfter = await handleAuthRequest(authRequest("/api/auth/data", { cookie: accountB.cookie }), environment);
+  const readBAfter = await handleAuthRequest(authRequest(`/api/auth/data?user_id=${accountA.payload.data.user.id}`, { cookie: accountB.cookie }), environment);
   assert.deepEqual((await json(readA)).data.data, dataA);
   assert.deepEqual((await json(readBAfter)).data.data, dataB);
 

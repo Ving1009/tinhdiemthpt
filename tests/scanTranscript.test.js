@@ -76,3 +76,21 @@ test("endpoint cho phép Live Server tại localhost gọi backend AI", async ()
     assert.equal(response.headers.get("access-control-allow-origin"), "http://127.0.0.1:5500");
   });
 });
+
+test("OCR giới hạn tổng multipart ngay trong luồng tải dù không có Content-Length", async () => {
+  await withServer(async () => assert.fail("Không được gửi ảnh quá lớn tới dịch vụ OCR"), async (baseUrl) => {
+    const form = new FormData();
+    const image = Buffer.alloc(6 * 1024 * 1024);
+    PNG.copy(image);
+    for (let index = 0; index < 2; index += 1) {
+      form.append("images[]", new Blob([image], { type: "image/png" }), `page-${index}.png`);
+    }
+    const multipart = new Request(`${baseUrl}/api/scan-transcript`, { method: "POST", body: form });
+    const response = await fetch(multipart.url, {
+      method: "POST", headers: { ...TURNSTILE_HEADERS, "Content-Type": multipart.headers.get("Content-Type") },
+      body: multipart.body, duplex: "half"
+    });
+    assert.equal(response.status, 413);
+    assert.equal((await response.json()).error.code, "REQUEST_TOO_LARGE");
+  });
+});

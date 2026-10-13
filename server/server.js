@@ -16,6 +16,7 @@ import { readFile } from "node:fs/promises";
 import { adsenseAdsTxt, isPublicHtmlPage, nonceHtmlScripts, prepareAdSenseHtml } from "../lib/adsense.js";
 import { parseAppRoute } from "../public/js/core/appRoutes.js";
 import { appRouteProfile, renderAppPage } from "../lib/appPages.js";
+import { isAllowedApiOrigin } from "../lib/requestOrigin.js";
 
 const serverRequire = createRequire(import.meta.url);
 const PUBLIC_DIR = fileURLToPath(new URL("../public/", import.meta.url));
@@ -66,6 +67,16 @@ export function createApp({ scanTranscript, dataStore = defaultDataStore, report
   const assistant = admissionsAssistant || createConfiguredAdmissionsAssistant(environment);
   app.disable("x-powered-by");
   app.use(applySecurityHeaders);
+  app.use("/api", (request, response, next) => {
+    const forwardedProtocol = String(request.headers["x-forwarded-proto"] || "").split(",", 1)[0].trim().toLowerCase();
+    const protocol = request.secure || forwardedProtocol === "https" ? "https" : "http";
+    if (!["GET", "HEAD", "OPTIONS"].includes(request.method)
+      && !isAllowedApiOrigin(`${protocol}://${request.get("host")}`, request.get("Origin") ?? null, request.get("Sec-Fetch-Site"))) {
+      response.status(403).json({ success: false, error: { code: "INVALID_ORIGIN", message: "Yêu cầu không đến từ trang web được phép." } });
+      return;
+    }
+    next();
+  });
   app.use(express.json({ limit: "100kb" }));
   app.get("/ads.txt", (_request, response) => {
     const text = adsenseAdsTxt(environment);

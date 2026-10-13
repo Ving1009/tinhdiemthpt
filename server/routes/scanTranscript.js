@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { Transform } from "node:stream";
 import rateLimit from "express-rate-limit";
 import multer from "multer";
 import { AppError } from "../errors.js";
@@ -21,6 +22,23 @@ function isRealImage(file) {
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { files: MAX_IMAGES, fileSize: MAX_IMAGE_BYTES, fields: 0, parts: MAX_IMAGES, fieldNameSize: 100 },
+  streamHandler(request, parser) {
+    let receivedBytes = 0;
+    const limited = new Transform({
+      transform(chunk, _encoding, callback) {
+        receivedBytes += chunk.length;
+        callback(receivedBytes > MAX_MULTIPART_BYTES
+          ? new AppError("Tổng dung lượng yêu cầu vượt quá giới hạn 11 MB.", { statusCode: 413, code: "REQUEST_TOO_LARGE" })
+          : null, chunk);
+      }
+    });
+    limited.on("error", (error) => parser.destroy(error));
+    parser.once("close", () => {
+      request.unpipe(limited);
+      limited.destroy();
+    });
+    request.pipe(limited).pipe(parser);
+  },
   fileFilter: (_request, file, callback) => {
     if (!ALLOWED_MIME_TYPES.has(file.mimetype)) {
       callback(new AppError("Chỉ hỗ trợ ảnh JPG, PNG hoặc WEBP.", { statusCode: 400, code: "UNSUPPORTED_IMAGE" }));

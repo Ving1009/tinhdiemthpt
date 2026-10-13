@@ -361,18 +361,18 @@ export class PracticeExamApp {
     this.renderResult(completed);
   }
 
-  renderReview(question, index, detail) {
+  renderReview(question, index, detail = {}) {
     const reviewText = `${question.context ? `<div class="practice-review-context">${escapeHTML(question.context)}</div>` : ""}<p class="practice-review-prompt">${escapeHTML(question.prompt)}</p>${renderQuestionFigures(question)}`;
     const solution = question.explanation ? `<details class="practice-question-solution" id="practice-solution-${index + 1}"><summary>Xem lời giải câu này</summary><div>${escapeHTML(question.explanation)}</div></details>` : "";
     if (question.type === "true-false") {
-      return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section)} · Câu ${question.number}</span>${detail.correctItems}/4 ý đúng · ${Number(detail.points).toFixed(2)}/${Number(detail.maximumPoints).toFixed(2)} điểm</h4>${reviewText}<div class="practice-review-options">${question.statements.map((statement, statementIndex) => {
+      return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section)} · Câu ${question.number}</span>${Number(detail.correctItems) || 0}/4 ý đúng · ${Number(detail.points || 0).toFixed(2)}/${Number(detail.maximumPoints || question.points).toFixed(2)} điểm</h4>${reviewText}<div class="practice-review-options">${question.statements.map((statement, statementIndex) => {
         const selected = detail.selected?.[statementIndex];
         const expected = question.answer[statementIndex];
         return `<p class="${selected === expected ? "is-answer" : "is-selected-wrong"}"><b>${escapeHTML(statement)}</b>Bạn chọn: ${answerLabel(selected)}<strong>Đáp án: ${answerLabel(expected)}</strong></p>`;
       }).join("")}</div>${solution}</article>`;
     }
     if (question.type === "short") {
-      return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section)} · Câu ${question.number}</span>${detail.correct ? "Chính xác" : "Chưa chính xác"} · ${Number(detail.points).toFixed(2)}/${Number(detail.maximumPoints).toFixed(2)} điểm</h4>${reviewText}<div class="practice-review-options"><p class="${detail.correct ? "is-answer" : "is-selected-wrong"}"><b>✎</b>Bạn nhập: ${escapeHTML(detail.selected || "Bỏ trống")}<strong>Đáp án: ${escapeHTML(question.answerText)}</strong></p></div>${solution}</article>`;
+      return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section)} · Câu ${question.number}</span>${detail.correct ? "Chính xác" : "Chưa chính xác"} · ${Number(detail.points || 0).toFixed(2)}/${Number(detail.maximumPoints || question.points).toFixed(2)} điểm</h4>${reviewText}<div class="practice-review-options"><p class="${detail.correct ? "is-answer" : "is-selected-wrong"}"><b>✎</b>Bạn nhập: ${escapeHTML(detail.selected || "Bỏ trống")}<strong>Đáp án: ${escapeHTML(question.answerText)}</strong></p></div>${solution}</article>`;
     }
     return `<article class="practice-review ${detail.correct ? "is-correct" : "is-wrong"}"><h4><span>${escapeHTML(question.section || "")} · Câu ${question.number || index + 1}</span>${detail.correct ? "Chính xác" : "Chưa chính xác"}</h4>${reviewText}<div class="practice-review-options">${question.options.map((option, optionIndex) => {
       const classes = [optionIndex === question.answer ? "is-answer" : "", optionIndex === detail.selected && optionIndex !== question.answer ? "is-selected-wrong" : ""].filter(Boolean).join(" ");
@@ -390,7 +390,7 @@ export class PracticeExamApp {
     }
     const result = attempt.result;
     const questions = this.questionsForAttempt(selectedExam, attempt);
-    const detailById = new Map(result.details.map((item) => [item.questionId, item]));
+    const detailById = new Map((Array.isArray(result.details) ? result.details : []).filter((item) => item && typeof item === "object").map((item) => [item.questionId, item]));
     const sourcePages = selectedExam.pageImages?.length ? `<details class="practice-solutions"><summary>Đề thi gốc (${selectedExam.pageImages.length} trang)</summary>${renderPageGallery(selectedExam.pageImages, `Đề ${selectedExam.subject}`, "practice-paper-pages")}</details>` : "";
     const answers = selectedExam.answerImages?.length ? `<details class="practice-solutions" open><summary>Đáp án trong tài liệu nguồn (${selectedExam.answerImages.length} trang)</summary>${renderPageGallery(selectedExam.answerImages, `Đáp án ${selectedExam.subject}`, "practice-solution-pages")}</details>` : "";
     const answerSource = selectedExam.answerSource ? `<p class="practice-answer-source">Nguồn đáp án tham khảo: <a href="${escapeHTML(selectedExam.answerSource)}" target="_blank" rel="noopener">mở trang đối chiếu</a>. Liên kết này không tự xác nhận đây là đáp án chính thức.</p>` : "";
@@ -400,8 +400,8 @@ export class PracticeExamApp {
     this.root.innerHTML = `
       <div class="practice-result">
         <header class="practice-result-hero ${scoreTone(result.score)}">
-          <div><p class="eyebrow">Kết quả · ${escapeHTML(selectedExam.subject)}</p><h3>${result.score.toFixed(2)}<span>/10</span></h3><p>${attempt.autoSubmitted ? "Đã tự động nộp bài vì hết giờ." : "Bài của bạn đã được chấm và lưu trên thiết bị."}</p></div>
-          <dl><div><dt>Câu đạt trọn điểm</dt><dd>${result.correctCount}/${result.totalQuestions}</dd></div><div><dt>Đã trả lời</dt><dd>${result.answeredCount}</dd></div><div><dt>Bỏ trống</dt><dd>${result.unansweredCount}</dd></div></dl>
+          <div><p class="eyebrow">Kết quả · ${escapeHTML(selectedExam.subject)}</p><h3>${Number(result.score || 0).toFixed(2)}<span>/10</span></h3><p>${attempt.autoSubmitted ? "Đã tự động nộp bài vì hết giờ." : "Bài của bạn đã được chấm và lưu trên thiết bị."}</p></div>
+          <dl><div><dt>Câu đạt trọn điểm</dt><dd>${Number(result.correctCount) || 0}/${Number(result.totalQuestions) || questions.length}</dd></div><div><dt>Đã trả lời</dt><dd>${Number(result.answeredCount) || 0}</dd></div><div><dt>Bỏ trống</dt><dd>${Number(result.unansweredCount) || 0}</dd></div></dl>
         </header>
         <p class="practice-exam-note">Nguồn: ${escapeHTML(sourceLabel(selectedExam))}. Kết quả dựa trên đáp án đã số hóa; nếu có điểm chưa khớp, hãy đối chiếu tài liệu và <a href="/lien-he/">gửi góp ý kèm môn, mã đề và câu cần kiểm tra</a>.</p>
         <div class="practice-result-actions"><button class="button button-primary" type="button" data-retry-exam="${escapeHTML(selectedExam.id)}">Làm lại đề</button><button class="button button-secondary" type="button" data-back-practice>Về danh sách môn</button></div>

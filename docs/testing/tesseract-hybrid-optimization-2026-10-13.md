@@ -8,7 +8,7 @@ Ba lượt đo sạch cuối của bộ ba ảnh học bạ giấy mất 21,3, 2
 
 Mẫu vnEdu đọc đúng 9/9 ô trung bình thuộc các môn đang hỗ trợ; mẫu biểu mẫu điện tử một hàng đọc đúng 3/3 ô. Các mẫu thiếu lớp, lớp ngoài THPT, kỳ học mâu thuẫn hoặc chỉ có điểm thành phần vẫn bị từ chối nhập vào bảng THPT.
 
-Luồng hybrid đã được phát hành ở commit `dfed9be` và kiểm thử bằng Brave trên tên miền thật. Kiểm thử production cũng phát hiện một rule cache chồng lấn; phần sửa cache đang được kiểm tra và phát hành bổ sung, với kết quả ghi ở cuối tài liệu.
+Luồng hybrid và phần sửa cache đã được phát hành, kiểm thử bằng Brave trên tên miền thật. Hoàn tất kiểm chứng production ngày 14/10/2026; các lượt tải lạnh/nóng đều đúng 81/81 và không gọi API. Chi tiết commit, triển khai và giới hạn được ghi ở cuối tài liệu.
 
 ## Môi trường và cách đối chiếu
 
@@ -171,7 +171,13 @@ Không xóa cache hoặc tự tải lại trang trong khi quét/nhập điểm. 
 
 Ở phát hành `dfed9be`, Brave production đọc đúng 81/81 trong 22,4 giây với cache lạnh và 21,4 giây ở lượt tiếp theo. Lượt nóng không gọi lại URL traineddata, xác nhận cache dữ liệu ngôn ngữ đã được dùng. Tuy nhiên header JS của Tesseract, worker và WASM.js cùng có `no-cache` và `immutable`: rule `/*.js` còn match các JS trong `/vendor/`, nên trình duyệt vẫn phải revalidate.
 
-Phần sửa thay rule JS chung bằng `/js/*` và `/formulas/*`, giữ `/vendor/*` cache một năm với `immutable`. URL tài nguyên nặng không đổi. Test hồi quy đọc các rule thực tế trong script build, xác nhận tài nguyên app cần revalidate và mỗi tài nguyên vendor chỉ nhận một rule cache. Cloudflare có thể gộp các giá trị header ở những rule cùng match; xem [tài liệu Static Assets headers](https://developers.cloudflare.com/workers/static-assets/headers/). Kết quả đo sau phần sửa được bổ sung trong mục phát hành.
+Phần sửa thay rule JS chung bằng `/js/*` và `/formulas/*`, giữ `/vendor/*` cache một năm với `immutable`. URL tài nguyên nặng không đổi. Test hồi quy đọc các rule thực tế trong script build, xác nhận tài nguyên app cần revalidate và mỗi tài nguyên vendor chỉ nhận một rule cache. Cloudflare có thể gộp các giá trị header ở những rule cùng match; xem [tài liệu Static Assets headers](https://developers.cloudflare.com/workers/static-assets/headers/).
+
+Sau deploy `73c4ceb`, tất cả response vendor trong phép thử chỉ còn `public, max-age=31536000, immutable`. Lượt lạnh mất 22,7 giây; lượt nóng ngay sau đó mất 21,1 giây, vẫn đúng 81/81 và không gọi OCR API. Lượt nóng không gọi URL `vie`/`eng` traineddata; CDP ghi nhận danh mục môn lấy từ disk cache. Thời gian khởi tạo worker giảm từ 1,07 xuống 0,28 giây, core từ 0,22 xuống 0,05 giây, ngôn ngữ từ 0,59 xuống 0,03 giây. Không coi toàn bộ chênh lệch là thời gian tải mạng.
+
+Một lượt lạnh trước đó đạt 22,3 giây, 81/81; phiên Brave kiểm thử bị đóng trước lượt nóng nên không ghép hai lần mở trình duyệt thành phép đo lạnh/nóng. Phép đo 22,7 → 21,1 dùng cùng phiên Brave mới. `request.sizes()` trả số byte âm với một số response lấy từ cache, nên không dùng số đó để công bố lượng dữ liệu tải hoặc RAM.
+
+Lượt nóng lặp lại mất 20,7 giây, vẫn đúng 81/81, 0 request OCR API. CDP có sự kiện `Network.requestServedFromCache` cho module Tesseract và `fromDiskCache` cho danh mục môn, xác nhận hai tài nguyên này được đọc từ cache trình duyệt. Các request của dedicated worker không có đầy đủ sự kiện ở CDP của trang; báo cáo không gán trạng thái disk cache cho từng core/worker chỉ từ số byte âm.
 
 ## File thay đổi
 
@@ -189,7 +195,7 @@ Phần sửa thay rule JS chung bằng `/js/*` và `/formulas/*`, giữ `/vendor
 
 Không sửa dữ liệu tuyển sinh, công thức, điểm ưu tiên, model/khóa AI, tài khoản, phòng thi, PDF hoặc cấu hình AdSense. Những phần đọc/ghi điểm đã có chỉ được gia cố tại ranh giới xác nhận kết quả OCR.
 
-## Kiểm thử và những phần còn chờ
+## Kiểm thử và giới hạn xác minh
 
 Các test tập trung của engine, bảng, bộ xử lý ảnh, đối chiếu và giao diện đã đạt. Các ca gồm tạo một worker, đọc tuần tự, hủy trước/trong khi khởi tạo, worker đến muộn, hủy khi OCR/giải mã, đóng bitmap hoàn thành muộn, timeout, dữ liệu riêng tư, cache, cắt đúng pixel, điểm mâu thuẫn, dấu thập phân, header mất, noise chữ ký, chọn ngôn ngữ/định hướng và giữ ô trống. Bộ toàn dự án đạt 556/556 sau khi thêm regression test cache, không hủy hoặc bỏ qua test.
 
@@ -208,11 +214,13 @@ Các test tập trung của engine, bảng, bộ xử lý ảnh, đối chiếu 
 | Quét lại / consent qua UI | Đạt: quét local không cần checkbox; mở hộp thoại giữ checkbox chưa chọn, nút gửi bị khóa; hủy/nhập tay không gọi API |
 | Timeout/quota, xung đột, bổ sung ô thiếu, giữ sửa/xóa dòng | Test hồi quy đạt; lỗi dịch vụ được mô phỏng, không cố làm hết quota thực tế |
 | Production, Turnstile/API thật | Đạt trên `dfed9be`: phải đồng ý trước khi gửi; 1 request HTTP 200, 81 ô trùng khớp, không mâu thuẫn |
-| Production local, cache lạnh/nóng | Đạt 81/81 và 0 API ở cả hai lượt; phát hiện header cache chồng lấn và bổ sung sửa/test |
+| Production local, cache lạnh/nóng | Đạt sau sửa cache: 22,7 / 21,1 giây, 81/81 đúng và 0 API ở cả hai lượt; vendor không còn header chồng lấn |
 
 Không xóa hoặc bỏ qua test để đạt kết quả xanh. Các cảnh báo thiếu nguồn tuyển sinh/công thức của bộ dữ liệu hiện có được ghi riêng khi tổng hợp kiểm thử; chúng không phải lỗi mới do OCR.
 
 Nhật ký kiểm tra giao diện riêng: `.local/hybrid-ui-qa.log`, `.local/hybrid-validation-qa.log`. Lượt quét lại trên bản cuối, sau guard header và hủy native worker, vẫn đúng 81/81, 0 request API, độ phủ 81/81 có căn cứ, mất 21,0 giây (`.local/hybrid-final-paper-2.log`). Các phép thử kích thước màn hình trên Brave không phải kiểm thử hiệu suất điện thoại thật.
+
+Đường chạy OCR không phụ thuộc tài khoản: `main.js` khởi tạo công cụ quét độc lập với `account.init()`; scanner chỉ khóa nút theo ảnh, trạng thái quét và consent gửi ảnh. Rà soát `saveForm` và danh sách key trong `accountDataIsolation` không thấy ảnh, OCR thô hoặc preview được đưa vào bản sao tài khoản. Test auth/session của dự án đã đạt trong bộ toàn dự án, nhưng chưa đăng nhập tài khoản thật để quét trên production. Hiệu suất điện thoại thật và RAM tổng vẫn chưa được đo.
 
 ## Rủi ro và cách khôi phục
 
@@ -234,8 +242,12 @@ Chỉ phát hành sau khi các kiểm thử quan trọng đạt và không còn 
 - Local production: 81/81 ô đúng, 0 sai/thiếu, 1 worker, 0 request OCR API ở cả lượt lạnh và nóng; độ đầy đủ có căn cứ là 81/81.
 - Lượt lạnh 22,4 giây: module 0,10 giây, worker 1,00 giây, core 0,22 giây, ngôn ngữ 0,51 giây. Lượt nóng 21,4 giây: worker 0,46 giây, core 0,15 giây, ngôn ngữ 0,03 giây. Các mốc core/ngôn ngữ gồm cả tải/cache và khởi tạo; không tách được riêng thời gian truyền mạng đáng tin cậy.
 - Consent → Turnstile → API thật: 1 request, HTTP 200, Groq 7,84 giây; tổng 14,4 giây, 81 ô trùng khớp và 0 mâu thuẫn. Không mock provider hoặc Turnstile trong phép thử này.
-- Phần sửa cache và phép đo production sau sửa: đang kiểm tra và phát hành bổ sung.
+- Commit sửa cache `73c4ceb`: đã push GitHub và deploy Cloudflare. Worker chính của phiên được kiểm chứng `187594cb-0bc4-406d-8a80-5f08be79201f`, Worker OCR `3c2d8836-8216-4724-8cf5-0df9692631d2`.
+- Production sau sửa cache: lượt lạnh 22,7 giây và lượt nóng 21,1 giây, đúng 81/81, không sai/thiếu, 1 worker, 0 request OCR API. Header vendor đã hết `no-cache`; không đổi URL binary/ngôn ngữ để đạt kết quả này.
+- Báo cáo cuối được commit sau kiểm chứng. Các deploy chỉ cập nhật tài liệu sau đó có cùng nội dung frontend/backend với phiên `73c4ceb` đã thử; không dùng số liệu cũ để khẳng định một thuật toán mới khác đã được kiểm chứng.
 
 Nhật ký riêng cho ba phép thử production đầu: `.local/hybrid-production-cold.log`, `.local/hybrid-production-warm.log`, `.local/hybrid-production-online.log`. Nhật ký chỉ chứa số liệu tổng hợp và metadata tài nguyên, không chứa ảnh, tên học sinh hoặc OCR thô.
+
+Nhật ký sau sửa cache: `.local/hybrid-cache-production-cold.log`, `.local/hybrid-cache-production-cold-2.log`, `.local/hybrid-cache-production-warm-2.log`, `.local/hybrid-cache-production-warm-3.log`; kiểm tra phát hành trong `.local/hybrid-cache-cf-deploy.log`. Năm lệnh kiểm tra cuối ghi ở `.local/hybrid-release-check.log`, `hybrid-release-tests.log`, `hybrid-release-verify-data.log`, `hybrid-release-audit-formulas.log`, `hybrid-release-cf-dry-run.log`.
 
 Các mã commit và thông tin triển khai của báo cáo API trước đó là phiên bản cũ; không dùng chúng để xác nhận luồng hybrid đã lên production.

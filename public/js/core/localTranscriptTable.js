@@ -158,7 +158,7 @@ function inlineCells(row, headers, words, height) {
     const end = labels[index + 1]?.rectangle.left - height * 0.2 || left + gap * 0.65;
     const cellWords = words.filter((word) => word.x > left && word.x < end && Math.abs(word.y - row.y) <= height * 1.4);
     const value = scoreOf(cellWords);
-    cells[header.field] = { value, confidence: cellWords.length === 1 ? Number(cellWords[0].confidence ?? 0) : 0,
+    cells[header.field] = { value, observedScore: cellWords.some(numericWord), confidence: cellWords.length === 1 ? Number(cellWords[0].confidence ?? 0) : 0,
       rectangle: { left: Math.floor(left), top: Math.max(0, Math.floor(row.y - height * 1.4)), width: Math.max(1, Math.ceil(end - left)), height: Math.ceil(height * 2.8) } };
     columns.push({ field: header.field, x: (left + end) / 2, x0: left, x1: end, header: header.rectangle });
   }
@@ -217,7 +217,9 @@ export function analyzeLocalTranscriptTable(page, catalog) {
     const nearby = headers.filter((header) => Math.abs(header.x - cluster.x) <= Math.max(height * 1.5, header.rectangle.width / 2));
     const fields = [...new Set(nearby.map((header) => header.field === "average" ? averageField : header.field))];
     const field = fields.length === 1 && SCORE_FIELDS.includes(fields[0]) ? fields[0] : null;
-    return { field, x: cluster.x, x0: index ? (all[index - 1].x + cluster.x) / 2 : Math.max(subjectRight, cluster.x - Math.max(height * 2, (all[1]?.x - cluster.x || height * 4) / 2)),
+    return { field, hasNumericWords: cluster.words.length > 0,
+      isComponent: nearby.length > 0 && nearby.every(header => header.field === "component"),
+      x: cluster.x, x0: index ? (all[index - 1].x + cluster.x) / 2 : Math.max(subjectRight, cluster.x - Math.max(height * 2, (all[1]?.x - cluster.x || height * 4) / 2)),
       x1: index + 1 < all.length ? (cluster.x + all[index + 1].x) / 2 : cluster.x + Math.max(height * 2, (cluster.x - all[index - 1]?.x || height * 4) / 2),
       header: nearby.find((header) => header.field === field || header.field === "average")?.rectangle || null };
   });
@@ -240,7 +242,7 @@ export function analyzeLocalTranscriptTable(page, catalog) {
       const numericWords = cellWords.filter(numericWord);
       const cellY = numericWords.length === 1 ? numericWords[0].y : row.y;
       const value = scoreOf(cellWords);
-      cells[column.field] = { value, confidence: cellWords.length === 1 ? Number(cellWords[0].confidence ?? 0) : 0,
+      cells[column.field] = { value, observedScore: numericWords.length > 0, confidence: cellWords.length === 1 ? Number(cellWords[0].confidence ?? 0) : 0,
         rectangle: { left: Math.max(0, Math.floor(column.x - halfWidth)), top: Math.max(0, Math.floor(cellY - halfHeight)), width: Math.ceil(halfWidth * 2), height: Math.ceil(halfHeight * 2) } };
     }
     const inline = inlineCells(row, allHeaders, words, height);
@@ -266,11 +268,48 @@ export function analyzeLocalTranscriptTable(page, catalog) {
       return [{ left: Math.floor(left), top: Math.max(0, Math.floor(row.y - height * 1.4)),
         width: Math.max(1, Math.ceil(right - left)), height: Math.ceil(height * 2.8) }];
     }).slice(0, 16) : [];
+  const unknownScorePositions = labelRegions.flatMap(region => words.filter(word => numericWord(word)
+    && word.y >= region.top && word.y <= region.top + region.height
+    && columns.some(column => column.field && word.x >= column.x0 && word.x <= column.x1)));
+  const mappedColumns = columns.filter(column => column.field);
+  // Numeric marks in the remarks/signature area are not missing score columns.
+  // With only one mapped column, there is too little geometry to exclude them safely.
+  const scoreGap = median(mappedColumns.slice(1).map((column, index) => column.x - mappedColumns[index].x));
+  const adjacentMargin = Math.max(scoreGap * 1.25, height * 3,
+    ...mappedColumns.map(column => column.header?.width || 0));
+  const scoreLeft = Math.min(...mappedColumns.map(column => column.x)) - adjacentMargin;
+  const scoreRight = Math.max(...mappedColumns.map(column => column.x)) + adjacentMargin;
+  const unresolvedColumns = columns.filter(column => !column.field && !column.isComponent && ((column.hasNumericWords
+    && (mappedColumns.length < 2 || (column.x >= scoreLeft && column.x <= scoreRight)))
+    || headers.some(header => header.field !== "component"
+      && Math.abs(header.x - column.x) <= Math.max(height * 1.5, header.rectangle.width / 2)))).length;
   return { grade, rows: detectedRows, columns, warnings,
+    unresolvedColumns, unknownScoreCells: unknownScorePositions.length,
     labelRegions,
     cells: detectedRows.flatMap((row) => Object.entries(row.cells).map(([field, cell]) => ({ subject: row.subject, grade, field, ...cell }))),
     headerRegion: { left: Math.max(0, Math.floor(headerLeft)), top: Math.max(0, Math.floor(headerTop)),
       width: Math.max(1, Math.ceil(headerRight - headerLeft)), height: Math.max(1, Math.ceil(headerBottom - headerTop)) } };
+}
+
+export function localTranscriptTableEvidence(table) {
+  const observed = (table.rows || []).flatMap(row => Object.entries(row.cells).filter(([, cell]) => cell.observedScore || cell.value !== null)
+    .map(([field, cell]) => ({ key: `${row.subject}|${table.grade}|${field}`, cell })));
+  const expectedCellKeys = [...new Set(observed.map(item => item.key))];
+  const unresolvedSubjects = table.labelRegions?.length || 0;
+  const geometryReliable = Boolean(table.grade && table.rows?.length && table.columns?.some(column => column.field)
+    && !table.unresolvedColumns);
+  return {
+    expectedCells: geometryReliable ? expectedCellKeys.length + (table.unknownScoreCells || 0) : null,
+    expectedCellsReliable: geometryReliable,
+    expectedCellKeys: geometryReliable ? expectedCellKeys : [],
+    visibleScoreCells: observed.length + (table.unknownScoreCells || 0),
+    recognizedCells: observed.filter(({ cell }) => Number.isFinite(cell.value) && cell.value >= 0 && cell.value <= 10).length,
+    geometryReliable,
+    unresolvedSubjects,
+    unresolvedColumns: table.unresolvedColumns || 0,
+    conflicts: observed.filter(({ cell }) => cell.conflict).length,
+    invalidScores: observed.filter(({ cell }) => cell.value === null && !cell.conflict).length
+  };
 }
 
 export function localTranscriptTablePayload(table) {

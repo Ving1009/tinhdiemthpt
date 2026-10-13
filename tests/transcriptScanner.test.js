@@ -78,14 +78,62 @@ test("cấu hình Turnstile cũ được làm mới và request quét được g
   const result = await requestProtectedTranscriptScan([], { gate, requestImpl });
 
   assert.equal(result.success, true);
-  assert.deepEqual(tokenCalls, [
-    { action: "scan_transcript", options: undefined },
-    { action: "scan_transcript", options: { forceConfiguration: true } }
+  assert.deepEqual(tokenCalls.map(({ action, options }) => ({ action, force: options?.forceConfiguration === true })), [
+    { action: "scan_transcript", force: false },
+    { action: "scan_transcript", force: true }
   ]);
+  assert.ok(tokenCalls.every(call => call.options.signal instanceof AbortSignal));
   assert.deepEqual(requestCalls, [
     { turnstileToken: "" },
     { turnstileToken: "fresh-token" }
   ]);
+});
+
+test("xác minh quá hạn không gửi ảnh khi token đến muộn", async () => {
+  let resolveToken, requests = 0, tokenSignal;
+  const token = new Promise(resolve => { resolveToken = resolve; });
+  await assert.rejects(() => requestProtectedTranscriptScan([], {
+    securityTimeoutMs: 5,
+    gate: { getToken: (_action, options) => { tokenSignal = options.signal; return token; } },
+    requestImpl: async () => { requests++; }
+  }), error => error.code === "TURNSTILE_TIMEOUT");
+  assert.equal(tokenSignal.aborted, true);
+  resolveToken("late-token");
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(requests, 0);
+});
+
+test("hủy xác minh không tải ảnh lên và hủy cả bước Turnstile", async () => {
+  const controller = new AbortController();
+  let tokenSignal, requests = 0;
+  const request = requestProtectedTranscriptScan([], {
+    signal: controller.signal,
+    gate: { getToken: (_action, options) => { tokenSignal = options.signal; return new Promise(() => {}); } },
+    requestImpl: async () => { requests++; }
+  });
+  controller.abort();
+  await assert.rejects(request, error => error.code === "TRANSCRIPT_ABORTED");
+  assert.equal(tokenSignal.aborted, true);
+  assert.equal(requests, 0);
+});
+
+test("body OCR không trả về cũng có timeout và không treo spinner", async () => {
+  await assert.rejects(() => requestRemoteTranscriptScan([], {
+    apiUrl: "https://example.com/api/scan-transcript", timeoutMs: 5,
+    fetchImpl: async () => ({ ok: true, json: () => new Promise(() => {}) })
+  }), error => error.code === "REMOTE_SCAN_TIMEOUT");
+});
+
+test("hủy request OCR đang chờ trả về lỗi hủy riêng", async () => {
+  const controller = new AbortController();
+  let requestSignal;
+  const request = requestRemoteTranscriptScan([], {
+    apiUrl: "https://example.com/api/scan-transcript", signal: controller.signal,
+    fetchImpl: (_url, options) => { requestSignal = options.signal; return new Promise(() => {}); }
+  });
+  controller.abort();
+  await assert.rejects(request, error => error.code === "TRANSCRIPT_ABORTED");
+  assert.equal(requestSignal.aborted, true);
 });
 
 test("dùng Tesseract khi provider hết quota, timeout hoặc trả lỗi 5xx", () => {

@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css?v=20261013-1" />
     <link rel="stylesheet" href="/css/responsive.css?v=20260927-1" />
-    <link rel="stylesheet" href="/css/refinement.css?v=20261004-1" />
+    <link rel="stylesheet" href="/css/refinement.css?v=20261013-1" />
     <link rel="stylesheet" href="/css/practice-exam.css?v=20260928-1" />
     <link rel="stylesheet" href="/css/assistant.css?v=20260929-2" />
     <link rel="stylesheet" href="/css/redesign.css?v=20261011-4" />
@@ -190,7 +190,7 @@
             <nav class="tool-switch" aria-label="Công cụ tính điểm"><a href="/tinh-diem-thpt/">Điểm thi THPT</a><a href="/tinh-diem-hoc-ba/">Điểm học bạ</a></nav>
           </div>
           <p class="tool-reading-note">Theo quy chế tuyển sinh 2026, phương thức xét học bạ sử dụng điểm trung bình cả năm lớp 10, 11 và 12. Các chế độ kỳ học khác trong công cụ giúp mô phỏng và so sánh, không xác nhận đủ điều kiện xét tuyển. Quy định 2027 đang cập nhật. <a href="/cam-nang/xet-tuyen-hoc-ba/">Xem hướng dẫn và căn cứ áp dụng</a>.</p>
-          <details class="tool-reading-note"><summary>Nhập tay hoặc quét ảnh học bạ như thế nào?</summary><p>Chọn đúng lớp và cột điểm trung bình trong bảng gốc. Nếu quét ảnh, hãy che họ tên, ngày sinh, CCCD và thông tin không cần thiết. Ảnh chỉ được gửi sau khi bạn đồng ý và bấm quét; dịch vụ dự phòng có thể được thử nếu lần trước lỗi. Quét local xử lý tại thiết bị khi bạn chọn, nhưng ảnh có thể đã được gửi trong lần thử từ xa trước đó.</p><p>Nhận diện có thể thiếu môn hoặc nhầm chữ số. Đối chiếu từng ô trong bản xem trước, nhập tay ô còn thiếu rồi mới xác nhận điền điểm. Không dùng điểm kiểm tra thành phần thay cho trung bình môn. <a href="/privacy">Xem cách xử lý ảnh và dữ liệu</a>.</p></details>
+          <details class="tool-reading-note"><summary>Nhập tay hoặc quét ảnh học bạ như thế nào?</summary><p>Chọn đúng lớp và cột điểm trung bình trong bảng gốc. Ảnh được đọc trên thiết bị trước. Nếu cần quét bổ sung trực tuyến, bạn sẽ được hỏi và cần đồng ý trước khi gửi ảnh. Hãy che họ tên, ngày sinh, CCCD và thông tin không cần thiết.</p><p>Nhận diện có thể thiếu môn hoặc nhầm chữ số. Đối chiếu từng ô trong bản xem trước, nhập tay ô còn thiếu rồi mới xác nhận điền điểm. Không dùng điểm kiểm tra thành phần thay cho trung bình môn. <a href="/privacy">Xem cách xử lý ảnh và dữ liệu</a>.</p></details>
           <div class="calculator-layout academic-layout">
             <form id="academic-form" novalidate>
               <div class="form-card">
@@ -200,15 +200,21 @@
                 <div class="transcript-dropzone" id="transcript-dropzone" role="button" tabindex="0" aria-describedby="transcript-scan-status">
                   <span class="transcript-camera" aria-hidden="true">⌾</span>
                   <strong>Tải ảnh học bạ</strong>
-                  <p>Chọn tối đa 6 ảnh JPG, PNG hoặc WEBP từ thiết bị, mỗi ảnh tối đa 7 MB. Ảnh được tối ưu tự động trước khi gửi.</p>
+                  <p>Chọn tối đa 6 ảnh JPG, PNG hoặc WEBP, mỗi ảnh tối đa 7 MB. Ảnh được đọc ngay trên thiết bị.</p>
                   <button class="button button-secondary" id="transcript-choose-images" type="button">Chọn ảnh từ thiết bị</button>
                 </div>
                 <ul class="transcript-file-list" id="transcript-file-list" aria-label="Ảnh học bạ đã chọn"></ul>
-                <label class="transcript-consent" for="transcript-consent"><input id="transcript-consent" type="checkbox" /> <span>Tôi đồng ý gửi ảnh học bạ đã tối ưu tới dịch vụ nhận diện điểm và hiểu rằng website chỉ xử lý ảnh tạm thời, không lưu ảnh vào ổ đĩa hoặc cơ sở dữ liệu.</span></label>
+                <p class="transcript-privacy">Lần đầu cần tải bộ nhận diện khoảng 15 MB. Lượt quét trên thiết bị dùng bộ xử lý và bộ nhớ của máy hoặc điện thoại.</p>
+                <details class="transcript-hints"><summary>Ảnh bảng điểm điện tử thiếu lớp hoặc kỳ học?</summary><p>Chọn theo bảng điểm gốc. Các ảnh khác lớp hoặc khác kỳ cần quét riêng nếu thông tin này không có trong ảnh.</p><div class="form-grid form-grid-two">
+                  <div class="field"><label for="transcript-local-grade">Lớp trong ảnh</label><select id="transcript-local-grade"><option value="">Đọc từ ảnh</option><option value="10">Lớp 10</option><option value="11">Lớp 11</option><option value="12">Lớp 12</option></select></div>
+                  <div class="field"><label for="transcript-local-period">Kỳ của cột điểm trung bình</label><select id="transcript-local-period"><option value="">Đọc từ ảnh</option><option value="semester1">Học kỳ 1</option><option value="semester2">Học kỳ 2</option><option value="year">Cả năm</option></select></div>
+                </div></details>
                 <div class="transcript-scan-actions">
                   <button class="button button-primary" id="transcript-scan" type="button" disabled>Quét học bạ <span aria-hidden="true">→</span></button>
                   <button class="button button-text" id="transcript-clear-images" type="button" disabled>Xóa ảnh</button>
+                  <button class="button button-light" id="transcript-cancel" type="button" hidden>Hủy quét</button>
                 </div>
+                <div class="transcript-scan-actions is-hidden" id="transcript-supplement-actions"><button class="button button-secondary" id="transcript-online" type="button">Dùng AI để quét bổ sung</button><button class="button button-text" type="button" id="transcript-enter-manually">Tự nhập điểm</button></div>
                 <p class="transcript-status" id="transcript-scan-status" role="status">Chọn ảnh học bạ để bắt đầu quét.</p>
                 <p class="transcript-privacy">Ảnh chỉ được dùng cho lượt nhận diện hiện tại. <button type="button" data-privacy-policy>Chính sách quyền riêng tư</button></p>
               </div>
@@ -504,20 +510,18 @@
       <div class="modal-dialog" role="document"><button class="modal-close" type="button" data-close-modal aria-label="Đóng cửa sổ">×</button><div id="modal-body"></div></div>
     </div>
     <dialog class="fallback-dialog" id="transcript-fallback-dialog" aria-labelledby="transcript-fallback-title">
-      <p class="modal-kicker">Nhận diện dự phòng</p>
-      <h2 id="transcript-fallback-title">Quét trực tiếp trên thiết bị?</h2>
-      <p>Dịch vụ nhận diện đang gián đoạn. Bạn có thể tải Tesseract.js và dữ liệu ngôn ngữ khoảng 15 MB để quét ảnh ngay trên thiết bị. Cách này dùng bộ xử lý và bộ nhớ của thiết bị.</p>
-      <p>Với ảnh bảng điểm điện tử thiếu lớp hoặc kỳ học, hãy chọn thông tin bên dưới theo bảng điểm gốc. Nếu các ảnh thuộc nhiều lớp hoặc kỳ khác nhau, hãy quét riêng từng nhóm.</p>
-      <div class="form-grid form-grid-two">
-        <div class="field"><label for="transcript-local-grade">Lớp trong ảnh</label><select id="transcript-local-grade"><option value="">Đọc từ ảnh</option><option value="10">Lớp 10</option><option value="11">Lớp 11</option><option value="12">Lớp 12</option></select></div>
-        <div class="field"><label for="transcript-local-period">Kỳ của cột điểm trung bình</label><select id="transcript-local-period"><option value="">Đọc từ ảnh</option><option value="semester1">Học kỳ 1</option><option value="semester2">Học kỳ 2</option><option value="year">Cả năm</option></select></div>
-      </div>
+      <p class="modal-kicker">Quét bổ sung</p>
+      <h2 id="transcript-fallback-title">Bạn muốn dùng AI để đọc bổ sung?</h2>
+      <p>Bạn có thể gửi ảnh để đọc thêm các ô còn thiếu, hoặc sửa điểm trong bảng xem trước. Kết quả từ AI cũng cần đối chiếu với ảnh gốc.</p>
+      <label class="transcript-consent" for="transcript-consent"><input id="transcript-consent" type="checkbox" /> <span>Tôi đồng ý gửi ảnh đã tối ưu tới dịch vụ nhận diện để quét bổ sung. Website xử lý ảnh tạm thời, không lưu ảnh vào ổ đĩa hoặc cơ sở dữ liệu.</span></label>
+      <p>Hãy che họ tên, ngày sinh, CCCD và thông tin không cần thiết trước khi chọn ảnh.</p>
       <div class="fallback-dialog-actions">
-        <button class="button button-primary" id="transcript-fallback-continue" type="button">Quét trên thiết bị (tải khoảng 15 MB)</button>
-        <button class="button button-light" id="transcript-fallback-manual" type="button">Tự nhập điểm bằng tay</button>
+        <button class="button button-primary" id="transcript-fallback-continue" type="button" disabled>Gửi ảnh và quét bổ sung</button>
+        <button class="button button-secondary" id="transcript-fallback-retry" type="button">Quét lại trên thiết bị</button>
+        <button class="button button-light" id="transcript-fallback-manual" type="button">Tự nhập điểm</button>
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="/js/main.js?v=20261013-2"></script>
+  <script type="module" src="/js/main.js?v=20261013-4"></script>
   </body>
 </html>

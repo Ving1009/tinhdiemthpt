@@ -462,6 +462,10 @@ textarea:focus-visible { outline:3px solid color-mix(in srgb,var(--primary) 38%,
 }
 
 #academic-form .form-card { overflow: hidden; }
+.transcript-scan-actions { flex-wrap: wrap; }
+.transcript-hints { margin-top: 12px; font-size: 12px; color: var(--muted); }
+.transcript-hints summary { cursor: pointer; color: var(--text); }
+.transcript-table select[data-transcript-choice] { width: 100%; min-width: 0; margin-top: 5px; font-size: 11px; }
 .academic-table-wrap,
 .transcript-table-wrap {
   overflow-x: auto;

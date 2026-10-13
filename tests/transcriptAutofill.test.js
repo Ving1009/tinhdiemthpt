@@ -33,6 +33,13 @@ test("nhiều ngoại ngữ được cảnh báo rõ", () => {
   assert.match(plan.warnings.join(" "), /nhiều môn ngoại ngữ/i);
 });
 
+test("ngoại ngữ chưa ghi rõ không tự gán vào môn đã chọn trong công cụ", () => {
+  const plan = buildTranscriptAutofillPlan({ scores: [{ subject: "Ngoại ngữ", grade: 12, year: 8 }] }, { methodId: "grade-12" });
+  assert.equal(plan.assignments.length, 0);
+  assert.equal(plan.language, "");
+  assert.match(plan.warnings.join(" "), /Chọn môn theo ảnh gốc/);
+});
+
 test("Giáo dục quốc phòng và an ninh được điền đúng ô học bạ", () => {
   const plan = buildTranscriptAutofillPlan({ scores: [{
     subject: "Giáo dục quốc phòng và an ninh", grade: 12, semester1: 8.8, semester2: 9.2, year: 9.1, confidence: 0.96

@@ -59,20 +59,22 @@ function challengeCopy(action) {
     return { title: "Xác minh trước khi tạo tài khoản", description: "Cloudflare Turnstile xác minh để ngăn tài khoản rác và bảo vệ chức năng đăng ký." };
   }
   return action === "scan_transcript"
-    ? { title: "Xác minh trước khi quét", description: "Cloudflare Turnstile xác minh để bảo vệ lượt quét ảnh và khóa truy cập dịch vụ AI." }
+    ? { title: "Xác minh trước khi gửi ảnh", description: "Hoàn tất bước xác minh để gửi ảnh quét bổ sung. Điểm đã đọc trên thiết bị vẫn được giữ lại." }
     : { title: "Xác minh trước khi gửi", description: "Cloudflare Turnstile xác minh để ngăn báo cáo rác do máy tự động gửi." };
 }
 
 export class TurnstileGate {
-  async getToken(action, { forceConfiguration = false } = {}) {
-    const configuration = await loadConfiguration(globalThis.fetch, { force: forceConfiguration });
+  async getToken(action, { forceConfiguration = false, signal } = {}) {
+    const configuration = await awaitVerification(loadConfiguration(globalThis.fetch, { force: forceConfiguration }), signal);
     if (!configuration.enabled) return "";
     if (!configuration.siteKey) throw new TurnstileClientError("Cloudflare Turnstile chưa có khóa xác minh cho trang web.", "TURNSTILE_MISCONFIGURED");
-    const api = await loadScript();
-    return this.openChallenge(api, configuration.siteKey, action);
+    const api = await awaitVerification(loadScript(), signal);
+    if (signal?.aborted) throw verificationCancelled();
+    return this.openChallenge(api, configuration.siteKey, action, signal);
   }
 
-  openChallenge(api, siteKey, action) {
+  openChallenge(api, siteKey, action, signal) {
+    if (signal?.aborted) return Promise.reject(verificationCancelled());
     const copy = challengeCopy(action);
     return new Promise((resolve, reject) => {
       const returnFocus = document.activeElement;
@@ -89,6 +91,7 @@ export class TurnstileGate {
       const finish = (error, token) => {
         if (settled) return;
         settled = true;
+        signal?.removeEventListener("abort", cancel);
         if (widgetId !== undefined) api.remove(widgetId);
         overlay.remove();
         document.body.classList.remove("turnstile-open");
@@ -97,6 +100,7 @@ export class TurnstileGate {
         else resolve(token);
       };
       const cancel = () => finish(new TurnstileClientError("Bạn đã đóng bước xác minh bảo mật.", "TURNSTILE_CANCELLED"));
+      signal?.addEventListener("abort", cancel, { once: true });
       closeButton.addEventListener("click", cancel);
       overlay.querySelector(".turnstile-backdrop").addEventListener("click", cancel);
       overlay.addEventListener("keydown", (event) => {
@@ -124,6 +128,19 @@ export class TurnstileGate {
       }
     });
   }
+}
+
+function verificationCancelled() { return new TurnstileClientError("Bạn đã dừng bước xác minh bảo mật.", "TURNSTILE_CANCELLED"); }
+async function awaitVerification(promise, signal) {
+  if (!signal) return promise;
+  if (signal.aborted) throw verificationCancelled();
+  let abortHandler;
+  try {
+    return await Promise.race([promise, new Promise((_, reject) => {
+      abortHandler = () => reject(verificationCancelled());
+      signal.addEventListener("abort", abortHandler, { once: true });
+    })]);
+  } finally { signal.removeEventListener("abort", abortHandler); }
 }
 
 export const turnstileGate = new TurnstileGate();

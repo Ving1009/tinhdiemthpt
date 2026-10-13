@@ -180,14 +180,44 @@ export async function prepareTranscriptCell(decoded, rectangle, referenceWidth, 
   }
 }
 
+export async function cropTranscriptRectangle(decoded, rectangle, { margin = 128, canvasFactory = () => document.createElement("canvas") } = {}) {
+  if (![decoded?.width, decoded?.height, rectangle?.left, rectangle?.top, rectangle?.width, rectangle?.height].every(Number.isFinite)) return null;
+  const targetLeft = Math.max(0, Math.floor(rectangle.left)), targetTop = Math.max(0, Math.floor(rectangle.top));
+  const targetWidth = Math.min(Math.floor(rectangle.width), decoded.width - targetLeft), targetHeight = Math.min(Math.floor(rectangle.height), decoded.height - targetTop);
+  if (targetWidth <= 0 || targetHeight <= 0) return null;
+  const padding = Number.isFinite(margin) ? Math.min(256, Math.max(0, Math.floor(margin))) : 128;
+  const left = Math.max(0, targetLeft - padding), top = Math.max(0, targetTop - padding);
+  const width = Math.min(decoded.width - left, targetLeft + targetWidth + padding - left);
+  const height = Math.min(decoded.height - top, targetTop + targetHeight + padding - top);
+  let canvas;
+  try {
+    canvas = canvasFactory(); canvas.width = width; canvas.height = height;
+    const context = canvas.getContext("2d", { alpha: false });
+    if (!context) return null;
+    // Keep nearby pixels for Tesseract's thresholding, but recognize only the original cell rectangle.
+    context.drawImage(decoded.source, left, top, width, height, 0, 0, width, height);
+    return { blob: await canvasBlob(canvas, "image/png"), width, height,
+      rectangle: { left: targetLeft - left, top: targetTop - top, width: targetWidth, height: targetHeight } };
+  } finally { if (canvas) { canvas.width = 1; canvas.height = 1; } }
+}
+
 export async function optimizeTranscriptImagesSequentially(files, {
   optimize = optimizeTranscriptImage,
-  onProgress = () => {}
+  onProgress = () => {},
+  signal
 } = {}) {
   const optimized = [];
-  for (let index = 0; index < files.length; index += 1) {
-    onProgress(index, files.length);
-    optimized.push(await optimize(files[index]));
+  const checkAbort = () => { if (signal?.aborted) throw new DOMException("Đã dừng xử lý ảnh.", "AbortError"); };
+  try {
+    for (let index = 0; index < files.length; index += 1) {
+      checkAbort();
+      onProgress(index, files.length);
+      optimized.push(await optimize(files[index]));
+      checkAbort();
+    }
+    return optimized;
+  } catch (error) {
+    for (const image of optimized) image.blob = null;
+    throw error;
   }
-  return optimized;
 }

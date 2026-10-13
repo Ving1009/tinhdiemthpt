@@ -93,6 +93,10 @@ export function buildTranscriptAutofillPlan(transcript, { methodId } = {}) {
   const detectedLanguages = new Set();
   for (const score of transcript?.scores || []) {
     const normalizedSubject = normalize(score.subject);
+    if (normalizedSubject === "ngoai ngu") {
+      warnings.push("Bảng điểm chưa ghi rõ ngoại ngữ. Chọn môn theo ảnh gốc trong bảng xem trước rồi xác nhận.");
+      continue;
+    }
     if (normalizedSubject === "cong nghe") {
       warnings.push("Môn Công nghệ chưa rõ định hướng. Hãy chọn Công nghệ công nghiệp hoặc Công nghệ nông nghiệp ở bước xem trước.");
       continue;

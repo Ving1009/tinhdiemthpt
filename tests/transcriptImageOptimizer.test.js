@@ -4,13 +4,48 @@ import {
   fitImageDimensions,
   optimizeTranscriptImage,
   optimizeTranscriptImagesSequentially,
-  prepareTranscriptCell
+  prepareTranscriptCell,
+  cropTranscriptRectangle
 } from "../public/js/transcriptImageOptimizer.js";
 
 test("ảnh chỉ thu nhỏ theo cạnh dài và không phóng lớn", () => {
   assert.deepEqual(fitImageDimensions(4032, 3024), { width: 1600, height: 1200 });
   assert.deepEqual(fitImageDimensions(900, 1200), { width: 900, height: 1200 });
   assert.deepEqual(fitImageDimensions(700, 933, 2400, true), { width: 1801, height: 2400 });
+});
+
+test("cắt ô giữ đúng pixel, không phóng lớn hoặc xử lý dấu thập phân; canvas được giải phóng", async () => {
+  const calls = [];
+  const canvas = { getContext: () => ({ drawImage: (...args) => calls.push(args) }),
+    toBlob: (callback, type) => callback(new Blob(["crop"], { type })) };
+  const decoded = { source: "detail", width: 2400, height: 3200 };
+  const result = await cropTranscriptRectangle(decoded, { left: 120, top: 240, width: 90, height: 50 }, { canvasFactory: () => canvas });
+  assert.deepEqual(calls, [["detail", 0, 112, 338, 306, 0, 0, 338, 306]]);
+  assert.equal(result.blob.type, "image/png");
+  assert.deepEqual([result.width, result.height], [338, 306]);
+  assert.deepEqual(result.rectangle, { left: 120, top: 128, width: 90, height: 50 });
+  assert.deepEqual([canvas.width, canvas.height], [1, 1]);
+  assert.equal(await cropTranscriptRectangle(decoded, { left: 2500, top: 0, width: 10, height: 10 }), null);
+});
+
+test("hủy tối ưu ảnh dừng ảnh kế tiếp và giải phóng các blob đã tạo", async () => {
+  const controller = new AbortController();
+  const created = [];
+  let calls = 0;
+  await assert.rejects(() => optimizeTranscriptImagesSequentially(["one", "two", "three"], {
+    signal: controller.signal,
+    optimize: async () => {
+      calls++;
+      const image = { blob: new Blob(["image"]) }; created.push(image);
+      controller.abort();
+      return image;
+    }
+  }), { name: "AbortError" });
+  assert.equal(calls, 1);
+  assert.equal(created[0].blob, null);
+  await assert.rejects(() => optimizeTranscriptImagesSequentially(["one"], {
+    signal: controller.signal, optimize: async () => assert.fail("Không xử lý ảnh sau khi hủy")
+  }), { name: "AbortError" });
 });
 
 test("optimizer đóng bitmap và thu hồi canvas sau khi tạo JPEG", async () => {

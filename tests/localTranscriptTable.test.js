@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
-import { analyzeLocalTranscriptTable, localTranscriptTablePayload, parseLocalTranscriptTable } from "../public/js/core/localTranscriptTable.js";
+import { analyzeLocalTranscriptTable, localTranscriptTablePayload, parseLocalTranscriptTable, localTranscriptTableEvidence } from "../public/js/core/localTranscriptTable.js";
 
 const catalog = JSON.parse(await readFile(new URL("../data/transcript-subjects.json", import.meta.url), "utf8"));
 const word = (text, x, y, confidence = 95, width = Math.max(10, text.length * 7)) => ({ text, confidence,
@@ -20,6 +20,21 @@ test("local OCR gán điểm theo vị trí header, kể cả cột bị đảo"
     { subject: "Toán", grade: 12, semester1: 8.3, semester2: 8.2, year: 8.1 },
     { subject: "Ngữ văn", grade: 12, semester1: 7.3, semester2: 7.2, year: 7.1 }
   ]);
+});
+
+test("đánh giá chỉ đếm ô điểm nhìn thấy; ô trắng và cột thành phần không tăng số cần đọc", () => {
+  const image = simpleTable();
+  const words = image.blocks[0].paragraphs[0].lines[0].words;
+  words.splice(words.findIndex(word => word.text === "8.2"), 1);
+  words.find(word => word.text === "7.1").text = "71";
+  const evidence = localTranscriptTableEvidence(analyzeLocalTranscriptTable(image, catalog));
+  assert.equal(evidence.expectedCells, 5);
+  assert.equal(evidence.visibleScoreCells, 5);
+  assert.equal(evidence.expectedCellsReliable, true);
+  assert.equal(evidence.invalidScores, 1);
+  assert.equal(evidence.expectedCellKeys.includes("Toán|12|semester2"), false);
+  image.text = "Lớp 7";
+  assert.equal(localTranscriptTableEvidence(analyzeLocalTranscriptTable(image, catalog)).expectedCellsReliable, false);
 });
 
 test("local OCR khoanh tên môn hỏng để đọc lại, không nhận nó bằng suy đoán", () => {
@@ -262,4 +277,81 @@ test("local OCR không dùng kỳ ở footer để cho phép lựa chọn mâu t
   assert.deepEqual(values(parseLocalTranscriptTable(image, catalog)), expected);
   image.blocks[0].paragraphs[0].lines[0].words.push(word("Học kỳ 2", 70, 55));
   assert.equal(parseLocalTranscriptTable(image, catalog).payload.scores.length, 0);
+});
+
+test("bố cục có cột số mất hoàn toàn header không được kết luận đã xác định đủ cột", () => {
+  const image = simpleTable(["HK1", "", "Cả năm"]);
+  const table = analyzeLocalTranscriptTable(image, catalog);
+  const evidence = localTranscriptTableEvidence(table);
+  assert.equal(table.unresolvedColumns, 1);
+  assert.equal(evidence.geometryReliable, false);
+  assert.equal(evidence.expectedCellsReliable, false);
+  assert.equal(evidence.expectedCells, null);
+  assert.deepEqual(values(parseLocalTranscriptTable(image, catalog)), [
+    { subject: "Toán", grade: 12, semester1: 8.1, semester2: null, year: 8.3 },
+    { subject: "Ngữ văn", grade: 12, semester1: 7.1, semester2: null, year: 7.3 }
+  ]);
+});
+
+test("cột TX/GK/CK có nhãn rõ không bị coi là cột điểm trung bình chưa xác định", () => {
+  const image = page([
+    word("Học kỳ 1", 70, 30), word("TX", 210, 80), word("GK", 310, 80), word("CK", 410, 80), word("TBM", 510, 80),
+    word("Toán", 70, 130), word("9", 210, 130), word("8.5", 310, 130), word("9", 410, 130), word("8.7", 510, 130),
+    word("Ngữ văn", 70, 190), word("8", 210, 190), word("7.5", 310, 190), word("8", 410, 190), word("7.9", 510, 190)
+  ], "Lớp 12 Học kỳ 1");
+  const table = analyzeLocalTranscriptTable(image, catalog);
+  const evidence = localTranscriptTableEvidence(table);
+  assert.equal(table.unresolvedColumns, 0);
+  assert.equal(evidence.geometryReliable, true);
+  assert.equal(evidence.expectedCells, 2);
+  assert.equal(evidence.recognizedCells, 2);
+});
+
+test("số nằm xa nhóm cột điểm ở vùng nhận xét không làm bố cục đủ header thành unknown", () => {
+  const image = simpleTable();
+  image.blocks[0].paragraphs[0].lines[0].words.push(word("12", 900, 132), word("8", 930, 192));
+  const table = analyzeLocalTranscriptTable(image, catalog);
+  const evidence = localTranscriptTableEvidence(table);
+  assert.equal(table.unresolvedColumns, 0);
+  assert.equal(evidence.expectedCellsReliable, true);
+  assert.equal(evidence.expectedCells, 6);
+  assert.equal(evidence.recognizedCells, 6);
+  assert.deepEqual(values(parseLocalTranscriptTable(image, catalog)), values(parseLocalTranscriptTable(simpleTable(), catalog)));
+});
+
+test("cột số liền kề ở ngoài nhóm điểm bị mất header vẫn làm bố cục unknown", () => {
+  for (const headers of [["", "HK2", "Cả năm"], ["HK1", "HK2", ""]]) {
+    const table = analyzeLocalTranscriptTable(simpleTable(headers), catalog);
+    const evidence = localTranscriptTableEvidence(table);
+    assert.equal(table.unresolvedColumns, 1);
+    assert.equal(evidence.expectedCellsReliable, false);
+    assert.equal(evidence.expectedCells, null);
+    assert.equal(table.rows[0].cells.semester2.value, 8.2);
+  }
+});
+
+test("chỉ một cột đã xác định thì không loại số khác chỉ vì nằm xa", () => {
+  const image = page([word("Cả năm", 220, 80),
+    word("Toán", 70, 130), word("8.5", 220, 130), word("9", 900, 130)]);
+  const table = analyzeLocalTranscriptTable(image, catalog);
+  assert.equal(table.unresolvedColumns, 1);
+  assert.equal(localTranscriptTableEvidence(table).expectedCellsReliable, false);
+  assert.equal(table.rows[0].cells.year.value, 8.5);
+});
+
+test("dòng có điểm nhưng chưa có môn trong catalog vẫn được tính là ô nhìn thấy", () => {
+  const image = page([
+    word("HK1", 220, 80),
+    word("Toán", 70, 130), word("8", 220, 130),
+    word("GDCD", 70, 190), word("7", 220, 190),
+    word("Ngoại ngữ", 70, 250), word("8", 220, 250),
+    word("Công nghệ", 70, 310), word("9", 220, 310)
+  ]);
+  const table = analyzeLocalTranscriptTable(image, catalog);
+  const evidence = localTranscriptTableEvidence(table);
+  assert.equal(evidence.geometryReliable, true);
+  assert.equal(evidence.expectedCells, 4);
+  assert.equal(evidence.recognizedCells, 3);
+  assert.equal(evidence.unresolvedSubjects, 1);
+  assert.deepEqual(table.rows.map(row => row.subject), ["Toán", "Ngoại ngữ", "Công nghệ"]);
 });

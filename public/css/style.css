@@ -104,6 +104,7 @@ body.dark { --bg: #11162a; --surface: #181f37; --surface-soft: #202944; --text: 
 .fallback-dialog h2 { margin: 0 0 10px; font-size: 24px; }
 .fallback-dialog > p:not(.modal-kicker) { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
 .fallback-dialog-actions { display: grid; gap: 9px; margin-top: 20px; }
+.transcript-table-wrap { contain: paint; }
 .privacy-policy h3 { margin: 20px 0 6px; font-size: 14px; }
 .privacy-policy p { margin: 0 0 10px; color: var(--muted); font-size: 12px; line-height: 1.65; }
 .privacy-policy code { color: var(--text); }

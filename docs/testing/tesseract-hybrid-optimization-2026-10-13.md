@@ -8,14 +8,14 @@ Ba lượt đo sạch cuối của bộ ba ảnh học bạ giấy mất 21,3, 2
 
 Mẫu vnEdu đọc đúng 9/9 ô trung bình thuộc các môn đang hỗ trợ; mẫu biểu mẫu điện tử một hàng đọc đúng 3/3 ô. Các mẫu thiếu lớp, lớp ngoài THPT, kỳ học mâu thuẫn hoặc chỉ có điểm thành phần vẫn bị từ chối nhập vào bảng THPT.
 
-Trạng thái của tài liệu: báo cáo trong quá trình kiểm thử. Các lượt production, cache lạnh, kiểm thử toàn dự án và thông tin phát hành còn chờ cập nhật ở cuối tài liệu.
+Luồng hybrid đã được phát hành ở commit `dfed9be` và kiểm thử bằng Brave trên tên miền thật. Kiểm thử production cũng phát hiện một rule cache chồng lấn; phần sửa cache đang được kiểm tra và phát hành bổ sung, với kết quả ghi ở cuối tài liệu.
 
 ## Môi trường và cách đối chiếu
 
 - Windows, Brave thật, Intel Core i5-5200U, khoảng 8 GB RAM; thử website chạy trên máy kiểm thử.
 - Bộ ba ảnh gốc đã được chủ website cho phép dùng: 27 hàng môn, 81 ô số cần đối chiếu. Ô đánh giá Đạt được loại khỏi phép đếm điểm số.
 - Bảng chuẩn nằm riêng trong `.local/`. Kiểm thử so khớp từng ô theo môn, lớp và kỳ; số ô có dữ liệu riêng lẻ không được dùng để kết luận độ chính xác.
-- Các lượt đo tốc độ ở bảng dưới dùng tài nguyên Tesseract đã được làm nóng bởi những lượt trước. Phép đo tải lần đầu trên storage/cache mới chưa hoàn tất.
+- Các lượt đo tốc độ local ở bảng dưới dùng tài nguyên Tesseract đã được làm nóng bởi những lượt trước. Production được đo thêm sau khi xóa HTTP cache và IndexedDB trong hồ sơ Brave kiểm thử riêng, rồi quét lại để đo cache nóng. Không xóa dữ liệu của hồ sơ trình duyệt người dùng.
 - Các lượt trước khi sửa dùng luồng cũ: request OCR từ xa trả lỗi 503 giả lập, sau đó người dùng chọn quét local. Các lượt mới bắt đầu local trực tiếp. Vì vậy phép so sánh là thời gian thực tế của luồng thao tác, bao gồm phần xử lý ảnh được bỏ đi, không chỉ thời gian nhận diện trong worker.
 - Ảnh, bảng chuẩn, tên học sinh, điểm từng ô và OCR thô không được đưa vào tài liệu này, GitHub hoặc Static Assets. Nhật ký riêng được dùng để lấy số liệu tổng hợp.
 
@@ -142,7 +142,7 @@ Luồng mới: quét local → xem trước và đánh giá → người dùng c
 - Dòng đã xóa không quay lại khi quét bổ sung. Lịch sử tên môn/lớp đã sửa được giữ tạm để API không thêm lại nhận dạng cũ; chọn bộ ảnh mới sẽ xóa lịch sử này. Tên môn có khoảng trắng hoặc Unicode được chuẩn hóa khi đối chiếu mà vẫn giữ điểm người dùng đang sửa, kể cả giá trị chưa hợp lệ cần chỉnh lại.
 - Chỉ điểm đã kiểm tra và xác nhận mới đi vào công cụ tính. Ảnh, OCR thô và tên học sinh không đi vào localStorage hoặc bản sao tài khoản của luồng quét này.
 
-Các API thật của phiên bản trước đã được kiểm thử trong [báo cáo độ trễ API](ocr-api-latency-2026-10-13.md). Số đo Groq 7,45–8,51 giây ở báo cáo đó không được dùng để khẳng định tốc độ của luồng mới; production của luồng hybrid còn chờ kiểm tra.
+Luồng mới đã gọi API thật trên production sau bước đồng ý và Turnstile: một request, HTTP 200, Groq trả 27 hàng trong 7,84 giây. Toàn bộ thao tác quét bổ sung mất 14,4 giây, gồm xử lý ảnh, xác minh và đối chiếu; 81 ô trùng khớp với local, không có mâu thuẫn. Số đo API của phiên bản trước được giữ riêng trong [báo cáo độ trễ API](ocr-api-latency-2026-10-13.md).
 
 ### Số lần gọi API theo tình huống
 
@@ -152,9 +152,12 @@ Các API thật của phiên bản trước đã được kiểm thử trong [b�
 | Một ảnh giấy | Brave thật, engine thật | 0 |
 | Sáu file lặp | Brave thật, engine thật | 0 |
 | Mẫu công khai chạy trực tiếp engine local | Engine thật; không thực hiện bước upload | 0 |
-| Bảng nhỏ đủ điểm, thiếu nhiều ô, từ chối consent, timeout/quota, merge mâu thuẫn | Test hồi quy; cần bổ sung kết quả UI đầy đủ | Chờ cập nhật |
-| Chấp nhận quét bổ sung qua Turnstile và API thật | Chờ kiểm tra production | Chờ cập nhật |
-| Tài khoản đăng nhập và phiên khách | Chờ bổ sung kết quả UI của luồng mới | Chờ cập nhật |
+| Bảng nhỏ đủ điểm / thiếu nhiều ô | Test hồi quy: bảng nhỏ không gợi ý; bảng thiếu nhiều ô gợi ý nhưng chưa upload | 0 trước khi đồng ý |
+| Từ chối consent, hủy, chuyển nhập tay | Test hồi quy và thao tác Brave thật | 0 |
+| Timeout/quota, merge mâu thuẫn | Test hồi quy mô phỏng lỗi để kiểm tra giữ dữ liệu local và yêu cầu chọn ô mâu thuẫn | 1 luồng gửi sau khi đồng ý |
+| Chấp nhận quét bổ sung qua Turnstile và API thật | Production Brave: HTTP 200, 81 ô trùng khớp | 1 |
+| Phiên khách | Production Brave: local và online dùng được | 0 ở local; 1 ở lượt online đã đồng ý |
+| Phiên đăng nhập | Rà soát mã và test auth hiện có; chưa đăng nhập tài khoản thật để quét trên production | Chưa đo trực tiếp |
 
 Test dùng mock kiểm tra điều kiện gọi và bảo toàn dữ liệu; chúng không chứng minh provider ngoài hoạt động hoặc còn quota.
 
@@ -166,7 +169,9 @@ Không xóa cache hoặc tự tải lại trang trong khi quét/nhập điểm. 
 
 Ảnh được giải mã tuần tự. Mỗi trang có thể giữ bitmap gốc và bitmap chi tiết khi đọc ô khó, sau đó đóng chúng trước trang tiếp theo. Các canvas vùng nhỏ được thu hồi sau khi tạo blob. Cách này tránh giữ cùng lúc sáu bitmap gốc, nhưng chưa có số đo RAM tổng của worker và tab, nên không đưa ra mức RAM tối thiểu hay khẳng định phù hợp mọi điện thoại.
 
-Kiểm tra cache lạnh, cache nóng qua production và dữ liệu mạng thực tế: chờ cập nhật. Những thời gian core/ngôn ngữ ngắn trong các lượt đã chạy chỉ mô tả điều kiện cache hiện tại.
+Ở phát hành `dfed9be`, Brave production đọc đúng 81/81 trong 22,4 giây với cache lạnh và 21,4 giây ở lượt tiếp theo. Lượt nóng không gọi lại URL traineddata, xác nhận cache dữ liệu ngôn ngữ đã được dùng. Tuy nhiên header JS của Tesseract, worker và WASM.js cùng có `no-cache` và `immutable`: rule `/*.js` còn match các JS trong `/vendor/`, nên trình duyệt vẫn phải revalidate.
+
+Phần sửa thay rule JS chung bằng `/js/*` và `/formulas/*`, giữ `/vendor/*` cache một năm với `immutable`. URL tài nguyên nặng không đổi. Test hồi quy đọc các rule thực tế trong script build, xác nhận tài nguyên app cần revalidate và mỗi tài nguyên vendor chỉ nhận một rule cache. Cloudflare có thể gộp các giá trị header ở những rule cùng match; xem [tài liệu Static Assets headers](https://developers.cloudflare.com/workers/static-assets/headers/). Kết quả đo sau phần sửa được bổ sung trong mục phát hành.
 
 ## File thay đổi
 
@@ -179,18 +184,19 @@ Kiểm tra cache lạnh, cache nóng qua production và dữ liệu mạng thự
 - `public/index.html`, `public/css/refinement.css`: các nút quét lại/quét bổ sung/hủy, hướng dẫn và phần hiển thị cần thiết trong giao diện học bạ.
 - `public/privacy.html`, phần chính sách hiện có trong `public/js/main.js`, `README.md`: mô tả đúng luồng local trước và consent khi quét trực tuyến; viết thông báo theo Humanizer.
 - `package.json` và các file test OCR/hybrid/autofill/scanner: thêm kiểm tra module và test hồi quy.
+- `scripts/build-cloudflare.mjs`, `tests/cloudflareAssetCache.test.js`: tránh rule cache JS của app chồng lên tài nguyên OCR tĩnh; kiểm tra header của module, worker, WASM và traineddata.
 - Tài liệu này: số liệu tổng hợp, giới hạn và tình trạng kiểm chứng.
 
 Không sửa dữ liệu tuyển sinh, công thức, điểm ưu tiên, model/khóa AI, tài khoản, phòng thi, PDF hoặc cấu hình AdSense. Những phần đọc/ghi điểm đã có chỉ được gia cố tại ranh giới xác nhận kết quả OCR.
 
 ## Kiểm thử và những phần còn chờ
 
-Các test tập trung của engine, bảng, bộ xử lý ảnh, đối chiếu và giao diện đã đạt. Các ca gồm tạo một worker, đọc tuần tự, hủy trước/trong khi khởi tạo, worker đến muộn, hủy khi OCR/giải mã, đóng bitmap hoàn thành muộn, timeout, dữ liệu riêng tư, cache, cắt đúng pixel, điểm mâu thuẫn, dấu thập phân, header mất, noise chữ ký, chọn ngôn ngữ/định hướng và giữ ô trống. Bộ toàn dự án đạt 555/555, không hủy hoặc bỏ qua test.
+Các test tập trung của engine, bảng, bộ xử lý ảnh, đối chiếu và giao diện đã đạt. Các ca gồm tạo một worker, đọc tuần tự, hủy trước/trong khi khởi tạo, worker đến muộn, hủy khi OCR/giải mã, đóng bitmap hoàn thành muộn, timeout, dữ liệu riêng tư, cache, cắt đúng pixel, điểm mâu thuẫn, dấu thập phân, header mất, noise chữ ký, chọn ngôn ngữ/định hướng và giữ ô trống. Bộ toàn dự án đạt 556/556 sau khi thêm regression test cache, không hủy hoặc bỏ qua test.
 
 | Lệnh hoặc phép thử | Trạng thái |
 | --- | --- |
 | `npm.cmd run check` | Đạt, exit 0 |
-| `npm.cmd test` | Đạt 555/555, fail/cancelled/skipped 0, khoảng 57,7 giây |
+| `npm.cmd test` | Đạt 556/556, fail/cancelled/skipped 0, khoảng 55,7 giây |
 | `npm.cmd run verify:data` | Đạt: 326 trường, 17.617 dòng ngành, 293 tổ hợp, 0 lỗi; 19 cảnh báo đã có |
 | `npm.cmd run audit:formulas` | Đạt: anchor lỗi 0, 6/6 nguồn công thức tích hợp đạt; 1.212 cặp chưa đủ căn cứ vẫn được loại như trước |
 | `npm.cmd run cf:dry-run` | Đạt: build 830 assets, dry-run Worker OCR và Worker chính thành công |
@@ -201,7 +207,8 @@ Các test tập trung của engine, bảng, bộ xử lý ảnh, đối chiếu 
 | Tệp trên 7 MB / chọn 7 ảnh | Đạt trên Brave: từ chối tệp lớn; giữ tối đa 6 ảnh, thông báo tiếng Việt |
 | Quét lại / consent qua UI | Đạt: quét local không cần checkbox; mở hộp thoại giữ checkbox chưa chọn, nút gửi bị khóa; hủy/nhập tay không gọi API |
 | Timeout/quota, xung đột, bổ sung ô thiếu, giữ sửa/xóa dòng | Test hồi quy đạt; lỗi dịch vụ được mô phỏng, không cố làm hết quota thực tế |
-| Production, Turnstile/API thật, cache lạnh/nóng | Chờ kiểm thử sau deploy |
+| Production, Turnstile/API thật | Đạt trên `dfed9be`: phải đồng ý trước khi gửi; 1 request HTTP 200, 81 ô trùng khớp, không mâu thuẫn |
+| Production local, cache lạnh/nóng | Đạt 81/81 và 0 API ở cả hai lượt; phát hiện header cache chồng lấn và bổ sung sửa/test |
 
 Không xóa hoặc bỏ qua test để đạt kết quả xanh. Các cảnh báo thiếu nguồn tuyển sinh/công thức của bộ dữ liệu hiện có được ghi riêng khi tổng hợp kiểm thử; chúng không phải lỗi mới do OCR.
 
@@ -221,12 +228,14 @@ Nếu cần khôi phục toàn bộ phát hành, revert commit OCR hybrid đã p
 
 Chỉ phát hành sau khi các kiểm thử quan trọng đạt và không còn regression nghiêm trọng.
 
-- Commit: chờ cập nhật.
-- Push GitHub: chờ cập nhật.
-- Deploy Worker chính/OCR: chờ cập nhật.
-- Brave tải đúng phiên bản frontend: chờ cập nhật.
-- Local đọc tốt, 0 request OCR API trên production: chờ cập nhật.
-- Lượt cache lạnh và cache nóng, thời gian/đối chiếu: chờ cập nhật.
-- Consent → Turnstile → API thật → đối chiếu điểm: chờ cập nhật.
+- Commit hybrid: `dfed9be`, đã push nhánh `main` trên GitHub.
+- Phát hành hybrid: Worker chính `f149b35b-916e-4b82-9ad4-bb931c746e8b`, Worker OCR `c1e6b17c-b4a9-4257-a4f3-01edb0291010`.
+- Brave production tải đúng frontend `main.js?v=20261013-4` cùng các module OCR đã tăng phiên bản.
+- Local production: 81/81 ô đúng, 0 sai/thiếu, 1 worker, 0 request OCR API ở cả lượt lạnh và nóng; độ đầy đủ có căn cứ là 81/81.
+- Lượt lạnh 22,4 giây: module 0,10 giây, worker 1,00 giây, core 0,22 giây, ngôn ngữ 0,51 giây. Lượt nóng 21,4 giây: worker 0,46 giây, core 0,15 giây, ngôn ngữ 0,03 giây. Các mốc core/ngôn ngữ gồm cả tải/cache và khởi tạo; không tách được riêng thời gian truyền mạng đáng tin cậy.
+- Consent → Turnstile → API thật: 1 request, HTTP 200, Groq 7,84 giây; tổng 14,4 giây, 81 ô trùng khớp và 0 mâu thuẫn. Không mock provider hoặc Turnstile trong phép thử này.
+- Phần sửa cache và phép đo production sau sửa: đang kiểm tra và phát hành bổ sung.
+
+Nhật ký riêng cho ba phép thử production đầu: `.local/hybrid-production-cold.log`, `.local/hybrid-production-warm.log`, `.local/hybrid-production-online.log`. Nhật ký chỉ chứa số liệu tổng hợp và metadata tài nguyên, không chứa ảnh, tên học sinh hoặc OCR thô.
 
 Các mã commit và thông tin triển khai của báo cáo API trước đó là phiên bản cũ; không dùng chúng để xác nhận luồng hybrid đã lên production.

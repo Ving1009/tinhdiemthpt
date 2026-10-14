@@ -16,7 +16,7 @@ import { TranscriptScanner } from "./transcriptScanner.js?v=20261013-5";
 import { turnstileGate } from "./turnstile.js";
 import { PracticeExamApp, PRACTICE_ACTIVE_KEY, PRACTICE_HISTORY_KEY } from "./practiceExam.js?v=20261012-4";
 import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-2";
-import { AdmissionsAssistant } from "./assistant.js?v=20261012-4";
+import { AdmissionsAssistant } from "./assistant.js?v=20261014-1";
 import { initAdConsent } from "./adConsent.js";
 import { APP_ROUTES, parseAppRoute, profilePath, routeFromLocation, updateAppMetadata, updateAppHeading } from "./core/appRoutes.js";
 import { calculateSchoolFormula, schoolFormulaBranches, selectSchoolFormulaRule, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20261004-3";

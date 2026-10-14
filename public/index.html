@@ -449,24 +449,24 @@
       <section class="assistant-panel" id="assistant-panel" role="dialog" aria-labelledby="assistant-title" hidden>
         <header class="assistant-header">
           <img class="assistant-avatar" src="/assets/brand/logo-icon.png?v=20261011-2" alt="" width="42" height="42" />
-          <div><h2 id="assistant-title">Trợ lý tuyển sinh</h2><p><span></span>Tư vấn từ thông tin trên website</p></div>
+          <div><h2 id="assistant-title">Trợ lý tuyển sinh</h2><p><span></span>Chọn ngành, ôn thi và tra cứu hồ sơ</p></div>
           <button class="assistant-close" type="button" data-assistant-close aria-label="Đóng trợ lý">×</button>
         </header>
         <div class="assistant-chat" data-assistant-chat>
           <div class="assistant-messages" id="assistant-messages" aria-live="polite">
             <article class="assistant-message assistant-message-assistant">
-              <div class="assistant-message-body"><p>Nhập tên trường, ngành hoặc mức điểm để tra cứu. Bạn cũng có thể hỏi về tổ hợp và gửi thông tin cần sửa.</p></div>
+              <div class="assistant-message-body"><p>Bạn đang phân vân chọn ngành, muốn hiểu cách xét tuyển hay cần một kế hoạch ôn tập? Hãy kể điều bạn cần. Tôi cũng có thể tra cứu hồ sơ trường và hướng dẫn dùng website.</p></div>
               <div class="assistant-suggestions">
-                <button class="assistant-chip" type="button" data-assistant-suggestion="Tìm ngành Công nghệ thông tin">Tìm ngành CNTT</button>
-                <button class="assistant-chip" type="button" data-assistant-suggestion="25 điểm THPT nên xem ngành nào?">Tư vấn theo điểm</button>
-                <button class="assistant-chip" type="button" data-assistant-suggestion="Báo thông tin sai">Báo thông tin sai</button>
+                <button class="assistant-chip" type="button" data-assistant-suggestion="Tôi thích Toán nhưng chưa biết chọn ngành nào">Gợi ý chọn ngành</button>
+                <button class="assistant-chip" type="button" data-assistant-suggestion="Công nghệ thông tin khác Khoa học máy tính thế nào?">So sánh ngành</button>
+                <button class="assistant-chip" type="button" data-assistant-suggestion="Giúp tôi lập kế hoạch ôn thi trong 8 tuần">Kế hoạch ôn thi</button>
               </div>
             </article>
           </div>
-          <div class="assistant-privacy"><span aria-hidden="true">✓</span><span>Câu hỏi được gửi tới dịch vụ AI. Câu trả lời chỉ để tham khảo; hãy đối chiếu thông báo chính thức của trường. Báo thông tin sai chỉ được gửi sau khi bạn xác nhận.</span></div>
+          <div class="assistant-privacy"><span aria-hidden="true">✓</span><span>Khi cần AI, nội dung trò chuyện được gửi để xử lý. Câu trả lời chỉ để tham khảo; hãy đối chiếu thông báo chính thức của trường. Báo sai chỉ gửi sau khi bạn xác nhận.</span></div>
           <form class="assistant-form" id="assistant-form">
             <label class="sr-only" for="assistant-input">Hỏi trợ lý tuyển sinh</label>
-            <textarea id="assistant-input" rows="1" minlength="2" maxlength="500" placeholder="Hỏi về ngành, trường, điểm…" required></textarea>
+            <textarea id="assistant-input" rows="1" minlength="2" maxlength="500" placeholder="Hỏi về chọn ngành, ôn thi, cách xét tuyển…" required></textarea>
             <button type="submit" aria-label="Gửi câu hỏi">➤</button>
           </form>
           <button class="assistant-report-shortcut" type="button" data-assistant-report-open>⚑ Báo thông tin sai</button>
@@ -522,6 +522,6 @@
       </div>
     </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="/js/main.js?v=20261013-4"></script>
+    <script type="module" src="/js/main.js?v=20261014-1"></script>
   </body>
 </html>

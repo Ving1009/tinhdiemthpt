@@ -1,6 +1,7 @@
 import { AppError } from "./errors.js";
 import { collectApiKeys, createProviderPool } from "./services/providerPool.js";
-import { createGroqAssistantService, DEFAULT_GROQ_MODEL } from "./services/groqAssistant.js";
+import { createGroqAssistantService, DEFAULT_GROQ_MODEL, normalizeAssistantInput } from "./services/groqAssistant.js";
+import { answerAdmissionsQuestion, createAssistantKnowledge } from "../public/js/core/localAdmissionsAssistant.js";
 import { createOpenAiCompatibleAssistantService } from "./services/openAiCompatibleAssistant.js";
 import { createCloudflareWorkersAssistantService, DEFAULT_CLOUDFLARE_AI_MODEL } from "./services/cloudflareWorkersAssistant.js";
 import { createGeminiAssistantService } from "./services/geminiAssistant.js";
@@ -9,6 +10,7 @@ import { createHuggingFaceAssistantService, createRequestyAssistantService } fro
 const MISTRAL_ENDPOINT = "https://api.mistral.ai/v1/chat/completions";
 const OPENROUTER_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
 const RETRY_SUFFIXES = ["RATE_LIMITED", "TIMEOUT", "AUTH", "REQUEST_FAILED", "INVALID_RESPONSE", "UNAVAILABLE"];
+const GUIDANCE_KNOWLEDGE = createAssistantKnowledge({ v: 1, y: 2026, s: [], p: [], t: [] });
 
 function unique(values) {
   return [...new Set(values.map((value) => String(value || "").trim()).filter(Boolean))];
@@ -175,7 +177,7 @@ export function createConfiguredAdmissionsAssistant(environment = process.env, {
     });
   }
 
-  return createProviderPool({
+  const askProvider = createProviderPool({
     keys: providers,
     createService: (provider) => provider.ask,
     retryCodes: new Set([
@@ -193,4 +195,10 @@ export function createConfiguredAdmissionsAssistant(environment = process.env, {
     ),
     unavailableError: () => new AppError("Trợ lý AI chưa có nhà cung cấp khả dụng.", { statusCode: 503, code: "AI_ASSISTANT_UNAVAILABLE" })
   });
+  return async (rawInput) => {
+    const input = normalizeAssistantInput(rawInput);
+    const guidance = answerAdmissionsQuestion(GUIDANCE_KNOWLEDGE, input.question, { history: input.history });
+    if (guidance.localOnly) return { answer: guidance.text, provider: "website", model: "website-guidance" };
+    return askProvider(input);
+  };
 }

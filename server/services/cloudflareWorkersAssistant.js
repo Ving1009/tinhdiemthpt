@@ -48,7 +48,7 @@ export function createCloudflareWorkersAssistantService({
       clearTimeout(timeout);
     }
     if (!response.ok) throw cloudflareError(response.status);
-    const answer = cleanAssistantAnswer(payload?.result?.response || payload?.result?.choices?.[0]?.message?.content);
+    const answer = cleanAssistantAnswer(payload?.result?.response || payload?.result?.choices?.[0]?.message?.content, 4_000, payload?.result?.choices?.[0]?.finish_reason || payload?.result?.finish_reason);
     if (!payload?.success || !answer) throw new AppError("Cloudflare Workers AI trả về dữ liệu không hợp lệ.", { statusCode: 502, code: "CLOUDFLARE_AI_INVALID_RESPONSE" });
     return { answer, model: selectedModel, provider: "cloudflare-workers-ai" };
   };

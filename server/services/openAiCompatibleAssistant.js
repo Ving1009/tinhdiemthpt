@@ -65,7 +65,7 @@ export function createOpenAiCompatibleAssistantService({
       clearTimeout(timeout);
     }
     if (!response.ok) throw providerError(code, label, response.status);
-    const answer = cleanAssistantAnswer(payload?.choices?.[0]?.message?.content);
+    const answer = cleanAssistantAnswer(payload?.choices?.[0]?.message?.content, 4_000, payload?.choices?.[0]?.finish_reason);
     if (!answer) throw new AppError(`${label} trả về dữ liệu không hợp lệ.`, { statusCode: 502, code: `${code}_INVALID_RESPONSE` });
     return { answer, model: selectedModel, provider };
   };

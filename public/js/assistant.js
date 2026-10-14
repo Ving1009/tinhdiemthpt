@@ -1,10 +1,11 @@
-import { answerAdmissionsQuestion, createAssistantKnowledge } from "./core/localAdmissionsAssistant.js?v=20261010-1";
+import { answerAdmissionsQuestion, createAssistantKnowledge } from "./core/localAdmissionsAssistant.js?v=20261014-1";
 import { createDataReport } from "./core/dataReport.js";
 import { turnstileGate } from "./turnstile.js";
 import { profilePath } from "./core/appRoutes.js";
 
 const KNOWLEDGE_PATH = "/data/assistant-knowledge.json";
 const REPORT_FIELDS = ["Hồ sơ trường", "Tên ngành", "Mã ngành", "Tổ hợp", "Phương thức", "Điểm chuẩn", "Công thức", "Liên kết nguồn", "Khác"];
+const EMPTY_KNOWLEDGE = createAssistantKnowledge({ v: 1, y: 2026, s: [], p: [], t: [] });
 
 function apiUrl(path) {
   const url = new URL(path, document.baseURI);
@@ -12,24 +13,44 @@ function apiUrl(path) {
   return url;
 }
 
-export async function requestAssistantAnswer(input, { fetchImpl = globalThis.fetch.bind(globalThis), timeoutMs = 45_000 } = {}) {
+async function withRequestDeadline(operation, timeoutMs) {
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  let timer;
+  const deadline = new Promise((_, reject) => {
+    timer = setTimeout(() => {
+      controller.abort();
+      reject(new DOMException("Request timed out", "AbortError"));
+    }, timeoutMs);
+  });
   try {
+    return await Promise.race([Promise.resolve().then(() => operation(controller.signal)), deadline]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+export async function requestAssistantAnswer(input, { fetchImpl = globalThis.fetch.bind(globalThis), timeoutMs = 45_000 } = {}) {
+  return withRequestDeadline(async (signal) => {
     const response = await fetchImpl(apiUrl("/api/assistant-chat"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(input),
-      signal: controller.signal
+      signal
     });
     const payload = await response.json().catch(() => null);
     if (!response.ok || !payload?.success || !payload?.data?.answer) {
       throw new Error(payload?.error?.message || "Trợ lý AI tạm thời chưa phản hồi. Bạn hãy thử lại sau.");
     }
     return payload.data;
-  } finally {
-    clearTimeout(timer);
-  }
+  }, timeoutMs);
+}
+
+export async function requestAssistantKnowledge({ fetchImpl = globalThis.fetch.bind(globalThis), timeoutMs = 8_000 } = {}) {
+  return withRequestDeadline(async (signal) => {
+    const response = await fetchImpl(new URL(KNOWLEDGE_PATH, document.baseURI), { cache: "force-cache", signal });
+    if (!response.ok) throw new Error("Chưa tải được hồ sơ trường. Bạn vẫn có thể hỏi về chọn ngành, cách học và cách dùng website.");
+    return createAssistantKnowledge(await response.json());
+  }, timeoutMs);
 }
 
 function element(tag, className, text) {
@@ -44,8 +65,10 @@ function reportContextLabel(context) {
 }
 
 export class AdmissionsAssistant {
-  constructor({ repository } = {}) {
+  constructor({ repository, requestAnswer = requestAssistantAnswer, requestKnowledge = requestAssistantKnowledge } = {}) {
     this.repository = repository;
+    this.requestAnswer = requestAnswer;
+    this.requestKnowledge = requestKnowledge;
     this.knowledge = null;
     this.knowledgePromise = null;
     this.reportContext = {};
@@ -90,11 +113,7 @@ export class AdmissionsAssistant {
   async loadKnowledge() {
     if (this.knowledge) return this.knowledge;
     if (!this.knowledgePromise) {
-      this.knowledgePromise = fetch(new URL(KNOWLEDGE_PATH, document.baseURI), { cache: "force-cache" })
-        .then(async (response) => {
-          if (!response.ok) throw new Error("Không tải được dữ liệu tư vấn. Bạn hãy thử lại.");
-          return createAssistantKnowledge(await response.json());
-        })
+      this.knowledgePromise = this.requestKnowledge()
         .then((knowledge) => {
           this.knowledge = knowledge;
           this.populateSchoolList();
@@ -190,10 +209,18 @@ export class AdmissionsAssistant {
     this.input.value = "";
     this.addMessage("user", question);
     this.setBusy(true);
-    const pending = this.addMessage("assistant", "Đang tìm thông tin và chuẩn bị câu trả lời…");
+    const pending = this.addMessage("assistant", "Đang đọc câu hỏi của bạn…");
     try {
-      const knowledge = await this.loadKnowledge();
-      const answer = answerAdmissionsQuestion(knowledge, question);
+      let answer = answerAdmissionsQuestion(this.knowledge || EMPTY_KNOWLEDGE, question, { history: this.history });
+      let knowledgeUnavailable = false;
+      if (!this.knowledge && answer.intent !== "guidance" && answer.action !== "report") {
+        try {
+          const knowledge = await this.loadKnowledge();
+          answer = answerAdmissionsQuestion(knowledge, question, { history: this.history });
+        } catch {
+          knowledgeUnavailable = true;
+        }
+      }
       if (answer.action === "report") {
         pending.remove();
         this.addMessage("assistant", answer.text, answer);
@@ -203,15 +230,21 @@ export class AdmissionsAssistant {
         return;
       }
       let responseText = answer.text;
-      try {
-        const remote = await requestAssistantAnswer({
+      if (!answer.localOnly) try {
+        const remote = await this.requestAnswer({
           question,
           history: this.history,
-          context: { localSummary: answer.text, cards: answer.cards || [] }
+          context: {
+            localSummary: knowledgeUnavailable
+              ? `Hồ sơ trường chưa tải được ở lượt này, không phải bằng chứng trường không có thông tin. Có thể tư vấn chung và hỏi thêm, nhưng chưa xác nhận dữ kiện riêng của trường.\n${answer.text}`
+              : answer.text,
+            cards: answer.cards || []
+          }
         });
         responseText = remote.answer;
       } catch {
-        responseText = `${answer.text}\n\nTrợ lý AI tạm thời chưa phản hồi. Câu trả lời này dùng dữ liệu tra cứu trên website.`;
+        responseText = `${answer.text}\n\nChưa kết nối được AI. Trên đây là hướng dẫn có sẵn trên website; bạn có thể hỏi lại sau để được tư vấn thêm.`;
+        if (knowledgeUnavailable) responseText += " Hồ sơ trường cũng chưa tải được ở lượt này, nên tôi chưa đối chiếu được thông tin riêng của trường.";
       }
       pending.remove();
       this.addMessage("assistant", responseText, answer);

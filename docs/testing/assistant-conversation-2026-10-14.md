@@ -56,4 +56,14 @@ Không thay dữ liệu tuyển sinh, thuật toán OCR, tài khoản, AdSense, 
 
 Tư vấn mở của model vẫn có thể sai hoặc thiếu; các ràng buộc prompt không phải bảo đảm độ chính xác. Các nhóm câu hỏi nội bộ là hướng dẫn tham khảo, không thay thông báo của trường. Website phục vụ kỳ thi 2027; hồ sơ và mốc 2026 vẫn chỉ là tham khảo. Kiểm tra mobile ở đây là kích thước giao diện trên Brave, không phải đo hiệu suất điện thoại thật.
 
-Commit/push/deploy và kiểm chứng production: cập nhật sau phát hành.
+## Phát hành và kiểm chứng production
+
+- Commit tính năng `ebdd7a3`, đã push nhánh `main` lên GitHub và deploy Cloudflare.
+- Worker chính của phiên kiểm chứng: `2f9f6e0a-ff59-48bd-843d-02c464c7458f`; Worker OCR: `11b95677-1a11-4501-aa70-19cfce6d3008`. Không đổi mã OCR trong tác vụ này.
+- Brave tải đúng `main.js?v=20261014-1`. Hai lượt hội thoại so sánh CNTT/KHMT và hỏi tiếp về sở thích Toán trả HTTP 200 từ Groq, không có thẻ tìm kiếm thừa hoặc bảng Markdown thô. Thời gian từ thao tác đến câu trả lời là 26,74 và 1,14 giây; thời gian có thể thay đổi theo provider/quota và không phải cam kết độ trễ.
+- Ba request thật trực tiếp tới `/api/assistant-chat` đều HTTP 200, `provider: website`: ưu tiên 0,40/tổng 26,40; kế hoạch đủ 8 tuần, 120 phút/ngày; học phí chưa có căn cứ không tự thêm số tiền hay lịch công bố.
+- Mobile 390 × 844: panel và ô nhập nằm trong màn hình, trang không tràn ngang.
+
+Nhật ký production trong `.local/assistant-production-ui-final.log`, không có khóa hay thông tin riêng tư. Các lượt API trước khi gia cố được giữ riêng để không bỏ qua lỗi chất lượng đã tìm thấy. Tư vấn so sánh ngành của model vẫn có xu hướng khái quát sự khác nhau; cần xem chương trình cụ thể vì tên ngành, môn học và hướng nghề nghiệp có giao thoa. Đây không phải đánh giá nghề nghiệp đã được chuyên gia xác nhận.
+
+Bản cập nhật báo cáo sau kiểm chứng chỉ thay tài liệu, có cùng mã frontend/backend với commit tính năng đã thử.

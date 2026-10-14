@@ -46,7 +46,7 @@ function deferred() {
 }
 const nextTurn = () => new Promise(resolve => setImmediate(resolve));
 
-function fixture(t, { local = complete(), recognize, online, optimize } = {}) {
+function fixture(t, { local = complete(), recognize, online, optimize, localTimeoutMs } = {}) {
   const originals = new Map(["document", "window", "requestAnimationFrame"].map(key => [key, Object.getOwnPropertyDescriptor(globalThis, key)]));
   t.after(() => {
     for (const [key, descriptor] of originals) {
@@ -65,6 +65,7 @@ function fixture(t, { local = complete(), recognize, online, optimize } = {}) {
   const state = { preview: null, previews: [], notices: [], localCalls: 0, optimized: 0, uploads: 0, starts: 0 };
   const file = { name: "bang-diem.jpg", type: "image/jpeg", size: 1000, lastModified: 1 };
   const scanner = new TranscriptScanner({
+    localTimeoutMs,
     onScanStart: () => { state.starts++; },
     onClearPreview: () => { state.preview = null; },
     onScanSuccess: value => { state.preview = structuredClone(value); state.previews.push(state.preview); },
@@ -95,6 +96,124 @@ function fixture(t, { local = complete(), recognize, online, optimize } = {}) {
   scanner.addFiles([file]);
   return { scanner, state, element, file };
 }
+
+test("chọn AI quét trực tiếp không khởi tạo local, chỉ gửi sau khi đồng ý", async t => {
+  const { scanner, state, element } = fixture(t);
+  element("transcript-mode-ai").checked = true;
+  await scanner.scan();
+  assert.equal(state.localCalls, 0);
+  assert.equal(state.uploads, 0);
+  assert.equal(state.optimized, 0);
+  assert.equal(element("transcript-fallback-dialog").open, true);
+  element("transcript-consent").checked = true;
+  await scanner.scanOnline();
+  assert.equal(state.uploads, 1);
+  assert.equal(state.localCalls, 0);
+  assert.equal(state.preview.data.scores.find(score => score.subject === 'Toán').year, 8.7);
+});
+
+test("chọn AI và đã cho phép gửi ảnh bỏ qua local hoàn toàn", async t => {
+  const { scanner, state, element } = fixture(t);
+  scanner.loadLocalOcr = () => assert.fail('Không được tải Tesseract khi chọn AI');
+  element("transcript-mode-ai").checked = true;
+  element("transcript-auto-ai-consent").checked = true;
+  await scanner.scan();
+  assert.equal(state.localCalls, 0);
+  assert.equal(state.uploads, 1);
+  assert.equal(scanner.isScanning, false);
+});
+
+test("local lỗi tự chuyển AI một lần khi đã cho phép, không tự gửi khi chưa đồng ý", async t => {
+  for (const allowed of [false, true]) await t.test(String(allowed), async t => {
+    const { scanner, state, element } = fixture(t, { recognize: () => { throw new Error('Không chạy được trên thiết bị'); } });
+    element("transcript-auto-ai-consent").checked = allowed;
+    await scanner.scan();
+    assert.equal(state.localCalls, 1);
+    assert.equal(state.uploads, allowed ? 1 : 0);
+    assert.equal(state.optimized, allowed ? 1 : 0);
+    assert.equal(scanner.isScanning, false);
+    if (!allowed) assert.equal(element("transcript-fallback-dialog").open, true);
+    else assert.equal(element("transcript-mode-ai").checked, true);
+  });
+});
+
+test("local quá hạn bị hủy, chuyển AI và không nhận kết quả local đến muộn", async t => {
+  const late = deferred();
+  let signal;
+  const { scanner, state, element } = fixture(t, { localTimeoutMs: 10,
+    recognize: options => { signal = options.signal; return late.promise; } });
+  element("transcript-auto-ai-consent").checked = true;
+  await scanner.scan();
+  assert.equal(signal.aborted, true);
+  assert.equal(state.uploads, 1);
+  assert.equal(state.previews.length, 1);
+  late.resolve(payload([row('Toán', { year: 1 })], 1));
+  await nextTurn();
+  assert.equal(state.previews.length, 1);
+  assert.equal(state.preview.data.scores.find(score => score.subject === 'Toán').year, 8.7);
+  assert.equal(scanner.isScanning, false);
+});
+
+test("tải bộ local quá hạn cũng chuyển AI, không để spinner chờ vô hạn", async t => {
+  const { scanner, state, element } = fixture(t, { localTimeoutMs: 10 });
+  scanner.loadLocalOcr = () => new Promise(() => {});
+  element("transcript-auto-ai-consent").checked = true;
+  await scanner.scan();
+  assert.equal(state.localCalls, 0);
+  assert.equal(state.uploads, 1);
+  assert.equal(scanner.isScanning, false);
+});
+
+test("local quá hạn chưa được đồng ý chỉ mở hộp thoại, AI hết quota không lặp quét", async t => {
+  const { scanner, state, element } = fixture(t, { localTimeoutMs: 10,
+    recognize: () => new Promise(() => {}),
+    online: () => { throw Object.assign(new Error('Hết lượt quét AI'), { code: 'SCAN_QUOTA_EXHAUSTED' }); } });
+  await scanner.scan();
+  assert.equal(state.uploads, 0);
+  assert.equal(element('transcript-fallback-dialog').open, true);
+  assert.match(element('transcript-scan-status').textContent, /mất quá lâu/);
+  element('transcript-consent').checked = true;
+  await scanner.scanOnline();
+  assert.equal(state.uploads, 1);
+  assert.equal(state.localCalls, 1);
+  assert.equal(scanner.isScanning, false);
+  assert.match(element('transcript-scan-status').textContent, /chưa khả dụng/);
+});
+
+test("local đủ điểm không dùng AI dù đã cho phép; thiếu nhiều điểm thì tự bổ sung", async t => {
+  const { scanner, state, element } = fixture(t);
+  element("transcript-auto-ai-consent").checked = true;
+  await scanner.scan();
+  assert.equal(state.uploads, 0);
+  scanner.loadLocalOcr = async () => ({ recognizeTranscriptInBrowser: async () => sparse() });
+  await scanner.scan();
+  assert.equal(state.uploads, 1);
+  assert.equal(state.preview.data.scores.find(score => score.subject === 'Ngữ văn').year, 7.7);
+});
+
+test("hủy local không tự chuyển AI dù đã cho phép gửi ảnh", async t => {
+  const late = deferred();
+  const { scanner, state, element } = fixture(t, { recognize: () => late.promise });
+  element("transcript-auto-ai-consent").checked = true;
+  const pending = scanner.scan();
+  await nextTurn();
+  scanner.cancel();
+  await pending;
+  assert.equal(state.uploads, 0);
+  assert.equal(state.optimized, 0);
+  assert.equal(scanner.isScanning, false);
+  late.resolve(complete());
+});
+
+test("đổi ảnh hoặc giải phóng ảnh không giữ lại đồng ý gửi ảnh cũ", t => {
+  const { scanner, element, file } = fixture(t);
+  for (const action of [() => scanner.removeFile(0), () => scanner.clearFiles(), () => scanner.releaseImages(), () => scanner.addFiles([{ ...file, name: 'anh-moi.jpg' }])]) {
+    scanner.addFiles([file]);
+    element("transcript-auto-ai-consent").checked = true;
+    action();
+    assert.equal(element("transcript-auto-ai-consent").checked, false);
+  }
+});
 
 function connectPreview(scanner, state) {
   const preview = new TranscriptPreview({ onConfirm: async () => ({ filled: 0, warnings: [] }) });

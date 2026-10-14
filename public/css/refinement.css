@@ -649,3 +649,13 @@ body.turnstile-open { overflow:hidden; }
 .account-status { min-height: 24px; font-size: .9rem; }
 .account-status.is-error { color: #c24141; }
 .account-logout { margin-top: 24px; border: 0; background: none; color: #c24141; font-weight: 700; cursor: pointer; }
+
+.transcript-mode-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; min-width:0; margin:0 0 16px; padding:0; border:0; }
+.transcript-mode-options legend { margin-bottom:8px; font-size:13px; font-weight:700; }
+.transcript-mode-card { display:flex; align-items:flex-start; gap:8px; min-width:0; padding:12px; border:1px solid var(--line); border-radius:10px; background:var(--surface); cursor:pointer; }
+.transcript-mode-card:has(input:checked) { border-color:var(--primary); background:var(--primary-soft); }
+.transcript-mode-card:has(input:focus-visible) { outline:2px solid var(--primary); outline-offset:2px; }
+.transcript-mode-card input { flex-shrink:0; width:16px; height:16px; min-height:16px; margin:2px 0 0; padding:0; accent-color:var(--primary); }
+.transcript-mode-card b { color:var(--text); font-size:13px; }
+.transcript-mode-card small { display:block; margin-top:5px; color:var(--muted); font-size:12px; line-height:1.6; }
+.transcript-mode-card:has(input:disabled) { opacity:.65; cursor:wait; }

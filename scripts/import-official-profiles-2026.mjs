@@ -6,11 +6,26 @@ import { ADMISSIONS_2026_NOTICE } from '../public/js/admissions.js';
 
 export const REFERENCE_NOTICE = ADMISSIONS_2026_NOTICE;
 const uniqueBy = (items, key) => [...new Map(items.map(item => [key(item),item])).values()];
+export function enrichOfficialInformation(information, note = {}) {
+  if (!note.checkedAt) return information;
+  const sources = (note.sources || []).filter(source => ['official', 'primary'].includes(source.type) && source.year === 2026 && source.checkedAt === note.checkedAt && /^https:\/\//.test(source.url));
+  if (!sources.length) return information;
+  const documents = sources.map(source => {
+    const previous = information.documents.find(document => document.url === source.url);
+    return {title:previous?.title || 'Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển',url:source.url,topics:['Phương thức, công thức và điều kiện xét tuyển'],checkedAt:source.checkedAt,provisional:Boolean(previous?.provisional) || /du[-_]?thao|duthao|du-kien/i.test(source.url),...(/\.pdf(?:\?|$)/i.test(source.url) ? {kind:'pdf'} : {})};
+  });
+  information.documents = [...documents, ...information.documents.filter(document => !sources.some(source => source.url === document.url))].slice(0,8);
+  information.checkedAt = note.checkedAt;
+  information.status = 'official_documents_available';
+  information.note = 'Đã đối chiếu thêm phương thức, công thức và điều kiện từ nguồn tuyển sinh 2026 của trường. Mỗi công thức có phạm vi ngành và mức độ xác minh riêng; phần còn thiếu bảng quy đổi hoặc có nguồn mâu thuẫn được ghi rõ tại phương thức.';
+  if (note.officialMethodLabels?.length) information.methods = note.officialMethodLabels.map(label => ({code:'',label}));
+  return information;
+}
 const planRank = title => (/thong tin tuyen sinh|de an tuyen sinh|thong bao tuyen sinh|phuong thuc/.test(normalize(title)) ? 10 : 0) - (/bo sung|diem chuan|trung tuyen|nhap hoc|nguong|thi nang khieu|tu van|hoi nghi|dieu chinh/.test(normalize(title)) ? 5 : 0);
 
 export async function importOfficialProfiles({write = false} = {}) {
   const cache = 'tmp/official-profiles-2026';
-  const [universities, links] = await Promise.all(['data/universities.json','data/research/official-profile-links-2026.json'].map(async path=>JSON.parse(await readFile(path,'utf8'))));
+  const [universities, links, notes] = await Promise.all(['data/universities.json','data/research/official-profile-links-2026.json','data/research/admission-methods-2026-notes.json'].map(async path=>JSON.parse(await readFile(path,'utf8'))));
   const reports = await Promise.all((await readdir(cache)).filter(file=>file.startsWith('school-') && file.endsWith('.json')).map(async file=>JSON.parse(await readFile(`${cache}/${file}`,'utf8'))));
   const cachedPages = await Promise.all((await readdir(cache)).filter(file=>/^[a-f0-9]{64}\.json$/.test(file)).map(async file=>({file,...JSON.parse(await readFile(`${cache}/${file}`,'utf8'))})));
   const pageByUrl = new Map(cachedPages.map(page=>[page.url,page]));
@@ -49,11 +64,11 @@ export async function importOfficialProfiles({write = false} = {}) {
     plans.sort((a,b)=>planRank(b.title)-planRank(a.title));
     const methodPlan=plans.find(p=>p.methods.length);
     const programPlan=plans.find(p=>p.programs.length);
-    const methods = methodPlan?.methods || [];
+    let methods = methodPlan?.methods || [];
     const programs = programPlan?.programs || [];
     const scopeNote = /phan hieu|co so|phia bac|phia nam|dai hoc quoc gia|dai hoc thai nguyen$/.test(normalize(school.name)) || links[school.code]?.sharedDocuments?.length ? 'Tài liệu có thể gồm nhiều cơ sở hoặc đơn vị thành viên. Chỉ dùng dòng ngành, điều kiện và điểm ghi đúng cơ sở dự tuyển.' : '';
     const information = {
-      year:2026,checkedAt:report.checkedAt,
+      year:2026,checkedAt:checked.checkedAt?.slice(0,10) || report.checkedAt,
       status:usable.length ? 'official_documents_available' : 'official_evidence_pending',
       notice:REFERENCE_NOTICE,
       note:usable.length ? 'Đã tìm được tài liệu tuyển sinh 2026 của trường. Các bảng bổ sung chỉ gồm phần đọc được từ tài liệu, có thể chưa đầy đủ. Mức độ xác minh của ngành, điểm và công thức vẫn được ghi riêng ở từng mục.' : 'Chưa xác minh được trang hoặc tài liệu tuyển sinh chính thức năm 2026. Dữ liệu hiện có chỉ để tham khảo; việc không truy cập được nguồn không có nghĩa trường chưa công bố.',
@@ -64,7 +79,11 @@ export async function importOfficialProfiles({write = false} = {}) {
       ...(methodPlan ? {methodTableUrl:methodPlan.url} : {}),
       ...(programPlan ? {programTableUrl:programPlan.url} : {})
     };
+    enrichOfficialInformation(information, notes.schools[school.code]);
+    usable.splice(0, usable.length, ...information.documents, ...usable.filter(document => !information.documents.some(value => value.url === document.url)));
+    methods = information.methods;
     school.admissions = {...school.admissions,information2026:information};
+    if (notes.schools[school.code]?.officialMethodLabels?.length && notes.schools[school.code]?.checkedAt) school.admissions.methods = notes.schools[school.code].officialMethodLabels;
     if(links[school.code]?.websiteStatus === 'needs_review') {
       school.websiteStatus = 'needs_review';
       school.website = '';
@@ -80,7 +99,7 @@ export async function importOfficialProfiles({write = false} = {}) {
     if(programs.length) report.summary.withProgramTables++;
     // A plan's program-wide combinations do not identify individual cutoff rows:
     // one program can have different scores for different combination groups.
-    report.schools.push({...checked,documents:usable,methodTableCount:methods.length,programTableCount:programs.length,scopeNote,status:information.status});
+    report.schools.push({...checked,checkedAt:information.checkedAt,documents:usable,methodTableCount:methods.length,programTableCount:programs.length,scopeNote,status:information.status});
   }
   if(write) await Promise.all([
     writeFile('data/universities.json',JSON.stringify(universities,null,2)+'\n'),

@@ -4,6 +4,26 @@ import test from 'node:test';
 import {extractOfficialFacts, inspectOfficialPage, officialHost} from '../scripts/research-official-profiles-2026.mjs';
 import {ADMISSIONS_2026_NOTICE} from '../public/js/admissions.js';
 import {sanitizeUniversity} from '../lib/dataValidation.js';
+import {enrichOfficialInformation} from '../scripts/import-official-profiles-2026.mjs';
+
+test('bổ sung nguồn nghiên cứu giữ bảng ngành và chỉ dùng nguồn chính thức 2026 đã đối chiếu', () => {
+  const original = {year:2026,checkedAt:'2026-10-03',status:'official_evidence_pending',documents:[],methods:[],programs:[{code:'7480201',name:'Công nghệ thông tin'}]};
+  for (const source of [
+    {url:'https://school.edu.vn/2026',type:'secondary',year:2026,checkedAt:'2026-10-14'},
+    {url:'https://school.edu.vn/2025',type:'official',year:2025,checkedAt:'2026-10-14'},
+    {url:'https://school.edu.vn/2026',type:'official',year:2026},
+    {url:'javascript:alert(1)',type:'official',year:2026,checkedAt:'2026-10-14'}
+  ]) assert.deepEqual(enrichOfficialInformation(structuredClone(original), {checkedAt:'2026-10-14',sources:[source]}), original);
+  const url = 'https://school.edu.vn/plan-2026.pdf';
+  const result = enrichOfficialInformation({...structuredClone(original),documents:[{url,checkedAt:'2026-10-03',title:'Thông tin tuyển sinh dự kiến',provisional:true}]}, {checkedAt:'2026-10-14',sources:[{url,type:'official',year:2026,checkedAt:'2026-10-14'}],officialMethodLabels:['100: THPT','301: Tuyển thẳng']});
+  assert.equal(result.documents.length, 1);
+  assert.equal(result.documents[0].checkedAt, '2026-10-14');
+  assert.equal(result.documents[0].provisional, true, 'không bỏ cảnh báo dự kiến chỉ vì cập nhật nguồn');
+  assert.equal(result.documents[0].title, 'Thông tin tuyển sinh dự kiến');
+  assert.equal(result.status, 'official_documents_available');
+  assert.deepEqual(result.methods, [{code:'',label:'100: THPT'},{code:'',label:'301: Tuyển thẳng'}]);
+  assert.deepEqual(result.programs, original.programs, 'không tự tạo ma trận ngành từ tên phương thức');
+});
 
 test('nguồn trường phải đúng hostname, không nhận tên miền giả hoặc trang tổng hợp', () => {
   assert.equal(officialHost('https://tuyensinh.school.edu.vn/2026', 'https://www.school.edu.vn'), true);

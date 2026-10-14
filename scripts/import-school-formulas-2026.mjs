@@ -54,9 +54,9 @@ const schools = research.schools.map((school) => {
     const status = method.disputed ? 'conflicting' : !programs.length || /candidate_catalog/.test(method.scopeStatus) ? 'scope_incomplete' :
       override.status || (oldOfficial ? 'official_verified' : nonNumeric ? 'non_numeric' : equations.length ? 'source_reported' : description ? 'source_description' : 'requires_review');
     const expression = override.expression || oldOfficial?.expression || nonNumeric || (equations.length ? equations.join('\n') : description ? `${description}\nNguồn chưa thể hiện đủ phép tính, hệ số hoặc bảng quy đổi để tự tính điểm cuối cùng.` : 'Chưa thu được biểu thức tính điểm đầy đủ năm 2026 từ nguồn; không dùng công thức chung để thay thế.');
-    const evidence = override.evidence || (oldOfficial ? { kind: oldOfficial.source.kind, url: oldOfficial.source.url, checkedAt: research.checkedAt, note: oldOfficial.source.evidence } : null) || {
+    const evidence = override.evidence || (oldOfficial ? { kind: oldOfficial.source.kind, url: oldOfficial.source.url, checkedAt: method.checkedAt || school.checkedAt || research.checkedAt, note: oldOfficial.source.evidence } : null) || {
       kind: primary ? 'official_primary' : 'secondary', url: method.sourceUrl,
-      checkedAt: research.checkedAt, sectionId: method.sourceSectionId,
+      checkedAt: method.checkedAt || school.checkedAt || research.checkedAt, sectionId: method.sourceSectionId,
       note: equations.length ? 'Biểu thức lấy từ mục cách xét / cách tính điểm của phương thức năm 2026.' : 'Điều kiện và phạm vi áp dụng đã được tra cứu; biểu thức điểm số cần kiểm tra thêm.',
     };
     return {
@@ -122,7 +122,7 @@ const automaticSchools = schools.filter((s) => s.methods.some((m) => m.autoCalcu
 const automaticMethods = automaticSchools.reduce((n, s) => n + s.methods.filter((m) => m.autoCalculate).length, 0);
 const lines = ['# Rà soát công thức xét tuyển 2026', '', `Ngày đối chiếu: ${dataset.checkedAt}. Tổng ${schools.length} hồ sơ, ${dataset.summary.methods} mục phương thức.`, '',
   'Một công thức theo từng phương thức; các nhóm ngành, tổ hợp hoặc nhóm thí sinh có hệ số khác nhau được giữ thành nhánh trong cùng phương thức. Danh sách ngành áp dụng được lưu riêng trong catalog.', '',
-  `Bổ sung ${automaticMethods} bộ tính ở ${automaticSchools.length} trường: ${automaticSchools.map((s) => s.schoolCode).join(', ')}. Bộ tính THPT Bách khoa đã có vẫn giới hạn ba chương trình IT1, EE2, ET1; đã đối chiếu lại hệ số Toán và tổ hợp K01. Hai mục nguồn trùng hệt biểu thức, điều kiện và phạm vi được gộp, giữ ID đối chiếu nội bộ.`, '',
+  `Hiện có ${automaticMethods} bộ tính ở ${automaticSchools.length} trường: ${automaticSchools.map((s) => s.schoolCode).join(', ')}. Bộ tính THPT Bách khoa đã có vẫn giới hạn ba chương trình IT1, EE2, ET1; đã đối chiếu lại hệ số Toán và tổ hợp K01. Hai mục nguồn trùng hệt biểu thức, điều kiện và phạm vi được gộp, giữ ID đối chiếu nội bộ.`, '',
   '**Đây không phải xác nhận rằng mọi phương thức đã có đủ công thức số.** Biểu thức lấy từ nguồn có thể chỉ là một thành phần hoặc còn cần bảng quy đổi. Không tự suy ra tổng ba môn hoặc điểm gốc / điểm tối đa × 30. Chỉ bật tự tính cho quy tắc đã đối chiếu trực tiếp và có đầu vào an toàn.', '',
   '| Trạng thái | Số phương thức |', '| --- | ---: |', ...Object.entries(counts).map(([status, count]) => `| ${labels[status]} | ${count} |`), '',
   '## Những phần còn cần bổ sung', '', 'Các mục “thiếu biểu thức”, “phạm vi chưa đủ”, “chưa có nguồn” và “mâu thuẫn” bên dưới vẫn chưa hoàn tất. Mục có biểu thức nhưng cần bảng / hệ số cũng chỉ dùng tra cứu. Hồ sơ hệ thống đại học hoặc cơ sở chuyên biệt không tự tạo công thức tuyển sinh đại học.', ''];
@@ -130,7 +130,7 @@ for (const school of schools) {
   lines.push(`## ${school.schoolCode} — ${universityByCode.get(school.schoolCode).name}`, '', ...(school.issues || []).map((issue) => `- ${issue}`), '');
   if (!school.methods.length) lines.push('Không có phương thức đại học 2026 được xác nhận cho hồ sơ này.', '');
   for (const method of school.methods) {
-    lines.push(`### ${method.label}`, '', `${labels[method.status]}. Ngành / chương trình trong phạm vi: ${method.programIndexes.length}. Tự tính mới: ${method.autoCalculate ? 'có' : 'không'}.`, '', method.expression, '', `Thang: ${method.scale || 'Chưa xác minh'}.`, '',
+    lines.push(`### ${method.label}`, '', `${labels[method.status]}. Ngành / chương trình trong phạm vi: ${method.programIndexes.length}. Tự tính: ${method.autoCalculate ? 'có' : 'không'}.`, '', method.expression, '', `Thang: ${method.scale || 'Chưa xác minh'}.`, '',
       ...method.conditions.map((condition) => `- ${condition.replace(/\n/g, ' ')}`), '', `Ưu tiên: ${method.priority || 'Chưa xác minh'}.`, ...(method.conversion ? ['', `Quy đổi: ${method.conversion}`] : []), '',
       ...(method.evidence?.url ? [`[Nguồn đối chiếu](${method.evidence.url}) · ${method.evidence.checkedAt}`, ''] : []), ...(method.issues || []).map((issue) => `- ${issue}`), '');
   }

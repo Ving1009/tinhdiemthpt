@@ -1,6 +1,6 @@
 # Phương thức xét tuyển 2026 của các trường trong hồ sơ
 
-Tra cứu 2026-09-30. Đọc [báo cáo phạm vi và phần còn thiếu](ra-soat-phuong-thuc-2026.md) trước khi sử dụng.
+Bản tổng hợp cập nhật 2026-10-14. Đọc [báo cáo phạm vi và phần còn thiếu](ra-soat-phuong-thuc-2026.md) trước khi sử dụng.
 
 Bảng ghi phạm vi ngành theo nguồn. Danh mục ứng viên chưa đủ ma trận được cảnh báo ngay tại phương thức tương ứng. Tuyển thẳng còn phụ thuộc giải thưởng, môn thi, đối tượng và quy định của trường; việc một ngành xuất hiện trong bảng không có nghĩa mọi thí sinh được tuyển thẳng. Ô trống là nguồn chưa có thông tin, không phải mức 0. Một số hồ sơ là hệ thống đại học hoặc đào tạo đặc thù, không có đề án tuyển mới từ THPT riêng.
 
@@ -2897,6 +2897,7 @@ Nguồn có các mục: Đối tượng; Điều kiện; Cách xét / cách tín
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-a-DAD.html)
+- [Nguồn 2 (official)](https://donga.edu.vn/tuyensinh/ts-chi-tiet/dai-hoc-dong-a-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971)
 - [Tài liệu 2026 đính kèm 1](http://images.tuyensinh247.com/user_data/2026/0406/DongA_Thong_tin_tuyen_sinh_2026.pdf)
 
 ### Điểm thi THPT
@@ -3381,18 +3382,21 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS, TOEFL, TOE
 | 144 | Giáo dục Mầm non |  |  | 0 |  |
 | 145 | Giáo dục Tiểu học |  |  | 0 |  |
 
-### Xét tuyển thí sinh tốt nghiệp THPT nước ngoài
+### THPT nước ngoài — Y khoa giảng dạy bằng tiếng Anh (411)
 
 ID đối chiếu: 7607; mã nguồn: 4 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-a-DAD.html#diem-thi-rieng-7607)
+[Đọc quy định gốc](https://donga.edu.vn/tuyensinh/ts-chi-tiet/dai-hoc-dong-a-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971)
+
+- Phương thức 411 chỉ xét Y khoa bằng tiếng Anh cho người nước ngoài; văn bằng tương đương, bảng điểm khoa học, chuẩn tiếng Anh, kết quả tốt nghiệp từ 65% và phỏng vấn bắt buộc.
 
 Nguồn có các mục: Đối tượng; Điều kiện; Cách xét / cách tính điểm.
 
+> Loại Dược khỏi phạm vi 411; không giữ mã nội bộ 132/133 trong trường mã ngành quốc gia. Chưa xác nhận mã riêng của Y khoa tiếng Anh nên để trống mã.
+
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 132 | Y khoa |  | A00; A02; B00; B03; B08; D07; X09; X11; X13; X14 | 0 | 1. Cơ sở Đà Nẵng |
-| 133 | Dược học |  | A00; A02; B00; B03; B08; D07; X09; X11; X13; X14 | 0 | 1. Cơ sở Đà Nẵng |
+|  | Y khoa (giảng dạy bằng tiếng Anh) | Thí sinh tốt nghiệp THPT nước ngoài, phương thức 411 |  |  | Nguồn mục II.4.6 chỉ xác nhận chương trình này; chưa xác nhận mã riêng. Không dùng mã 132 trong bảng Y khoa chung làm mã ngành quốc gia. |
 
 ### ƯTXT, XT thẳng
 
@@ -5388,6 +5392,7 @@ ID đối chiếu: thpt; mã nguồn: không ghi (school).
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-da-nang-DDF.html)
+- [Nguồn 2 (official)](https://tuyensinh.ufl.udn.vn/wp-content/uploads/2026/06/2026.06.02-Thong-tin-tuyen-sinh-nam-2026-FINAL.pdf)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0616/20260602-thong-tin-tuyen-sinh-nam-2026-final.pdf)
 
 ### Điểm thi THPT + Học bạ
@@ -5480,6 +5485,7 @@ Nguồn có các mục: Đối tượng; Thông tin khác.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-bach-khoa-da-nang-DDK.html)
+- [Nguồn 2 (official)](https://tuyensinh.dut.udn.vn/diem-quy-doi-chung-chi-ngoai-ngu)
 
 ### Điểm thi THPT
 
@@ -7953,17 +7959,22 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: V-SAT, SAT.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-y-duoc-da-nang-DDY.html)
+- [Nguồn 2 (official)](https://smp.udn.vn/ckfinder/userfiles/files/C%E1%BA%ACP%20NH%E1%BA%ACT_DDY_%20TH%C3%94NG%20TIN%20TUY%E1%BB%82N%20SINH%20TYD%20N%C4%82M%202026(1).pdf)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0407/thong-tin-tuyen-sinh-truong-y-duoc-dai-hoc-da-nang-2026.pdf)
 
 ### Điểm thi THPT
 
 ID đối chiếu: 8825; mã nguồn: 1 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-y-duoc-da-nang-DDY.html#diem-thi-thpt-8825)
+[Đọc quy định gốc](https://smp.udn.vn/ckfinder/userfiles/files/C%E1%BA%ACP%20NH%E1%BA%ACT_DDY_%20TH%C3%94NG%20TIN%20TUY%E1%BB%82N%20SINH%20TYD%20N%C4%82M%202026(1).pdf)
+
+- PT100 sử dụng kết quả thi THPT 2026 vào tất cả bảy ngành. Chỉ trong tổ hợp có Tiếng Anh B08/D07/A01/D01 mới có nhánh thay IELTS; phép cộng cuối được nguồn xác nhận rõ cho nhánh thay chứng chỉ, chưa phải biểu thức chung của mọi tổ hợp.
 
 Nguồn có các mục: Điều kiện; Cách xét / cách tính điểm.
 
 Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS.
+
+> Giữ phạm vi toàn phương thức THPT; không dùng công thức thay IELTS để mô tả B00/A00. Công thức điểm cuối riêng của nhánh THPT thường còn cần xác nhận.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -8191,6 +8202,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-du-lich-dai-hoc-hue-DHD.html)
+- [Nguồn 2 (official)](https://huis.edu.vn/uploads/static/THONG_TIN_TUYEN_SINH_202611.pdf)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0423/thong-tin-tuyen-sinh-truong-du-lich-dai-hoc-hue-2026.pdf)
 
 ### Điểm thi THPT
@@ -9961,6 +9973,9 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ky-thuat-binh-duong-DKB.html)
+- [Nguồn 2 (official)](https://tuyensinh.ktkt.edu.vn/fileuploads/Article/AttachmentFile/d54297b5b9d740b2bd67d15fb648ba21.pdf)
+
+> Chỉ V-ACT có phép đổi 30/1200 trong bảng. SPT của ĐH Sư phạm Hà Nội không phải HSA; chưa có đủ công thức ghép môn và điểm cuối.
 
 ### Điểm học bạ
 
@@ -10123,7 +10138,10 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-tphcm-DKC.html)
+- [Nguồn 2 (official)](https://www.hutech.edu.vn/tuyensinh/tin-tuyen-sinh/14630721-hutech-cong-bo-phuong-an-tuyen-sinh-dai-hoc-chinh-quy-du-kien-nam-2026)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0527/thong-tin-tuyen-sinh-dh-cong-nghe-tphcm-2026.pdf)
+
+> Nguồn trường 2026 đã chuyển học bạ sang sáu kỳ; điều kiện xét tốt nghiệp Y/Dược là 8,5 trong phương án cập nhật. Không giữ nội dung riêng lớp 12 hoặc 8,0 từ nguồn tổng hợp cũ. Còn thiếu bảng quy đổi và điểm cộng.
 
 ### Điểm thi THPT
 
@@ -10400,11 +10418,17 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: V-SAT, VSAT.
 
 ID đối chiếu: 7906; mã nguồn: 3 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghe-tphcm-DKC.html#diem-hoc-ba-7906)
+[Đọc quy định gốc](https://www.hutech.edu.vn/tuyensinh/tin-tuyen-sinh/14630721-hutech-cong-bo-phuong-an-tuyen-sinh-dai-hoc-chinh-quy-du-kien-nam-2026)
+
+- Luật/Luật KT: lớp 12 Giỏi và tổng thi 3 môn≥18 hoặc xét tốt nghiệp≥8,5. Y/Dược: Giỏi và tổng thi≥20 hoặc xét tốt nghiệp 8,5. Điều dưỡng/Xét nghiệm: Khá và tổng thi≥16,5 hoặc xét tốt nghiệp 6,5.
+- Tổ hợp/nhóm ngành theo bảng 64 chương trình 2026; không dùng điều kiện 2025 từ nguồn tổng hợp.
+- Học bạ dùng tổ hợp sáu học kỳ 10,11,12; thay nội dung cũ riêng lớp 12.
 
 Nguồn có các mục: Đối tượng; Cách xét / cách tính điểm.
 
 Bài thi / chứng chỉ được nhắc trong điều kiện: VSAT.
+
+> Thông báo chính thức 2026 dùng sáu học kỳ; thay nội dung nguồn tổng hợp cũ chỉ dùng lớp 12.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -11725,6 +11749,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html)
+- [Nguồn 2 (official)](https://tuyensinh.ldxh.edu.vn/gt/)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0128/thong-tin-tuyen-sinh-truong-dai-hoc-lao-dong-xa-hoi-2026.pdf)
 
 ### Điểm thi THPT
@@ -11777,15 +11802,17 @@ Nguồn có các mục: Đối tượng.
 | 7380107 | Luật kinh tế |  | A01; D01; X01; X25 | 100 |  |
 | 7760101A | Công tác xã hội |  | C00; D01; D14; X70 | 100 |  |
 
-### Xét kết hợp Điểm thi + CCNN
+### THPT có quy đổi chứng chỉ tiếng Anh
 
 ID đối chiếu: 9478; mã nguồn: 10 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html#xet-tuyen-ket-hop-9478)
+[Đọc quy định gốc](https://tuyensinh.ldxh.edu.vn/gt/)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
 Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS, TOEFL, TOEIC, PTE, Aptis, Cambridge.
+
+> Nguồn trường xếp chứng chỉ tiếng Anh là quy đổi trong PT 100/PT 200, không phải hai phương thức độc lập.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -11804,15 +11831,17 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS, TOEFL, TOE
 | 7380107 | Luật kinh tế |  | A01; D01; X01; X25 | 100 |  |
 | 7760101A | Công tác xã hội |  | C00; D01; D14; X70 | 100 |  |
 
-### Xét kết hợp Học bạ + CCNN
+### Học bạ có quy đổi chứng chỉ tiếng Anh
 
 ID đối chiếu: 9479; mã nguồn: 3 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-phia-nam-DLS.html#diem-hoc-ba-9479)
+[Đọc quy định gốc](https://tuyensinh.ldxh.edu.vn/gt/)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
 Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS, TOEFL, TOEIC, PTE, Aptis, Cambridge.
+
+> Nguồn trường xếp chứng chỉ tiếng Anh là quy đổi trong PT 100/PT 200, không phải hai phương thức độc lập.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -11931,6 +11960,31 @@ Nguồn có các mục: Đối tượng.
 | 7380107 | Luật kinh tế |  |  | 100 |  |
 | 7760101A | Công tác xã hội |  |  | 100 |  |
 
+### Kết quả học dự bị đại học dân tộc
+
+ID đối chiếu: 500; mã nguồn: 500 (national_as_published).
+
+[Đọc quy định gốc](https://tuyensinh.ldxh.edu.vn/gt/)
+
+- Tốt nghiệp THPT, hoàn thành một năm dự bị đại học; tổng trung bình ba môn của năm dự bị từ 18 gồm ưu tiên; Ngôn ngữ Anh yêu cầu môn Anh từ 7.
+
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
+| 7220201 | Ngôn ngữ Anh |  | A01;D01;D09; D15 | 50 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7310101 A | Kinh tế lao động |  | A01; D01; D09; X25 | 50 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7310401 A | Tâm lý học |  | C00; D01; D14; X74 | 50 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7340101 A | Quản trị kinh doanh |  | A01; D01; X05; X25 | 70 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7340101 B | Marketing |  | A01; D01; X05; X25 | 50 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7340101 C | Logistics và quản trị chuỗi cung ứng |  | A01; D01; X05; X25 | 50 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7340201 A | Tài chính - Ngân hàng |  | A01; C01; D01; X25 | 70 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7340207 | Bảo hiểm - Tài chính |  | A01; D01; X21; X25 | 50 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7340301 A | Kế toán |  | A01; C03; D01; X25 | 100 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7340302 | Kiểm toán |  | A01; D01; X05; X25 | 70 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7340404 A | Quản trị nhân lực |  | A01; D01; D09; X25 | 150 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7340405 | Hệ thống thông tin quản lý |  | A01; D01; D07; X25 | 60 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7380107 | Luật kinh tế |  | A01; D01; X01; X25 | 100 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+| 7760101 A | Công tác xã hội |  | C00; D01; D14; X70 | 100 | Bảng ngành Cơ sở II tại mục 2.4 của thông báo tuyển sinh 2026; PT 500 theo mục 2.2.5 và 2.3. |
+
 <a id="school-DLT"></a>
 
 ## DLT — Trường Đại học Lao động - Xã hội (Cơ sở Sơn Tây)
@@ -11949,6 +12003,8 @@ Nguồn có các mục: Đối tượng.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lao-dong-xa-hoi-co-so-ha-noi-DLX.html)
+- [Nguồn 2 (official)](https://tuyensinh.ulsa.edu.vn/thong-bao-tuyen-sinh-dhcq-2026/)
+- [Nguồn 3 (official)](https://thongtindaotao.ulsa.edu.vn/tin-tuc/tin-tuc-chung/truong-dai-hoc-lao-dong-xa-hoi-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0505/thong-tin-tuyen-sinh-truong-dai-hoc-lao-dong-xa-hoi-2026.pdf)
 
 ### Điểm thi THPT
@@ -12268,6 +12324,45 @@ Nguồn có các mục: Đối tượng.
 | 7760101B | Dịch vụ chăm sóc xã hội với người cao tuổi |  |  | 60 |  |
 | 7810103A | Quản trị dịch vụ du lịch và lữ hành |  |  | 100 |  |
 | 7810103B | Quản trị khách sạn |  |  | 50 |  |
+
+### Xét kết quả năm dự bị đại học
+
+ID đối chiếu: prep; mã nguồn: 500 (national_as_published).
+
+[Đọc quy định gốc](https://thongtindaotao.ulsa.edu.vn/tin-tuc/tin-tuc-chung/truong-dai-hoc-lao-dong-xa-hoi-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/)
+
+- Mục5.1 cho tổ hợp đăng ký theo mục3 (bảng ngành DLX); học 1 năm dự bị, tổng3 môn gồm ưu tiên từ18; Ngôn ngữ Anh có điều kiện Anh từ7.
+
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
+| 7220201 | Ngôn ngữ Anh |  | A01;D01;D09; D15 | 100 |  |
+| 7310101A | Kinh tế lao động |  | A01; D01; D09; X25 | 55 |  |
+| 7310101B | Kinh tế số |  | A01; D01; D09; X25 | 70 |  |
+| 7310401A | Tâm lý học |  | C00; D01; D14; X74 | 120 |  |
+| 7310401B | Tâm lý học học đường |  | C00; D01; D14; X74 | 90 |  |
+| 7340101A | Quản trị kinh doanh |  | A01; D01; X05; X25 | 180 |  |
+| 7340101B | Marketing |  | A01; D01; X05; X25 | 50 |  |
+| 7340101C | Logistics và quản trị chuỗi cung ứng |  | A01; D01; X05; X25 | 50 |  |
+| 7340201A | Tài chính - Ngân hàng |  | A01; C01; D01; X25 | 180 |  |
+| 7340201B | Công nghệ tài chính |  | A01; C01; D01; X25 | 70 |  |
+| 7340204A | Bảo hiểm |  | A01; C04; D01; X25 | 50 |  |
+| 7340204B | Tài chính và Quản trị rủi ro |  | A01; C04; D01; X25 | 50 |  |
+| 7340204C | Đầu tư tài chính |  | A01; C04; D01; X25 | 50 |  |
+| 7340207 | Bảo hiểm - Tài chính |  | A01; D01; X21; X25 | 50 |  |
+| 7340301A | Kế toán |  | A01; C03; D01; X25 | 330 |  |
+| 7340301B | Phân tích dữ liệu trong kế toán |  | A01; C03; D01; X25 | 100 |  |
+| 7340301C | Kế toán quản trị định hướng chứng chỉ quốc tế CMA |  | A01; C03; D01; X25 | 50 |  |
+| 7340302 | Kiểm toán |  | A01; D01; X05; X25 | 70 |  |
+| 7340404A | Quản trị nhân lực |  | A01; D01; D09; X25 | 250 |  |
+| 7340404B | Quản trị nhân lực số |  | A01; D01; D09; X25 | 120 |  |
+| 7340404C | Quản trị nhân lực và văn phòng |  | A01; D01; D09; X25 | 60 |  |
+| 7340405 | Hệ thống thông tin quản lý |  | A01; D01; D07; X25 | 60 |  |
+| 7380107 | Luật kinh tế |  | A01; D01; X01; X25 | 100 |  |
+| 7480201 | Công nghệ thông tin |  | A01; D01; X06; X25 | 120 |  |
+| 7760101A | Công tác xã hội |  | C00; D01; D14; X70 | 115 |  |
+| 7760101B | Dịch vụ chăm sóc xã hội với người cao tuổi |  | C00; D01; D14; X70 | 60 |  |
+| 7810103A | Quản trị dịch vụ du lịch và lữ hành |  | A01; D01; X17; X25 | 100 |  |
+| 7810103B | Quản trị khách sạn |  | A01; D01; X17; X25 | 50 |  |
 
 <a id="school-DMS"></a>
 
@@ -12740,7 +12835,10 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nam-can-tho-DNC.html)
+- [Nguồn 2 (official)](https://tuyensinh.nctu.edu.vn/news/2026/danh-muc-nganh-tuyen-sinh-dai-hoc-2026)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0618/thong-tin-tuyen-sinh-truong-dai-hoc-nam-can-tho.pdf)
+
+> Nguồn trường công bố 5 nhóm phương thức; chưa có hệ số PT 407 hay bảng quy đổi từng kỳ thi. Không tự suy ra tỷ lệ 50/50.
 
 ### Điểm thi THPT
 
@@ -13157,7 +13255,10 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: SAT, ACT, IELTS.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-ngoai-ngu-tin-hoc-tphcm-DNT.html)
+- [Nguồn 2 (official)](https://huflit.edu.vn/vi/tin-tuc/huflit-cong-bo-thong-tin-tuyen-sinh-nam-2026/)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0508/thong-tin-tuyen-sinh-truong-dai-hoc-ngoai-ngu-tin-hoc-tphcm-2026.pdf)
+
+> Nguồn trường xác nhận học bạ ba năm và ngưỡng V-ACT 550/1200. Chưa xác minh đủ điểm cộng và ưu tiên cuối cho mọi ngành.
 
 ### Điểm thi THPT
 
@@ -13750,6 +13851,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-pham-van-dong-DPQ.html)
+- [Nguồn 2 (official)](https://tuyensinh.pdu.edu.vn/download/3770/)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0425/pdu-thong-tin-tuyen-sinh-cq-2026-1.pdf)
 
 ### Điểm thi THPT
@@ -14497,106 +14599,136 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html)
+- [Nguồn 2 (official)](https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208)
+- [Nguồn 3 (official)](https://qnu.edu.vn/vi/tuyen-sinh-1763/tb123-ve-viec-quy-doi-tuong-duong-diem-giua-cac-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-2625)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0616/thong-tin-tuyen-sinh-truong-dai-hoc-quy-nhon-nam-2026.pdf)
+
+> Tổ hợp được lưu đúng tên môn trong bảng nguồn; với tên chung “Công nghệ” không tự suy thành Công nghệ công nghiệp hoặc Công nghệ nông nghiệp. Chỉ tiêu là tổng theo chương trình, không phải chỉ tiêu riêng của từng phương thức.
 
 ### Điểm thi THPT
 
 ID đối chiếu: 8531; mã nguồn: 1 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html#diem-thi-thpt-8531)
+[Đọc quy định gốc](https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208)
+
+- Phạm vi ngành và tổ hợp lấy từ cột PT1 của bảng II.4 TB1906 ngày 31/05/2026.
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7140114 | Quản lý giáo dục |  | C00; X70; X74; X01; D01; C03 | 0 |  |
-| 7140202 | Giáo dục Tiểu học |  | D01; D11; D12; D13; D14; D15 | 0 |  |
-| 7140205 | Giáo dục Chính trị |  | X01; X70; X74; X78 | 0 |  |
-| 7140209 | Sư phạm Toán học |  | A00; A01; D07; X26 | 0 |  |
-| 7140210 | Sư phạm Tin học |  | A00; A01; D01; D07; X02; X06; X10; X26 | 0 |  |
-| 7140211 | Sư phạm Vật lý |  | A00; A01; C01; X06 | 0 |  |
-| 7140212 | Sư phạm Hóa học |  | A00; B00; D07; C02 | 0 |  |
-| 7140213 | Sư phạm Sinh học |  | B00; A02; D08; B03 | 0 |  |
-| 7140217 | Sư phạm Ngữ văn |  | C00; D14; D15; D01; X78 | 0 |  |
-| 7140218 | Sư phạm Lịch sử |  | C00; X70; D14; C03 | 0 |  |
-| 7140219 | Sư phạm Địa lý |  | C00; X74; D15; C04; D10; X21; B02; A07; A06 | 0 |  |
-| 7140231 | Sư phạm Tiếng Anh |  | D01 | 0 |  |
-| 7140247 | Sư phạm Khoa học tự nhiên |  | A00; A01; A02; B00; D08 | 0 |  |
-| 7140249 | Sư phạm Lịch sử - Địa lý |  | C00; X70; X74; D14; D15; C03; C04 | 0 |  |
-| 7220201 | Ngôn ngữ Anh |  | D01; D14; D15; A01 | 0 |  |
-| 7220204 | Ngôn ngữ Trung Quốc |  | D01; D14; D15; A01 | 0 |  |
-| 7229030 | Văn học |  | C00; X70; D14; D15; X78; X74 | 0 |  |
-| 7310101 | Kinh tế |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7310109 | Kinh tế số (dự kiến) |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7310205 | Quản lý nhà nước |  | D01; D11; D14; X01; X70; C00 | 0 |  |
-| 7310403 | Tâm lý học giáo dục |  | C00; X70; X74; X01; D01; C03; D14 | 0 |  |
-| 7310608 | Đông phương học |  | C00; X70; D14; D15; X78; D01; C03; D65 | 0 |  |
-| 7310630 | Việt Nam học |  | C00; X70; X74; C03; C04; X78; X01 | 0 |  |
-| 7340101 | Quản trị kinh doanh |  | D01; A01; D07; X26; X25; D09; D10 | 0 |  |
-| 7340201 | Tài chính – Ngân hàng |  | D01; A01; D07; X26; X25; D09; D10 | 0 |  |
-| 7340301 | Kế toán |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7340301 ACCA | Kế toán (Định hướng ACCA) |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7340302 | Kiểm toán |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7380101 | Luật |  | D01; D11; D14; X01; X70; C00 | 0 |  |
-| 7440112 | Hóa học |  | A00; B00; D07; C02; X10; A05; A06; X09 | 0 |  |
-| 7460108 | Khoa học dữ liệu |  | A00; A01; D07; X26; D01 | 0 |  |
-| 7460112 | Toán ứng dụng |  | A00; A01; D07; X26; D01 | 0 |  |
-| 7480103 | Kỹ thuật phần mềm |  | A01; D01; D07; X25; X26 | 0 |  |
-| 7480107 | Trí tuệ nhân tạo |  | A00; A01; D01; D07; X26 | 0 |  |
-| 7480201 | Công nghệ thông tin |  | A01; D01; D07; X25; X26 | 0 |  |
-| 7510205 | Công nghệ kỹ thuật ô tô |  | A00; A01; X06; C01; X07 | 0 |  |
-| 7510401 | Công nghệ kỹ thuật hóa học |  | A00; D07; C02; X09; B00; X10; A05 | 0 |  |
-| 7510605 | Logistics và QL chuỗi cung ứng |  | D01; A01; D07; X26; X25; D09; D10 | 0 |  |
-| 7520116 | Kỹ thuật cơ khí động lực |  | A00; A01; X06; C01; X07 | 0 |  |
-| 7520201 | Kỹ thuật điện |  | A00; A01; X06; C01; X07 | 0 |  |
-| 7520207 | Kỹ thuật điện tử - viễn thông |  | A00; A01; X06; C01; X07; X08 | 0 |  |
-| 7520216 | Kỹ thuật điều khiển và TĐH |  | A00; A01; X06; C01; X07; X08 | 0 |  |
-| 7520401 | Vật lý kỹ thuật |  | A00; A01; A02; X06; X07; X08; C01 | 0 |  |
-| 7540101 | Công nghệ thực phẩm |  | B00; A06; A05; A00; D07; X10; C02; X09 | 0 |  |
-| 7580201 | Kỹ thuật xây dựng |  | A00; A01; X06; C01; X07; X08 | 0 |  |
-| 7620301 | Nuôi trồng thủy sản |  | A02; B00; B01; B03; D08; X13; X14; X15; B02; X16 | 0 |  |
-| 7760101 | Công tác xã hội |  | C00; X70; D14; D01; C04; C03; X01; X78; X74 | 0 |  |
-| 7810103 | QL dịch vụ du lịch và lữ hành |  | X01; D01; C03; C04; C02; C01; X02 | 0 |  |
-| 7810201 | Quản trị khách sạn |  | X01; D01; C03; C04; C02; C01; X02 | 0 |  |
-| 7850101 | Quản lý tài nguyên và môi trường |  | X74; X21; C04; B02; D15; A04; D10; C13; A06 | 0 |  |
-| 7850103 | Quản lý đất đai |  | X74; X21; C04; B02; D15; A04; D10; C13; A06 | 0 |  |
+| 7140114 | Quản lý giáo dục |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử) | 44 | TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140202 | Giáo dục Tiểu học |  | (Văn, Anh, Toán); (Văn, Anh, Lý); (Văn, Anh, Hóa); (Văn, Anh, Sinh); (Văn, Anh, Sử); (Văn, Anh, Địa) | 250 | TB1906 ngày 31/05/2026, mục II.4, dòng 3. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140205 | Giáo dục Chính trị |  | (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Anh, Giáo dục KT và PL) | 20 | TB1906 ngày 31/05/2026, mục II.4, dòng 4. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140209 | Sư phạm Toán học |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh) | 100 | TB1906 ngày 31/05/2026, mục II.4, dòng 6. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140210 | Sư phạm Tin học |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Văn, Tin); (Toán, Lý, Tin); (Toán, Hóa, Tin); (Toán, Anh, Tin) | 120 | TB1906 ngày 31/05/2026, mục II.4, dòng 7. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140211 | Sư phạm Vật lý |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Văn); (Toán, Lý, Tin) | 51 | TB1906 ngày 31/05/2026, mục II.4, dòng 8. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140212 | Sư phạm Hóa học |  | (Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn) | 36 | TB1906 ngày 31/05/2026, mục II.4, dòng 9. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140213 | Sư phạm Sinh học |  | (Toán, Sinh, Hóa); (Toán, Sinh, Lý); (Toán, Sinh, Anh); (Toán, Sinh, Văn) | 25 | TB1906 ngày 31/05/2026, mục II.4, dòng 10. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140217 | Sư phạm Ngữ Văn |  | (Văn, Sử, Địa); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Toán, Anh); (Văn, Giáo dục KT và PL, Anh) | 120 | TB1906 ngày 31/05/2026, mục II.4, dòng 11. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140218 | Sư phạm Lịch sử |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Sử, Toán) | 54 | TB1906 ngày 31/05/2026, mục II.4, dòng 12. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140219 | Sư phạm Địa lý |  | (Văn, Địa, Sử); (Văn, Địa, Giáo dục KT và PL); (Văn, Địa, Anh); (Văn, Địa, Toán); (Toán, Địa, Anh); (Toán, Địa, Giáo dục KT và PL); (Toán, Địa, Sinh); (Toán, Địa, Sử); (Toán, Địa, Hóa) | 80 | TB1906 ngày 31/05/2026, mục II.4, dòng 13. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140231 | Sư phạm Tiếng Anh |  | (Toán, Văn, Anh) | 200 | TB1906 ngày 31/05/2026, mục II.4, dòng 14. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140247 | Sư phạm Khoa học tự nhiên |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Hóa, Sinh); (Toán, Sinh, Anh) | 70 | TB1906 ngày 31/05/2026, mục II.4, dòng 15. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140249 | Sư phạm Lịch sử - Địa lý |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Sử, Toán); (Văn, Địa, Toán) | 85 | TB1906 ngày 31/05/2026, mục II.4, dòng 16. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7220201 | Ngôn ngữ Anh |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 261 | TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7220204 | Ngôn ngữ Trung Quốc |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7229030 | Văn học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL) | 57 | TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310101 | Kinh tế |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310109 | Kinh tế số |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310205 | Quản lý nhà nước |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa) | 61 | TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310403 | Tâm lý học giáo dục |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Anh) | 64 | TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310608 | Đông phương học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Tiếng Trung) | 102 | TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310630 | Việt Nam học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Sử); (Văn, Toán, Địa); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Giáo dục KT và PL) | 63 | TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340101 | Quản trị kinh doanh |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 249 | TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340201 | Tài chính – Ngân hàng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 94 | TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340301 | Kế toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 257 | TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340301AC | Kế toán (Định hướng ACCA) |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 30 | TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340302 | Kiểm toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 49 | TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7380101 | Luật |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa) | 106 | TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7440112 | Hóa học (Hóa dược, Hóa mỹ phẩm) |  | (Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Tin); (Toán, Hóa, Sử); (Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT và PL) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7460108 | Khoa học dữ liệu |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7460112 | Toán ứng dụng |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480103 | Kỹ thuật phần mềm |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 60 | TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480107 | Trí tuệ nhân tạo |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh) | 53 | TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480201 | Công nghệ thông tin (An toàn, an ninh mạng) |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 182 | TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510205 | Công nghệ kỹ thuật ô tô |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 137 | TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510401 | Công nghệ kỹ thuật hoá học |  | (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL); (Toán, Hóa, Sinh); (Toán, Hóa, Tin); (Toán, Hóa, Sử) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510605 | Logistics và Quản lý chuỗi cung ứng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 159 | TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520116 | Kỹ thuật cơ khí động lực |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 40 | TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520201 | Kỹ thuật điện |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 144 | TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520207 | Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch) |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 100 | TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520216 | Kỹ thuật điều khiển và tự động hóa |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 85 | TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520401 | Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch) |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Tin); (Toán, Lý, Công nghệ); (Toán, Lý, Văn) | 62 | TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7540101 | Công nghệ thực phẩm |  | (Toán, Hóa, Sinh); (Toán, Hóa, Địa); (Toán, Hóa, Sử); (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Tin); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL) | 143 | TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7580201 | Kỹ thuật xây dựng |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 109 | TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7620109 | Nông học |  | (Toán, Sinh, Lý); (Toán, Sinh, Hóa); (Toán, Sinh, Sử); (Toán, Sinh, Văn); (Toán, Sinh, Anh); (Toán, Sinh, Giáo dục KT và PL); (Toán, Sinh, Tin); (Toán, Sinh, Công nghệ); (Toán, Sinh, Địa) | 43 | TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7760101 | Công tác xã hội |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Toán, Địa); (Văn, Toán, Sử); (Văn, Toán, Giáo dục KT và PL); (Văn, Giáo dục KT và PL, Anh); (Văn, Địa, Giáo dục KT và PL) | 52 | TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7810103 | Quản trị dịch vụ du lịch và lữ hành |  | (Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin) | 125 | TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7810201 | Quản trị khách sạn |  | (Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7850101 | Quản lý tài nguyên và môi trường |  | (Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa) | 112 | TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7850103 | Quản lý đất đai |  | (Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa) | 123 | TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
 
 ### Điểm học bạ
 
 ID đối chiếu: 8532; mã nguồn: 3 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html#diem-hoc-ba-8532)
+[Đọc quy định gốc](https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208)
+
+- Phạm vi ngành và tổ hợp lấy từ cột PT2 của bảng II.4 TB1906 ngày 31/05/2026.
+- Không áp dụng ngành đào tạo giáo viên; Quản lý giáo dục 7140114 được trường ghi áp dụng.
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7140114 | Quản lý giáo dục |  | C00; X70; X74; X01; D01; C03 | 0 |  |
-| 7140202 | Giáo dục Tiểu học |  | D01; D11; D12; D13; D14; D15 | 0 |  |
-| 7140205 | Giáo dục Chính trị |  | X01; X70; X74; X78 | 0 |  |
-| 7140209 | Sư phạm Toán học |  | A00; A01; D07; X26 | 0 |  |
-| 7140210 | Sư phạm Tin học |  | A00; A01; D01; D07; X02; X06; X10; X26 | 0 |  |
-| 7140211 | Sư phạm Vật lý |  | A00; A01; C01; X06 | 0 |  |
-| 7140212 | Sư phạm Hóa học |  | A00; B00; D07; C02 | 0 |  |
-| 7140213 | Sư phạm Sinh học |  | B00; A02; D08; B03 | 0 |  |
-| 7140217 | Sư phạm Ngữ văn |  | C00; D14; D15; D01; X78 | 0 |  |
-| 7140218 | Sư phạm Lịch sử |  | C00; X70; D14; C03 | 0 |  |
-| 7140219 | Sư phạm Địa lý |  | C00; X74; D15; C04; D10; X21; B02; A07; A06 | 0 |  |
-| 7140231 | Sư phạm Tiếng Anh |  | D01 | 0 |  |
-| 7140247 | Sư phạm Khoa học tự nhiên |  | A00; A01; A02; B00; D08 | 0 |  |
-| 7140249 | Sư phạm Lịch sử - Địa lý |  | C00; X70; X74; D14; D15; C03; C04 | 0 |  |
-| 7220201 | Ngôn ngữ Anh |  | D01; D14; D15; A01 | 0 |  |
-| 7220204 | Ngôn ngữ Trung Quốc |  | D01; D14; D15; A01 | 0 |  |
-| 7229030 | Văn học |  | C00; X70; D14; D15; X78; X74 | 0 |  |
-| 7310101 | Kinh tế |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7310109 | Kinh tế số (dự kiến) |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7310205 | Quản lý nhà nước |  | D01; D11; D14; X01; X70; C00 | 0 |  |
+| 7140114 | Quản lý giáo dục |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử) | 44 | TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7220201 | Ngôn ngữ Anh |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 261 | TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7220204 | Ngôn ngữ Trung Quốc |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7229030 | Văn học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL) | 57 | TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310101 | Kinh tế |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310109 | Kinh tế số |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310205 | Quản lý nhà nước |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa) | 61 | TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310403 | Tâm lý học giáo dục |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Anh) | 64 | TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310608 | Đông phương học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Tiếng Trung) | 102 | TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310630 | Việt Nam học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Sử); (Văn, Toán, Địa); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Giáo dục KT và PL) | 63 | TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340101 | Quản trị kinh doanh |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 249 | TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340201 | Tài chính – Ngân hàng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 94 | TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340301 | Kế toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 257 | TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340301AC | Kế toán (Định hướng ACCA) |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 30 | TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340302 | Kiểm toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 49 | TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7380101 | Luật |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa) | 106 | TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7440112 | Hóa học (Hóa dược, Hóa mỹ phẩm) |  | (Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Tin); (Toán, Hóa, Sử); (Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT và PL) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7460108 | Khoa học dữ liệu |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7460112 | Toán ứng dụng |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480103 | Kỹ thuật phần mềm |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 60 | TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480107 | Trí tuệ nhân tạo |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh) | 53 | TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480201 | Công nghệ thông tin (An toàn, an ninh mạng) |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 182 | TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510205 | Công nghệ kỹ thuật ô tô |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 137 | TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510401 | Công nghệ kỹ thuật hoá học |  | (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL); (Toán, Hóa, Sinh); (Toán, Hóa, Tin); (Toán, Hóa, Sử) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510605 | Logistics và Quản lý chuỗi cung ứng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 159 | TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520116 | Kỹ thuật cơ khí động lực |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 40 | TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520201 | Kỹ thuật điện |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 144 | TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520207 | Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch) |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 100 | TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520216 | Kỹ thuật điều khiển và tự động hóa |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 85 | TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520401 | Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch) |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Tin); (Toán, Lý, Công nghệ); (Toán, Lý, Văn) | 62 | TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7540101 | Công nghệ thực phẩm |  | (Toán, Hóa, Sinh); (Toán, Hóa, Địa); (Toán, Hóa, Sử); (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Tin); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL) | 143 | TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7580201 | Kỹ thuật xây dựng |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 109 | TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7620109 | Nông học |  | (Toán, Sinh, Lý); (Toán, Sinh, Hóa); (Toán, Sinh, Sử); (Toán, Sinh, Văn); (Toán, Sinh, Anh); (Toán, Sinh, Giáo dục KT và PL); (Toán, Sinh, Tin); (Toán, Sinh, Công nghệ); (Toán, Sinh, Địa) | 43 | TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7760101 | Công tác xã hội |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Toán, Địa); (Văn, Toán, Sử); (Văn, Toán, Giáo dục KT và PL); (Văn, Giáo dục KT và PL, Anh); (Văn, Địa, Giáo dục KT và PL) | 52 | TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7810103 | Quản trị dịch vụ du lịch và lữ hành |  | (Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin) | 125 | TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7810201 | Quản trị khách sạn |  | (Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7850101 | Quản lý tài nguyên và môi trường |  | (Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa) | 112 | TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7850103 | Quản lý đất đai |  | (Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa) | 123 | TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
 
 ### Kết hợp Điểm thi THPT + CCNN
 
 ID đối chiếu: 9491; mã nguồn: 10 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html#xet-tuyen-ket-hop-9491)
+[Đọc quy định gốc](https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208)
+
+- Phạm vi ngành và tổ hợp lấy từ cột PT1 của bảng II.4 TB1906 ngày 31/05/2026.
+- Đây là nhánh dùng IELTS/VSTEP thay điểm Tiếng Anh của phương thức gốc; chỉ giữ tổ hợp có Tiếng Anh, không cộng chứng chỉ lần thứ hai.
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
@@ -14604,63 +14736,67 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS, VSTEP.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7140114 | Quản lý giáo dục |  | C00; X70; X74; X01; D01; C03 | 0 |  |
-| 7140202 | Giáo dục Tiểu học |  | D01; D11; D12; D13; D14; D15 | 0 |  |
-| 7140205 | Giáo dục Chính trị |  | X01; X70; X74; X78 | 0 |  |
-| 7140209 | Sư phạm Toán học |  | A00; A01; D07; X26 | 0 |  |
-| 7140210 | Sư phạm Tin học |  | A00; A01; D01; D07; X02; X06; X10; X26 | 0 |  |
-| 7140211 | Sư phạm Vật lý |  | A00; A01; C01; X06 | 0 |  |
-| 7140212 | Sư phạm Hóa học |  | A00; B00; D07; C02 | 0 |  |
-| 7140213 | Sư phạm Sinh học |  | B00; A02; D08; B03 | 0 |  |
-| 7140217 | Sư phạm Ngữ văn |  | C00; D14; D15; D01; X78 | 0 |  |
-| 7140218 | Sư phạm Lịch sử |  | C00; X70; D14; C03 | 0 |  |
-| 7140219 | Sư phạm Địa lý |  | C00; X74; D15; C04; D10; X21; B02; A07; A06 | 0 |  |
-| 7140231 | Sư phạm Tiếng Anh |  | D01 | 0 |  |
-| 7140247 | Sư phạm Khoa học tự nhiên |  | A00; A01; A02; B00; D08 | 0 |  |
-| 7140249 | Sư phạm Lịch sử - Địa lý |  | C00; X70; X74; D14; D15; C03; C04 | 0 |  |
-| 7220201 | Ngôn ngữ Anh |  | D01; D14; D15; A01 | 0 |  |
-| 7220204 | Ngôn ngữ Trung Quốc |  | D01; D14; D15; A01 | 0 |  |
-| 7229030 | Văn học |  | C00; X70; D14; D15; X78; X74 | 0 |  |
-| 7310101 | Kinh tế |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7310109 | Kinh tế số (dự kiến) |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7310205 | Quản lý nhà nước |  | D01; D11; D14; X01; X70; C00 | 0 |  |
-| 7310403 | Tâm lý học giáo dục |  | C00; X70; X74; X01; D01; C03; D14 | 0 |  |
-| 7310608 | Đông phương học |  | C00; X70; D14; D15; X78; D01; C03; D65 | 0 |  |
-| 7310630 | Việt Nam học |  | C00; X70; X74; C03; C04; X78; X01 | 0 |  |
-| 7340101 | Quản trị kinh doanh |  | D01; A01; D07; X26; X25; D09; D10 | 0 |  |
-| 7340201 | Tài chính – Ngân hàng |  | D01; A01; D07; X26; X25; D09; D10 | 0 |  |
-| 7340301 | Kế toán |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7340301 ACCA | Kế toán (Định hướng ACCA) |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7340302 | Kiểm toán |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7380101 | Luật |  | D01; D11; D14; X01; X70; C00 | 0 |  |
-| 7440112 | Hóa học |  | A00; B00; D07; C02; X10; A05; A06; X09 | 0 |  |
-| 7460108 | Khoa học dữ liệu |  | A00; A01; D07; X26; D01 | 0 |  |
-| 7460112 | Toán ứng dụng |  | A00; A01; D07; X26; D01 | 0 |  |
-| 7480103 | Kỹ thuật phần mềm |  | A01; D01; D07; X25; X26 | 0 |  |
-| 7480107 | Trí tuệ nhân tạo |  | A00; A01; D01; D07; X26 | 0 |  |
-| 7480201 | Công nghệ thông tin |  | A01; D01; D07; X25; X26 | 0 |  |
-| 7510205 | Công nghệ kỹ thuật ô tô |  | A00; A01; X06; C01; X07 | 0 |  |
-| 7510401 | Công nghệ kỹ thuật hóa học |  | A00; D07; C02; X09; B00; X10; A05 | 0 |  |
-| 7510605 | Logistics và QL chuỗi cung ứng |  | D01; A01; D07; X26; X25; D09; D10 | 0 |  |
-| 7520116 | Kỹ thuật cơ khí động lực |  | A00; A01; X06; C01; X07 | 0 |  |
-| 7520201 | Kỹ thuật điện |  | A00; A01; X06; C01; X07 | 0 |  |
-| 7520207 | Kỹ thuật điện tử - viễn thông |  | A00; A01; X06; C01; X07; X08 | 0 |  |
-| 7520216 | Kỹ thuật điều khiển và TĐH |  | A00; A01; X06; C01; X07; X08 | 0 |  |
-| 7520401 | Vật lý kỹ thuật |  | A00; A01; A02; X06; X07; X08; C01 | 0 |  |
-| 7540101 | Công nghệ thực phẩm |  | B00; A06; A05; A00; D07; X10; C02; X09 | 0 |  |
-| 7580201 | Kỹ thuật xây dựng |  | A00; A01; X06; C01; X07; X08 | 0 |  |
-| 7620301 | Nuôi trồng thủy sản |  | A02; B00; B01; B03; D08; X13; X14; X15; B02; X16 | 0 |  |
-| 7760101 | Công tác xã hội |  | C00; X70; D14; D01; C04; C03; X01; X78; X74 | 0 |  |
-| 7810103 | QL dịch vụ du lịch và lữ hành |  | X01; D01; C03; C04; C02; C01; X02 | 0 |  |
-| 7810201 | Quản trị khách sạn |  | X01; D01; C03; C04; C02; C01; X02 | 0 |  |
-| 7850101 | Quản lý tài nguyên và môi trường |  | X74; X21; C04; B02; D15; A04; D10; C13; A06 | 0 |  |
-| 7850103 | Quản lý đất đai |  | X74; X21; C04; B02; D15; A04; D10; C13; A06 | 0 |  |
+| 7140114 | Quản lý giáo dục |  | (Văn, Toán, Anh) | 44 | TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140202 | Giáo dục Tiểu học |  | (Văn, Anh, Toán); (Văn, Anh, Lý); (Văn, Anh, Hóa); (Văn, Anh, Sinh); (Văn, Anh, Sử); (Văn, Anh, Địa) | 250 | TB1906 ngày 31/05/2026, mục II.4, dòng 3. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140205 | Giáo dục Chính trị |  | (Văn, Anh, Giáo dục KT và PL) | 20 | TB1906 ngày 31/05/2026, mục II.4, dòng 4. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140209 | Sư phạm Toán học |  | (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh) | 100 | TB1906 ngày 31/05/2026, mục II.4, dòng 6. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140210 | Sư phạm Tin học |  | (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Anh, Tin) | 120 | TB1906 ngày 31/05/2026, mục II.4, dòng 7. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140211 | Sư phạm Vật lý |  | (Toán, Lý, Anh) | 51 | TB1906 ngày 31/05/2026, mục II.4, dòng 8. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140212 | Sư phạm Hóa học |  | (Toán, Hóa, Anh) | 36 | TB1906 ngày 31/05/2026, mục II.4, dòng 9. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140213 | Sư phạm Sinh học |  | (Toán, Sinh, Anh) | 25 | TB1906 ngày 31/05/2026, mục II.4, dòng 10. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140217 | Sư phạm Ngữ Văn |  | (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Toán, Anh); (Văn, Giáo dục KT và PL, Anh) | 120 | TB1906 ngày 31/05/2026, mục II.4, dòng 11. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140218 | Sư phạm Lịch sử |  | (Văn, Sử, Anh) | 54 | TB1906 ngày 31/05/2026, mục II.4, dòng 12. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140219 | Sư phạm Địa lý |  | (Văn, Địa, Anh); (Toán, Địa, Anh) | 80 | TB1906 ngày 31/05/2026, mục II.4, dòng 13. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140231 | Sư phạm Tiếng Anh |  | (Toán, Văn, Anh) | 200 | TB1906 ngày 31/05/2026, mục II.4, dòng 14. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140247 | Sư phạm Khoa học tự nhiên |  | (Toán, Lý, Anh); (Toán, Sinh, Anh) | 70 | TB1906 ngày 31/05/2026, mục II.4, dòng 15. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7140249 | Sư phạm Lịch sử - Địa lý |  | (Văn, Sử, Anh); (Văn, Địa, Anh) | 85 | TB1906 ngày 31/05/2026, mục II.4, dòng 16. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7220201 | Ngôn ngữ Anh |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 261 | TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7220204 | Ngôn ngữ Trung Quốc |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7229030 | Văn học |  | (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL) | 57 | TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310101 | Kinh tế |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310109 | Kinh tế số |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310205 | Quản lý nhà nước |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh) | 61 | TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310403 | Tâm lý học giáo dục |  | (Văn, Toán, Anh); (Văn, Sử, Anh) | 64 | TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310608 | Đông phương học |  | (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh) | 102 | TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310630 | Việt Nam học |  | (Văn, Giáo dục KT và PL, Anh) | 63 | TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7340101 | Quản trị kinh doanh |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 249 | TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7340201 | Tài chính – Ngân hàng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 94 | TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7340301 | Kế toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 257 | TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7340301AC | Kế toán (Định hướng ACCA) |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 30 | TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7340302 | Kiểm toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 49 | TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7380101 | Luật |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh) | 106 | TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7440112 | Hóa học (Hóa dược, Hóa mỹ phẩm) |  | (Toán, Hóa, Anh) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7460108 | Khoa học dữ liệu |  | (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7460112 | Toán ứng dụng |  | (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7480103 | Kỹ thuật phần mềm |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 60 | TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7480107 | Trí tuệ nhân tạo |  | (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh) | 53 | TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7480201 | Công nghệ thông tin (An toàn, an ninh mạng) |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 182 | TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7510205 | Công nghệ kỹ thuật ô tô |  | (Toán, Lý, Anh) | 137 | TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7510401 | Công nghệ kỹ thuật hoá học |  | (Toán, Hóa, Anh) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7510605 | Logistics và Quản lý chuỗi cung ứng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 159 | TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7520116 | Kỹ thuật cơ khí động lực |  | (Toán, Lý, Anh) | 40 | TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7520201 | Kỹ thuật điện |  | (Toán, Lý, Anh) | 144 | TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7520207 | Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch) |  | (Toán, Lý, Anh) | 100 | TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7520216 | Kỹ thuật điều khiển và tự động hóa |  | (Toán, Lý, Anh) | 85 | TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7520401 | Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch) |  | (Toán, Lý, Anh) | 62 | TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7540101 | Công nghệ thực phẩm |  | (Toán, Hóa, Anh) | 143 | TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7580201 | Kỹ thuật xây dựng |  | (Toán, Lý, Anh) | 109 | TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7620109 | Nông học |  | (Toán, Sinh, Anh) | 43 | TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7760101 | Công tác xã hội |  | (Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Giáo dục KT và PL, Anh) | 52 | TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7810103 | Quản trị dịch vụ du lịch và lữ hành |  | (Toán, Văn, Anh) | 125 | TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7810201 | Quản trị khách sạn |  | (Toán, Văn, Anh) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7850101 | Quản lý tài nguyên và môi trường |  | (Địa, Văn, Anh); (Địa, Toán, Anh) | 112 | TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7850103 | Quản lý đất đai |  | (Địa, Văn, Anh); (Địa, Toán, Anh) | 123 | TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
 
 ### Kết hợp Học bạ + CCNN
 
 ID đối chiếu: 9492; mã nguồn: 10 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html#xet-tuyen-ket-hop-9492)
+[Đọc quy định gốc](https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208)
+
+- Phạm vi ngành và tổ hợp lấy từ cột PT2 của bảng II.4 TB1906 ngày 31/05/2026.
+- Không áp dụng ngành đào tạo giáo viên; Quản lý giáo dục 7140114 được trường ghi áp dụng.
+- Đây là nhánh dùng IELTS/VSTEP thay điểm Tiếng Anh của phương thức gốc; chỉ giữ tổ hợp có Tiếng Anh, không cộng chứng chỉ lần thứ hai.
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
@@ -14668,161 +14804,176 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS, VSTEP.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7310403 | Tâm lý học giáo dục |  | C00; X70; X74; X01; D01; C03; D14 | 0 |  |
-| 7310608 | Đông phương học |  | C00; X70; D14; D15; X78; D01; C03; D65 | 0 |  |
-| 7310630 | Việt Nam học |  | C00; X70; X74; C03; C04; X78; X01 | 0 |  |
-| 7340101 | Quản trị kinh doanh |  | D01; A01; D07; X26; X25; D09; D10 | 0 |  |
-| 7340201 | Tài chính – Ngân hàng |  | D01; A01; D07; X26; X25; D09; D10 | 0 |  |
-| 7340301 | Kế toán |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7340301 ACCA | Kế toán (Định hướng ACCA) |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7340302 | Kiểm toán |  | X25; X26; D07; D01; A01; D10; D09 | 0 |  |
-| 7380101 | Luật |  | D01; D11; D14; X01; X70; C00 | 0 |  |
-| 7440112 | Hóa học |  | A00; B00; D07; C02; X10; A05; A06; X09 | 0 |  |
-| 7460108 | Khoa học dữ liệu |  | A00; A01; D07; X26; D01 | 0 |  |
-| 7460112 | Toán ứng dụng |  | A00; A01; D07; X26; D01 | 0 |  |
-| 7480103 | Kỹ thuật phần mềm |  | A01; D01; D07; X25; X26 | 0 |  |
-| 7480107 | Trí tuệ nhân tạo |  | A00; A01; D01; D07; X26 | 0 |  |
-| 7480201 | Công nghệ thông tin |  | A01; D01; D07; X25; X26 | 0 |  |
-| 7510205 | Công nghệ kỹ thuật ô tô |  | A00; A01; X06; C01; X07 | 0 |  |
-| 7510401 | Công nghệ kỹ thuật hóa học |  | A00; D07; C02; X09; B00; X10; A05 | 0 |  |
-| 7510605 | Logistics và QL chuỗi cung ứng |  | D01; A01; D07; X26; X25; D09; D10 | 0 |  |
-| 7520116 | Kỹ thuật cơ khí động lực |  | A00; A01; X06; C01; X07 | 0 |  |
-| 7520201 | Kỹ thuật điện |  | A00; A01; X06; C01; X07 | 0 |  |
-| 7520207 | Kỹ thuật điện tử - viễn thông |  | A00; A01; X06; C01; X07; X08 | 0 |  |
-| 7520216 | Kỹ thuật điều khiển và TĐH |  | A00; A01; X06; C01; X07; X08 | 0 |  |
-| 7520401 | Vật lý kỹ thuật |  | A00; A01; A02; X06; X07; X08; C01 | 0 |  |
-| 7540101 | Công nghệ thực phẩm |  | B00; A06; A05; A00; D07; X10; C02; X09 | 0 |  |
-| 7580201 | Kỹ thuật xây dựng |  | A00; A01; X06; C01; X07; X08 | 0 |  |
-| 7620301 | Nuôi trồng thủy sản |  | A02; B00; B01; B03; D08; X13; X14; X15; B02; X16 | 0 |  |
-| 7760101 | Công tác xã hội |  | C00; X70; D14; D01; C04; C03; X01; X78; X74 | 0 |  |
-| 7810103 | QL dịch vụ du lịch và lữ hành |  | X01; D01; C03; C04; C02; C01; X02 | 0 |  |
-| 7810201 | Quản trị khách sạn |  | X01; D01; C03; C04; C02; C01; X02 | 0 |  |
-| 7850101 | Quản lý tài nguyên và môi trường |  | X74; X21; C04; B02; D15; A04; D10; C13; A06 | 0 |  |
-| 7850103 | Quản lý đất đai |  | X74; X21; C04; B02; D15; A04; D10; C13; A06 | 0 |  |
+| 7140114 | Quản lý giáo dục |  | (Văn, Toán, Anh) | 44 | TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7220201 | Ngôn ngữ Anh |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 261 | TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7220204 | Ngôn ngữ Trung Quốc |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7229030 | Văn học |  | (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL) | 57 | TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310101 | Kinh tế |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310109 | Kinh tế số |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310205 | Quản lý nhà nước |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh) | 61 | TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310403 | Tâm lý học giáo dục |  | (Văn, Toán, Anh); (Văn, Sử, Anh) | 64 | TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310608 | Đông phương học |  | (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh) | 102 | TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7310630 | Việt Nam học |  | (Văn, Giáo dục KT và PL, Anh) | 63 | TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7340101 | Quản trị kinh doanh |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 249 | TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7340201 | Tài chính – Ngân hàng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 94 | TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7340301 | Kế toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 257 | TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7340301AC | Kế toán (Định hướng ACCA) |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 30 | TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7340302 | Kiểm toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 49 | TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7380101 | Luật |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh) | 106 | TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7440112 | Hóa học (Hóa dược, Hóa mỹ phẩm) |  | (Toán, Hóa, Anh) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7460108 | Khoa học dữ liệu |  | (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7460112 | Toán ứng dụng |  | (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7480103 | Kỹ thuật phần mềm |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 60 | TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7480107 | Trí tuệ nhân tạo |  | (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh) | 53 | TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7480201 | Công nghệ thông tin (An toàn, an ninh mạng) |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 182 | TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7510205 | Công nghệ kỹ thuật ô tô |  | (Toán, Lý, Anh) | 137 | TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7510401 | Công nghệ kỹ thuật hoá học |  | (Toán, Hóa, Anh) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7510605 | Logistics và Quản lý chuỗi cung ứng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 159 | TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7520116 | Kỹ thuật cơ khí động lực |  | (Toán, Lý, Anh) | 40 | TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7520201 | Kỹ thuật điện |  | (Toán, Lý, Anh) | 144 | TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7520207 | Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch) |  | (Toán, Lý, Anh) | 100 | TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7520216 | Kỹ thuật điều khiển và tự động hóa |  | (Toán, Lý, Anh) | 85 | TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7520401 | Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch) |  | (Toán, Lý, Anh) | 62 | TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7540101 | Công nghệ thực phẩm |  | (Toán, Hóa, Anh) | 143 | TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7580201 | Kỹ thuật xây dựng |  | (Toán, Lý, Anh) | 109 | TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7620109 | Nông học |  | (Toán, Sinh, Anh) | 43 | TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7760101 | Công tác xã hội |  | (Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Giáo dục KT và PL, Anh) | 52 | TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7810103 | Quản trị dịch vụ du lịch và lữ hành |  | (Toán, Văn, Anh) | 125 | TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7810201 | Quản trị khách sạn |  | (Toán, Văn, Anh) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7850101 | Quản lý tài nguyên và môi trường |  | (Địa, Văn, Anh); (Địa, Toán, Anh) | 112 | TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
+| 7850103 | Quản lý đất đai |  | (Địa, Văn, Anh); (Địa, Toán, Anh) | 123 | TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c. |
 
 ### Kết hợp Điểm thi THPT + Năng khiếu
 
 ID đối chiếu: 8535; mã nguồn: 10 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html#xet-tuyen-ket-hop-8535)
+[Đọc quy định gốc](https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208)
+
+- Phạm vi ngành và tổ hợp lấy từ cột PT5 của bảng II.4 TB1906 ngày 31/05/2026.
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7140201 | Giáo dục Mầm non |  | M00 | 0 |  |
-| 7140206 | Giáo dục Thể chất |  | T00; T01; T02; T03; T04; T05 | 0 |  |
+| 7140201 | Giáo dục Mầm non |  | (Văn, Toán, NK GDMN) | 180 | TB1906 ngày 31/05/2026, mục II.4, dòng 2. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140206 | Giáo dục Thể chất |  | (Toán, Sinh, NK TDTT); (Toán, Văn, NK TDTT); (Văn, Sinh, NK TDTT); (Văn, Địa, NK TDTT); (Toán, Lý, NK TDTT); (Văn, Giáo dục KT và PL, NK TDTT) | 100 | TB1906 ngày 31/05/2026, mục II.4, dòng 5. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
 
 ### Điểm ĐGNL ĐH Sư phạm HN
 
 ID đối chiếu: 8533; mã nguồn: 7 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html#diem-thi-dgnl-dh-su-pham-hn-8533)
+[Đọc quy định gốc](https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208)
+
+- Phạm vi ngành và tổ hợp lấy từ cột PT4 của bảng II.4 TB1906 ngày 31/05/2026.
+- PT4 là kỳ thi ĐGNL của Trường Đại học Sư phạm Hà Nội; vẫn áp dụng các ngành giáo viên có cột 4.
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7140114 | Quản lý giáo dục |  |  | 0 |  |
-| 7140202 | Giáo dục Tiểu học |  |  | 0 |  |
-| 7140205 | Giáo dục Chính trị |  |  | 0 |  |
-| 7140209 | Sư phạm Toán học |  |  | 0 |  |
-| 7140210 | Sư phạm Tin học |  |  | 0 |  |
-| 7140211 | Sư phạm Vật lý |  |  | 0 |  |
-| 7140212 | Sư phạm Hóa học |  |  | 0 |  |
-| 7140213 | Sư phạm Sinh học |  |  | 0 |  |
-| 7140217 | Sư phạm Ngữ văn |  |  | 0 |  |
-| 7140218 | Sư phạm Lịch sử |  |  | 0 |  |
-| 7140219 | Sư phạm Địa lý |  |  | 0 |  |
-| 7140231 | Sư phạm Tiếng Anh |  |  | 0 |  |
-| 7140247 | Sư phạm Khoa học tự nhiên |  |  | 0 |  |
-| 7140249 | Sư phạm Lịch sử - Địa lý |  |  | 0 |  |
-| 7220201 | Ngôn ngữ Anh |  |  | 0 |  |
-| 7220204 | Ngôn ngữ Trung Quốc |  |  | 0 |  |
-| 7229030 | Văn học |  |  | 0 |  |
-| 7310101 | Kinh tế |  |  | 0 |  |
-| 7310109 | Kinh tế số (dự kiến) |  |  | 0 |  |
-| 7310205 | Quản lý nhà nước |  |  | 0 |  |
-| 7310403 | Tâm lý học giáo dục |  |  | 0 |  |
-| 7310608 | Đông phương học |  |  | 0 |  |
-| 7310630 | Việt Nam học |  |  | 0 |  |
-| 7340101 | Quản trị kinh doanh |  |  | 0 |  |
-| 7340201 | Tài chính – Ngân hàng |  |  | 0 |  |
-| 7340301 | Kế toán |  |  | 0 |  |
-| 7340301 ACCA | Kế toán (Định hướng ACCA) |  |  | 0 |  |
-| 7340302 | Kiểm toán |  |  | 0 |  |
-| 7380101 | Luật |  |  | 0 |  |
-| 7440112 | Hóa học |  |  | 0 |  |
-| 7460108 | Khoa học dữ liệu |  |  | 0 |  |
-| 7460112 | Toán ứng dụng |  |  | 0 |  |
-| 7480103 | Kỹ thuật phần mềm |  |  | 0 |  |
-| 7480107 | Trí tuệ nhân tạo |  |  | 0 |  |
-| 7480201 | Công nghệ thông tin |  |  | 0 |  |
-| 7510205 | Công nghệ kỹ thuật ô tô |  |  | 0 |  |
-| 7510401 | Công nghệ kỹ thuật hóa học |  |  | 0 |  |
-| 7510605 | Logistics và QL chuỗi cung ứng |  |  | 0 |  |
-| 7520116 | Kỹ thuật cơ khí động lực |  |  | 0 |  |
-| 7520201 | Kỹ thuật điện |  |  | 0 |  |
-| 7520207 | Kỹ thuật điện tử - viễn thông |  |  | 0 |  |
-| 7520216 | Kỹ thuật điều khiển và TĐH |  |  | 0 |  |
-| 7520401 | Vật lý kỹ thuật |  |  | 0 |  |
-| 7540101 | Công nghệ thực phẩm |  |  | 0 |  |
-| 7580201 | Kỹ thuật xây dựng |  |  | 0 |  |
-| 7620301 | Nuôi trồng thủy sản |  |  | 0 |  |
-| 7760101 | Công tác xã hội |  |  | 0 |  |
-| 7810103 | QL dịch vụ du lịch và lữ hành |  |  | 0 |  |
-| 7810201 | Quản trị khách sạn |  |  | 0 |  |
-| 7850101 | Quản lý tài nguyên và môi trường |  |  | 0 |  |
-| 7850103 | Quản lý đất đai |  |  | 0 |  |
+| 7140114 | Quản lý giáo dục |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử) | 44 | TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140202 | Giáo dục Tiểu học |  | (Văn, Anh, Toán); (Văn, Anh, Lý); (Văn, Anh, Hóa); (Văn, Anh, Sinh); (Văn, Anh, Sử); (Văn, Anh, Địa) | 250 | TB1906 ngày 31/05/2026, mục II.4, dòng 3. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140205 | Giáo dục Chính trị |  | (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Anh, Giáo dục KT và PL) | 20 | TB1906 ngày 31/05/2026, mục II.4, dòng 4. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140209 | Sư phạm Toán học |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh) | 100 | TB1906 ngày 31/05/2026, mục II.4, dòng 6. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140210 | Sư phạm Tin học |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Văn, Tin); (Toán, Lý, Tin); (Toán, Hóa, Tin); (Toán, Anh, Tin) | 120 | TB1906 ngày 31/05/2026, mục II.4, dòng 7. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140211 | Sư phạm Vật lý |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Văn); (Toán, Lý, Tin) | 51 | TB1906 ngày 31/05/2026, mục II.4, dòng 8. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140212 | Sư phạm Hóa học |  | (Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn) | 36 | TB1906 ngày 31/05/2026, mục II.4, dòng 9. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140213 | Sư phạm Sinh học |  | (Toán, Sinh, Hóa); (Toán, Sinh, Lý); (Toán, Sinh, Anh); (Toán, Sinh, Văn) | 25 | TB1906 ngày 31/05/2026, mục II.4, dòng 10. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140217 | Sư phạm Ngữ Văn |  | (Văn, Sử, Địa); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Toán, Anh); (Văn, Giáo dục KT và PL, Anh) | 120 | TB1906 ngày 31/05/2026, mục II.4, dòng 11. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140218 | Sư phạm Lịch sử |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Sử, Toán) | 54 | TB1906 ngày 31/05/2026, mục II.4, dòng 12. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140219 | Sư phạm Địa lý |  | (Văn, Địa, Sử); (Văn, Địa, Giáo dục KT và PL); (Văn, Địa, Anh); (Văn, Địa, Toán); (Toán, Địa, Anh); (Toán, Địa, Giáo dục KT và PL); (Toán, Địa, Sinh); (Toán, Địa, Sử); (Toán, Địa, Hóa) | 80 | TB1906 ngày 31/05/2026, mục II.4, dòng 13. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140231 | Sư phạm Tiếng Anh |  | (Toán, Văn, Anh) | 200 | TB1906 ngày 31/05/2026, mục II.4, dòng 14. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140247 | Sư phạm Khoa học tự nhiên |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Hóa, Sinh); (Toán, Sinh, Anh) | 70 | TB1906 ngày 31/05/2026, mục II.4, dòng 15. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7140249 | Sư phạm Lịch sử - Địa lý |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Sử, Toán); (Văn, Địa, Toán) | 85 | TB1906 ngày 31/05/2026, mục II.4, dòng 16. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7220201 | Ngôn ngữ Anh |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 261 | TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7220204 | Ngôn ngữ Trung Quốc |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7229030 | Văn học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL) | 57 | TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310101 | Kinh tế |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310109 | Kinh tế số |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310205 | Quản lý nhà nước |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa) | 61 | TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310403 | Tâm lý học giáo dục |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Anh) | 64 | TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310608 | Đông phương học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Tiếng Trung) | 102 | TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310630 | Việt Nam học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Sử); (Văn, Toán, Địa); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Giáo dục KT và PL) | 63 | TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340101 | Quản trị kinh doanh |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 249 | TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340201 | Tài chính – Ngân hàng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 94 | TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340301 | Kế toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 257 | TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340301AC | Kế toán (Định hướng ACCA) |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 30 | TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340302 | Kiểm toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 49 | TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7380101 | Luật |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa) | 106 | TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7440112 | Hóa học (Hóa dược, Hóa mỹ phẩm) |  | (Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Tin); (Toán, Hóa, Sử); (Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT và PL) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7460108 | Khoa học dữ liệu |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7460112 | Toán ứng dụng |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480103 | Kỹ thuật phần mềm |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 60 | TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480107 | Trí tuệ nhân tạo |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh) | 53 | TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480201 | Công nghệ thông tin (An toàn, an ninh mạng) |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 182 | TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510205 | Công nghệ kỹ thuật ô tô |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 137 | TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510401 | Công nghệ kỹ thuật hoá học |  | (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL); (Toán, Hóa, Sinh); (Toán, Hóa, Tin); (Toán, Hóa, Sử) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510605 | Logistics và Quản lý chuỗi cung ứng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 159 | TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520116 | Kỹ thuật cơ khí động lực |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 40 | TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520201 | Kỹ thuật điện |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 144 | TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520207 | Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch) |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 100 | TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520216 | Kỹ thuật điều khiển và tự động hóa |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 85 | TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520401 | Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch) |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Tin); (Toán, Lý, Công nghệ); (Toán, Lý, Văn) | 62 | TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7540101 | Công nghệ thực phẩm |  | (Toán, Hóa, Sinh); (Toán, Hóa, Địa); (Toán, Hóa, Sử); (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Tin); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL) | 143 | TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7580201 | Kỹ thuật xây dựng |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 109 | TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7620109 | Nông học |  | (Toán, Sinh, Lý); (Toán, Sinh, Hóa); (Toán, Sinh, Sử); (Toán, Sinh, Văn); (Toán, Sinh, Anh); (Toán, Sinh, Giáo dục KT và PL); (Toán, Sinh, Tin); (Toán, Sinh, Công nghệ); (Toán, Sinh, Địa) | 43 | TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7760101 | Công tác xã hội |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Toán, Địa); (Văn, Toán, Sử); (Văn, Toán, Giáo dục KT và PL); (Văn, Giáo dục KT và PL, Anh); (Văn, Địa, Giáo dục KT và PL) | 52 | TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7810103 | Quản trị dịch vụ du lịch và lữ hành |  | (Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin) | 125 | TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7810201 | Quản trị khách sạn |  | (Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7850101 | Quản lý tài nguyên và môi trường |  | (Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa) | 112 | TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7850103 | Quản lý đất đai |  | (Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa) | 123 | TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
 
 ### Điểm ĐGNL V-ACT
 
 ID đối chiếu: 8534; mã nguồn: 2 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html#diem-thi-dgnl-qg-hcm-8534)
+[Đọc quy định gốc](https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208)
+
+- Phạm vi ngành và tổ hợp lấy từ cột PT3 của bảng II.4 TB1906 ngày 31/05/2026.
+- Không áp dụng ngành đào tạo giáo viên; Quản lý giáo dục 7140114 được trường ghi áp dụng.
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7140114 | Quản lý giáo dục |  |  | 0 |  |
-| 7220201 | Ngôn ngữ Anh |  |  | 0 |  |
-| 7220204 | Ngôn ngữ Trung Quốc |  |  | 0 |  |
-| 7229030 | Văn học |  |  | 0 |  |
-| 7310101 | Kinh tế |  |  | 0 |  |
-| 7310109 | Kinh tế số (dự kiến) |  |  | 0 |  |
-| 7310205 | Quản lý nhà nước |  |  | 0 |  |
-| 7310403 | Tâm lý học giáo dục |  |  | 0 |  |
-| 7310608 | Đông phương học |  |  | 0 |  |
-| 7310630 | Việt Nam học |  |  | 0 |  |
-| 7340101 | Quản trị kinh doanh |  |  | 0 |  |
-| 7340201 | Tài chính – Ngân hàng |  |  | 0 |  |
-| 7340301 | Kế toán |  |  | 0 |  |
-| 7340301 ACCA | Kế toán (Định hướng ACCA) |  |  | 0 |  |
-| 7340302 | Kiểm toán |  |  | 0 |  |
-| 7380101 | Luật |  |  | 0 |  |
-| 7440112 | Hóa học |  |  | 0 |  |
-| 7460108 | Khoa học dữ liệu |  |  | 0 |  |
-| 7460112 | Toán ứng dụng |  |  | 0 |  |
-| 7480103 | Kỹ thuật phần mềm |  |  | 0 |  |
-| 7480107 | Trí tuệ nhân tạo |  |  | 0 |  |
-| 7480201 | Công nghệ thông tin |  |  | 0 |  |
-| 7510205 | Công nghệ kỹ thuật ô tô |  |  | 0 |  |
-| 7510401 | Công nghệ kỹ thuật hóa học |  |  | 0 |  |
-| 7510605 | Logistics và QL chuỗi cung ứng |  |  | 0 |  |
-| 7520116 | Kỹ thuật cơ khí động lực |  |  | 0 |  |
-| 7520201 | Kỹ thuật điện |  |  | 0 |  |
-| 7520207 | Kỹ thuật điện tử - viễn thông |  |  | 0 |  |
-| 7520216 | Kỹ thuật điều khiển và TĐH |  |  | 0 |  |
-| 7520401 | Vật lý kỹ thuật |  |  | 0 |  |
-| 7540101 | Công nghệ thực phẩm |  |  | 0 |  |
-| 7580201 | Kỹ thuật xây dựng |  |  | 0 |  |
-| 7620301 | Nuôi trồng thủy sản |  |  | 0 |  |
-| 7760101 | Công tác xã hội |  |  | 0 |  |
-| 7810103 | QL dịch vụ du lịch và lữ hành |  |  | 0 |  |
-| 7810201 | Quản trị khách sạn |  |  | 0 |  |
-| 7850101 | Quản lý tài nguyên và môi trường |  |  | 0 |  |
-| 7850103 | Quản lý đất đai |  |  | 0 |  |
+| 7140114 | Quản lý giáo dục |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử) | 44 | TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7220201 | Ngôn ngữ Anh |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 261 | TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7220204 | Ngôn ngữ Trung Quốc |  | (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7229030 | Văn học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL) | 57 | TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310101 | Kinh tế |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310109 | Kinh tế số |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310205 | Quản lý nhà nước |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa) | 61 | TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310403 | Tâm lý học giáo dục |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Anh) | 64 | TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310608 | Đông phương học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Tiếng Trung) | 102 | TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7310630 | Việt Nam học |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Sử); (Văn, Toán, Địa); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Giáo dục KT và PL) | 63 | TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340101 | Quản trị kinh doanh |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 249 | TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340201 | Tài chính – Ngân hàng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 94 | TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340301 | Kế toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 257 | TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340301AC | Kế toán (Định hướng ACCA) |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 30 | TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7340302 | Kiểm toán |  | (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử) | 49 | TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7380101 | Luật |  | (Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa) | 106 | TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7440112 | Hóa học (Hóa dược, Hóa mỹ phẩm) |  | (Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Tin); (Toán, Hóa, Sử); (Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT và PL) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7460108 | Khoa học dữ liệu |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 45 | TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7460112 | Toán ứng dụng |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh) | 58 | TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480103 | Kỹ thuật phần mềm |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 60 | TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480107 | Trí tuệ nhân tạo |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh) | 53 | TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7480201 | Công nghệ thông tin (An toàn, an ninh mạng) |  | (Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin) | 182 | TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510205 | Công nghệ kỹ thuật ô tô |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 137 | TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510401 | Công nghệ kỹ thuật hoá học |  | (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL); (Toán, Hóa, Sinh); (Toán, Hóa, Tin); (Toán, Hóa, Sử) | 56 | TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7510605 | Logistics và Quản lý chuỗi cung ứng |  | (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa) | 159 | TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520116 | Kỹ thuật cơ khí động lực |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 40 | TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520201 | Kỹ thuật điện |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 144 | TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520207 | Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch) |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 100 | TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520216 | Kỹ thuật điều khiển và tự động hóa |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 85 | TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7520401 | Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch) |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Tin); (Toán, Lý, Công nghệ); (Toán, Lý, Văn) | 62 | TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7540101 | Công nghệ thực phẩm |  | (Toán, Hóa, Sinh); (Toán, Hóa, Địa); (Toán, Hóa, Sử); (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Tin); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL) | 143 | TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7580201 | Kỹ thuật xây dựng |  | (Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ) | 109 | TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7620109 | Nông học |  | (Toán, Sinh, Lý); (Toán, Sinh, Hóa); (Toán, Sinh, Sử); (Toán, Sinh, Văn); (Toán, Sinh, Anh); (Toán, Sinh, Giáo dục KT và PL); (Toán, Sinh, Tin); (Toán, Sinh, Công nghệ); (Toán, Sinh, Địa) | 43 | TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7760101 | Công tác xã hội |  | (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Toán, Địa); (Văn, Toán, Sử); (Văn, Toán, Giáo dục KT và PL); (Văn, Giáo dục KT và PL, Anh); (Văn, Địa, Giáo dục KT và PL) | 52 | TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7810103 | Quản trị dịch vụ du lịch và lữ hành |  | (Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin) | 125 | TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7810201 | Quản trị khách sạn |  | (Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin) | 99 | TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7850101 | Quản lý tài nguyên và môi trường |  | (Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa) | 112 | TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
+| 7850103 | Quản lý đất đai |  | (Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa) | 123 | TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. |
 
 ### ƯTXT, XT thẳng
 
@@ -15364,7 +15515,10 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Còn thiếu / mâu thuẫn phạm vi ngành.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-DTB.html)
+- [Nguồn 2 (official)](https://media.tbu.edu.vn//Media/1_TH1062/FolderFunc/202603/Documents/thong-bao-so-565-20260324051114-e.pdf)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0618/thong-tin-tuyen-sinh-dai-hoc-thai-binh-2026.pdf)
+
+> Bảng trang 4 chỉ gắn TSA với nhóm kỹ thuật/CNTT, SPT với nhóm xã hội/kinh tế; không gán HSA/TSA/SPT đồng loạt cho mọi ngành.
 
 ### Điểm thi THPT
 
@@ -19223,7 +19377,10 @@ Nguồn có các mục: Đối tượng.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html)
+- [Nguồn 2 (official)](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0618/thong-tin-tuyen-sinh-truong-dai-hoc-van-lang-nam-2026.pdf)
+
+> PT 3 là kết hợp học bạ, không phải các phương thức độc lập chỉ dùng V-ACT/HSA/V-SAT/TSA. Hệ số cuối cần tài liệu khác.
 
 ### Điểm thi THPT
 
@@ -19430,13 +19587,15 @@ Nguồn có các mục: Đối tượng.
 | 7810202 | Quản trị nhà hàng và Dịch vụ ăn uống |  |  | 0 |  |
 | 7850101 | Quản lý Tài nguyên & Môi trường |  |  | 0 |  |
 
-### Điểm ĐGNL V-ACT
+### Kết hợp học bạ và V-ACT
 
 ID đối chiếu: 9151; mã nguồn: 2 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html#diem-thi-dgnl-qg-hcm-9151)
+[Đọc quy định gốc](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
+
+> Nguồn trường 2026 xếp vào phương thức kết hợp kết quả học tập THPT với bài thi/chứng chỉ. Không coi điểm bài thi gốc là điểm xét tuyển cuối.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -19495,13 +19654,15 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 | 7810202 | Quản trị nhà hàng và Dịch vụ ăn uống |  | D01;D14;D15; D09; D10;X26 | 0 |  |
 | 7850101 | Quản lý Tài nguyên & Môi trường |  | A00;A01;B00;D07 | 0 |  |
 
-### Điểm ĐGNL HSA
+### Kết hợp học bạ và HSA
 
 ID đối chiếu: 9152; mã nguồn: 5 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html#diem-thi-dgnl-hn-9152)
+[Đọc quy định gốc](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
+
+> Nguồn trường 2026 xếp vào phương thức kết hợp kết quả học tập THPT với bài thi/chứng chỉ. Không coi điểm bài thi gốc là điểm xét tuyển cuối.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -19560,15 +19721,17 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 | 7810202 | Quản trị nhà hàng và Dịch vụ ăn uống |  | Q00 | 0 |  |
 | 7850101 | Quản lý Tài nguyên & Môi trường |  | Q00 | 0 |  |
 
-### Điểm Đánh giá đầu vào V-SAT
+### Kết hợp học bạ và V-SAT
 
 ID đối chiếu: 9153; mã nguồn: 13 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html#diem-thi-danh-gia-dau-vao-v-sat-9153)
+[Đọc quy định gốc](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026)
 
 Nguồn có các mục: Ngưỡng đầu vào.
 
 Bài thi / chứng chỉ được nhắc trong điều kiện: V-SAT.
+
+> Nguồn trường 2026 xếp vào phương thức kết hợp kết quả học tập THPT với bài thi/chứng chỉ. Không coi điểm bài thi gốc là điểm xét tuyển cuối.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -19627,13 +19790,15 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: V-SAT.
 | 7810202 | Quản trị nhà hàng và Dịch vụ ăn uống |  | D01;D14;D15; D09; D10;X26 | 0 |  |
 | 7850101 | Quản lý Tài nguyên & Môi trường |  | A00;A01;B00;D07 | 0 |  |
 
-### Điểm Đánh giá Tư duy
+### Kết hợp học bạ và TSA
 
 ID đối chiếu: 9154; mã nguồn: 6 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html#diem-dg-tu-duy-dhbkhn-9154)
+[Đọc quy định gốc](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026)
 
 Nguồn có các mục: Ngưỡng đầu vào.
+
+> Nguồn trường 2026 xếp vào phương thức kết hợp kết quả học tập THPT với bài thi/chứng chỉ. Không coi điểm bài thi gốc là điểm xét tuyển cuối.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -19692,15 +19857,17 @@ Nguồn có các mục: Ngưỡng đầu vào.
 | 7810202 | Quản trị nhà hàng và Dịch vụ ăn uống |  | K00 | 0 |  |
 | 7850101 | Quản lý Tài nguyên & Môi trường |  | K00 | 0 |  |
 
-### Chứng chỉ quốc tế
+### Kết hợp học bạ và chứng chỉ quốc tế
 
 ID đối chiếu: 9155; mã nguồn: 12 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-van-lang-DVL.html#chung-chi-quoc-te-9155)
+[Đọc quy định gốc](https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
 Bài thi / chứng chỉ được nhắc trong điều kiện: SAT, IELTS, TOEFL.
+
+> Nguồn trường 2026 xếp vào phương thức kết hợp kết quả học tập THPT với bài thi/chứng chỉ. Không coi điểm bài thi gốc là điểm xét tuyển cuối.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -19877,7 +20044,11 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tra-vinh-DVT.html)
+- [Nguồn 2 (official)](https://tuyensinh.tvu.edu.vn/dai-hoc-tra-vinh-cong-bo-phuong-an-tuyen-sinh-2026-tuyen-7-415-chi-tieu-qua-4-phuong-thuc/)
+- [Nguồn 3 (official)](https://dkxt.tvu.edu.vn/tu-van-xet-tuyen)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0618/2026-5-29-tb-1076-dhtv-tb-tuyen-sinh-chinh-quy-trinh-kypdf-164445-1-1-1-1.pdf)
+
+> Học bạ loại trừ Y khoa/Răng–Hàm–Mặt/Dược. V-SAT tách PT 416/417 và yêu cầu ba môn cùng đợt. Cần bảng quy đổi từng môn; không dùng hệ số tuyến tính chung.
 
 ### Điểm thi THPT
 
@@ -19943,9 +20114,11 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 ID đối chiếu: 9368; mã nguồn: 3 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-tra-vinh-DVT.html#diem-hoc-ba-9368)
+[Đọc quy định gốc](https://tuyensinh.tvu.edu.vn/dai-hoc-tra-vinh-cong-bo-phuong-an-tuyen-sinh-2026-tuyen-7-415-chi-tieu-qua-4-phuong-thuc/)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
+
+> Loại Y khoa, Răng – Hàm – Mặt và Dược học khỏi học bạ theo phương án chính thức 2026; không áp dụng toàn bộ danh sách của phương thức THPT.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -19984,12 +20157,9 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 | 7620112 | Bảo vệ thực vật |  | A02; B00; B08; X12; X14; X16; X28 | 120 |  |
 | 7620301 | Nuôi trồng thủy sản |  | A02; B00; B08; X12; X14; X16; X28 | 350 |  |
 | 7640101 | Thú y |  | A02; B00; B08; X12; X14; X16; X28 | 300 |  |
-| 7720101 | Y khoa (*) |  | B08; B00 | 250 |  |
 | 7720110 | Y học dự phòng |  | B08; B00 | 100 |  |
-| 7720201 | Dược học (*) |  | A00; B00 | 150 |  |
 | 7720203 | Hóa dược |  | A00; B00; D07; A11; X09; X10; X11 | 60 |  |
 | 7720301 | Điều dưỡng |  | B08; B00 | 300 |  |
-| 7720501 | Răng - Hàm - Mặt (*) |  | B08; B00 | 80 |  |
 | 7720601 | Kỹ thuật xét nghiệm y  học |  | A00; B00 | 100 |  |
 | 7720602 | Kỹ thuật hình ảnh y học |  | A00; B00 | 60 |  |
 | 7720603 | Kỹ thuật phục hồi chức  năng |  | A00; B00 | 100 |  |
@@ -20081,6 +20251,7 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: V-SAT.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-yersin-da-lat-DYD.html)
+- [Nguồn 2 (official)](https://yersin.edu.vn/thong-tin-tuyen-sinh-2026/)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0618/thong-tin-tuyen-sinh-truong-dai-hoc-yersin-da-lat.pdf)
 
 ### Điểm thi THPT
@@ -20706,6 +20877,9 @@ ID đối chiếu: holistic; mã nguồn: không ghi (school).
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-gia-dinh-GDU.html)
+- [Nguồn 2 (official)](https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-cong-bo-05-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026)
+
+> PT 4 có thêm điểm xét tốt nghiệp. Chưa có quy tắc chuẩn hóa tổng bốn thành phần, nên không so tổng có thể tới 40 với điểm chuẩn thang 30.
 
 ### Điểm thi THPT
 
@@ -23386,6 +23560,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hong-duc-HDT.html)
+- [Nguồn 2 (official)](https://tuyensinh.hdu.edu.vn/thong-tin-tuyen-sinh-dao-tao-trinh-do-dai-hoc-nam-2026)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0424/thong-tin-tuyen-sinh-dai-hoc-hong-duc.pdf)
 
 ### Điểm thi THPT
@@ -24880,7 +25055,10 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quoc-te-hong-bang-HIU.html)
+- [Nguồn 2 (official)](https://hiu.vn/tuyen-sinh/thong-tin-tuyen-sinh-2026/)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0618/thong-tin-tuyen-sinh-truong-dai-hoc-quoc-te-hong-bang-nam-2026.pdf)
+
+> PDF chính thức ngày 27/02/2026 có 43 ngành; bài cập nhật 08/07 nêu 45 ngành. Chưa đồng nhất hai phạm vi. Mục học phần của phương thức văn bằng chưa đủ để áp dụng cho 45 ngành; các ngưỡng 650/300/SAT 800 không phải công thức điểm cuối.
 
 ### Điểm thi THPT
 
@@ -25277,6 +25455,61 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: SAT.
 | 7720701 | Y tế công cộng |  |  | 0 |  |
 | 7810103 | Quản trị Du lịch & Lữ hành |  |  | 0 |  |
 | 7810201 | Quản trị khách sạn |  |  | 0 |  |
+
+### Tốt nghiệp THPT nước ngoài kết hợp phỏng vấn
+
+ID đối chiếu: foreign-2026; mã nguồn: không ghi (school).
+
+[Đọc quy định gốc](https://hiu.vn/tuyen-sinh/thong-tin-tuyen-sinh-2026/)
+
+- Văn bằng được nước sở tại công nhận; xét học lực, phỏng vấn năng lực học tập và năng lực ngôn ngữ, mỗi thành phần thang 10.
+- Phạm vi PDF 43 ngành khác danh mục cập nhật 45 ngành; chỉ liên kết các mã ngành có trong cả hai nguồn, chưa xác nhận đầy đủ toàn bộ danh mục.
+
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
+| 7140114 | Quản lý giáo dục |  | A00; A01; B00; C00; C03; C04; C20; D01; D09; D10; D14; D15; D66; X01 | 0 |  |
+| 7210403 | Thiết kế đồ họa |  | A00; A01; C00; C01; C03; C04; D09; H01; H08; V00; V01; X06; X26 | 0 |  |
+| 7220201 | Ngôn ngữ Anh |  | A01; C00; C04; C14; D01; D14; D15; X02 | 0 |  |
+| 7220204 | Ngôn ngữ Trung Quốc |  | A01; C00; C04; C14; D01; D06; D14; D15 | 0 |  |
+| 7220209 | Ngôn ngữ Nhật |  | A01; C00; C04; C14; D01; D06; D14; D15 | 0 |  |
+| 7220210 | Ngôn ngữ Hàn Quốc |  | A01; C00; C04; C14; D01; DD 2; D14; D15 | 0 |  |
+| 7310206 | Quan hệ quốc tế |  | A00; A01; C00; C03; C04; C19; C20; D01; D09; D10; D14; D15; D66; X01; X71 | 0 |  |
+| 7310401 | Tâm lý học |  | A00; A01; C00; C03; C04; C19; C20; D01; D09; D10; D14; D15; D66; X01; X71 | 0 |  |
+| 7310403 | Tâm lý học giáo dục(*) |  | A00; A01; C00; C03; C04; C19; C20; D01; D09; D10; D14; D15; D66; X01; X71 | 0 |  |
+| 7310630 | Việt Nam học |  | A00; A01; C00; C03; C04; C19; C20; D01; D09; D10; D14; D15; D66; X01; X71 | 0 |  |
+| 7320104 | Truyền thông đa phương tiện |  | A01; C00; C19; C20; D01; D09; D10; D14; D15; D66; X01; X71 | 0 |  |
+| 7320108 | Quan hệ công chúng |  | A01; C00; C19; C20; D01; D09; D10; D14; D15; D66; X01; X71 | 0 |  |
+| 7340101 | Quản trị kinh doanh |  | A00; A01; C00; C03; C04; C19; D01; D09; D10; D14; D15; D66; X01; X26 | 0 |  |
+| 7340114 | Digital Marketing |  | A00; A01; C00; C03; C04; C19; D01; D09; D10; D14; D15; D66; X01; X26 | 0 |  |
+| 7340120 | Kinh doanh quốc tế |  | A00; A01; C00; C03; C04; C19; D01; D09; D10; D14; D15; D66; X01; X26 | 0 |  |
+| 7340122 | Thương mại điện tử |  | A00; A01; C00; C03; C04; C19; D01; D09; D10; D14; D15; D66; X01; X26 | 0 |  |
+| 7340201 | Tài chính ngân hàng |  | A00; A01; C00; C03; C04; C19; D01; D09; D10; D14; D15; D66; X01; X26 | 0 |  |
+| 7340205 | Công nghệ tài chính |  | A00; A01; C00; C03; C04; C19; D01; D09; D10; D14; D15; D66; X01; X26 | 0 |  |
+| 7340301 | Kế toán |  | A00; A01; C00; C03; C04; C19; D01; D09; D10; D14; D15; D66; X01; X26 | 0 |  |
+| 7340412 | Quản trị sự kiện |  | A00; A01; C00; C03; C04; C19; D01; D09; D10; D14; D15; D66; X01; X26 | 0 |  |
+| 7380101 | Luật |  | A00; A01; A08; C00; C03; C04; C14; C19; C20; D01; D09; D10; D15 | 0 |  |
+| 7380107 | Luật kinh tế |  | A00; A01; A08; C00; C03; C04; C19; C14; C20; D01; D09; D10; D15 | 0 |  |
+| 7420201 | Công nghệ sinh học |  | A00; A02; B00; C01; C02; C03; C04; D07; D08; X01; X14 | 0 |  |
+| 7420207 | Công nghệ thẩm mỹ(*) |  | A00; A01; B03; C01; C02; C14; D01; X01; X02; X14 | 0 |  |
+| 7480201 | Công nghệ thông tin |  | A00; A01; C01; C03; C04; D01; D07; D09; D10; X02; X06; X10; X26 | 0 |  |
+| 7510601 | Quản lý công nghiệp(*) |  | A00; A01; C00; C02; C03; C04; D01; D09; D66; X06; X26 | 0 |  |
+| 7510605 | Logistics và quản lý chuỗi cung ứng |  | A00; A01; C00; C02; C03; C04; D01; D09; D66; X06; X26 | 0 |  |
+| 7520114 | Kỹ thuật cơ điện tử |  | A00; A01; C01; C02; D01; D09; X06; X26 | 0 |  |
+| 7520212 | Kỹ thuật y sinh |  | A00; A01; A02; A03; A04; B00; C01; D07; D08; X05; X06; X07; X10; X14 | 0 |  |
+| 7580101 | Kiến trúc |  | A00; A01; C00; C03; C04; D01; D09; D10; H01; V00; V01; X06; X10 | 0 |  |
+| 7720101 | Y khoa |  | A00; A02; B00; B08; D07; D08; X14 | 0 |  |
+| 7720115 | Y học cổ truyền |  | A00; A01; A02; B00; B08; D01; D07; D08; X14 | 0 |  |
+| 7720201 | Dược học |  | A00; A01; B00; D07; D08; X10; X14 | 0 |  |
+| 7720301 | Điều dưỡng |  | A00; A01; A02; B00; B01; B03; C01; C02; C12; D01; D07; D08; X10; X14 | 0 |  |
+| 7720302 | Hộ sinh |  | A00; A01; A02; B00; B01; B03; C01; C02; C12; D01; D07; D08; X10; X14 | 0 |  |
+| 7720401 | Dinh dưỡng |  | A00; A01; A02; B00; B01; B03; C01; C02; C12; D01; D07; D08; X10; X14 | 0 |  |
+| 7720501 | Răng - Hàm - Mặt |  | A00; A02; B00; B08; D07; D08; X14 | 0 |  |
+| 7720601 | Kỹ thuật xét nghiệm y học |  | A00; A01; A02; B00; B01; B03; C01; C02; C12; D01; D07; D08; X10; X14 | 0 |  |
+| 7720602 | Kỹ thuật hình ảnh y học |  | A00; A01; A02; B00; B01; B03; C01; C02; C12; D01; D07; D08; X10; X14 | 0 |  |
+| 7720603 | Kỹ thuật phục hồi chức năng |  | A00; A01; A02; B00; B01; B03; C01; C02; C12; D01; D07; D08; X10; X14 | 0 |  |
+| 7720701 | Y tế công cộng |  | A00; A01; A02; B00; B01; B03; C01; C02; C12; D01; D07; D08; X10; X14 | 0 |  |
+| 7810103 | Quản trị Du lịch & Lữ hành |  | A00; A01; C00; C03; C04; C19; D01; D09; D10; D14; D15; D66; X01; X26 | 0 |  |
+| 7810201 | Quản trị khách sạn |  | A00; A01; C00; C03; C04; C19; D01; D09; D10; D14; D15; D66; X01; X26 | 0 |  |
 
 <a id="school-HLQ"></a>
 
@@ -26026,6 +26259,9 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: SAT, ACT, IELTS, 
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hoa-sen-HSU.html)
+- [Nguồn 2 (official)](https://www.hoasen.edu.vn/dtdh/wp-content/uploads/sites/28/2026/05/QD__Thong-tin-tuyen-sinh-10.03.2026duthao.pdf)
+
+> Bài ngày 26/01 ghi học bạ ba kỳ, khác PDF sáu kỳ của Phòng Đào tạo. PDF còn phép chia 3 chưa rõ cách nhóm. V-ACT/HSA và phỏng vấn loại trừ ba ngành Luật. Chưa coi công thức ngưỡng là điểm cuối.
 
 ### Điểm thi THPT
 
@@ -27507,16 +27743,20 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-tphcm-IUH.html)
 - [Nguồn 2 (secondary)](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf)
 - [Nguồn 3 (official)](https://tuyensinh.iuh.edu.vn/)
+- [Nguồn 4 (official)](https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf)
 
-### Kết hợp Điểm thi THPT + Học bạ
+### Xét tuyển kết hợp THPT, ĐGNL và học bạ lớp 12
 
 ID đối chiếu: 8313; mã nguồn: 10 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf)
+[Đọc quy định gốc](https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf)
 
-- Phương thức kết hợp chọn giá trị lớn nhất trong ba cách xét: XT1 = 0,7×max(THPT, ĐGNL quy đổi) + 0,3×học bạ lớp 12 + ưu tiên + điểm cộng; XT2 = THPT + ưu tiên + điểm cộng; XT3 = ĐGNL quy đổi + ưu tiên + điểm cộng.
-- Điểm ĐGNL ĐHQG-HCM quy đổi về thang 30 bằng điểm bài thi × 30 / điểm cao nhất của kỳ thi năm 2026. Điều kiện thành tích và quy đổi chứng chỉ theo thông báo.
+- ĐTN: tổng ba môn thi THPT năm 2026 trong tổ hợp; ĐHB: tổng ba môn học bạ lớp 12 cùng tổ hợp.
+- ĐTK là điểm cao nhất thực tế của kỳ thi ĐGNL ĐHQG TP.HCM năm 2026, không phải điểm tối đa lý thuyết 1200.
+- ĐC gồm điểm thưởng, xét thưởng và khuyến khích; điều kiện, mức cộng theo Phụ lục 1–2 của thông báo.
+- Nếu dùng chứng chỉ thay môn Anh khi không thi môn này, không đồng thời cộng điểm khuyến khích từ chứng chỉ đó.
+- Tổ hợp, môn bắt buộc và điều kiện ngành theo bảng của đúng cơ sở; kết quả dùng tham khảo năm 2026.
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
@@ -27585,14 +27825,17 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 | 7850101 | Quản lý tài nguyên và môi trường |  | D01; C01; C02; C04; B03; X01; X04 | 0 |  |
 | 7850103 | Quản lý đất đai gồm 02 ngành: Quản lý đất đai; Kinh tế tài nguyên thiên nhiên. |  | C04; D10; A06; B02; X24; X21 | 0 |  |
 
-### Kết hợp điểm ĐGNL V-ACT + Học bạ
+### Xét tuyển kết hợp THPT, ĐGNL và học bạ lớp 12
 
 ID đối chiếu: 9445; mã nguồn: 10 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf)
+[Đọc quy định gốc](https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf)
 
-- Phương thức kết hợp chọn giá trị lớn nhất trong ba cách xét: XT1 = 0,7×max(THPT, ĐGNL quy đổi) + 0,3×học bạ lớp 12 + ưu tiên + điểm cộng; XT2 = THPT + ưu tiên + điểm cộng; XT3 = ĐGNL quy đổi + ưu tiên + điểm cộng.
-- Điểm ĐGNL ĐHQG-HCM quy đổi về thang 30 bằng điểm bài thi × 30 / điểm cao nhất của kỳ thi năm 2026. Điều kiện thành tích và quy đổi chứng chỉ theo thông báo.
+- ĐTN: tổng ba môn thi THPT năm 2026 trong tổ hợp; ĐHB: tổng ba môn học bạ lớp 12 cùng tổ hợp.
+- ĐTK là điểm cao nhất thực tế của kỳ thi ĐGNL ĐHQG TP.HCM năm 2026, không phải điểm tối đa lý thuyết 1200.
+- ĐC gồm điểm thưởng, xét thưởng và khuyến khích; điều kiện, mức cộng theo Phụ lục 1–2 của thông báo.
+- Nếu dùng chứng chỉ thay môn Anh khi không thi môn này, không đồng thời cộng điểm khuyến khích từ chứng chỉ đó.
+- Tổ hợp, môn bắt buộc và điều kiện ngành theo bảng của đúng cơ sở; kết quả dùng tham khảo năm 2026.
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
@@ -27665,7 +27908,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 ID đối chiếu: 8312; mã nguồn: 11 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf)
+[Đọc quy định gốc](https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf)
 
 - Thông báo 867/TB-ĐHCN nêu tuyển thẳng theo quy chế Bộ GDĐT; ngành phù hợp giải thưởng/đối tượng theo quy định, không mặc định mọi thí sinh được tuyển thẳng.
 
@@ -27745,6 +27988,7 @@ Nguồn có các mục: Đối tượng; Ngưỡng đầu vào.
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-cong-nghiep-tphcm-IUH.html)
 - [Nguồn 2 (secondary)](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf)
 - [Nguồn 3 (official)](https://tuyensinh.iuh.edu.vn/)
+- [Nguồn 4 (official)](https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf)
 
 > Thông báo 867/TB-ĐHCN, mục 3.2 và bảng trang 7–8: phân hiệu IUQ tuyển 6 ngành. Không sử dụng 62 dòng chương trình tại trụ sở IUH cho IUQ.
@@ -27753,7 +27997,7 @@ Nguồn có các mục: Đối tượng; Ngưỡng đầu vào.
 
 ID đối chiếu: direct; mã nguồn: không ghi (school).
 
-[Đọc quy định gốc](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf)
+[Đọc quy định gốc](https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf)
 
 - Phân hiệu được áp dụng cùng chính sách với trụ sở chính; vẫn phải đáp ứng diện và ngành phù hợp theo quy chế.
 
@@ -27766,14 +28010,17 @@ ID đối chiếu: direct; mã nguồn: không ghi (school).
 | 7510205 | Công nghệ kỹ thuật ô tô | Phân hiệu Quảng Ngãi | Toán, Vật lí + 1 môn trong nhóm TC1: Ngữ văn, Tiếng Anh, Hóa học, Công nghệ công nghiệp, Tin học, Giáo dục kinh tế và pháp luật |  |  |
 | 7510301 | Công nghệ kỹ thuật điện, điện tử | Phân hiệu Quảng Ngãi | Toán, Vật lí + 1 môn trong nhóm TC1: Ngữ văn, Tiếng Anh, Hóa học, Công nghệ công nghiệp, Tin học, Giáo dục kinh tế và pháp luật |  |  |
 
-### Xét tuyển kết hợp THPT, ĐGNL ĐHQG-HCM và học bạ lớp 12
+### Xét tuyển kết hợp THPT, ĐGNL và học bạ lớp 12
 
 ID đối chiếu: combined; mã nguồn: không ghi (school).
 
-[Đọc quy định gốc](https://cdn.tuyensinh247.com/picture/2026/0710/867-thongbao-tuyensinh-2026.pdf)
+[Đọc quy định gốc](https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf)
 
-- Phương thức kết hợp chọn giá trị lớn nhất trong ba cách xét: XT1 = 0,7×max(THPT, ĐGNL quy đổi) + 0,3×học bạ lớp 12 + ưu tiên + điểm cộng; XT2 = THPT + ưu tiên + điểm cộng; XT3 = ĐGNL quy đổi + ưu tiên + điểm cộng.
-- Điểm ĐGNL ĐHQG-HCM quy đổi về thang 30 bằng điểm bài thi × 30 / điểm cao nhất của kỳ thi năm 2026. Điều kiện thành tích và quy đổi chứng chỉ theo thông báo.
+- ĐTN: tổng ba môn thi THPT năm 2026 trong tổ hợp; ĐHB: tổng ba môn học bạ lớp 12 cùng tổ hợp.
+- ĐTK là điểm cao nhất thực tế của kỳ thi ĐGNL ĐHQG TP.HCM năm 2026, không phải điểm tối đa lý thuyết 1200.
+- ĐC gồm điểm thưởng, xét thưởng và khuyến khích; điều kiện, mức cộng theo Phụ lục 1–2 của thông báo.
+- Nếu dùng chứng chỉ thay môn Anh khi không thi môn này, không đồng thời cộng điểm khuyến khích từ chứng chỉ đó.
+- Tổ hợp, môn bắt buộc và điều kiện ngành theo bảng của đúng cơ sở; kết quả dùng tham khảo năm 2026.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -29287,7 +29534,11 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: TSA, IELTS, TOEFL
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/hoc-vien-ky-thuat-mat-ma-KMA.html)
+- [Nguồn 2 (official)](https://actvn.edu.vn/News/DownloadFile?idFile=4359)
+- [Nguồn 3 (official)](https://actvn.edu.vn/News/Detail?NewsId=28180)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0603/thong-tin-tuyen-sinh-hoc-vien-ky-thuat-mat-ma-2026.docx)
+
+> Thông tin tháng 4 và thông báo tháng 7 khác mã tổ hợp K01/C01; bản tháng 7 là văn bản quy đổi hiện dùng. Bảng tổ hợp chương trình Điện tử–vi mạch cần đối chiếu trang 1.
 
 ### Điểm thi THPT
 
@@ -30091,6 +30342,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kien-truc-da-nang-KTD.html)
+- [Nguồn 2 (official)](https://tuyensinh.dau.edu.vn/truong-dai-hoc-kien-truc-da-nang-cong-bo-phuong-an-xet-tuyen-dai-hoc-nam-2026-du-kien-012929.html)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0505/thong-tin-tuyen-sinh-dai-hoc-kien-truc-da-nang.pdf)
 
 ### Điểm thi THPT
@@ -30800,6 +31052,8 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-lam-nghiep-LNH.html)
+- [Nguồn 2 (official)](https://tuyensinh.vnuf.edu.vn/Detail.aspx?id=9)
+- [Nguồn 3 (official)](https://vnuf.edu.vn/thong-bao-nguon-xet-tuyen-dau-vao-nguong-dam-bao-chat-luong-dau-vao-diem-san-va-quy-tac-quy-doi-tuong-duong-cac-phuong-thuc-tuyen-sinh-dai-hoc-nam-2026.html)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0310/thong-tin-tuyen-sinh-truong-dai-hoc-lam-nghiep-2026.pdf)
 
 ### Điểm thi THPT
@@ -31053,6 +31307,45 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 |---|---|---|---|---|---|
 | 7580102 | Kiến trúc cảnh quan (Quy hoạch và Thiết kế cảnh quan, Quản lý công trình cảnh quan đô thị, Quản lý cây xanh đô thị) |  | H07, V00, V01, V02; V03; V06; H02; H04; Toán, Năng khiếu, Lịch sử; Toán, Năng khiếu, GDKTPL; Toán, Năng khiếu, Tin học; Toán Năng khiếu, Công nghệ | 30 |  |
 | 7580108 | Thiết kế nội thất |  | H07, V00, V01, V02; V03; V06; H02; H04; Toán, Năng khiếu, Lịch sử; Toán, Năng khiếu, GDKTPL; Toán, Năng khiếu, Tin học; Toán Năng khiếu, Công nghệ | 70 | 2 chương trình đào tạo bằng tiếng Việt - đào tạo tăng cường tiếng Trung |
+
+### Đánh giá năng lực V-ACT
+
+ID đối chiếu: vact; mã nguồn: 402 (national_as_published).
+
+[Đọc quy định gốc](https://vnuf.edu.vn/thong-bao-nguon-xet-tuyen-dau-vao-nguong-dam-bao-chat-luong-dau-vao-diem-san-va-quy-tac-quy-doi-tuong-duong-cac-phuong-thuc-tuyen-sinh-dai-hoc-nam-2026.html)
+
+- Ngành có V-ACT trong bảng quy đổi; Kỹ thuật xây dựng mã 7580201 được xác nhận bổ sung từ Phụ lục 01 của thông tin tuyển sinh chính thức, dòng có mã 402.
+
+Bài thi / chứng chỉ được nhắc trong điều kiện: V-ACT.
+
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
+| 7310101 | Kinh tế (Kinh tế, Kinh tế đầu tư; Kinh tế số, Kinh tế tuần hoàn) |  | Q00 | 60 |  |
+| 7340101 | Quản trị kinh doanh (Quản trị doanh nghiệp, quản trị Logistics; Marketing số) |  | Q00 | 160 |  |
+| 7340116 | Bất động sản |  | Q00 | 30 |  |
+| 7340201 | Tài chính - Ngân hàng (Bảo hiểm và đầu tư tài chính, Ngân hàng, Tài chính, Tài chính - Ngân hàng) |  | Q00 | 60 |  |
+| 7340301 | Kế toán (Kế toán, Kế toán doanh nghiệp, Kế toán công) |  | Q00 | 200 |  |
+| 7420201 | Công nghệ sinh học |  | Q00 | 30 |  |
+| 7480104 | Hệ thống thông tin  (Công nghệ thông tin) |  | Q00 | 60 |  |
+| 7510203 | Công nghệ kỹ thuật cơ điện tử |  | Q00 | 130 |  |
+| 7510205 | Công nghệ kỹ thuật ô tô |  | Q00 | 130 |  |
+| 7510605 | Logistics và Quản lý chuỗi cung ứng |  | Q00 | 180 |  |
+| 7520103 | Kỹ thuật cơ khí  (Công nghệ chế tạo máy) |  | Q00 | 50 |  |
+| 7520118 | Kỹ thuật hệ thống công nghiệp |  | Q00 | 30 |  |
+| 7549001 | Công nghệ chế biến lâm sản (Công nghệ gỗ và quản trị sản xuất, Kỹ nghệ gỗ và nội thất, Thiết kế và kỹ thuật đồ gỗ nội thất) |  | Q00 | 30 |  |
+| 7620105 | Chăn nuôi |  | Q00 | 30 |  |
+| 7620110 | Khoa học cây trồng (Nông nghiệp công nghệ cao, Khuyến nông và phát triển nông thôn) |  | Q00 | 30 |  |
+| 7620205 | Lâm sinh (Công nghệ viễn thám và GIS; Quản lý phát thải cacbon; Lâm sinh) |  | Q00 | 40 |  |
+| 7620210 | Lâm nghiệp |  | Q00 | 30 |  |
+| 7620211 | Quản lý tài nguyên rừng  (Kiểm lâm) |  | Q00 | 90 | 2 chương trình đào tạo bằng tiếng Việt - tiếng Anh |
+| 7640101 | Thú y |  | Q00 | 90 |  |
+| 7760101 | Công tác xã hội |  | Q00 | 50 |  |
+| 7810103 | Quản trị dịch vụ Du lịch và Lữ hành (Quản trị khách sạn, Quản trị lữ hành) |  | Q00 | 220 |  |
+| 7850101 | Quản lý tài nguyên và Môi trường |  | Q00 | 30 | 2 chương trình đào tạo bằng tiếng Việt - tiếng Anh |
+| 7850103 | Quản lý đất đai (Địa tin học, Quản trị đất đai hiện đại, Quản trị đô thị thông minh) |  | Q00 | 60 |  |
+| 7850104 | Du lịch sinh thái |  | Q00 | 30 |  |
+| 7850106 | Quản lý tài nguyên thiên nhiên |  | Q00 | 20 | Chương trình tiếng Anh |
+| 7580201 | Kỹ thuật xây dựng |  | Q00 | 30 |  |
 
 <a id="school-LNS"></a>
 
@@ -32356,6 +32649,8 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html)
+- [Nguồn 2 (official)](https://hou.edu.vn/wp-content/uploads/2026/06/Phan-II_Muc-1_Thong-tin-TS-2026-DHCQ_Chot.pdf)
+- [Nguồn 3 (official)](https://tuyensinh.hou.edu.vn/tintucchitiet/BT601/)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0705/thong-tin-tuyen-sinh-dai-hoc-mo-ha-noi-2026.pdf)
 - [Tài liệu 2026 đính kèm 2](https://images.tuyensinh247.com/picture/2026/0407/thong-tin-tuyen-sinh-dai-hoc-mo-hn-2026.pdf)
 
@@ -32513,14 +32808,34 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 
 ID đối chiếu: 8436; mã nguồn: 11 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-mo-ha-noi-MHN.html#uu-tien-xet-tuyen-xet-tuyen-thang-8436)
+[Đọc quy định gốc](https://hou.edu.vn/wp-content/uploads/2026/06/Phan-II_Muc-1_Thong-tin-TS-2026-DHCQ_Chot.pdf)
 
 Nguồn có các mục: Đối tượng; Cách xét / cách tính điểm; Thời gian.
+
+> Đã sửa phạm vi theo ô đánh dấu mã 301 trong bảng chính thức trang 4–5; bảng nguồn tổng hợp trước đó gán quá rộng.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
 | 7210403 | Thiết kế đồ họa |  | H00, H01, H06 | 160 |  |
 | 7210404 | Thiết kế thời trang |  | H00; H01; H06 | 55 |  |
+| 7220201 | Ngôn ngữ Anh |  | D01 | 290 |  |
+| 7220204 | Ngôn ngữ Trung Quốc |  | D01; D04 | 280 |  |
+| 7420201 | Công nghệ sinh học |  | B00; A00;D07; A01 | 120 |  |
+| 7480106 | Kỹ thuật máy tính |  | A00; A01; D01; X26 | 75 |  |
+| 7480201 | Công nghệ thông tin |  | A00; A01; D01; X26 | 385 |  |
+| 7540101 | Công nghệ thực phẩm |  | B00; A00; D07; A01 | 180 |  |
+| 7580108 | Thiết kế nội thất |  | H00; H01; H06 | 100 |  |
+
+### Xét kết quả dự bị đại học (mã 500)
+
+ID đối chiếu: prep; mã nguồn: 500 (national_as_published).
+
+[Đọc quy định gốc](https://hou.edu.vn/wp-content/uploads/2026/06/Phan-II_Muc-1_Thong-tin-TS-2026-DHCQ_Chot.pdf)
+
+- Hoàn thành chương trình dự bị đại học; tổng tổ hợp gồm ưu tiên đạt ngưỡng PT100. Bảng trang 4–8 gắn PT500 cho đúng18 ngành ngoài4 ngành năng khiếu.
+
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
 | 7220201 | Ngôn ngữ Anh |  | D01 | 290 |  |
 | 7220204 | Ngôn ngữ Trung Quốc |  | D01; D04 | 280 |  |
 | 7340101 | Quản trị kinh doanh |  | A00; A01; D01; X26 | 290 |  |
@@ -32537,8 +32852,6 @@ Nguồn có các mục: Đối tượng; Cách xét / cách tính điểm; Thờ
 | 7510302 | Công nghệ kỹ thuật điện tử - viễn thông |  | A00; A01; D01; X26 | 200 |  |
 | 7510303 | Công nghệ kỹ thuật điều khiển và tự động hóa |  | A00; A01; D01; X26 | 290 |  |
 | 7540101 | Công nghệ thực phẩm |  | B00; A00; D07; A01 | 180 |  |
-| 7580101 | Kiến trúc |  | V00; V01; V02 | 85 |  |
-| 7580108 | Thiết kế nội thất |  | H00; H01; H06 | 100 |  |
 | 7810103 | Quản trị dịch vụ du lịch và lữ hành |  | D01; D09; D10 | 225 |  |
 | 7810201 | Quản trị khách sạn |  | D01; D09; D10 | 150 |  |
 
@@ -32814,15 +33127,20 @@ ID đối chiếu: nk-hb; mã nguồn: không ghi (school).
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-my-thuat-tphcm-MTS.html)
+- [Nguồn 2 (official)](https://hcmufa.edu.vn/news_detail/id/620)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0505/thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026.pdf)
 
-### Điểm thi THPT
+> Ngữ văn chỉ là điều kiện, không cộng vào điểm chuyên môn. Nhãn THPT/học bạ là hai cách đáp ứng điều kiện Văn; không phải xét tổng ba môn thông thường.
+
+### Thi năng khiếu; Ngữ văn thi THPT là điều kiện
 
 ID đối chiếu: 8695; mã nguồn: 1 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-my-thuat-tphcm-MTS.html#diem-thi-thpt-8695)
+[Đọc quy định gốc](https://hcmufa.edu.vn/news_detail/id/620)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
+
+> Nhãn THPT/học bạ cũ chỉ biểu thị cách xét điều kiện Ngữ văn; điểm xếp hạng là hai môn năng khiếu, không cộng Văn.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -32833,13 +33151,15 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 | 7210105 | Điêu khắc |  |  | 10 | Ngữ văn kết hợp Năng khiếu |
 | 7210403 | Thiết kế đồ họa |  |  | 140 | Ngữ văn kết hợp Năng khiếu |
 
-### Điểm học bạ
+### Thi năng khiếu; Ngữ văn học bạ là điều kiện
 
 ID đối chiếu: 8702; mã nguồn: 3 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-my-thuat-tphcm-MTS.html#diem-hoc-ba-8702)
+[Đọc quy định gốc](https://hcmufa.edu.vn/news_detail/id/620)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
+
+> Nhãn THPT/học bạ cũ chỉ biểu thị cách xét điều kiện Ngữ văn; điểm xếp hạng là hai môn năng khiếu, không cộng Văn.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -32857,6 +33177,9 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-xay-dung-mien-tay-MTU.html)
+- [Nguồn 2 (official)](https://xttt.mtu.edu.vn/Thongtintuyensinh.aspx)
+
+> Thi riêng và học bạ còn hệ số quy đổi chưa đọc đủ. PDF nhắc riêng lớp 12, trong khi trang 2026 yêu cầu ba năm; cần làm rõ trước khi áp dụng.
 
 ### Điểm thi THPT
 
@@ -36962,6 +37285,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quan-tri-va-kinh-doanh-dh-quoc-gia-ha-noi-QHD.html)
+- [Nguồn 2 (official)](https://www.hsb.edu.vn/admissions/undergrad-admissions-2026)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0515/thong-tin-tuyen-sinh-truong-dai-hoc-quan-tri-va-kinh-doanh-dhqghn-2026.pdf)
 
 ### Điểm thi THPT
@@ -37069,7 +37393,12 @@ Nguồn có các mục: Đối tượng; Điều kiện; Cách xét / cách tín
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-kinh-te-ha-noi-QHE.html)
+- [Nguồn 2 (official)](https://ueb.edu.vn/Tuyen-Sinh/UEB/truong-dai-hoc-kinh-te-dhqghn-ban-hanh-thong-tin-tuyen-sinh-dai-hoc-nam-2026/1730/1731/1737/46139)
+- [Nguồn 3 (official)](https://ueb.edu.vn/Tuyen-Sinh/UEB/quy-doi-diem-tuong-duong-giua-diem-thi-danh-gia-nang-luc-hsa-va-diem-thi-tot-nghiep-thpt/1730/1731/1737/46692)
+- [Nguồn 4 (official)](https://ueb.edu.vn/Tuyen-Sinh/UEB/truong-dai-hoc-kinh-te-dhqghn-thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/1730/1731/1737/46161)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0509/tb-tuyen-sinh-dai-hoc-2026.pdf)
+
+> Phạm vi hệ trong nước và Troy/St.Francis khác nhau; học bạ liên kết có mô tả khác kỳ học giữa 46139 và 46161.
 
 ### Điểm thi THPT
 
@@ -37671,6 +38000,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/truong-quoc-te-dai-hoc-quoc-gia-ha-noi-QHQ.html)
+- [Nguồn 2 (official)](https://www.is.vnu.edu.vn/truong-quoc-te-thong-bao-thong-tin-du-kien-tuyen-sinh-dhcq-nam-2026/)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0616/thong-tin-tuyen-sinh-truong-quoc-te.pdf)
 
 ### Điểm thi THPT
@@ -39931,6 +40261,8 @@ Nguồn có các mục: Đối tượng; Điều kiện; Cách xét / cách tín
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html)
+- [Nguồn 2 (official)](https://tuyensinh.utehy.edu.vn/ThongBao/ChiTiet?ID_thong_bao=27)
+- [Nguồn 3 (official)](https://tuyensinh.utehy.edu.vn/)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0618/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026.pdf)
 
 ### Điểm thi THPT
@@ -40059,11 +40391,13 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: V-SAT.
 
 ID đối chiếu: 8517; mã nguồn: 6 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-su-pham-ky-thuat-hung-yen-SKH.html#diem-dg-tu-duy-dhbkhn-8517)
+[Đọc quy định gốc](https://tuyensinh.utehy.edu.vn/ThongBao/ChiTiet?ID_thong_bao=27)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
 Bài thi / chứng chỉ được nhắc trong điều kiện: TSA.
+
+> Thông báo 612 ghi không áp dụng TSA đối với ngành Sư phạm tiếng Anh.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -40769,7 +41103,10 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html)
+- [Nguồn 2 (official)](https://qao.dthu.edu.vn/Media/Files/SPD-thong-tin-tuyen-sinh-dai-hoc-cao-dang-2026-DIEU-CHINH.pdf)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0616/20260528044344d-spd-thong-tin-tuyen-sinh-dai-hoc-cao-dang-2026-hoanchinh-trnh-ky-20260528015322-e.pdf)
+
+> Đã sửa phạm vi biến thể học bạ+năng khiếu: nguồn chính thức loại trừ Giáo dục thể chất. Không biến các ngưỡng 15/18/225/600 thành điểm chuẩn.
 
 ### Điểm thi THPT
 
@@ -40843,9 +41180,11 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: V-SAT.
 
 ID đối chiếu: 9484; mã nguồn: 10 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html#xet-tuyen-ket-hop-9484)
+[Đọc quy định gốc](https://qao.dthu.edu.vn/Media/Files/SPD-thong-tin-tuyen-sinh-dai-hoc-cao-dang-2026-DIEU-CHINH.pdf)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
+
+> Bổ sung ngành cao đẳng Giáo dục Mầm non51140201 ở hai biến thể năng khiếu. Nguồn chính thức bảng59ngành có mã51140201 và tổ hợpM00/M05; không chỉ năm ngành đại học như bảng tổng hợp cũ.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -40854,6 +41193,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 | 7140221 | Sư phạm Âm nhạc |  | N00; N01 | 115 |  |
 | 7140222 | Sư phạm Mỹ thuật |  | H00; H07 | 115 |  |
 | 7810302 | Huấn luyện thể thao |  | T03; T06; T15; T00; T01; T02 | 120 |  |
+| 51140201 | Giáo dục Mầm non (CĐ) |  | M00, M05 | 40 | Cao đẳng Giáo dục Mầm non; tổ hợp M00/M05 kết hợp năng khiếu theo mục2.1 và2.5 thông tin2026. |
 
 ### Điểm học bạ
 
@@ -40907,13 +41247,14 @@ Nguồn có các mục: Đối tượng; Cách xét / cách tính điểm.
 
 ID đối chiếu: 9487; mã nguồn: 10 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html#xet-tuyen-ket-hop-9487)
+[Đọc quy định gốc](https://qao.dthu.edu.vn/Media/Files/SPD-thong-tin-tuyen-sinh-dai-hoc-cao-dang-2026-DIEU-CHINH.pdf)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
+> PDF 2026 mục 2.2 loại trừ toàn bộ ngành đào tạo giáo viên. Dòng Giáo dục thể chất trong biến thể học bạ của nguồn tổng hợp mâu thuẫn; chỉ giữ ngành Huấn luyện thể thao theo bảng ngành chính thức.
+
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
-| 7140206 | Giáo dục Thể chất |  | T06; T00; T03; T01; T15; T02 | 115 |  |
 | 7810302 | Huấn luyện thể thao |  | T03; T06; T15; T00; T01; T02 | 120 |  |
 
 ### Điểm Đánh giá đầu vào V-SAT
@@ -40988,11 +41329,13 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: V-SAT.
 
 ID đối chiếu: 9488; mã nguồn: 10 (tuyensinh247_internal).
 
-[Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-dong-thap-SPD.html#xet-tuyen-ket-hop-9488)
+[Đọc quy định gốc](https://qao.dthu.edu.vn/Media/Files/SPD-thong-tin-tuyen-sinh-dai-hoc-cao-dang-2026-DIEU-CHINH.pdf)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
 Bài thi / chứng chỉ được nhắc trong điều kiện: V-SAT.
+
+> Bổ sung ngành cao đẳng Giáo dục Mầm non51140201 ở hai biến thể năng khiếu. Nguồn chính thức bảng59ngành có mã51140201 và tổ hợpM00/M05; không chỉ năm ngành đại học như bảng tổng hợp cũ.
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -41001,6 +41344,7 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: V-SAT.
 | 7140221 | Sư phạm Âm nhạc |  | N00; N01 | 115 |  |
 | 7140222 | Sư phạm Mỹ thuật |  | H00; H07 | 115 |  |
 | 7810302 | Huấn luyện thể thao |  | T03; T06; T15; T00; T01; T02 | 120 |  |
+| 51140201 | Giáo dục Mầm non (CĐ) |  | M00, M05 | 40 | Cao đẳng Giáo dục Mầm non; tổ hợp M00/M05 kết hợp năng khiếu theo mục2.1 và2.5 thông tin2026. |
 
 ### Điểm ĐGNL V-ACT
 
@@ -42160,6 +42504,21 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 | 7810301 | Ngành Quản lý thể dục thể thao |  | T00; T01; T02; T05; T08; T09; T10 | 100 |  |
 | 7810302 | Ngành Huấn luyện thể thao |  | T00; T01; T02; T05; T08; T09; T10 | 100 |  |
 
+### Xét tuyển thẳng theo quy chế của Trường
+
+ID đối chiếu: official2026-301; mã nguồn: 301 (official_method_code).
+
+[Đọc quy định gốc](https://tuyensinh.upes.edu.vn/2026/04/14/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/)
+
+- Ngành Giáo dục thể chất, Quản lý TDTT và Huấn luyện thể thao; thành tích, thời hạn và tiêu chuẩn cụ thể trong đề án.
+- Không dùng tổng ba môn thông thường để khẳng định đủ điều kiện xét thẳng.
+
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
+| 7140206 | Ngành Giáo dục thể chất |  | T00; T01; T02; T05; T08; T09; T10 | 300 |  |
+| 7810301 | Ngành Quản lý thể dục thể thao |  | T00; T01; T02; T05; T08; T09; T10 | 100 |  |
+| 7810302 | Ngành Huấn luyện thể thao |  | T00; T01; T02; T05; T08; T09; T10 | 100 |  |
+
 <a id="school-TAG"></a>
 
 ## TAG — Trường Đại học An Giang (ĐHQG HCM)
@@ -42281,9 +42640,10 @@ Nguồn có các mục: Đối tượng; Điều kiện; Cách xét / cách tín
 
 ## TBD — Trường Đại học Thái Bình Dương
 
-**Tình trạng:** Đã thu bảng ngành theo phương thức.
+**Tình trạng:** Còn thiếu / mâu thuẫn phạm vi ngành.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html)
+- [Nguồn 2 (primary)](https://tbd.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/)
 
 ### Điểm thi THPT
 
@@ -42361,6 +42721,10 @@ ID đối chiếu: 8868; mã nguồn: 2 (tuyensinh247_internal).
 
 Nguồn có các mục: Cách xét / cách tính điểm.
 
+> Thông tin chính thức 2026 đang công bố 4 phương thức; nhãn cũ này chưa được xác nhận trong danh sách đó. Không sử dụng để tự tính.
+
+**Có mâu thuẫn giữa các nguồn; chưa xác nhận phương thức/phạm vi ngành này.**
+
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
 | 7210403 | Thiết kế đồ họa |  |  | 0 |  |
@@ -42431,6 +42795,10 @@ Nguồn có các mục: Ngưỡng đầu vào.
 
 Bài thi / chứng chỉ được nhắc trong điều kiện: HSK.
 
+> Thông tin chính thức 2026 đang công bố 4 phương thức; nhãn cũ này chưa được xác nhận trong danh sách đó. Không sử dụng để tự tính.
+
+**Có mâu thuẫn giữa các nguồn; chưa xác nhận phương thức/phạm vi ngành này.**
+
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
 | 7210403 | Thiết kế đồ họa |  | A01; C03; D01; D14; H01; X02 | 0 |  |
@@ -42464,6 +42832,10 @@ ID đối chiếu: 9244; mã nguồn: 10 (tuyensinh247_internal).
 [Đọc quy định gốc](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-thai-binh-duong-TBD.html#xet-tuyen-ket-hop-9244)
 
 Nguồn có các mục: Cách xét / cách tính điểm.
+
+> Thông tin chính thức 2026 đang công bố 4 phương thức; nhãn cũ này chưa được xác nhận trong danh sách đó. Không sử dụng để tự tính.
+
+**Có mâu thuẫn giữa các nguồn; chưa xác nhận phương thức/phạm vi ngành này.**
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -44407,6 +44779,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hai-phong-THP.html)
+- [Nguồn 2 (official)](https://dhhp.edu.vn/post/thong-bao-ve-nguong-bao-dam-chat-luong-dau-vao-quy-tac-quy-doi-tuong-duong-diem-xet-tuyen-giua-cac-phuong-thuc-xet-tuyen-dai-hoc-chinh-quy-nam-2026-73810.html)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0424/thong-tin-tuyen-sinh-dai-hoc-hai-phong.pdf)
 
 ### Điểm thi THPT
@@ -44885,9 +45258,10 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: SPT.
 
 ## THV — Trường Đại học Hùng Vương
 
-**Tình trạng:** Đã thu bảng ngành theo phương thức.
+**Tình trạng:** Còn thiếu / mâu thuẫn phạm vi ngành.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-hung-vuong-THV.html)
+- [Nguồn 2 (official)](https://www.hvu.edu.vn/tin-tuc/thong-tin-tuyen-sinh-nam-2026/1773029218.hvu)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0615/thong-tin-tuyen-sinh-truong-dh-hung-vuong-2026.pdf)
 - [Tài liệu 2026 đính kèm 2](https://images.tuyensinh247.com/picture/2026/0413/thong-tin-tuyen-sinh-dai-hoc-hung-vuong-2026.pdf)
 
@@ -44968,6 +45342,10 @@ ID đối chiếu: 8837; mã nguồn: 10 (tuyensinh247_internal).
 Nguồn có các mục: Cách xét / cách tính điểm.
 
 Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS, TOEFL, TOEIC, HSK, Cambridge.
+
+> Mục 3.1.3 nêu chứng chỉ cho Sư phạm Anh, Ngôn ngữ Anh và Ngôn ngữ Trung; bảng ngành lại gắn TS03 với CNTT. Cần giữ mâu thuẫn nguồn, chưa gán tất cả ngành.
+
+**Có mâu thuẫn giữa các nguồn; chưa xác nhận phương thức/phạm vi ngành này.**
 
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
@@ -46217,6 +46595,38 @@ Nguồn có các mục: Đối tượng.
 | 7810103 | Quản trị DVDL và lữ hành |  | C00; C19; C03; C04; D01; D14; D15; X01; X70; X74 | 35 |  |
 | 7810302 | Huấn luyện thể thao |  | T00; T01; T02; T05; T08; T09; T10 | 30 |  |
 
+### Kết hợp THPT và năng khiếu (PT405)
+
+ID đối chiếu: official2026-405; mã nguồn: 405 (official_method_code).
+
+[Đọc quy định gốc](https://daihoctantrao.edu.vn/media/files/2026/Th%C3%B4ng-tin-tuy%E1%BB%83n-sinh-h%E1%BB%87-ch%C3%ADnh-quy-2026.pdf)
+
+- Chỉ Huấn luyện thể thao, không dùng nhánh năng khiếu cho Giáo dục Mầm non trong đề án này.
+- Tên PT405 ghi thi THPT + năng khiếu nhưng đoạn mô tả ngay dưới lại ghi học bạ ba năm.
+- Không tự đảo mã 405/406 để sửa tài liệu; chờ hướng dẫn chính thức xác nhận.
+
+> Tên và định nghĩa nguồn điểm văn hóa của PT405/PT406 bị đảo trong đề án.
+
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
+| 7810302 | Huấn luyện thể thao |  | T00; T01; T02; T05; T08; T09; T10 | 60 | Chỉ tiêu chung PT301/405/406; không phải 60 cho từng phương thức. |
+
+### Kết hợp học bạ và năng khiếu (PT406)
+
+ID đối chiếu: official2026-406; mã nguồn: 406 (official_method_code).
+
+[Đọc quy định gốc](https://daihoctantrao.edu.vn/media/files/2026/Th%C3%B4ng-tin-tuy%E1%BB%83n-sinh-h%E1%BB%87-ch%C3%ADnh-quy-2026.pdf)
+
+- Chỉ Huấn luyện thể thao, không dùng nhánh năng khiếu cho Giáo dục Mầm non trong đề án này.
+- Tên PT406 ghi học bạ + năng khiếu nhưng đoạn mô tả ngay dưới lại ghi hai môn thi THPT.
+- Không tự đảo mã 405/406 để sửa tài liệu; chờ hướng dẫn chính thức xác nhận.
+
+> Tên và định nghĩa nguồn điểm văn hóa của PT405/PT406 bị đảo trong đề án.
+
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
+| 7810302 | Huấn luyện thể thao |  | T00; T01; T02; T05; T08; T09; T10 | 60 | Chỉ tiêu chung PT301/405/406; không phải 60 cho từng phương thức. |
+
 <a id="school-TSN"></a>
 
 ## TSN — Trường Đại học Nha Trang
@@ -46224,6 +46634,7 @@ Nguồn có các mục: Đối tượng.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-nha-trang-TSN.html)
+- [Nguồn 2 (official)](https://tuyensinh.ntu.edu.vn/thong-bao/quy-doi-diem-tuong-duong)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0408/thong-tin-tuyen-sinh-truong-dai-hoc-nha-trang-2026.pdf)
 
 ### ƯTXT, XT thẳng
@@ -46849,6 +47260,8 @@ ID đối chiếu: nomination; mã nguồn: không ghi (school).
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-the-duc-the-thao-da-nang-TTD.html)
+- [Nguồn 2 (official)](https://dsu.edu.vn/resources/post_tailieu/d42266f8-0de2-4a0c-93b3-bc52442f533a.pdf)
+- [Nguồn 3 (primary)](https://dsu.edu.vn/resources/post_tailieu/be835036-685f-439a-956b-8aa3907a7cbc.pdf)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0407/thong-tin-tuyen-sinh-truong-the-duc-the-thao-da-nang-2026.pdf)
 
 ### Điểm thi THPT
@@ -47968,6 +48381,7 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-khanh-hoa-UKH.html)
+- [Nguồn 2 (official)](https://ukh.edu.vn/tuyensinh/vi-vn/chi-tiet-tin/id/6347/THONG-TIN-TUYEN-SINH-NAM-2026-(CAP-NHAT))
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0401/226khdhkh-24022026-kh-tuyen-sinh-dao-tao-dh-cd-chinh-quy-nam-2026-signedsigned.pdf)
 
 ### ƯTXT, XT thẳng
@@ -48253,7 +48667,10 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-viet-duc-VGU.html)
+- [Nguồn 2 (official)](https://tuyensinh.vgu.edu.vn/nhaphoc-1)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0505/thong-tin-tuyen-sinh-dai-hoc-viet-duc.pdf)
+
+> Digital TestAS dùng 40%/60%, mỗi module từ 50; Paper TestAS mỗi module từ 90. Chưa có chung một phép đổi tất cả chứng chỉ quốc tế về thang 30.
 
 ### TestAS
 
@@ -49439,7 +49856,10 @@ Nguồn có các mục: Cách xét / cách tính điểm.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-vo-truong-toan-VTT.html)
+- [Nguồn 2 (official)](https://vttu.edu.vn/cam-nang-2026/)
 - [Tài liệu 2026 đính kèm 1](https://cdn.tuyensinh247.com/picture/2026/0618/thong-tin-tuyen-sinh-truong-dai-hoc-vo-truong-toan-nam-2026.pdf)
+
+> Bổ sung PT 411 đang thiếu: chỉ Y khoa, Răng–Hàm–Mặt, Dược học. PT 402/407 chỉ có bốn ngành sức khỏe/Luật, không áp dụng toàn bộ danh mục.
 
 ### Điểm thi THPT
 
@@ -49540,6 +49960,21 @@ Nguồn có các mục: Đối tượng.
 | 7720101 | Y khoa |  |  | 750 |  |
 | 7720201 | Dược học |  |  | 40 |  |
 | 7720501 | Răng - Hàm - Mặt |  |  | 600 |  |
+
+### Thí sinh tốt nghiệp THPT nước ngoài
+
+ID đối chiếu: 411; mã nguồn: 411 (national_as_published).
+
+[Đọc quy định gốc](https://vttu.edu.vn/cam-nang-2026/)
+
+- Tốt nghiệp THPT/trung học nghề nước ngoài hoặc người nước ngoài đúng diện quy chế; xét kết quả học tập THPT.
+- Chỉ Y khoa, Răng – Hàm – Mặt, Dược học; hội đồng kiểm tra tương đương văn bằng và ngưỡng riêng.
+
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
+| 7720101 | Y khoa |  | B00; B03; D08; A00; A02; D01 | 750 |  |
+| 7720201 | Dược học |  | B00; B03; D08; A00; A02; D01 | 40 |  |
+| 7720501 | Răng - Hàm - Mặt |  | B00; B03; D08; A00; A02; D01 | 600 |  |
 
 <a id="school-VUI"></a>
 
@@ -50809,6 +51244,7 @@ Nguồn có các mục: Đối tượng.
 **Tình trạng:** Đã thu bảng ngành theo phương thức.
 
 - [Nguồn 1 (secondary)](https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-y-khoa-vinh-YKV.html)
+- [Nguồn 2 (official)](https://www.vmu.edu.vn/cdn/vmu/Assets/Documents/422_08.5.2026_TB%20Tuyen%20Sinh%202026.pdf)
 - [Tài liệu 2026 đính kèm 1](https://images.tuyensinh247.com/picture/2026/0513/thong-tin-tuyen-sinh-truong-dai-hoc-y-khoa-vinh-2026.pdf)
 
 ### ƯTXT, XT thẳng
@@ -51146,6 +51582,26 @@ Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS, TOEFL.
 | Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
 |---|---|---|---|---|---|
 | 7460108 | Khoa học dữ liệu |  | Q00 | 60 |  |
+
+### Xét chuyển từ dự bị đại học
+
+ID đối chiếu: official2026-preparatory; mã nguồn: YTC-PREPARATORY (official_method_label).
+
+[Đọc quy định gốc](https://tuyensinh.huph.edu.vn/post/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026)
+
+- Chỉ thí sinh đã hoàn thành dự bị đại học và đủ điều kiện xét chuyển; ba môn thi cuối khóa đúng tổ hợp ngành. Không áp dụng cho hồ sơ THPT thông thường.
+- KK chứng chỉ hợp lệ theo bảng 2, tối đa 1,5; mức IELTS 5/5,5/6/6,5/7–9 tương ứng 0,3/0,6/0,9/1,2/1,5. Đính chính 591 không thay đổi mục 5.3.2.
+
+Bài thi / chứng chỉ được nhắc trong điều kiện: IELTS.
+
+| Mã ngành / chương trình | Tên ngành / chuyên ngành | Nhóm / cơ sở | Tổ hợp nguồn ghi | Chỉ tiêu nguồn ghi | Ghi chú |
+|---|---|---|---|---|---|
+| 7460108 | Khoa học dữ liệu |  |  | 60 |  |
+| 7720401 | Dinh dưỡng |  |  | 130 |  |
+| 7720601 | Kỹ thuật xét nghiệm y học |  |  | 230 |  |
+| 7720603 | Kỹ thuật phục hồi chức năng |  |  | 145 |  |
+| 7720701 | Y tế công cộng |  |  | 220 |  |
+| 7760101 | Công tác xã hội |  |  | 105 |  |
 
 <a id="school-ZCH"></a>
 

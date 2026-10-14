@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "year": 2026,
+  "checkedAt": "2026-10-14",
+  "policy": "Nguồn 2026 dùng tham khảo cho mùa tuyển sinh 2027; không mở tự tính khi chưa có đủ dữ kiện.",
+  "methods": {
+    "IUH:8313": {
+      "status": "source_reported",
+      "label": "Xét tuyển kết hợp THPT, ĐGNL và học bạ lớp 12",
+      "expression": "ĐXT = max(XT1; XT2; XT3)\nXT1 = 0,7 × ĐK + 0,3 × ĐHB + ĐƯT + ĐC\nXT2 = ĐTN + ĐƯT + ĐC\nXT3 = ĐĐGNL + ĐƯT + ĐC\nĐK = max(ĐTN; ĐĐGNL)\nĐĐGNL = Điểm thi ĐGNL × 30 / ĐTK",
+      "equations": [
+        "ĐXT = max(XT1; XT2; XT3)",
+        "XT1 = 0,7 × ĐK + 0,3 × ĐHB + ĐƯT + ĐC",
+        "XT2 = ĐTN + ĐƯT + ĐC",
+        "XT3 = ĐĐGNL + ĐƯT + ĐC",
+        "ĐK = max(ĐTN; ĐĐGNL)",
+        "ĐĐGNL = Điểm thi ĐGNL × 30 / ĐTK"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "ĐTN: tổng ba môn thi THPT năm 2026 trong tổ hợp; ĐHB: tổng ba môn học bạ lớp 12 cùng tổ hợp.",
+        "ĐTK là điểm cao nhất thực tế của kỳ thi ĐGNL ĐHQG TP.HCM năm 2026, không phải điểm tối đa lý thuyết 1200.",
+        "ĐC gồm điểm thưởng, xét thưởng và khuyến khích; điều kiện, mức cộng theo Phụ lục 1–2 của thông báo.",
+        "Nếu dùng chứng chỉ thay môn Anh khi không thi môn này, không đồng thời cộng điểm khuyến khích từ chứng chỉ đó.",
+        "Tổ hợp, môn bắt buộc và điều kiện ngành theo bảng của đúng cơ sở; kết quả dùng tham khảo năm 2026."
+      ],
+      "priority": "ĐƯT là ưu tiên khu vực và đối tượng theo quy chế Bộ GDĐT; phải áp dụng mức giảm theo điểm nền của cách xét tương ứng.",
+      "conversion": "ĐGNL quy về thang 30 theo điểm thủ khoa kỳ thi 2026. Chưa bật tự tính khi chưa xác nhận ĐTK và đầy đủ điểm cộng/ưu tiên.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Thông báo 867/TB-ĐHCN ngày 16/04/2026; đọc trực quan bản PDF ký đóng dấu, trang 1–2, mục 3.1.2 và 3.2. Phân hiệu áp dụng cùng phương thức nhưng bảng ngành riêng."
+      }
+    },
+    "IUH:9445": {
+      "status": "source_reported",
+      "label": "Xét tuyển kết hợp THPT, ĐGNL và học bạ lớp 12",
+      "expression": "ĐXT = max(XT1; XT2; XT3)\nXT1 = 0,7 × ĐK + 0,3 × ĐHB + ĐƯT + ĐC\nXT2 = ĐTN + ĐƯT + ĐC\nXT3 = ĐĐGNL + ĐƯT + ĐC\nĐK = max(ĐTN; ĐĐGNL)\nĐĐGNL = Điểm thi ĐGNL × 30 / ĐTK",
+      "equations": [
+        "ĐXT = max(XT1; XT2; XT3)",
+        "XT1 = 0,7 × ĐK + 0,3 × ĐHB + ĐƯT + ĐC",
+        "XT2 = ĐTN + ĐƯT + ĐC",
+        "XT3 = ĐĐGNL + ĐƯT + ĐC",
+        "ĐK = max(ĐTN; ĐĐGNL)",
+        "ĐĐGNL = Điểm thi ĐGNL × 30 / ĐTK"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "ĐTN: tổng ba môn thi THPT năm 2026 trong tổ hợp; ĐHB: tổng ba môn học bạ lớp 12 cùng tổ hợp.",
+        "ĐTK là điểm cao nhất thực tế của kỳ thi ĐGNL ĐHQG TP.HCM năm 2026, không phải điểm tối đa lý thuyết 1200.",
+        "ĐC gồm điểm thưởng, xét thưởng và khuyến khích; điều kiện, mức cộng theo Phụ lục 1–2 của thông báo.",
+        "Nếu dùng chứng chỉ thay môn Anh khi không thi môn này, không đồng thời cộng điểm khuyến khích từ chứng chỉ đó.",
+        "Tổ hợp, môn bắt buộc và điều kiện ngành theo bảng của đúng cơ sở; kết quả dùng tham khảo năm 2026."
+      ],
+      "priority": "ĐƯT là ưu tiên khu vực và đối tượng theo quy chế Bộ GDĐT; phải áp dụng mức giảm theo điểm nền của cách xét tương ứng.",
+      "conversion": "ĐGNL quy về thang 30 theo điểm thủ khoa kỳ thi 2026. Chưa bật tự tính khi chưa xác nhận ĐTK và đầy đủ điểm cộng/ưu tiên.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Thông báo 867/TB-ĐHCN ngày 16/04/2026; đọc trực quan bản PDF ký đóng dấu, trang 1–2, mục 3.1.2 và 3.2. Phân hiệu áp dụng cùng phương thức nhưng bảng ngành riêng."
+      }
+    },
+    "IUQ:combined": {
+      "status": "source_reported",
+      "label": "Xét tuyển kết hợp THPT, ĐGNL và học bạ lớp 12",
+      "expression": "ĐXT = max(XT1; XT2; XT3)\nXT1 = 0,7 × ĐK + 0,3 × ĐHB + ĐƯT + ĐC\nXT2 = ĐTN + ĐƯT + ĐC\nXT3 = ĐĐGNL + ĐƯT + ĐC\nĐK = max(ĐTN; ĐĐGNL)\nĐĐGNL = Điểm thi ĐGNL × 30 / ĐTK",
+      "equations": [
+        "ĐXT = max(XT1; XT2; XT3)",
+        "XT1 = 0,7 × ĐK + 0,3 × ĐHB + ĐƯT + ĐC",
+        "XT2 = ĐTN + ĐƯT + ĐC",
+        "XT3 = ĐĐGNL + ĐƯT + ĐC",
+        "ĐK = max(ĐTN; ĐĐGNL)",
+        "ĐĐGNL = Điểm thi ĐGNL × 30 / ĐTK"
+      ],
+      "scale": "Thang 30",
+      "conditions": [
+        "ĐTN: tổng ba môn thi THPT năm 2026 trong tổ hợp; ĐHB: tổng ba môn học bạ lớp 12 cùng tổ hợp.",
+        "ĐTK là điểm cao nhất thực tế của kỳ thi ĐGNL ĐHQG TP.HCM năm 2026, không phải điểm tối đa lý thuyết 1200.",
+        "ĐC gồm điểm thưởng, xét thưởng và khuyến khích; điều kiện, mức cộng theo Phụ lục 1–2 của thông báo.",
+        "Nếu dùng chứng chỉ thay môn Anh khi không thi môn này, không đồng thời cộng điểm khuyến khích từ chứng chỉ đó.",
+        "Tổ hợp, môn bắt buộc và điều kiện ngành theo bảng của đúng cơ sở; kết quả dùng tham khảo năm 2026."
+      ],
+      "priority": "ĐƯT là ưu tiên khu vực và đối tượng theo quy chế Bộ GDĐT; phải áp dụng mức giảm theo điểm nền của cách xét tương ứng.",
+      "conversion": "ĐGNL quy về thang 30 theo điểm thủ khoa kỳ thi 2026. Chưa bật tự tính khi chưa xác nhận ĐTK và đầy đủ điểm cộng/ưu tiên.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Thông báo 867/TB-ĐHCN ngày 16/04/2026; đọc trực quan bản PDF ký đóng dấu, trang 1–2, mục 3.1.2 và 3.2. Phân hiệu áp dụng cùng phương thức nhưng bảng ngành riêng."
+      }
+    }
+  },
+  "researchCorrections": {
+    "IUH": {
+      "checkedAt": "2026-10-14",
+      "sources": [
+        {
+          "url": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf",
+          "type": "official",
+          "year": 2026
+        }
+      ],
+      "methodCorrections": {
+        "8312": {
+          "sourceUrl": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf"
+        },
+        "8313": {
+          "label": "Xét tuyển kết hợp THPT, ĐGNL và học bạ lớp 12",
+          "sourceUrl": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf",
+          "requirements": [
+            "ĐTN: tổng ba môn thi THPT năm 2026 trong tổ hợp; ĐHB: tổng ba môn học bạ lớp 12 cùng tổ hợp.",
+            "ĐTK là điểm cao nhất thực tế của kỳ thi ĐGNL ĐHQG TP.HCM năm 2026, không phải điểm tối đa lý thuyết 1200.",
+            "ĐC gồm điểm thưởng, xét thưởng và khuyến khích; điều kiện, mức cộng theo Phụ lục 1–2 của thông báo.",
+            "Nếu dùng chứng chỉ thay môn Anh khi không thi môn này, không đồng thời cộng điểm khuyến khích từ chứng chỉ đó.",
+            "Tổ hợp, môn bắt buộc và điều kiện ngành theo bảng của đúng cơ sở; kết quả dùng tham khảo năm 2026."
+          ]
+        },
+        "9445": {
+          "label": "Xét tuyển kết hợp THPT, ĐGNL và học bạ lớp 12",
+          "sourceUrl": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf",
+          "requirements": [
+            "ĐTN: tổng ba môn thi THPT năm 2026 trong tổ hợp; ĐHB: tổng ba môn học bạ lớp 12 cùng tổ hợp.",
+            "ĐTK là điểm cao nhất thực tế của kỳ thi ĐGNL ĐHQG TP.HCM năm 2026, không phải điểm tối đa lý thuyết 1200.",
+            "ĐC gồm điểm thưởng, xét thưởng và khuyến khích; điều kiện, mức cộng theo Phụ lục 1–2 của thông báo.",
+            "Nếu dùng chứng chỉ thay môn Anh khi không thi môn này, không đồng thời cộng điểm khuyến khích từ chứng chỉ đó.",
+            "Tổ hợp, môn bắt buộc và điều kiện ngành theo bảng của đúng cơ sở; kết quả dùng tham khảo năm 2026."
+          ]
+        }
+      }
+    },
+    "IUQ": {
+      "checkedAt": "2026-10-14",
+      "sources": [
+        {
+          "url": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf",
+          "type": "official",
+          "year": 2026
+        }
+      ],
+      "methodCorrections": {
+        "combined": {
+          "label": "Xét tuyển kết hợp THPT, ĐGNL và học bạ lớp 12",
+          "sourceUrl": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf",
+          "requirements": [
+            "ĐTN: tổng ba môn thi THPT năm 2026 trong tổ hợp; ĐHB: tổng ba môn học bạ lớp 12 cùng tổ hợp.",
+            "ĐTK là điểm cao nhất thực tế của kỳ thi ĐGNL ĐHQG TP.HCM năm 2026, không phải điểm tối đa lý thuyết 1200.",
+            "ĐC gồm điểm thưởng, xét thưởng và khuyến khích; điều kiện, mức cộng theo Phụ lục 1–2 của thông báo.",
+            "Nếu dùng chứng chỉ thay môn Anh khi không thi môn này, không đồng thời cộng điểm khuyến khích từ chứng chỉ đó.",
+            "Tổ hợp, môn bắt buộc và điều kiện ngành theo bảng của đúng cơ sở; kết quả dùng tham khảo năm 2026."
+          ]
+        },
+        "direct": {
+          "sourceUrl": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf"
+        }
+      }
+    }
+  },
+  "audited": [
+    {
+      "code": "IUH",
+      "checkedAt": "2026-10-14",
+      "urls": [
+        "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf"
+      ],
+      "outcome": "Đã đọc công thức chính thức trang 1–2. Hai nhãn đầu vào của IUH thuộc cùng một phương thức kết hợp; giữ riêng ngành ở cơ sở chính và phân hiệu."
+    },
+    {
+      "code": "IUQ",
+      "checkedAt": "2026-10-14",
+      "urls": [
+        "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf"
+      ],
+      "outcome": "Đã đọc công thức chính thức trang 1–2. Hai nhãn đầu vào của IUH thuộc cùng một phương thức kết hợp; giữ riêng ngành ở cơ sở chính và phân hiệu."
+    }
+  ]
+}

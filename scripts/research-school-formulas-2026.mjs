@@ -4,6 +4,19 @@ import { pathToFileURL } from 'node:url';
 import { plainText } from './lib/ts247-plans.mjs';
 import { formulaKind, scoreEquations, scoringDefinitions } from './lib/school-formulas.mjs';
 
+export async function officialDocumentCache(directory = 'tmp/official-profiles-2026') {
+  const index = new Map();
+  for (const file of (await fs.readdir(directory)).filter(file => /^[a-f0-9]{64}\.json$/.test(file))) {
+    const page = JSON.parse(await fs.readFile(`${directory}/${file}`, 'utf8'));
+    if (page.error || !['html', 'pdf'].includes(page.kind)) continue;
+    const entry = { kind: page.kind, checkedAt: page.checkedAt, base: `${directory}/${file.slice(0, -5)}` };
+    for (const url of [page.url, page.requestedUrl].filter(Boolean)) {
+      if (!index.has(url) || String(entry.checkedAt || '') > String(index.get(url).checkedAt || '')) index.set(url, entry);
+    }
+  }
+  return index;
+}
+
 export function officialFormulaDocument(document, profile, sharedDocuments = []) {
   let url;
   try { url = new URL(document.url); } catch { return false; }
@@ -71,16 +84,18 @@ export async function researchSchoolFormulas() {
   ].map(load));
   const methods = {};
   const audit = [];
+  const cache = await officialDocumentCache();
   for (const school of research.schools) {
     const profile = profiles.schools.find((s) => s.code === school.code);
     const existing = catalog.schools.find((s) => s.schoolCode === school.code);
     const candidates = [];
     for (const document of profile?.documents || []) {
       if (!officialFormulaDocument(document, profile, links[school.code]?.sharedDocuments)) continue;
-      const base = `tmp/official-profiles-2026/${createHash('sha256').update(document.url).digest('hex')}`;
+      const cached = cache.get(document.url);
+      const base = cached?.base || `tmp/official-profiles-2026/${createHash('sha256').update(document.url).digest('hex')}`;
       let text = '';
       try {
-        const page = await load(`${base}.json`);
+        const page = cached || await load(`${base}.json`);
         text = page.kind === 'pdf' ? await fs.readFile(`${base}.txt`, 'utf8') : plainText((await fs.readFile(`${base}.html`, 'utf8')).replace(/<(?:style|nav|footer)\b[^>]*>[\s\S]*?<\/(?:style|nav|footer)>/gi, ''));
       } catch { continue; }
       if (document.kind === 'pdf' && !/2026/.test(text.slice(0, 2500))) continue;

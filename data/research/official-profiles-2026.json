@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "checkedAt": "2026-10-04",
+  "checkedAt": "2026-10-14",
   "priority": [
     "official_admissions",
     "official_university",
@@ -10,11 +10,11 @@
   "notice": "Thông tin tuyển sinh năm 2026 chỉ mang tính tham khảo. Hãy đối chiếu thông báo chính thức của trường trước khi đăng ký; không áp dụng mặc định cho năm khác.",
   "summary": {
     "schools": 326,
-    "withOfficialDocuments": 261,
-    "withMethodTables": 51,
+    "withOfficialDocuments": 268,
+    "withMethodTables": 73,
     "withProgramTables": 26,
-    "websitesConfirmed": 6,
-    "needsReview": 65
+    "websitesConfirmed": 8,
+    "needsReview": 58
   },
   "schools": [
     {
@@ -449,25 +449,17 @@
       "code": "QHQ",
       "name": "Khoa Quốc tế - Đại học Quốc gia Hà Nội",
       "website": "https://is.vnu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "THÔNG TIN TUYỂN SINH ĐẠI HỌC NĂM 2026 - Trường Quốc tế - ĐHQGHN",
           "url": "https://www.is.vnu.edu.vn/truong-quoc-te-thong-bao-thong-tin-du-kien-tuyen-sinh-dhcq-nam-2026/",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi",
-            "Chỉ tiêu",
-            "Lịch tuyển sinh",
-            "Học phí"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
-          "provisional": false
+          "checkedAt": "2026-10-14",
+          "provisional": true
         },
         {
           "title": "Trường Quốc tế thông báo tuyển sinh bổ sung Đại học chính quy năm 2026 - Trường Quốc tế - ĐHQGHN",
@@ -605,7 +597,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 17,
+      "methodTableCount": 2,
       "programTableCount": 17,
       "scopeNote": "Tài liệu có thể gồm nhiều cơ sở hoặc đơn vị thành viên. Chỉ dùng dòng ngành, điều kiện và điểm ghi đúng cơ sở dự tuyển."
     },
@@ -1050,9 +1042,36 @@
       "code": "QHE",
       "name": "Trường Đại học Kinh tế - Đại học Quốc gia Hà Nội",
       "website": "https://ueb.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://ueb.edu.vn/Tuyen-Sinh/UEB/truong-dai-hoc-kinh-te-dhqghn-ban-hanh-thong-tin-tuyen-sinh-dai-hoc-nam-2026/1730/1731/1737/46139",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://ueb.edu.vn/Tuyen-Sinh/UEB/quy-doi-diem-tuong-duong-giua-diem-thi-danh-gia-nang-luc-hsa-va-diem-thi-tot-nghiep-thpt/1730/1731/1737/46692",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://ueb.edu.vn/Tuyen-Sinh/UEB/truong-dai-hoc-kinh-te-dhqghn-thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/1730/1731/1737/46161",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "Những con số ấn tượng về Tuyển sinh Đại học năm 2026 của Trường Đại học Kinh tế - ĐHQGHN",
           "url": "https://ueb.edu.vn/Tin-Tuc/UEB/nhung-con-so-an-tuong-ve-tuyen-sinh-dai-hoc-nam-2026-cua-truong-dai-hoc-kinh-te-dhqghn/47118",
@@ -1159,7 +1178,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 2,
       "programTableCount": 0,
       "scopeNote": "Tài liệu có thể gồm nhiều cơ sở hoặc đơn vị thành viên. Chỉ dùng dòng ngành, điều kiện và điểm ghi đúng cơ sở dự tuyển."
     },
@@ -1857,23 +1876,16 @@
       "code": "QHD",
       "name": "Trường Quản trị và Kinh doanh - Đại học Quốc gia Hà Nội",
       "website": "https://hsb.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "Thông tin tuyển sinh Đại học năm 2026",
           "url": "https://www.hsb.edu.vn/admissions/undergrad-admissions-2026",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Công thức, quy đổi",
-            "Chỉ tiêu",
-            "Lịch tuyển sinh",
-            "Học phí"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         }
       ],
@@ -1914,7 +1926,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 4,
       "programTableCount": 7,
       "scopeNote": "Tài liệu có thể gồm nhiều cơ sở hoặc đơn vị thành viên. Chỉ dùng dòng ngành, điều kiện và điểm ghi đúng cơ sở dự tuyển."
     },
@@ -3156,18 +3168,25 @@
       "code": "KMA",
       "name": "Học viện Kỹ thuật Mật mã",
       "website": "https://actvn.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://actvn.edu.vn/News/DownloadFile?idFile=4359",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "Phương thức tuyển sinh đại học chính quy năm 2026",
           "url": "https://actvn.edu.vn/News/Detail?NewsId=28180",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Lịch tuyển sinh"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         },
         {
@@ -3334,7 +3353,7 @@
           "yearConfirmed": true
         }
       ],
-      "methodTableCount": 3,
+      "methodTableCount": 6,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -5377,92 +5396,76 @@
       "status": "official_documents_available",
       "documents": [
         {
-          "url": "https://hict.edu.vn/",
+          "title": "Thông tin tuyển sinh năm 2026",
+          "url": "https://hict.edu.vn/thong-tin-tuyen-sinh-nam-2026.htm",
+          "topics": [
+            "Phương thức",
+            "Ngành, mã ngành",
+            "Điều kiện, ngưỡng đầu vào",
+            "Điểm trúng tuyển",
+            "Công thức, quy đổi"
+          ],
+          "checkedAt": "2026-10-03",
+          "provisional": false
+        },
+        {
+          "title": "Quyết định ban hành thông tin tuyển sinh năm 2026",
+          "url": "https://hict.edu.vn/quyet-dinh-ban-hanh-thong-tin-tuyen-sinh-nam-2026.htm",
+          "topics": [
+            "Điều kiện, ngưỡng đầu vào",
+            "Điểm trúng tuyển",
+            "Công thức, quy đổi"
+          ],
+          "checkedAt": "2026-10-03",
+          "provisional": false
+        },
+        {
+          "title": "Quy tắc quy đổi điểm giữa các phương thức năm 2026",
+          "url": "https://hict.edu.vn/quy-tac-quy-doi-diem-giua-cac-phuong-thuc-nam-2026.htm",
+          "topics": [
+            "Điều kiện, ngưỡng đầu vào",
+            "Điểm trúng tuyển",
+            "Công thức, quy đổi"
+          ],
+          "checkedAt": "2026-10-03",
+          "provisional": false
+        },
+        {
+          "title": "Thông báo tuyển sinh bổ sung năm 2026",
+          "url": "https://hict.edu.vn/thong-bao-tuyen-sinh-bo-sung-nam-2026.htm",
+          "topics": [
+            "Phương thức",
+            "Điều kiện, ngưỡng đầu vào",
+            "Điểm trúng tuyển",
+            "Công thức, quy đổi",
+            "Lịch tuyển sinh"
+          ],
+          "checkedAt": "2026-10-03",
+          "provisional": false
+        },
+        {
           "title": "TUYỂN SINH NĂM 2026 Xem thêm",
-          "kind": "html",
+          "url": "https://hict.edu.vn/",
           "topics": [
             "Điểm trúng tuyển"
           ],
           "checkedAt": "2026-10-03",
-          "verification": "year_title_confirmed"
+          "provisional": false
         },
         {
-          "url": "https://hict.edu.vn/thong-tin-tuyen-sinh-nam-2026.htm",
-          "title": "Thông tin tuyển sinh năm 2026",
-          "kind": "html",
-          "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi"
-          ],
-          "checkedAt": "2026-10-03",
-          "verification": "year_title_confirmed"
-        },
-        {
-          "url": "https://hict.edu.vn/quyet-dinh-ban-hanh-thong-tin-tuyen-sinh-nam-2026.htm",
-          "title": "Quyết định ban hành thông tin tuyển sinh năm 2026",
-          "kind": "html",
-          "topics": [
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi"
-          ],
-          "checkedAt": "2026-10-03",
-          "verification": "year_title_confirmed"
-        },
-        {
-          "url": "https://hict.edu.vn/quy-tac-quy-doi-diem-giua-cac-phuong-thuc-nam-2026.htm",
-          "title": "Quy tắc quy đổi điểm giữa các phương thức năm 2026",
-          "kind": "html",
-          "topics": [
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi"
-          ],
-          "checkedAt": "2026-10-03",
-          "verification": "year_title_confirmed"
-        },
-        {
-          "url": "https://hict.edu.vn/pic/general/files/2026/Th%C3%A1ng%204/QD%20ban%20hanh%20Thong%20tin%20tuyen%20sinh%20nam%202026%20cua%20truong%20Dai%20hoc%20Cong%20nghiep%20va%20Thuong%20mai%20Ha%20Noi_banchinh.pdf",
-          "title": "Xem chi tiết tại đ&acirc;y · Quyết định ban hành thông tin tuyển sinh năm 2026",
-          "kind": "pdf",
-          "topics": [],
-          "checkedAt": "2026-10-03",
-          "file": "tmp/official-profiles-2026/8192fa09a98b0414a343b47047c6247d2f3ce52d7dbc50e1f0825401b502b983.pdf",
-          "verification": "needs_pdf_read"
-        },
-        {
-          "url": "https://hict.edu.vn/thong-bao-tuyen-sinh-bo-sung-nam-2026.htm",
-          "title": "Thông báo tuyển sinh bổ sung năm 2026",
-          "kind": "html",
-          "topics": [
-            "Phương thức",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi",
-            "Lịch tuyển sinh"
-          ],
-          "checkedAt": "2026-10-03",
-          "verification": "year_title_confirmed"
-        },
-        {
-          "url": "https://hict.edu.vn/diem-trung-tuyen-dai-hoc-nam-2026.htm",
           "title": "Điểm trúng tuyển đại học năm 2026",
-          "kind": "html",
+          "url": "https://hict.edu.vn/diem-trung-tuyen-dai-hoc-nam-2026.htm",
           "topics": [
             "Điều kiện, ngưỡng đầu vào",
             "Điểm trúng tuyển",
             "Công thức, quy đổi"
           ],
           "checkedAt": "2026-10-03",
-          "verification": "year_title_confirmed"
+          "provisional": false
         },
         {
-          "url": "https://hict.edu.vn/huong-dan-dang-ky-xet-tuyen-bo-sung-nam-2026.htm",
           "title": "Hướng dẫn đăng ký xét tuyển bổ sung năm 2026",
-          "kind": "html",
+          "url": "https://hict.edu.vn/huong-dan-dang-ky-xet-tuyen-bo-sung-nam-2026.htm",
           "topics": [
             "Ngành, mã ngành",
             "Điều kiện, ngưỡng đầu vào",
@@ -5471,12 +5474,11 @@
             "Lịch tuyển sinh"
           ],
           "checkedAt": "2026-10-03",
-          "verification": "year_title_confirmed"
+          "provisional": false
         },
         {
-          "url": "https://hict.edu.vn/cong-bo-nguong-diem-nhan-ho-so-xet-tuyen-dai-hoc-he-chinh-quy-nam-2026.htm",
           "title": "Công bố ngưỡng điểm nhận hồ sơ xét tuyển Đại học hệ chính quy năm 2026",
-          "kind": "html",
+          "url": "https://hict.edu.vn/cong-bo-nguong-diem-nhan-ho-so-xet-tuyen-dai-hoc-he-chinh-quy-nam-2026.htm",
           "topics": [
             "Phương thức",
             "Điều kiện, ngưỡng đầu vào",
@@ -5485,7 +5487,7 @@
             "Lịch tuyển sinh"
           ],
           "checkedAt": "2026-10-03",
-          "verification": "year_title_confirmed"
+          "provisional": false
         }
       ],
       "attempts": [
@@ -7650,20 +7652,25 @@
       "code": "LNH",
       "name": "Trường Đại học Lâm nghiệp",
       "website": "https://vnuf.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.vnuf.edu.vn/Detail.aspx?id=9",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "Thông báo (Điểm sàn): Nguồn xét tuyển đầu vào, ngưỡng đảm bảo chất lượng đầu vào và quy tắc quy đổi tương đương các phương thức tuyển sinh đại học năm 2026",
           "url": "https://vnuf.edu.vn/thong-bao-nguon-xet-tuyen-dau-vao-nguong-dam-bao-chat-luong-dau-vao-diem-san-va-quy-tac-quy-doi-tuong-duong-cac-phuong-thuc-tuyen-sinh-dai-hoc-nam-2026.html",
           "topics": [
-            "Phương thức",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         }
       ],
@@ -7746,7 +7753,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 6,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -7754,9 +7761,28 @@
       "code": "DLX",
       "name": "Trường Đại học Lao động - Xã hội",
       "website": "https://ulsa.edu.vn",
-      "checkedAt": "2026-10-03",
-      "status": "official_evidence_pending",
-      "documents": [],
+      "checkedAt": "2026-10-14",
+      "status": "official_documents_available",
+      "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.ulsa.edu.vn/thong-bao-tuyen-sinh-dhcq-2026/",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://thongtindaotao.ulsa.edu.vn/tin-tuc/tin-tuc-chung/truong-dai-hoc-lao-dong-xa-hoi-tuyen-sinh-dai-hoc-chinh-quy-nam-2026/",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        }
+      ],
       "attempts": [
         {
           "url": "https://ulsa.edu.vn",
@@ -7801,7 +7827,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -11787,9 +11813,28 @@
       "code": "MHN",
       "name": "Trường Đại học Mở Hà Nội",
       "website": "https://hou.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://hou.edu.vn/wp-content/uploads/2026/06/Phan-II_Muc-1_Thong-tin-TS-2026-DHCQ_Chot.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        },
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.hou.edu.vn/tintucchitiet/BT601/",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "Thông tin tuyển sinh đại học chính quy năm 2026 của Trường Đại học Mở Hà Nội (Cập nhật ngày 28/5/2026)",
           "url": "https://hou.edu.vn/tin-tuyen-sinh/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-cua-truong-dai-hoc-mo-ha-noi-cap-nhat-ngay-28-05-2026/",
@@ -11919,7 +11964,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 7,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -13435,9 +13480,19 @@
       "code": "IUH",
       "name": "Trường Đại học Công nghiệp TP.HCM",
       "website": "https://iuh.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        },
         {
           "title": "Thông báo điểm trúng tuyển bậc Đại học hệ Chính quy năm 2026 tại Phân hiệu Quảng Ngãi - Đại học Công nghiệp Thành phố Hồ Chí Minh - IUH",
           "url": "https://iuh.edu.vn/vi/thong-bao/thong-bao-diem-trung-tuyen-bac-dai-hoc-he-chinh-quy-nam-2026-tai-phan-hieu-quang-ngai-2237.html",
@@ -13758,9 +13813,19 @@
       "code": "HSU",
       "name": "Trường Đại học Hoa Sen",
       "website": "https://hoasen.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://www.hoasen.edu.vn/dtdh/wp-content/uploads/sites/28/2026/05/QD__Thong-tin-tuyen-sinh-10.03.2026duthao.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": true,
+          "kind": "pdf"
+        },
         {
           "title": "Các phương thức xét tuyển đại học 2026 và điều kiện thí sinh cần biết",
           "url": "https://www.hoasen.edu.vn/tuyensinh/cac-phuong-thuc-xet-tuyen-dai-hoc-2026/",
@@ -13903,7 +13968,7 @@
           "yearConfirmed": true
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -14507,9 +14572,19 @@
       "code": "DLS",
       "name": "Trường Đại học Lao động Xã hội – Cơ sở TP.HCM",
       "website": "https://ulsa.edu.vn",
-      "checkedAt": "2026-10-03",
-      "status": "official_evidence_pending",
-      "documents": [],
+      "checkedAt": "2026-10-14",
+      "status": "official_documents_available",
+      "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.ldxh.edu.vn/gt/",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        }
+      ],
       "attempts": [
         {
           "url": "https://ulsa.edu.vn",
@@ -14554,7 +14629,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": "Tài liệu có thể gồm nhiều cơ sở hoặc đơn vị thành viên. Chỉ dùng dòng ngành, điều kiện và điểm ghi đúng cơ sở dự tuyển."
     },
@@ -14987,28 +15062,21 @@
       "code": "MTS",
       "name": "Trường Đại học Mỹ thuật TP.HCM",
       "website": "https://hcmufa.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "Thông tin tuyển sinh đại học năm 2026",
-          "url": "https://www.hcmufa.edu.vn/news_detail/id/620",
+          "url": "https://hcmufa.edu.vn/news_detail/id/620",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi",
-            "Chỉ tiêu",
-            "Lịch tuyển sinh",
-            "Học phí"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         },
         {
           "title": "Thông tin tuyển sinh đại học năm 2026",
-          "url": "https://hcmufa.edu.vn/news_detail/id/620",
+          "url": "https://www.hcmufa.edu.vn/news_detail/id/620",
           "topics": [
             "Phương thức",
             "Ngành, mã ngành",
@@ -15192,7 +15260,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 1,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -15950,19 +16018,16 @@
       "code": "HIU",
       "name": "Trường Đại học Quốc tế Hồng Bàng",
       "website": "https://hiu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "Thông tin tuyển sinh năm 2026",
           "url": "https://hiu.vn/tuyen-sinh/thong-tin-tuyen-sinh-2026/",
           "topics": [
-            "Phương thức",
-            "Điều kiện, ngưỡng đầu vào",
-            "Lịch tuyển sinh",
-            "Học phí"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         },
         {
@@ -18035,9 +18100,18 @@
       "code": "VGU",
       "name": "Trường Đại học Việt - Đức",
       "website": "https://vgu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 | tuyen sinh VGU",
+          "url": "https://tuyensinh.vgu.edu.vn/nhaphoc-1",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "Thông báo tuyển sinh bổ sung năm 2026",
           "url": "https://tuyensinh.vgu.edu.vn/post/th%C3%B4ng-b%C3%A1o-tuy%E1%BB%83n-sinh-b%E1%BB%95-sung-n%C4%83m-2026",
@@ -18060,23 +18134,6 @@
           "topics": [
             "Phương thức",
             "Ngành, mã ngành"
-          ],
-          "checkedAt": "2026-10-03",
-          "provisional": false
-        },
-        {
-          "title": "Tuyển sinh 2026 | tuyen sinh VGU",
-          "url": "https://tuyensinh.vgu.edu.vn/nhaphoc-1",
-          "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi",
-            "Chỉ tiêu",
-            "Lịch tuyển sinh",
-            "Học phí"
           ],
           "checkedAt": "2026-10-03",
           "provisional": false
@@ -18140,7 +18197,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 6,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -18563,9 +18620,18 @@
       "code": "GDU",
       "name": "Trường Đại học Gia Định",
       "website": "https://giadinh.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Trường Đại học Gia Định công bố 05 phương thức tuyển sinh đại học chính quy năm 2026",
+          "url": "https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-cong-bo-05-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "Chính thức công bố Đề án tuyển sinh năm 2026",
           "url": "https://giadinh.edu.vn/gdu-cong-bo-de-an-tuyen-sinh-2026",
@@ -18580,18 +18646,6 @@
           "url": "https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026",
           "topics": [
             "Học phí"
-          ],
-          "checkedAt": "2026-10-03",
-          "provisional": false
-        },
-        {
-          "title": "Trường Đại học Gia Định công bố 05 phương thức tuyển sinh đại học chính quy năm 2026",
-          "url": "https://giadinh.edu.vn/truong-dai-hoc-gia-dinh-cong-bo-05-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
-          "topics": [
-            "Phương thức",
-            "Điều kiện, ngưỡng đầu vào",
-            "Công thức, quy đổi",
-            "Lịch tuyển sinh"
           ],
           "checkedAt": "2026-10-03",
           "provisional": false
@@ -18739,7 +18793,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 2,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -18747,9 +18801,18 @@
       "code": "DKC",
       "name": "Trường Đại học Công nghệ TP.HCM",
       "website": "https://hutech.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "HUTECH công bố phương án tuyển sinh Đại học chính quy năm 2026",
+          "url": "https://www.hutech.edu.vn/tuyensinh/tin-tuyen-sinh/14630721-hutech-cong-bo-phuong-an-tuyen-sinh-dai-hoc-chinh-quy-du-kien-nam-2026",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": true
+        },
         {
           "title": "THÔNG TIN TUYỂN SINH 2026 - HUTECH",
           "url": "https://www.hutech.edu.vn/tuyensinh",
@@ -18758,22 +18821,6 @@
             "Ngành, mã ngành",
             "Tổ hợp",
             "Điều kiện, ngưỡng đầu vào",
-            "Lịch tuyển sinh",
-            "Học phí"
-          ],
-          "checkedAt": "2026-10-03",
-          "provisional": false
-        },
-        {
-          "title": "HUTECH công bố phương án tuyển sinh Đại học chính quy năm 2026",
-          "url": "https://www.hutech.edu.vn/tuyensinh/tin-tuyen-sinh/14630721-hutech-cong-bo-phuong-an-tuyen-sinh-dai-hoc-chinh-quy-du-kien-nam-2026",
-          "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Công thức, quy đổi",
-            "Chỉ tiêu",
             "Lịch tuyển sinh",
             "Học phí"
           ],
@@ -18906,7 +18953,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -19356,21 +19403,16 @@
       "code": "DVL",
       "name": "Trường Đại học Văn Lang",
       "website": "https://vlu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "Trường Đại học Văn Lang công bố thông tin tuyển sinh đại học chính quy 2026",
           "url": "https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-cong-bo-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Công thức, quy đổi",
-            "Học phí"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         },
         {
@@ -19502,7 +19544,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 4,
+      "methodTableCount": 6,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -19696,23 +19738,16 @@
       "code": "DNT",
       "name": "Trường Đại học Ngoại ngữ - Tin học TP.HCM",
       "website": "https://huflit.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "HUFLIT công bố thông tin Tuyển sinh năm 2026",
           "url": "https://huflit.edu.vn/vi/tin-tuc/huflit-cong-bo-thong-tin-tuyen-sinh-nam-2026/",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi",
-            "Lịch tuyển sinh",
-            "Học phí"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         },
         {
@@ -19874,7 +19909,7 @@
           "yearConfirmed": true
         }
       ],
-      "methodTableCount": 1,
+      "methodTableCount": 4,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -23393,22 +23428,16 @@
       "code": "THP",
       "name": "Trường Đại học Hải Phòng",
       "website": "https://dhhp.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "Thông báo về ngưỡng bảo đảm chất lượng đầu vào, quy tắc quy đổi tương đương điểm xét tuyển giữa các phương thức xét tuyển đại học chính quy năm 2026",
           "url": "https://dhhp.edu.vn/post/thong-bao-ve-nguong-bao-dam-chat-luong-dau-vao-quy-tac-quy-doi-tuong-duong-diem-xet-tuyen-giua-cac-phuong-thuc-xet-tuyen-dai-hoc-chinh-quy-nam-2026-73810.html",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi",
-            "Học phí"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         },
         {
@@ -23560,7 +23589,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -23906,9 +23935,19 @@
       "code": "HDT",
       "name": "Trường Đại học Hồng Đức",
       "website": "https://hdu.edu.vn",
-      "checkedAt": "2026-10-03",
-      "status": "official_evidence_pending",
-      "documents": [],
+      "checkedAt": "2026-10-14",
+      "status": "official_documents_available",
+      "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.hdu.edu.vn/thong-tin-tuyen-sinh-dao-tao-trinh-do-dai-hoc-nam-2026",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        }
+      ],
       "attempts": [
         {
           "url": "https://hdu.edu.vn/",
@@ -24023,7 +24062,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 4,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -24031,9 +24070,18 @@
       "code": "THV",
       "name": "Trường Đại học Hùng Vương",
       "website": "https://hvu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Thông tin tuyển sinh đại học hệ chính quy năm 2026 (Cập nhật)",
+          "url": "https://www.hvu.edu.vn/tin-tuc/thong-tin-tuyen-sinh-nam-2026/1773029218.hvu",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "Thông tin tuyển sinh năm 2026",
           "url": "https://www.hvu.edu.vn/tin-tuc/thong-tin-tuyen-sinh-nam-2026.hvu",
@@ -24041,23 +24089,6 @@
             "Ngành, mã ngành",
             "Điều kiện, ngưỡng đầu vào",
             "Điểm trúng tuyển",
-            "Học phí"
-          ],
-          "checkedAt": "2026-10-03",
-          "provisional": false
-        },
-        {
-          "title": "Thông tin tuyển sinh đại học hệ chính quy năm 2026 (Cập nhật)",
-          "url": "https://www.hvu.edu.vn/tin-tuc/thong-tin-tuyen-sinh-nam-2026/1773029218.hvu",
-          "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi",
-            "Chỉ tiêu",
-            "Lịch tuyển sinh",
             "Học phí"
           ],
           "checkedAt": "2026-10-03",
@@ -24202,7 +24233,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 7,
       "programTableCount": 27,
       "scopeNote": ""
     },
@@ -25371,19 +25402,25 @@
       "code": "SKH",
       "name": "Trường Đại học Sư phạm Kỹ thuật Hưng Yên",
       "website": "https://utehy.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.utehy.edu.vn/ThongBao/ChiTiet?ID_thong_bao=27",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "THÔNG TIN TUYỂN SINH ĐẠI HỌC HỆ CHÍNH QUY 2026",
           "url": "https://tuyensinh.utehy.edu.vn/",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Chỉ tiêu"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         }
       ],
@@ -25480,7 +25517,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 2,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -26170,9 +26207,19 @@
       "code": "DTB",
       "name": "Trường Đại học Thái Bình",
       "website": "https://tbu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://media.tbu.edu.vn//Media/1_TH1062/FolderFunc/202603/Documents/thong-bao-so-565-20260324051114-e.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        },
         {
           "title": "Thông báo Thông tin tuyển sinh đại học chính quy năm 2026",
           "url": "https://tbu.edu.vn/thong-bao-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-073631.html",
@@ -26302,7 +26349,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -30045,9 +30092,19 @@
       "code": "SPD",
       "name": "Trường Đại học Đồng Tháp",
       "website": "https://dthu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://qao.dthu.edu.vn/Media/Files/SPD-thong-tin-tuyen-sinh-dai-hoc-cao-dang-2026-DIEU-CHINH.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        },
         {
           "title": "Thông tin tuyển sinh năm 2026 (Hình thức đào tạo chính quy)",
           "url": "https://dthu.edu.vn/nView.aspx?id=1463",
@@ -30204,7 +30261,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -30476,9 +30533,19 @@
       "code": "DKB",
       "name": "Trường Đại học Kinh tế Kỹ thuật Bình Dương",
       "website": "https://ktkt.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.ktkt.edu.vn/fileuploads/Article/AttachmentFile/d54297b5b9d740b2bd67d15fb648ba21.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        },
         {
           "title": "BETU THÔNG BÁO TUYỂN SINH ĐẠI HỌC CHÍNH QUY NĂM 2026",
           "url": "https://tuyensinh.ktkt.edu.vn/thong-bao-tuyen-sinh/betu-thong-bao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
@@ -30619,7 +30686,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 4,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -30878,9 +30945,19 @@
       "code": "DNC",
       "name": "Trường Đại học Nam Cần Thơ",
       "website": "https://nctu.edu.vn",
-      "checkedAt": "2026-10-03",
-      "status": "official_evidence_pending",
-      "documents": [],
+      "checkedAt": "2026-10-14",
+      "status": "official_documents_available",
+      "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.nctu.edu.vn/news/2026/danh-muc-nganh-tuyen-sinh-dai-hoc-2026",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        }
+      ],
       "attempts": [
         {
           "url": "https://nctu.edu.vn",
@@ -30925,7 +31002,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -31904,29 +31981,32 @@
       "code": "DVT",
       "name": "Trường Đại học Trà Vinh",
       "website": "https://tvu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Đại học Trà Vinh công bố phương án tuyển sinh 2026: Tuyển 7.415 chỉ tiêu qua 4 phương thức",
+          "url": "https://tuyensinh.tvu.edu.vn/dai-hoc-tra-vinh-cong-bo-phuong-an-tuyen-sinh-2026-tuyen-7-415-chi-tieu-qua-4-phuong-thuc/",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://dkxt.tvu.edu.vn/tu-van-xet-tuyen",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "Thông báo tuyển sinh đại học hệ Chính quy, Đợt 1 năm 2026 (người có bằng tốt nghiệp trung học phổ thông)",
           "url": "https://tuyensinh.tvu.edu.vn/thong-bao-tuyen-sinh-dai-hoc-he-chinh-quy-dot-1-nam-2026-nguoi-co-bang-tot-nghiep-trung-hoc-pho-thong/",
           "topics": [
             "Phương thức",
-            "Chỉ tiêu",
-            "Lịch tuyển sinh"
-          ],
-          "checkedAt": "2026-10-03",
-          "provisional": false
-        },
-        {
-          "title": "Đại học Trà Vinh công bố phương án tuyển sinh 2026: Tuyển 7.415 chỉ tiêu qua 4 phương thức",
-          "url": "https://tuyensinh.tvu.edu.vn/dai-hoc-tra-vinh-cong-bo-phuong-an-tuyen-sinh-2026-tuyen-7-415-chi-tieu-qua-4-phuong-thuc/",
-          "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
             "Chỉ tiêu",
             "Lịch tuyển sinh"
           ],
@@ -32142,7 +32222,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 4,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -32150,9 +32230,18 @@
       "code": "VTT",
       "name": "Trường Đại học Võ Trường Toản",
       "website": "https://vttu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "CẨM NANG TUYỂN SINH NĂM 2026",
+          "url": "https://vttu.edu.vn/cam-nang-2026/",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "Công bố kết quả thí sinh đạt mức điểm (điều kiện) xét tuyển trình độ đại học năm 2026",
           "url": "https://vttu.edu.vn/cong-bo-ket-qua-thi-sinh-dat-muc-diem-dieu-kien-xet-tuyen-trinh-do-dai-hoc-nam-2026-2/",
@@ -32168,21 +32257,6 @@
           "title": "TRA CỨU ĐỦ ĐIỀU KIỆN XÉT TUYỂN 2026 - HỆ THỐNG TRA CỨU VTTU",
           "url": "https://search.vttu.edu.vn/pages/du-dieu-kien-xet-tuyen-2026/",
           "topics": [],
-          "checkedAt": "2026-10-03",
-          "provisional": false
-        },
-        {
-          "title": "CẨM NANG TUYỂN SINH NĂM 2026",
-          "url": "https://vttu.edu.vn/cam-nang-2026/",
-          "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi",
-            "Học phí"
-          ],
           "checkedAt": "2026-10-03",
           "provisional": false
         },
@@ -32354,7 +32428,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -32362,21 +32436,16 @@
       "code": "MTU",
       "name": "Trường Đại học Xây dựng Miền Tây",
       "website": "https://mtu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "Thông tin Tuyển sinh 2026 - Trường Đại học Xây dựng Miền Tây",
           "url": "https://xttt.mtu.edu.vn/Thongtintuyensinh.aspx",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Công thức, quy đổi",
-            "Học phí"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         },
         {
@@ -32511,7 +32580,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 4,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -32808,9 +32877,19 @@
       "code": "DHD",
       "name": "Trường Du lịch - ĐH Huế",
       "website": "http://huht.hueuni.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://huis.edu.vn/uploads/static/THONG_TIN_TUYEN_SINH_202611.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        },
         {
           "title": "Thông báo về việc tổ chức thi kiểm tra đầu vào Ngoại ngữ không chuyên Tiếng Anh dành cho sinh viên khóa tuyển sinh 2026 và các khóa về trước tại trường Đại học Ngoại ngữ, Đại học Huế – Trường Du lịch – Đại học Huế",
           "url": "http://huht.hueuni.edu.vn/thong-bao-ve-viec-to-chuc-thi-kiem-tra-dau-vao-ngoai-ngu-khong-chuyen-tieng-anh-danh-cho-sinh-vien-khoa-tuyen-sinh-2026-va-cac-khoa-ve-truoc-tai-truong-dai-hoc-ngoai-ngu-dai-hoc-hue.html",
@@ -34829,9 +34908,19 @@
       "code": "DDY",
       "name": "Khoa Y Dược – ĐH Đà Nẵng",
       "website": "https://smp.udn.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tài liệu đính kèm · Thông tin tuyển sinh năm 2026 (Công bố ngày 05/6/2026) · Thông tin tuyển sinh năm 2026 (Công bố ngày 05/6/2026)",
+          "url": "https://smp.udn.vn/ckfinder/userfiles/files/C%E1%BA%ACP%20NH%E1%BA%ACT_DDY_%20TH%C3%94NG%20TIN%20TUY%E1%BB%82N%20SINH%20TYD%20N%C4%82M%202026(1).pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        },
         {
           "title": "Thông tin tuyển sinh năm 2026",
           "url": "https://smp.udn.vn/thong-bao/thong-tin-tuyen-sinh-nam-2026",
@@ -34863,16 +34952,6 @@
         {
           "title": "Tài liệu đính kèm · Thông tin tuyển sinh năm 2026 · Thông tin tuyển sinh năm 2026",
           "url": "https://smp.udn.vn/ckfinder/userfiles/files/2026_3_27_19_51_633_(27_3)_ddy__th%C3%B4ng_tin_tuy%E1%BB%83n_sinh_tyd_n%C4%83m_2026(1).pdf",
-          "topics": [
-            "Tài liệu PDF tuyển sinh 2026"
-          ],
-          "checkedAt": "2026-10-03",
-          "provisional": false,
-          "kind": "pdf"
-        },
-        {
-          "title": "Tài liệu đính kèm · Thông tin tuyển sinh năm 2026 (Công bố ngày 05/6/2026) · Thông tin tuyển sinh năm 2026 (Công bố ngày 05/6/2026)",
-          "url": "https://smp.udn.vn/ckfinder/userfiles/files/C%E1%BA%ACP%20NH%E1%BA%ACT_DDY_%20TH%C3%94NG%20TIN%20TUY%E1%BB%82N%20SINH%20TYD%20N%C4%82M%202026(1).pdf",
           "topics": [
             "Tài liệu PDF tuyển sinh 2026"
           ],
@@ -35042,7 +35121,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 3,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -35193,9 +35272,19 @@
       "code": "DDK",
       "name": "Trường Đại học Bách Khoa - ĐH Đà Nẵng",
       "website": "https://dut.udn.vn",
-      "checkedAt": "2026-10-03",
-      "status": "official_evidence_pending",
-      "documents": [],
+      "checkedAt": "2026-10-14",
+      "status": "official_documents_available",
+      "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.dut.udn.vn/diem-quy-doi-chung-chi-ngoai-ngu",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        }
+      ],
       "attempts": [
         {
           "url": "https://dut.udn.vn/",
@@ -35455,9 +35544,19 @@
       "code": "DDF",
       "name": "Trường Đại học Ngoại ngữ - ĐH Đà Nẵng",
       "website": "https://ufl.udn.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Thông tin tuyển sinh · Kế hoạch tuyển sinh đại học chính quy năm 2026",
+          "url": "https://tuyensinh.ufl.udn.vn/wp-content/uploads/2026/06/2026.06.02-Thong-tin-tuyen-sinh-nam-2026-FINAL.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        },
         {
           "title": "Thông tin tuyển sinh Đại học Chính quy năm 2026",
           "url": "https://tuyensinh.ufl.udn.vn/",
@@ -35469,16 +35568,6 @@
           ],
           "checkedAt": "2026-10-03",
           "provisional": false
-        },
-        {
-          "title": "Thông tin tuyển sinh · Kế hoạch tuyển sinh đại học chính quy năm 2026",
-          "url": "https://tuyensinh.ufl.udn.vn/wp-content/uploads/2026/06/2026.06.02-Thong-tin-tuyen-sinh-nam-2026-FINAL.pdf",
-          "topics": [
-            "Tài liệu PDF tuyển sinh 2026"
-          ],
-          "checkedAt": "2026-10-03",
-          "provisional": false,
-          "kind": "pdf"
         },
         {
           "title": "Thông báo về việc khám sức khỏe đối với sinh viên khóa tuyển sinh 2026",
@@ -36291,9 +36380,19 @@
       "code": "KTD",
       "name": "Trường Đại học Kiến trúc Đà Nẵng",
       "website": "https://dau.edu.vn",
-      "checkedAt": "2026-10-03",
-      "status": "official_evidence_pending",
-      "documents": [],
+      "checkedAt": "2026-10-14",
+      "status": "official_documents_available",
+      "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.dau.edu.vn/truong-dai-hoc-kien-truc-da-nang-cong-bo-phuong-an-xet-tuyen-dai-hoc-nam-2026-du-kien-012929.html",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": true
+        }
+      ],
       "attempts": [
         {
           "url": "https://dau.edu.vn/",
@@ -36904,23 +37003,16 @@
       "code": "DYD",
       "name": "Trường Đại học Yersin Đà Lạt",
       "website": "https://yersin.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "Thông tin tuyển sinh 2026",
           "url": "https://yersin.edu.vn/thong-tin-tuyen-sinh-2026/",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi",
-            "Lịch tuyển sinh",
-            "Học phí"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         },
         {
@@ -37048,29 +37140,21 @@
       "code": "DAD",
       "name": "Trường Đại học Đông Á",
       "website": "https://donga.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "Thông tin tuyển sinh Đại học Đông Á năm 2026",
-          "url": "https://donga.edu.vn/tin-tuc/ttsk-chi-tiet/Dai-hoc-Dong-A-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971",
+          "url": "https://donga.edu.vn/tuyensinh/ts-chi-tiet/dai-hoc-dong-a-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Công thức, quy đổi",
-            "Chỉ tiêu",
-            "Lịch tuyển sinh",
-            "Học phí"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         },
         {
           "title": "Thông tin tuyển sinh Đại học Đông Á năm 2026",
-          "url": "https://donga.edu.vn/tuyensinh/ts-chi-tiet/dai-hoc-dong-a-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971",
+          "url": "https://donga.edu.vn/tin-tuc/ttsk-chi-tiet/Dai-hoc-Dong-A-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971",
           "topics": [
             "Phương thức",
             "Ngành, mã ngành",
@@ -37429,14 +37513,16 @@
       "code": "UKH",
       "name": "Trường Đại học Khánh Hòa",
       "website": "https://ukh.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "THÔNG TIN TUYỂN SINH NĂM 2026 (CẬP NHẬT)",
           "url": "https://ukh.edu.vn/tuyensinh/vi-vn/chi-tiet-tin/id/6347/THONG-TIN-TUYEN-SINH-NAM-2026-(CAP-NHAT)",
-          "topics": [],
-          "checkedAt": "2026-10-03",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
           "provisional": false
         },
         {
@@ -38185,9 +38271,18 @@
       "code": "TSN",
       "name": "Trường Đại học Nha Trang",
       "website": "https://ntu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.ntu.edu.vn/thong-bao/quy-doi-diem-tuong-duong",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "Trường Đại học Nha Trang thông báo xét tuyển bổ xung năm 2026",
           "url": "https://tuyensinh.ntu.edu.vn/thong-bao/thong-bao-xet-tuyen-bo-sung-nam-2026",
@@ -38355,9 +38450,18 @@
       "code": "DPQ",
       "name": "Trường Đại học Phạm Văn Đồng",
       "website": "https://pdu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "TB-QDTD_TS-2026.pdf (285 tải về)",
+          "url": "https://tuyensinh.pdu.edu.vn/download/3770/",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "Thông tin tuyển sinh năm 2026",
           "url": "https://tuyensinh.pdu.edu.vn/thong-tin-tuyen-sinh-nam-2026/",
@@ -38398,16 +38502,6 @@
         {
           "title": "PDU_Thong-tin-tuyen-sinh-CQ-2026.pdf (2409 tải về)",
           "url": "https://tuyensinh.pdu.edu.vn/download/3691/",
-          "topics": [
-            "Tài liệu PDF tuyển sinh 2026"
-          ],
-          "checkedAt": "2026-10-03",
-          "provisional": false,
-          "kind": "pdf"
-        },
-        {
-          "title": "TB-QDTD_TS-2026.pdf (285 tải về)",
-          "url": "https://tuyensinh.pdu.edu.vn/download/3770/",
           "topics": [
             "Tài liệu PDF tuyển sinh 2026"
           ],
@@ -39581,9 +39675,27 @@
       "code": "DQN",
       "name": "Trường Đại học Quy Nhơn",
       "website": "https://qnu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://qnu.edu.vn/vi/tuyen-sinh-1763/tb123-ve-viec-quy-doi-tuong-duong-diem-giua-cac-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-2625",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false
+        },
         {
           "title": "TB141 - Điểm chuẩn trúng tuyển vào đại học chính quy năm 2026",
           "url": "https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb141-diem-chuan-trung-tuyen-vao-dai-hoc-chinh-quy-nam-2026",
@@ -39726,7 +39838,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 6,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -40125,28 +40237,21 @@
       "code": "TBD",
       "name": "Trường Đại học Thái Bình Dương",
       "website": "https://tbd.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
         {
           "title": "Thông tin tuyển sinh đại học hệ chính quy năm 2026",
-          "url": "https://tbd.edu.vn/tin-dac-biet/thong-tin-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/",
+          "url": "https://tbd.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/",
           "topics": [
-            "Phương thức",
-            "Ngành, mã ngành",
-            "Tổ hợp",
-            "Điều kiện, ngưỡng đầu vào",
-            "Điểm trúng tuyển",
-            "Chỉ tiêu",
-            "Lịch tuyển sinh",
-            "Học phí"
+            "Phương thức, công thức và điều kiện xét tuyển"
           ],
-          "checkedAt": "2026-10-03",
+          "checkedAt": "2026-10-14",
           "provisional": false
         },
         {
           "title": "Thông tin tuyển sinh đại học hệ chính quy năm 2026",
-          "url": "https://tbd.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/",
+          "url": "https://tbd.edu.vn/tin-dac-biet/thong-tin-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/",
           "topics": [
             "Phương thức",
             "Ngành, mã ngành",
@@ -40297,7 +40402,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 3,
+      "methodTableCount": 4,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -40305,9 +40410,30 @@
       "code": "TTD",
       "name": "Trường Đại học Thể dục Thể thao Đà Nẵng",
       "website": "https://upes3.edu.vn",
-      "checkedAt": "2026-10-03",
-      "status": "official_evidence_pending",
-      "documents": [],
+      "checkedAt": "2026-10-14",
+      "status": "official_documents_available",
+      "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://dsu.edu.vn/resources/post_tailieu/d42266f8-0de2-4a0c-93b3-bc52442f533a.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        },
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://dsu.edu.vn/resources/post_tailieu/be835036-685f-439a-956b-8aa3907a7cbc.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        }
+      ],
       "attempts": [
         {
           "url": "https://upes3.edu.vn/",
@@ -40317,7 +40443,7 @@
           "yearConfirmed": false
         }
       ],
-      "methodTableCount": 0,
+      "methodTableCount": 5,
       "programTableCount": 0,
       "scopeNote": ""
     },
@@ -40819,9 +40945,19 @@
       "code": "YKV",
       "name": "Trường Đại học Y khoa Vinh",
       "website": "https://vmu.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://www.vmu.edu.vn/cdn/vmu/Assets/Documents/422_08.5.2026_TB%20Tuyen%20Sinh%202026.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        },
         {
           "title": "Thông báo tuyển sinh trình độ đại học hệ chính quy năm 2026",
           "url": "https://www.vmu.edu.vn/tuyen-sinh-dao-tao/dai-hoc-chinh-quy/tuyen-sinh/thong-bao-tuyen-sinh-trinh-do-dai-hoc-he-chinh-quy-nam-2026-a9811",
@@ -47323,9 +47459,19 @@
       "code": "IUQ",
       "name": "Phân hiệu Trường Đại học Công nghiệp TP.HCM tại Quảng Ngãi",
       "website": "https://iuh.edu.vn",
-      "checkedAt": "2026-10-03",
+      "checkedAt": "2026-10-14",
       "status": "official_documents_available",
       "documents": [
+        {
+          "title": "Tuyển sinh 2026 · Phương thức, điều kiện và công thức xét tuyển",
+          "url": "https://pdt.iuh.edu.vn/Uploads/184bdbe0-55bd-4c96-9bf9-31761077668c_867_Thongbao_tuyensinh_2026.pdf",
+          "topics": [
+            "Phương thức, công thức và điều kiện xét tuyển"
+          ],
+          "checkedAt": "2026-10-14",
+          "provisional": false,
+          "kind": "pdf"
+        },
         {
           "title": "Thông báo điểm trúng tuyển bậc Đại học hệ Chính quy năm 2026 tại Phân hiệu Quảng Ngãi - Đại học Công nghiệp Thành phố Hồ Chí Minh - IUH",
           "url": "https://iuh.edu.vn/vi/thong-bao/thong-bao-diem-trung-tuyen-bac-dai-hoc-he-chinh-quy-nam-2026-tai-phan-hieu-quang-ngai-2237.html",

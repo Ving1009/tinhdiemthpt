@@ -1,0 +1,3759 @@
+{
+  "year": 2026,
+  "checkedAt": "2026-10-14",
+  "policy": "Nguồn tuyển sinh 2026 chỉ dùng tham khảo cho mùa 2027; không suy công thức từ ngưỡng nhận hồ sơ, không mở tự tính từ bản nghiên cứu.",
+  "methods": {
+    "DHD:9032": {
+      "status": "source_reported",
+      "expression": "ĐXT = 3 × (M1 × H1 + M2 × H2 + M3 × H3) / (H1 + H2 + H3) + ĐƯT",
+      "equations": [
+        "ĐXT = 3 × (M1 × H1 + M2 × H2 + M3 × H3) / (H1 + H2 + H3) + ĐƯT"
+      ],
+      "conditions": [
+        "M1–M3: điểm thi THPT 2026.",
+        "Hệ số theo bảng ngành; không cộng điểm thành tích."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://huis.edu.vn/uploads/static/THONG_TIN_TUYEN_SINH_202611.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Mục III.2, III.3, III.5a–b; phạm vi DHD trang 30–31; mục V.2 trang 38."
+      },
+      "scale": "Thang 30",
+      "conversion": "Chứng chỉ theo Phụ lục 1; làm tròn 2 chữ số.",
+      "issues": [
+        "Bảng nhóm ưu tiên trong tài liệu còn dấu hiệu không đồng nhất với quy chế 2026; chỉ tra cứu, chưa mở tự tính."
+      ]
+    },
+    "DHD:9033": {
+      "status": "source_reported",
+      "expression": "ĐXT = 3 × (M1 × H1 + M2 × H2 + M3 × H3) / (H1 + H2 + H3) + ĐƯT",
+      "equations": [
+        "ĐXT = 3 × (M1 × H1 + M2 × H2 + M3 × H3) / (H1 + H2 + H3) + ĐƯT"
+      ],
+      "conditions": [
+        "M1–M3: trung bình môn cả năm lớp 10, 11, 12.",
+        "Hệ số theo bảng ngành; không cộng điểm thành tích."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://huis.edu.vn/uploads/static/THONG_TIN_TUYEN_SINH_202611.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Mục III.2, III.3, III.5a–b; phạm vi DHD trang 30–31; mục V.2 trang 38."
+      },
+      "scale": "Thang 30",
+      "conversion": "Chứng chỉ theo Phụ lục 1; làm tròn 2 chữ số.",
+      "issues": [
+        "Bảng nhóm ưu tiên trong tài liệu còn dấu hiệu không đồng nhất với quy chế 2026; chỉ tra cứu, chưa mở tự tính."
+      ]
+    },
+    "DHD:9034": {
+      "status": "source_reported",
+      "expression": "ĐXT = 3 × (M1 × H1 + M2 × H2 + M3 × H3) / (H1 + H2 + H3) + ĐƯT",
+      "equations": [
+        "ĐXT = 3 × (M1 × H1 + M2 × H2 + M3 × H3) / (H1 + H2 + H3) + ĐƯT"
+      ],
+      "conditions": [
+        "M1, M2: điểm thi; M3: ngoại ngữ quy đổi.",
+        "Hệ số theo bảng ngành; không cộng điểm thành tích."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://huis.edu.vn/uploads/static/THONG_TIN_TUYEN_SINH_202611.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Mục III.2, III.3, III.5a–b; phạm vi DHD trang 30–31; mục V.2 trang 38."
+      },
+      "scale": "Thang 30",
+      "conversion": "Chứng chỉ theo Phụ lục 1; làm tròn 2 chữ số.",
+      "issues": [
+        "Bảng nhóm ưu tiên trong tài liệu còn dấu hiệu không đồng nhất với quy chế 2026; chỉ tra cứu, chưa mở tự tính."
+      ]
+    },
+    "DHD:9506": {
+      "status": "source_reported",
+      "expression": "ĐXT = 3 × (M1 × H1 + M2 × H2 + M3 × H3) / (H1 + H2 + H3) + ĐƯT",
+      "equations": [
+        "ĐXT = 3 × (M1 × H1 + M2 × H2 + M3 × H3) / (H1 + H2 + H3) + ĐƯT"
+      ],
+      "conditions": [
+        "M1, M2: trung bình môn ba năm; M3: ngoại ngữ quy đổi.",
+        "Hệ số theo bảng ngành; không cộng điểm thành tích."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://huis.edu.vn/uploads/static/THONG_TIN_TUYEN_SINH_202611.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Mục III.2, III.3, III.5a–b; phạm vi DHD trang 30–31; mục V.2 trang 38."
+      },
+      "scale": "Thang 30",
+      "conversion": "Chứng chỉ theo Phụ lục 1; làm tròn 2 chữ số.",
+      "issues": [
+        "Bảng nhóm ưu tiên trong tài liệu còn dấu hiệu không đồng nhất với quy chế 2026; chỉ tra cứu, chưa mở tự tính."
+      ]
+    },
+    "DDK:9449": {
+      "status": "source_reported",
+      "expression": "ĐXT = Tổng điểm tổ hợp sau thay ngoại ngữ + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = Tổng điểm tổ hợp sau thay ngoại ngữ + ĐC + ĐƯT"
+      ],
+      "conditions": [
+        "Chỉ dùng chứng chỉ để thay môn ngoại ngữ hoặc cộng khuyến khích, không đồng thời hai cách.",
+        "Bảng đã đọc áp dụng chương trình chuẩn; không tự suy cho chương trình đặc biệt."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.dut.udn.vn/diem-quy-doi-chung-chi-ngoai-ngu",
+        "checkedAt": "2026-10-14",
+        "note": "Ảnh quy-doi-ngoai-ngu-1.jpg và trang /xet-kq-thi-tot-nghiep-thpt, ảnh THPT-2.jpg."
+      },
+      "scale": "Thang 30",
+      "conversion": "IELTS 5.0/5.5/6.0/6.5/7.0–9.0 → 8/8.5/9/9.5/10. VSTEP 5.5/6–6.5/7–7.5/8/8.5–10 → 8/8.5/9/9.5/10.",
+      "issues": [
+        "Phải tra hệ số tổ hợp và bảng riêng chương trình trước khi tính."
+      ]
+    },
+    "DQN:8532": {
+      "status": "source_reported",
+      "expression": "y = y1 + (x − x1) × (y2 − y1) / (x2 − x1)",
+      "equations": [
+        "y = y1 + (x − x1) × (y2 − y1) / (x2 − x1)"
+      ],
+      "conditions": [
+        "x là tổng điểm học bạ theo tổ hợp gốc.",
+        "Chọn hai mốc bách phân vị liền kề trong Phụ lục 1; không chia tuyến tính toàn thang.",
+        "Phạm vi ngành và tổ hợp lấy từ cột PT2 của bảng II.4 TB1906 ngày 31/05/2026.",
+        "Không áp dụng ngành đào tạo giáo viên; Quản lý giáo dục 7140114 được trường ghi áp dụng."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://qnu.edu.vn/vi/tuyen-sinh-1763/tb123-ve-viec-quy-doi-tuong-duong-diem-giua-cac-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-2625",
+        "checkedAt": "2026-10-14",
+        "note": "TB123 ngày 11/07/2026, mục 2–3; công thức nội suy và Phụ lục 1. Phạm vi ngành và tổ hợp đối chiếu bảng II.4 TB1906 ngày 31/05/2026."
+      },
+      "scale": "Điểm quy đổi về tổ hợp THPT tương ứng",
+      "conversion": "Đối sánh A00/A01/B00/C00/C01/D01/D07; phạm vi ngành theo TB1906.",
+      "issues": [
+        "Đây là bước quy đổi; chưa coi là công thức cuối có đủ ưu tiên, điểm cộng và điều kiện."
+      ]
+    },
+    "DQN:8533": {
+      "status": "source_reported",
+      "expression": "y = y1 + (x − x1) × (y2 − y1) / (x2 − x1)",
+      "equations": [
+        "y = y1 + (x − x1) × (y2 − y1) / (x2 − x1)"
+      ],
+      "conditions": [
+        "x là kết quả SPT theo tổ hợp gốc.",
+        "Chọn hai mốc bách phân vị liền kề trong Phụ lục 1; không chia tuyến tính toàn thang.",
+        "Phạm vi ngành và tổ hợp lấy từ cột PT4 của bảng II.4 TB1906 ngày 31/05/2026.",
+        "PT4 là kỳ thi ĐGNL của Trường Đại học Sư phạm Hà Nội; vẫn áp dụng các ngành giáo viên có cột 4."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://qnu.edu.vn/vi/tuyen-sinh-1763/tb123-ve-viec-quy-doi-tuong-duong-diem-giua-cac-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-2625",
+        "checkedAt": "2026-10-14",
+        "note": "TB123 ngày 11/07/2026, mục 2–3; công thức nội suy và Phụ lục 1. Phạm vi ngành và tổ hợp đối chiếu bảng II.4 TB1906 ngày 31/05/2026."
+      },
+      "scale": "Điểm quy đổi về tổ hợp THPT tương ứng",
+      "conversion": "Đối sánh A00/A01/B00/C00/C01/D01/D07; phạm vi ngành theo TB1906.",
+      "issues": [
+        "Đây là bước quy đổi; chưa coi là công thức cuối có đủ ưu tiên, điểm cộng và điều kiện."
+      ]
+    },
+    "DQN:8534": {
+      "status": "source_reported",
+      "expression": "y = y1 + (x − x1) × (y2 − y1) / (x2 − x1)",
+      "equations": [
+        "y = y1 + (x − x1) × (y2 − y1) / (x2 − x1)"
+      ],
+      "conditions": [
+        "x là điểm ĐGNL ĐHQG TP.HCM.",
+        "Chọn hai mốc bách phân vị liền kề trong Phụ lục 1; không chia tuyến tính toàn thang.",
+        "Phạm vi ngành và tổ hợp lấy từ cột PT3 của bảng II.4 TB1906 ngày 31/05/2026.",
+        "Không áp dụng ngành đào tạo giáo viên; Quản lý giáo dục 7140114 được trường ghi áp dụng."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://qnu.edu.vn/vi/tuyen-sinh-1763/tb123-ve-viec-quy-doi-tuong-duong-diem-giua-cac-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-2625",
+        "checkedAt": "2026-10-14",
+        "note": "TB123 ngày 11/07/2026, mục 2–3; công thức nội suy và Phụ lục 1. Phạm vi ngành và tổ hợp đối chiếu bảng II.4 TB1906 ngày 31/05/2026."
+      },
+      "scale": "Điểm quy đổi về tổ hợp THPT tương ứng",
+      "conversion": "Đối sánh A00/A01/B00/C00/C01/D01/D07; phạm vi ngành theo TB1906.",
+      "issues": [
+        "Đây là bước quy đổi; chưa coi là công thức cuối có đủ ưu tiên, điểm cộng và điều kiện."
+      ]
+    },
+    "DQN:9491": {
+      "status": "source_reported",
+      "expression": "Điểm môn Tiếng Anh = Điểm chứng chỉ quy đổi",
+      "equations": [
+        "Điểm môn Tiếng Anh = Điểm chứng chỉ quy đổi"
+      ],
+      "conditions": [
+        "Nhánh thay ngoại ngữ thuộc PT1/PT2; không phải cộng thêm chứng chỉ vào tổng.",
+        "Phạm vi ngành và tổ hợp lấy từ cột PT1 của bảng II.4 TB1906 ngày 31/05/2026.",
+        "Đây là nhánh dùng IELTS/VSTEP thay điểm Tiếng Anh của phương thức gốc; chỉ giữ tổ hợp có Tiếng Anh, không cộng chứng chỉ lần thứ hai."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+        "checkedAt": "2026-10-14",
+        "note": "TB1906 ngày 31/05/2026, mục II.5c. Phạm vi ngành và tổ hợp đối chiếu bảng II.4 TB1906 ngày 31/05/2026."
+      },
+      "conversion": "IELTS 5.0/5.5/6.0/6.5/≥7.0 → 8/8.5/9/9.5/10; VSTEP 4/5/6/7/≥8 → cùng dãy điểm.",
+      "issues": [
+        "Chưa có đủ biểu thức cuối cho mọi ngành và hệ số; không mở tự tính."
+      ]
+    },
+    "DQN:9492": {
+      "status": "source_reported",
+      "expression": "Điểm môn Tiếng Anh = Điểm chứng chỉ quy đổi",
+      "equations": [
+        "Điểm môn Tiếng Anh = Điểm chứng chỉ quy đổi"
+      ],
+      "conditions": [
+        "Nhánh thay ngoại ngữ thuộc PT1/PT2; không phải cộng thêm chứng chỉ vào tổng.",
+        "Phạm vi ngành và tổ hợp lấy từ cột PT2 của bảng II.4 TB1906 ngày 31/05/2026.",
+        "Không áp dụng ngành đào tạo giáo viên; Quản lý giáo dục 7140114 được trường ghi áp dụng.",
+        "Đây là nhánh dùng IELTS/VSTEP thay điểm Tiếng Anh của phương thức gốc; chỉ giữ tổ hợp có Tiếng Anh, không cộng chứng chỉ lần thứ hai."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+        "checkedAt": "2026-10-14",
+        "note": "TB1906 ngày 31/05/2026, mục II.5c. Phạm vi ngành và tổ hợp đối chiếu bảng II.4 TB1906 ngày 31/05/2026."
+      },
+      "conversion": "IELTS 5.0/5.5/6.0/6.5/≥7.0 → 8/8.5/9/9.5/10; VSTEP 4/5/6/7/≥8 → cùng dãy điểm.",
+      "issues": [
+        "Chưa có đủ biểu thức cuối cho mọi ngành và hệ số; không mở tự tính."
+      ]
+    },
+    "DYD:7843": {
+      "status": "source_reported",
+      "expression": "ĐXT = Điểm tổ hợp thi THPT + ĐƯT",
+      "equations": [
+        "ĐXT = Điểm tổ hợp thi THPT + ĐƯT"
+      ],
+      "conditions": [
+        "Y khoa, Dược, Điều dưỡng, Luật kinh tế phải đáp ứng ngưỡng ngành; Kiến trúc/Nội thất có môn Vẽ."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://yersin.edu.vn/thong-tin-tuyen-sinh-2026/",
+        "checkedAt": "2026-10-14",
+        "note": "Mục II.2.2 DYD-TN1; điểm nền lấy theo tổ hợp."
+      },
+      "scale": "Thang 30"
+    },
+    "DYD:7844": {
+      "status": "source_reported",
+      "expression": "ĐXT = Điểm ĐGNL quy đổi về thang 30 + ĐƯT",
+      "equations": [
+        "ĐXT = Điểm ĐGNL quy đổi về thang 30 + ĐƯT"
+      ],
+      "conditions": [
+        "Ngưỡng quy đổi: thường 15; Điều dưỡng/Luật kinh tế 18; Y/Dược 20, kèm điều kiện học tập riêng."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://yersin.edu.vn/thong-tin-tuyen-sinh-2026/",
+        "checkedAt": "2026-10-14",
+        "note": "Mục II.2.3 DYD-NL1. Nguồn không cho hệ số quy đổi cụ thể."
+      },
+      "scale": "Thang 30 sau quy đổi",
+      "issues": [
+        "Chưa có bảng/quy tắc quy đổi; không mặc định ĐGNL/40."
+      ]
+    },
+    "DAD:7607": {
+      "status": "non_numeric",
+      "label": "THPT nước ngoài — Y khoa giảng dạy bằng tiếng Anh (411)",
+      "expression": "Xét kết quả tốt nghiệp THPT ở nước ngoài hoặc kỳ thi tương đương, điều kiện văn bằng, bảng điểm khoa học, tiếng Anh và phỏng vấn; không có công thức cộng ba môn chung.",
+      "equations": [],
+      "scale": "Không có thang điểm chung; xét điều kiện của từng chương trình",
+      "conditions": [
+        "Chỉ chương trình Y khoa giảng dạy bằng tiếng Anh dành cho người nước ngoài; không áp dụng cho Dược học.",
+        "Văn bằng và bảng điểm phải được xác thực, công nhận tương đương; có tổ hợp Toán–Hóa–Sinh, Toán–Lý–Hóa hoặc Lý–Hóa–Sinh. Thiếu Sinh học phải có Thực vật học và Động vật học.",
+        "Đáp ứng một diện tiếng Anh được trường chấp nhận: chương trình THPT học bằng tiếng Anh, chứng chỉ từ IELTS 5,5 hoặc tương đương B2, hoặc đạt đánh giá B2 của trường.",
+        "Kết quả kỳ thi tốt nghiệp hoặc tương đương đạt ít nhất 65% mức tối đa; tất cả thí sinh phải phỏng vấn đầu vào."
+      ],
+      "priority": "Mục II.4.6 không nêu phép cộng ưu tiên cho phương thức 411; không áp dụng công thức ưu tiên THPT thay cho điều kiện hồ sơ.",
+      "conversion": "Mức 65% là ngưỡng điều kiện của kết quả kỳ thi được công nhận, không phải công thức quy đổi sang thang 30.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://donga.edu.vn/tuyensinh/ts-chi-tiet/dai-hoc-dong-a-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971",
+        "checkedAt": "2026-10-14",
+        "note": "Đọc trực tiếp trang trường ngày 14/10/2026: mục II.1 và II.4.6 giới hạn phương thức 411 vào Y khoa giảng dạy bằng tiếng Anh. Mục VII bảng Đà Nẵng ghi 132 cho Y khoa chung nhưng không ghi mã ngành quốc gia hay mã riêng của chương trình tiếng Anh; không lấy 132 làm mã quốc gia, không giữ Dược 133."
+      },
+      "issues": [
+        "Chưa xác nhận mã xét tuyển riêng hoặc mã ngành quốc gia của chương trình Y khoa tiếng Anh từ tài liệu này; để trống mã, không suy từ mã 132 của bảng chung."
+      ]
+    },
+    "YKV:9215": {
+      "status": "official_verified",
+      "expression": "ĐXT = M1 + M2 + M3 + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = M1 + M2 + M3 + ĐC + ĐƯT"
+      ],
+      "conditions": [
+        "Ba môn thi hệ số 1; tất cả năm ngành tuyển THPT theo bảng ngành.",
+        "Làm tròn 2 chữ số, tối đa 30; tổng điểm cộng không quá 3."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://www.vmu.edu.vn/cdn/vmu/Assets/Documents/422_08.5.2026_TB%20Tuyen%20Sinh%202026.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Thông báo 422 ngày 08/05/2026, mục V.1 trang 6, VI.1–2 trang 8; đối chiếu ảnh PDF trực tiếp."
+      },
+      "scale": "Thang 30",
+      "priority": "T = tổng ba môn + ĐC; khi T ≥ 22,5, ĐƯT = (30 − T)/7,5 × mức ưu tiên. Dưới ngưỡng giữ mức ưu tiên theo quy chế.",
+      "conversion": "Điểm thi không nhân hệ số; điểm cộng chỉ lấy sau xác nhận minh chứng của trường."
+    },
+    "DDF:6629": {
+      "status": "source_reported",
+      "expression": "ĐXT = T × a + H × b + ĐC + ĐƯT",
+      "equations": [
+        "ĐXT = T × a + H × b + ĐC + ĐƯT"
+      ],
+      "conditions": [
+        "T: tổng ba môn thi THPT 2026; H: tổng ba điểm trung bình môn cả năm lớp 10,11,12; đều quy thang 30 và làm tròn 2 chữ số.",
+        "Sư phạm Anh, Pháp, Trung, Hàn: a=0,8; b=0,2. Các ngành cử nhân: a=0,6; b=0,4.",
+        "Cùng tổ hợp thi/học bạ; ngoại lệ môn ngoại ngữ thi khác ngoại ngữ 1 ghi trong học bạ. Bắt buộc có điểm thi 2026.",
+        "Tổng tối đa 30, điểm cộng tối đa 3; điểm thưởng và xét thưởng không dùng đồng thời."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.ufl.udn.vn/wp-content/uploads/2026/06/2026.06.02-Thong-tin-tuyen-sinh-nam-2026-FINAL.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Bản cập nhật 02/06/2026, mục II.2.2 trang 2; mục II.5.2 trang 8–9. Chỉ lưu biểu thức tổng quát, loại ví dụ số."
+      },
+      "scale": "Thang 30",
+      "priority": "Áp dụng mục II.5.2 và quy chế 2026, làm tròn 2 chữ số; chỉ nhập ưu tiên đã xác định theo quy định của trường."
+    },
+    "DPQ:9093": {
+      "status": "source_reported",
+      "expression": "Y = A + (X − L) × (B − A) / (U − L)",
+      "equations": [
+        "Y = A + (X − L) × (B − A) / (U − L)"
+      ],
+      "conditions": [
+        "X là điểm ĐGNL ĐHQG-HCM 2026; L,U là hai cận khoảng thi; A,B là hai cận THPT tương ứng.",
+        "Chọn đúng khoảng trong bảng nguồn; đây là bước quy đổi, không tự cộng ưu tiên hai lần."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.pdu.edu.vn/download/3770/",
+        "checkedAt": "2026-10-14",
+        "note": "Thông báo điều chỉnh thay TB848, mục 2 trang 3; bảng 7 khoảng."
+      },
+      "scale": "Thang 30 sau quy đổi",
+      "conversion": "X 513–580→15–16; 580–650→16–17,5; 650–762→17,5–20; 762–900→20–23; 900–1000→23–25,5; 1000–1124→25,5–28,5; 1124–1200→28,5–30.",
+      "issues": [
+        "Nguồn ghi L ≤ X < U; điểm cận trên tối đa cần đối chiếu thông báo/hệ thống trường."
+      ]
+    },
+    "TSN:8468": {
+      "status": "source_reported",
+      "expression": "x = x1 + (y − y1) × (x2 − x1) / (y2 − y1)",
+      "equations": [
+        "x = x1 + (y − y1) × (x2 − x1) / (y2 − y1)"
+      ],
+      "conditions": [
+        "y: điểm HSA ĐHQG Hà Nội, thang 150; chọn hai mốc liền kề ở đúng cột.",
+        "Bảng trường quy đổi sang tổng THPT bốn môn thang 40; không mặc định chia điểm thi về thang 30."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.ntu.edu.vn/thong-bao/quy-doi-diem-tuong-duong",
+        "checkedAt": "2026-10-14",
+        "note": "Thông báo 30/07/2026, Bảng 1 và đoạn nội suy sau bảng."
+      },
+      "scale": "Thang 40 sau quy đổi",
+      "conversion": "Bảng công bố 27 khoảng; kết quả ngoài miền bảng chưa có quy tắc xử lý được xác minh.",
+      "issues": [
+        "Đây là công thức quy đổi, chưa đủ ưu tiên và ngưỡng mọi ngành để tự tính."
+      ]
+    },
+    "TSN:8469": {
+      "status": "source_reported",
+      "expression": "x = x1 + (y − y1) × (x2 − x1) / (y2 − y1)",
+      "equations": [
+        "x = x1 + (y − y1) × (x2 − x1) / (y2 − y1)"
+      ],
+      "conditions": [
+        "y: điểm ĐGNL ĐHQG TP.HCM, thang 1200; chọn hai mốc liền kề ở đúng cột.",
+        "Bảng trường quy đổi sang tổng THPT bốn môn thang 40; không mặc định chia điểm thi về thang 30."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.ntu.edu.vn/thong-bao/quy-doi-diem-tuong-duong",
+        "checkedAt": "2026-10-14",
+        "note": "Thông báo 30/07/2026, Bảng 1 và đoạn nội suy sau bảng."
+      },
+      "scale": "Thang 40 sau quy đổi",
+      "conversion": "Bảng công bố 27 khoảng; kết quả ngoài miền bảng chưa có quy tắc xử lý được xác minh.",
+      "issues": [
+        "Đây là công thức quy đổi, chưa đủ ưu tiên và ngưỡng mọi ngành để tự tính."
+      ]
+    },
+    "TTD:8895": {
+      "status": "source_reported",
+      "expression": "ĐXT = M1 + M2 + M3 + ĐƯT",
+      "equations": [
+        "ĐXT = M1 + M2 + M3 + ĐƯT"
+      ],
+      "conditions": [
+        "Mi là điểm thi THPT 2026 của môn trong tổ hợp.",
+        "Chỉ ngành Quản lý TDTT (7810301); tổ hợp B03, C01, C03, X01."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://dsu.edu.vn/resources/post_tailieu/d42266f8-0de2-4a0c-93b3-bc52442f533a.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "QĐ358/2026, mục V.1.2 trang in 6; phạm vi kiểm tra lại ở thông báo cập nhật, trang 2–4."
+      },
+      "scale": "Thang 30",
+      "priority": "Tổng từ 22,5: ĐƯT = (30 − tổng điểm)/7,5 × mức ưu tiên; làm tròn đến hàng phần trăm.",
+      "issues": [
+        "Học bạ phải đối chiếu quy đổi tương đương của trường trước khi xét điểm cuối."
+      ]
+    },
+    "TTD:8896": {
+      "status": "source_reported",
+      "expression": "ĐXT = M1 + M2 + M3 + ĐƯT",
+      "equations": [
+        "ĐXT = M1 + M2 + M3 + ĐƯT"
+      ],
+      "conditions": [
+        "Mi là trung bình điểm cả năm lớp 10, 11, 12 của môn trong tổ hợp.",
+        "Chỉ ngành Quản lý TDTT (7810301); tổ hợp B03, C01, C03, X01."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://dsu.edu.vn/resources/post_tailieu/d42266f8-0de2-4a0c-93b3-bc52442f533a.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "QĐ358/2026, mục V.1.2 trang in 6; phạm vi kiểm tra lại ở thông báo cập nhật, trang 2–4."
+      },
+      "scale": "Thang 30",
+      "priority": "Tổng từ 22,5: ĐƯT = (30 − tổng điểm)/7,5 × mức ưu tiên; làm tròn đến hàng phần trăm.",
+      "issues": [
+        "Học bạ phải đối chiếu quy đổi tương đương của trường trước khi xét điểm cuối."
+      ]
+    },
+    "TTD:8897": {
+      "status": "source_reported",
+      "expression": "ĐXT = V + NK1 + NK2 + ĐƯT",
+      "equations": [
+        "ĐXT = V + NK1 + NK2 + ĐƯT"
+      ],
+      "conditions": [
+        "V là điểm thi THPT 2026 môn Toán hoặc Ngữ văn.",
+        "Áp dụng Giáo dục thể chất 7140206, Quản lý TDTT 7810301, Huấn luyện thể thao 7810302.",
+        "NK1: năng khiếu chung; NK2: chuyên ngành; mỗi điểm là trung bình các nội dung thi tương ứng."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://dsu.edu.vn/resources/post_tailieu/d42266f8-0de2-4a0c-93b3-bc52442f533a.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Mục V.1.1 trang in 5–6; cập nhật trang 2 xác nhận phương thức 405/406 và ba ngành."
+      },
+      "scale": "Thang 30",
+      "issues": [
+        "Phải áp dụng ngưỡng học lực, môn văn hóa, năng khiếu theo từng ngành và năm tốt nghiệp ở thông báo cập nhật; không dùng một ngưỡng chung."
+      ]
+    },
+    "TTD:9458": {
+      "status": "source_reported",
+      "expression": "ĐXT = V + NK1 + NK2 + ĐƯT",
+      "equations": [
+        "ĐXT = V + NK1 + NK2 + ĐƯT"
+      ],
+      "conditions": [
+        "V là trung bình điểm cả năm lớp 10, 11, 12 môn Toán hoặc Ngữ văn.",
+        "Áp dụng Giáo dục thể chất 7140206, Quản lý TDTT 7810301, Huấn luyện thể thao 7810302.",
+        "NK1: năng khiếu chung; NK2: chuyên ngành; mỗi điểm là trung bình các nội dung thi tương ứng."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://dsu.edu.vn/resources/post_tailieu/d42266f8-0de2-4a0c-93b3-bc52442f533a.pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Mục V.1.1 trang in 5–6; cập nhật trang 2 xác nhận phương thức 405/406 và ba ngành."
+      },
+      "scale": "Thang 30",
+      "issues": [
+        "Phải áp dụng ngưỡng học lực, môn văn hóa, năng khiếu theo từng ngành và năm tốt nghiệp ở thông báo cập nhật; không dùng một ngưỡng chung."
+      ]
+    },
+    "KTD:8363": {
+      "status": "source_reported",
+      "expression": "ĐXT = M1 + M2 + M3 + ĐƯT",
+      "equations": [
+        "ĐXT = M1 + M2 + M3 + ĐƯT"
+      ],
+      "conditions": [
+        "Mi là điểm thi THPT 2026.",
+        "Phương thức không năng khiếu dùng tổ hợp trong bảng ngành; tổ hợp V/H chuyển sang nhánh có điểm Vẽ."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.dau.edu.vn/truong-dai-hoc-kien-truc-da-nang-cong-bo-phuong-an-xet-tuyen-dai-hoc-nam-2026-du-kien-012929.html",
+        "checkedAt": "2026-10-14",
+        "note": "Mục II–III; đối chiếu trực quan ảnh cach-tinh-diem-20260515084346-rwn2j.png, mã phương thức 100/200."
+      },
+      "scale": "Thang 30",
+      "priority": "Tổng từ 22,5: ĐƯT = (30 − tổng điểm)/7,5 × mức ưu tiên thông thường.",
+      "issues": [
+        "Cần đối chiếu bảng ngành và ngưỡng cập nhật trước khi xét; không dùng ngưỡng dự kiến thay công thức."
+      ]
+    },
+    "KTD:8365": {
+      "status": "source_reported",
+      "expression": "ĐXT = M1 + M2 + M3 + ĐƯT",
+      "equations": [
+        "ĐXT = M1 + M2 + M3 + ĐƯT"
+      ],
+      "conditions": [
+        "Mi là trung bình môn cả năm lớp 10, 11, 12.",
+        "Phương thức không năng khiếu dùng tổ hợp trong bảng ngành; tổ hợp V/H chuyển sang nhánh có điểm Vẽ."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://tuyensinh.dau.edu.vn/truong-dai-hoc-kien-truc-da-nang-cong-bo-phuong-an-xet-tuyen-dai-hoc-nam-2026-du-kien-012929.html",
+        "checkedAt": "2026-10-14",
+        "note": "Mục II–III; đối chiếu trực quan ảnh cach-tinh-diem-20260515084346-rwn2j.png, mã phương thức 100/200."
+      },
+      "scale": "Thang 30",
+      "priority": "Tổng từ 22,5: ĐƯT = (30 − tổng điểm)/7,5 × mức ưu tiên thông thường.",
+      "issues": [
+        "Cần đối chiếu bảng ngành và ngưỡng cập nhật trước khi xét; không dùng ngưỡng dự kiến thay công thức."
+      ]
+    },
+    "DDY:8825": {
+      "status": "source_reported",
+      "expression": "THPT thông thường: nguồn xác nhận phương thức 100 cho tất cả ngành nhưng chưa trình bày riêng đầy đủ biểu thức điểm cuối.\nChỉ nhánh thay IELTS trong tổ hợp có Tiếng Anh: ĐXT = M1 + M2 + ĐCC + ĐC + ĐƯT",
+      "equations": [
+        "Nhánh thay IELTS: ĐXT = M1 + M2 + ĐCC + ĐC + ĐƯT"
+      ],
+      "scale": "Thang 30; điểm cuối không vượt 30",
+      "conditions": [
+        "Công thức số này chỉ dùng cho nhánh thay IELTS trong B08, D07, A01 hoặc D01 của đúng ngành; không áp dụng cho B00, A00 hoặc tổ hợp không có Tiếng Anh.",
+        "M1, M2 là hai môn thi THPT 2026 còn lại cùng tổ hợp; ĐCC là điểm Tiếng Anh quy đổi. IELTS còn hạn hai năm đến ngày 14/7/2026; kiểm tra bản gốc khi nhập học.",
+        "Nguồn cho phép dùng điểm thi Tiếng Anh hoặc IELTS; chưa ghi rõ một công thức cuối riêng cho nhánh dùng toàn bộ điểm thi. Không coi công thức IELTS là công thức bắt buộc của toàn bộ PT100."
+      ],
+      "priority": "Mục II.5.b, trang 8: tổng điểm đạt được T từ 22,5 trên thang 30 thì ĐƯT = (30 − T)/7,5 × mức ưu tiên gốc. Dưới ngưỡng dùng mức ưu tiên đủ điều kiện theo quy chế.",
+      "conversion": "IELTS 5/5,5/6/6,5/7–9 → Tiếng Anh 8/8,5/9/9,5/10. Điểm thưởng ở mục II.5.c, trang 8–9; xét đúng diện, không mặc định mọi thí sinh đều được cộng.",
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://smp.udn.vn/ckfinder/userfiles/files/C%E1%BA%ACP%20NH%E1%BA%ACT_DDY_%20TH%C3%94NG%20TIN%20TUY%E1%BB%82N%20SINH%20TYD%20N%C4%82M%202026(1).pdf",
+        "checkedAt": "2026-10-14",
+        "note": "Tải trực tiếp PDF từ trường và xem trực quan ngày 14/10/2026: mục II.2.1.1 trang 2–3 chỉ ghi biểu thức cuối rõ cho nhánh IELTS; mục II.5.b–c trang 8–9 có giảm ưu tiên, mức thưởng; trang 10–11 không bổ sung biểu thức THPT thường. Phạm vi PT100 vẫn tất cả bảy ngành, biểu thức số chỉ giới hạn tổ hợp có Tiếng Anh."
+      },
+      "issues": [
+        "Chưa xác nhận một biểu thức điểm cuối riêng cho nhánh THPT thông thường từ nguồn này; công thức đã nạp chỉ thể hiện nhánh thay IELTS. Không tự mở bộ tính cho toàn phương thức."
+      ]
+    },
+    "UKH:8191": {
+      "status": "source_reported",
+      "expression": "Y = a × X + b\na = r × Sy / Sx\nb = Ȳ − a × X̄",
+      "equations": [
+        "Y = a × X + b",
+        "a = r × Sy / Sx",
+        "b = Ȳ − a × X̄"
+      ],
+      "conditions": [
+        "X là điểm học bạ, Y là điểm THPT tương đương; r, Sx, Sy và trung bình lấy bộ dữ liệu Bộ GD&ĐT năm 2026.",
+        "Trường xây dựng bảng tổng tổ hợp từ trung bình quy đổi tám môn nhân ba; phải tra Phụ lục I, không thay bằng tổng học bạ chưa quy đổi."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://ukh.edu.vn/tuyensinh/vi-vn/chi-tiet-tin/id/6347/THONG-TIN-TUYEN-SINH-NAM-2026-(CAP-NHAT)",
+        "checkedAt": "2026-10-14",
+        "note": "PDF cập nhật ngày 09/07/2026 được nhúng trong trang, mục II.1.2 trang 3–4, Phụ lục I trang 12–23."
+      },
+      "scale": "Điểm THPT tương đương",
+      "issues": [
+        "Chỉ xác nhận bước hồi quy/quy đổi; chưa đủ công thức điểm cuối gồm ưu tiên, điểm cộng và ngưỡng từng ngành để tự tính."
+      ]
+    },
+    "UKH:8473": {
+      "status": "source_reported",
+      "expression": "T_VACT = VACT3 + (T_THPT − A3) × (VACT2 − VACT3) / (A2 − A3)",
+      "equations": [
+        "T_VACT = VACT3 + (T_THPT − A3) × (VACT2 − VACT3) / (A2 − A3)"
+      ],
+      "conditions": [
+        "A2, A3 là mốc THPT của hai phân vị liền kề; VACT2, VACT3 là mốc ĐGNL tương ứng.",
+        "Nguồn mô tả chiều THPT sang V-ACT; trung bình kết quả quy đổi năm tổ hợp A00, A01, B00, C00, D01."
+      ],
+      "calculationRule": null,
+      "evidence": {
+        "kind": "official_primary",
+        "url": "https://ukh.edu.vn/tuyensinh/vi-vn/chi-tiet-tin/id/6347/THONG-TIN-TUYEN-SINH-NAM-2026-(CAP-NHAT)",
+        "checkedAt": "2026-10-14",
+        "note": "PDF cập nhật 09/07/2026, mục II.1.1 trang 3, Phụ lục I."
+      },
+      "scale": "Thang V-ACT tương đương",
+      "issues": [
+        "Không đảo chiều quy đổi hoặc cộng ưu tiên lần nữa khi chưa có hướng dẫn; đây chưa phải biểu thức điểm trúng tuyển cuối."
+      ]
+    }
+  },
+  "researchCorrections": {
+    "DQN": {
+      "officialMethodLabels": [
+        "THPT (100)",
+        "Học bạ ba năm (200)",
+        "ĐGNL ĐHQG TP.HCM (402A)",
+        "ĐGNL ĐHSP Hà Nội (402B)",
+        "THPT + năng khiếu (405)",
+        "Xét tuyển thẳng (301)"
+      ],
+      "note": "TB1906 mục II.4: PT1 THPT, PT2 học bạ ba năm, PT3 V-ACT, PT4 SPT ĐHSP Hà Nội, PT5 THPT+năng khiếu. Ngành đào tạo giáo viên không áp dụng PT2/PT3; Quản lý giáo dục vẫn được áp dụng. Nhánh chứng chỉ chỉ giữ tổ hợp có Tiếng Anh.",
+      "sources": [
+        {
+          "url": "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+          "type": "primary",
+          "year": 2026,
+          "checkedAt": "2026-10-14"
+        }
+      ],
+      "methodCorrections": {
+        "8531": {
+          "programs": [
+            {
+              "code": "7140114",
+              "displayCode": "7140114",
+              "name": "Quản lý giáo dục",
+              "group": "",
+              "quota": 44,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140202",
+              "displayCode": "7140202",
+              "name": "Giáo dục Tiểu học",
+              "group": "",
+              "quota": 250,
+              "combinations": "(Văn, Anh, Toán); (Văn, Anh, Lý); (Văn, Anh, Hóa); (Văn, Anh, Sinh); (Văn, Anh, Sử); (Văn, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 3. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140205",
+              "displayCode": "7140205",
+              "name": "Giáo dục Chính trị",
+              "group": "",
+              "quota": 20,
+              "combinations": "(Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Anh, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 4. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140209",
+              "displayCode": "7140209",
+              "name": "Sư phạm Toán học",
+              "group": "",
+              "quota": 100,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 6. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140210",
+              "displayCode": "7140210",
+              "name": "Sư phạm Tin học",
+              "group": "",
+              "quota": 120,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Văn, Tin); (Toán, Lý, Tin); (Toán, Hóa, Tin); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 7. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140211",
+              "displayCode": "7140211",
+              "name": "Sư phạm Vật lý",
+              "group": "",
+              "quota": 51,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Văn); (Toán, Lý, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 8. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140212",
+              "displayCode": "7140212",
+              "name": "Sư phạm Hóa học",
+              "group": "",
+              "quota": 36,
+              "combinations": "(Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 9. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140213",
+              "displayCode": "7140213",
+              "name": "Sư phạm Sinh học",
+              "group": "",
+              "quota": 25,
+              "combinations": "(Toán, Sinh, Hóa); (Toán, Sinh, Lý); (Toán, Sinh, Anh); (Toán, Sinh, Văn)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 10. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140217",
+              "displayCode": "7140217",
+              "name": "Sư phạm Ngữ Văn",
+              "group": "",
+              "quota": 120,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Toán, Anh); (Văn, Giáo dục KT và PL, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 11. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140218",
+              "displayCode": "7140218",
+              "name": "Sư phạm Lịch sử",
+              "group": "",
+              "quota": 54,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Sử, Toán)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 12. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140219",
+              "displayCode": "7140219",
+              "name": "Sư phạm Địa lý",
+              "group": "",
+              "quota": 80,
+              "combinations": "(Văn, Địa, Sử); (Văn, Địa, Giáo dục KT và PL); (Văn, Địa, Anh); (Văn, Địa, Toán); (Toán, Địa, Anh); (Toán, Địa, Giáo dục KT và PL); (Toán, Địa, Sinh); (Toán, Địa, Sử); (Toán, Địa, Hóa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 13. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140231",
+              "displayCode": "7140231",
+              "name": "Sư phạm Tiếng Anh",
+              "group": "",
+              "quota": 200,
+              "combinations": "(Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 14. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140247",
+              "displayCode": "7140247",
+              "name": "Sư phạm Khoa học tự nhiên",
+              "group": "",
+              "quota": 70,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Hóa, Sinh); (Toán, Sinh, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 15. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140249",
+              "displayCode": "7140249",
+              "name": "Sư phạm Lịch sử - Địa lý",
+              "group": "",
+              "quota": 85,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Sử, Toán); (Văn, Địa, Toán)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 16. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7220201",
+              "displayCode": "7220201",
+              "name": "Ngôn ngữ Anh",
+              "group": "",
+              "quota": 261,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7220204",
+              "displayCode": "7220204",
+              "name": "Ngôn ngữ Trung Quốc",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7229030",
+              "displayCode": "7229030",
+              "name": "Văn học",
+              "group": "",
+              "quota": 57,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310101",
+              "displayCode": "7310101",
+              "name": "Kinh tế",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310109",
+              "displayCode": "7310109",
+              "name": "Kinh tế số",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310205",
+              "displayCode": "7310205",
+              "name": "Quản lý nhà nước",
+              "group": "",
+              "quota": 61,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310403",
+              "displayCode": "7310403",
+              "name": "Tâm lý học giáo dục",
+              "group": "",
+              "quota": 64,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310608",
+              "displayCode": "7310608",
+              "name": "Đông phương học",
+              "group": "",
+              "quota": 102,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Tiếng Trung)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310630",
+              "displayCode": "7310630",
+              "name": "Việt Nam học",
+              "group": "",
+              "quota": 63,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Sử); (Văn, Toán, Địa); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340101",
+              "displayCode": "7340101",
+              "name": "Quản trị kinh doanh",
+              "group": "",
+              "quota": 249,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340201",
+              "displayCode": "7340201",
+              "name": "Tài chính – Ngân hàng",
+              "group": "",
+              "quota": 94,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301",
+              "name": "Kế toán",
+              "group": "",
+              "quota": 257,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301AC",
+              "name": "Kế toán (Định hướng ACCA)",
+              "group": "",
+              "quota": 30,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340302",
+              "displayCode": "7340302",
+              "name": "Kiểm toán",
+              "group": "",
+              "quota": 49,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7380101",
+              "displayCode": "7380101",
+              "name": "Luật",
+              "group": "",
+              "quota": 106,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7440112",
+              "displayCode": "7440112",
+              "name": "Hóa học (Hóa dược, Hóa mỹ phẩm)",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Tin); (Toán, Hóa, Sử); (Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7460108",
+              "displayCode": "7460108",
+              "name": "Khoa học dữ liệu",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7460112",
+              "displayCode": "7460112",
+              "name": "Toán ứng dụng",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480103",
+              "displayCode": "7480103",
+              "name": "Kỹ thuật phần mềm",
+              "group": "",
+              "quota": 60,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480107",
+              "displayCode": "7480107",
+              "name": "Trí tuệ nhân tạo",
+              "group": "",
+              "quota": 53,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480201",
+              "displayCode": "7480201",
+              "name": "Công nghệ thông tin (An toàn, an ninh mạng)",
+              "group": "",
+              "quota": 182,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510205",
+              "displayCode": "7510205",
+              "name": "Công nghệ kỹ thuật ô tô",
+              "group": "",
+              "quota": 137,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510401",
+              "displayCode": "7510401",
+              "name": "Công nghệ kỹ thuật hoá học",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL); (Toán, Hóa, Sinh); (Toán, Hóa, Tin); (Toán, Hóa, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510605",
+              "displayCode": "7510605",
+              "name": "Logistics và Quản lý chuỗi cung ứng",
+              "group": "",
+              "quota": 159,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520116",
+              "displayCode": "7520116",
+              "name": "Kỹ thuật cơ khí động lực",
+              "group": "",
+              "quota": 40,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520201",
+              "displayCode": "7520201",
+              "name": "Kỹ thuật điện",
+              "group": "",
+              "quota": 144,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520207",
+              "displayCode": "7520207",
+              "name": "Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch)",
+              "group": "",
+              "quota": 100,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520216",
+              "displayCode": "7520216",
+              "name": "Kỹ thuật điều khiển và tự động hóa",
+              "group": "",
+              "quota": 85,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520401",
+              "displayCode": "7520401",
+              "name": "Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch)",
+              "group": "",
+              "quota": 62,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Tin); (Toán, Lý, Công nghệ); (Toán, Lý, Văn)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7540101",
+              "displayCode": "7540101",
+              "name": "Công nghệ thực phẩm",
+              "group": "",
+              "quota": 143,
+              "combinations": "(Toán, Hóa, Sinh); (Toán, Hóa, Địa); (Toán, Hóa, Sử); (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Tin); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7580201",
+              "displayCode": "7580201",
+              "name": "Kỹ thuật xây dựng",
+              "group": "",
+              "quota": 109,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7620109",
+              "displayCode": "7620109",
+              "name": "Nông học",
+              "group": "",
+              "quota": 43,
+              "combinations": "(Toán, Sinh, Lý); (Toán, Sinh, Hóa); (Toán, Sinh, Sử); (Toán, Sinh, Văn); (Toán, Sinh, Anh); (Toán, Sinh, Giáo dục KT và PL); (Toán, Sinh, Tin); (Toán, Sinh, Công nghệ); (Toán, Sinh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7760101",
+              "displayCode": "7760101",
+              "name": "Công tác xã hội",
+              "group": "",
+              "quota": 52,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Toán, Địa); (Văn, Toán, Sử); (Văn, Toán, Giáo dục KT và PL); (Văn, Giáo dục KT và PL, Anh); (Văn, Địa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7810103",
+              "displayCode": "7810103",
+              "name": "Quản trị dịch vụ du lịch và lữ hành",
+              "group": "",
+              "quota": 125,
+              "combinations": "(Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7810201",
+              "displayCode": "7810201",
+              "name": "Quản trị khách sạn",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7850101",
+              "displayCode": "7850101",
+              "name": "Quản lý tài nguyên và môi trường",
+              "group": "",
+              "quota": 112,
+              "combinations": "(Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7850103",
+              "displayCode": "7850103",
+              "name": "Quản lý đất đai",
+              "group": "",
+              "quota": 123,
+              "combinations": "(Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            }
+          ],
+          "scopeStatus": "explicit_official_program_table",
+          "sourceUrl": "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+          "checkedAt": "2026-10-14",
+          "requirements": [
+            "Phạm vi ngành và tổ hợp lấy từ cột PT1 của bảng II.4 TB1906 ngày 31/05/2026."
+          ]
+        },
+        "8532": {
+          "programs": [
+            {
+              "code": "7140114",
+              "displayCode": "7140114",
+              "name": "Quản lý giáo dục",
+              "group": "",
+              "quota": 44,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7220201",
+              "displayCode": "7220201",
+              "name": "Ngôn ngữ Anh",
+              "group": "",
+              "quota": 261,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7220204",
+              "displayCode": "7220204",
+              "name": "Ngôn ngữ Trung Quốc",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7229030",
+              "displayCode": "7229030",
+              "name": "Văn học",
+              "group": "",
+              "quota": 57,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310101",
+              "displayCode": "7310101",
+              "name": "Kinh tế",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310109",
+              "displayCode": "7310109",
+              "name": "Kinh tế số",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310205",
+              "displayCode": "7310205",
+              "name": "Quản lý nhà nước",
+              "group": "",
+              "quota": 61,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310403",
+              "displayCode": "7310403",
+              "name": "Tâm lý học giáo dục",
+              "group": "",
+              "quota": 64,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310608",
+              "displayCode": "7310608",
+              "name": "Đông phương học",
+              "group": "",
+              "quota": 102,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Tiếng Trung)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310630",
+              "displayCode": "7310630",
+              "name": "Việt Nam học",
+              "group": "",
+              "quota": 63,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Sử); (Văn, Toán, Địa); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340101",
+              "displayCode": "7340101",
+              "name": "Quản trị kinh doanh",
+              "group": "",
+              "quota": 249,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340201",
+              "displayCode": "7340201",
+              "name": "Tài chính – Ngân hàng",
+              "group": "",
+              "quota": 94,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301",
+              "name": "Kế toán",
+              "group": "",
+              "quota": 257,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301AC",
+              "name": "Kế toán (Định hướng ACCA)",
+              "group": "",
+              "quota": 30,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340302",
+              "displayCode": "7340302",
+              "name": "Kiểm toán",
+              "group": "",
+              "quota": 49,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7380101",
+              "displayCode": "7380101",
+              "name": "Luật",
+              "group": "",
+              "quota": 106,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7440112",
+              "displayCode": "7440112",
+              "name": "Hóa học (Hóa dược, Hóa mỹ phẩm)",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Tin); (Toán, Hóa, Sử); (Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7460108",
+              "displayCode": "7460108",
+              "name": "Khoa học dữ liệu",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7460112",
+              "displayCode": "7460112",
+              "name": "Toán ứng dụng",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480103",
+              "displayCode": "7480103",
+              "name": "Kỹ thuật phần mềm",
+              "group": "",
+              "quota": 60,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480107",
+              "displayCode": "7480107",
+              "name": "Trí tuệ nhân tạo",
+              "group": "",
+              "quota": 53,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480201",
+              "displayCode": "7480201",
+              "name": "Công nghệ thông tin (An toàn, an ninh mạng)",
+              "group": "",
+              "quota": 182,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510205",
+              "displayCode": "7510205",
+              "name": "Công nghệ kỹ thuật ô tô",
+              "group": "",
+              "quota": 137,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510401",
+              "displayCode": "7510401",
+              "name": "Công nghệ kỹ thuật hoá học",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL); (Toán, Hóa, Sinh); (Toán, Hóa, Tin); (Toán, Hóa, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510605",
+              "displayCode": "7510605",
+              "name": "Logistics và Quản lý chuỗi cung ứng",
+              "group": "",
+              "quota": 159,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520116",
+              "displayCode": "7520116",
+              "name": "Kỹ thuật cơ khí động lực",
+              "group": "",
+              "quota": 40,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520201",
+              "displayCode": "7520201",
+              "name": "Kỹ thuật điện",
+              "group": "",
+              "quota": 144,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520207",
+              "displayCode": "7520207",
+              "name": "Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch)",
+              "group": "",
+              "quota": 100,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520216",
+              "displayCode": "7520216",
+              "name": "Kỹ thuật điều khiển và tự động hóa",
+              "group": "",
+              "quota": 85,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520401",
+              "displayCode": "7520401",
+              "name": "Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch)",
+              "group": "",
+              "quota": 62,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Tin); (Toán, Lý, Công nghệ); (Toán, Lý, Văn)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7540101",
+              "displayCode": "7540101",
+              "name": "Công nghệ thực phẩm",
+              "group": "",
+              "quota": 143,
+              "combinations": "(Toán, Hóa, Sinh); (Toán, Hóa, Địa); (Toán, Hóa, Sử); (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Tin); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7580201",
+              "displayCode": "7580201",
+              "name": "Kỹ thuật xây dựng",
+              "group": "",
+              "quota": 109,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7620109",
+              "displayCode": "7620109",
+              "name": "Nông học",
+              "group": "",
+              "quota": 43,
+              "combinations": "(Toán, Sinh, Lý); (Toán, Sinh, Hóa); (Toán, Sinh, Sử); (Toán, Sinh, Văn); (Toán, Sinh, Anh); (Toán, Sinh, Giáo dục KT và PL); (Toán, Sinh, Tin); (Toán, Sinh, Công nghệ); (Toán, Sinh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7760101",
+              "displayCode": "7760101",
+              "name": "Công tác xã hội",
+              "group": "",
+              "quota": 52,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Toán, Địa); (Văn, Toán, Sử); (Văn, Toán, Giáo dục KT và PL); (Văn, Giáo dục KT và PL, Anh); (Văn, Địa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7810103",
+              "displayCode": "7810103",
+              "name": "Quản trị dịch vụ du lịch và lữ hành",
+              "group": "",
+              "quota": 125,
+              "combinations": "(Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7810201",
+              "displayCode": "7810201",
+              "name": "Quản trị khách sạn",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7850101",
+              "displayCode": "7850101",
+              "name": "Quản lý tài nguyên và môi trường",
+              "group": "",
+              "quota": 112,
+              "combinations": "(Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7850103",
+              "displayCode": "7850103",
+              "name": "Quản lý đất đai",
+              "group": "",
+              "quota": 123,
+              "combinations": "(Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            }
+          ],
+          "scopeStatus": "explicit_official_program_table",
+          "sourceUrl": "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+          "checkedAt": "2026-10-14",
+          "requirements": [
+            "Phạm vi ngành và tổ hợp lấy từ cột PT2 của bảng II.4 TB1906 ngày 31/05/2026.",
+            "Không áp dụng ngành đào tạo giáo viên; Quản lý giáo dục 7140114 được trường ghi áp dụng."
+          ]
+        },
+        "8533": {
+          "programs": [
+            {
+              "code": "7140114",
+              "displayCode": "7140114",
+              "name": "Quản lý giáo dục",
+              "group": "",
+              "quota": 44,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140202",
+              "displayCode": "7140202",
+              "name": "Giáo dục Tiểu học",
+              "group": "",
+              "quota": 250,
+              "combinations": "(Văn, Anh, Toán); (Văn, Anh, Lý); (Văn, Anh, Hóa); (Văn, Anh, Sinh); (Văn, Anh, Sử); (Văn, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 3. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140205",
+              "displayCode": "7140205",
+              "name": "Giáo dục Chính trị",
+              "group": "",
+              "quota": 20,
+              "combinations": "(Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Anh, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 4. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140209",
+              "displayCode": "7140209",
+              "name": "Sư phạm Toán học",
+              "group": "",
+              "quota": 100,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 6. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140210",
+              "displayCode": "7140210",
+              "name": "Sư phạm Tin học",
+              "group": "",
+              "quota": 120,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Văn, Tin); (Toán, Lý, Tin); (Toán, Hóa, Tin); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 7. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140211",
+              "displayCode": "7140211",
+              "name": "Sư phạm Vật lý",
+              "group": "",
+              "quota": 51,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Văn); (Toán, Lý, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 8. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140212",
+              "displayCode": "7140212",
+              "name": "Sư phạm Hóa học",
+              "group": "",
+              "quota": 36,
+              "combinations": "(Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 9. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140213",
+              "displayCode": "7140213",
+              "name": "Sư phạm Sinh học",
+              "group": "",
+              "quota": 25,
+              "combinations": "(Toán, Sinh, Hóa); (Toán, Sinh, Lý); (Toán, Sinh, Anh); (Toán, Sinh, Văn)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 10. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140217",
+              "displayCode": "7140217",
+              "name": "Sư phạm Ngữ Văn",
+              "group": "",
+              "quota": 120,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Toán, Anh); (Văn, Giáo dục KT và PL, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 11. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140218",
+              "displayCode": "7140218",
+              "name": "Sư phạm Lịch sử",
+              "group": "",
+              "quota": 54,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Sử, Toán)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 12. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140219",
+              "displayCode": "7140219",
+              "name": "Sư phạm Địa lý",
+              "group": "",
+              "quota": 80,
+              "combinations": "(Văn, Địa, Sử); (Văn, Địa, Giáo dục KT và PL); (Văn, Địa, Anh); (Văn, Địa, Toán); (Toán, Địa, Anh); (Toán, Địa, Giáo dục KT và PL); (Toán, Địa, Sinh); (Toán, Địa, Sử); (Toán, Địa, Hóa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 13. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140231",
+              "displayCode": "7140231",
+              "name": "Sư phạm Tiếng Anh",
+              "group": "",
+              "quota": 200,
+              "combinations": "(Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 14. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140247",
+              "displayCode": "7140247",
+              "name": "Sư phạm Khoa học tự nhiên",
+              "group": "",
+              "quota": 70,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Hóa, Sinh); (Toán, Sinh, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 15. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140249",
+              "displayCode": "7140249",
+              "name": "Sư phạm Lịch sử - Địa lý",
+              "group": "",
+              "quota": 85,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Sử, Toán); (Văn, Địa, Toán)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 16. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7220201",
+              "displayCode": "7220201",
+              "name": "Ngôn ngữ Anh",
+              "group": "",
+              "quota": 261,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7220204",
+              "displayCode": "7220204",
+              "name": "Ngôn ngữ Trung Quốc",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7229030",
+              "displayCode": "7229030",
+              "name": "Văn học",
+              "group": "",
+              "quota": 57,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310101",
+              "displayCode": "7310101",
+              "name": "Kinh tế",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310109",
+              "displayCode": "7310109",
+              "name": "Kinh tế số",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310205",
+              "displayCode": "7310205",
+              "name": "Quản lý nhà nước",
+              "group": "",
+              "quota": 61,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310403",
+              "displayCode": "7310403",
+              "name": "Tâm lý học giáo dục",
+              "group": "",
+              "quota": 64,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310608",
+              "displayCode": "7310608",
+              "name": "Đông phương học",
+              "group": "",
+              "quota": 102,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Tiếng Trung)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310630",
+              "displayCode": "7310630",
+              "name": "Việt Nam học",
+              "group": "",
+              "quota": 63,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Sử); (Văn, Toán, Địa); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340101",
+              "displayCode": "7340101",
+              "name": "Quản trị kinh doanh",
+              "group": "",
+              "quota": 249,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340201",
+              "displayCode": "7340201",
+              "name": "Tài chính – Ngân hàng",
+              "group": "",
+              "quota": 94,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301",
+              "name": "Kế toán",
+              "group": "",
+              "quota": 257,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301AC",
+              "name": "Kế toán (Định hướng ACCA)",
+              "group": "",
+              "quota": 30,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340302",
+              "displayCode": "7340302",
+              "name": "Kiểm toán",
+              "group": "",
+              "quota": 49,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7380101",
+              "displayCode": "7380101",
+              "name": "Luật",
+              "group": "",
+              "quota": 106,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7440112",
+              "displayCode": "7440112",
+              "name": "Hóa học (Hóa dược, Hóa mỹ phẩm)",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Tin); (Toán, Hóa, Sử); (Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7460108",
+              "displayCode": "7460108",
+              "name": "Khoa học dữ liệu",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7460112",
+              "displayCode": "7460112",
+              "name": "Toán ứng dụng",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480103",
+              "displayCode": "7480103",
+              "name": "Kỹ thuật phần mềm",
+              "group": "",
+              "quota": 60,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480107",
+              "displayCode": "7480107",
+              "name": "Trí tuệ nhân tạo",
+              "group": "",
+              "quota": 53,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480201",
+              "displayCode": "7480201",
+              "name": "Công nghệ thông tin (An toàn, an ninh mạng)",
+              "group": "",
+              "quota": 182,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510205",
+              "displayCode": "7510205",
+              "name": "Công nghệ kỹ thuật ô tô",
+              "group": "",
+              "quota": 137,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510401",
+              "displayCode": "7510401",
+              "name": "Công nghệ kỹ thuật hoá học",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL); (Toán, Hóa, Sinh); (Toán, Hóa, Tin); (Toán, Hóa, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510605",
+              "displayCode": "7510605",
+              "name": "Logistics và Quản lý chuỗi cung ứng",
+              "group": "",
+              "quota": 159,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520116",
+              "displayCode": "7520116",
+              "name": "Kỹ thuật cơ khí động lực",
+              "group": "",
+              "quota": 40,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520201",
+              "displayCode": "7520201",
+              "name": "Kỹ thuật điện",
+              "group": "",
+              "quota": 144,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520207",
+              "displayCode": "7520207",
+              "name": "Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch)",
+              "group": "",
+              "quota": 100,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520216",
+              "displayCode": "7520216",
+              "name": "Kỹ thuật điều khiển và tự động hóa",
+              "group": "",
+              "quota": 85,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520401",
+              "displayCode": "7520401",
+              "name": "Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch)",
+              "group": "",
+              "quota": 62,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Tin); (Toán, Lý, Công nghệ); (Toán, Lý, Văn)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7540101",
+              "displayCode": "7540101",
+              "name": "Công nghệ thực phẩm",
+              "group": "",
+              "quota": 143,
+              "combinations": "(Toán, Hóa, Sinh); (Toán, Hóa, Địa); (Toán, Hóa, Sử); (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Tin); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7580201",
+              "displayCode": "7580201",
+              "name": "Kỹ thuật xây dựng",
+              "group": "",
+              "quota": 109,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7620109",
+              "displayCode": "7620109",
+              "name": "Nông học",
+              "group": "",
+              "quota": 43,
+              "combinations": "(Toán, Sinh, Lý); (Toán, Sinh, Hóa); (Toán, Sinh, Sử); (Toán, Sinh, Văn); (Toán, Sinh, Anh); (Toán, Sinh, Giáo dục KT và PL); (Toán, Sinh, Tin); (Toán, Sinh, Công nghệ); (Toán, Sinh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7760101",
+              "displayCode": "7760101",
+              "name": "Công tác xã hội",
+              "group": "",
+              "quota": 52,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Toán, Địa); (Văn, Toán, Sử); (Văn, Toán, Giáo dục KT và PL); (Văn, Giáo dục KT và PL, Anh); (Văn, Địa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7810103",
+              "displayCode": "7810103",
+              "name": "Quản trị dịch vụ du lịch và lữ hành",
+              "group": "",
+              "quota": 125,
+              "combinations": "(Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7810201",
+              "displayCode": "7810201",
+              "name": "Quản trị khách sạn",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7850101",
+              "displayCode": "7850101",
+              "name": "Quản lý tài nguyên và môi trường",
+              "group": "",
+              "quota": 112,
+              "combinations": "(Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7850103",
+              "displayCode": "7850103",
+              "name": "Quản lý đất đai",
+              "group": "",
+              "quota": 123,
+              "combinations": "(Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            }
+          ],
+          "scopeStatus": "explicit_official_program_table",
+          "sourceUrl": "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+          "checkedAt": "2026-10-14",
+          "requirements": [
+            "Phạm vi ngành và tổ hợp lấy từ cột PT4 của bảng II.4 TB1906 ngày 31/05/2026.",
+            "PT4 là kỳ thi ĐGNL của Trường Đại học Sư phạm Hà Nội; vẫn áp dụng các ngành giáo viên có cột 4."
+          ]
+        },
+        "8534": {
+          "programs": [
+            {
+              "code": "7140114",
+              "displayCode": "7140114",
+              "name": "Quản lý giáo dục",
+              "group": "",
+              "quota": 44,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7220201",
+              "displayCode": "7220201",
+              "name": "Ngôn ngữ Anh",
+              "group": "",
+              "quota": 261,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7220204",
+              "displayCode": "7220204",
+              "name": "Ngôn ngữ Trung Quốc",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7229030",
+              "displayCode": "7229030",
+              "name": "Văn học",
+              "group": "",
+              "quota": 57,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310101",
+              "displayCode": "7310101",
+              "name": "Kinh tế",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310109",
+              "displayCode": "7310109",
+              "name": "Kinh tế số",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310205",
+              "displayCode": "7310205",
+              "name": "Quản lý nhà nước",
+              "group": "",
+              "quota": 61,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310403",
+              "displayCode": "7310403",
+              "name": "Tâm lý học giáo dục",
+              "group": "",
+              "quota": 64,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Giáo dục KT và PL); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310608",
+              "displayCode": "7310608",
+              "name": "Đông phương học",
+              "group": "",
+              "quota": 102,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh); (Văn, Toán, Sử); (Văn, Sử, Tiếng Trung)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7310630",
+              "displayCode": "7310630",
+              "name": "Việt Nam học",
+              "group": "",
+              "quota": 63,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Địa, Giáo dục KT và PL); (Văn, Toán, Sử); (Văn, Toán, Địa); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340101",
+              "displayCode": "7340101",
+              "name": "Quản trị kinh doanh",
+              "group": "",
+              "quota": 249,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340201",
+              "displayCode": "7340201",
+              "name": "Tài chính – Ngân hàng",
+              "group": "",
+              "quota": 94,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301",
+              "name": "Kế toán",
+              "group": "",
+              "quota": 257,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301AC",
+              "name": "Kế toán (Định hướng ACCA)",
+              "group": "",
+              "quota": 30,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7340302",
+              "displayCode": "7340302",
+              "name": "Kiểm toán",
+              "group": "",
+              "quota": 49,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7380101",
+              "displayCode": "7380101",
+              "name": "Luật",
+              "group": "",
+              "quota": 106,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh); (Văn, Toán, Giáo dục KT và PL); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7440112",
+              "displayCode": "7440112",
+              "name": "Hóa học (Hóa dược, Hóa mỹ phẩm)",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Lý); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Tin); (Toán, Hóa, Sử); (Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7460108",
+              "displayCode": "7460108",
+              "name": "Khoa học dữ liệu",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7460112",
+              "displayCode": "7460112",
+              "name": "Toán ứng dụng",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480103",
+              "displayCode": "7480103",
+              "name": "Kỹ thuật phần mềm",
+              "group": "",
+              "quota": 60,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480107",
+              "displayCode": "7480107",
+              "name": "Trí tuệ nhân tạo",
+              "group": "",
+              "quota": 53,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7480201",
+              "displayCode": "7480201",
+              "name": "Công nghệ thông tin (An toàn, an ninh mạng)",
+              "group": "",
+              "quota": 182,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510205",
+              "displayCode": "7510205",
+              "name": "Công nghệ kỹ thuật ô tô",
+              "group": "",
+              "quota": 137,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510401",
+              "displayCode": "7510401",
+              "name": "Công nghệ kỹ thuật hoá học",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL); (Toán, Hóa, Sinh); (Toán, Hóa, Tin); (Toán, Hóa, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7510605",
+              "displayCode": "7510605",
+              "name": "Logistics và Quản lý chuỗi cung ứng",
+              "group": "",
+              "quota": 159,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520116",
+              "displayCode": "7520116",
+              "name": "Kỹ thuật cơ khí động lực",
+              "group": "",
+              "quota": 40,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520201",
+              "displayCode": "7520201",
+              "name": "Kỹ thuật điện",
+              "group": "",
+              "quota": 144,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520207",
+              "displayCode": "7520207",
+              "name": "Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch)",
+              "group": "",
+              "quota": 100,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520216",
+              "displayCode": "7520216",
+              "name": "Kỹ thuật điều khiển và tự động hóa",
+              "group": "",
+              "quota": 85,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7520401",
+              "displayCode": "7520401",
+              "name": "Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch)",
+              "group": "",
+              "quota": 62,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Tin); (Toán, Lý, Công nghệ); (Toán, Lý, Văn)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7540101",
+              "displayCode": "7540101",
+              "name": "Công nghệ thực phẩm",
+              "group": "",
+              "quota": 143,
+              "combinations": "(Toán, Hóa, Sinh); (Toán, Hóa, Địa); (Toán, Hóa, Sử); (Toán, Hóa, Lý); (Toán, Hóa, Anh); (Toán, Hóa, Tin); (Toán, Hóa, Văn); (Toán, Hóa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7580201",
+              "displayCode": "7580201",
+              "name": "Kỹ thuật xây dựng",
+              "group": "",
+              "quota": 109,
+              "combinations": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn); (Toán, Lý, Công nghệ)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7620109",
+              "displayCode": "7620109",
+              "name": "Nông học",
+              "group": "",
+              "quota": 43,
+              "combinations": "(Toán, Sinh, Lý); (Toán, Sinh, Hóa); (Toán, Sinh, Sử); (Toán, Sinh, Văn); (Toán, Sinh, Anh); (Toán, Sinh, Giáo dục KT và PL); (Toán, Sinh, Tin); (Toán, Sinh, Công nghệ); (Toán, Sinh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7760101",
+              "displayCode": "7760101",
+              "name": "Công tác xã hội",
+              "group": "",
+              "quota": 52,
+              "combinations": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT và PL); (Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Toán, Địa); (Văn, Toán, Sử); (Văn, Toán, Giáo dục KT và PL); (Văn, Giáo dục KT và PL, Anh); (Văn, Địa, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7810103",
+              "displayCode": "7810103",
+              "name": "Quản trị dịch vụ du lịch và lữ hành",
+              "group": "",
+              "quota": 125,
+              "combinations": "(Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7810201",
+              "displayCode": "7810201",
+              "name": "Quản trị khách sạn",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Văn, Giáo dục KT và PL); (Toán, Văn, Anh); (Toán, Văn, Sử); (Toán, Văn, Địa); (Toán, Văn, Hóa); (Toán, Văn, Lý); (Toán, Văn, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7850101",
+              "displayCode": "7850101",
+              "name": "Quản lý tài nguyên và môi trường",
+              "group": "",
+              "quota": 112,
+              "combinations": "(Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7850103",
+              "displayCode": "7850103",
+              "name": "Quản lý đất đai",
+              "group": "",
+              "quota": 123,
+              "combinations": "(Địa, Văn, Giáo dục KT và PL); (Địa, Toán, Giáo dục KT và PL); (Địa, Toán, Văn); (Địa, Toán, Sinh); (Địa, Văn, Anh); (Địa, Toán, Lý); (Địa, Toán, Anh); (Địa, Văn, Sinh); (Địa, Toán, Hóa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            }
+          ],
+          "scopeStatus": "explicit_official_program_table",
+          "sourceUrl": "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+          "checkedAt": "2026-10-14",
+          "requirements": [
+            "Phạm vi ngành và tổ hợp lấy từ cột PT3 của bảng II.4 TB1906 ngày 31/05/2026.",
+            "Không áp dụng ngành đào tạo giáo viên; Quản lý giáo dục 7140114 được trường ghi áp dụng."
+          ]
+        },
+        "8535": {
+          "programs": [
+            {
+              "code": "7140201",
+              "displayCode": "7140201",
+              "name": "Giáo dục Mầm non",
+              "group": "",
+              "quota": 180,
+              "combinations": "(Văn, Toán, NK GDMN)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 2. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            },
+            {
+              "code": "7140206",
+              "displayCode": "7140206",
+              "name": "Giáo dục Thể chất",
+              "group": "",
+              "quota": 100,
+              "combinations": "(Toán, Sinh, NK TDTT); (Toán, Văn, NK TDTT); (Văn, Sinh, NK TDTT); (Văn, Địa, NK TDTT); (Toán, Lý, NK TDTT); (Văn, Giáo dục KT và PL, NK TDTT)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 5. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp."
+            }
+          ],
+          "scopeStatus": "explicit_official_program_table",
+          "sourceUrl": "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+          "checkedAt": "2026-10-14",
+          "requirements": [
+            "Phạm vi ngành và tổ hợp lấy từ cột PT5 của bảng II.4 TB1906 ngày 31/05/2026."
+          ]
+        },
+        "9491": {
+          "programs": [
+            {
+              "code": "7140114",
+              "displayCode": "7140114",
+              "name": "Quản lý giáo dục",
+              "group": "",
+              "quota": 44,
+              "combinations": "(Văn, Toán, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140202",
+              "displayCode": "7140202",
+              "name": "Giáo dục Tiểu học",
+              "group": "",
+              "quota": 250,
+              "combinations": "(Văn, Anh, Toán); (Văn, Anh, Lý); (Văn, Anh, Hóa); (Văn, Anh, Sinh); (Văn, Anh, Sử); (Văn, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 3. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140205",
+              "displayCode": "7140205",
+              "name": "Giáo dục Chính trị",
+              "group": "",
+              "quota": 20,
+              "combinations": "(Văn, Anh, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 4. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140209",
+              "displayCode": "7140209",
+              "name": "Sư phạm Toán học",
+              "group": "",
+              "quota": 100,
+              "combinations": "(Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 6. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140210",
+              "displayCode": "7140210",
+              "name": "Sư phạm Tin học",
+              "group": "",
+              "quota": 120,
+              "combinations": "(Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 7. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140211",
+              "displayCode": "7140211",
+              "name": "Sư phạm Vật lý",
+              "group": "",
+              "quota": 51,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 8. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140212",
+              "displayCode": "7140212",
+              "name": "Sư phạm Hóa học",
+              "group": "",
+              "quota": 36,
+              "combinations": "(Toán, Hóa, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 9. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140213",
+              "displayCode": "7140213",
+              "name": "Sư phạm Sinh học",
+              "group": "",
+              "quota": 25,
+              "combinations": "(Toán, Sinh, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 10. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140217",
+              "displayCode": "7140217",
+              "name": "Sư phạm Ngữ Văn",
+              "group": "",
+              "quota": 120,
+              "combinations": "(Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Toán, Anh); (Văn, Giáo dục KT và PL, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 11. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140218",
+              "displayCode": "7140218",
+              "name": "Sư phạm Lịch sử",
+              "group": "",
+              "quota": 54,
+              "combinations": "(Văn, Sử, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 12. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140219",
+              "displayCode": "7140219",
+              "name": "Sư phạm Địa lý",
+              "group": "",
+              "quota": 80,
+              "combinations": "(Văn, Địa, Anh); (Toán, Địa, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 13. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140231",
+              "displayCode": "7140231",
+              "name": "Sư phạm Tiếng Anh",
+              "group": "",
+              "quota": 200,
+              "combinations": "(Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 14. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140247",
+              "displayCode": "7140247",
+              "name": "Sư phạm Khoa học tự nhiên",
+              "group": "",
+              "quota": 70,
+              "combinations": "(Toán, Lý, Anh); (Toán, Sinh, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 15. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7140249",
+              "displayCode": "7140249",
+              "name": "Sư phạm Lịch sử - Địa lý",
+              "group": "",
+              "quota": 85,
+              "combinations": "(Văn, Sử, Anh); (Văn, Địa, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 16. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7220201",
+              "displayCode": "7220201",
+              "name": "Ngôn ngữ Anh",
+              "group": "",
+              "quota": 261,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7220204",
+              "displayCode": "7220204",
+              "name": "Ngôn ngữ Trung Quốc",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7229030",
+              "displayCode": "7229030",
+              "name": "Văn học",
+              "group": "",
+              "quota": 57,
+              "combinations": "(Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310101",
+              "displayCode": "7310101",
+              "name": "Kinh tế",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310109",
+              "displayCode": "7310109",
+              "name": "Kinh tế số",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310205",
+              "displayCode": "7310205",
+              "name": "Quản lý nhà nước",
+              "group": "",
+              "quota": 61,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310403",
+              "displayCode": "7310403",
+              "name": "Tâm lý học giáo dục",
+              "group": "",
+              "quota": 64,
+              "combinations": "(Văn, Toán, Anh); (Văn, Sử, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310608",
+              "displayCode": "7310608",
+              "name": "Đông phương học",
+              "group": "",
+              "quota": 102,
+              "combinations": "(Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310630",
+              "displayCode": "7310630",
+              "name": "Việt Nam học",
+              "group": "",
+              "quota": 63,
+              "combinations": "(Văn, Giáo dục KT và PL, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7340101",
+              "displayCode": "7340101",
+              "name": "Quản trị kinh doanh",
+              "group": "",
+              "quota": 249,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7340201",
+              "displayCode": "7340201",
+              "name": "Tài chính – Ngân hàng",
+              "group": "",
+              "quota": 94,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301",
+              "name": "Kế toán",
+              "group": "",
+              "quota": 257,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301AC",
+              "name": "Kế toán (Định hướng ACCA)",
+              "group": "",
+              "quota": 30,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7340302",
+              "displayCode": "7340302",
+              "name": "Kiểm toán",
+              "group": "",
+              "quota": 49,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7380101",
+              "displayCode": "7380101",
+              "name": "Luật",
+              "group": "",
+              "quota": 106,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7440112",
+              "displayCode": "7440112",
+              "name": "Hóa học (Hóa dược, Hóa mỹ phẩm)",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7460108",
+              "displayCode": "7460108",
+              "name": "Khoa học dữ liệu",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7460112",
+              "displayCode": "7460112",
+              "name": "Toán ứng dụng",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7480103",
+              "displayCode": "7480103",
+              "name": "Kỹ thuật phần mềm",
+              "group": "",
+              "quota": 60,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7480107",
+              "displayCode": "7480107",
+              "name": "Trí tuệ nhân tạo",
+              "group": "",
+              "quota": 53,
+              "combinations": "(Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7480201",
+              "displayCode": "7480201",
+              "name": "Công nghệ thông tin (An toàn, an ninh mạng)",
+              "group": "",
+              "quota": 182,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7510205",
+              "displayCode": "7510205",
+              "name": "Công nghệ kỹ thuật ô tô",
+              "group": "",
+              "quota": 137,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7510401",
+              "displayCode": "7510401",
+              "name": "Công nghệ kỹ thuật hoá học",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7510605",
+              "displayCode": "7510605",
+              "name": "Logistics và Quản lý chuỗi cung ứng",
+              "group": "",
+              "quota": 159,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7520116",
+              "displayCode": "7520116",
+              "name": "Kỹ thuật cơ khí động lực",
+              "group": "",
+              "quota": 40,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7520201",
+              "displayCode": "7520201",
+              "name": "Kỹ thuật điện",
+              "group": "",
+              "quota": 144,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7520207",
+              "displayCode": "7520207",
+              "name": "Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch)",
+              "group": "",
+              "quota": 100,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7520216",
+              "displayCode": "7520216",
+              "name": "Kỹ thuật điều khiển và tự động hóa",
+              "group": "",
+              "quota": 85,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7520401",
+              "displayCode": "7520401",
+              "name": "Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch)",
+              "group": "",
+              "quota": 62,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7540101",
+              "displayCode": "7540101",
+              "name": "Công nghệ thực phẩm",
+              "group": "",
+              "quota": 143,
+              "combinations": "(Toán, Hóa, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7580201",
+              "displayCode": "7580201",
+              "name": "Kỹ thuật xây dựng",
+              "group": "",
+              "quota": 109,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7620109",
+              "displayCode": "7620109",
+              "name": "Nông học",
+              "group": "",
+              "quota": 43,
+              "combinations": "(Toán, Sinh, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7760101",
+              "displayCode": "7760101",
+              "name": "Công tác xã hội",
+              "group": "",
+              "quota": 52,
+              "combinations": "(Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Giáo dục KT và PL, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7810103",
+              "displayCode": "7810103",
+              "name": "Quản trị dịch vụ du lịch và lữ hành",
+              "group": "",
+              "quota": 125,
+              "combinations": "(Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7810201",
+              "displayCode": "7810201",
+              "name": "Quản trị khách sạn",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7850101",
+              "displayCode": "7850101",
+              "name": "Quản lý tài nguyên và môi trường",
+              "group": "",
+              "quota": 112,
+              "combinations": "(Địa, Văn, Anh); (Địa, Toán, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7850103",
+              "displayCode": "7850103",
+              "name": "Quản lý đất đai",
+              "group": "",
+              "quota": 123,
+              "combinations": "(Địa, Văn, Anh); (Địa, Toán, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            }
+          ],
+          "scopeStatus": "explicit_official_program_table",
+          "sourceUrl": "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+          "checkedAt": "2026-10-14",
+          "requirements": [
+            "Phạm vi ngành và tổ hợp lấy từ cột PT1 của bảng II.4 TB1906 ngày 31/05/2026.",
+            "Đây là nhánh dùng IELTS/VSTEP thay điểm Tiếng Anh của phương thức gốc; chỉ giữ tổ hợp có Tiếng Anh, không cộng chứng chỉ lần thứ hai."
+          ]
+        },
+        "9492": {
+          "programs": [
+            {
+              "code": "7140114",
+              "displayCode": "7140114",
+              "name": "Quản lý giáo dục",
+              "group": "",
+              "quota": 44,
+              "combinations": "(Văn, Toán, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 1. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7220201",
+              "displayCode": "7220201",
+              "name": "Ngôn ngữ Anh",
+              "group": "",
+              "quota": 261,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 17. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7220204",
+              "displayCode": "7220204",
+              "name": "Ngôn ngữ Trung Quốc",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh); (Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 18. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7229030",
+              "displayCode": "7229030",
+              "name": "Văn học",
+              "group": "",
+              "quota": 57,
+              "combinations": "(Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Anh, Giáo dục KT và PL)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 19. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310101",
+              "displayCode": "7310101",
+              "name": "Kinh tế",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 20. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310109",
+              "displayCode": "7310109",
+              "name": "Kinh tế số",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 21. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310205",
+              "displayCode": "7310205",
+              "name": "Quản lý nhà nước",
+              "group": "",
+              "quota": 61,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 22. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310403",
+              "displayCode": "7310403",
+              "name": "Tâm lý học giáo dục",
+              "group": "",
+              "quota": 64,
+              "combinations": "(Văn, Toán, Anh); (Văn, Sử, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 23. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310608",
+              "displayCode": "7310608",
+              "name": "Đông phương học",
+              "group": "",
+              "quota": 102,
+              "combinations": "(Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Giáo dục KT và PL, Anh); (Văn, Toán, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 24. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7310630",
+              "displayCode": "7310630",
+              "name": "Việt Nam học",
+              "group": "",
+              "quota": 63,
+              "combinations": "(Văn, Giáo dục KT và PL, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 25. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7340101",
+              "displayCode": "7340101",
+              "name": "Quản trị kinh doanh",
+              "group": "",
+              "quota": 249,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 26. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7340201",
+              "displayCode": "7340201",
+              "name": "Tài chính – Ngân hàng",
+              "group": "",
+              "quota": 94,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 27. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301",
+              "name": "Kế toán",
+              "group": "",
+              "quota": 257,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 28. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7340301",
+              "displayCode": "7340301AC",
+              "name": "Kế toán (Định hướng ACCA)",
+              "group": "",
+              "quota": 30,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 29. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7340302",
+              "displayCode": "7340302",
+              "name": "Kiểm toán",
+              "group": "",
+              "quota": 49,
+              "combinations": "(Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin); (Toán, Anh, Hóa); (Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Địa); (Toán, Anh, Sử)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 30. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7380101",
+              "displayCode": "7380101",
+              "name": "Luật",
+              "group": "",
+              "quota": 106,
+              "combinations": "(Văn, Toán, Anh); (Văn, Lý, Anh); (Văn, Sử, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 31. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7440112",
+              "displayCode": "7440112",
+              "name": "Hóa học (Hóa dược, Hóa mỹ phẩm)",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 32. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7460108",
+              "displayCode": "7460108",
+              "name": "Khoa học dữ liệu",
+              "group": "",
+              "quota": 45,
+              "combinations": "(Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 33. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7460112",
+              "displayCode": "7460112",
+              "name": "Toán ứng dụng",
+              "group": "",
+              "quota": 58,
+              "combinations": "(Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh); (Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 34. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7480103",
+              "displayCode": "7480103",
+              "name": "Kỹ thuật phần mềm",
+              "group": "",
+              "quota": 60,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 35. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7480107",
+              "displayCode": "7480107",
+              "name": "Trí tuệ nhân tạo",
+              "group": "",
+              "quota": 53,
+              "combinations": "(Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh); (Toán, Tin, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 36. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7480201",
+              "displayCode": "7480201",
+              "name": "Công nghệ thông tin (An toàn, an ninh mạng)",
+              "group": "",
+              "quota": 182,
+              "combinations": "(Toán, Anh, Lý); (Toán, Anh, Văn); (Toán, Anh, Hóa); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Tin)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 37. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7510205",
+              "displayCode": "7510205",
+              "name": "Công nghệ kỹ thuật ô tô",
+              "group": "",
+              "quota": 137,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 38. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7510401",
+              "displayCode": "7510401",
+              "name": "Công nghệ kỹ thuật hoá học",
+              "group": "",
+              "quota": 56,
+              "combinations": "(Toán, Hóa, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 39. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7510605",
+              "displayCode": "7510605",
+              "name": "Logistics và Quản lý chuỗi cung ứng",
+              "group": "",
+              "quota": 159,
+              "combinations": "(Toán, Anh, Văn); (Toán, Anh, Lý); (Toán, Anh, Hóa); (Toán, Anh, Tin); (Toán, Anh, Giáo dục KT và PL); (Toán, Anh, Sử); (Toán, Anh, Địa)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 40. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7520116",
+              "displayCode": "7520116",
+              "name": "Kỹ thuật cơ khí động lực",
+              "group": "",
+              "quota": 40,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 41. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7520201",
+              "displayCode": "7520201",
+              "name": "Kỹ thuật điện",
+              "group": "",
+              "quota": 144,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 42. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7520207",
+              "displayCode": "7520207",
+              "name": "Kỹ thuật điện tử - viễn thông (chuyên ngành Thiết kế vi mạch)",
+              "group": "",
+              "quota": 100,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 43. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7520216",
+              "displayCode": "7520216",
+              "name": "Kỹ thuật điều khiển và tự động hóa",
+              "group": "",
+              "quota": 85,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 44. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7520401",
+              "displayCode": "7520401",
+              "name": "Vật lý kỹ thuật (chuyên ngành Công nghệ gia công, đóng gói và kiểm thử vi mạch)",
+              "group": "",
+              "quota": 62,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 45. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7540101",
+              "displayCode": "7540101",
+              "name": "Công nghệ thực phẩm",
+              "group": "",
+              "quota": 143,
+              "combinations": "(Toán, Hóa, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 46. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7580201",
+              "displayCode": "7580201",
+              "name": "Kỹ thuật xây dựng",
+              "group": "",
+              "quota": 109,
+              "combinations": "(Toán, Lý, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 47. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7620109",
+              "displayCode": "7620109",
+              "name": "Nông học",
+              "group": "",
+              "quota": 43,
+              "combinations": "(Toán, Sinh, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 48. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7760101",
+              "displayCode": "7760101",
+              "name": "Công tác xã hội",
+              "group": "",
+              "quota": 52,
+              "combinations": "(Văn, Sử, Anh); (Văn, Toán, Anh); (Văn, Giáo dục KT và PL, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 49. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7810103",
+              "displayCode": "7810103",
+              "name": "Quản trị dịch vụ du lịch và lữ hành",
+              "group": "",
+              "quota": 125,
+              "combinations": "(Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 50. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7810201",
+              "displayCode": "7810201",
+              "name": "Quản trị khách sạn",
+              "group": "",
+              "quota": 99,
+              "combinations": "(Toán, Văn, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 51. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7850101",
+              "displayCode": "7850101",
+              "name": "Quản lý tài nguyên và môi trường",
+              "group": "",
+              "quota": 112,
+              "combinations": "(Địa, Văn, Anh); (Địa, Toán, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 52. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            },
+            {
+              "code": "7850103",
+              "displayCode": "7850103",
+              "name": "Quản lý đất đai",
+              "group": "",
+              "quota": 123,
+              "combinations": "(Địa, Văn, Anh); (Địa, Toán, Anh)",
+              "note": "TB1906 ngày 31/05/2026, mục II.4, dòng 53. Chỉ tiêu là tổng của chương trình cho các phương thức, không cộng lặp. Chỉ giữ tổ hợp có Tiếng Anh để thay bằng chứng chỉ theo mục II.5c."
+            }
+          ],
+          "scopeStatus": "explicit_official_program_table",
+          "sourceUrl": "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+          "checkedAt": "2026-10-14",
+          "requirements": [
+            "Phạm vi ngành và tổ hợp lấy từ cột PT2 của bảng II.4 TB1906 ngày 31/05/2026.",
+            "Không áp dụng ngành đào tạo giáo viên; Quản lý giáo dục 7140114 được trường ghi áp dụng.",
+            "Đây là nhánh dùng IELTS/VSTEP thay điểm Tiếng Anh của phương thức gốc; chỉ giữ tổ hợp có Tiếng Anh, không cộng chứng chỉ lần thứ hai."
+          ]
+        }
+      },
+      "checkedAt": "2026-10-14",
+      "issues": [
+        "Tổ hợp được lưu đúng tên môn trong bảng nguồn; với tên chung “Công nghệ” không tự suy thành Công nghệ công nghiệp hoặc Công nghệ nông nghiệp. Chỉ tiêu là tổng theo chương trình, không phải chỉ tiêu riêng của từng phương thức."
+      ]
+    },
+    "TBD": {
+      "officialMethodLabels": [
+        "Học bạ THPT",
+        "Kết quả thi THPT 2026",
+        "Điểm xét tốt nghiệp THPT 2026",
+        "Học bạ THPT kết hợp năng lực"
+      ],
+      "methodCorrections": {
+        "8868": {
+          "disputed": true,
+          "issue": "Thông tin chính thức 2026 đang công bố 4 phương thức; nhãn cũ này chưa được xác nhận trong danh sách đó. Không sử dụng để tự tính."
+        },
+        "9243": {
+          "disputed": true,
+          "issue": "Thông tin chính thức 2026 đang công bố 4 phương thức; nhãn cũ này chưa được xác nhận trong danh sách đó. Không sử dụng để tự tính."
+        },
+        "9244": {
+          "disputed": true,
+          "issue": "Thông tin chính thức 2026 đang công bố 4 phương thức; nhãn cũ này chưa được xác nhận trong danh sách đó. Không sử dụng để tự tính."
+        }
+      },
+      "note": "Không tự xóa các phương thức cũ hoặc ánh xạ THPT+hồ sơ sang học bạ+năng lực.",
+      "sources": [
+        {
+          "url": "https://tbd.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/",
+          "type": "primary",
+          "year": 2026,
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    "TTD": {
+      "officialWebsite": "https://dsu.edu.vn/",
+      "officialMethodLabels": [
+        "Tuyển thẳng (301)",
+        "THPT + năng khiếu (405)",
+        "Học bạ ba năm + năng khiếu (406)",
+        "THPT, chỉ Quản lý TDTT (100)",
+        "Học bạ ba năm, chỉ Quản lý TDTT (200)"
+      ],
+      "issue": "Website cũ https://upes3.edu.vn hiện hiển thị nội dung công nghệ/iCloud; nguồn tuyển sinh và thông tin liên hệ trong tài liệu ký đóng dấu năm 2026 xác nhận https://dsu.edu.vn/.",
+      "note": "THPT/học bạ thuần chỉ Quản lý TDTT; hai phương thức có năng khiếu áp dụng ba ngành. Giữ phạm vi ngành đã có, không nhân bản ngành sang mọi phương thức.",
+      "sources": [
+        {
+          "url": "https://dsu.edu.vn/resources/post_tailieu/d42266f8-0de2-4a0c-93b3-bc52442f533a.pdf",
+          "type": "primary",
+          "year": 2026,
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "url": "https://dsu.edu.vn/resources/post_tailieu/be835036-685f-439a-956b-8aa3907a7cbc.pdf",
+          "type": "primary",
+          "year": 2026,
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    "DDY": {
+      "officialMethodLabels": [
+        "THPT 2026 (100)",
+        "Học bạ ba năm (200)",
+        "Tuyển thẳng (301)"
+      ],
+      "note": "Học bạ chỉ Điều dưỡng, Kỹ thuật xét nghiệm y học, Hóa dược, Tâm lý học định hướng lâm sàng; IELTS thay điểm Tiếng Anh là nhánh của THPT.",
+      "sources": [
+        {
+          "type": "primary",
+          "url": "https://smp.udn.vn/ckfinder/userfiles/files/C%E1%BA%ACP%20NH%E1%BA%ACT_DDY_%20TH%C3%94NG%20TIN%20TUY%E1%BB%82N%20SINH%20TYD%20N%C4%82M%202026(1).pdf",
+          "year": 2026,
+          "checkedAt": "2026-10-14"
+        }
+      ],
+      "methodCorrections": {
+        "8825": {
+          "sourceUrl": "https://smp.udn.vn/ckfinder/userfiles/files/C%E1%BA%ACP%20NH%E1%BA%ACT_DDY_%20TH%C3%94NG%20TIN%20TUY%E1%BB%82N%20SINH%20TYD%20N%C4%82M%202026(1).pdf",
+          "requirements": [
+            "PT100 sử dụng kết quả thi THPT 2026 vào tất cả bảy ngành. Chỉ trong tổ hợp có Tiếng Anh B08/D07/A01/D01 mới có nhánh thay IELTS; phép cộng cuối được nguồn xác nhận rõ cho nhánh thay chứng chỉ, chưa phải biểu thức chung của mọi tổ hợp."
+          ],
+          "issue": "Giữ phạm vi toàn phương thức THPT; không dùng công thức thay IELTS để mô tả B00/A00. Công thức điểm cuối riêng của nhánh THPT thường còn cần xác nhận."
+        }
+      }
+    },
+    "DAD": {
+      "sources": [
+        {
+          "type": "primary",
+          "url": "https://donga.edu.vn/tuyensinh/ts-chi-tiet/dai-hoc-dong-a-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971",
+          "year": 2026,
+          "checkedAt": "2026-10-14"
+        }
+      ],
+      "methodCorrections": {
+        "7607": {
+          "label": "THPT nước ngoài — Y khoa giảng dạy bằng tiếng Anh (411)",
+          "sourceUrl": "https://donga.edu.vn/tuyensinh/ts-chi-tiet/dai-hoc-dong-a-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971",
+          "scopeStatus": "explicit_official_program_table",
+          "programs": [
+            {
+              "code": "",
+              "displayCode": "",
+              "name": "Y khoa (giảng dạy bằng tiếng Anh)",
+              "group": "Thí sinh tốt nghiệp THPT nước ngoài, phương thức 411",
+              "combinations": "",
+              "quota": "",
+              "note": "Nguồn mục II.4.6 chỉ xác nhận chương trình này; chưa xác nhận mã riêng. Không dùng mã 132 trong bảng Y khoa chung làm mã ngành quốc gia."
+            }
+          ],
+          "requirements": [
+            "Phương thức 411 chỉ xét Y khoa bằng tiếng Anh cho người nước ngoài; văn bằng tương đương, bảng điểm khoa học, chuẩn tiếng Anh, kết quả tốt nghiệp từ 65% và phỏng vấn bắt buộc."
+          ],
+          "issue": "Loại Dược khỏi phạm vi 411; không giữ mã nội bộ 132/133 trong trường mã ngành quốc gia. Chưa xác nhận mã riêng của Y khoa tiếng Anh nên để trống mã."
+        }
+      }
+    }
+  },
+  "audited": [
+    {
+      "code": "BMU",
+      "name": "Trường Đại học Y dược Buôn Ma Thuột",
+      "urls": [
+        "https://bmu.edu.vn/-thong-bao--quy-tac-tinh-diem-quy-doi-tuong-duong-nguong-dau-vao-va-diem-trung-tuyen-giua-cac-phuong-thuc-xet-tuyen-nam-2026",
+        "https://bmu.edu.vn/quy-doi-diem-cac-phuong-thuc-tuyen-sinh"
+      ],
+      "outcome": "Đã đọc thông báo 16/7/2026: điểm dùng quy đổi đã gồm điểm cộng và ưu tiên; ĐGNL theo bảng bách phân vị. Chưa tải được phụ lục đầy đủ cho V-ACT/HSA/SPT, giữ ba công thức chờ; không suy từ bảng điểm sàn.",
+      "remainingIds": [
+        "school-bmu-8424",
+        "school-bmu-8425",
+        "school-bmu-8426"
+      ],
+      "updatedMethodIds": [],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "CEA",
+      "name": "Trường Đại học Kinh tế Nghệ An",
+      "urls": [
+        "https://nau.edu.vn/dv-10/tin-tuc-su-kien-67/cong-bo-thong-tin-tuyen-sinh-2026-du-kien-them-co-hoi-vung-tuong-lai-10371.aspx",
+        "https://nau.edu.vn/hoat-dong-tai-nau-14/tuyen-sinh-2026-thi-sinh-va-phu-huynh-hoi-%E2%80%93-truong-dai-hoc-nghe-an-tra-loi-10682.aspx"
+      ],
+      "outcome": "Đã đọc phương án và hỏi đáp 2026: xác nhận năm phương thức và nhánh năng khiếu chỉ Giáo dục mầm non; chưa có phép tính hoặc quy đổi ĐGNL đầy đủ. Giữ bốn công thức chờ.",
+      "remainingIds": [
+        "school-cea-8263",
+        "school-cea-8264",
+        "school-cea-8265",
+        "school-cea-8266"
+      ],
+      "updatedMethodIds": [],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "DAD",
+      "name": "Trường Đại học Đông Á",
+      "urls": [
+        "https://donga.edu.vn/tuyensinh/ts-chi-tiet/dai-hoc-dong-a-thong-bao-tuyen-sinh-bac-dai-hoc-chinh-quy-nam-2026-42971"
+      ],
+      "outcome": "Đã đọc điều kiện phương thức 411 và giới hạn Y khoa bằng tiếng Anh; phân loại xét điều kiện, không tạo công thức số giả.",
+      "remainingIds": [],
+      "updatedMethodIds": [
+        "DAD:7607"
+      ],
+      "verifiedMethodIds": [
+        "DAD:7607"
+      ]
+    },
+    {
+      "code": "DDG",
+      "name": "Khoa Giáo dục Thể chất – ĐH Đà Nẵng",
+      "urls": [
+        "https://fpe.udn.vn/"
+      ],
+      "outcome": "Đã đọc trang Khoa Giáo dục thể chất ĐHĐN; các liên kết đại học 2026 tìm được thuộc mã DDS, không đủ bằng chứng áp cho DDG. Không chuyển công thức khác đơn vị sang hồ sơ DDG.",
+      "remainingIds": [
+        "pending-ddg-thptkethopnangkhieu"
+      ],
+      "updatedMethodIds": [],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "DDK",
+      "name": "Trường Đại học Bách Khoa - ĐH Đà Nẵng",
+      "urls": [
+        "https://tuyensinh.dut.udn.vn/phuong-thuc-tuyen-sinh",
+        "https://tuyensinh.dut.udn.vn/xet-kq-thi-tot-nghiep-thpt",
+        "https://tuyensinh.dut.udn.vn/diem-quy-doi-chung-chi-ngoai-ngu"
+      ],
+      "outcome": "Đọc trực tiếp ảnh thông báo THPT và quy đổi ngoại ngữ; chứng chỉ là nhánh thay điểm/điểm khuyến khích, không tự tạo phương thức độc lập.",
+      "remainingIds": [
+        "school-ddk-9449"
+      ],
+      "updatedMethodIds": [
+        "DDK:9449"
+      ],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "DDY",
+      "name": "Khoa Y Dược – ĐH Đà Nẵng",
+      "urls": [
+        "https://smp.udn.vn/ckfinder/userfiles/files/C%E1%BA%ACP%20NH%E1%BA%ACT_DDY_%20TH%C3%94NG%20TIN%20TUY%E1%BB%82N%20SINH%20TYD%20N%C4%82M%202026(1).pdf"
+      ],
+      "outcome": "Đọc trực tiếp bản cập nhật 13 trang: xác nhận ba phương thức 100/200/301, bảy ngành và nhánh thay IELTS. Bổ sung nhánh THPT + chứng chỉ; chưa đánh dấu toàn bộ phương thức đã hoàn chỉnh.",
+      "remainingIds": [
+        "school-ddy-8825"
+      ],
+      "updatedMethodIds": [
+        "DDY:8825"
+      ],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "DHD",
+      "name": "Trường Du lịch - ĐH Huế",
+      "urls": [
+        "https://huis.edu.vn/uploads/static/THONG_TIN_TUYEN_SINH_202611.pdf",
+        "https://huht.hueuni.edu.vn/tuyen-sinh"
+      ],
+      "outcome": "Đã đọc công thức bốn nhánh và phạm vi ngành; ghi rõ không cộng điểm thành tích. Bảng ưu tiên trong chính nguồn cần xác minh thêm.",
+      "remainingIds": [
+        "school-dhd-9032",
+        "school-dhd-9033",
+        "school-dhd-9034",
+        "school-dhd-9506"
+      ],
+      "updatedMethodIds": [
+        "DHD:9032",
+        "DHD:9033",
+        "DHD:9034",
+        "DHD:9506"
+      ],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "DPQ",
+      "name": "Trường Đại học Phạm Văn Đồng",
+      "urls": [
+        "https://tuyensinh.pdu.edu.vn/thong-tin-tuyen-sinh-nam-2026/",
+        "https://tuyensinh.pdu.edu.vn/download/3770/"
+      ],
+      "outcome": "Đọc đề án và thông báo quy đổi điều chỉnh: bổ sung nội suy V-ACT đầy đủ bảy khoảng; không suy thành công thức điểm cuối.",
+      "remainingIds": [
+        "school-dpq-9093"
+      ],
+      "updatedMethodIds": [
+        "DPQ:9093"
+      ],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "DPY",
+      "name": "Trường Đại học Phú Yên",
+      "urls": [
+        "https://dangkytuyensinh.pyu.edu.vn/tuyen-sinh/tin-tuc/thong-tin-tuyen-sinh-n-m-2026",
+        "https://tuyensinh.pyu.edu.vn/tuyen-sinh/tin-tuc/quy-tac-quy-doi-diem-xet-tuyen-n-m-2026",
+        "https://drive.google.com/file/d/1Qz-ZCw3_ugcY_34gFahbj9qEBUTjcSMs/preview",
+        "https://drive.google.com/file/d/1m0E82UOlWaIDCzVyUF4_9e7Gs6p-_eU7/preview"
+      ],
+      "outcome": "Đọc đề án 13 trang và quy đổi 2 trang. Học bạ/V-ACT không dùng ngành giáo viên, GDMN dùng THPT + năng khiếu. PDF mang tên quy đổi chỉ cho bảng ngoại ngữ, chưa đủ công thức V-ACT hoặc điểm cuối; giữ ba mục chờ.",
+      "remainingIds": [
+        "school-dpy-7997",
+        "school-dpy-7998",
+        "school-dpy-7999"
+      ],
+      "updatedMethodIds": [],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "DQN",
+      "name": "Trường Đại học Quy Nhơn",
+      "urls": [
+        "https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208",
+        "https://qnu.edu.vn/vi/tuyen-sinh-1763/tb123-ve-viec-quy-doi-tuong-duong-diem-giua-cac-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-2625"
+      ],
+      "outcome": "Đã bổ sung bước nội suy cho học bạ/SPT/ĐGNL và thay ngoại ngữ. THPT, năng khiếu: nguồn đã đọc chưa cho đủ phép tính cuối; giữ chờ xác minh. Đã đối chiếu đủ 53 dòng bảng II.4: học bạ và V-ACT 38 chương trình không đào tạo giáo viên; SPT và THPT 51; năng khiếu 2. Nhánh chứng chỉ lọc tổ hợp có Anh. Giữ Quản lý giáo dục; bổ sung Nông học theo bảng chính thức.",
+      "remainingIds": [
+        "school-dqn-8531",
+        "school-dqn-8532",
+        "school-dqn-9491",
+        "school-dqn-9492",
+        "school-dqn-8535",
+        "school-dqn-8533",
+        "school-dqn-8534"
+      ],
+      "updatedMethodIds": [
+        "DQN:8532",
+        "DQN:8533",
+        "DQN:8534",
+        "DQN:9491",
+        "DQN:9492"
+      ],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "DVX",
+      "name": "Trường Đại học Công nghệ Vạn Xuân",
+      "urls": [
+        "https://vxut.edu.vn/"
+      ],
+      "outcome": "Trang trường đọc được nhưng tin tuyển sinh đang nêu năm 2023; chưa có nguồn tuyển sinh 2026 đủ xác minh, giữ cả hai phương thức chờ.",
+      "remainingIds": [
+        "pending-dvx-thpt",
+        "pending-dvx-hocba"
+      ],
+      "updatedMethodIds": [],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "DYD",
+      "name": "Trường Đại học Yersin Đà Lạt",
+      "urls": [
+        "https://yersin.edu.vn/thong-tin-tuyen-sinh-2026/"
+      ],
+      "outcome": "Bổ sung cơ sở tính hai phương thức còn thiếu; ĐGNL thiếu bảng quy đổi nên không mở tự tính.",
+      "remainingIds": [
+        "school-dyd-7843",
+        "school-dyd-7844"
+      ],
+      "updatedMethodIds": [
+        "DYD:7843",
+        "DYD:7844"
+      ],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "HVPG-HUE",
+      "name": "Học viện Phật giáo Việt Nam tại Huế",
+      "urls": [
+        "https://vbuhue.edu.vn/hvpg.aspx?TieuDeID=134&KenhID=0&ChuDeID=0&TinTucID=40455&l=vn"
+      ],
+      "outcome": "Đọc thông báo kết quả khóa XVII: xác nhận điểm chuẩn 15, không đủ trọng số/công thức tuyển sinh. Không đổi điểm chuẩn thành công thức.",
+      "remainingIds": [
+        "school-hvpg-hue-own-exam"
+      ],
+      "updatedMethodIds": [],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "KTD",
+      "name": "Trường Đại học Kiến trúc Đà Nẵng",
+      "urls": [
+        "https://tuyensinh.dau.edu.vn/truong-dai-hoc-kien-truc-da-nang-cong-bo-phuong-an-xet-tuyen-dai-hoc-nam-2026-du-kien-012929.html",
+        "https://w.ladicdn.com/6779f83248dce300129f2a53/cach-tinh-diem-20260515084346-rwn2j.png"
+      ],
+      "outcome": "Đọc phương án chính thức 2026 và ảnh công thức: tổng ba môn ngang hệ số + ưu tiên; học bạ dùng điểm cả năm lớp 10, 11, 12. Không suy ngưỡng thành điểm chuẩn.",
+      "remainingIds": [
+        "school-ktd-8363",
+        "school-ktd-8365"
+      ],
+      "updatedMethodIds": [
+        "KTD:8363",
+        "KTD:8365"
+      ],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "TBD",
+      "name": "Trường Đại học Thái Bình Dương",
+      "urls": [
+        "https://tbd.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2026/"
+      ],
+      "outcome": "Nguồn chính thức hiện liệt kê bốn phương thức, khác sáu nhãn đang có; 15 và 5,5 là ngưỡng nhận hồ sơ, không thay thành công thức cuối.",
+      "remainingIds": [
+        "school-tbd-8866",
+        "school-tbd-8867",
+        "school-tbd-8868",
+        "school-tbd-8869",
+        "school-tbd-9243",
+        "school-tbd-9244"
+      ],
+      "updatedMethodIds": [],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "TDV",
+      "name": "Trường Đại học Vinh",
+      "urls": [
+        "https://vinhuni.edu.vn/Upload/files/HCTH/2026-01/Thongtintuyensinh2026.pdf",
+        "https://vinhuni.edu.vn/nguong-bao-dam-chat-luong-dau-vao-va-quy-tac-quy-doi-tuong-duong-de-xet-tuyen-dai-hoc-chinh-quy-truong-dai-hoc-vinh-nam-2026-c06.01l0v0p0a161940.html",
+        "https://vinhuni.edu.vn/Upload/files/HCTH/2026-07/NguongDBCL2026.pdf"
+      ],
+      "outcome": "Đọc phương án tháng 1 và ngưỡng cập nhật tháng 7: có dấu hiệu đổi cơ sở học bạ từ lớp 12 sang cả năm lớp 10, 11, 12. Không gán công thức bản đầu năm cho bản cuối; hai mục tiếp tục chờ quy chế chi tiết.",
+      "remainingIds": [
+        "school-tdv-8020",
+        "school-tdv-8021"
+      ],
+      "updatedMethodIds": [],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "TSN",
+      "name": "Trường Đại học Nha Trang",
+      "urls": [
+        "https://tuyensinh.ntu.edu.vn/",
+        "https://tuyensinh.ntu.edu.vn/thong-bao/quy-doi-diem-tuong-duong"
+      ],
+      "outcome": "Đọc trang tuyển sinh 2026 và bảng quy đổi: tổng THPT bốn môn thang 40; bổ sung nội suy HSA/V-ACT. Phương thức chứng chỉ và ưu tiên còn cần tài liệu chi tiết.",
+      "remainingIds": [
+        "school-tsn-8467",
+        "school-tsn-8468",
+        "school-tsn-8469",
+        "school-tsn-9451"
+      ],
+      "updatedMethodIds": [
+        "TSN:8468",
+        "TSN:8469"
+      ],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "TTD",
+      "name": "Trường Đại học Thể dục Thể thao Đà Nẵng",
+      "urls": [
+        "https://dsu.edu.vn/tuyensinh/chi-tiet/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026-13632",
+        "https://dsu.edu.vn/resources/post_tailieu/d42266f8-0de2-4a0c-93b3-bc52442f533a.pdf",
+        "https://dsu.edu.vn/tuyensinh/chi-tiet/cap-nhat-bo-sung-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026-13709",
+        "https://dsu.edu.vn/resources/post_tailieu/be835036-685f-439a-956b-8aa3907a7cbc.pdf",
+        "https://upes3.edu.vn"
+      ],
+      "outcome": "Đã đọc trực quan PDF gốc 16 trang và cập nhật 6 trang: xác minh bốn phép tính cùng phạm vi ngành. Website cũ upes3.edu.vn hiển thị nội dung công nghệ/iCloud, không dùng làm nguồn tuyển sinh; domain đúng được tài liệu ký đóng dấu xác nhận là dsu.edu.vn.",
+      "remainingIds": [
+        "school-ttd-8895",
+        "school-ttd-8896",
+        "school-ttd-8897",
+        "school-ttd-9458"
+      ],
+      "updatedMethodIds": [
+        "TTD:8895",
+        "TTD:8896",
+        "TTD:8897",
+        "TTD:9458"
+      ],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "UKH",
+      "name": "Trường Đại học Khánh Hòa",
+      "urls": [
+        "https://ukh.edu.vn/tuyensinh/vi-vn/chi-tiet-tin/id/6347/THONG-TIN-TUYEN-SINH-NAM-2026-(CAP-NHAT)",
+        "https://drive.google.com/file/d/1w-5JwFk1Txac3o1YWRJzAP0jAOICDcWh/preview"
+      ],
+      "outcome": "Đọc PDF cập nhật 29 trang, xác minh hai bước quy đổi: hồi quy học bạ và bách phân vị THPT sang V-ACT. THPT cùng công thức điểm cuối từng phương thức vẫn cần tài liệu quy chế gốc.",
+      "remainingIds": [
+        "school-ukh-8190",
+        "school-ukh-8191",
+        "school-ukh-8473"
+      ],
+      "updatedMethodIds": [
+        "UKH:8191",
+        "UKH:8473"
+      ],
+      "verifiedMethodIds": []
+    },
+    {
+      "code": "YKV",
+      "name": "Trường Đại học Y khoa Vinh",
+      "urls": [
+        "https://www.vmu.edu.vn/tuyen-sinh-dao-tao/dai-hoc-chinh-quy/tuyen-sinh/thong-bao-tuyen-sinh-trinh-do-dai-hoc-he-chinh-quy-nam-2026-a9811",
+        "https://www.vmu.edu.vn/cdn/vmu/Assets/Documents/422_08.5.2026_TB%20Tuyen%20Sinh%202026.pdf"
+      ],
+      "outcome": "Đọc PDF 13 trang và kiểm tra trực quan trang 6,8: tổng ba môn ngang hệ số; ưu tiên xét trên tổng đã có điểm cộng. Không bật tính tự động.",
+      "remainingIds": [],
+      "updatedMethodIds": [
+        "YKV:9215"
+      ],
+      "verifiedMethodIds": [
+        "YKV:9215"
+      ]
+    }
+  ],
+  "pending": [
+    {
+      "code": "DDT",
+      "name": "Trường Đại học Duy Tân",
+      "remainingIds": [
+        "school-ddt-8432"
+      ]
+    },
+    {
+      "code": "HCQ",
+      "name": "Phân hiệu Học viện Hành chính và Quản trị công tại TP. Đà Nẵng",
+      "remainingIds": [
+        "school-hcq-9132",
+        "school-hcq-9133",
+        "school-hcq-9134",
+        "school-hcq-9135"
+      ]
+    },
+    {
+      "code": "HCTN",
+      "name": "Phân hiệu Học viện Hành chính và Quản trị công tại Đắk Lắk",
+      "remainingIds": [
+        "school-hctn-9132",
+        "school-hctn-9133",
+        "school-hctn-9134",
+        "school-hctn-9135"
+      ]
+    },
+    {
+      "code": "HFA",
+      "name": "Phân hiệu Trường Đại học Tài chính - Kế toán tại Thừa Thiên Huế",
+      "remainingIds": [
+        "school-hfa-thpt",
+        "school-hfa-hb"
+      ]
+    },
+    {
+      "code": "IUQ",
+      "name": "Phân hiệu Trường Đại học Công nghiệp TP.HCM tại Quảng Ngãi",
+      "remainingIds": [
+        "school-iuq-combined"
+      ]
+    },
+    {
+      "code": "KGH",
+      "name": "Trường Sĩ quan Không quân",
+      "remainingIds": [
+        "school-kgh-8908",
+        "school-kgh-8909",
+        "school-kgh-8910",
+        "school-kgh-8911"
+      ]
+    },
+    {
+      "code": "LNA",
+      "name": "Phân hiệu Trường Đại học Lâm nghiệp tại Gia Lai",
+      "remainingIds": [
+        "school-lna-9357",
+        "school-lna-9358"
+      ]
+    },
+    {
+      "code": "LPD",
+      "name": "Phân hiệu Trường Đại học Luật Hà Nội tại tỉnh Đắk Lắk",
+      "remainingIds": [
+        "school-lpd-9119"
+      ]
+    },
+    {
+      "code": "NLG",
+      "name": "Phân hiệu Trường Đại học Nông Lâm TP.HCM tại Gia Lai",
+      "remainingIds": [
+        "school-nlg-9218",
+        "school-nlg-9219",
+        "school-nlg-9220"
+      ]
+    },
+    {
+      "code": "NLN",
+      "name": "Phân hiệu Trường Đại học Nông Lâm TP.HCM tại Ninh Thuận",
+      "remainingIds": [
+        "school-nln-9224",
+        "school-nln-9228",
+        "school-nln-9230"
+      ]
+    },
+    {
+      "code": "TDL",
+      "name": "Trường Đại học Đà Lạt",
+      "remainingIds": [
+        "school-tdl-9177",
+        "school-tdl-9178",
+        "school-tdl-9179",
+        "school-tdl-9180"
+      ]
+    },
+    {
+      "code": "TTH",
+      "name": "Trường Sĩ quan Thông tin",
+      "remainingIds": [
+        "school-tth-7886",
+        "school-tth-7888",
+        "school-tth-7887",
+        "school-tth-7909"
+      ]
+    },
+    {
+      "code": "TTN",
+      "name": "Trường Đại học Tây Nguyên",
+      "remainingIds": [
+        "school-ttn-9489",
+        "school-ttn-9490",
+        "school-ttn-8935",
+        "school-ttn-8936"
+      ]
+    },
+    {
+      "code": "UFA",
+      "name": "Phân hiệu Trường Đại học Tài chính - Marketing tại Quảng Ngãi",
+      "remainingIds": [
+        "school-ufa-8603",
+        "school-ufa-8604"
+      ]
+    },
+    {
+      "code": "YDN",
+      "name": "Trường Đại học Kỹ thuật Y Dược Đà Nẵng",
+      "remainingIds": [
+        "school-ydn-9225"
+      ]
+    }
+  ],
+  "coverage": {
+    "gapSchools": 35,
+    "inspectedSchools": 20,
+    "pendingSchools": 15,
+    "methodPatches": 27,
+    "note": "Inspected không có nghĩa đã hoàn thiện: xem outcome/remainingIds từng trường. DDF là đối chiếu thêm ngoài 35 trường có khoảng trống."
+  }
+}

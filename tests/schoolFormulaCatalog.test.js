@@ -619,6 +619,8 @@ test('trích công thức không lấy điều kiện tuyển sinh làm phép t�
   assert.equal(formulaKind('ĐGNL HSA'), 'hsa');
   assert.equal(describeScoring('Thí sinh thi tốt nghiệp THPT phải có tổng điểm từ 15.', 'transcript'), '');
   assert.deepEqual(scoreEquations('Điểm thi THPT'), []);
+  assert.deepEqual(scoreEquations('ĐXT = 22.5 × 0,8 + 24,00 × 0,2 + 0,5 + 0 = 23,3\nĐXT = 22.5 x 0,6 + 24,00 x 0,4 + 0,5 + 0 = 23,6'), []);
+  assert.deepEqual(scoreEquations('XT1 = 0.7*ĐK + 0.3*ĐHB + ĐƯT + ĐC'), ['XT1 = 0.7×ĐK + 0.3×ĐHB + ĐƯT + ĐC']);
   assert.deepEqual(scoreEquations('(4) Đối với thí sinh khuyết tật bị suy giảm khả năng học tập có nguyện vọng ngành phù hợp.\nĐXT = M1 + M2 + M3'), ['ĐXT = M1 + M2 + M3']);
 });
 

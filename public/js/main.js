@@ -19,7 +19,7 @@ import { AccountApp, hasStoredAuthSession } from "./account.js?v=20261001-2";
 import { AdmissionsAssistant } from "./assistant.js?v=20261014-1";
 import { initAdConsent } from "./adConsent.js";
 import { APP_ROUTES, parseAppRoute, profilePath, routeFromLocation, updateAppMetadata, updateAppHeading } from "./core/appRoutes.js";
-import { calculateSchoolFormula, schoolFormulaBranches, selectSchoolFormulaRule, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20261004-3";
+import { calculateSchoolFormula, schoolFormulaBranches, schoolFormulaCombinationLabels, selectSchoolFormulaRule, validateSchoolFormulaValue } from "./core/schoolFormula.js?v=20261014-1";
 
 const FORM_STORAGE_KEY = "thpt-calculator-form-v2";
 const THEME_STORAGE_KEY = "thpt-calculator-theme-v1";
@@ -783,7 +783,7 @@ class THPTApp {
     const sourceUrl = safeWebsite(source?.url);
     const conditions = (formula?.conditions || []).map((item) => `<li>${escapeHTML(item)}</li>`).join("");
     const programs = (formula?.programs || []).map((item) => `<li>${item.code ? `<b>${escapeHTML(item.code)}</b> · ` : ""}${escapeHTML(item.name)}${item.group ? ` · ${escapeHTML(item.group)}` : ""}${item.combination ? ` · ${escapeHTML(item.combination)}` : ""}${item.note ? `<small>${escapeHTML(item.note)}</small>` : ""}</li>`).join("");
-    const combinations = (formula?.combinations || [...new Set((formula?.programs || []).flatMap((p) => String(p.combination || "").split(/[;,/|]+/)).map((c) => c.trim()).filter(Boolean))]).map((code) => `<span>${escapeHTML(code)}</span>`).join("");
+    const combinations = (formula?.combinations || [...new Set((formula?.programs || []).flatMap((p) => schoolFormulaCombinationLabels(p.combination)))]).map((code) => `<span>${escapeHTML(code)}</span>`).join("");
     const branchNote = Number(formula.variantCount) > 1
       ? `<p class="formula-scope-note">Công thức của phương thức này có ${formula.variantCount} nhánh, tùy nhóm ngành hoặc điều kiện áp dụng.</p>`
       : `<p class="formula-scope-note">Bạn cần dùng đúng nhánh công thức và tổ hợp của phương thức, đồng thời đáp ứng điều kiện của ngành bên dưới.</p>`;

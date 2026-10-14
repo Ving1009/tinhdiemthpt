@@ -15,8 +15,10 @@ export function scoreEquations(text) {
     }
     const equal = value.indexOf('=');
     const math = /[+×*÷/]|\s[xX]\s/.test(equal < 0 ? value : value.slice(equal + 1));
-    const score = /(điểm|đxt|đtx|đx\b|dxt|kqhb|đkh|đtb|hsnl|tổ hợp|m[123i]\b|nk[12]\b)/i;
+    const score = /(điểm|đxt|đtx|đx\b|dxt|kqhb|đkh|đtb|hsnl|tổ hợp|m[123i]\b|nk[12]\b|\bXT[123]\b)/i;
     if (!math || value.length > 900) continue;
+    // A worked example with only numbers on the right is not a reusable formula.
+    if (equal >= 0 && !/\p{L}/u.test(value.slice(equal + 1).replace(/\s[xX]\s/g, ' '))) continue;
     if (equal >= 0 ? equal > 150 || !score.test(value.slice(0, equal)) : value.length > 240 || !score.test(lines[i - 1] || '') || !/^(?:[-•]\s*)?(?:Toán|Ngữ văn|Văn|Môn|Điểm môn|Điểm thi|\()/i.test(value) || !/[+×*]|\s[xX]\s/.test(value)) continue;
     if (/i\s*=\s*1\s*,\s*2|stt|học phí|số tiền|chỉ tiêu/i.test(value)) continue;
     const context = clean(lines[i - 1]);

@@ -1,5 +1,10 @@
 import { calculateAdmissionPriority, rounded } from '../utils.js';
 
+export function schoolFormulaCombinationLabels(value) {
+  // Commas inside a published subject group belong to that group.
+  return String(value || '').split(/[;,/|]+(?![^()]*\))/).map(label => label.trim()).filter(Boolean);
+}
+
 export function schoolFormulaBranches(formula, program = null) {
   return (formula?.calculationBranches || []).filter((branch) => !branch.programCodes || program && [program.code, program.nationalMajorCode].some((code) => branch.programCodes.includes(code)));
 }

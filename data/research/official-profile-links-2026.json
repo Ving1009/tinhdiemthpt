@@ -1038,5 +1038,13 @@
       "https://hict.edu.vn/quyet-dinh-ban-hanh-thong-tin-tuyen-sinh-nam-2026.htm",
       "https://hict.edu.vn/huong-dan-dang-ky-du-tuyen-nam-2026-theo-phuong-thuc-xet-tuyen-hoc-ba-thpt.htm"
     ]
+  },
+  "TTD": {
+    "website": "https://dsu.edu.vn",
+    "seeds": [
+      "https://dsu.edu.vn/tuyensinh/chi-tiet/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-2026-13632",
+      "https://dsu.edu.vn/resources/post_tailieu/be835036-685f-439a-956b-8aa3907a7cbc.pdf"
+    ],
+    "note": "Đối chiếu 14/10/2026: tên miền cũ upes3.edu.vn hiển thị nội dung công nghệ không thuộc trường. Website dsu.edu.vn được ghi trong tài liệu tuyển sinh chính thức năm 2026."
   }
 }

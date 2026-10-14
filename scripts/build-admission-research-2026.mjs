@@ -27,6 +27,7 @@ function methodRecord(method, page, schoolNote) {
   const sourceUrl = correction.sourceUrl || method.sourceUrl || page?.url || schoolNote.sources?.[0]?.url || "";
   return {
     id: String(method.id), label: correction.label || method.label, year: 2026,
+    checkedAt: correction.checkedAt || method.checkedAt || notes.checkedAt,
     sourceLabel: method.label,
     methodCode: method.methodCode, codeNamespace: method.codeNamespace || "tuyensinh247_internal",
     scopeStatus, disputed: Boolean(correction.disputed), yearEvidence: method.yearEvidence || "explicit_2026",
@@ -58,7 +59,7 @@ const schools = universities.map((school) => {
   if (!methods.length && !note.classification) issues.push("Chưa xác nhận được đủ phương thức và bảng ngành áp dụng cho năm 2026.");
   const status = note.classification || (!methods.length ? "missing_2026_evidence" : note.unresolved || methods.some((m) => !m.programs.length || m.disputed) ? "partial_program_mapping" : methods.some((m) => m.yearEvidence === "current_policy") ? "current_policy_collected" : "source_program_mapping_collected");
   return {
-    code: school.code, name: school.name, checkedAt: notes.checkedAt, status,
+    code: school.code, name: school.name, checkedAt: note.checkedAt || notes.checkedAt, status,
     sourceSchoolCode: page?.code || null, sourceSchoolName: page?.name || null,
     sources: [...new Map([...(page ? [{ url: page.url, type: "secondary", year: page.availableMethodYears.includes(2026) ? 2026 : null, availableYears: page.availableMethodYears }] : []), ...(note.sources || [])].map((s) => [s.url, s])).values()],
     documents: unique((page?.documentUrls || []).filter((url) => /\/2026\//.test(url))),
@@ -70,13 +71,14 @@ const schools = universities.map((school) => {
 const counts = {};
 for (const school of schools) counts[school.status] = (counts[school.status] || 0) + 1;
 const summary = { schools: schools.length, sourcePages: raw.pages.length, methods: schools.reduce((n, s) => n + s.methods.length, 0), programMethodRows: schools.reduce((n, s) => n + s.methods.reduce((m, x) => m + x.programs.length, 0), 0), statusCounts: counts };
-const dataset = { schemaVersion: 1, year: 2026, checkedAt: notes.checkedAt, sourcePagesCollectedAt: raw.checkedAt, purpose: "research_only", summary, schools };
+const checkedAt = [notes.checkedAt, ...schools.map(school => school.checkedAt)].sort().at(-1);
+const dataset = { schemaVersion: 1, year: 2026, checkedAt, sourcePagesCollectedAt: raw.checkedAt, purpose: "research_only", summary, schools };
 await fs.mkdir("docs/research", { recursive: true });
 await fs.writeFile("data/research/admission-methods-2026.json", JSON.stringify(dataset, null, 2) + "\n");
 
 const escape = (value) => String(value ?? "").replace(/\|/g, "\\|").replace(/[\r\n]+/g, " ");
 const statusText = { source_program_mapping_collected: "Đã thu bảng ngành theo phương thức", current_policy_collected: "Đã thu chính sách hiện hành — chưa có đề án riêng ghi năm 2026", partial_program_mapping: "Còn thiếu / mâu thuẫn phạm vi ngành", missing_2026_evidence: "Chưa đủ nguồn năm 2026", university_system: "Hệ thống đại học — xem các trường thành viên", specialized_or_postgraduate: "Đào tạo đặc thù / sau đại học" };
-const overview = ["# Rà soát phương thức xét tuyển 2026", "", `Ngày tra cứu: ${notes.checkedAt}. Phạm vi: toàn bộ ${summary.schools} hồ sơ hiện có.`, "", `Đã đọc ${summary.sourcePages} trang đề án trên TuyểnSinh247 và đối chiếu bổ sung tài liệu trường. Thu được ${summary.methods} mục phương thức / biến thể và ${summary.programMethodRows} dòng ngành–phương thức.`, "", "Đây là tài liệu nghiên cứu, chưa nạp vào dữ liệu phục vụ website. Trạng thái ‘đã thu’ chỉ xác nhận đã lấy được bảng ngành từ nguồn; không phải chứng nhận mọi điều kiện đã được kiểm chứng độc lập hoặc mọi đề án đã đầy đủ. Không lấy phương thức năm cũ để điền năm 2026, không tự gán mọi ngành cho mọi phương thức.", "", "## Kết quả theo trạng thái", "", ...Object.entries(counts).map(([key, count]) => `- ${statusText[key]}: **${count} hồ sơ**.`), "", "## Hồ sơ còn thiếu nguồn hoặc phạm vi ngành", "", "| Mã | Trường | Tình trạng / thông tin còn thiếu |", "|---|---|---|"];
+const overview = ["# Rà soát phương thức xét tuyển 2026", "", `Cập nhật gần nhất: ${checkedAt}. Phạm vi: ${summary.schools} hồ sơ hiện có; ngày đối chiếu từng trường được lưu riêng trong dữ liệu.`, "", `Đã đọc ${summary.sourcePages} trang đề án trên TuyểnSinh247 và đối chiếu bổ sung tài liệu trường. Thu được ${summary.methods} mục phương thức / biến thể và ${summary.programMethodRows} dòng ngành–phương thức.`, "", "Dữ liệu nghiên cứu này được dùng để tạo catalog phương thức và công thức phục vụ website. Trạng thái ‘đã thu’ chỉ xác nhận đã lấy được bảng ngành từ nguồn; không phải chứng nhận mọi điều kiện đã được kiểm chứng độc lập hoặc mọi đề án đã đầy đủ. Không lấy phương thức năm cũ để điền năm 2026, không tự gán mọi ngành cho mọi phương thức.", "", "## Kết quả theo trạng thái", "", ...Object.entries(counts).map(([key, count]) => `- ${statusText[key]}: **${count} hồ sơ**.`), "", "## Hồ sơ còn thiếu nguồn hoặc phạm vi ngành", "", "| Mã | Trường | Tình trạng / thông tin còn thiếu |", "|---|---|---|"];
 for (const school of schools.filter((s) => ["partial_program_mapping", "missing_2026_evidence"].includes(s.status))) {
   const missing = school.methods.filter((m) => !m.programs.length || m.disputed).map((m) => `${m.label} (${m.id})${m.disputed ? " — mâu thuẫn nguồn" : " — thiếu bảng ngành"}`);
   overview.push(`| ${school.code} | [${escape(school.name)}](phuong-thuc-xet-tuyen-2026.md#school-${school.code}) | ${escape([...missing, ...school.issues].join("; "))} |`);
@@ -88,7 +90,7 @@ for (const school of schools.filter((s) => !["partial_program_mapping", "missing
 overview.push("", "## Đọc và tái tạo kết quả", "", "- Chi tiết từng trường: [phuong-thuc-xet-tuyen-2026.md](phuong-thuc-xet-tuyen-2026.md).", "- Dữ liệu có cấu trúc: `data/research/admission-methods-2026.json`.", "- Đối chiếu thủ công: `data/research/admission-methods-2026-notes.json`.", "- Thu trang nguồn: `node scripts/research-admission-methods-2026.mjs` (cache tại `tmp/admissions-plans-2026`); thêm `--refresh` để tải lại các trang thay vì dùng cache.", "- Tạo tài liệu: `node scripts/build-admission-research-2026.mjs`.", "", "Mã phương thức của TuyểnSinh247 là mã nội bộ, không dùng như mã phương thức Bộ GDĐT. Mã ngành, chuyên ngành, nhóm và phân hiệu được giữ riêng theo nguồn. Chỉ tiêu có thể là tổng chương trình, không cộng các dòng lặp ở nhiều phương thức. Chứng chỉ được nhắc trong điều kiện không tự động được coi là một phương thức độc lập. Các PDF được gắn năm 2026 nhưng có mốc ngày khác được ghi chú khi phát hiện. Bản thu thập lưu nguyên nhãn khi chưa có căn cứ sửa.");
 await fs.writeFile("docs/research/ra-soat-phuong-thuc-2026.md", overview.join("\n") + "\n");
 
-const detail = ["# Phương thức xét tuyển 2026 của các trường trong hồ sơ", "", `Tra cứu ${notes.checkedAt}. Đọc [báo cáo phạm vi và phần còn thiếu](ra-soat-phuong-thuc-2026.md) trước khi sử dụng.`, "", "Bảng ghi phạm vi ngành theo nguồn. Danh mục ứng viên chưa đủ ma trận được cảnh báo ngay tại phương thức tương ứng. Tuyển thẳng còn phụ thuộc giải thưởng, môn thi, đối tượng và quy định của trường; việc một ngành xuất hiện trong bảng không có nghĩa mọi thí sinh được tuyển thẳng. Ô trống là nguồn chưa có thông tin, không phải mức 0. Một số hồ sơ là hệ thống đại học hoặc đào tạo đặc thù, không có đề án tuyển mới từ THPT riêng."];
+const detail = ["# Phương thức xét tuyển 2026 của các trường trong hồ sơ", "", `Bản tổng hợp cập nhật ${checkedAt}. Đọc [báo cáo phạm vi và phần còn thiếu](ra-soat-phuong-thuc-2026.md) trước khi sử dụng.`, "", "Bảng ghi phạm vi ngành theo nguồn. Danh mục ứng viên chưa đủ ma trận được cảnh báo ngay tại phương thức tương ứng. Tuyển thẳng còn phụ thuộc giải thưởng, môn thi, đối tượng và quy định của trường; việc một ngành xuất hiện trong bảng không có nghĩa mọi thí sinh được tuyển thẳng. Ô trống là nguồn chưa có thông tin, không phải mức 0. Một số hồ sơ là hệ thống đại học hoặc đào tạo đặc thù, không có đề án tuyển mới từ THPT riêng."];
 detail.push("", "## Mục lục", "", ...schools.map((school) => `- [${school.code} — ${school.name}](#school-${school.code})`));
 for (const school of schools) {
   detail.push("", `<a id="school-${school.code}"></a>`, "", `## ${school.code} — ${school.name}`, "", `**Tình trạng:** ${statusText[school.status]}.`, "");

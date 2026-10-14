@@ -664,6 +664,7 @@ class THPTApp {
       this.elements.selectionHint.textContent = "Chọn trường để xem từng phương thức và trạng thái xác minh của công thức.";
       this.renderAdmissionCalculator(); this.saveForm(); return;
     }
+    $("#admission-calculator-panel").innerHTML = '<p class="selection-hint" role="status">Đang tải phương thức và công thức của trường...</p>';
     try {
       const [majors, formulaData] = await Promise.all([
         this.repository.getMajors(id),
@@ -680,7 +681,7 @@ class THPTApp {
         ? '<option value="">Chọn phương thức</option>' + options.map((option) => `<option value="${escapeHTML(option.value || option.label)}">${option.verified ? "✓ " : ""}${escapeHTML(option.label)} · ${option.programCount} ngành</option>`).join("")
         : '<option value="">Chưa có phương thức</option>';
       this.elements.methodSelect.disabled = !options.length;
-      this.elements.selectionHint.textContent = formulaData.catalog ? (options.length ? `${options.length} phương thức đã được kiểm tra. Chọn phương thức để xem công thức, ngành áp dụng và trạng thái xác minh.` : (formulaData.catalog.issues || []).join(' ') || 'Chưa có phương thức tuyển sinh đại học 2026 được xác nhận cho hồ sơ này.') : formulaData.message;
+      this.elements.selectionHint.textContent = formulaData.catalog ? (options.length ? `${options.length} phương thức trong dữ liệu 2026. Mở từng thanh bên dưới để đọc thông tin; chọn phương thức ở trên để dùng bộ tính nếu được hỗ trợ.` : (formulaData.catalog.issues || []).join(' ') || 'Chưa có phương thức tuyển sinh đại học 2026 được xác nhận cho hồ sơ này.') : formulaData.message;
       this.renderAdmissionCalculator();
     } catch {
       if (loadVersion !== this.admissionLoadVersion) return;
@@ -802,6 +803,10 @@ class THPTApp {
     if (!method) {
       this.elements.calculateAdmission.disabled = true; this.elements.calculateAdmission.textContent = "Chưa hỗ trợ tự tính";
       const catalog = this.admissionFormulaData?.catalog;
+      if (catalog?.methods.length) {
+        panel.innerHTML = `<div class="admission-form-heading"><div><p class="eyebrow">Thông tin tuyển sinh 2026 · Tham khảo cho 2027</p><h3>Phương thức và công thức của trường</h3><p>Mở từng phương thức để xem công thức, ngành áp dụng, điều kiện và nguồn. Các mục chưa đủ thông tin được ghi rõ trong từng thanh.</p></div></div>${catalog.methods.map((formula) => this.admissionFormulaMarkup(formula, { profile: true })).join("")}`;
+        return;
+      }
       panel.innerHTML = catalog && !catalog.methods.length
         ? `<div class="result-empty"><h3>Chưa xác nhận được phương thức tuyển sinh đại học 2026</h3><p>${escapeHTML((catalog.issues || []).join(' ') || 'Xem ghi chú hồ sơ và thông báo tuyển sinh của cơ sở.')}</p></div>`
         : '<div class="result-empty"><h3>Chọn trường và phương thức</h3><p>Nhãn "Đã xác minh" chỉ dành cho công thức được nêu trực tiếp trong nguồn chính thức.</p></div>';

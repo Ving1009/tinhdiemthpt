@@ -644,7 +644,8 @@ test('Worker và Express trả cùng catalog theo trường, không đưa catalo
 test('chọn trường lần đầu và chuyển nhanh không bị NaN hoặc lấy kết quả request cũ', async () => {
   const source = await fs.readFile(new URL('../public/js/main.js', import.meta.url), 'utf8');
   const body = source.slice(source.indexOf('  async populateMajorSelect() {'), source.indexOf('  populateMethodSelect() {'));
-  const Fixture = vm.runInNewContext(`(class { ${body} })`, { escapeHTML: String });
+  const panel = { innerHTML: 'Thông tin trường cũ' };
+  const Fixture = vm.runInNewContext(`(class { ${body} })`, { escapeHTML: String, $: () => panel });
   const pending = new Map();
   const deferred = (key) => new Promise((resolve) => pending.set(key, resolve));
   const app = new Fixture();
@@ -653,6 +654,8 @@ test('chọn trường lần đầu và chuyển nhanh không bị NaN hoặc l�
   app.renderAdmissionCalculator = () => {};
   app.saveForm = () => {};
   const first = app.populateMajorSelect();
+  assert.match(panel.innerHTML, /Đang tải phương thức/);
+  assert.doesNotMatch(panel.innerHTML, /Thông tin trường cũ/);
   assert.equal(app.admissionLoadVersion, 1);
   app.elements.universitySelect.value = 'second';
   const second = app.populateMajorSelect();
@@ -665,6 +668,40 @@ test('chọn trường lần đầu và chuyển nhanh không bị NaN hoặc l�
   assert.match(app.elements.methodSelect.innerHTML, /second-method/);
   assert.doesNotMatch(app.elements.methodSelect.innerHTML, /first-method/);
   assert.equal(app.admissionMajorRows[0].id, 'second-row');
+});
+
+test('mục 03 hiển thị đủ phương thức mới ngay khi chọn trường, giữ công thức, phạm vi và nguồn', async () => {
+  const source = await fs.readFile(new URL('../public/js/main.js', import.meta.url), 'utf8');
+  const body = source.slice(source.indexOf('  admissionFormulaMarkup('), source.indexOf('  renderStructuredAdmissionCalculator('));
+  const { escapeHTML } = await import('../public/js/utils.js');
+  const { schoolFormulaCombinationLabels } = await import('../public/js/core/schoolFormula.js');
+  const panel = {};
+  const Fixture = vm.runInNewContext(`(class { ${body} })`, { $: () => panel, escapeHTML, schoolFormulaCombinationLabels, safeWebsite: (url) => url });
+  const app = new Fixture();
+  app.elements = { methodSelect: { value: '' }, calculateAdmission: {} };
+  for (const code of ['IUH', 'SPD', 'DQN', 'DVT', 'GDU', 'DAD']) {
+    const data = publicSchoolFormulas(school(code), catalog.checkedAt);
+    app.admissionFormulaData = { catalog: data };
+    app.renderAdmissionCalculator();
+    assert.equal((panel.innerHTML.match(/<details class="verified-formula-card/g) || []).length, data.methods.length, code);
+    assert.match(panel.innerHTML, /2026 · Tham khảo cho 2027/);
+    assert.equal(app.elements.calculateAdmission.disabled, true);
+    for (const formula of data.methods) {
+      assert.ok(panel.innerHTML.includes(escapeHTML(formula.label)), formula.id);
+      assert.ok(panel.innerHTML.includes(escapeHTML(formula.expression)), formula.id);
+      if (formula.conversion) assert.ok(panel.innerHTML.includes(escapeHTML(formula.conversion)), formula.id);
+      if (formula.priority) assert.ok(panel.innerHTML.includes(escapeHTML(formula.priority)), formula.id);
+      if (formula.officialLink) assert.ok(panel.innerHTML.includes(escapeHTML(formula.officialLink.url)), formula.id);
+      for (const program of formula.programs) assert.ok(panel.innerHTML.includes(escapeHTML(program.name)), formula.id);
+    }
+  }
+  app.admissionFormulaData = { catalog: { methods: [], issues: ['Chưa đủ nguồn chính thức'] } };
+  app.renderAdmissionCalculator();
+  assert.match(panel.innerHTML, /Chưa đủ nguồn chính thức/);
+  assert.doesNotMatch(panel.innerHTML, /profile-formula-disclosure/);
+  app.admissionFormulaData = null;
+  app.renderAdmissionCalculator();
+  assert.match(panel.innerHTML, /Chọn trường và phương thức/);
 });
 
 test('khôi phục lựa chọn không ghi đè thao tác mới trên cùng trường lúc đang khởi tạo', async () => {
